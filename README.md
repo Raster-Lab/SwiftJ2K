@@ -12,6 +12,8 @@ Swift 6.2 minimum, Swift 6 language mode and complete concurrency checking. Appl
 
 ## Start reading
 
+The first coding task is **Milestone 1: API and memory-contract feasibility**, using synthetic buffers. Codec migration and the first real shared-storage transcode follow in Milestones 2 and 3. Use the ready-to-use task prompt in [AGENTS.md](AGENTS.md).
+
 - [Coding-agent entry point](AGENTS.md) and [codec-specific implementation plan](IMPLEMENTATION.md).
 - [Suite policy](Documentation/SUITE_POLICY.md) and [common API](Documentation/COMMON_API.md).
 - [Memory ownership and no-copy hand-off](Documentation/MEMORY_CONTRACT.md).

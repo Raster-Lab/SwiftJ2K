@@ -34,6 +34,6 @@ State what behaviour changed and why, exact source/baseline/contract revisions, 
 
 ## Ready-to-use first task prompt
 
-"Read AGENTS.md, IMPLEMENTATION.md, HISTORY.md and the common contract. Carry out Milestone 1 only: validate the local public API and owning-memory contract in Swift 6.2, with meaningful descriptor, lifetime, concurrency and independent-consumer tests. Preserve repository independence. Do not migrate the entire codec yet. Return a reviewable PR, exact test evidence and any concrete contract issue requiring a coordinated revision."
+"Read AGENTS.md, IMPLEMENTATION.md, HISTORY.md and the common contract. Carry out Milestone 1 only: validate the local public API and owning-memory contract in Swift 6.2, with meaningful descriptor, lifetime, concurrency and independent-consumer tests. Use synthetic buffers for the adapter experiment and preserve repository independence. Do not migrate codec algorithms or implement the real transcoder in this milestone. Return a reviewable PR, exact test evidence and any concrete contract issue requiring a coordinated revision."
 
 Later task prompts must name the next milestone explicitly. Repository creation and documentation publication are separate from authorising codec implementation.
