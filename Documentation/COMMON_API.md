@@ -1,6 +1,6 @@
 # Common API contract
 
-Contract **0.1.0**. Normative implementation specification, not implemented API documentation.
+Contract **0.1.1**. Normative implementation specification, not implemented API documentation.
 
 ## Public naming and module boundary
 

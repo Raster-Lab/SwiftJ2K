@@ -1,6 +1,6 @@
 # Swift Image Compression Suite — implementation baseline
 
-Contract version: **0.1.0**. Prepared: **17 September 2026**.
+Contract version: **0.1.1**. Prepared: **17 September 2026**.
 Status: **documentation foundation; implementation and validation not yet performed**.
 
 This is the common engineering specification for four independent successor libraries. It records the owner's accepted direction and makes concrete implementation choices for the coding agent. Detailed API designs and engineering thresholds in this foundation have not been compiler-validated or separately human-approved; demonstrate them in the first contract milestone before substantial migration. Do not describe this baseline as a released SDK or a conformance certificate.
@@ -43,10 +43,20 @@ The predecessor's Apple-only restriction for JXLSwift is superseded by the accep
 
 Keep each shared document byte-identical across the four repositories. Any contract change requires a versioned explanation, impact on all four codecs and their adapters, updated hash manifests and matching conformance tests. Make coordinated documentation PRs; avoid unilateral drift. The optional integration test harness may inspect all four repositories without becoming their dependency. Tag contract revisions separately from library release versions only if a tagging policy is later adopted; this foundation creates no tags.
 
-## First implementation milestone
+## First coding task — Milestone 1
+
+Start with contract feasibility, as numbered in every repository's `IMPLEMENTATION.md`. Establish the Swift 6.2 package and local API/owning-memory types, validate descriptors, and prove the adapter and ownership lifecycle using synthetic sample buffers. Settle the concrete lease-token signatures once and mirror the refinement across all four repositories before codec migration. Keep any API-shape experiments or test doubles clearly separate from advertised codec functionality.
+
+Milestone 1 does not migrate codec algorithms or implement a real compressed-image transcode. Its exit evidence is compiling common call shapes, meaningful descriptor/lifetime/concurrency tests and independent consumer use. The complete end-to-end proof below belongs to Milestones 2 and 3. Each later milestone remains a separately assigned coding task.
+
+## First end-to-end proof — Milestones 2 and 3
 
 One unsigned greyscale image, stored as 16-bit samples, losslessly compressed as JPEG 2000, is decoded by SwiftJ2K directly into shared storage and encoded by SwiftJLS as lossless JPEG-LS. Exercise both full 16-bit precision and 12 meaningful bits in 16-bit storage. The destination decode must match source logical samples and their meaningful precision. No intermediate file and no full-image hand-off copy. Retain storage through all asynchronous work and clean up on failure/cancellation.
 
-Migration and optimisation then extend to the remaining codecs, HTJ2K, signed samples, other layouts and advanced features using the same contract. This bounded first milestone does not remove the final platform or codec scope.
+Migration and optimisation then extend to the remaining codecs, HTJ2K, signed samples, other layouts and advanced features using the same contract. This bounded first end-to-end proof does not remove the final platform or codec scope.
+
+## Contract revision 0.1.1 — 17 September 2026
+
+Clarifies the milestone sequence for all four codecs and their adapters: Milestone 1 proves the API and ownership contract with synthetic buffers; Milestones 2 and 3 deliver the first real codec/transcode proof. API names, memory semantics, platform scope, library version targets and release gates are unchanged. The matching Milestone 1 acceptance instructions in TESTING.md specify future tests; no implementation or test execution is included in this documentation revision. All seven common documents and their hash manifest advance together.
 
 References: [Swift API design](https://www.swift.org/documentation/api-design-guidelines/), [Swift package descriptions](https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html), and each predecessor's pinned history in `HISTORY.md`.

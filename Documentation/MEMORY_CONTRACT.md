@@ -1,6 +1,6 @@
 # Common image memory and ownership contract
 
-Contract **0.1.0**. All requirements below apply independently in each codec.
+Contract **0.1.1**. All requirements below apply independently in each codec.
 
 ## Existing memory layouts, no new image format
 
@@ -62,7 +62,7 @@ After sealing, multiple readers may share storage; none may mutate it. Destructi
 
 **MEM-10.** Decoder inspection describes a supported output layout and precision; callers may request the initial shared layout. The allocating decode convenience and caller-destination decode use the same final-output path. Destination decode writes final reconstructed samples directly to the provided plane(s). It may use algorithm workspace, but must not decode to a second full final image and copy that image into the destination as a hidden implementation shortcut.
 
-The encoder reads the supplied compatible `Image` directly, after decode has sealed it. For JPEG-LS, reading samples into bounded predictor/line workspace is acceptable; materialising the full frame as `[[Int]]` merely to enter the old encoder is a hand-off copy and fails the first milestone.
+The encoder reads the supplied compatible `Image` directly, after decode has sealed it. For JPEG-LS, reading samples into bounded predictor/line workspace is acceptable; materialising the full frame as `[[Int]]` merely to enter the old encoder is a hand-off copy and fails the first end-to-end proof in Milestone 3.
 
 **MEM-11.** For a future umbrella, one storage owner sits above the codecs. Local adapter objects implement each module's local storage protocol around that same owner. Descriptor values are mapped explicitly. Shared allocation identity, capacity and lifecycle are forwarded unchanged. The adapter retains the owner for the whole operation; it does not reconstruct the pixels. The first test harness may perform this role without introducing a production umbrella dependency.
 
@@ -86,7 +86,7 @@ The encoder reads the supplied compatible `Image` directly, after decode has sea
 
 No windowing, VOI LUT, modality rescale, colour display conversion or automatic normalisation occurs in this contract. Preserve meaningful bit depth when the source explicitly declares it. Do not infer 12 bits just because a 16-bit image's values happen to fit 12 bits. A destination that cannot represent required precision or interpretation must reject or require an explicit, durable external metadata contract.
 
-The first milestone is unsigned. Signed JPEG-LS/JPEG XL mappings need explicit external interpretation where the codestream cannot record signedness; prove both encode and decode mapping without overflow, especially -32768. Those mappings are not part of the first shared-storage claim. CVPixelBuffer format codes, vImage geometry or raw byte arrays alone do not carry the complete descriptor. Do not use Float16 as a substitute for exact UInt16 samples.
+The first end-to-end proof in Milestone 3 is unsigned. Signed JPEG-LS/JPEG XL mappings need explicit external interpretation where the codestream cannot record signedness; prove both encode and decode mapping without overflow, especially -32768. Those mappings are not part of the first shared-storage claim. CVPixelBuffer format codes, vImage geometry or raw byte arrays alone do not carry the complete descriptor. Do not use Float16 as a substitute for exact UInt16 samples.
 
 ## Failure and limits
 

@@ -1,6 +1,6 @@
 # Unit, regression, interoperability and security testing
 
-Contract **0.1.0**. Required evidence for coding agents; no tests have been run for these successor repositories.
+Contract **0.1.1**. Required evidence for coding agents; no tests have been run for these successor repositories.
 
 ## General rules
 
@@ -26,7 +26,17 @@ Every fixture records source or deterministic generator/seed, redistribution lic
 | CLI | Exit codes, binary pipes, stderr separation, invalid/malicious headers, cancellation, overwrite rules | Agrees with CLI contract, preserves bytes and errors |
 | Platform | Scalar and available accelerated paths on every claimed target | Build and runtime results distinguished; no hidden dependency |
 
-## First cross-codec proof
+## Milestone 1 acceptance — contract feasibility
+
+Use synthetic sample storage and an adapter experiment to prove the public API and memory contract before codec algorithms are migrated. Compile the agreed call shapes under Swift 6.2 with complete concurrency checking; keep experimental/test-double behaviour distinct from real codec capabilities. An independent consumer must use the local public types without a sibling codec or shared-foundation dependency.
+
+Exercise unsigned full 16-bit and 12-in-16 descriptors, odd dimensions, padded rows, invalid ranges/strides/capacities and checked-arithmetic rejection. Observe synthetic writes followed by sealed reads through the retained owner; test shared allocation identity across adapter wrappers, rejection of overlapping writers, read-before-seal/write-after-seal, early caller release and failure/cancellation cleanup. Run the applicable ownership/race checks on an available supported target and record unavailable gates explicitly.
+
+Record the concrete lease-token signatures and the evidence supporting Sendable/lifetime claims. Mirror any coordinated contract refinement before codec migration. Passing this milestone proves the tested API/storage behaviour only; it does not prove compressed-format interoperability, real-codec throughput or a working transcoder. Those gates follow with the relevant implementation milestones.
+
+## First cross-codec proof — Milestone 3
+
+After the relevant native scalar paths have been migrated and independently validated in Milestone 2, prove their shared-storage integration below. This is not an additional Milestone 1 requirement.
 
 **TEST-02.** Build a development-only harness against SwiftJ2K and SwiftJLS, outside either library's dependency graph. It supplies one owner through each module's adapter wrapper. Use a non-square synthetic image with an odd width, sentinel row padding, both 12-meaningful-bit and 16-meaningful-bit patterns and independently known expected samples.
 

@@ -1,6 +1,6 @@
 # Performance engineering and regression gates
 
-Contract **0.1.0**. All performance claims require measurement.
+Contract **0.1.1**. All performance claims require measurement.
 
 **PERF-01.** Measure before optimising. Preserve the scalar reference. Priorities are latency/throughput, compression efficiency and resource efficiency, subject to correct fidelity, reliability and security. A faster result that drops precision, copies unexpectedly, ignores limits or produces non-conformant data fails.
 
