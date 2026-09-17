@@ -1,0 +1,72 @@
+# Unit, regression, interoperability and security testing
+
+Contract **0.1.0**. Required evidence for coding agents; no tests have been run for these successor repositories.
+
+## General rules
+
+**TEST-01.** Tests verify independent expected behaviour, not merely duplicate the implementation. Use known vectors, specification invariants, independently generated files, property-based inputs and scalar/accelerated comparisons. A self-round-trip alone can pass when encoder and decoder share a bug. Tests must fail for corrupted output, incorrect precision, copied hand-off buffers and unsafe lifetimes.
+
+Swift Testing or XCTest is acceptable. Preserve valuable predecessor regression tests after auditing assertions and prerequisites. Unit tests and synthetic fixtures run offline and do not require third-party tools. Oracle jobs install pinned independent tools explicitly and report missing tools as missing coverage. A required release oracle gate cannot be satisfied by skipped tests. Do not depend on private patient datasets for normal CI.
+
+Every fixture records source or deterministic generator/seed, redistribution licence, SHA-256, geometry, component roles, storage/meaningful bits, signedness, byte order, expected outcome and expected sample digest or values. Use synthetic or verified de-identified/licensed fixtures. Raw metadata and pixels are not CI log material. A failing generated seed becomes a permanent small regression fixture when safe to retain.
+
+## Required groups
+
+| Group / requirement | Essential cases | Acceptance |
+| --- | --- | --- |
+| Unit — API-01..13 | Constructors, defaults, mode validation, capability queries, error categories, module-qualified client examples | Same common call shapes and semantics across all four modules |
+| Unit — MEM-01..04 | 1x1, odd widths/heights, row padding, offsets, exact/short capacities, misalignment, endianness, planar descriptors, checked-arithmetic boundaries | Valid layouts work; invalid layouts throw before out-of-bounds access |
+| Unit — sample meaning | 0/max, alternating extremes, ramps, sparse impulses, all-zero, constant, random, 12-in-16, 16-bit unsigned; supported signed/float extensions | Exact integer values and descriptors, including meaningful bits |
+| Unit — parsers | Truncated inputs at every boundary for small fixtures, invalid lengths, entropy tables, markers/boxes, offsets, frame counts and metadata | Defined error; no trap, infinite loop or unchecked allocation |
+| Unit — lifecycle | Double writer, read before seal, write after seal, owner released by caller early, decode failure, cancellation, pool reuse, concurrent readers | Owner survives until last user; one deallocation; invalid frames never published |
+| Unit — options | Unsupported feature, required/preferred backend, copy-policy mismatch, resource/deadline limit, progress ordering | Clear error or reported fallback; no silent fidelity change |
+| Regression | Pinned predecessor corpus and bug reproducers; edge geometries; each advertised mode | No unexplained sample/behaviour regression |
+| Interoperability | Independent encoder -> successor decoder and successor encoder -> independent decoder | Correct formats, semantics and declared fidelity |
+| Integration | Shared-buffer transcodes and optional adapter harness | No intermediate image file or hand-off copy in required-sharing mode |
+| CLI | Exit codes, binary pipes, stderr separation, invalid/malicious headers, cancellation, overwrite rules | Agrees with CLI contract, preserves bytes and errors |
+| Platform | Scalar and available accelerated paths on every claimed target | Build and runtime results distinguished; no hidden dependency |
+
+## First cross-codec proof
+
+**TEST-02.** Build a development-only harness against SwiftJ2K and SwiftJLS, outside either library's dependency graph. It supplies one owner through each module's adapter wrapper. Use a non-square synthetic image with an odd width, sentinel row padding, both 12-meaningful-bit and 16-meaningful-bit patterns and independently known expected samples.
+
+1. Produce/obtain conformant lossless JPEG 2000 input and validate it with an independent decoder.
+2. Inspect with limits, allocate the single destination and record allocation identity/capacity.
+3. Decode final samples directly into it; observe writes in the supplied allocation.
+4. Pass a sealed read-only view of the same owner into lossless JPEG-LS encoding; observe reads from that allocation.
+5. Decode the JPEG-LS output with both the successor decoder and an independent JPEG-LS decoder. Compare every logical sample and declared meaningful precision to the input reference. Compare metadata/interpretation under the preservation policy.
+6. Instrument pixel allocations and copy/conversion byte counts over steps 2–4. Permit algorithm workspace with recorded purpose, prohibit an additional full final image for hand-off. Padding sentinels must not be encoded as samples or leak to output.
+7. Repeat with cancellation during decode and encode, incompatible layout under require-sharing, explicit allow-copy with reporting, two simultaneous reader encodes, and attempted concurrent mutation.
+8. Verify no intermediate image file is opened. A final CLI destination file is distinct from forbidden intermediate image staging. Run the in-process API with file access monitoring where available.
+
+Same-pointer assertions without copy/allocation instrumentation and source-path review are insufficient. A final image copied into the original destination would otherwise produce a false pass.
+
+**TEST-03.** Extend the harness to HTJ2K and each codec pair in both directions where their common capabilities permit. Lossless JPEG means supported lossless JPEG syntax, not baseline lossy JPEG. Signedness mappings require explicit metadata round trips; unsupported pairs must produce the documented error. Test encoded-file semantics, not only RAM flags. Multi-frame/streaming follow with bounded in-flight frames and back-pressure.
+
+## Regression policy
+
+**TEST-04.** Before migration, reproduce the pinned predecessor's useful tests on its compatible platform, record failures and create sample/behaviour baselines. Record exact source revision and configuration. Existing failures are not silently marked acceptable or copied as skips. Resolve them, or document a narrowly scoped excluded capability and its consequence before release.
+
+For lossless modes, sample equality has zero tolerance. Codestream byte equality is required only for promises such as byte-reconstructible JPEG, deterministic encoding at a fixed configuration, or a deliberately pinned unchanged encoding path. New valid encoders need not emit identical bytes to predecessors if sample fidelity, interoperability and size/performance gates pass. For lossy output, record named metrics, colour domain, max error and accepted tolerances before changing kernels. Never loosen a threshold after observing a regression just to pass the build.
+
+Every fixed defect gains a small failing-before/passing-after regression test. Retain malformed-input cases that previously crashed/hung. Compare scalar/accelerated output according to the selected fidelity mode; a generic epsilon is never allowed for lossless integers. Run isolated tests as well as the full suite to expose global-state dependencies and order sensitivity.
+
+## Security and reliability gates
+
+**TEST-05.** Fuzz independent parsers, inspect, decode and descriptor validation with bounded resources. Start from conformant seeds and mutate truncations, lengths, table cardinalities, counts and entropy symbols. Use coverage-guided fuzzing where available; retain seeds and minimised reproducers. Time out hangs and record peak memory. Deterministic parser mutation tests remain mandatory where a fuzzing engine is unavailable. Initial release gate: at least a one-hour fuzz campaign per decode entry point on a supported host, with zero unresolved crashes/hangs/bounds findings; this is a minimum experiment, not a security certification.
+
+Run AddressSanitizer and ThreadSanitizer separately on supported toolchain/target combinations. Exercise any native C/C++ kernels with their applicable undefined-behaviour checks. Record unsupported configurations explicitly; use a supported native host for mandatory ownership/race coverage. Test repeated cancellation, allocation denial, callback re-entrancy, resource exhaustion and backend failure. No unbounded task creation or corrupted successful result is acceptable.
+
+## Resource-limit defaults for implementation trials
+
+**TEST-06.** Establish a finite `ResourceLimits` value in every operation. Initial general profile: compressed input 256 MiB, total published decoded sample bytes 512 MiB, algorithm workspace 512 MiB, 64 million pixels per frame, one million per dimension, 256 frames when using a multi-frame extension, metadata 16 MiB, individual ICC payload 4 MiB, bounded nesting depth 32, worker count at most min(active CPU count, 8), and operation deadline 120 seconds. Strides/padding count towards decoded storage. Bound other attacker-controlled counts by validated format constraints and an explicit parser work budget.
+
+The initial Watch profile reduces compressed input to 16 MiB, decoded storage and workspace to 32 MiB each, workers to 2 and deadline to 30 seconds. These are explicit engineering starting limits, not performance guarantees or validated device memory ceilings. Validate them on target devices and adjust conservatively with a contract revision before release. Applications may set smaller limits. Larger limits require an explicit caller override and remain checked; no input data may raise them.
+
+Limits are independent ceilings, not a guarantee that their sum fits device memory. Account for compressed input, destination, workspace, retained metadata and in-flight operations when admitting work. Before allocation, enforce the application/process memory budget or deny admission; check the monotonic deadline during bounded CPU work. Hardware work needs a finite tested completion timeout and safe lifetime handling. Test inputs just below/at/above every limit. A dimension alone is never a sufficient decompression-bomb defence.
+
+## Evidence and release
+
+**TEST-07.** The coding agent must provide exact executable commands after creating the package, rather than claiming commands ran now. At minimum use debug/release build and test, independent consumer builds, selected sanitizer jobs, fuzz runs, regression runs and release benchmarks. Capture exit codes and machine-readable test reports as well as logs. Validate that test-runner failures cannot be hidden by output filtering or an unrelated CLI entry point.
+
+Evidence records: repository SHA, contract version/hash, fixture and oracle revisions, compiler/SDK/OS/CPU, backend/configuration, commands, counts of passed/failed/skipped tests and reasons, measured memory/copies, benchmark methodology and known limits. No new stable version tag until required correctness, interoperability, platform, security and performance gates are complete. Publish precise supported capabilities, not a broad compliance claim inferred from a test count.
