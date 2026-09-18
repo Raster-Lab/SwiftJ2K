@@ -1,6 +1,6 @@
 # Security policy and implementation requirements
 
-Status: documentation foundation. No successor binary release exists and no vulnerability response time is promised here.
+Status: Milestone 1 API/storage candidate. No successor binary release exists and no vulnerability response time is promised here.
 
 ## Reporting
 

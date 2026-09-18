@@ -1,6 +1,6 @@
 # Unit, regression, interoperability and security testing
 
-Contract **0.2.0**. Required evidence for coding agents; no tests have been run for these successor repositories.
+Contract **0.2.1**. Required evidence for coding agents. Actual Milestone 1 commands and outcomes are recorded in each repository; planned gates are not passes.
 
 ## General rules
 
@@ -90,3 +90,9 @@ For J2K ↔ HTJ2K, test each direction and both round trips with conformant inde
 For existing lossy JPEG ↔ JPEG XL, compare restored JPEG length and every byte, record SHA-256, and reconstruct with only the JXL available to the operation. Test both independent interoperability directions and actual JXL image decoding. Cover every claimed JPEG/metadata profile; explicitly reject unsupported reconstruction cases. Include missing/corrupt reconstruction metadata, noncanonical padding, expanded-metadata limits and attempts to invoke pixel fallback or supply the original JPEG. Source-based diagnostic reconstruction is not acceptance evidence.
 
 For both operations, verify bounded workspace/copies, cancellation/owner lifetime, source and destination limits, native standalone consumption, and absence of intermediate file or external-process I/O. CLI tests exercise one-process transcode commands, pipes, errors and output publication. Distinguish source inspection, test presence, executed tests and unexecuted coverage. Native transcoder milestones supplement the initial J2K → JPEG-LS shared-image proof; they do not expand Milestone 1 into codec implementation.
+
+## Executable Milestone 1 validation
+
+Run `python3 Scripts/validate.py` from the repository root with Swift 6.2 installed. It verifies contract digests, builds/tests debug and release, runs the standalone public consumer, and retains command exit codes, logs and xUnit results in `.validation/`. Run `python3 Scripts/check_url_consumer.py <published-commit-sha>` for clean URL-based resolution of this one library, without sibling checkouts. CI selects Swift 6.2.0 on Ubuntu 24.04 ARM64/x86_64 and Xcode 26.0.1 on macOS 26; it also defines Apple SDK builds and separate address/thread sanitizer invocations. A missing or failed runner remains an unresolved gate.
+
+The implementation makes the trial aggregate admission limit explicit as `maximumTotalBytes` (1 GiB general, 96 MiB Watch), and bounds compressed output with `maximumOutputBytes` (256 MiB general, 16 MiB Watch). These are per-operation ceilings, not process-wide guarantees. An optional umbrella must aggregate all retained allocations and simultaneous operations. Constructor overrides are explicit and checked; no input can enlarge them. Actual codec workspace/deadline enforcement follows the later algorithm milestones.

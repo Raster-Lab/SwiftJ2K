@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-18",
+  "repository": "Raster-Lab/SwiftJ2K",
+  "contractVersion": "0.2.1",
+  "sourceRevision": "e62078029b8506a3fca5b96b24e8561922dcf27e",
+  "runID": 35309322447,
+  "runURL": "https://github.com/Raster-Lab/SwiftJ2K/actions/runs/35309322447",
+  "workflowConclusion": "failure",
+  "jobCount": 5,
+  "runnerAssigned": false,
+  "executedStepCount": 0,
+  "swiftCompilation": "not executed",
+  "unitTests": "not executed",
+  "sanitizers": "not executed",
+  "consumerTests": "not executed",
+  "failureReason": "unverified; failure annotations unavailable through the connection",
+  "exampleJobID": 105487878158,
+  "localCompiler": {
+    "command": [
+      "swift",
+      "--version"
+    ],
+    "exitCode": 127,
+    "available": false
+  },
+  "localToolchainDownload": "official Swift 6.2 archive request timed out at the network proxy",
+  "scope": "initial published source only; later refinements and integration fixture require their own successful runs"
+}

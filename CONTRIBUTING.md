@@ -1,6 +1,6 @@
 # Contributing
 
-Start with `AGENTS.md` and `IMPLEMENTATION.md`. This repository starts as a documentation foundation; implementation is staged. Keep pull requests focused and preserve independent package consumption.
+Start with `AGENTS.md` and `IMPLEMENTATION.md`. The current Milestone 1 candidate has API/storage code and tests; compilation and runtime validation remain outstanding. Later codec implementation is staged. Keep pull requests focused and preserve independent package consumption.
 
 Every behavioural change needs relevant unit/regression tests. Parser or ownership changes need the matching security/lifetime checks; hot-path changes need controlled benchmark evidence. Public common API changes require the same contract revision in all four repositories and updated example/conformance tests. Codec-specific exceptions need an explicit reason.
 

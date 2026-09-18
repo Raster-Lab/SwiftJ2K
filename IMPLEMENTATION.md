@@ -1,6 +1,6 @@
 # SwiftJ2K — staged implementation instructions
 
-Read AGENTS.md and every common contract document first. This plan is for a later owner-assigned coding task; the repository foundation itself contains no implementation. Follow the common contract when predecessor conventions differ. Maintain performance, reliability and security together.
+Read AGENTS.md and every common contract document first. Milestone 1 is the current owner-assigned coding task; its implementation and validation status are recorded in `Documentation/MILESTONE_1.md`. Later milestones require a separate assignment. Follow the common contract when predecessor conventions differ. Maintain performance, reliability and security together.
 
 ## Source and destination
 

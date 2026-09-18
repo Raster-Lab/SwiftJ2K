@@ -1,7 +1,7 @@
 # Swift Image Compression Suite — implementation baseline
 
-Contract version: **0.2.0**. Prepared: **17 September 2026**.
-Status: **documentation foundation; implementation and validation not yet performed**.
+Contract version: **0.2.1**. Prepared: **17 September 2026**.
+Status: **Milestone 1 API/storage implementation under validation; codec migration remains deferred**.
 
 This is the common engineering specification for four independent successor libraries. It records the owner's accepted direction and makes concrete implementation choices for the coding agent. Detailed API designs and engineering thresholds in this foundation have not been compiler-validated or separately human-approved; demonstrate them in the first contract milestone before substantial migration. Do not describe this baseline as a released SDK or a conformance certificate.
 
@@ -66,3 +66,9 @@ Clarifies the milestone sequence for all four codecs and their adapters: Milesto
 Adds owner-requested in-memory J2K ↔ HTJ2K transcoding and reversible existing-JPEG ↔ JPEG XL recompression/reconstruction instructions. Defines a consistent native format-pair API/CLI extension, separates exact samples from original-JPEG byte restoration, and adds memory, regression, interoperability and performance gates. The seven shared documents and manifest are mirrored across all four repositories; only SwiftJ2K/SwiftJXL receive the native pair requirement and detailed local TRANSCODING.md instructions. Standalone packaging, MIT licensing, platform floors, intended library versions and the first coding milestone remain unchanged. This revision contains documentation and source-review findings only; no codec tests or benchmarks were run.
 
 References: [Swift API design](https://www.swift.org/documentation/api-design-guidelines/), [Swift package descriptions](https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html), and each predecessor's pinned history in `HISTORY.md`.
+
+## Contract revision 0.2.1 — 18 September 2026
+
+Fixes the concrete local `ImageWriteLease` protocol and owning destination API during the owner-assigned Milestone 1 implementation. The same signatures are implemented independently in each module; adapters forward one provider lifecycle and allocation UUID across distinct protocol types. Destination construction reserves its writer immediately, failed/abandoned writes invalidate it, and sealed storage remains immutable. Public codec methods currently expose the agreed call shapes but advertise no implemented codec capabilities and throw defined unsupported errors. No codec algorithms, working transcoders or CLI are delivered by this milestone.
+
+Adds explicit aggregate and compressed-output admission ceilings to the trial limits, plus executable package/consumer/CI validation instructions. All seven documents and their manifest advance together. Compiled/tested platforms and unresolved gates are recorded in each repository's `Documentation/MILESTONE_1.md`; this shared specification is not a claim that every gate passed. Library release targets and the later migration sequence remain unchanged.
