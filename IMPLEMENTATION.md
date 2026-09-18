@@ -1,6 +1,8 @@
 # SwiftJ2K — staged implementation instructions
 
-Read AGENTS.md and every common contract document first. This plan is for a later owner-assigned coding task; the repository foundation itself contains no implementation. Follow the common contract when predecessor conventions differ. Maintain performance, reliability and security together.
+Read AGENTS.md and every common contract document first. Milestone 1 feasibility is implemented; later codec milestones require their own owner-assigned task. Follow the common contract when predecessor conventions differ. Maintain performance, reliability and security together.
+
+For applications upgrading from J2KSwift, use [MIGRATION.md](MIGRATION.md). This implementation plan is for codec developers, not a claim that application cutover is already possible.
 
 ## Source and destination
 

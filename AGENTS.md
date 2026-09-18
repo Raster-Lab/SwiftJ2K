@@ -8,6 +8,10 @@ Read `README.md`, `HISTORY.md`, this file and `IMPLEMENTATION.md`, then all seve
 
 This repository began with documentation only. Reading its instructions does not by itself authorise codec migration. When the owner assigns an implementation task, execute only that milestone. The original foundation contained no package or source. Milestone 1 now has a feasibility implementation; see Documentation/MILESTONE1.md for executed evidence. Do not report planned codec instructions as implemented functionality.
 
+## Application migration tasks
+
+Read [MIGRATION.md](MIGRATION.md) before changing applications that consume J2KSwift. It covers consumer migration; [IMPLEMENTATION.md](IMPLEMENTATION.md) governs codec implementation. Verify the application's pinned predecessor and target capabilities, preserve required unsupported features, and report blockers rather than claiming a storage-only adapter completes migration. Work only in application repositories explicitly assigned by the owner.
+
 ## Required working method
 
 1. Confirm the task, target repository, pinned predecessor revision and contract version. Inspect existing working changes before editing. Work on an isolated feature branch; preserve unrelated work.

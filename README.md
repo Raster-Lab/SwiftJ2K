@@ -6,6 +6,10 @@ JPEG 2000 and HTJ2K for the **Swift Image Compression Suite**.
 
 SwiftJ2K is the standalone successor to [J2KSwift](https://github.com/Raster-Lab/J2KSwift). The successor is intended to provide a harmonised API, explicit memory ownership, high-precision sample preservation and efficient shared-storage integration. It has no mandatory dependency on another suite library or CompressionFamily. MIT licensing applies to these documents and subsequent authorised in-house implementation; third-party material retains its own terms.
 
+## Migrating an existing application
+
+Read [MIGRATION.md — J2KSwift to SwiftJ2K](MIGRATION.md) for dependency/product and API mappings, sample ownership, feature gaps, staged cutover and rollback instructions for people and coding agents. Current migration can prepare application adapters; real codec replacement must wait for qualified successor functionality.
+
 ## Intended platform baseline
 
 Swift 6.2 minimum, Swift 6 language mode and complete concurrency checking. Apple OS deployment minima: macOS, iOS/iPadOS, tvOS, visionOS and watchOS 26.0. Apple Silicon is the primary optimisation target. macOS x86_64 and Linux ARM64/x86_64 are included with cleanly separated platform/architecture support. Ubuntu 24.04 is the initial Linux engineering baseline. These are requirements, not completed qualification claims.
