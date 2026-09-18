@@ -1,6 +1,6 @@
 # Swift Image Compression Suite — implementation baseline
 
-Contract version: **0.1.1**. Prepared: **17 September 2026**.
+Contract version: **0.2.0**. Prepared: **17 September 2026**.
 Status: **documentation foundation; implementation and validation not yet performed**.
 
 This is the common engineering specification for four independent successor libraries. It records the owner's accepted direction and makes concrete implementation choices for the coding agent. Detailed API designs and engineering thresholds in this foundation have not been compiler-validated or separately human-approved; demonstrate them in the first contract milestone before substantial migration. Do not describe this baseline as a released SDK or a conformance certificate.
@@ -32,6 +32,8 @@ The public family name is **Swift Image Compression Suite**. Raster-Lab remains 
 
 **POL-08 Truthful status.** Documentation requirements are planned until implemented and tested. Do not copy historical test counts, benchmark numbers or production-readiness claims into the successor README. Record measured results with exact revisions, platform and test commands. A missing required environment is an unexecuted gate, not a pass.
 
+**POL-09 Native transcoding.** SwiftJ2K must provide lossless Part 1 J2K ↔ Part 15 HTJ2K transcoding in memory. SwiftJXL must preserve and qualify its predecessor's reversible existing-JPEG ↔ JPEG XL capability, restoring the original JPEG bytes from the JXL alone. These are native operations inside the standalone libraries; the optional umbrella is not required. Coefficient/reconstruction paths may avoid pixel images entirely. The common ownership/resource rules still apply, and a qualified J2K sample path uses the shared Image allocation. See API-14, MEM-14, TEST-08 and CLI-06. No new implementation or native-pair obligation is imposed on SwiftJLS/SwiftJLI.
+
 ## Document precedence and change control
 
 1. The owner's current explicit task scope and decisions.
@@ -58,5 +60,9 @@ Migration and optimisation then extend to the remaining codecs, HTJ2K, signed sa
 ## Contract revision 0.1.1 — 17 September 2026
 
 Clarifies the milestone sequence for all four codecs and their adapters: Milestone 1 proves the API and ownership contract with synthetic buffers; Milestones 2 and 3 deliver the first real codec/transcode proof. API names, memory semantics, platform scope, library version targets and release gates are unchanged. The matching Milestone 1 acceptance instructions in TESTING.md specify future tests; no implementation or test execution is included in this documentation revision. All seven common documents and their hash manifest advance together.
+
+## Contract revision 0.2.0 — 18 September 2026
+
+Adds owner-requested in-memory J2K ↔ HTJ2K transcoding and reversible existing-JPEG ↔ JPEG XL recompression/reconstruction instructions. Defines a consistent native format-pair API/CLI extension, separates exact samples from original-JPEG byte restoration, and adds memory, regression, interoperability and performance gates. The seven shared documents and manifest are mirrored across all four repositories; only SwiftJ2K/SwiftJXL receive the native pair requirement and detailed local TRANSCODING.md instructions. Standalone packaging, MIT licensing, platform floors, intended library versions and the first coding milestone remain unchanged. This revision contains documentation and source-review findings only; no codec tests or benchmarks were run.
 
 References: [Swift API design](https://www.swift.org/documentation/api-design-guidelines/), [Swift package descriptions](https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html), and each predecessor's pinned history in `HISTORY.md`.

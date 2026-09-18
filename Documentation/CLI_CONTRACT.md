@@ -1,6 +1,6 @@
 # Command-line and transcoding contract
 
-Contract **0.1.1**. This foundation supplies instructions only; no CLI exists in these successors yet.
+Contract **0.2.0**. This foundation supplies instructions only; no CLI exists in these successors yet.
 
 ## Native codec commands
 
@@ -33,3 +33,11 @@ Cross-process shared memory/IOSurface handle passing is a separate future featur
 Cover spaces/non-ASCII filenames, empty input, huge declared dimensions, malformed interchange headers, truncated binary streams, slow readers, downstream early exit, cancellation, existing output, unwritable directories and file cleanup. Execute every example in help/docs against fixtures once implementation exists. File parsing must not follow untrusted detached references or make network requests.
 
 Reference: [NRRD format](https://teem.sourceforge.net/nrrd/format.html). The limited stream profile is planned; interoperability must be proven before advertising it.
+
+## Standalone native transcode commands
+
+**CLI-06.** SwiftJ2K and SwiftJXL each implement `transcode` for their own supported native format pairs, in a single process and without another codec library or an umbrella. SwiftJ2K handles Part 1 J2K ↔ Part 15 HTJ2K; SwiftJXL handles existing lossy JPEG ↔ JPEG XL with original-JPEG reconstruction data. SwiftJLS/SwiftJLI need not implement a placeholder native pair. The separate optional umbrella remains responsible for general cross-library transcoding.
+
+Use `--input`, `--output`, `--input-format`, `--output-format`, `--mode lossless` and the shared resource/backend/copy/reporting flags. Lossless is the default; for J2K/HTJ2K it means sample/interpretation preservation on qualified lossless sources, and for JPEG/JXL it means original-JPEG byte restoration. Reject incompatible lossy/quality settings and metadata-discard requests. Do not make pixel re-encoding the default for reversible JPEG recompression. Reverse reconstruction has no dependency on a `--source original.jpg` argument.
+
+Validate format claims against the bytes, declare supported raw/container variants and fail for absent reconstruction data or unsupported precision/features. All intermediate samples, coefficients and reconstruction metadata stay in owned memory. Standard input/output may carry the compressed endpoints; a shell pipe is not a pointer. File I/O is limited to input/final-output/report handling, with the existing atomic-output, cancellation and stderr rules. Repository-specific TRANSCODING.md examples are planned command tests until executable implementations exist.

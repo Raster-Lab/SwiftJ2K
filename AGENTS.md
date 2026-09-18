@@ -4,7 +4,7 @@ Applies to Claude, Codex and other coding agents working in this repository.
 
 ## Start here
 
-Read `README.md`, `HISTORY.md`, this file and `IMPLEMENTATION.md`, then all seven common contract documents in `Documentation/`. `CLAUDE.md` points here and is not a separate policy. Follow the precedence in `Documentation/SUITE_POLICY.md`.
+Read `README.md`, `HISTORY.md`, this file and `IMPLEMENTATION.md`, then all seven common contract documents in `Documentation/`. Read the repository-specific `TRANSCODING.md` when present before work affecting transcoding. `CLAUDE.md` points here and is not a separate policy. Follow the precedence in `Documentation/SUITE_POLICY.md`.
 
 This initial repository contains documentation only. It does not authorise an agent merely reading it to start migration. When the owner assigns an implementation task, execute only that milestone. The present foundation contains no Package.swift, source, tests, executable workflow or binary. Do not report these instructions as implemented functionality.
 
