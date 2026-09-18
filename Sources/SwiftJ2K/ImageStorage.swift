@@ -117,7 +117,9 @@ public final class OwnedImageStorage: WritableImageStorage, Sendable {
         }
         defer { lifecycle.withLock { $0.borrowActive = false } }
         do {
-            let result = try body(UnsafeMutableRawBufferPointer(start: allocation.pointer, count: byteCount))
+            let result = try withExtendedLifetime(allocation) {
+                try body(UnsafeMutableRawBufferPointer(start: allocation.pointer, count: byteCount))
+            }
             try lifecycle.withLock { state in
                 guard state.state == .writing, state.token == token else {
                     throw CodecError(.storageUnavailable, context: "storage invalidated during write borrow")
@@ -152,7 +154,9 @@ public final class OwnedImageStorage: WritableImageStorage, Sendable {
                 throw CodecError(.storageUnavailable, context: "storage is not sealed")
             }
         }
-        return try body(UnsafeRawBufferPointer(start: allocation.pointer, count: byteCount))
+        return try withExtendedLifetime(allocation) {
+            try body(UnsafeRawBufferPointer(start: allocation.pointer, count: byteCount))
+        }
     }
 
     private final class WriteLease: ImageWriteLease, Sendable {
