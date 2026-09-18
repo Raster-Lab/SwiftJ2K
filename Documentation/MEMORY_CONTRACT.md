@@ -1,6 +1,6 @@
 # Common image memory and ownership contract
 
-Contract **0.2.0**. All requirements below apply independently in each codec.
+Contract **0.2.1**. All requirements below apply independently in each codec.
 
 ## Existing memory layouts, no new image format
 
@@ -99,3 +99,33 @@ Validate resource limits before allocation and re-check on frame/layout changes.
 Borrow or transfer compatible coefficient storage between stages without redundant whole-coefficient duplication solely to enter a legacy adapter. Report necessary allocation, transformation and copying costs; do not claim universal zero allocations or copies for compressed bytes, entropy work or container assembly. Enforce limits on expanded reconstruction metadata and restored output as well as coefficient dimensions. No intermediate file, temporary memory-mapped scratch file or spill-to-disk fallback. This is an application I/O guarantee, not a promise that the operating system never pages memory.
 
 When J2K ↔ HTJ2K uses a qualified sample path, MEM-05..13 apply unchanged: one final uncompressed allocation, sealed before encoding, with no extra final-image handoff copy under `requireSharedStorage`. Coefficient-only paths must not allocate a pixel image merely to satisfy an interface. In both paths retain all owners across async work, keep borrows scoped, join workers on error/cancellation and publish no partial success.
+
+## Concrete lease refinement — Milestone 1
+
+Each module independently exports these Swift 6.2 protocols. Equal names do not create shared type identity. The default owning provider is `OwnedImageStorage`; an umbrella/test adapter must explicitly implement the destination module's protocols around the same underlying owner and lease.
+
+```swift
+public protocol ReadOnlyImageStorage: AnyObject, Sendable {
+    var byteCount: Int { get }
+    var allocationID: UUID { get }
+    func withUnsafeBytes<R>(_ body: (UnsafeRawBufferPointer) throws -> R) throws -> R
+}
+public protocol WritableImageStorage: AnyObject, Sendable {
+    var byteCount: Int { get }
+    var allocationID: UUID { get }
+    func reserveWrite() throws -> any ImageWriteLease
+}
+public protocol ImageWriteLease: AnyObject, Sendable {
+    var byteCount: Int { get }
+    var allocationID: UUID { get }
+    func withUnsafeMutableBytes<R>(_ body: (UnsafeMutableRawBufferPointer) throws -> R) throws -> R
+    func finish() throws -> any ReadOnlyImageStorage
+    func abort()
+}
+```
+
+The provider owns lifecycle state across all wrappers. `ImageDestination(descriptor:storage:limits:)` validates geometry, capacity, metadata budgets and lease/provider identity, then reserves immediately (`available -> writing`). The allocating convenience performs admission before allocating. One lease permits successive synchronous writes, with at most one active mutable borrow; overlapping/reentrant borrows and finishing during a borrow throw. A thrown callback invalidates the operation. Abort during a callback prevents publication, retains memory until the callback returns, and makes that borrow fail on its final state check. No caller callback executes while the lifecycle mutex is locked.
+
+`finish()` makes the allocation permanently sealed and returns a read-only owner interface. A valid `Image` retains that owner across suspension and caller release. An unfinished lease or destination aborts on destruction; abort is idempotent and cannot unseal a published image. There is no pool reuse or reset in Milestone 1. All bytes, including padding, in the default owning allocation are initially zero. External providers must satisfy the same initialisation, alignment, bounds, lifetime and immutability duties; protocol conformance alone cannot prove their implementation is safe.
+
+The default owner uses checked `Sendable` conformance and mutex-protected lifecycle state. Only its private immutable raw-allocation holder uses a locally documented `@unchecked Sendable` bridge. Raw callbacks remain advanced unsafe APIs: pointers must not escape, span `await`, or be used for mutation after a borrow. Safe sample access does not expose a pointer. The initial implemented descriptor accepts the required unsigned, little-endian, single-plane greyscale16 profile; signed, float, colour and additional storage-width layouts remain explicit unsupported extensions.

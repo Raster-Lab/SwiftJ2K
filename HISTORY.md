@@ -27,3 +27,7 @@ The originals are intended to become maintenance projects while new development 
 ## Native transcoding source review — 18 September 2026
 
 Re-inspected the same pinned predecessor snapshot for the owner-requested native transcoding instructions. [TRANSCODING.md](TRANSCODING.md) records concrete entry points, test assertions, known limitations and required successor corrections. Source presence/control flow were reviewed; no codec build, test or benchmark was executed. No predecessor files were changed.
+
+## Milestone 1 implementation — 18 September 2026
+
+The owner assigned one coding agent per successor, coordinated against contract 0.2.1. This milestone creates new in-house API, descriptor, owning-memory, test and CI code. No predecessor algorithm, third-party codec or fixture was migrated. Synthetic tests create their samples in memory. The pinned predecessor snapshots above remain the sources to audit before Milestone 2. See `Documentation/MILESTONE_1.md` for validation outcomes and limitations.

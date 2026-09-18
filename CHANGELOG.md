@@ -1,5 +1,12 @@
 # Change log
 
+## Unreleased — Milestone 1
+
+- Add the Swift 6.2 package, independent common API surface, validated unsigned greyscale16 descriptor and owning write-lease lifecycle.
+- Add synthetic descriptor, resource, lifetime, concurrency, cancellation and standalone-consumer tests.
+- Refine the mirrored common contract to 0.2.1 and add CI validation gates.
+- Codec algorithms and operational transcoders remain deferred; capability queries advertise no codec support.
+
 ## Unreleased — documentation foundation, 2026-09-17
 
 - Defined the standalone SwiftJ2K successor and intended first stable version 12.0.0.

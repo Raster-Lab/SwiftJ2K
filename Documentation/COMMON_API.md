@@ -1,6 +1,6 @@
 # Common API contract
 
-Contract **0.2.0**. Normative implementation specification, not implemented API documentation.
+Contract **0.2.1**. Normative specification. Milestone 1 implements the API and image-storage surface; compression, parsing and transcoding remain unimplemented.
 
 ## Public naming and module boundary
 
@@ -89,3 +89,11 @@ Use explicit target selection and validated source detection. `TranscodeOptions`
 Defaults preserve the pair's stated fidelity. For J2K/HTJ2K, a conformant coefficient path is preferred; a qualified lossless sample path may use the common shared Image allocation. For JPEG/JXL, reversible coefficient/reconstruction processing is mandatory: no RGB/pixel fallback, quality-driven re-encode, private archive or original-source lookup on reverse. Lossy JPEG input does not make its reversible recompression a lossy operation, nor does reconstruction recover pixels lost in the original JPEG encoding. Missing reconstruction data and unsupported profiles fail explicitly.
 
 The report must distinguish sample preservation from original-bitstream restoration, and identify coefficient/reconstruction versus sample processing. Include actual backend/fallback reason, required workspace and copy events using the established fields; add any new report fields consistently during API feasibility. Do not claim that JPEG reconstruction used a shared pixel image when none was materialised. Precision limits of the JPEG bridge are separate from the general 16-bit Image API. Ancillary-discard options incompatible with original-byte restoration are rejected. These specialised operations are implemented in later codec milestones; Milestone 1 remains feasibility only.
+
+## Milestone 1 concrete surface
+
+The package has independent local `ImageWriteLease` and `OwnedImageStorage` types in addition to the names above. `ImageDestination` exposes `allocationID`, `byteCount`, synchronous `withUnsafeMutableBytes(_:)`, checked `setSample(_:x:y:)`, `seal(metadata:)` and idempotent `abort()`. `Image.sample(x:y:)` reads an exact checked UInt16 sample. These safe sample conveniences preserve declared precision; the unsafe callback APIs retain the caller duties in MEM-05..09.
+
+`EncoderConfiguration.lossless` and `DecoderConfiguration.preserving` provide validated default values. `Encoder`/`Decoder` expose both type-level and instance `capabilities`; supported sets are empty until real algorithms are qualified. The constructors establish a configuration for API feasibility, not a claim that encoding or decoding is currently available. Unsupported operations publish no bytes, image, report or success progress. A failing/cancelled `decode(_:into:options:)` invalidates its destination. SwiftJ2K/SwiftJXL expose the corresponding native `Transcoder` shape with empty pair capabilities; SwiftJLS/SwiftJLI have no placeholder native transcoder.
+
+CPU async entry points use Swift 6.2 `@concurrent` to select the generic executor explicitly. Current unsupported operations perform bounded admission/cancellation checks only. Actual worker scheduling, deadlines during codec work and progress production are qualified with the later algorithms, not inferred from these shells.

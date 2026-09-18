@@ -1,0 +1,95 @@
+name: Milestone 1 contract
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: contract-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  SUITE_CONSUMER_REVISION: ${{ github.event.pull_request.head.sha || github.sha }}
+
+jobs:
+  linux:
+    name: Swift 6.2 / ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        runner: [ubuntu-24.04, ubuntu-24.04-arm]
+    runs-on: ${{ matrix.runner }}
+    container: swift:6.2.0-noble
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          ref: ${{ env.SUITE_CONSUMER_REVISION }}
+      - run: python3 Scripts/validate.py
+      - run: python3 Scripts/check_url_consumer.py "$SUITE_CONSUMER_REVISION"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: evidence-${{ matrix.runner }}
+          path: .validation/
+          include-hidden-files: true
+          retention-days: 30
+
+  macos:
+    name: Xcode 26 / ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        runner: [macos-26, macos-26-intel]
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 25
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.0.1.app/Contents/Developer
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          ref: ${{ env.SUITE_CONSUMER_REVISION }}
+      - run: xcodebuild -version
+      - run: python3 Scripts/validate.py
+      - run: python3 Scripts/check_url_consumer.py "$SUITE_CONSUMER_REVISION"
+      - name: Address sanitizer
+        if: matrix.runner == 'macos-26'
+        run: swift test -j 2 --scratch-path .build/asan --sanitize address
+      - name: Thread sanitizer
+        if: matrix.runner == 'macos-26'
+        run: swift test -j 2 --scratch-path .build/tsan --sanitize thread
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: evidence-${{ matrix.runner }}
+          path: .validation/
+          include-hidden-files: true
+          retention-days: 30
+
+  apple-sdk-builds:
+    name: Apple OS 26 SDK builds
+    runs-on: macos-26
+    timeout-minutes: 30
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.0.1.app/Contents/Developer
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          ref: ${{ env.SUITE_CONSUMER_REVISION }}
+      - run: bash Scripts/validate_apple_sdks.sh
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: evidence-apple-sdk-builds
+          path: .validation/
+          include-hidden-files: true
+          retention-days: 30

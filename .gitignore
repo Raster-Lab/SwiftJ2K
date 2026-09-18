@@ -1,0 +1,8 @@
+.build/
+.swiftpm/
+
+.validation/
+
+__pycache__/
+
+*.pyc
