@@ -1,0 +1,6 @@
+Building for debugging...
+Build complete! (0.17 secs)
+Creating SBOMs...
+- created cyclonedx1 v1.7 SBOM at /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/tooling/sbom-build-cyclonedx/cyclonedx1-1.7-ToolingProbe-unknown-all-2026-09-18T22_01_33Z.json
+SBOMs created  (0.03 secs)
+warning: Bundle 'SwiftPM_SBOMModel' with schemas not found - skipping SBOM validation

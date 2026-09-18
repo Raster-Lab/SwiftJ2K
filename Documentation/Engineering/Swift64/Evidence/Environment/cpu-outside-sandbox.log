@@ -1,0 +1,4 @@
+Command: sysctl -n machdep.cpu.brand_string
+Execution: outside sandbox after sandbox permission failure
+Exit: 0
+Apple M5 Max

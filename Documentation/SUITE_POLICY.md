@@ -1,18 +1,18 @@
 # Swift Image Compression Suite — implementation baseline
 
-Contract version: **0.2.1**. Prepared: **17 September 2026**.
+Contract version: **0.3.0**. Updated: **19 September 2026**.
 Status: **engineering specification; Milestone 1 implementation evidence is recorded in MILESTONE1.md. Later codec and platform gates remain planned**.
 
-This is the common engineering specification for four independent successor libraries. It records the owner's accepted direction and makes concrete implementation choices for the coding agent. Detailed API designs and engineering thresholds in this foundation have not been compiler-validated or separately human-approved; demonstrate them in the first contract milestone before substantial migration. Do not describe this baseline as a released SDK or a conformance certificate.
+This is the common engineering specification for four independent successor libraries. It records the owner's accepted direction and makes concrete implementation choices for the coding agent. Milestone 1 public API shapes and owning storage have been compiler-validated to the coverage recorded in MILESTONE1.md and Engineering/Swift64/README.md. Planned codec behaviour, engineering thresholds and unexecuted platforms remain qualification gates; those records do not constitute a separate human approval. Do not describe this baseline as a released SDK or a conformance certificate.
 
 ## Decisions and boundaries
 
 | Successor under Raster-Lab | Predecessor | Intended first stable release |
 | --- | --- | --- |
-| SwiftJ2K | J2KSwift | 12.0.0 |
-| SwiftJLS | JLSwift | 1.0.0 |
-| SwiftJXL | JXLSwift | 2.0.0 |
-| SwiftJLI | JLISwift | 1.0.0 |
+| SwiftJ2K | J2KSwift | 12.1.0 |
+| SwiftJLS | JLSwift | 1.1.0 |
+| SwiftJXL | JXLSwift | 2.1.0 |
+| SwiftJLI | JLISwift | 1.1.0 |
 
 The public family name is **Swift Image Compression Suite**. Raster-Lab remains the GitHub organisation; copyright attribution remains accurate. Each codec has its own repository, implementation, package and release sequence. HTJ2K remains a mode of SwiftJ2K.
 
@@ -47,7 +47,7 @@ Keep each shared document byte-identical across the four repositories. Any contr
 
 ## First coding task — Milestone 1
 
-Start with contract feasibility, as numbered in every repository's `IMPLEMENTATION.md`. Establish the Swift 6.2 package and local API/owning-memory types, validate descriptors, and prove the adapter and ownership lifecycle using synthetic sample buffers. Settle the concrete lease-token signatures once and mirror the refinement across all four repositories before codec migration. Keep any API-shape experiments or test doubles clearly separate from advertised codec functionality.
+Start with contract feasibility, as numbered in every repository's `IMPLEMENTATION.md`. Establish the Swift 6.4 package and local API/owning-memory types, validate descriptors, and prove the adapter and ownership lifecycle using synthetic sample buffers. Settle the concrete lease-token signatures once and mirror the refinement across all four repositories before codec migration. Keep any API-shape experiments or test doubles clearly separate from advertised codec functionality.
 
 Milestone 1 does not migrate codec algorithms or implement a real compressed-image transcode. Its exit evidence is compiling common call shapes, meaningful descriptor/lifetime/concurrency tests and independent consumer use. The complete end-to-end proof below belongs to Milestones 2 and 3. Each later milestone remains a separately assigned coding task.
 
@@ -72,3 +72,11 @@ References: [Swift API design](https://www.swift.org/documentation/api-design-gu
 Milestone 1 fixes the concrete local storage lease signatures in MEM-05. Each module retains its independent Swift types and ships no sibling dependency. A provider owns the authoritative allocation lifecycle; a copyable token is an identifier, not evidence of exclusive access by itself. Providers must reject invalid, reentrant and concurrent mutable borrows and prevent publication during a mutable borrow. API-shape implementations must advertise no codec capabilities until actual compressed-format work is qualified.
 
 The corresponding implementation and executed evidence are recorded in each repository's `MILESTONE1.md`; this common specification does not certify all platforms or a working codec. The required deployment floors, later codec milestones, native transcoding requirements and release gates are unchanged. All seven documents and the hash manifest advance together.
+
+## Contract revision 0.3.0 — 19 September 2026
+
+The owner assigned a Swift 6.4 upgrade of the four successors before Milestone 2, following SWIFT64-MANIFESTO-001 and SWIFT64-SICS-001 version 1.0.0. Their compiler direction supersedes earlier 6.2 minimum instructions. Preserve Swift 6 language mode, OS 26 deployment floors, module-local public signatures, ownership/fidelity semantics and the existing milestone boundary. The supplement's inspected 0.2.0 snapshot is historical; this revision builds on the implemented 0.2.1 lease contract.
+
+The owner also requested version increments. Because none of the successors has a released library tag, advance the unreleased targets by one minor version: SwiftJ2K 12.0.0 → 12.1.0, SwiftJLS 1.0.0 → 1.1.0, SwiftJXL 2.0.0 → 2.1.0 and SwiftJLI 1.0.0 → 1.1.0. Each VERSION file identifies its first `-dev.1` candidate. These are development identifiers and intended future releases, not published tags, backwards binary-compatibility assertions or completed codec qualification. Historical release/provenance records remain unchanged.
+
+All seven shared documents and their SHA-256 manifest advance together. Public signatures are unchanged. Safe native-order span sample access may use explicit fixed-width integer endian conversion without raising the runtime floor. Record F01–F13 dispositions and exact tests, including compiler/platform gaps, in [the upgrade record](Engineering/Swift64/README.md). Swift 6.4 adoption grants no later codec milestone or release authorisation.

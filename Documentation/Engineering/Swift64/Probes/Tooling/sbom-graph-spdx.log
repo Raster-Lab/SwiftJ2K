@@ -1,0 +1,5 @@
+Creating SBOMs...
+- created spdx3 v3.0.1 SBOM at /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/tooling/sbom-graph-spdx/spdx3-3.0.1-ToolingProbe-unknown-all-2026-09-18T22_02_12Z.json
+SBOMs created  (0.03 secs)
+warning: Bundle 'SwiftPM_SBOMModel' with schemas not found - skipping SBOM validation
+warning: `generate-sbom` subcommand may be inaccurate as it does not contain build-time conditionals.

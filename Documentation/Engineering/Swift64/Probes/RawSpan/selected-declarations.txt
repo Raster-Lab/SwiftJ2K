@@ -1,0 +1,244 @@
+Installed source: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/swift/Swift.swiftmodule/arm64e-apple-macos.swiftinterface
+Selected declarations and implementation excerpts; numbered by original line.
+
+Lines 4057-4065
+4057: @available(anyAppleOS 27.0, *)
+4058: @frozen public enum ByteOrder : Swift::Equatable, Swift::Hashable, Swift::Sendable {
+4059:   case bigEndian
+4060:   case littleEndian
+4061:   @inlinable @_transparent public static var native: Swift::ByteOrder {
+4062:     @_transparent get {
+4063:     .littleEndian
+4064:   }
+4065:   }
+
+Lines 12027-12031
+12027: @_marker public protocol ConvertibleToBytes {
+12028: }
+12029: @_marker public protocol ConvertibleFromBytes : Swift::BitwiseCopyable {
+12030: }
+12031: public typealias FullyInhabited = Swift::ConvertibleFromBytes & Swift::ConvertibleToBytes
+
+Lines 23997-23999
+23997: @available(macOS 10.14.4, iOS 12.2, watchOS 5.2, tvOS 12.2, visionOS 1.0, *)
+23998: @frozen @safe public struct RawSpan : ~Swift::Escapable, Swift::Copyable, Swift::BitwiseCopyable {
+23999:   @usableFromInline
+
+Lines 24520-24564
+24520:     let newSpan = Span<T>(_unsafeBytes: rawBuffer)
+24521:      
+24522:      
+24523:     return _overrideLifetime(newSpan, copying: self)
+24524:   }
+24525:   #endif
+24526:   #endif
+24527: }
+24528: @available(macOS 10.14.4, iOS 12.2, watchOS 5.2, tvOS 12.2, visionOS 1.0, *)
+24529: extension Swift::RawSpan {
+24530:   @unsafe @_alwaysEmitIntoClient public func unsafeLoad<T>(fromByteOffset offset: Swift::Int = 0, as type: T.Type) -> T {
+24531:     _precondition(
+24532:       UInt(bitPattern: offset) <= UInt(bitPattern: _count) &&
+24533:       MemoryLayout<T>.size <= (_count &- offset),
+24534:       "Byte offset range out of bounds"
+24535:     )
+24536:     return unsafeLoad(fromUncheckedByteOffset: offset, as: T.self)
+24537:   }
+24538:   @unsafe @_alwaysEmitIntoClient public func unsafeLoad<T>(fromUncheckedByteOffset offset: Swift::Int, as type: T.Type) -> T {
+24539:     _start().load(fromByteOffset: offset, as: T.self)
+24540:   }
+24541:   @unsafe @_alwaysEmitIntoClient public func unsafeLoadUnaligned<T>(fromByteOffset offset: Swift::Int = 0, as type: T.Type) -> T where T : Swift::BitwiseCopyable {
+24542:     _precondition(
+24543:       UInt(bitPattern: offset) <= UInt(bitPattern: _count) &&
+24544:       MemoryLayout<T>.size <= (_count &- offset),
+24545:       "Byte offset range out of bounds"
+24546:     )
+24547:     return unsafeLoadUnaligned(
+24548:       fromUncheckedByteOffset: offset, as: T.self
+24549:     )
+24550:   }
+24551:   @unsafe @_alwaysEmitIntoClient public func unsafeLoadUnaligned<T>(fromUncheckedByteOffset offset: Swift::Int, as type: T.Type) -> T where T : Swift::BitwiseCopyable {
+24552:     _start().loadUnaligned(fromByteOffset: offset, as: T.self)
+24553:   }
+24554:   @_alwaysEmitIntoClient public func load<T>(fromByteOffset offset: Swift::Int, as type: T.Type) -> T where T : Swift::ConvertibleFromBytes {
+24555:     unsafeLoadUnaligned(fromByteOffset: offset, as: T.self)
+24556:   }
+24557:   @available(anyAppleOS 27.0, *)
+24558:   @_alwaysEmitIntoClient public func load<T>(fromByteOffset offset: Swift::Int, as type: T.Type, _ byteOrder: Swift::ByteOrder) -> T where T : Swift::ConvertibleFromBytes, T : Swift::FixedWidthInteger {
+24559:     let rawValue = load(fromByteOffset: offset, as: T.self)
+24560:     return switch byteOrder {
+24561:     case .bigEndian: rawValue.bigEndian
+24562:     case .littleEndian: rawValue.littleEndian
+24563:     }
+24564:   }
+
+Lines 26009-26014
+26009: @available(macOS 10.14.4, iOS 12.2, watchOS 5.2, tvOS 12.2, visionOS 1.0, *)
+26010: @safe @frozen public struct MutableRawSpan : ~Copyable & ~Escapable {
+26011:   @usableFromInline
+26012:   internal let _pointer: Swift::UnsafeMutableRawPointer?
+26013:   @usableFromInline
+26014:   internal let _count: Swift::Int
+
+Lines 26371-26380
+26371:   @_alwaysEmitIntoClient public func load<T>(fromByteOffset offset: Swift::Int, as type: T.Type) -> T where T : Swift::ConvertibleFromBytes {
+26372:     unsafeLoadUnaligned(fromByteOffset: offset, as: T.self)
+26373:   }
+26374:   @available(anyAppleOS 27.0, *)
+26375:   @_alwaysEmitIntoClient public func load<T>(fromByteOffset offset: Swift::Int, as type: T.Type, _ byteOrder: Swift::ByteOrder) -> T where T : Swift::ConvertibleFromBytes, T : Swift::FixedWidthInteger {
+26376:     let rawValue = load(fromByteOffset: offset, as: T.self)
+26377:     return switch byteOrder {
+26378:     case .bigEndian: rawValue.bigEndian
+26379:     case .littleEndian: rawValue.littleEndian
+26380:     }
+
+Lines 26431-26465
+26431:   #if compiler(>=5.3) && $LifetimeDependence
+26432:   #if compiler(>=5.3) && $Lifetimes
+26433:   @_lifetime(self: copy self)
+26434:   @_alwaysEmitIntoClient public mutating func storeBytes<T>(of value: T, toByteOffset offset: Swift::Int, as type: T.Type) where T : Swift::BitwiseCopyable, T : Swift::ConvertibleToBytes {
+26435:     _storeBytes(of: value, toByteOffset: offset, as: T.self)
+26436:   }
+26437:   #else
+26438:   @lifetime(self: copy self)
+26439:   @_alwaysEmitIntoClient public mutating func storeBytes<T>(of value: T, toByteOffset offset: Swift::Int, as type: T.Type) where T : Swift::BitwiseCopyable, T : Swift::ConvertibleToBytes {
+26440:     _storeBytes(of: value, toByteOffset: offset, as: T.self)
+26441:   }
+26442:   #endif
+26443:   #endif
+26444:   #if compiler(>=5.3) && $LifetimeDependence
+26445:   #if compiler(>=5.3) && $Lifetimes
+26446:   @available(anyAppleOS 27.0, *)
+26447:   @_lifetime(self: copy self)
+26448:   @_alwaysEmitIntoClient public mutating func storeBytes<T>(of value: T, toByteOffset offset: Swift::Int, as type: T.Type, _ byteOrder: Swift::ByteOrder) where T : Swift::BitwiseCopyable, T : Swift::ConvertibleToBytes, T : Swift::FixedWidthInteger {
+26449:     switch byteOrder {
+26450:     case .bigEndian:
+26451:       storeBytes(of: value.bigEndian, toByteOffset: offset, as: T.self)
+26452:     case .littleEndian:
+26453:       storeBytes(of: value.littleEndian, toByteOffset: offset, as: T.self)
+26454:     }
+26455:   }
+26456:   #else
+26457:   @available(anyAppleOS 27.0, *)
+26458:   @lifetime(self: copy self)
+26459:   @_alwaysEmitIntoClient public mutating func storeBytes<T>(of value: T, toByteOffset offset: Swift::Int, as type: T.Type, _ byteOrder: Swift::ByteOrder) where T : Swift::BitwiseCopyable, T : Swift::ConvertibleToBytes, T : Swift::FixedWidthInteger {
+26460:     switch byteOrder {
+26461:     case .bigEndian:
+26462:       storeBytes(of: value.bigEndian, toByteOffset: offset, as: T.self)
+26463:     case .littleEndian:
+26464:       storeBytes(of: value.littleEndian, toByteOffset: offset, as: T.self)
+26465:     }
+
+Lines 27718-27726
+27718: #endif
+27719: @available(macOS 10.14.4, iOS 12.2, watchOS 5.2, tvOS 12.2, visionOS 1.0, *)
+27720: @safe @frozen public struct OutputRawSpan : ~Swift::Copyable, ~Swift::Escapable {
+27721:   @usableFromInline
+27722:   internal let _pointer: Swift::UnsafeMutableRawPointer?
+27723:   public let capacity: Swift::Int
+27724:   @usableFromInline
+27725:   internal var _count: Swift::Int
+27726:   #if compiler(>=5.3) && $LifetimeDependence
+
+Lines 27799-27823
+27799:   @unsafe @_alwaysEmitIntoClient public init(buffer: Swift::UnsafeMutableRawBufferPointer, initializedCount: Swift::Int) {
+27800:     if let baseAddress = buffer.baseAddress {
+27801:       _precondition(
+27802:         baseAddress.advanced(by: buffer.count) >= baseAddress,
+27803:         "Buffer must not wrap around the address space"
+27804:       )
+27805:     }
+27806:     _precondition(
+27807:       0 <= initializedCount && initializedCount <= buffer.count,
+27808:       "OutputRawSpan count is not within capacity"
+27809:     )
+27810:     self.init(
+27811:       _uncheckedBuffer: buffer, initializedCount: initializedCount
+27812:     )
+27813:   }
+27814:   #else
+27815:   @lifetime(borrow buffer)
+27816:   @unsafe @_alwaysEmitIntoClient public init(buffer: Swift::UnsafeMutableRawBufferPointer, initializedCount: Swift::Int) {
+27817:     if let baseAddress = buffer.baseAddress {
+27818:       _precondition(
+27819:         baseAddress.advanced(by: buffer.count) >= baseAddress,
+27820:         "Buffer must not wrap around the address space"
+27821:       )
+27822:     }
+27823:     _precondition(
+
+Lines 27984-28016
+27984:   #if compiler(>=5.3) && $LifetimeDependence
+27985:   #if compiler(>=5.3) && $Lifetimes
+27986:   @_lifetime(self: copy self)
+27987:   @_alwaysEmitIntoClient public mutating func append<T>(_ value: T, as type: T.Type) where T : Swift::BitwiseCopyable, T : Swift::ConvertibleToBytes {
+27988:     _append(value, as: T.self)
+27989:   }
+27990:   #else
+27991:   @lifetime(self: copy self)
+27992:   @_alwaysEmitIntoClient public mutating func append<T>(_ value: T, as type: T.Type) where T : Swift::BitwiseCopyable, T : Swift::ConvertibleToBytes {
+27993:     _append(value, as: T.self)
+27994:   }
+27995:   #endif
+27996:   #endif
+27997:   #if compiler(>=5.3) && $LifetimeDependence
+27998:   #if compiler(>=5.3) && $Lifetimes
+27999:   @available(anyAppleOS 27.0, *)
+28000:   @_lifetime(self: copy self)
+28001:   @_alwaysEmitIntoClient public mutating func append<T>(_ value: T, as type: T.Type, _ byteOrder: Swift::ByteOrder) where T : Swift::BitwiseCopyable, T : Swift::ConvertibleToBytes, T : Swift::FixedWidthInteger {
+28002:     let rawValue = switch byteOrder {
+28003:     case .bigEndian: value.bigEndian
+28004:     case .littleEndian: value.littleEndian
+28005:     }
+28006:     _append(rawValue, as: T.self)
+28007:   }
+28008:   #else
+28009:   @available(anyAppleOS 27.0, *)
+28010:   @lifetime(self: copy self)
+28011:   @_alwaysEmitIntoClient public mutating func append<T>(_ value: T, as type: T.Type, _ byteOrder: Swift::ByteOrder) where T : Swift::BitwiseCopyable, T : Swift::ConvertibleToBytes, T : Swift::FixedWidthInteger {
+28012:     let rawValue = switch byteOrder {
+28013:     case .bigEndian: value.bigEndian
+28014:     case .littleEndian: value.littleEndian
+28015:     }
+28016:     _append(rawValue, as: T.self)
+
+Lines 28183-28195
+28183: @available(macOS 10.14.4, iOS 12.2, watchOS 5.2, tvOS 12.2, visionOS 1.0, *)
+28184: extension Swift::OutputRawSpan {
+28185:   @unsafe @_alwaysEmitIntoClient public consuming func finalize(for buffer: Swift::UnsafeMutableRawBufferPointer) -> Swift::Int {
+28186:     _precondition(
+28187:       buffer.baseAddress == self._pointer
+28188:       && buffer.count == self.capacity,
+28189:       "OutputRawSpan identity mismatch")
+28190:     return _count
+28191:   }
+28192:   @unsafe @_alwaysEmitIntoClient public consuming func finalize(for buffer: Swift::Slice<Swift::UnsafeMutableRawBufferPointer>) -> Swift::Int {
+28193:     let rebased = UnsafeMutableRawBufferPointer(rebasing: buffer)
+28194:     return self.finalize(for: rebased)
+28195:   }
+
+Lines 31966-31990
+31966: @available(macOS 10.14.4, iOS 12.2, watchOS 5.2, tvOS 12.2, visionOS 1.0, *)
+31967: @_alwaysEmitIntoClient @_transparent public func withTemporaryAllocation<T, R, E>(of type: T.Type, capacity: Swift::Int, _ body: (inout Swift::OutputSpan<T>) throws(E) -> R) throws(E) -> R where E : Swift::Error, T : ~Copyable, R : ~Copyable {
+31968:   try withUnsafeTemporaryAllocation(of: type, capacity: capacity) {
+31969:     (buffer) throws(E) in
+31970:     var span = OutputSpan(buffer: buffer, initializedCount: 0)
+31971:     defer {
+31972:       let initializedCount = span.finalize(for: buffer)
+31973:       span = OutputSpan()
+31974:       buffer.extracting(..<initializedCount).deinitialize()
+31975:     }
+31976: 
+31977:     return try body(&span)
+31978:   }
+31979: }
+31980: @available(macOS 10.14.4, iOS 12.2, watchOS 5.2, tvOS 12.2, visionOS 1.0, *)
+31981: @_alwaysEmitIntoClient @_transparent public func withTemporaryAllocation<R, E>(byteCount: Swift::Int, alignment: Swift::Int, _ body: (inout Swift::OutputRawSpan) throws(E) -> R) throws(E) -> R where E : Swift::Error, R : ~Copyable {
+31982:   try withUnsafeTemporaryAllocation(byteCount: byteCount, alignment: alignment) {
+31983:     (buffer) throws(E) in
+31984:     var span = OutputRawSpan(buffer: buffer, initializedCount: 0)
+31985:     defer {
+31986:       _ = span.finalize(for: buffer)
+31987:       span = OutputRawSpan()
+31988:     }
+31989:     return try body(&span)
+31990:   }

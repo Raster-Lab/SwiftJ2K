@@ -1,0 +1,184 @@
+[
+  {
+    "label": "F01Portable-macos26.0-compile",
+    "argv": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache",
+      "-target",
+      "arm64-apple-macosx26.0",
+      "-parse-as-library",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable.swift",
+      "-o",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable-macos26.0"
+    ],
+    "command": "xcrun swiftc -swift-version 6 -strict-concurrency=complete -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache -target arm64-apple-macosx26.0 -parse-as-library /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable.swift -o /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable-macos26.0",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "F01Portable-macos26.0-run",
+    "argv": [
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable-macos26.0"
+    ],
+    "command": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable-macos26.0",
+    "exit": 0,
+    "stdout": "F01 portable passed: unaligned load/store, endian conversion, signed minimum, bounded truncation/offset rejection, preserved sentinels\n",
+    "stderr": ""
+  },
+  {
+    "label": "F01Portable-macos27.0-compile",
+    "argv": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache",
+      "-target",
+      "arm64-apple-macosx27.0",
+      "-parse-as-library",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable.swift",
+      "-o",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable-macos27.0"
+    ],
+    "command": "xcrun swiftc -swift-version 6 -strict-concurrency=complete -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache -target arm64-apple-macosx27.0 -parse-as-library /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable.swift -o /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable-macos27.0",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "F01Portable-macos27.0-run",
+    "argv": [
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable-macos27.0"
+    ],
+    "command": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable-macos27.0",
+    "exit": 0,
+    "stdout": "F01 portable passed: unaligned load/store, endian conversion, signed minimum, bounded truncation/offset rejection, preserved sentinels\n",
+    "stderr": ""
+  },
+  {
+    "label": "F01ByteOrder-macos26.0-compile",
+    "argv": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache",
+      "-target",
+      "arm64-apple-macosx26.0",
+      "-parse-as-library",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01ByteOrder.swift",
+      "-o",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01ByteOrder-macos26.0"
+    ],
+    "command": "xcrun swiftc -swift-version 6 -strict-concurrency=complete -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache -target arm64-apple-macosx26.0 -parse-as-library /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01ByteOrder.swift -o /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01ByteOrder-macos26.0",
+    "exit": 1,
+    "stdout": "",
+    "stderr": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01ByteOrder.swift:6:30: error: 'load(fromByteOffset:as:_:)' is only available in macOS 27.0 or newer\n 1 | @main struct F01ByteOrder {\n   |              `- note: add '@available' attribute to enclosing struct\n 2 |     static func main() {\n   |                 `- note: add '@available' attribute to enclosing static method\n 3 |         var bytes: [UInt8] = [0, 0x34, 0x12, 0]\n 4 |         bytes.withUnsafeMutableBytes { buffer in\n 5 |             var span = unsafe MutableRawSpan(_unsafeBytes: buffer)\n 6 |             let value = span.load(fromByteOffset: 1, as: UInt16.self, .littleEndian)\n   |                              |- error: 'load(fromByteOffset:as:_:)' is only available in macOS 27.0 or newer\n   |                              `- note: add 'if #available' version check\n 7 |             span.storeBytes(of: value, toByteOffset: 1, as: UInt16.self, .bigEndian)\n 8 |         }\n\n/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01ByteOrder.swift:7:18: error: 'storeBytes(of:toByteOffset:as:_:)' is only available in macOS 27.0 or newer\n 1 | @main struct F01ByteOrder {\n   |              `- note: add '@available' attribute to enclosing struct\n 2 |     static func main() {\n   |                 `- note: add '@available' attribute to enclosing static method\n 3 |         var bytes: [UInt8] = [0, 0x34, 0x12, 0]\n 4 |         bytes.withUnsafeMutableBytes { buffer in\n 5 |             var span = unsafe MutableRawSpan(_unsafeBytes: buffer)\n 6 |             let value = span.load(fromByteOffset: 1, as: UInt16.self, .littleEndian)\n 7 |             span.storeBytes(of: value, toByteOffset: 1, as: UInt16.self, .bigEndian)\n   |                  |- error: 'storeBytes(of:toByteOffset:as:_:)' is only available in macOS 27.0 or newer\n   |                  `- note: add 'if #available' version check\n 8 |         }\n 9 |         precondition(bytes == [0, 0x12, 0x34, 0])\n"
+  },
+  {
+    "label": "F01ByteOrder-macos27.0-compile",
+    "argv": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache",
+      "-target",
+      "arm64-apple-macosx27.0",
+      "-parse-as-library",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01ByteOrder.swift",
+      "-o",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01ByteOrder-macos27.0"
+    ],
+    "command": "xcrun swiftc -swift-version 6 -strict-concurrency=complete -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache -target arm64-apple-macosx27.0 -parse-as-library /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01ByteOrder.swift -o /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01ByteOrder-macos27.0",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "F01ByteOrder-macos27.0-run",
+    "argv": [
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01ByteOrder-macos27.0"
+    ],
+    "command": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01ByteOrder-macos27.0",
+    "exit": 0,
+    "stdout": "F01 explicit Swift.ByteOrder passed\n",
+    "stderr": ""
+  },
+  {
+    "label": "F02Temporary-macos26.0-compile",
+    "argv": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache",
+      "-target",
+      "arm64-apple-macosx26.0",
+      "-parse-as-library",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary.swift",
+      "-o",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary-macos26.0"
+    ],
+    "command": "xcrun swiftc -swift-version 6 -strict-concurrency=complete -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache -target arm64-apple-macosx26.0 -parse-as-library /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary.swift -o /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary-macos26.0",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "F02Temporary-macos26.0-run",
+    "argv": [
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary-macos26.0"
+    ],
+    "command": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary-macos26.0",
+    "exit": 0,
+    "stdout": "F02 passed: typed/raw scratch, 3 exact destructions including partial initialisation throw, empty and bounded capacities\n",
+    "stderr": ""
+  },
+  {
+    "label": "F02Temporary-macos27.0-compile",
+    "argv": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache",
+      "-target",
+      "arm64-apple-macosx27.0",
+      "-parse-as-library",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary.swift",
+      "-o",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary-macos27.0"
+    ],
+    "command": "xcrun swiftc -swift-version 6 -strict-concurrency=complete -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache -target arm64-apple-macosx27.0 -parse-as-library /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary.swift -o /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary-macos27.0",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "F02Temporary-macos27.0-run",
+    "argv": [
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary-macos27.0"
+    ],
+    "command": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary-macos27.0",
+    "exit": 0,
+    "stdout": "F02 passed: typed/raw scratch, 3 exact destructions including partial initialisation throw, empty and bounded capacities\n",
+    "stderr": ""
+  }
+]

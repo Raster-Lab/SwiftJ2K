@@ -1,0 +1,22 @@
+ M AGENTS.md
+ M CHANGELOG.md
+ M Documentation/CLI_CONTRACT.md
+ M Documentation/COMMON_API.md
+ M Documentation/COMMON_CONTRACT_SHA256.txt
+ M Documentation/MEMORY_CONTRACT.md
+ M Documentation/PERFORMANCE.md
+ M Documentation/PLATFORMS.md
+ M Documentation/SUITE_POLICY.md
+ M Documentation/TESTING.md
+ M Examples/IndependentConsumer/Package.swift
+ M HISTORY.md
+ M IMPLEMENTATION.md
+ M MIGRATION.md
+ M Package.swift
+ M README.md
+ M Sources/SwiftJLI/CodecAPI.swift
+ M Sources/SwiftJLI/Image.swift
+?? Documentation/Engineering/
+?? Scripts/
+?? Tests/SwiftJLITests/Swift64SampleAccessTests.swift
+?? VERSION

@@ -1,0 +1,28 @@
+$ xcrun swift test --package-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJXL --scratch-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/focused-tests/SwiftJXL/scratch --cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/focused-tests/SwiftJXL/cache --manifest-cache local --disable-sandbox --build-system swiftbuild --jobs 2 --filter Swift64SampleAccessTests
+exit: 0
+􀟈  Test run started.
+􀄵  Testing Library Version: 2084
+􀄵  Target Platform: arm64e-apple-macos14.0
+􀟈  Suite "Swift 6.4 sample access" started.
+􀟈  Test initialisesExternalSampleBytesAtOddAddressWithoutChangingPadding() started.
+􀟈  Test rejectsCoordinatesBeforeOffsetArithmetic() started.
+􀟈  Test refusesShortProviderBeforeLoadingSample() started.
+􀟈  Test outOfPrecisionWriteInvalidatesDestination() started.
+􀟈  Test readsIndependentGoldenBytesFromOddPhysicalAddress() started.
+􀟈  Test writesGoldenBytesForPackedAndPadded12And16BitSamples() started.
+􁁛  Test initialisesExternalSampleBytesAtOddAddressWithoutChangingPadding() passed after 0.001 seconds.
+􁁛  Test outOfPrecisionWriteInvalidatesDestination() passed after 0.001 seconds.
+􁁛  Test rejectsCoordinatesBeforeOffsetArithmetic() passed after 0.001 seconds.
+􁁛  Test refusesShortProviderBeforeLoadingSample() passed after 0.001 seconds.
+􁁛  Test readsIndependentGoldenBytesFromOddPhysicalAddress() passed after 0.001 seconds.
+􁁛  Test writesGoldenBytesForPackedAndPadded12And16BitSamples() passed after 0.001 seconds.
+􁁛  Suite "Swift 6.4 sample access" passed after 0.001 seconds.
+􁁛  Test run with 6 tests in 1 suite passed after 0.001 seconds.
+warning: /Users/suresh/Library/org.swift.swiftpm/configuration is not accessible or not writable, disabling user-level cache features.
+warning: /Users/suresh/Library/org.swift.swiftpm/security is not accessible or not writable, disabling user-level cache features.
+Building for debugging...
+[2 / 4] SwiftJXLTests-product
+[4 / 6] SwiftJXLTests-product
+[10 / 11] SwiftJXLTests-product
+[13 / 13] SwiftJXL-product
+Build complete! (1.10 secs)

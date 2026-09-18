@@ -1,0 +1,26 @@
+ M AGENTS.md
+ M CHANGELOG.md
+ M Documentation/CLI_CONTRACT.md
+ M Documentation/COMMON_API.md
+ M Documentation/COMMON_CONTRACT_SHA256.txt
+ M Documentation/MEMORY_CONTRACT.md
+ M Documentation/PERFORMANCE.md
+ M Documentation/PLATFORMS.md
+ M Documentation/SUITE_POLICY.md
+ M Documentation/TESTING.md
+ M Examples/Consumer/Package.swift
+ M HISTORY.md
+ M IMPLEMENTATION.md
+ M Integration/ContractHarness/Package.swift
+ M MIGRATION.md
+ M Package.swift
+ M README.md
+ M Scripts/validate.sh
+ M Sources/SwiftJ2K/CodecAPI.swift
+ M Sources/SwiftJ2K/Image.swift
+ M TRANSCODING.md
+?? Documentation/Engineering/
+?? Scripts/README.md
+?? Scripts/validate-swift64.py
+?? Tests/SwiftJ2KTests/Swift64SampleAccessTests.swift
+?? VERSION

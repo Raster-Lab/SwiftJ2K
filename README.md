@@ -2,7 +2,7 @@
 
 JPEG 2000 and HTJ2K for the **Swift Image Compression Suite**.
 
-**Status: Milestone 1 API and owning-memory feasibility implemented and tested on macOS arm64. JPEG 2000 and HTJ2K algorithms are not yet implemented.** The intended first stable library version is **12.0.0**; it is not a published release. The standalone Swift package has no external dependencies; it deliberately advertises no codec capabilities yet.
+**Status: Milestone 1 API and owning-memory feasibility implemented and tested on macOS arm64. JPEG 2000 and HTJ2K algorithms are not yet implemented.** The intended first stable library version is **12.1.0**; it is not a published release. The standalone Swift package has no external dependencies; it deliberately advertises no codec capabilities yet.
 
 SwiftJ2K is the standalone successor to [J2KSwift](https://github.com/Raster-Lab/J2KSwift). The successor is intended to provide a harmonised API, explicit memory ownership, high-precision sample preservation and efficient shared-storage integration. It has no mandatory dependency on another suite library or CompressionFamily. MIT licensing applies to these documents and subsequent authorised in-house implementation; third-party material retains its own terms.
 
@@ -10,9 +10,13 @@ SwiftJ2K is the standalone successor to [J2KSwift](https://github.com/Raster-Lab
 
 Read [MIGRATION.md — J2KSwift to SwiftJ2K](MIGRATION.md) for dependency/product and API mappings, sample ownership, feature gaps, staged cutover and rollback instructions for people and coding agents. Current migration can prepare application adapters; real codec replacement must wait for qualified successor functionality.
 
+## Swift 6.4 development candidate
+
+Current development version: **12.1.0-dev.1** ([VERSION](VERSION)); shared contract **0.3.0**. This increments the earlier unreleased 12.0.0 target and creates no release/tag. See the [upgrade record](Documentation/Engineering/Swift64/README.md) for adopted features, exact Xcode/Swift Build evidence and open platform gates. The historical [Milestone 1 evidence](Documentation/MILESTONE1.md) remains unchanged.
+
 ## Intended platform baseline
 
-Swift 6.2 minimum, Swift 6 language mode and complete concurrency checking. Apple OS deployment minima: macOS, iOS/iPadOS, tvOS, visionOS and watchOS 26.0. Apple Silicon is the primary optimisation target. macOS x86_64 and Linux ARM64/x86_64 are included with cleanly separated platform/architecture support. Ubuntu 24.04 is the initial Linux engineering baseline. These are requirements, not completed qualification claims.
+Swift 6.4 minimum, Swift 6 language mode and complete concurrency checking. Apple OS deployment minima: macOS, iOS/iPadOS, tvOS, visionOS and watchOS 26.0. Apple Silicon is the primary optimisation target. macOS x86_64 and Linux ARM64/x86_64 are included with cleanly separated platform/architecture support. Ubuntu 24.04 is the initial Linux engineering baseline. These are requirements, not completed qualification claims.
 
 ## Start reading
 

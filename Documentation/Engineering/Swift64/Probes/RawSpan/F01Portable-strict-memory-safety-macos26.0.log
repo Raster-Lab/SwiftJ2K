@@ -1,0 +1,2 @@
+$ xcrun swiftc -swift-version 6 -strict-memory-safety -warnings-as-errors -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache -target arm64-apple-macosx26.0 -parse-as-library -typecheck /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable.swift
+exit: 0

@@ -1,0 +1,392 @@
+[
+  {
+    "name": "F03_containers_import_os26_compile",
+    "command": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-target",
+      "arm64-apple-macos26.0",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/module-cache",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F03_containers_import.swift",
+      "-typecheck"
+    ],
+    "exit_code": 1,
+    "expected": "record actual result",
+    "output": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F03_containers_import.swift:1:8: error: no such module 'Containers'\n1 | import Containers\n  |        `- error: no such module 'Containers'\n2 | \n"
+  },
+  {
+    "name": "F03_rigid_array_os26_compile",
+    "command": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-target",
+      "arm64-apple-macos26.0",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/module-cache",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F03_rigid_array.swift",
+      "-typecheck"
+    ],
+    "exit_code": 1,
+    "expected": "record actual result",
+    "output": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F03_rigid_array.swift:1:13: error: cannot find 'RigidArray' in scope\n1 | let array = RigidArray<Int>(capacity: 4)\n  |             `- error: cannot find 'RigidArray' in scope\n2 | \n"
+  },
+  {
+    "name": "F03_F06_unique_iteration_os26_compile",
+    "command": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-target",
+      "arm64-apple-macos26.0",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/module-cache",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F03_F06_unique_iteration.swift",
+      "-o",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F03_F06_unique_iteration_os26"
+    ],
+    "exit_code": 1,
+    "expected": "record actual result",
+    "output": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F03_F06_unique_iteration.swift:4:17: error: 'UniqueArray' is only available in macOS 27.0 or newer\n 1 | \n 2 | struct Element: ~Copyable { var number: Int }\n 3 | func run() {\n   |      `- note: add '@available' attribute to enclosing global function\n 4 |     var array = UniqueArray<Element>(capacity: 3)\n   |                 |- error: 'UniqueArray' is only available in macOS 27.0 or newer\n   |                 `- note: add 'if #available' version check\n 5 |     array.append(Element(number: 1))\n 6 |     array.append(Element(number: 2))\n\n/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F03_F06_unique_iteration.swift:4:36: error: 'init(capacity:)' is only available in macOS 27.0 or newer\n 1 | \n 2 | struct Element: ~Copyable { var number: Int }\n 3 | func run() {\n   |      `- note: add '@available' attribute to enclosing global function\n 4 |     var array = UniqueArray<Element>(capacity: 3)\n   |                                    |- error: 'init(capacity:)' is only available in macOS 27.0 or newer\n   |                                    `- note: add 'if #available' version check\n 5 |     array.append(Element(number: 1))\n 6 |     array.append(Element(number: 2))\n\n/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F03_F06_unique_iteration.swift:5:11: error: 'append' is only available in macOS 27.0 or newer\n 1 | \n 2 | struct Element: ~Copyable { var number: Int }\n 3 | func run() {\n   |      `- note: add '@available' attribute to enclosing global function\n 4 |     var array = UniqueArray<Element>(capacity: 3)\n 5 |     array.append(Element(number: 1))\n   |           |- error: 'append' is only available in macOS 27.0 or newer\n   |           `- note: add 'if #available' version check\n 6 |     array.append(Element(number: 2))\n 7 |     var total = 0\n\n/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F03_F06_unique_iteration.swift:6:11: error: 'append' is only available in macOS 27.0 or newer\n 1 | \n 2 | struct Element: ~Copyable { var number: Int }\n 3 | func run() {\n   |      `- note: add '@available' attribute to enclosing global function\n 4 |     var array = UniqueArray<Element>(capacity: 3)\n 5 |     array.append(Element(number: 1))\n 6 |     array.append(Element(number: 2))\n   |           |- error: 'append' is only available in macOS 27.0 or newer\n   |           `- note: add 'if #available' version check\n 7 |     var total = 0\n 8 |     for element in array { total += element.number }\n\n/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F03_F06_unique_iteration.swift:9:38: error: 'count' is only available in macOS 27.0 or newer\n 1 | \n 2 | struct Element: ~Copyable { var number: Int }\n 3 | func run() {\n   |      `- note: add '@available' attribute to enclosing global function\n 4 |     var array = UniqueArray<Element>(capacity: 3)\n 5 |     array.append(Element(number: 1))\n   :\n 7 |     var total = 0\n 8 |     for element in array { total += element.number }\n 9 |     precondition(total == 3 && array.count == 2)\n   |                                      |- error: 'count' is only available in macOS 27.0 or newer\n   |                                      `- note: add 'if #available' version check\n10 |     print(\"F03/F06: noncopyable element iteration passed\")\n11 | }\n\n/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F03_F06_unique_iteration.swift:8:5: error: for-in loop requires 'UniqueArray<Element>' to conform to 'Iterable', which is only available in macOS 27.0 or newer\n 1 | \n 2 | struct Element: ~Copyable { var number: Int }\n 3 | func run() {\n   |      `- note: add '@available' attribute to enclosing global function\n 4 |     var array = UniqueArray<Element>(capacity: 3)\n 5 |     array.append(Element(number: 1))\n 6 |     array.append(Element(number: 2))\n 7 |     var total = 0\n 8 |     for element in array { total += element.number }\n   |     |- error: for-in loop requires 'UniqueArray<Element>' to conform to 'Iterable', which is only available in macOS 27.0 or newer\n   |     `- note: add 'if #available' version check\n 9 |     precondition(total == 3 && array.count == 2)\n10 |     print(\"F03/F06: noncopyable element iteration passed\")\n"
+  },
+  {
+    "name": "F03_F06_unique_iteration_os27_compile",
+    "command": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-target",
+      "arm64-apple-macos27.0",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/module-cache",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F03_F06_unique_iteration.swift",
+      "-o",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F03_F06_unique_iteration_os27"
+    ],
+    "exit_code": 0,
+    "expected": "record actual result",
+    "output": ""
+  },
+  {
+    "name": "F03_F06_unique_iteration_os27_run",
+    "command": [
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F03_F06_unique_iteration_os27"
+    ],
+    "exit_code": 0,
+    "expected": "zero",
+    "output": "F03/F06: noncopyable element iteration passed\n"
+  },
+  {
+    "name": "F04_unique_box_os26_compile",
+    "command": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-target",
+      "arm64-apple-macos26.0",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/module-cache",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F04_unique_box.swift",
+      "-o",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F04_unique_box_os26"
+    ],
+    "exit_code": 1,
+    "expected": "record actual result",
+    "output": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F04_unique_box.swift:4:15: error: 'UniqueBox' is only available in macOS 27.0 or newer\n 1 | \n 2 | struct Element: ~Copyable { var number: Int }\n 3 | func run() {\n   |      `- note: add '@available' attribute to enclosing global function\n 4 |     var box = UniqueBox(Element(number: 3))\n   |               |- error: 'UniqueBox' is only available in macOS 27.0 or newer\n   |               `- note: add 'if #available' version check\n 5 |     box.value.number += 1\n 6 |     let value = box.consume()\n\n/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F04_unique_box.swift:4:15: error: 'init(_:)' is only available in macOS 27.0 or newer\n 1 | \n 2 | struct Element: ~Copyable { var number: Int }\n 3 | func run() {\n   |      `- note: add '@available' attribute to enclosing global function\n 4 |     var box = UniqueBox(Element(number: 3))\n   |               |- error: 'init(_:)' is only available in macOS 27.0 or newer\n   |               `- note: add 'if #available' version check\n 5 |     box.value.number += 1\n 6 |     let value = box.consume()\n\n/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F04_unique_box.swift:5:9: error: 'value' is only available in macOS 27.0 or newer\n 1 | \n 2 | struct Element: ~Copyable { var number: Int }\n 3 | func run() {\n   |      `- note: add '@available' attribute to enclosing global function\n 4 |     var box = UniqueBox(Element(number: 3))\n 5 |     box.value.number += 1\n   |         |- error: 'value' is only available in macOS 27.0 or newer\n   |         `- note: add 'if #available' version check\n 6 |     let value = box.consume()\n 7 |     precondition(value.number == 4)\n\n/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F04_unique_box.swift:6:21: error: 'consume()' is only available in macOS 27.0 or newer\n 1 | \n 2 | struct Element: ~Copyable { var number: Int }\n 3 | func run() {\n   |      `- note: add '@available' attribute to enclosing global function\n 4 |     var box = UniqueBox(Element(number: 3))\n 5 |     box.value.number += 1\n 6 |     let value = box.consume()\n   |                     |- error: 'consume()' is only available in macOS 27.0 or newer\n   |                     `- note: add 'if #available' version check\n 7 |     precondition(value.number == 4)\n 8 |     print(\"F04: unique box mutation and consume passed\")\n"
+  },
+  {
+    "name": "F04_unique_box_os27_compile",
+    "command": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-target",
+      "arm64-apple-macos27.0",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/module-cache",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F04_unique_box.swift",
+      "-o",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F04_unique_box_os27"
+    ],
+    "exit_code": 0,
+    "expected": "record actual result",
+    "output": ""
+  },
+  {
+    "name": "F04_unique_box_os27_run",
+    "command": [
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F04_unique_box_os27"
+    ],
+    "exit_code": 0,
+    "expected": "zero",
+    "output": "F04: unique box mutation and consume passed\n"
+  },
+  {
+    "name": "F05_accessors_os26_compile",
+    "command": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-target",
+      "arm64-apple-macos26.0",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/module-cache",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F05_accessors.swift",
+      "-o",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F05_accessors_os26"
+    ],
+    "exit_code": 0,
+    "expected": "record actual result",
+    "output": ""
+  },
+  {
+    "name": "F05_accessors_os26_run",
+    "command": [
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F05_accessors_os26"
+    ],
+    "exit_code": 0,
+    "expected": "zero",
+    "output": "F05: value-type borrow/mutate passed\n"
+  },
+  {
+    "name": "F07_references_os26_compile",
+    "command": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-target",
+      "arm64-apple-macos26.0",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/module-cache",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F07_references.swift",
+      "-o",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F07_references_os26"
+    ],
+    "exit_code": 1,
+    "expected": "record actual result",
+    "output": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F07_references.swift:5:25: error: 'MutableRef' is only available in macOS 27.0 or newer\n 1 | \n 2 | func run() {\n   |      `- note: add '@available' attribute to enclosing global function\n 3 |     var number = 3\n 4 |     do {\n 5 |         var reference = MutableRef(&number)\n   |                         |- error: 'MutableRef' is only available in macOS 27.0 or newer\n   |                         `- note: add 'if #available' version check\n 6 |         reference.value += 1\n 7 |     }\n\n/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F07_references.swift:5:25: error: 'init(_:)' is only available in macOS 27.0 or newer\n 1 | \n 2 | func run() {\n   |      `- note: add '@available' attribute to enclosing global function\n 3 |     var number = 3\n 4 |     do {\n 5 |         var reference = MutableRef(&number)\n   |                         |- error: 'init(_:)' is only available in macOS 27.0 or newer\n   |                         `- note: add 'if #available' version check\n 6 |         reference.value += 1\n 7 |     }\n\n/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F07_references.swift:6:19: error: 'value' is only available in macOS 27.0 or newer\n 1 | \n 2 | func run() {\n   |      `- note: add '@available' attribute to enclosing global function\n 3 |     var number = 3\n 4 |     do {\n 5 |         var reference = MutableRef(&number)\n 6 |         reference.value += 1\n   |                   |- error: 'value' is only available in macOS 27.0 or newer\n   |                   `- note: add 'if #available' version check\n 7 |     }\n 8 |     let reference = Ref(number)\n\n/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F07_references.swift:8:21: error: 'Ref' is only available in macOS 27.0 or newer\n 1 | \n 2 | func run() {\n   |      `- note: add '@available' attribute to enclosing global function\n 3 |     var number = 3\n 4 |     do {\n   :\n 6 |         reference.value += 1\n 7 |     }\n 8 |     let reference = Ref(number)\n   |                     |- error: 'Ref' is only available in macOS 27.0 or newer\n   |                     `- note: add 'if #available' version check\n 9 |     precondition(reference.value == 4)\n10 |     print(\"F07: scoped mutable and read references passed\")\n\n/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F07_references.swift:8:21: error: 'init(_:)' is only available in macOS 27.0 or newer\n 1 | \n 2 | func run() {\n   |      `- note: add '@available' attribute to enclosing global function\n 3 |     var number = 3\n 4 |     do {\n   :\n 6 |         reference.value += 1\n 7 |     }\n 8 |     let reference = Ref(number)\n   |                     |- error: 'init(_:)' is only available in macOS 27.0 or newer\n   |                     `- note: add 'if #available' version check\n 9 |     precondition(reference.value == 4)\n10 |     print(\"F07: scoped mutable and read references passed\")\n\n/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F07_references.swift:9:28: error: 'value' is only available in macOS 27.0 or newer\n 1 | \n 2 | func run() {\n   |      `- note: add '@available' attribute to enclosing global function\n 3 |     var number = 3\n 4 |     do {\n   :\n 7 |     }\n 8 |     let reference = Ref(number)\n 9 |     precondition(reference.value == 4)\n   |                            |- error: 'value' is only available in macOS 27.0 or newer\n   |                            `- note: add 'if #available' version check\n10 |     print(\"F07: scoped mutable and read references passed\")\n11 | }\n"
+  },
+  {
+    "name": "F07_references_os27_compile",
+    "command": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-target",
+      "arm64-apple-macos27.0",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/module-cache",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F07_references.swift",
+      "-o",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F07_references_os27"
+    ],
+    "exit_code": 0,
+    "expected": "record actual result",
+    "output": ""
+  },
+  {
+    "name": "F07_references_os27_run",
+    "command": [
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F07_references_os27"
+    ],
+    "exit_code": 0,
+    "expected": "zero",
+    "output": "F07: scoped mutable and read references passed\n"
+  },
+  {
+    "name": "F08_async_defer_os26_compile",
+    "command": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-target",
+      "arm64-apple-macos26.0",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/module-cache",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F08_async_defer.swift",
+      "-parse-as-library",
+      "-o",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F08_async_defer_os26"
+    ],
+    "exit_code": 0,
+    "expected": "record actual result",
+    "output": ""
+  },
+  {
+    "name": "F08_async_defer_os26_run",
+    "command": [
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F08_async_defer_os26"
+    ],
+    "exit_code": 0,
+    "expected": "zero",
+    "output": "F08: async defer completed on return, throw and cancellation\n"
+  },
+  {
+    "name": "F09_cancellation_shield_os26_compile",
+    "command": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-target",
+      "arm64-apple-macos26.0",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/module-cache",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F09_cancellation_shield.swift",
+      "-parse-as-library",
+      "-o",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F09_cancellation_shield_os26"
+    ],
+    "exit_code": 1,
+    "expected": "record actual result",
+    "output": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F09_cancellation_shield.swift:7:23: error: 'withTaskCancellationShield(operation:)' is only available in macOS 27.0 or newer\n 1 | \n 2 | @main struct Probe {\n   |              `- note: add '@available' attribute to enclosing struct\n 3 |     static func main() async throws {\n   |                 `- note: add '@available' attribute to enclosing static method\n 4 |         let operation = Task {\n 5 |             withUnsafeCurrentTask { $0?.cancel() }\n 6 |             precondition(Task.isCancelled)\n 7 |             try await withTaskCancellationShield {\n   |                       |- error: 'withTaskCancellationShield(operation:)' is only available in macOS 27.0 or newer\n   |                       `- note: add 'if #available' version check\n 8 |                 await Task.yield()\n 9 |                 precondition(!Task.isCancelled)\n"
+  },
+  {
+    "name": "F09_cancellation_shield_os27_compile",
+    "command": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-target",
+      "arm64-apple-macos27.0",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/module-cache",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F09_cancellation_shield.swift",
+      "-parse-as-library",
+      "-o",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F09_cancellation_shield_os27"
+    ],
+    "exit_code": 0,
+    "expected": "record actual result",
+    "output": ""
+  },
+  {
+    "name": "F09_cancellation_shield_os27_run",
+    "command": [
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F09_cancellation_shield_os27"
+    ],
+    "exit_code": 0,
+    "expected": "zero",
+    "output": "F09: shield masks observation only inside scoped cleanup\n"
+  },
+  {
+    "name": "F10_optional_ref_os27_compile",
+    "command": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-target",
+      "arm64-apple-macos27.0",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/module-cache",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F10_optional_ref.swift",
+      "-typecheck"
+    ],
+    "exit_code": 1,
+    "expected": "record actual result",
+    "output": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F10_optional_ref.swift:4:14: error: value of type 'Element?' has no member 'ref'\n2 | struct Element: ~Copyable { var number: Int }\n3 | func trial(_ optional: borrowing Element?) -> Int? {\n4 |     optional.ref.map { $0.value.number }\n  |              `- error: value of type 'Element?' has no member 'ref'\n5 | }\n6 | \n"
+  },
+  {
+    "name": "F10_optional_put_os27_compile",
+    "command": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-target",
+      "arm64-apple-macos27.0",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/module-cache",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F10_optional_put.swift",
+      "-typecheck"
+    ],
+    "exit_code": 1,
+    "expected": "record actual result",
+    "output": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F10_optional_put.swift:4:30: error: value of type 'Element?' has no member 'put'\n2 | struct Element: ~Copyable { var number: Int }\n3 | func trial(_ optional: inout Element?) {\n4 |     var reference = optional.put(Element(number: 3))\n  |                              `- error: value of type 'Element?' has no member 'put'\n5 |     reference.value.number += 1\n6 | }\n"
+  },
+  {
+    "name": "F10_optional_map_os27_compile",
+    "command": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-target",
+      "arm64-apple-macos27.0",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/module-cache",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F10_optional_map.swift",
+      "-typecheck"
+    ],
+    "exit_code": 1,
+    "expected": "record actual result",
+    "output": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F10_optional_map.swift:4:14: error: referencing instance method 'map' on 'Optional' requires that 'Element' conform to 'Copyable'\n2 | struct Element: ~Copyable { var number: Int }\n3 | func trial(_ optional: consuming Element?) -> Int? {\n4 |     optional.map { $0.number }\n  |              `- error: referencing instance method 'map' on 'Optional' requires that 'Element' conform to 'Copyable'\n5 | }\n6 | \n\nSwift.Optional:1:11: note: 'where Wrapped: Copyable' is implicit here\n1 | extension Optional {\n  |           `- note: 'where Wrapped: Copyable' is implicit here\n2 |     public func map<E, U>(_ transform: (Wrapped) throws(E) -> U) throws(E) -> U? where E : Error, U : ~Copyable\n3 | }\n"
+  },
+  {
+    "name": "F13_diagnose_error_os26_compile",
+    "command": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-target",
+      "arm64-apple-macos26.0",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/module-cache",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F13_diagnose_error.swift",
+      "-typecheck"
+    ],
+    "exit_code": 1,
+    "expected": "record actual result",
+    "output": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F13_diagnose_error.swift:5:17: error: 'oldFunction()' is deprecated: probe only [#DeprecatedDeclaration]\n3 | func oldFunction() { }\n4 | @diagnose(DeprecatedDeclaration, as: error, reason: \"Test local elevation\")\n5 | func caller() { oldFunction() }\n  |                 `- error: 'oldFunction()' is deprecated: probe only [#DeprecatedDeclaration]\n6 | \n\n[#DeprecatedDeclaration]: <https://docs.swift.org/compiler/documentation/diagnostics/deprecated-declaration>\n"
+  },
+  {
+    "name": "F13_warning_baseline_os26_compile",
+    "command": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-target",
+      "arm64-apple-macos26.0",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/module-cache",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F13_warning_baseline.swift",
+      "-typecheck"
+    ],
+    "exit_code": 0,
+    "expected": "record actual result",
+    "output": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F13_warning_baseline.swift:4:17: warning: 'oldFunction()' is deprecated: probe only [#DeprecatedDeclaration]\n2 | @available(*, deprecated, message: \"probe only\")\n3 | func oldFunction() { }\n4 | func caller() { oldFunction() }\n  |                 `- warning: 'oldFunction()' is deprecated: probe only [#DeprecatedDeclaration]\n5 | \n\n[#DeprecatedDeclaration]: <https://docs.swift.org/compiler/documentation/diagnostics/deprecated-declaration>\n"
+  }
+]

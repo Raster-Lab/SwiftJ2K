@@ -1,6 +1,6 @@
 # Platform and build contract
 
-Contract **0.2.1**. The table is intended support, not a claim of completed builds.
+Contract **0.3.0**. The table is intended support, not a claim of completed builds.
 
 | Environment | Minimum / architecture | Validation responsibility |
 | --- | --- | --- |
@@ -13,7 +13,7 @@ Contract **0.2.1**. The table is intended support, not a claim of completed buil
 | Linux ARM64 | Ubuntu 24.04 reference distribution; AArch64 | Native build/run, scalar core, CLI and regression; optional ARM optimisation |
 | Linux x86_64 | Ubuntu 24.04 reference distribution | Native build/run, scalar core, CLI and regression; isolated Intel optimisation |
 
-**PLAT-01.** Minimum tools/compiler Swift 6.2, Swift 6 language mode and complete concurrency checking throughout library, CLI and test targets. Keep a Swift 6.2 build to enforce the minimum even when CI also uses a newer stable toolchain. Pin SDK/toolchain/container revisions in evidence. Use an Xcode supporting OS 26 SDKs. iPadOS uses the iOS SwiftPM deployment setting. Linux has its own distribution/runtime baseline; it has no Apple-style OS 26 floor. Ubuntu 24.04 is this foundation's concrete engineering baseline; wider distribution support needs evidence and a recorded expansion.
+**PLAT-01.** Minimum tools/compiler Swift 6.4, Swift 6 language mode and complete concurrency checking throughout library, CLI and test targets. Pin the qualified Swift 6.4 build identity; retain the preceding source/toolchain reference for rollback. Swift 6.2 is historical, not a supported compiler for new 6.4-only source. Pin SDK/toolchain/container revisions in evidence. Use an Xcode supporting OS 26 SDKs. iPadOS uses the iOS SwiftPM deployment setting. Linux has its own distribution/runtime baseline; it has no Apple-style OS 26 floor. Ubuntu 24.04 is this foundation's concrete engineering baseline; wider distribution support needs evidence and a recorded expansion.
 
 **PLAT-02.** The Apple deployment minimum is exactly 26.0 unless an approved contract change raises it. An SDK update alone must not raise package minima. Do not assume watchOS shares every framework or architecture of macOS/iOS. Probe API availability per target. No 32-bit Intel or general Linux ARMv7 support is implied. Windows is outside the current scope.
 
@@ -38,3 +38,7 @@ For every target, retain exact build/test invocations, SDK version, target tripl
 Initial CI should run complete core correctness on macOS arm64 and both Linux architectures, plus an Apple SDK build matrix. Add native macOS Intel and representative Apple runtime checks before the stable release claims those targets. Resource-limited Watch tests use their explicit profile; they must not be disabled merely to make the matrix green.
 
 References: [Swift Linux toolchains](https://www.swift.org/install/linux/ubuntu/24_04/), [Xcode SDK compatibility](https://developer.apple.com/xcode/system-requirements), [Swift compilation conditions](https://github.com/swiftlang/swift-book/blob/main/TSPL.docc/ReferenceManual/Statements.md#conditional-compilation-block).
+
+## Swift 6.4 build qualification — contract 0.3.0
+
+Use the Swift Build engine explicitly and record clean/incremental, debug/release and standalone-consumer results. Do not hide a failed engine qualification behind an unreported native-engine fallback. Record target actor isolation, upcoming features, memory-safety settings, exact SDKs and the source of each adopted API's deployment availability. New APIs requiring OS 27 remain deferred unless a separately tested compatible path preserves OS 26. Build-associated SBOMs are distinct from package-graph inventories; report schema-validation failures and components outside the package graph. See [the upgrade record](Engineering/Swift64/README.md).

@@ -1,0 +1,100 @@
+{
+  "$schema" : "http://cyclonedx.org/schema/bom-1.7.schema.json",
+  "bomFormat" : "CycloneDX",
+  "components" : [
+    {
+      "bom-ref" : "swiftjli",
+      "externalReferences" : [
+
+      ],
+      "name" : "swiftjli",
+      "pedigree" : {
+
+      },
+      "properties" : [
+        {
+          "name" : "swift-entity",
+          "value" : "swift-package"
+        }
+      ],
+      "purl" : "pkg:swift/swiftjli@62e9502082a90bbabedf3d554b58e6dc8356b30a-modified",
+      "scope" : "required",
+      "type" : "library",
+      "version" : "62e9502082a90bbabedf3d554b58e6dc8356b30a-modified"
+    },
+    {
+      "bom-ref" : "swiftjli:SwiftJLI",
+      "externalReferences" : [
+
+      ],
+      "name" : "SwiftJLI",
+      "pedigree" : {
+
+      },
+      "properties" : [
+        {
+          "name" : "swift-entity",
+          "value" : "swift-product"
+        }
+      ],
+      "purl" : "pkg:swift/swiftjli/swiftjli:SwiftJLI@62e9502082a90bbabedf3d554b58e6dc8356b30a-modified",
+      "scope" : "required",
+      "type" : "library",
+      "version" : "62e9502082a90bbabedf3d554b58e6dc8356b30a-modified"
+    }
+  ],
+  "dependencies" : [
+    {
+      "dependsOn" : [
+        "swiftjli:SwiftJLI"
+      ],
+      "ref" : "swiftjli"
+    }
+  ],
+  "metadata" : {
+    "component" : {
+      "bom-ref" : "swiftjli:SwiftJLI",
+      "externalReferences" : [
+
+      ],
+      "name" : "SwiftJLI",
+      "pedigree" : {
+
+      },
+      "properties" : [
+        {
+          "name" : "swift-entity",
+          "value" : "swift-product"
+        }
+      ],
+      "purl" : "pkg:swift/swiftjli/swiftjli:SwiftJLI@62e9502082a90bbabedf3d554b58e6dc8356b30a-modified",
+      "scope" : "required",
+      "type" : "library",
+      "version" : "62e9502082a90bbabedf3d554b58e6dc8356b30a-modified"
+    },
+    "timestamp" : "2026-09-18T22:09:08Z",
+    "tools" : {
+      "components" : [
+        {
+          "bom-ref" : "urn:uuid:a6b4ae49-3a29-4715-9add-eb42702494e1",
+          "licenses" : [
+            {
+              "license" : {
+                "id" : "Apache-2.0",
+                "url" : "http://swift.org/LICENSE.txt"
+              }
+            }
+          ],
+          "name" : "swift-package-manager",
+          "purl" : "pkg:swift/github.com/swiftlang/swift-package-manager@6.4.0-dev",
+          "scope" : "excluded",
+          "type" : "application",
+          "version" : "6.4.0-dev"
+        }
+      ]
+    }
+  },
+  "serialNumber" : "urn:uuid:2fad3298-b40c-49bd-aafa-b17dccbf2ec2",
+  "specVersion" : "1.7",
+  "version" : 1
+}

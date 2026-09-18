@@ -1,0 +1,7 @@
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F10_optional_ref.swift:4:14: error: value of type 'Element?' has no member 'ref'
+2 | struct Element: ~Copyable { var number: Int }
+3 | func trial(_ optional: borrowing Element?) -> Int? {
+4 |     optional.ref.map { $0.value.number }
+  |              `- error: value of type 'Element?' has no member 'ref'
+5 | }
+6 | 

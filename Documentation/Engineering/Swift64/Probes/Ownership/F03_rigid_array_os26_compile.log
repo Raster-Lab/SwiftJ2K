@@ -1,0 +1,4 @@
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F03_rigid_array.swift:1:13: error: cannot find 'RigidArray' in scope
+1 | let array = RigidArray<Int>(capacity: 4)
+  |             `- error: cannot find 'RigidArray' in scope
+2 | 

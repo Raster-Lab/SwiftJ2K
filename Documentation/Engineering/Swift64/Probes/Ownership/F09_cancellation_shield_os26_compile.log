@@ -1,0 +1,14 @@
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F09_cancellation_shield.swift:7:23: error: 'withTaskCancellationShield(operation:)' is only available in macOS 27.0 or newer
+ 1 | 
+ 2 | @main struct Probe {
+   |              `- note: add '@available' attribute to enclosing struct
+ 3 |     static func main() async throws {
+   |                 `- note: add '@available' attribute to enclosing static method
+ 4 |         let operation = Task {
+ 5 |             withUnsafeCurrentTask { $0?.cancel() }
+ 6 |             precondition(Task.isCancelled)
+ 7 |             try await withTaskCancellationShield {
+   |                       |- error: 'withTaskCancellationShield(operation:)' is only available in macOS 27.0 or newer
+   |                       `- note: add 'if #available' version check
+ 8 |                 await Task.yield()
+ 9 |                 precondition(!Task.isCancelled)

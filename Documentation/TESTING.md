@@ -1,6 +1,6 @@
 # Unit, regression, interoperability and security testing
 
-Contract **0.2.1**. Required evidence for coding agents. Executed Milestone 1 results are recorded separately in each repository; later codec and release gates remain requirements.
+Contract **0.3.0**. Required evidence for coding agents. Executed Milestone 1 results are recorded separately in each repository; later codec and release gates remain requirements.
 
 ## General rules
 
@@ -28,7 +28,7 @@ Every fixture records source or deterministic generator/seed, redistribution lic
 
 ## Milestone 1 acceptance — contract feasibility
 
-Use synthetic sample storage and an adapter experiment to prove the public API and memory contract before codec algorithms are migrated. Compile the agreed call shapes under Swift 6.2 with complete concurrency checking; keep experimental/test-double behaviour distinct from real codec capabilities. An independent consumer must use the local public types without a sibling codec or shared-foundation dependency.
+Use synthetic sample storage and an adapter experiment to prove the public API and memory contract before codec algorithms are migrated. Compile the agreed call shapes under Swift 6.4 with complete concurrency checking; keep experimental/test-double behaviour distinct from real codec capabilities. An independent consumer must use the local public types without a sibling codec or shared-foundation dependency.
 
 Exercise unsigned full 16-bit and 12-in-16 descriptors, odd dimensions, padded rows, invalid ranges/strides/capacities and checked-arithmetic rejection. Observe synthetic writes followed by sealed reads through the retained owner; test shared allocation identity across adapter wrappers, rejection of overlapping writers, read-before-seal/write-after-seal, early caller release and failure/cancellation cleanup. Run the applicable ownership/race checks on an available supported target and record unavailable gates explicitly.
 

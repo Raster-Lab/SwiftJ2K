@@ -1,0 +1,8 @@
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F13_diagnose_error.swift:5:17: error: 'oldFunction()' is deprecated: probe only [#DeprecatedDeclaration]
+3 | func oldFunction() { }
+4 | @diagnose(DeprecatedDeclaration, as: error, reason: "Test local elevation")
+5 | func caller() { oldFunction() }
+  |                 `- error: 'oldFunction()' is deprecated: probe only [#DeprecatedDeclaration]
+6 | 
+
+[#DeprecatedDeclaration]: <https://docs.swift.org/compiler/documentation/diagnostics/deprecated-declaration>

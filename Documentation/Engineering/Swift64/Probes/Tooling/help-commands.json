@@ -1,0 +1,70 @@
+[
+  {
+    "name": "swift-version",
+    "argv": [
+      "xcrun",
+      "swift",
+      "--version"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "swift-build-help",
+    "argv": [
+      "xcrun",
+      "swift",
+      "build",
+      "--help"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "swift-test-help",
+    "argv": [
+      "xcrun",
+      "swift",
+      "test",
+      "--help"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "swift-test-list-help",
+    "argv": [
+      "xcrun",
+      "swift",
+      "test",
+      "list",
+      "--help"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "swift-package-help",
+    "argv": [
+      "xcrun",
+      "swift",
+      "package",
+      "--help"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "xcodebuild-help",
+    "argv": [
+      "xcrun",
+      "xcodebuild",
+      "-help"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "xcodebuild-version",
+    "argv": [
+      "xcrun",
+      "xcodebuild",
+      "-version"
+    ],
+    "exit": 0
+  }
+]

@@ -1,0 +1,13 @@
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F10_optional_map.swift:4:14: error: referencing instance method 'map' on 'Optional' requires that 'Element' conform to 'Copyable'
+2 | struct Element: ~Copyable { var number: Int }
+3 | func trial(_ optional: consuming Element?) -> Int? {
+4 |     optional.map { $0.number }
+  |              `- error: referencing instance method 'map' on 'Optional' requires that 'Element' conform to 'Copyable'
+5 | }
+6 | 
+
+Swift.Optional:1:11: note: 'where Wrapped: Copyable' is implicit here
+1 | extension Optional {
+  |           `- note: 'where Wrapped: Copyable' is implicit here
+2 |     public func map<E, U>(_ transform: (Wrapped) throws(E) -> U) throws(E) -> U? where E : Error, U : ~Copyable
+3 | }

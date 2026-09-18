@@ -1,6 +1,6 @@
 # Command-line and transcoding contract
 
-Contract **0.2.1**. This foundation supplies instructions only; no CLI exists in these successors yet.
+Contract **0.3.0**. This foundation supplies instructions only; no CLI exists in these successors yet.
 
 ## Native codec commands
 

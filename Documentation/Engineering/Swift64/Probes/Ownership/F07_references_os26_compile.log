@@ -1,0 +1,81 @@
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F07_references.swift:5:25: error: 'MutableRef' is only available in macOS 27.0 or newer
+ 1 | 
+ 2 | func run() {
+   |      `- note: add '@available' attribute to enclosing global function
+ 3 |     var number = 3
+ 4 |     do {
+ 5 |         var reference = MutableRef(&number)
+   |                         |- error: 'MutableRef' is only available in macOS 27.0 or newer
+   |                         `- note: add 'if #available' version check
+ 6 |         reference.value += 1
+ 7 |     }
+
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F07_references.swift:5:25: error: 'init(_:)' is only available in macOS 27.0 or newer
+ 1 | 
+ 2 | func run() {
+   |      `- note: add '@available' attribute to enclosing global function
+ 3 |     var number = 3
+ 4 |     do {
+ 5 |         var reference = MutableRef(&number)
+   |                         |- error: 'init(_:)' is only available in macOS 27.0 or newer
+   |                         `- note: add 'if #available' version check
+ 6 |         reference.value += 1
+ 7 |     }
+
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F07_references.swift:6:19: error: 'value' is only available in macOS 27.0 or newer
+ 1 | 
+ 2 | func run() {
+   |      `- note: add '@available' attribute to enclosing global function
+ 3 |     var number = 3
+ 4 |     do {
+ 5 |         var reference = MutableRef(&number)
+ 6 |         reference.value += 1
+   |                   |- error: 'value' is only available in macOS 27.0 or newer
+   |                   `- note: add 'if #available' version check
+ 7 |     }
+ 8 |     let reference = Ref(number)
+
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F07_references.swift:8:21: error: 'Ref' is only available in macOS 27.0 or newer
+ 1 | 
+ 2 | func run() {
+   |      `- note: add '@available' attribute to enclosing global function
+ 3 |     var number = 3
+ 4 |     do {
+   :
+ 6 |         reference.value += 1
+ 7 |     }
+ 8 |     let reference = Ref(number)
+   |                     |- error: 'Ref' is only available in macOS 27.0 or newer
+   |                     `- note: add 'if #available' version check
+ 9 |     precondition(reference.value == 4)
+10 |     print("F07: scoped mutable and read references passed")
+
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F07_references.swift:8:21: error: 'init(_:)' is only available in macOS 27.0 or newer
+ 1 | 
+ 2 | func run() {
+   |      `- note: add '@available' attribute to enclosing global function
+ 3 |     var number = 3
+ 4 |     do {
+   :
+ 6 |         reference.value += 1
+ 7 |     }
+ 8 |     let reference = Ref(number)
+   |                     |- error: 'init(_:)' is only available in macOS 27.0 or newer
+   |                     `- note: add 'if #available' version check
+ 9 |     precondition(reference.value == 4)
+10 |     print("F07: scoped mutable and read references passed")
+
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F07_references.swift:9:28: error: 'value' is only available in macOS 27.0 or newer
+ 1 | 
+ 2 | func run() {
+   |      `- note: add '@available' attribute to enclosing global function
+ 3 |     var number = 3
+ 4 |     do {
+   :
+ 7 |     }
+ 8 |     let reference = Ref(number)
+ 9 |     precondition(reference.value == 4)
+   |                            |- error: 'value' is only available in macOS 27.0 or newer
+   |                            `- note: add 'if #available' version check
+10 |     print("F07: scoped mutable and read references passed")
+11 | }

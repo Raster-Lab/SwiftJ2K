@@ -1,0 +1,12 @@
+[
+  {
+    "file": "spdx-3.0.1.schema.json",
+    "url": "https://spdx.org/schema/3.0.1/spdx-json-schema.json",
+    "error": "URLError(gaierror(8, 'nodename nor servname provided, or not known'))"
+  },
+  {
+    "file": "cyclonedx-1.7.schema.json",
+    "url": "https://cyclonedx.org/schema/bom-1.7.schema.json",
+    "error": "URLError(gaierror(8, 'nodename nor servname provided, or not known'))"
+  }
+]

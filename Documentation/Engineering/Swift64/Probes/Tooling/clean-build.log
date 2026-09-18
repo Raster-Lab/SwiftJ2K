@@ -1,0 +1,25 @@
+Building for debugging...
+[Planning deferred tasks]
+[31 / 51] ToolingFixture_ToolingLibrary
+[36 / 51] ToolingFixture_ToolingLibrary
+[36 / 51]
+[37 / 52] ToolingLibrary
+[47 / 89]
+[52 / 89]
+[55 / 89]
+[56 / 89]
+[60 / 89]
+[63 / 89]
+[68 / 89]
+[69 / 89]
+[70 / 89]
+[71 / 89]
+[82 / 89] ToolingProbe-product
+[83 / 90] ToolingProbe-product
+[87 / 92] ToolingLibrary
+[90 / 92] ToolingProbe-product
+Build complete! (5.23 secs)
+Creating SBOMs...
+- created spdx3 v3.0.1 SBOM at /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/tooling/sbom-build-spdx/spdx3-3.0.1-ToolingProbe-unknown-all-2026-09-18T22_01_15Z.json
+SBOMs created  (0.03 secs)
+warning: Bundle 'SwiftPM_SBOMModel' with schemas not found - skipping SBOM validation
