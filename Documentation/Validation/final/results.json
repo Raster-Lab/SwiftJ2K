@@ -1,0 +1,53 @@
+{
+  "purpose": "Final cancellation-publication regression validation",
+  "environment": {
+    "DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer",
+    "CLANG_MODULE_CACHE_PATH": "<workspace>/work/final-validation/SwiftJ2K/module-cache",
+    "SWIFTPM_MODULECACHE_OVERRIDE": "<workspace>/work/final-validation/SwiftJ2K/module-cache"
+  },
+  "records": [
+    {
+      "check": "debug",
+      "command": "xcrun swift test --disable-xctest --disable-sandbox --build-system native --jobs 2 --cache-path <workspace>/work/final-validation/SwiftJ2K/cache --config-path <workspace>/work/final-validation/SwiftJ2K/config --security-path <workspace>/work/final-validation/SwiftJ2K/security --scratch-path <workspace>/work/final-validation/SwiftJ2K/debug --xunit-output <workspace>/work/final-validation/SwiftJ2K/debug.xml",
+      "exit_code": 0,
+      "tests": 38,
+      "log": "work/final-validation/SwiftJ2K/debug.log"
+    },
+    {
+      "check": "release",
+      "command": "xcrun swift test --disable-xctest --disable-sandbox --build-system native --jobs 2 --cache-path <workspace>/work/final-validation/SwiftJ2K/cache --config-path <workspace>/work/final-validation/SwiftJ2K/config --security-path <workspace>/work/final-validation/SwiftJ2K/security --scratch-path <workspace>/work/final-validation/SwiftJ2K/release --xunit-output <workspace>/work/final-validation/SwiftJ2K/release.xml -c release",
+      "exit_code": 0,
+      "tests": 38,
+      "log": "work/final-validation/SwiftJ2K/release.log"
+    },
+    {
+      "check": "asan",
+      "command": "xcrun swift test --disable-xctest --disable-sandbox --build-system native --jobs 2 --cache-path <workspace>/work/final-validation/SwiftJ2K/cache --config-path <workspace>/work/final-validation/SwiftJ2K/config --security-path <workspace>/work/final-validation/SwiftJ2K/security --scratch-path <workspace>/work/final-validation/SwiftJ2K/asan --xunit-output <workspace>/work/final-validation/SwiftJ2K/asan.xml --sanitize address",
+      "exit_code": 0,
+      "tests": 38,
+      "log": "work/final-validation/SwiftJ2K/asan.log"
+    },
+    {
+      "check": "tsan",
+      "command": "xcrun swift test --disable-xctest --disable-sandbox --build-system native --jobs 2 --cache-path <workspace>/work/final-validation/SwiftJ2K/cache --config-path <workspace>/work/final-validation/SwiftJ2K/config --security-path <workspace>/work/final-validation/SwiftJ2K/security --scratch-path <workspace>/work/final-validation/SwiftJ2K/tsan --xunit-output <workspace>/work/final-validation/SwiftJ2K/tsan.xml --sanitize thread",
+      "exit_code": 0,
+      "tests": 38,
+      "log": "work/final-validation/SwiftJ2K/tsan.log"
+    },
+    {
+      "check": "consumer",
+      "command": "xcrun swift run --disable-sandbox --build-system native --jobs 2 --cache-path <workspace>/work/final-validation/SwiftJ2K/cache --config-path <workspace>/work/final-validation/SwiftJ2K/config --security-path <workspace>/work/final-validation/SwiftJ2K/security --scratch-path <workspace>/work/final-validation/SwiftJ2K/consumer --package-path Examples/Consumer Consumer",
+      "exit_code": 0,
+      "log": "work/final-validation/SwiftJ2K/consumer.log"
+    }
+  ],
+  "source_sha256": {
+    "Sources/SwiftJ2K/CodecAPI.swift": "50bc697ef1c976fb164d659b6a7b4d3a6858e5591ce60a83b8d62cb17989c174",
+    "Sources/SwiftJ2K/Errors.swift": "cfae3357b4aba0e62df1ed6096b8af951d39d0155184b8881c737d48ec936643",
+    "Sources/SwiftJ2K/Image.swift": "a10dda5b5d33b63aec4afb4eb060a3a2d8017dbb9bc0c3b1059a4498f77222e5",
+    "Sources/SwiftJ2K/ImageDescriptor.swift": "a6d91691d00c0bee8f19986f7bd95739589794898e3c163e80923885d21c5a96",
+    "Sources/SwiftJ2K/ImageStorage.swift": "8bc26a7d1237260dbb607fe2612f55d05a9376365371573332190e78308095cd",
+    "Sources/SwiftJ2K/Options.swift": "082a589b2172282b6a66ea3bd6e72f6d865671a782cb1b3839549db3e575f622",
+    "Sources/SwiftJ2K/Transcoding.swift": "ded0e4c738b299b64478cdf05fbe49aed3d93cc726fef8e1ed262d5bc7ca12ed"
+  }
+}

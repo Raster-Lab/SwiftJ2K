@@ -1,6 +1,6 @@
 # Platform and build contract
 
-Contract **0.2.0**. The table is intended support, not a claim of completed builds.
+Contract **0.2.1**. The table is intended support, not a claim of completed builds.
 
 | Environment | Minimum / architecture | Validation responsibility |
 | --- | --- | --- |
@@ -29,7 +29,7 @@ Use Swift target-platform and architecture compilation conditions and target/dep
 
 ## Build and packaging acceptance
 
-The coding agent must create the package and CI later. This documentation foundation intentionally has no Package.swift, workflows, sources, generated binaries or test implementation.
+Milestone 1 establishes the standalone package and contract tests. Consult each repository's evidence for executed builds; this platform table remains the intended qualification matrix, not a declaration that every target has passed.
 
 When implemented, validate a fresh URL-based consumer of each library, using a versioned prerelease when dependency resolution requires one. It must not discover sibling checkouts or require another suite package. Do not require manifest unsafe flags that make the package unusable as a dependency. Keep examples, benchmarks and CLI entry points out of library test linkage where they can hijack a test executable's main function.
 

@@ -1,0 +1,19 @@
+Building for debugging...
+[0/7] Write sources
+[2/7] Write Consumer-entitlement.plist
+[3/7] Write swift-version--58304C5D6DBC2206.txt
+[5/12] Emitting module SwiftJ2K
+[6/12] Compiling SwiftJ2K CodecAPI.swift
+[7/12] Compiling SwiftJ2K Errors.swift
+[8/12] Compiling SwiftJ2K Image.swift
+[9/12] Compiling SwiftJ2K ImageDescriptor.swift
+[10/15] Compiling SwiftJ2K ImageStorage.swift
+[11/15] Compiling SwiftJ2K Options.swift
+[12/15] Compiling SwiftJ2K Transcoding.swift
+[13/17] Emitting module Consumer
+[14/17] Compiling Consumer main.swift
+[14/17] Write Objects.LinkFileList
+[15/17] Linking Consumer
+[16/17] Applying Consumer
+Build of product 'Consumer' complete! (3.73s)
+Independent SwiftJ2K consumer passed; synthetic storage only.
