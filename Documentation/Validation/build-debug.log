@@ -1,0 +1,17 @@
+warning: /Users/suresh/Library/org.swift.swiftpm/configuration is not accessible or not writable, disabling user-level cache features.
+warning: /Users/suresh/Library/org.swift.swiftpm/security is not accessible or not writable, disabling user-level cache features.
+warning: /Users/suresh/Library/Caches/org.swift.swiftpm is not accessible or not writable, disabling user-level cache features.
+warning: 'swiftj2k': failed storing manifest for 'swiftj2k' in cache: attempt to write a readonly database
+Building for debugging...
+[0/2] Write sources
+[1/2] Write swift-version--58304C5D6DBC2206.txt
+[3/10] Compiling SwiftJ2K ImageStorage.swift
+[4/10] Compiling SwiftJ2K Transcoding.swift
+[5/10] Compiling SwiftJ2K Options.swift
+[6/10] Compiling SwiftJ2K Image.swift
+[7/10] Compiling SwiftJ2K ImageDescriptor.swift
+[8/10] Compiling SwiftJ2K Errors.swift
+[9/10] Emitting module SwiftJ2K
+[10/10] Compiling SwiftJ2K CodecAPI.swift
+Build complete! (3.08s)
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.

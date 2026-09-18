@@ -1,0 +1,32 @@
+[
+  {
+    "generator": "max if (x+y)%2==0 else x+y*5; y=0..<3,x=0..<5",
+    "width": 5,
+    "height": 3,
+    "storage_bits": 16,
+    "meaningful_bits": 12,
+    "signed": false,
+    "byte_order": "littleEndian",
+    "colour": "greyscale",
+    "row_bytes": 14,
+    "offset": 2,
+    "allocation_bytes": 44,
+    "logical_sample_sha256": "34a1930c3229a471bd3e256e15cc6c05301e4ba138afda439f16b6fc6a4b7551",
+    "licence": "MIT; new in-house synthetic generator"
+  },
+  {
+    "generator": "max if (x+y)%2==0 else x+y*5; y=0..<3,x=0..<5",
+    "width": 5,
+    "height": 3,
+    "storage_bits": 16,
+    "meaningful_bits": 16,
+    "signed": false,
+    "byte_order": "littleEndian",
+    "colour": "greyscale",
+    "row_bytes": 14,
+    "offset": 2,
+    "allocation_bytes": 44,
+    "logical_sample_sha256": "b5b7417351b1a7c2ced729e4ca6ef728b24eed67093e5195f068ea72c892bd6c",
+    "licence": "MIT; new in-house synthetic generator"
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "date": "2026-09-18",
+  "baseline": "e7c287c768b40afa9c657cfe0b63a27d6adf3267",
+  "contract": "0.2.1",
+  "xcode": "27.0 (27A266a)",
+  "swift": "6.4 (swiftlang-6.4.0.34.1)",
+  "language_mode": 6,
+  "architecture": "arm64",
+  "tests": {
+    "debug": {
+      "exit_code": 0,
+      "swift_testing_tests": 37,
+      "failures": 0,
+      "skips": 0
+    },
+    "release": {
+      "exit_code": 0,
+      "swift_testing_tests": 37,
+      "failures": 0,
+      "skips": 0
+    },
+    "address_sanitizer": {
+      "exit_code": 0,
+      "swift_testing_tests": 37,
+      "failures": 0,
+      "skips": 0
+    },
+    "thread_sanitizer": {
+      "exit_code": 0,
+      "swift_testing_tests": 37,
+      "failures": 0,
+      "skips": 0
+    }
+  },
+  "consumer": {
+    "exit_code": 0
+  },
+  "cross_module_harness": {
+    "debug": {
+      "exit_code": 0,
+      "experiments": 3
+    },
+    "release": {
+      "exit_code": 0,
+      "experiments": 3
+    },
+    "address_sanitizer": {
+      "exit_code": 0,
+      "experiments": 3
+    },
+    "thread_sanitizer": {
+      "exit_code": 0,
+      "experiments": 3
+    }
+  },
+  "codec_capabilities": []
+}

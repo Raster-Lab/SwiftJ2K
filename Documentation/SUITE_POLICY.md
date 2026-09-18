@@ -1,7 +1,7 @@
 # Swift Image Compression Suite — implementation baseline
 
-Contract version: **0.2.0**. Prepared: **17 September 2026**.
-Status: **documentation foundation; implementation and validation not yet performed**.
+Contract version: **0.2.1**. Prepared: **17 September 2026**.
+Status: **engineering specification; Milestone 1 implementation evidence is recorded in MILESTONE1.md. Later codec and platform gates remain planned**.
 
 This is the common engineering specification for four independent successor libraries. It records the owner's accepted direction and makes concrete implementation choices for the coding agent. Detailed API designs and engineering thresholds in this foundation have not been compiler-validated or separately human-approved; demonstrate them in the first contract milestone before substantial migration. Do not describe this baseline as a released SDK or a conformance certificate.
 
@@ -66,3 +66,9 @@ Clarifies the milestone sequence for all four codecs and their adapters: Milesto
 Adds owner-requested in-memory J2K ↔ HTJ2K transcoding and reversible existing-JPEG ↔ JPEG XL recompression/reconstruction instructions. Defines a consistent native format-pair API/CLI extension, separates exact samples from original-JPEG byte restoration, and adds memory, regression, interoperability and performance gates. The seven shared documents and manifest are mirrored across all four repositories; only SwiftJ2K/SwiftJXL receive the native pair requirement and detailed local TRANSCODING.md instructions. Standalone packaging, MIT licensing, platform floors, intended library versions and the first coding milestone remain unchanged. This revision contains documentation and source-review findings only; no codec tests or benchmarks were run.
 
 References: [Swift API design](https://www.swift.org/documentation/api-design-guidelines/), [Swift package descriptions](https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html), and each predecessor's pinned history in `HISTORY.md`.
+
+## Contract revision 0.2.1 — 18 September 2026
+
+Milestone 1 fixes the concrete local storage lease signatures in MEM-05. Each module retains its independent Swift types and ships no sibling dependency. A provider owns the authoritative allocation lifecycle; a copyable token is an identifier, not evidence of exclusive access by itself. Providers must reject invalid, reentrant and concurrent mutable borrows and prevent publication during a mutable borrow. API-shape implementations must advertise no codec capabilities until actual compressed-format work is qualified.
+
+The corresponding implementation and executed evidence are recorded in each repository's `MILESTONE1.md`; this common specification does not certify all platforms or a working codec. The required deployment floors, later codec milestones, native transcoding requirements and release gates are unchanged. All seven documents and the hash manifest advance together.

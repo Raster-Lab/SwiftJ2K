@@ -1,5 +1,19 @@
 # Change log
 
+## Unreleased — application migration guide, 2026-09-18
+
+- Added MIGRATION.md for humans and coding agents moving applications from J2KSwift, with verified dependency/API mappings, precision and ownership changes, explicit feature gaps, and staged rollout/rollback guidance.
+- Linked the guide from README, agent instructions, contributor guidance, implementation and transcoding plans. Codec availability is unchanged.
+
+## Unreleased — Milestone 1, 2026-09-18
+
+- Final Milestone 1 review: prevent image publication when cancellation occurs inside provider sealing/validation; deterministic regressions and full checks pass.
+- Added the independent Swift 6.2 package and common local API, checked descriptors, zero-initialised owning storage and exclusive lease lifecycle.
+- Added safe synthetic 12/16-bit sample access, caller resource-budget validation and clearly unsupported codec/native-transcoder entry points.
+- Refined the mirrored suite contract to 0.2.1 with concrete lease and preflight semantics.
+- Debug/release, independent consumer, AddressSanitizer and ThreadSanitizer checks passed using Xcode 27 headlessly; see Documentation/MILESTONE1.md for exact results and unavailable gates.
+- Added a separate four-module adapter experiment. No codec algorithm, CLI, accelerated backend or release tag is included.
+
 ## Unreleased — documentation foundation, 2026-09-17
 
 - Defined the standalone SwiftJ2K successor and intended first stable version 12.0.0.

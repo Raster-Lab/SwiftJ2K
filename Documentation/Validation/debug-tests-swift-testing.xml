@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="TestResults" errors="0" tests="37" failures="0" skipped="0" time="0.001889209">
+    <testcase classname="SwiftJ2KTests" name="explicitLargerMetadataLimitIsHonoured()" time="0.001381833" />
+    <testcase classname="SwiftJ2KTests" name="safeWriterRejectsOutOfRangeInsteadOfTruncating()" time="0.001059417" />
+    <testcase classname="SwiftJ2KTests" name="concurrentAdaptersReserveExactlyOneWriter()" time="0.001044292" />
+    <testcase classname="SwiftJ2KTests" name="safeSampleAccessHonoursExplicitBigEndian()" time="0.000631375" />
+    <testcase classname="SwiftJ2KTests" name="sealedOwnerSupportsConcurrentReadersAndNestedRead()" time="0.0010505" />
+    <testcase classname="SwiftJ2KTests" name="metadataAndDestinationLimitsUseCallerBudget()" time="0.000910292" />
+    <testcase classname="SwiftJ2KTests" name="cancellationInsideWriteCannotPublishPartialImage()" time="0.001305" />
+    <testcase classname="SwiftJ2KTests" name="independentAllocationAndMemoryCeilingsAreEnforced()" time="0.001074666" />
+    <testcase classname="SwiftJ2KTests" name="descriptorMutationRejectsInvalidStridesAndOffsets()" time="0.001502625" />
+    <testcase classname="SwiftJ2KTests.DescriptorTests" name="semanticMetadataMustAgreeWithComponents()" time="0.000541584" />
+    <testcase classname="SwiftJ2KTests.DescriptorTests" name="rejectsOverlappingPlanesAndIncompleteMapping()" time="0.000653958" />
+    <testcase classname="SwiftJ2KTests.DescriptorTests" name="rejectsArithmeticOverflowBeforeAllocation()" time="0.000590583" />
+    <testcase classname="SwiftJ2KTests.DescriptorTests" name="finalRowNeedsOnlyItsActualSampleBytes()" time="0.000629375" />
+    <testcase classname="SwiftJ2KTests.DescriptorTests" name="paddedOddDimensionsAndPrecision()" time="0.000715458" />
+    <testcase classname="SwiftJ2KTests.DescriptorTests" name="rejectsMisalignedOffsetsAndStrides()" time="0.00087175" />
+    <testcase classname="SwiftJ2KTests.DescriptorTests" name="deterministicLayoutMutation()" time="0.001093375" />
+    <testcase classname="SwiftJ2KTests.DescriptorTests" name="rejectsInvalidGeometryAndPrecision()" time="0.000720375" />
+    <testcase classname="SwiftJ2KTests" name="independentPublicCallShapesFailHonestly()" time="0.001291583" />
+    <testcase classname="SwiftJ2KTests" name="imageRetainsAdapterUntilLastImageReleaseExactlyOnce()" time="0.00081175" />
+    <testcase classname="SwiftJ2KTests" name="configurationsAndBackendRequestsRejectUnsupportedChoices()" time="0.001064166" />
+    <testcase classname="SwiftJ2KTests" name="reentrantLeaseOperationsRejectWithoutDeadlocking()" time="0.000642875" />
+    <testcase classname="SwiftJ2KTests" name="invalidResourceProfilesAndProgressFailPredictably()" time="0.001431667" />
+    <testcase classname="SwiftJ2KTests" name="borrowedStorageRejectsForgedLeasesAndPublication()" time="0.001144041" />
+    <testcase classname="SwiftJ2KTests" name="publicOperationsRejectCodecWorkAndAdvertiseEmptyCapabilities()" time="0.001106125" />
+    <testcase classname="SwiftJ2KTests" name="integerOverflowWithExplicitLargeLimitsThrows()" time="0.0010245" />
+    <testcase classname="SwiftJ2KTests" name="decoderPreservesTaskCancellationError()" time="0.001157125" />
+    <testcase classname="SwiftJ2KTests" name="cancellationIsCheckedBeforeAllocatingStorage()" time="0.000933417" />
+    <testcase classname="SwiftJ2KTests" name="pixelAndDimensionLimitsRejectBeforeAllocation()" time="0.000897667" />
+    <testcase classname="SwiftJ2KTests" name="sameTokenCannotAuthoriseConcurrentOverlappingBorrows()" time="0.001467917" />
+    <testcase classname="SwiftJ2KTests" name="abandonedDestinationInvalidatesItsReservedOwner()" time="0.00079475" />
+    <testcase classname="SwiftJ2KTests" name="cancellationDuringSyntheticRowsInvalidatesDestination()" time="0.001144416" />
+    <testcase classname="SwiftJ2KTests" name="safeSampleWriterRejectsOutOfRangeWithoutTruncating()" time="0.001230084" />
+    <testcase classname="SwiftJ2KTests" name="adaptersShareWriterAuthorityAndRejectForgedLease()" time="0.000754166" />
+    <testcase classname="SwiftJ2KTests" name="syntheticExactSamplesAndPadding(precision:)" time="0.000684375" />
+    <testcase classname="SwiftJ2KTests" name="paddedStorageCountsTowardsDecodedLimit()" time="0.000657875" />
+    <testcase classname="SwiftJ2KTests" name="unknownMeasurementsStayUnknownAndMetadataIsBounded()" time="0.00080575" />
+    <testcase classname="SwiftJ2KTests" name="failedFillInvalidatesDestination()" time="0.000903625" />
+  </testsuite>
+</testsuites>

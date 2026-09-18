@@ -6,7 +6,11 @@ Applies to Claude, Codex and other coding agents working in this repository.
 
 Read `README.md`, `HISTORY.md`, this file and `IMPLEMENTATION.md`, then all seven common contract documents in `Documentation/`. Read the repository-specific `TRANSCODING.md` when present before work affecting transcoding. `CLAUDE.md` points here and is not a separate policy. Follow the precedence in `Documentation/SUITE_POLICY.md`.
 
-This initial repository contains documentation only. It does not authorise an agent merely reading it to start migration. When the owner assigns an implementation task, execute only that milestone. The present foundation contains no Package.swift, source, tests, executable workflow or binary. Do not report these instructions as implemented functionality.
+This repository began with documentation only. Reading its instructions does not by itself authorise codec migration. When the owner assigns an implementation task, execute only that milestone. The original foundation contained no package or source. Milestone 1 now has a feasibility implementation; see Documentation/MILESTONE1.md for executed evidence. Do not report planned codec instructions as implemented functionality.
+
+## Application migration tasks
+
+Read [MIGRATION.md](MIGRATION.md) before changing applications that consume J2KSwift. It covers consumer migration; [IMPLEMENTATION.md](IMPLEMENTATION.md) governs codec implementation. Verify the application's pinned predecessor and target capabilities, preserve required unsupported features, and report blockers rather than claiming a storage-only adapter completes migration. Work only in application repositories explicitly assigned by the owner.
 
 ## Required working method
 
