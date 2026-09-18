@@ -1,6 +1,6 @@
 # Unit, regression, interoperability and security testing
 
-Contract **0.1.1**. Required evidence for coding agents; no tests have been run for these successor repositories.
+Contract **0.2.0**. Required evidence for coding agents; no tests have been run for these successor repositories.
 
 ## General rules
 
@@ -80,3 +80,13 @@ Limits are independent ceilings, not a guarantee that their sum fits device memo
 **TEST-07.** The coding agent must provide exact executable commands after creating the package, rather than claiming commands ran now. At minimum use debug/release build and test, independent consumer builds, selected sanitizer jobs, fuzz runs, regression runs and release benchmarks. Capture exit codes and machine-readable test reports as well as logs. Validate that test-runner failures cannot be hidden by output filtering or an unrelated CLI entry point.
 
 Evidence records: repository SHA, contract version/hash, fixture and oracle revisions, compiler/SDK/OS/CPU, backend/configuration, commands, counts of passed/failed/skipped tests and reasons, measured memory/copies, benchmark methodology and known limits. No new stable version tag until required correctness, interoperability, platform, security and performance gates are complete. Publish precise supported capabilities, not a broad compliance claim inferred from a test count.
+
+## Native format-pair transcoding gates
+
+**TEST-08.** Add the separately qualified native operations in SwiftJ2K and SwiftJXL without making other codecs depend on them. Their repository-specific TRANSCODING.md files give the source inventory, known gaps, API/CLI requirements and detailed acceptance cases.
+
+For J2K ↔ HTJ2K, test each direction and both round trips with conformant independent fixtures, nonzero textured samples, full 16-bit and 12-in-16 precision. Compare samples and required interpretation exactly with a Part 15-capable oracle where needed. Coefficient paths also verify quantised coefficients and quantisation/transform semantics; sample paths prove the single shared allocation. A nonempty output, matching dimensions or successful all-zero fixture is not a fidelity proof. Decode errors must never become zero-filled success, and predecessor parser-hang skips must become bounded regressions.
+
+For existing lossy JPEG ↔ JPEG XL, compare restored JPEG length and every byte, record SHA-256, and reconstruct with only the JXL available to the operation. Test both independent interoperability directions and actual JXL image decoding. Cover every claimed JPEG/metadata profile; explicitly reject unsupported reconstruction cases. Include missing/corrupt reconstruction metadata, noncanonical padding, expanded-metadata limits and attempts to invoke pixel fallback or supply the original JPEG. Source-based diagnostic reconstruction is not acceptance evidence.
+
+For both operations, verify bounded workspace/copies, cancellation/owner lifetime, source and destination limits, native standalone consumption, and absence of intermediate file or external-process I/O. CLI tests exercise one-process transcode commands, pipes, errors and output publication. Distinguish source inspection, test presence, executed tests and unexecuted coverage. Native transcoder milestones supplement the initial J2K → JPEG-LS shared-image proof; they do not expand Milestone 1 into codec implementation.

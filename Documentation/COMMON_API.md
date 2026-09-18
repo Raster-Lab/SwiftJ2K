@@ -1,6 +1,6 @@
 # Common API contract
 
-Contract **0.1.1**. Normative implementation specification, not implemented API documentation.
+Contract **0.2.0**. Normative implementation specification, not implemented API documentation.
 
 ## Public naming and module boundary
 
@@ -45,7 +45,7 @@ The names and call shapes below are documentation requirements, not source code.
 
 The default is lossless in the API and CLI. Unsupported lossless requests fail. In SwiftJLI this selects the supported native lossless JPEG path, not a high-quality lossy approximation. JPEG-LS near-lossless uses an explicit nonzero error bound. JPEG 2000 reversible transforms and zero-loss quantisation must agree with the lossless declaration. HTJ2K remains an encoder configuration choice inside SwiftJ2K, with standard-compliant output.
 
-**API-05.** Lossless means identical logical samples after destination decoding, preserving meaningful precision and interpretation. It does not promise identical compressed bytes or recovery of information previously lost by a lossy source. Colour/alpha meaning must be preserved or rejected; no silent colour conversion, rescaling, bit truncation, normalisation or premultiplication. Lossy transform settings are never activated by an effort/performance preset. JPEG-to-JXL byte-reconstructible recompression is a distinct, specialised operation with its own tests.
+**API-05.** In the Image encode/decode API, lossless means identical logical samples after destination decoding, preserving meaningful precision and interpretation. It does not promise identical compressed bytes or recovery of information previously lost by a lossy source. Colour/alpha meaning must be preserved or rejected; no silent colour conversion, rescaling, bit truncation, normalisation or premultiplication. Lossy transform settings are never activated by an effort/performance preset. JPEG-to-JXL byte-reconstructible recompression is a distinct, specialised operation with its own tests.
 
 **API-06.** Integer signedness unsupported by a destination codestream is not made portable by retaining a RAM flag. A mapping that needs external metadata requires an explicit caller contract and round-trip tests including that metadata. Plain standalone output must reject an unrepresentable signedness/precision/colour requirement. Do not quietly invent private markers or a new image file format. Floating-point support is capability-specific; integer lossless behaviour cannot be inferred from float conversions. Non-finite values require an explicit supported policy, otherwise rejection.
 
@@ -74,3 +74,18 @@ Progress uses immutable `ProgressUpdate` values and a `@Sendable` callback. Call
 **API-13.** Add specialised features through codec-specific options or clearly named extension operations. Each exception must state why the standard operation cannot represent it and include usage/error tests. The common single-image contract does not pretend that JPIP, volume coding, animation or JPEG reconstruction are interchangeable operations.
 
 Contract tests must compile equivalent client examples against all four modules, differing only in the module qualifier and justified codec options. They must exercise behaviour, not only check that types conform. The optional umbrella maps local types explicitly and implements the same mode, resource, error and ownership semantics. It must never use `unsafeBitCast`, reflection-based layout assumptions or a copied protocol declaration as a claim of shared type identity.
+
+## Native format-pair transcoding extension
+
+**API-14.** SwiftJ2K and SwiftJXL provide a local `Transcoder`, `TranscoderConfiguration`, `TranscodeOptions` and `TranscodeTarget` for the native compressed-format pairs below. Use the same constructor/operation pattern: `Transcoder(configuration:) throws`, `Transcoder.transcode(_:to:options:) async throws -> EncodedImage`, and immutable `Transcoder.capabilities`. Input is Foundation `Data`; output identifies its actual format and carries the common operation report. These are planned names/call shapes to validate under Swift 6.2, not compiled API examples.
+
+| Library | Local target cases / native pairs | Required preservation |
+| --- | --- | --- |
+| SwiftJ2K | `jpeg2000`, `htj2k`; Part 1 ↔ Part 15 | Exact decoded samples and required interpretation for qualified complete lossless sources; original compressed bytes may change |
+| SwiftJXL | `jpegXL`, `jpeg`; existing lossy JPEG ↔ reconstruction-bearing JXL | JPEG → JXL → JPEG restores every original JPEG byte, using the JXL alone for reconstruction |
+
+Use explicit target selection and validated source detection. `TranscodeOptions` reuses `resourceLimits`, `executionPolicy`, `copyPolicy`, `metadataPolicy` and `progress`; constructors/configuration remain validated and immutable. Capabilities list supported directional source/target pairs, preservation guarantees, profile limits and available processing paths. SwiftJLS/SwiftJLI do not acquire placeholder transcoders or new dependencies from this extension. The later optional umbrella can use the same operation pattern through adapters for cross-library pairs.
+
+Defaults preserve the pair's stated fidelity. For J2K/HTJ2K, a conformant coefficient path is preferred; a qualified lossless sample path may use the common shared Image allocation. For JPEG/JXL, reversible coefficient/reconstruction processing is mandatory: no RGB/pixel fallback, quality-driven re-encode, private archive or original-source lookup on reverse. Lossy JPEG input does not make its reversible recompression a lossy operation, nor does reconstruction recover pixels lost in the original JPEG encoding. Missing reconstruction data and unsupported profiles fail explicitly.
+
+The report must distinguish sample preservation from original-bitstream restoration, and identify coefficient/reconstruction versus sample processing. Include actual backend/fallback reason, required workspace and copy events using the established fields; add any new report fields consistently during API feasibility. Do not claim that JPEG reconstruction used a shared pixel image when none was materialised. Precision limits of the JPEG bridge are separate from the general 16-bit Image API. Ancillary-discard options incompatible with original-byte restoration are rejected. These specialised operations are implemented in later codec milestones; Milestone 1 remains feasibility only.

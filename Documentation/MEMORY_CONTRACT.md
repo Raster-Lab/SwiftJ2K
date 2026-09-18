@@ -1,6 +1,6 @@
 # Common image memory and ownership contract
 
-Contract **0.1.1**. All requirements below apply independently in each codec.
+Contract **0.2.0**. All requirements below apply independently in each codec.
 
 ## Existing memory layouts, no new image format
 
@@ -91,3 +91,11 @@ The first end-to-end proof in Milestone 3 is unsigned. Signed JPEG-LS/JPEG XL ma
 ## Failure and limits
 
 Validate resource limits before allocation and re-check on frame/layout changes. Join every worker before completing error cleanup. Failed decodes invalidate their destination; failed encodes publish no successful result. No automatic file spill. Admission failure returns `resourceLimitExceeded`; allocation failure returns a defined error where the allocator permits recovery. Resource limits reduce allocation-failure risk but cannot guarantee recovery from process-level OS termination.
+
+## Compressed-domain intermediates
+
+**MEM-14.** Native J2K ↔ HTJ2K coefficient transcoding and JPEG ↔ JPEG XL bitstream reconstruction may operate without creating an uncompressed Image. This is a justified alternative to the Image-based handoff, not an exception to ownership, resource or disk-staging rules. Quantised wavelet/DCT coefficients and reconstruction metadata are bounded private algorithm workspace retained by their owners; they are not a new serialised interchange format.
+
+Borrow or transfer compatible coefficient storage between stages without redundant whole-coefficient duplication solely to enter a legacy adapter. Report necessary allocation, transformation and copying costs; do not claim universal zero allocations or copies for compressed bytes, entropy work or container assembly. Enforce limits on expanded reconstruction metadata and restored output as well as coefficient dimensions. No intermediate file, temporary memory-mapped scratch file or spill-to-disk fallback. This is an application I/O guarantee, not a promise that the operating system never pages memory.
+
+When J2K ↔ HTJ2K uses a qualified sample path, MEM-05..13 apply unchanged: one final uncompressed allocation, sealed before encoding, with no extra final-image handoff copy under `requireSharedStorage`. Coefficient-only paths must not allocate a pixel image merely to satisfy an interface. In both paths retain all owners across async work, keep borrows scoped, join workers on error/cancellation and publish no partial success.

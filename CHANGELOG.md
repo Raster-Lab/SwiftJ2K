@@ -14,4 +14,11 @@
 - Mirrored all seven common documents and regenerated their SHA-256 manifest across the four repositories. API/memory behaviour, platform floors, intended library versions and release gates are unchanged.
 - Verified documentation consistency and links; no codec code or executable tests were added or run.
 
-The foundation document version is 0.1.1. It is separate from the intended library version.
+## Native transcoding instructions — contract 0.2.0, 2026-09-18
+
+- Added a common native format-pair API/CLI pattern and explicit in-memory ownership, fidelity and testing requirements for SwiftJ2K and SwiftJXL.
+- Distinguished sample-exact J2K ↔ HTJ2K conversion from original-JPEG-byte restoration through JPEG XL. Neither operation requires an umbrella or sibling codec dependency.
+- Recorded predecessor implementation/test findings in the relevant repositories; kept Milestone 1 scoped to feasibility. No native transcode placeholder is required in SwiftJLS/SwiftJLI.
+- Updated all seven shared documents and their SHA-256 manifest. This is documentation only; no source migration, codec execution or performance claim.
+
+The foundation document version is 0.2.0. It is separate from the intended library version.

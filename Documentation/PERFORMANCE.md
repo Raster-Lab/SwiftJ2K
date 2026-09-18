@@ -1,6 +1,6 @@
 # Performance engineering and regression gates
 
-Contract **0.1.1**. All performance claims require measurement.
+Contract **0.2.0**. All performance claims require measurement.
 
 **PERF-01.** Measure before optimising. Preserve the scalar reference. Priorities are latency/throughput, compression efficiency and resource efficiency, subject to correct fidelity, reliability and security. A faster result that drops precision, copies unexpectedly, ignores limits or produces non-conformant data fails.
 
@@ -29,3 +29,9 @@ Maintain CPU fallback and explicit backend selection for diagnostics. Accelerati
 **PERF-05.** Profile memory under concurrent operations and cancellation as well as one-frame throughput. Budget scratch per worker, use back-pressure and cap caches/pools. Warm caches need eviction tests and must not retain sensitive frame data unnecessarily. Pool exhaustion returns a defined limit error or waits with cancellation, never allocates without bounds. State which operations are serialised and why.
 
 Do not publish comparative third-party benchmark prose in repository marketing. Keep independent-oracle comparisons and raw engineering evidence in the validation material, with versions, settings and licences. README performance numbers, if later added, must be reproducible measurements of this library under a stated configuration.
+
+## Native transcoding measurements
+
+**PERF-06.** Measure J2K ↔ HTJ2K and JPEG ↔ JPEG XL forward/reverse operations separately for each qualified profile. Record the actual processing path, coefficient/reconstruction workspace, any materialised pixels, compressed input/output, copy/allocation counts, peak memory, latency and output size. For J2K compare a coefficient path against a measured compatible decode/re-encode path; exact fidelity is a prerequisite to a speed comparison. For JPEG reconstruction compare original JPEG bytes exactly before accepting a performance result.
+
+No fixed size reduction or speedup is promised: valid JPEG XL recompression can be larger on some inputs, and preserving reconstruction metadata has a cost. Apply the established regression methodology to like-for-like baselines. Retain only measured claims. Prove absence of unnecessary full-image/coefficient handoff copies and intermediate file I/O rather than inferring it from throughput or memory usage alone.

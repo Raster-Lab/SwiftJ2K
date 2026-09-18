@@ -43,6 +43,10 @@ The following codec work follows Milestone 1 contract feasibility. It is not par
 Build on the validated common local memory types to implement the direct unsigned 16-bit decode-into path, then cooperate with the SwiftJLS adapter harness. Prove 12-in-16 and full 16-bit precision. Extend HTJ2K using the same proof once classic JPEG 2000 is validated. Do not begin with a broad GPU rewrite.
 
 
+## Native transcoding work
+
+Implement lossless J2K ↔ HTJ2K using [TRANSCODING.md](TRANSCODING.md) and the common native format-pair API/CLI. Audit the recorded predecessor limitations in Milestone 2; qualify the in-memory native operation in Milestone 3 and extend profiles in Milestone 4. Preserve the initial J2K → JPEG-LS proof and the Milestone 1 feasibility boundary.
+
 ## Required handover
 
 Update CHANGELOG.md and migration provenance. Provide the exact commands, commits, fixture hashes and outcomes; report tests not run and why, unsupported cases, allocation/copy evidence and performance impact. Map each advertised feature to a test and capability entry. Keep DICOMKit/Voxelia source changes outside this repository task unless the owner separately assigns them.
