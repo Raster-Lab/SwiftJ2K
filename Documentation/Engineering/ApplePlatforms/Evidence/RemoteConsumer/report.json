@@ -1,0 +1,44 @@
+{
+  "repository": "SwiftJ2K",
+  "revision": "9a3cc81f04ec5925dc1041132c80eaab4a9f0f8d",
+  "argv": [
+    "xcrun",
+    "swift",
+    "run",
+    "--build-system",
+    "swiftbuild",
+    "--jobs",
+    "2",
+    "--package-path",
+    "<workspace>/work/apple-platform-qualification/remote-consumers/RemoteConsumer-SwiftJ2K",
+    "--scratch-path",
+    "<workspace>/work/apple-platform-qualification/remote-consumers/RemoteConsumer-SwiftJ2K/build",
+    "--cache-path",
+    "<workspace>/work/apple-platform-qualification/remote-consumers/RemoteConsumer-SwiftJ2K/cache",
+    "--config-path",
+    "<workspace>/work/apple-platform-qualification/remote-consumers/RemoteConsumer-SwiftJ2K/config",
+    "--security-path",
+    "<workspace>/work/apple-platform-qualification/remote-consumers/RemoteConsumer-SwiftJ2K/security",
+    "Consumer"
+  ],
+  "cwd": "<workspace>/work/apple-platform-qualification/remote-consumers/RemoteConsumer-SwiftJ2K",
+  "environment": {
+    "DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer"
+  },
+  "exit_code": 0,
+  "resolved_dependencies": [
+    {
+      "identity": "swiftj2k",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/Raster-Lab/SwiftJ2K.git",
+      "state": {
+        "revision": "9a3cc81f04ec5925dc1041132c80eaab4a9f0f8d"
+      }
+    }
+  ],
+  "tested_input_hashes_match": true,
+  "consumer_sha256": {
+    "Package.swift": "98b0bd83b4c7f2d4081e91fd4c2398f81da763b4b60c7fffd132e311c61288ad",
+    "Sources/Consumer/main.swift": "573d10a54c99952dfd3a3a086f4e24b60671fd2fb500d32b6a237c3b3dcd320c"
+  }
+}

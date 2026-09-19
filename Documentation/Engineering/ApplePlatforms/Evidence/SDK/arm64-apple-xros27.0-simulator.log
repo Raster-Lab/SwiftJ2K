@@ -1,0 +1,1 @@
+clang: warning: using sysroot for 'macOS 26.4' but targeting 'arm64-apple-xros27.0.0-simulator' [-Wincompatible-sysroot]

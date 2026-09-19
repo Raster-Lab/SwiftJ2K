@@ -1,0 +1,4 @@
+ M .gitignore
+?? Scripts/test-apple-platform-runner.py
+?? Scripts/test-apple-platforms.py
+?? Tests/SwiftJ2KTests/PlatformProfileTests.swift

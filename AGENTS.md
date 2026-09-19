@@ -4,6 +4,8 @@ Applies to Claude, Codex and other coding agents working in this repository.
 
 ## Start here
 
+Read [current Apple runtime qualification](Documentation/Engineering/ApplePlatforms/README.md) and use `Scripts/test-apple-platforms.py` for OS 27 simulator testing. Historical reports retain their original platform limitations.
+
 Current owner-approved baseline: Apple OS 27.0 and the CLI foundation; read [current qualification](Documentation/Engineering/OS27CLI/README.md) before applying historical OS 26 feature decisions.
 
 For the compiler upgrade, read the [Swift 6.4 manifesto](Documentation/Engineering/Swift64/Swift_6.4_Upgrade_Manifesto_v1.0.0.md), [suite supplement](Documentation/Engineering/Swift64/Swift_Image_Compression_Suite_Swift_6.4_Supplement_v1.0.0.md), then the [historical upgrade record and feature register](Documentation/Engineering/Swift64/README.md). Preserve the supplied files byte-for-byte. Current contract 0.4.0 supersedes their older inspected contract snapshot; historical evidence is not rewritten.

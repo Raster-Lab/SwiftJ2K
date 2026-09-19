@@ -1,0 +1,1 @@
+clang: warning: using sysroot for 'macOS 26.4' but targeting 'arm64-apple-tvos27.0.0' [-Wincompatible-sysroot]

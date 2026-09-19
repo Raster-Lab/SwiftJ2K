@@ -1,0 +1,147 @@
+{
+  "errors" : [
+
+  ],
+  "values" : [
+    {
+      "disabledTests" : [
+
+      ],
+      "enabledTests" : [
+        {
+          "identifier" : "SwiftJ2KTests/DescriptorTests/deterministicLayoutMutation()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/DescriptorTests/finalRowNeedsOnlyItsActualSampleBytes()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/DescriptorTests/paddedOddDimensionsAndPrecision()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/DescriptorTests/rejectsArithmeticOverflowBeforeAllocation()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/DescriptorTests/rejectsInvalidGeometryAndPrecision()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/DescriptorTests/rejectsMisalignedOffsetsAndStrides()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/DescriptorTests/rejectsOverlappingPlanesAndIncompleteMapping()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/DescriptorTests/semanticMetadataMustAgreeWithComponents()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/Swift64SampleAccessTests/initialisesExternalSampleBytesAtOddAddressWithoutChangingPadding()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/Swift64SampleAccessTests/outOfPrecisionWriteInvalidatesDestination()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/Swift64SampleAccessTests/readsIndependentGoldenBytesFromOddPhysicalAddress()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/Swift64SampleAccessTests/refusesShortProviderBeforeLoadingSample()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/Swift64SampleAccessTests/rejectsCoordinatesBeforeOffsetArithmetic()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/Swift64SampleAccessTests/writesGoldenBytesForPackedAndPadded12And16BitSamples()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/abandonedDestinationInvalidatesItsReservedOwner()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/adaptersShareWriterAuthorityAndRejectForgedLease()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/borrowedStorageRejectsForgedLeasesAndPublication()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/cancellationDuringSyntheticRowsInvalidatesDestination()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/cancellationInProviderFinalisationPreventsPublication(_:)"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/cancellationInsideWriteCannotPublishPartialImage()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/cancellationIsCheckedBeforeAllocatingStorage()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/concurrentAdaptersReserveExactlyOneWriter()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/configurationsAndBackendRequestsRejectUnsupportedChoices()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/decoderPreservesTaskCancellationError()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/descriptorMutationRejectsInvalidStridesAndOffsets()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/explicitLargerMetadataLimitIsHonoured()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/failedFillInvalidatesDestination()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/imageRetainsAdapterUntilLastImageReleaseExactlyOnce()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/independentAllocationAndMemoryCeilingsAreEnforced()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/independentPublicCallShapesFailHonestly()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/integerOverflowWithExplicitLargeLimitsThrows()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/invalidResourceProfilesAndProgressFailPredictably()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/metadataAndDestinationLimitsUseCallerBudget()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/paddedStorageCountsTowardsDecodedLimit()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/pixelAndDimensionLimitsRejectBeforeAllocation()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/publicOperationsRejectCodecWorkAndAdvertiseEmptyCapabilities()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/reentrantLeaseOperationsRejectWithoutDeadlocking()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/safeSampleAccessHonoursExplicitBigEndian()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/safeSampleWriterRejectsOutOfRangeWithoutTruncating()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/safeWriterRejectsOutOfRangeInsteadOfTruncating()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/sameTokenCannotAuthoriseConcurrentOverlappingBorrows()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/sealedOwnerSupportsConcurrentReadersAndNestedRead()"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/syntheticExactSamplesAndPadding(precision:)"
+        },
+        {
+          "identifier" : "SwiftJ2KTests/unknownMeasurementsStayUnknownAndMetadataIsBounded()"
+        }
+      ],
+      "testPlan" : "SwiftJ2K-Package"
+    }
+  ]
+}

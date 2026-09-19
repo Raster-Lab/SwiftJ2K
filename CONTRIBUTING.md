@@ -9,3 +9,7 @@ New in-house contributions use MIT with SPDX identifier MIT where appropriate. P
 PR descriptions state the problem, resulting behaviour, contract/source revisions, tests actually run, missing environments, memory/copy implications and measured performance where relevant. Do not copy predecessor success counts as successor evidence. Follow `SECURITY.md` for sensitive reports.
 
 For application upgrade documentation and examples, use [MIGRATION.md](MIGRATION.md). Keep verified predecessor mappings, current-versus-planned capabilities and migration examples accurate when changing public APIs.
+
+## Apple runtime qualification update
+
+See [Apple platform runtime qualification](Documentation/Engineering/ApplePlatforms/README.md) for executed OS 27 simulator, macOS and Mac Catalyst tests and the reproducible headless runner. This qualifies the current API/storage foundation; the existing codec migration and production-cutover gates remain in force.

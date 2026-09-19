@@ -1,0 +1,128 @@
+{
+  "module": "SwiftJ2K",
+  "platforms": [
+    "visionos"
+  ],
+  "configurations": [
+    "Debug",
+    "Release"
+  ],
+  "environment": {
+    "DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer"
+  },
+  "scratch": "/private/tmp/SwiftJ2K-apple-tests-1m81414m",
+  "source_sha256": {
+    "Package.swift": "3ddc95c4bebc4c03ab5d9c8dca9f6ee031c845f47ce3c205023eca9fe5798d10",
+    "Scripts/README.md": "04241727241c5e39c460ba9ce92e6fc8cb8592cd53931aacd372ba6f7416fa1f",
+    "Scripts/install-cli.sh": "7c6b94d5115a4f0b3372d09588cfbac5efb58e9332b50e35b99e850f32540eb1",
+    "Scripts/test-apple-platforms.py": "b95651c544c0894c392f819a7ead2b969cac09cf90c925f7c98831be2461f637",
+    "Scripts/test-cli.py": "1bd6ae8f0ef5b0464356ec83a9d68bc9ed8092659196ad2f5a3475bf4d8a0ff7",
+    "Scripts/validate-swift64.py": "cf9f9a0ef5f529206e37a99819d020014d2327aaa168d8a9e9f695099e087dbf",
+    "Scripts/validate.sh": "5fde61d2ab79718a455979ffd6909cdbc9592445c09a02f1fce45a7c316a0365",
+    "Sources/SwiftJ2K/CodecAPI.swift": "f2744a85794dc40f46e9062e01bed9484ea4eca14ae729bbe870e589839b0e91",
+    "Sources/SwiftJ2K/Errors.swift": "cfae3357b4aba0e62df1ed6096b8af951d39d0155184b8881c737d48ec936643",
+    "Sources/SwiftJ2K/Image.swift": "4dfb7a32d89f03a9679b1b5f9071af5a6176f335e96faf400fba2b7a0c9debf7",
+    "Sources/SwiftJ2K/ImageDescriptor.swift": "a6d91691d00c0bee8f19986f7bd95739589794898e3c163e80923885d21c5a96",
+    "Sources/SwiftJ2K/ImageStorage.swift": "8bc26a7d1237260dbb607fe2612f55d05a9376365371573332190e78308095cd",
+    "Sources/SwiftJ2K/Options.swift": "082a589b2172282b6a66ea3bd6e72f6d865671a782cb1b3839549db3e575f622",
+    "Sources/SwiftJ2K/Transcoding.swift": "ded0e4c738b299b64478cdf05fbe49aed3d93cc726fef8e1ed262d5bc7ca12ed",
+    "Sources/SwiftJ2KCLI/main.swift": "174ce06e478145490f9e7480147e8e861f29f258bd5a5570b42274afb694ce69",
+    "Tests/SwiftJ2KTests/BehaviourTests.swift": "ba279cba9f127950598ff33f00e0c43c9fb6cdbb09157d87bcf502826ac6232d",
+    "Tests/SwiftJ2KTests/CancellationPublicationTests.swift": "26c492fcf872a1817b79380fd0aacb255acaca311ef5408e88148eabc534acda",
+    "Tests/SwiftJ2KTests/ContractTests.swift": "fb0fe2d891638341676644d2161c2f2d6d434a5345223925b1c0b4f4d3cf701e",
+    "Tests/SwiftJ2KTests/DescriptorTests.swift": "32b5d921d6f8948362770a00b6bb9e2d64d98696e1f8975533961c9bafd60abe",
+    "Tests/SwiftJ2KTests/LimitTests.swift": "b457efe5e070c221a9ae4d2c2b5cb43d45ebb08bf3512fe56e218fd246f7b6fa",
+    "Tests/SwiftJ2KTests/OwnershipTests.swift": "34fc730ffc3ba0d9bba78c10cd77bcf1bda34eafcaffd85dfbb24db37f998606",
+    "Tests/SwiftJ2KTests/PlatformProfileTests.swift": "f776590c38a8c5871cee5d5bbede52ee8e60cfdbaf3c0504bf9a10b09462ed54",
+    "Tests/SwiftJ2KTests/Swift64SampleAccessTests.swift": "236e3f581cc4d27388c788fb6ed622aeb3d6ce84387953e3e67d3ba25dc77351",
+    "VERSION": "99f7205baf97734e7f88e5a5d30e98e3d4f7e41831a9086041603a5bd4e45c5c"
+  },
+  "commands": [
+    {
+      "label": "revision",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "<workspace>/outputs/SwiftJ2K",
+      "log": "revision.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.006178084
+    },
+    {
+      "label": "working-changes",
+      "argv": [
+        "git",
+        "status",
+        "--short"
+      ],
+      "cwd": "<workspace>/outputs/SwiftJ2K",
+      "log": "working-changes.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.021084291999999998
+    },
+    {
+      "label": "xcode",
+      "argv": [
+        "xcodebuild",
+        "-version"
+      ],
+      "cwd": "<workspace>/outputs/SwiftJ2K",
+      "log": "xcode.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.074331166
+    },
+    {
+      "label": "swift",
+      "argv": [
+        "xcrun",
+        "swift",
+        "--version"
+      ],
+      "cwd": "<workspace>/outputs/SwiftJ2K",
+      "log": "swift.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.13331154100000003
+    },
+    {
+      "label": "host",
+      "argv": [
+        "sw_vers"
+      ],
+      "cwd": "<workspace>/outputs/SwiftJ2K",
+      "log": "host.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.010525541000000027
+    },
+    {
+      "label": "sdks",
+      "argv": [
+        "xcodebuild",
+        "-showsdks"
+      ],
+      "cwd": "<workspace>/outputs/SwiftJ2K",
+      "log": "sdks.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.40288854200000007
+    },
+    {
+      "label": "simulators",
+      "argv": [
+        "xcrun",
+        "simctl",
+        "list",
+        "--json"
+      ],
+      "cwd": "<workspace>/outputs/SwiftJ2K",
+      "log": "simulators.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.29150895899999996
+    }
+  ],
+  "results": [],
+  "status": "failed",
+  "revision": "a74b6ab52c14158b02c5562eb6a7909d6d38d912",
+  "working_changes": "?? Scripts/test-apple-platforms.py\n?? Tests/SwiftJ2KTests/PlatformProfileTests.swift\n",
+  "error": "No available visionos 27.0 simulator; install/create it explicitly"
+}

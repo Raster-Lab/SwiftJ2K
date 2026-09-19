@@ -1,0 +1,98 @@
+SWIFTJ2K(1)              Swift Image Compression Suite             SWIFTJ2K(1)
+
+NNAAMMEE
+     swiftj2k - help, version and capability reporting for SwiftJ2K
+
+SSYYNNOOPPSSIISS
+     sswwiiffttjj22kk [_o_p_t_i_o_n_s] _c_o_m_m_a_n_d [_o_p_t_i_o_n_s]
+
+DDEESSCCRRIIPPTTIIOONN
+     This development tool provides help, version and truthful library
+     capability reporting.  Codec algorithms are not implemented. Reserved
+     encode, decode, inspect and validate commands and native transcode return
+     4 without opening input, consuming standard input or creating output.
+     Build with Swift 6.4 in Swift 6 language mode. Apple OS minimum is 27.0.
+     CLI hosts are macOS and Linux; consult qualification records for executed
+     coverage.
+
+CCOOMMMMAANNDDSS
+     ccaappaabbiilliittiieess [[----jjssoonn]]
+            Report actual library encode/decode/inspect support. JSON is one
+            document on stdout.  False support values and empty formats mean
+            unavailable algorithms.
+
+     hheellpp [[ccoommmmaanndd]]
+            Show global or command-specific help. No arguments also show
+            global help.
+
+     vveerrssiioonn
+            Show the development version.
+
+OOPPTTIIOONNSS
+     --hh,, ----hheellpp
+            Show help, including after a command.
+
+     ----vveerrssiioonn
+            Show the development version.
+
+     --vv,, --vvvv,, --vvvvvv,, --vvvvvvvv,, --vvvvvvvvvv
+            Increase diagnostic verbosity, up to 5.
+
+     ----vveerrbboossee LLEEVVEELL,, ----vveerrbboossee==LLEEVVEELL
+            Set level to 1 through 5, or + through +++++. Bare verbose
+            increments once.
+
+     --vveerrbboossee:: LLEEVVEELL,, --vveerrbboossee::LLEEVVEELL
+            Equivalent explicit verbosity spelling; bare -verbose increments
+            once.
+
+     --qq,, ----qquuiieett
+            Suppress optional diagnostics; errors remain visible. Conflicts
+            with verbosity.
+
+DDIIAAGGNNOOSSTTIICC LLEEVVEELLSS
+     Default 0 reports errors only. Levels are cumulative: 1 summary; 2
+     stages; 3 capability/configuration details; 4 elapsed timing; 5 bounded
+     trace. Invalid levels or totals above 5 return 2.  Explicit levels set
+     and repeated flags increment in argument order.  Diagnostics use stderr.
+     Requested help/version/capability data uses stdout.  No payload bytes,
+     metadata, raw addresses or input/output paths are logged.
+
+RREESSEERRVVEEDD CCOODDEECC SSYYNNTTAAXX
+     Codec command help lists reserved -i/--input, -o/--output, --input-
+     format, --output-format, --mode, --max-error, --backend, --copy-policy,
+     --threads, --max-memory, --timeout, --overwrite and --json.  These are
+     not implemented payload operations. A single hyphen will denote standard
+     input/output in a future codec command. Default future mode is lossless
+     and copy policy is require-sharing. No private intermediate image format
+     is implemented.
+
+EEXXIITT SSTTAATTUUSS
+     0 success/help/version; 2 invalid usage; 4 unsupported operation; 6
+     output I/O failure including a closed pipe.  Future codec statuses
+     reserve 3 malformed input, 5 resource/deadline, 7 internal failure and
+     130 user cancellation.
+
+EEXXAAMMPPLLEESS
+     swiftj2k -h
+     swiftj2k help capabilities
+     swiftj2k capabilities --json -vv
+     swiftj2k capabilities -verbose: 3
+     swiftj2k capabilities --verbose=+++++
+
+IINNSSTTAALLLLAATTIIOONN
+     Scripts/install-cli.sh installs or updates the executable and this page
+     together.  Use --prefix for an absolute prefix (default /usr/local),
+     --destdir or DESTDIR for staging, and --binary for a prebuilt binary
+     matching VERSION.  Files are PREFIX/bin/swiftj2k and
+     PREFIX/share/man/man1/swiftj2k.1.  For custom prefixes use man -M
+     PREFIX/share/man swiftj2k, or configure MANPATH.  No index refresh is
+     needed for direct lookup; no sudo runs automatically.
+
+SSEEEE AALLSSOO
+     mmaann(1)
+
+     CLI.md and Documentation/Engineering/OS27CLI/README.md in the SwiftJ2K
+     repository.
+
+12.1.0-dev.2                  September 19, 2026                   SWIFTJ2K(1)
