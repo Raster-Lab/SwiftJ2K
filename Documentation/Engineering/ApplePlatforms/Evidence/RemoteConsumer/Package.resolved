@@ -1,0 +1,14 @@
+{
+  "originHash" : "98b0bd83b4c7f2d4081e91fd4c2398f81da763b4b60c7fffd132e311c61288ad",
+  "pins" : [
+    {
+      "identity" : "swiftj2k",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Raster-Lab/SwiftJ2K.git",
+      "state" : {
+        "revision" : "9a3cc81f04ec5925dc1041132c80eaab4a9f0f8d"
+      }
+    }
+  ],
+  "version" : 3
+}

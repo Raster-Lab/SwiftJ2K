@@ -32,3 +32,28 @@ This script covers local macOS validation of the existing Milestone 1 API/storag
 ## OS 27 and CLI checks
 
 Active packages and generated consumers now require Apple OS 27.0. The owner-approved CLI foundation is a separate executable product, with no main entry point in library tests. After building its release binary, run `python3 Scripts/test-cli.py --binary /absolute/path/to/the/tool --output /new/evidence/directory` for process-level help/verbosity/stream and staged install/man-page checks. The check requires `man` and `mandoc`; missing manual tools fail explicitly. `install-cli.sh --help` describes install/update and DESTDIR staging. Read [CLI.md](../CLI.md) and [current evidence](../Documentation/Engineering/OS27CLI/README.md).
+
+## Apple simulator and Mac Catalyst tests
+
+Use the native Apple Silicon Python to run complete Debug and Release suites on every installed OS 27 platform:
+
+```sh
+/usr/bin/python3 -B Scripts/test-apple-platforms.py --output /absolute/new/evidence-directory
+# Include Mac Catalyst alongside the six default destinations:
+/usr/bin/python3 -B Scripts/test-apple-platforms.py \
+  --platforms macos catalyst ios ipados tvos watchos visionos \
+  --output /absolute/another-new/evidence-directory
+# Choose an existing simulator explicitly:
+/usr/bin/python3 -B Scripts/test-apple-platforms.py --platforms ios \
+  --device ios=YOUR-SIMULATOR-UUID --output /absolute/new/ios-evidence
+# Check the runner's rejection of missing, skipped and wrong-destination evidence:
+/usr/bin/python3 -B Scripts/test-apple-platform-runner.py
+```
+
+Use `--help` for bounded jobs/timeouts and configuration selection. Selecting fewer platforms/configurations qualifies only that subset. The runner requires Xcode 27.0 build 27A266a / Swift 6.4 build swiftlang-6.4.0.34.1 and native arm64 Python; this Mac's bare `python3` resolves to an Intel Homebrew build, while `/usr/bin/python3` runs natively. Xcode is selected per process. Install required runtimes and create devices beforehand; missing runtimes fail instead of becoming skips. Device overrides must match runtime and device family. iPad uses the iOS runtime; CoreSimulator internally calls visionOS `xrOS`.
+
+Build products use an isolated `/private/tmp` directory so simulator test runners can load bundles even when the checkout/evidence is under Documents. The runner retains that directory and logs its path; remove it manually when no longer needed. It does not delete or erase simulators, change global Xcode settings or shut down user devices. Tests may leave their selected simulators booted. Run paired iPhone/Watch jobs sequentially and avoid simultaneous tests on the same destination.
+
+Every test action is independently enumerated, then checked against its xcresult summary. Zero/discovery-mismatched, failed, skipped and expected-failure results fail qualification, as do wrong OS/platform/device results. Logs retain exact commands, exits, source hashes, declaration counts and parameterised case counts. Timeouts are failures; there is no retry-until-pass mode. Do not edit sources/tests/scripts during a run. Diagnostics and full inventories may contain local paths/device identifiers; the published evidence uses documented redaction.
+
+See [executed Apple runtime results](../Documentation/Engineering/ApplePlatforms/README.md). The runner tests existing implemented functionality; successful stub rejection does not establish codec interoperability or physical-device qualification.

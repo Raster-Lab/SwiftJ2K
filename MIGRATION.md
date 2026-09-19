@@ -113,3 +113,7 @@ Predecessor transcoder success is not by itself an oracle: recorded zero-on-erro
 7. Report changed call sites, exact before/after revisions, executed commands, results, conversion costs, blockers and rollback steps in the application PR. Mark storage-only work as partial migration. This guide does not authorise a coding agent to implement later codec milestones or modify a downstream application unless assigned that work.
 
 A completed application migration requires working successor operations for every enabled profile, passing independent fidelity/metadata and platform tests, and an exercised rollback route. **Those codec cutover gates cannot be passed by the current Milestone 1 implementation.** As later releases add capabilities, update this guide and its executable example together; keep the tested revision and remaining gaps explicit.
+
+## Apple runtime qualification update
+
+See [Apple platform runtime qualification](Documentation/Engineering/ApplePlatforms/README.md) for executed OS 27 simulator, macOS and Mac Catalyst tests and the reproducible headless runner. This qualifies the current API/storage foundation; the existing codec migration and production-cutover gates remain in force.

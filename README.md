@@ -2,7 +2,7 @@
 
 JPEG 2000 and HTJ2K for the **Swift Image Compression Suite**.
 
-**Status: Milestone 1 API and owning-memory feasibility implemented and tested on macOS arm64. JPEG 2000 and HTJ2K algorithms are not yet implemented.** The intended first stable library version is **12.1.0**; it is not a published release. The standalone Swift package has no external dependencies; it deliberately advertises no codec capabilities yet.
+**Status: Milestone 1 API and owning-memory feasibility implemented; Apple runtime results are linked below. JPEG 2000 and HTJ2K algorithms are not yet implemented.** The intended first stable library version is **12.1.0**; it is not a published release. The standalone Swift package has no external dependencies; it deliberately advertises no codec capabilities yet.
 
 SwiftJ2K is the standalone successor to [J2KSwift](https://github.com/Raster-Lab/J2KSwift). The successor is intended to provide a harmonised API, explicit memory ownership, high-precision sample preservation and efficient shared-storage integration. It has no mandatory dependency on another suite library or CompressionFamily. MIT licensing applies to these documents and subsequent authorised in-house implementation; third-party material retains its own terms.
 
@@ -13,6 +13,10 @@ Read [MIGRATION.md — J2KSwift to SwiftJ2K](MIGRATION.md) for dependency/produc
 ## Swift 6.4 development candidate
 
 Current development version: **12.1.0-dev.2** ([VERSION](VERSION)); shared contract **0.4.0**. This increments the earlier unreleased 12.0.0 target and creates no release/tag. See the [current qualification record](Documentation/Engineering/OS27CLI/README.md) for adopted features, exact Xcode/Swift Build evidence and open platform gates. The historical [Milestone 1 evidence](Documentation/MILESTONE1.md) remains unchanged.
+
+## Apple platform runtime tests
+
+The existing API/storage foundation now passes complete Debug and Release suites on macOS arm64, Mac Catalyst and OS 27 simulators for iPhone, iPad, Apple TV, Apple Watch and Vision Pro. See [Apple platform runtime qualification](Documentation/Engineering/ApplePlatforms/README.md) for exact counts, commands, source hashes and remaining physical-device/Intel/Linux gates. Codec algorithms and compressed-format interoperability remain deferred. Current development version **12.1.0-dev.2** is unchanged because this update adds qualification tooling and tests without changing the shipped API or behaviour.
 
 ## Intended platform baseline
 
