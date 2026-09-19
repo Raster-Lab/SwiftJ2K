@@ -1,0 +1,31 @@
+{
+  "name": "mixed-failure-testing",
+  "argv": [
+    "xcrun",
+    "swift",
+    "test",
+    "--package-path",
+    "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/tooling/Fixture",
+    "--scratch-path",
+    "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/tooling/scratch",
+    "--cache-path",
+    "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/tooling/cache",
+    "--config-path",
+    "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/tooling/config",
+    "--security-path",
+    "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/tooling/security",
+    "--disable-sandbox",
+    "--build-system",
+    "swiftbuild",
+    "--skip-build",
+    "--disable-xctest",
+    "--enable-swift-testing",
+    "--filter",
+    "mixedFrameworkAssertion",
+    "--xunit-output",
+    "../mixed-failure-testing.xml"
+  ],
+  "cwd": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/tooling/Fixture",
+  "exit": 1,
+  "seconds": 1.0284919738769531
+}

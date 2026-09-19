@@ -1,0 +1,28 @@
+ M AGENTS.md
+ M CHANGELOG.md
+ M Documentation/CLI_CONTRACT.md
+ M Documentation/COMMON_API.md
+ M Documentation/COMMON_CONTRACT_SHA256.txt
+ M Documentation/MEMORY_CONTRACT.md
+ M Documentation/PERFORMANCE.md
+ M Documentation/PLATFORMS.md
+ M Documentation/SUITE_POLICY.md
+ M Documentation/TESTING.md
+ M Examples/Consumer/Package.swift
+ M HISTORY.md
+ M IMPLEMENTATION.md
+ M Integration/ContractHarness/Package.swift
+ M MIGRATION.md
+ M Package.swift
+ M README.md
+ M Scripts/README.md
+ M Scripts/validate-swift64.py
+ M Sources/SwiftJ2K/Image.swift
+ M TRANSCODING.md
+ M VERSION
+?? CLI.md
+?? Documentation/Engineering/OS27CLI/
+?? ManPages/
+?? Scripts/install-cli.sh
+?? Scripts/test-cli.py
+?? Sources/SwiftJ2KCLI/

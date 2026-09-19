@@ -1,0 +1,77 @@
+Building for debugging...
+[Planning deferred tasks]
+[33 / 64]
+[34 / 65] SwiftJ2K
+[41 / 107]
+[44 / 107]
+[48 / 107]
+[52 / 107]
+[53 / 107]
+[57 / 107]
+[59 / 107]
+[62 / 107]
+[65 / 107]
+[66 / 107]
+[67 / 107]
+[68 / 107]
+[70 / 107] SwiftJ2K
+[71 / 107] SwiftJ2K
+[79 / 107] SwiftJ2K
+[81 / 107] SwiftJ2K
+[82 / 107]
+[93 / 109]
+[97 / 122] swiftj2k-product
+[102 / 122] SwiftJ2KTests-product
+[103 / 122] SwiftJ2KTests-product
+[106 / 122] SwiftJ2KTests-product
+[111 / 122] SwiftJ2KTests-product
+[114 / 122] SwiftJ2KTests-product
+[115 / 122] swiftj2k-product
+[116 / 122] SwiftJ2KTests-product
+[118 / 122] SwiftJ2KTests-product
+[122 / 122] SwiftJ2KTests-product
+Build complete! (8.68 secs)
+SwiftJ2KTests.DescriptorTests/deterministicLayoutMutation()
+SwiftJ2KTests.DescriptorTests/finalRowNeedsOnlyItsActualSampleBytes()
+SwiftJ2KTests.DescriptorTests/paddedOddDimensionsAndPrecision()
+SwiftJ2KTests.DescriptorTests/rejectsArithmeticOverflowBeforeAllocation()
+SwiftJ2KTests.DescriptorTests/rejectsInvalidGeometryAndPrecision()
+SwiftJ2KTests.DescriptorTests/rejectsMisalignedOffsetsAndStrides()
+SwiftJ2KTests.DescriptorTests/rejectsOverlappingPlanesAndIncompleteMapping()
+SwiftJ2KTests.DescriptorTests/semanticMetadataMustAgreeWithComponents()
+SwiftJ2KTests.Swift64SampleAccessTests/initialisesExternalSampleBytesAtOddAddressWithoutChangingPadding()
+SwiftJ2KTests.Swift64SampleAccessTests/outOfPrecisionWriteInvalidatesDestination()
+SwiftJ2KTests.Swift64SampleAccessTests/readsIndependentGoldenBytesFromOddPhysicalAddress()
+SwiftJ2KTests.Swift64SampleAccessTests/refusesShortProviderBeforeLoadingSample()
+SwiftJ2KTests.Swift64SampleAccessTests/rejectsCoordinatesBeforeOffsetArithmetic()
+SwiftJ2KTests.Swift64SampleAccessTests/writesGoldenBytesForPackedAndPadded12And16BitSamples()
+SwiftJ2KTests.abandonedDestinationInvalidatesItsReservedOwner()
+SwiftJ2KTests.adaptersShareWriterAuthorityAndRejectForgedLease()
+SwiftJ2KTests.borrowedStorageRejectsForgedLeasesAndPublication()
+SwiftJ2KTests.cancellationDuringSyntheticRowsInvalidatesDestination()
+SwiftJ2KTests.cancellationInProviderFinalisationPreventsPublication(_:)
+SwiftJ2KTests.cancellationInsideWriteCannotPublishPartialImage()
+SwiftJ2KTests.cancellationIsCheckedBeforeAllocatingStorage()
+SwiftJ2KTests.concurrentAdaptersReserveExactlyOneWriter()
+SwiftJ2KTests.configurationsAndBackendRequestsRejectUnsupportedChoices()
+SwiftJ2KTests.decoderPreservesTaskCancellationError()
+SwiftJ2KTests.descriptorMutationRejectsInvalidStridesAndOffsets()
+SwiftJ2KTests.explicitLargerMetadataLimitIsHonoured()
+SwiftJ2KTests.failedFillInvalidatesDestination()
+SwiftJ2KTests.imageRetainsAdapterUntilLastImageReleaseExactlyOnce()
+SwiftJ2KTests.independentAllocationAndMemoryCeilingsAreEnforced()
+SwiftJ2KTests.independentPublicCallShapesFailHonestly()
+SwiftJ2KTests.integerOverflowWithExplicitLargeLimitsThrows()
+SwiftJ2KTests.invalidResourceProfilesAndProgressFailPredictably()
+SwiftJ2KTests.metadataAndDestinationLimitsUseCallerBudget()
+SwiftJ2KTests.paddedStorageCountsTowardsDecodedLimit()
+SwiftJ2KTests.pixelAndDimensionLimitsRejectBeforeAllocation()
+SwiftJ2KTests.publicOperationsRejectCodecWorkAndAdvertiseEmptyCapabilities()
+SwiftJ2KTests.reentrantLeaseOperationsRejectWithoutDeadlocking()
+SwiftJ2KTests.safeSampleAccessHonoursExplicitBigEndian()
+SwiftJ2KTests.safeSampleWriterRejectsOutOfRangeWithoutTruncating()
+SwiftJ2KTests.safeWriterRejectsOutOfRangeInsteadOfTruncating()
+SwiftJ2KTests.sameTokenCannotAuthoriseConcurrentOverlappingBorrows()
+SwiftJ2KTests.sealedOwnerSupportsConcurrentReadersAndNestedRead()
+SwiftJ2KTests.syntheticExactSamplesAndPadding(precision:)
+SwiftJ2KTests.unknownMeasurementsStayUnknownAndMetadataIsBounded()

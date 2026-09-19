@@ -1,0 +1,8 @@
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F13_warning_baseline.swift:4:17: warning: 'oldFunction()' is deprecated: probe only [#DeprecatedDeclaration]
+2 | @available(*, deprecated, message: "probe only")
+3 | func oldFunction() { }
+4 | func caller() { oldFunction() }
+  |                 `- warning: 'oldFunction()' is deprecated: probe only [#DeprecatedDeclaration]
+5 | 
+
+[#DeprecatedDeclaration]: <https://docs.swift.org/compiler/documentation/diagnostics/deprecated-declaration>

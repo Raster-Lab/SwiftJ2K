@@ -1,6 +1,6 @@
 # Common API contract
 
-Contract **0.2.1**. Normative implementation specification. Consult MILESTONE1.md for the implemented feasibility surface; codec operations remain deferred.
+Contract **0.4.0**. Normative implementation specification. Consult MILESTONE1.md for the implemented feasibility surface; codec operations remain deferred.
 
 ## Public naming and module boundary
 
@@ -21,7 +21,7 @@ Contract **0.2.1**. Normative implementation specification. Consult MILESTONE1.m
 | `CodecCapabilities` | Explicit supported modes, sample types, precision ranges, layouts and optional features |
 | `CodecError` | Stable error category, safe diagnostic context and optional underlying error |
 
-The names and call shapes below are documentation requirements, not source code. Validate their Swift 6.2 implementation and usability in the first milestone. Do not invent alternate spellings in individual repositories.
+The tables below specify public call shapes implemented by Milestone 1 and behaviour required of later codec milestones. Preserve their Swift 6.4 implementation and independent-consumer tests. Do not invent alternate spellings in individual repositories.
 
 ## Common operations
 
@@ -63,7 +63,7 @@ The default is lossless in the API and CLI. Unsupported lossless requests fail. 
 
 ## Concurrency, progress and cancellation
 
-**API-11.** Public immutable values conform to `Sendable` when their ownership makes it valid. Public mutable raw pointers are not freely Sendable. No default main-actor isolation for codec kernels. Select an explicit Swift 6.2 execution strategy so expensive work cannot block the caller's UI actor. Use bounded structured task groups; keep task-local scratch per operation; join child work and GPU completion before releasing memory. A dependency or annotation that merely suppresses diagnostics is not evidence of safety.
+**API-11.** Public immutable values conform to `Sendable` when their ownership makes it valid. Public mutable raw pointers are not freely Sendable. No default main-actor isolation for codec kernels. Select an explicit Swift 6.4 execution strategy so expensive work cannot block the caller's UI actor. Use bounded structured task groups; keep task-local scratch per operation; join child work and GPU completion before releasing memory. A dependency or annotation that merely suppresses diagnostics is not evidence of safety.
 
 **API-12.** Check cancellation before allocation, between bounded work units and before successful publication. Default operation deadline is part of resource limits. After cancellation, do not return a successful frame or expose a partially written destination. One in-flight hardware unit may complete before safe release; test and document that bound. Never free storage while hardware or workers still reference it.
 
@@ -77,7 +77,7 @@ Contract tests must compile equivalent client examples against all four modules,
 
 ## Native format-pair transcoding extension
 
-**API-14.** SwiftJ2K and SwiftJXL provide a local `Transcoder`, `TranscoderConfiguration`, `TranscodeOptions` and `TranscodeTarget` for the native compressed-format pairs below. Use the same constructor/operation pattern: `Transcoder(configuration:) throws`, `Transcoder.transcode(_:to:options:) async throws -> EncodedImage`, and immutable `Transcoder.capabilities`. Input is Foundation `Data`; output identifies its actual format and carries the common operation report. These are planned names/call shapes to validate under Swift 6.2, not compiled API examples.
+**API-14.** SwiftJ2K and SwiftJXL provide a local `Transcoder`, `TranscoderConfiguration`, `TranscodeOptions` and `TranscodeTarget` for the native compressed-format pairs below. Use the same constructor/operation pattern: `Transcoder(configuration:) throws`, `Transcoder.transcode(_:to:options:) async throws -> EncodedImage`, and immutable `Transcoder.capabilities`. Input is Foundation `Data`; output identifies its actual format and carries the common operation report. Milestone 1 implements and tests these names/call shapes with empty capabilities and explicit unsupported-operation errors. Real native transcoding remains a later milestone.
 
 | Library | Local target cases / native pairs | Required preservation |
 | --- | --- | --- |

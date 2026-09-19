@@ -1,0 +1,110 @@
+{
+  "@context" : "https://spdx.org/rdf/3.0.1/spdx-context.jsonld",
+  "@graph" : [
+    {
+      "creationInfo" : "urn:uuid:0864842d-7c3d-4870-90bb-9905eee7df29:creationInfo",
+      "from" : "urn:uuid:0864842d-7c3d-4870-90bb-9905eee7df29",
+      "relationshipType" : "hasDeclaredLicense",
+      "spdxId" : "urn:uuid:0864842d-7c3d-4870-90bb-9905eee7df29-hasDeclaredLicense-urn:spdx:Apache-2.0",
+      "to" : [
+        "urn:spdx:Apache-2.0"
+      ],
+      "type" : "Relationship"
+    },
+    {
+      "creationInfo" : "urn:uuid:0864842d-7c3d-4870-90bb-9905eee7df29:creationInfo",
+      "simplelicensing_licenseExpression" : "Apache-2.0",
+      "spdxId" : "urn:spdx:Apache-2.0",
+      "type" : "simplelicensing_LicenseExpression"
+    },
+    {
+      "@id" : "urn:uuid:0864842d-7c3d-4870-90bb-9905eee7df29:creationInfo",
+      "created" : "2026-09-18T22:01:15Z",
+      "createdBy" : [
+        "urn:uuid:0864842d-7c3d-4870-90bb-9905eee7df29"
+      ],
+      "specVersion" : "6.4.0-dev",
+      "type" : "CreationInfo"
+    },
+    {
+      "creationInfo" : "urn:uuid:0864842d-7c3d-4870-90bb-9905eee7df29:creationInfo",
+      "name" : "swift-package-manager",
+      "spdxId" : "urn:uuid:0864842d-7c3d-4870-90bb-9905eee7df29",
+      "type" : "Agent"
+    },
+    {
+      "@id" : "_:creationInfo",
+      "created" : "2026-09-18T22:01:15Z",
+      "createdBy" : [
+        "urn:uuid:0864842d-7c3d-4870-90bb-9905eee7df29"
+      ],
+      "specVersion" : "3.0.1",
+      "type" : "CreationInfo"
+    },
+    {
+      "creationInfo" : "_:creationInfo",
+      "profileConformance" : [
+        "core",
+        "software"
+      ],
+      "rootElement" : [
+        "urn:spdx:fixture:ToolingProbe"
+      ],
+      "spdxId" : "urn:uuid:a1c97f73-faa1-4d8f-8325-0f9141d0ab66",
+      "type" : "software_Sbom"
+    },
+    {
+      "creationInfo" : "_:creationInfo",
+      "from" : "urn:uuid:a1c97f73-faa1-4d8f-8325-0f9141d0ab66",
+      "relationshipType" : "describes",
+      "spdxId" : "urn:uuid:a1c97f73-faa1-4d8f-8325-0f9141d0ab66-describes-urn:spdx:fixture:ToolingProbe",
+      "to" : [
+        "urn:spdx:fixture:ToolingProbe"
+      ],
+      "type" : "Relationship"
+    },
+    {
+      "creationInfo" : "_:creationInfo",
+      "profileConformance" : [
+        "core",
+        "software"
+      ],
+      "rootElement" : [
+        "urn:uuid:a1c97f73-faa1-4d8f-8325-0f9141d0ab66"
+      ],
+      "spdxId" : "urn:uuid:52e7f98a-fd8f-404f-87a6-ced760e5242b",
+      "type" : "SpdxDocument"
+    },
+    {
+      "creationInfo" : "_:creationInfo",
+      "description" : "<ResolvedPackage: fixture>",
+      "externalUrl" : "pkg:swift/fixture",
+      "name" : "fixture",
+      "software_internalVersion" : "unknown",
+      "software_primaryPurpose" : "application",
+      "spdxId" : "urn:spdx:fixture",
+      "summary" : "swift-package",
+      "type" : "software_Package"
+    },
+    {
+      "creationInfo" : "_:creationInfo",
+      "externalUrl" : "pkg:swift/fixture/fixture:ToolingProbe",
+      "name" : "ToolingProbe",
+      "software_internalVersion" : "unknown",
+      "software_primaryPurpose" : "application",
+      "spdxId" : "urn:spdx:fixture:ToolingProbe",
+      "summary" : "swift-product",
+      "type" : "software_Package"
+    },
+    {
+      "creationInfo" : "_:creationInfo",
+      "from" : "urn:spdx:fixture",
+      "relationshipType" : "dependsOn",
+      "spdxId" : "urn:spdx:fixture-dependsOn",
+      "to" : [
+        "urn:spdx:fixture:ToolingProbe"
+      ],
+      "type" : "Relationship"
+    }
+  ]
+}

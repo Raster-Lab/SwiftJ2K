@@ -1,0 +1,1717 @@
+{
+  "method": "Same-host release executables; 5 warmups then 20 interleaved measurements per case; 5% median/peak-memory regression investigation threshold set by contract PERF-03 before execution. Shared Image.swift evaluated through SwiftJ2K, not a codec-throughput or multi-platform claim.",
+  "builds": {
+    "baseline": {
+      "executable": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/benchmark/baseline/.build/out/Products/Release/StorageBench",
+      "size_bytes": 325328,
+      "command": "xcrun swift build --disable-sandbox --build-system swiftbuild -c release --jobs 2 --cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/benchmark/baseline/cache --config-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/benchmark/baseline/config --security-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/benchmark/baseline/security",
+      "source_sha256": "a5f050b9334d533cd4f0d01b73bb7e465b9e50718abf7c07eb80dc0109e97e0e"
+    },
+    "candidate": {
+      "executable": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/benchmark/candidate/.build/out/Products/Release/StorageBench",
+      "size_bytes": 324768,
+      "command": "xcrun swift build --disable-sandbox --build-system swiftbuild -c release --jobs 2 --cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/benchmark/candidate/cache --config-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/benchmark/candidate/config --security-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/benchmark/candidate/security",
+      "source_sha256": "4dfb7a32d89f03a9679b1b5f9071af5a6176f335e96faf400fba2b7a0c9debf7"
+    }
+  },
+  "process_exit_codes": {
+    "baseline": 0,
+    "candidate": 0
+  },
+  "records": [
+    {
+      "name": "baseline",
+      "width": 64,
+      "iteration": 0,
+      "allocate_ns": 916,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 48500,
+      "thermal_state": 0,
+      "write_ns": 6459,
+      "total_ns": 55875
+    },
+    {
+      "name": "candidate",
+      "width": 64,
+      "iteration": 0,
+      "allocate_ns": 3334,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 41709,
+      "thermal_state": 0,
+      "write_ns": 7416,
+      "total_ns": 52459
+    },
+    {
+      "name": "candidate",
+      "width": 64,
+      "iteration": 1,
+      "allocate_ns": 1459,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 38250,
+      "thermal_state": 0,
+      "write_ns": 6916,
+      "total_ns": 46625
+    },
+    {
+      "name": "baseline",
+      "width": 64,
+      "iteration": 1,
+      "allocate_ns": 2875,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 62208,
+      "thermal_state": 0,
+      "write_ns": 7375,
+      "total_ns": 72458
+    },
+    {
+      "name": "baseline",
+      "width": 64,
+      "iteration": 2,
+      "allocate_ns": 3000,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 73875,
+      "thermal_state": 0,
+      "write_ns": 7500,
+      "total_ns": 84375
+    },
+    {
+      "name": "candidate",
+      "width": 64,
+      "iteration": 2,
+      "allocate_ns": 2667,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 43875,
+      "thermal_state": 0,
+      "write_ns": 7583,
+      "total_ns": 54125
+    },
+    {
+      "name": "candidate",
+      "width": 64,
+      "iteration": 3,
+      "allocate_ns": 1459,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 38167,
+      "thermal_state": 0,
+      "write_ns": 6916,
+      "total_ns": 46542
+    },
+    {
+      "name": "baseline",
+      "width": 64,
+      "iteration": 3,
+      "allocate_ns": 2417,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 38792,
+      "thermal_state": 0,
+      "write_ns": 7625,
+      "total_ns": 48834
+    },
+    {
+      "name": "baseline",
+      "width": 64,
+      "iteration": 4,
+      "allocate_ns": 1417,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 37792,
+      "thermal_state": 0,
+      "write_ns": 6708,
+      "total_ns": 45917
+    },
+    {
+      "name": "candidate",
+      "width": 64,
+      "iteration": 4,
+      "allocate_ns": 2084,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 40625,
+      "thermal_state": 0,
+      "write_ns": 7041,
+      "total_ns": 49750
+    },
+    {
+      "name": "candidate",
+      "width": 64,
+      "iteration": 5,
+      "allocate_ns": 1250,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 40833,
+      "thermal_state": 0,
+      "write_ns": 6458,
+      "total_ns": 48541
+    },
+    {
+      "name": "baseline",
+      "width": 64,
+      "iteration": 5,
+      "allocate_ns": 2334,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 42458,
+      "thermal_state": 0,
+      "write_ns": 8250,
+      "total_ns": 53042
+    },
+    {
+      "name": "baseline",
+      "width": 64,
+      "iteration": 6,
+      "allocate_ns": 1292,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 42500,
+      "thermal_state": 0,
+      "write_ns": 6667,
+      "total_ns": 50459
+    },
+    {
+      "name": "candidate",
+      "width": 64,
+      "iteration": 6,
+      "allocate_ns": 1125,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 41583,
+      "thermal_state": 0,
+      "write_ns": 6458,
+      "total_ns": 49166
+    },
+    {
+      "name": "candidate",
+      "width": 64,
+      "iteration": 7,
+      "allocate_ns": 3625,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 43541,
+      "thermal_state": 0,
+      "write_ns": 7000,
+      "total_ns": 54166
+    },
+    {
+      "name": "baseline",
+      "width": 64,
+      "iteration": 7,
+      "allocate_ns": 2708,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 43416,
+      "thermal_state": 0,
+      "write_ns": 6709,
+      "total_ns": 52833
+    },
+    {
+      "name": "baseline",
+      "width": 64,
+      "iteration": 8,
+      "allocate_ns": 1542,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 39917,
+      "thermal_state": 0,
+      "write_ns": 6708,
+      "total_ns": 48167
+    },
+    {
+      "name": "candidate",
+      "width": 64,
+      "iteration": 8,
+      "allocate_ns": 1334,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 43583,
+      "thermal_state": 0,
+      "write_ns": 6583,
+      "total_ns": 51500
+    },
+    {
+      "name": "candidate",
+      "width": 64,
+      "iteration": 9,
+      "allocate_ns": 2000,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 42834,
+      "thermal_state": 0,
+      "write_ns": 7208,
+      "total_ns": 52042
+    },
+    {
+      "name": "baseline",
+      "width": 64,
+      "iteration": 9,
+      "allocate_ns": 1375,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 41583,
+      "thermal_state": 0,
+      "write_ns": 6750,
+      "total_ns": 49708
+    },
+    {
+      "name": "baseline",
+      "width": 64,
+      "iteration": 10,
+      "allocate_ns": 1208,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 38125,
+      "thermal_state": 0,
+      "write_ns": 6542,
+      "total_ns": 45875
+    },
+    {
+      "name": "candidate",
+      "width": 64,
+      "iteration": 10,
+      "allocate_ns": 1250,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 43709,
+      "thermal_state": 0,
+      "write_ns": 6625,
+      "total_ns": 51584
+    },
+    {
+      "name": "candidate",
+      "width": 64,
+      "iteration": 11,
+      "allocate_ns": 1584,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 42459,
+      "thermal_state": 0,
+      "write_ns": 7041,
+      "total_ns": 51084
+    },
+    {
+      "name": "baseline",
+      "width": 64,
+      "iteration": 11,
+      "allocate_ns": 2625,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 41000,
+      "thermal_state": 0,
+      "write_ns": 7042,
+      "total_ns": 50667
+    },
+    {
+      "name": "baseline",
+      "width": 64,
+      "iteration": 12,
+      "allocate_ns": 1666,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 43208,
+      "thermal_state": 0,
+      "write_ns": 6917,
+      "total_ns": 51791
+    },
+    {
+      "name": "candidate",
+      "width": 64,
+      "iteration": 12,
+      "allocate_ns": 1791,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 42708,
+      "thermal_state": 0,
+      "write_ns": 6709,
+      "total_ns": 51208
+    },
+    {
+      "name": "candidate",
+      "width": 64,
+      "iteration": 13,
+      "allocate_ns": 1417,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 37958,
+      "thermal_state": 0,
+      "write_ns": 6625,
+      "total_ns": 46000
+    },
+    {
+      "name": "baseline",
+      "width": 64,
+      "iteration": 13,
+      "allocate_ns": 1959,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 41750,
+      "thermal_state": 0,
+      "write_ns": 6958,
+      "total_ns": 50667
+    },
+    {
+      "name": "baseline",
+      "width": 64,
+      "iteration": 14,
+      "allocate_ns": 1834,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 40959,
+      "thermal_state": 0,
+      "write_ns": 6666,
+      "total_ns": 49459
+    },
+    {
+      "name": "candidate",
+      "width": 64,
+      "iteration": 14,
+      "allocate_ns": 2542,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 42959,
+      "thermal_state": 0,
+      "write_ns": 7708,
+      "total_ns": 53209
+    },
+    {
+      "name": "candidate",
+      "width": 64,
+      "iteration": 15,
+      "allocate_ns": 1500,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 40834,
+      "thermal_state": 0,
+      "write_ns": 6708,
+      "total_ns": 49042
+    },
+    {
+      "name": "baseline",
+      "width": 64,
+      "iteration": 15,
+      "allocate_ns": 1833,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 41792,
+      "thermal_state": 0,
+      "write_ns": 6625,
+      "total_ns": 50250
+    },
+    {
+      "name": "baseline",
+      "width": 64,
+      "iteration": 16,
+      "allocate_ns": 1375,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 42333,
+      "thermal_state": 0,
+      "write_ns": 6792,
+      "total_ns": 50500
+    },
+    {
+      "name": "candidate",
+      "width": 64,
+      "iteration": 16,
+      "allocate_ns": 2333,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 41625,
+      "thermal_state": 0,
+      "write_ns": 7208,
+      "total_ns": 51166
+    },
+    {
+      "name": "candidate",
+      "width": 64,
+      "iteration": 17,
+      "allocate_ns": 1500,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 41084,
+      "thermal_state": 0,
+      "write_ns": 6708,
+      "total_ns": 49292
+    },
+    {
+      "name": "baseline",
+      "width": 64,
+      "iteration": 17,
+      "allocate_ns": 2667,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 40042,
+      "thermal_state": 0,
+      "write_ns": 7250,
+      "total_ns": 49959
+    },
+    {
+      "name": "baseline",
+      "width": 64,
+      "iteration": 18,
+      "allocate_ns": 1542,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 41833,
+      "thermal_state": 0,
+      "write_ns": 6750,
+      "total_ns": 50125
+    },
+    {
+      "name": "candidate",
+      "width": 64,
+      "iteration": 18,
+      "allocate_ns": 2208,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 40959,
+      "thermal_state": 0,
+      "write_ns": 7083,
+      "total_ns": 50250
+    },
+    {
+      "name": "candidate",
+      "width": 64,
+      "iteration": 19,
+      "allocate_ns": 1542,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 42834,
+      "thermal_state": 0,
+      "write_ns": 6791,
+      "total_ns": 51167
+    },
+    {
+      "name": "baseline",
+      "width": 64,
+      "iteration": 19,
+      "allocate_ns": 1709,
+      "checksum": 8126496,
+      "pixel_capacity": 8568,
+      "read_ns": 39958,
+      "thermal_state": 0,
+      "write_ns": 6833,
+      "total_ns": 48500
+    },
+    {
+      "name": "baseline",
+      "width": 512,
+      "iteration": 0,
+      "allocate_ns": 4791,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2918417,
+      "thermal_state": 0,
+      "write_ns": 371542,
+      "total_ns": 3294750
+    },
+    {
+      "name": "candidate",
+      "width": 512,
+      "iteration": 0,
+      "allocate_ns": 8250,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2890167,
+      "thermal_state": 0,
+      "write_ns": 370166,
+      "total_ns": 3268583
+    },
+    {
+      "name": "candidate",
+      "width": 512,
+      "iteration": 1,
+      "allocate_ns": 5916,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2641375,
+      "thermal_state": 0,
+      "write_ns": 371042,
+      "total_ns": 3018333
+    },
+    {
+      "name": "baseline",
+      "width": 512,
+      "iteration": 1,
+      "allocate_ns": 6500,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2533375,
+      "thermal_state": 0,
+      "write_ns": 368417,
+      "total_ns": 2908292
+    },
+    {
+      "name": "baseline",
+      "width": 512,
+      "iteration": 2,
+      "allocate_ns": 6875,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2934750,
+      "thermal_state": 0,
+      "write_ns": 408708,
+      "total_ns": 3350333
+    },
+    {
+      "name": "candidate",
+      "width": 512,
+      "iteration": 2,
+      "allocate_ns": 9375,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2457125,
+      "thermal_state": 0,
+      "write_ns": 380458,
+      "total_ns": 2846958
+    },
+    {
+      "name": "candidate",
+      "width": 512,
+      "iteration": 3,
+      "allocate_ns": 6875,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2642875,
+      "thermal_state": 0,
+      "write_ns": 371250,
+      "total_ns": 3021000
+    },
+    {
+      "name": "baseline",
+      "width": 512,
+      "iteration": 3,
+      "allocate_ns": 6750,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2632041,
+      "thermal_state": 0,
+      "write_ns": 371209,
+      "total_ns": 3010000
+    },
+    {
+      "name": "baseline",
+      "width": 512,
+      "iteration": 4,
+      "allocate_ns": 5292,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2598916,
+      "thermal_state": 0,
+      "write_ns": 437375,
+      "total_ns": 3041583
+    },
+    {
+      "name": "candidate",
+      "width": 512,
+      "iteration": 4,
+      "allocate_ns": 8125,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2578209,
+      "thermal_state": 0,
+      "write_ns": 402958,
+      "total_ns": 2989292
+    },
+    {
+      "name": "candidate",
+      "width": 512,
+      "iteration": 5,
+      "allocate_ns": 5500,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2939042,
+      "thermal_state": 0,
+      "write_ns": 369541,
+      "total_ns": 3314083
+    },
+    {
+      "name": "baseline",
+      "width": 512,
+      "iteration": 5,
+      "allocate_ns": 12291,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2704917,
+      "thermal_state": 0,
+      "write_ns": 371875,
+      "total_ns": 3089083
+    },
+    {
+      "name": "baseline",
+      "width": 512,
+      "iteration": 6,
+      "allocate_ns": 6542,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2578750,
+      "thermal_state": 0,
+      "write_ns": 370000,
+      "total_ns": 2955292
+    },
+    {
+      "name": "candidate",
+      "width": 512,
+      "iteration": 6,
+      "allocate_ns": 6583,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 3326417,
+      "thermal_state": 0,
+      "write_ns": 369583,
+      "total_ns": 3702583
+    },
+    {
+      "name": "candidate",
+      "width": 512,
+      "iteration": 7,
+      "allocate_ns": 7542,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2647625,
+      "thermal_state": 0,
+      "write_ns": 428375,
+      "total_ns": 3083542
+    },
+    {
+      "name": "baseline",
+      "width": 512,
+      "iteration": 7,
+      "allocate_ns": 102291,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2614417,
+      "thermal_state": 0,
+      "write_ns": 443792,
+      "total_ns": 3160500
+    },
+    {
+      "name": "baseline",
+      "width": 512,
+      "iteration": 8,
+      "allocate_ns": 6333,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2561333,
+      "thermal_state": 0,
+      "write_ns": 367625,
+      "total_ns": 2935291
+    },
+    {
+      "name": "candidate",
+      "width": 512,
+      "iteration": 8,
+      "allocate_ns": 6958,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2699834,
+      "thermal_state": 0,
+      "write_ns": 371833,
+      "total_ns": 3078625
+    },
+    {
+      "name": "candidate",
+      "width": 512,
+      "iteration": 9,
+      "allocate_ns": 6333,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2707125,
+      "thermal_state": 0,
+      "write_ns": 369292,
+      "total_ns": 3082750
+    },
+    {
+      "name": "baseline",
+      "width": 512,
+      "iteration": 9,
+      "allocate_ns": 7833,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2990750,
+      "thermal_state": 0,
+      "write_ns": 411083,
+      "total_ns": 3409666
+    },
+    {
+      "name": "baseline",
+      "width": 512,
+      "iteration": 10,
+      "allocate_ns": 8166,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2697583,
+      "thermal_state": 0,
+      "write_ns": 368584,
+      "total_ns": 3074333
+    },
+    {
+      "name": "candidate",
+      "width": 512,
+      "iteration": 10,
+      "allocate_ns": 8584,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2709542,
+      "thermal_state": 0,
+      "write_ns": 367708,
+      "total_ns": 3085834
+    },
+    {
+      "name": "candidate",
+      "width": 512,
+      "iteration": 11,
+      "allocate_ns": 5916,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2700458,
+      "thermal_state": 0,
+      "write_ns": 371334,
+      "total_ns": 3077708
+    },
+    {
+      "name": "baseline",
+      "width": 512,
+      "iteration": 11,
+      "allocate_ns": 7625,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2770583,
+      "thermal_state": 0,
+      "write_ns": 380209,
+      "total_ns": 3158417
+    },
+    {
+      "name": "baseline",
+      "width": 512,
+      "iteration": 12,
+      "allocate_ns": 9917,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 3033208,
+      "thermal_state": 0,
+      "write_ns": 374625,
+      "total_ns": 3417750
+    },
+    {
+      "name": "candidate",
+      "width": 512,
+      "iteration": 12,
+      "allocate_ns": 8459,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2827833,
+      "thermal_state": 0,
+      "write_ns": 383583,
+      "total_ns": 3219875
+    },
+    {
+      "name": "candidate",
+      "width": 512,
+      "iteration": 13,
+      "allocate_ns": 7291,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 3001459,
+      "thermal_state": 0,
+      "write_ns": 368750,
+      "total_ns": 3377500
+    },
+    {
+      "name": "baseline",
+      "width": 512,
+      "iteration": 13,
+      "allocate_ns": 10375,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2491625,
+      "thermal_state": 0,
+      "write_ns": 550291,
+      "total_ns": 3052291
+    },
+    {
+      "name": "baseline",
+      "width": 512,
+      "iteration": 14,
+      "allocate_ns": 8000,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2823875,
+      "thermal_state": 0,
+      "write_ns": 370125,
+      "total_ns": 3202000
+    },
+    {
+      "name": "candidate",
+      "width": 512,
+      "iteration": 14,
+      "allocate_ns": 9083,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2687750,
+      "thermal_state": 0,
+      "write_ns": 374667,
+      "total_ns": 3071500
+    },
+    {
+      "name": "candidate",
+      "width": 512,
+      "iteration": 15,
+      "allocate_ns": 5500,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2760750,
+      "thermal_state": 0,
+      "write_ns": 372125,
+      "total_ns": 3138375
+    },
+    {
+      "name": "baseline",
+      "width": 512,
+      "iteration": 15,
+      "allocate_ns": 7750,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2974459,
+      "thermal_state": 0,
+      "write_ns": 367583,
+      "total_ns": 3349792
+    },
+    {
+      "name": "baseline",
+      "width": 512,
+      "iteration": 16,
+      "allocate_ns": 8750,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 3031208,
+      "thermal_state": 0,
+      "write_ns": 368459,
+      "total_ns": 3408417
+    },
+    {
+      "name": "candidate",
+      "width": 512,
+      "iteration": 16,
+      "allocate_ns": 9667,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2767833,
+      "thermal_state": 0,
+      "write_ns": 369958,
+      "total_ns": 3147458
+    },
+    {
+      "name": "candidate",
+      "width": 512,
+      "iteration": 17,
+      "allocate_ns": 4834,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2816625,
+      "thermal_state": 0,
+      "write_ns": 372000,
+      "total_ns": 3193459
+    },
+    {
+      "name": "baseline",
+      "width": 512,
+      "iteration": 17,
+      "allocate_ns": 7708,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2987958,
+      "thermal_state": 0,
+      "write_ns": 567375,
+      "total_ns": 3563041
+    },
+    {
+      "name": "baseline",
+      "width": 512,
+      "iteration": 18,
+      "allocate_ns": 8042,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2722500,
+      "thermal_state": 0,
+      "write_ns": 368125,
+      "total_ns": 3098667
+    },
+    {
+      "name": "candidate",
+      "width": 512,
+      "iteration": 18,
+      "allocate_ns": 7000,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2765500,
+      "thermal_state": 0,
+      "write_ns": 367875,
+      "total_ns": 3140375
+    },
+    {
+      "name": "candidate",
+      "width": 512,
+      "iteration": 19,
+      "allocate_ns": 4208,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2763750,
+      "thermal_state": 0,
+      "write_ns": 369875,
+      "total_ns": 3137833
+    },
+    {
+      "name": "baseline",
+      "width": 512,
+      "iteration": 19,
+      "allocate_ns": 5625,
+      "checksum": 8556380416,
+      "pixel_capacity": 527352,
+      "read_ns": 2698125,
+      "thermal_state": 0,
+      "write_ns": 367500,
+      "total_ns": 3071250
+    },
+    {
+      "name": "baseline",
+      "width": 2048,
+      "iteration": 0,
+      "allocate_ns": 42167,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 44856834,
+      "thermal_state": 0,
+      "write_ns": 6007958,
+      "total_ns": 50906959
+    },
+    {
+      "name": "candidate",
+      "width": 2048,
+      "iteration": 0,
+      "allocate_ns": 43333,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 45959875,
+      "thermal_state": 0,
+      "write_ns": 6057833,
+      "total_ns": 52061041
+    },
+    {
+      "name": "candidate",
+      "width": 2048,
+      "iteration": 1,
+      "allocate_ns": 49083,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 44815750,
+      "thermal_state": 0,
+      "write_ns": 6030583,
+      "total_ns": 50895416
+    },
+    {
+      "name": "baseline",
+      "width": 2048,
+      "iteration": 1,
+      "allocate_ns": 41000,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 44486417,
+      "thermal_state": 0,
+      "write_ns": 6137917,
+      "total_ns": 50665334
+    },
+    {
+      "name": "baseline",
+      "width": 2048,
+      "iteration": 2,
+      "allocate_ns": 39750,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 44831417,
+      "thermal_state": 0,
+      "write_ns": 6024792,
+      "total_ns": 50895959
+    },
+    {
+      "name": "candidate",
+      "width": 2048,
+      "iteration": 2,
+      "allocate_ns": 42000,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 45539625,
+      "thermal_state": 0,
+      "write_ns": 6333625,
+      "total_ns": 51915250
+    },
+    {
+      "name": "candidate",
+      "width": 2048,
+      "iteration": 3,
+      "allocate_ns": 43209,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 45732625,
+      "thermal_state": 0,
+      "write_ns": 6132666,
+      "total_ns": 51908500
+    },
+    {
+      "name": "baseline",
+      "width": 2048,
+      "iteration": 3,
+      "allocate_ns": 84834,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 46714125,
+      "thermal_state": 0,
+      "write_ns": 6287083,
+      "total_ns": 53086042
+    },
+    {
+      "name": "baseline",
+      "width": 2048,
+      "iteration": 4,
+      "allocate_ns": 43375,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 45634166,
+      "thermal_state": 0,
+      "write_ns": 12804500,
+      "total_ns": 58482041
+    },
+    {
+      "name": "candidate",
+      "width": 2048,
+      "iteration": 4,
+      "allocate_ns": 45167,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 46999125,
+      "thermal_state": 0,
+      "write_ns": 6519333,
+      "total_ns": 53563625
+    },
+    {
+      "name": "candidate",
+      "width": 2048,
+      "iteration": 5,
+      "allocate_ns": 43250,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 47159334,
+      "thermal_state": 0,
+      "write_ns": 6111166,
+      "total_ns": 53313750
+    },
+    {
+      "name": "baseline",
+      "width": 2048,
+      "iteration": 5,
+      "allocate_ns": 41166,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 45243625,
+      "thermal_state": 0,
+      "write_ns": 6046042,
+      "total_ns": 51330833
+    },
+    {
+      "name": "baseline",
+      "width": 2048,
+      "iteration": 6,
+      "allocate_ns": 40625,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 45316542,
+      "thermal_state": 0,
+      "write_ns": 5990208,
+      "total_ns": 51347375
+    },
+    {
+      "name": "candidate",
+      "width": 2048,
+      "iteration": 6,
+      "allocate_ns": 40583,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 45230125,
+      "thermal_state": 0,
+      "write_ns": 6531542,
+      "total_ns": 51802250
+    },
+    {
+      "name": "candidate",
+      "width": 2048,
+      "iteration": 7,
+      "allocate_ns": 40625,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 44809375,
+      "thermal_state": 0,
+      "write_ns": 6708333,
+      "total_ns": 51558333
+    },
+    {
+      "name": "baseline",
+      "width": 2048,
+      "iteration": 7,
+      "allocate_ns": 41959,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 44262542,
+      "thermal_state": 0,
+      "write_ns": 6256416,
+      "total_ns": 50560917
+    },
+    {
+      "name": "baseline",
+      "width": 2048,
+      "iteration": 8,
+      "allocate_ns": 64750,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 43231167,
+      "thermal_state": 0,
+      "write_ns": 6247583,
+      "total_ns": 49543500
+    },
+    {
+      "name": "candidate",
+      "width": 2048,
+      "iteration": 8,
+      "allocate_ns": 43084,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 48263625,
+      "thermal_state": 0,
+      "write_ns": 6461333,
+      "total_ns": 54768042
+    },
+    {
+      "name": "candidate",
+      "width": 2048,
+      "iteration": 9,
+      "allocate_ns": 41209,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 48853125,
+      "thermal_state": 0,
+      "write_ns": 6471375,
+      "total_ns": 55365709
+    },
+    {
+      "name": "baseline",
+      "width": 2048,
+      "iteration": 9,
+      "allocate_ns": 45000,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 48834166,
+      "thermal_state": 0,
+      "write_ns": 6222042,
+      "total_ns": 55101208
+    },
+    {
+      "name": "baseline",
+      "width": 2048,
+      "iteration": 10,
+      "allocate_ns": 42625,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 48988084,
+      "thermal_state": 0,
+      "write_ns": 6259416,
+      "total_ns": 55290125
+    },
+    {
+      "name": "candidate",
+      "width": 2048,
+      "iteration": 10,
+      "allocate_ns": 43416,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 46691500,
+      "thermal_state": 0,
+      "write_ns": 6977542,
+      "total_ns": 53712458
+    },
+    {
+      "name": "candidate",
+      "width": 2048,
+      "iteration": 11,
+      "allocate_ns": 40959,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 46686792,
+      "thermal_state": 0,
+      "write_ns": 8427166,
+      "total_ns": 55154917
+    },
+    {
+      "name": "baseline",
+      "width": 2048,
+      "iteration": 11,
+      "allocate_ns": 46875,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 47533333,
+      "thermal_state": 0,
+      "write_ns": 6287625,
+      "total_ns": 53867833
+    },
+    {
+      "name": "baseline",
+      "width": 2048,
+      "iteration": 12,
+      "allocate_ns": 40000,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 45747166,
+      "thermal_state": 0,
+      "write_ns": 6815959,
+      "total_ns": 52603125
+    },
+    {
+      "name": "candidate",
+      "width": 2048,
+      "iteration": 12,
+      "allocate_ns": 63667,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 48260541,
+      "thermal_state": 0,
+      "write_ns": 7333125,
+      "total_ns": 55657333
+    },
+    {
+      "name": "candidate",
+      "width": 2048,
+      "iteration": 13,
+      "allocate_ns": 43334,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 47718834,
+      "thermal_state": 0,
+      "write_ns": 6704791,
+      "total_ns": 54466959
+    },
+    {
+      "name": "baseline",
+      "width": 2048,
+      "iteration": 13,
+      "allocate_ns": 45000,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 48941292,
+      "thermal_state": 0,
+      "write_ns": 6041666,
+      "total_ns": 55027958
+    },
+    {
+      "name": "baseline",
+      "width": 2048,
+      "iteration": 14,
+      "allocate_ns": 76334,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 48761000,
+      "thermal_state": 0,
+      "write_ns": 7959958,
+      "total_ns": 56797292
+    },
+    {
+      "name": "candidate",
+      "width": 2048,
+      "iteration": 14,
+      "allocate_ns": 61917,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 47889542,
+      "thermal_state": 0,
+      "write_ns": 5944166,
+      "total_ns": 53895625
+    },
+    {
+      "name": "candidate",
+      "width": 2048,
+      "iteration": 15,
+      "allocate_ns": 40542,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 46078958,
+      "thermal_state": 0,
+      "write_ns": 6194458,
+      "total_ns": 52313958
+    },
+    {
+      "name": "baseline",
+      "width": 2048,
+      "iteration": 15,
+      "allocate_ns": 48583,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 47102959,
+      "thermal_state": 0,
+      "write_ns": 7087250,
+      "total_ns": 54238792
+    },
+    {
+      "name": "baseline",
+      "width": 2048,
+      "iteration": 16,
+      "allocate_ns": 45000,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 47763583,
+      "thermal_state": 0,
+      "write_ns": 6383584,
+      "total_ns": 54192167
+    },
+    {
+      "name": "candidate",
+      "width": 2048,
+      "iteration": 16,
+      "allocate_ns": 41709,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 49196292,
+      "thermal_state": 0,
+      "write_ns": 6338708,
+      "total_ns": 55576709
+    },
+    {
+      "name": "candidate",
+      "width": 2048,
+      "iteration": 17,
+      "allocate_ns": 39208,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 47619667,
+      "thermal_state": 0,
+      "write_ns": 6207583,
+      "total_ns": 53866458
+    },
+    {
+      "name": "baseline",
+      "width": 2048,
+      "iteration": 17,
+      "allocate_ns": 48083,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 48121084,
+      "thermal_state": 0,
+      "write_ns": 6642750,
+      "total_ns": 54811917
+    },
+    {
+      "name": "baseline",
+      "width": 2048,
+      "iteration": 18,
+      "allocate_ns": 44667,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 47324375,
+      "thermal_state": 0,
+      "write_ns": 6128333,
+      "total_ns": 53497375
+    },
+    {
+      "name": "candidate",
+      "width": 2048,
+      "iteration": 18,
+      "allocate_ns": 42541,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 49063375,
+      "thermal_state": 0,
+      "write_ns": 7619417,
+      "total_ns": 56725333
+    },
+    {
+      "name": "candidate",
+      "width": 2048,
+      "iteration": 19,
+      "allocate_ns": 57083,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 49445292,
+      "thermal_state": 0,
+      "write_ns": 6567875,
+      "total_ns": 56070250
+    },
+    {
+      "name": "baseline",
+      "width": 2048,
+      "iteration": 19,
+      "allocate_ns": 81917,
+      "checksum": 137304736768,
+      "pixel_capacity": 8400888,
+      "read_ns": 48942500,
+      "thermal_state": 0,
+      "write_ns": 7463250,
+      "total_ns": 56487667
+    }
+  ],
+  "summary": [
+    {
+      "width": 64,
+      "metric": "allocate_ns",
+      "medians": {
+        "baseline": 1771.0,
+        "candidate": 1563.0
+      },
+      "candidate_change_percent": -11.744776962168268,
+      "p95": {
+        "baseline": 2875,
+        "candidate": 3334
+      },
+      "minimum": {
+        "baseline": 916,
+        "candidate": 1125
+      },
+      "maximum": {
+        "baseline": 3000,
+        "candidate": 3625
+      }
+    },
+    {
+      "width": 64,
+      "metric": "write_ns",
+      "medians": {
+        "baseline": 6771.0,
+        "candidate": 6916.0
+      },
+      "candidate_change_percent": 2.141485748043115,
+      "p95": {
+        "baseline": 7625,
+        "candidate": 7583
+      },
+      "minimum": {
+        "baseline": 6459,
+        "candidate": 6458
+      },
+      "maximum": {
+        "baseline": 8250,
+        "candidate": 7708
+      }
+    },
+    {
+      "width": 64,
+      "metric": "read_ns",
+      "medians": {
+        "baseline": 41771.0,
+        "candidate": 41667.0
+      },
+      "candidate_change_percent": -0.24897656268703106,
+      "p95": {
+        "baseline": 62208,
+        "candidate": 43709
+      },
+      "minimum": {
+        "baseline": 37792,
+        "candidate": 37958
+      },
+      "maximum": {
+        "baseline": 73875,
+        "candidate": 43875
+      }
+    },
+    {
+      "width": 64,
+      "metric": "total_ns",
+      "medians": {
+        "baseline": 50354.5,
+        "candidate": 51125.0
+      },
+      "candidate_change_percent": 1.5301512277949403,
+      "p95": {
+        "baseline": 72458,
+        "candidate": 54125
+      },
+      "minimum": {
+        "baseline": 45875,
+        "candidate": 46000
+      },
+      "maximum": {
+        "baseline": 84375,
+        "candidate": 54166
+      }
+    },
+    {
+      "width": 512,
+      "metric": "allocate_ns",
+      "medians": {
+        "baseline": 7729.0,
+        "candidate": 6979.0
+      },
+      "candidate_change_percent": -9.703713287618065,
+      "p95": {
+        "baseline": 12291,
+        "candidate": 9375
+      },
+      "minimum": {
+        "baseline": 4791,
+        "candidate": 4208
+      },
+      "maximum": {
+        "baseline": 102291,
+        "candidate": 9667
+      }
+    },
+    {
+      "width": 512,
+      "metric": "write_ns",
+      "medians": {
+        "baseline": 371375.5,
+        "candidate": 371146.0
+      },
+      "candidate_change_percent": -0.06179729142067325,
+      "p95": {
+        "baseline": 550291,
+        "candidate": 402958
+      },
+      "minimum": {
+        "baseline": 367500,
+        "candidate": 367708
+      },
+      "maximum": {
+        "baseline": 567375,
+        "candidate": 428375
+      }
+    },
+    {
+      "width": 512,
+      "metric": "read_ns",
+      "medians": {
+        "baseline": 2713708.5,
+        "candidate": 2735146.0
+      },
+      "candidate_change_percent": 0.7899706250689809,
+      "p95": {
+        "baseline": 3031208,
+        "candidate": 3001459
+      },
+      "minimum": {
+        "baseline": 2491625,
+        "candidate": 2457125
+      },
+      "maximum": {
+        "baseline": 3033208,
+        "candidate": 3326417
+      }
+    },
+    {
+      "width": 512,
+      "metric": "total_ns",
+      "medians": {
+        "baseline": 3128542.0,
+        "candidate": 3111833.5
+      },
+      "candidate_change_percent": -0.5340666674764183,
+      "p95": {
+        "baseline": 3417750,
+        "candidate": 3377500
+      },
+      "minimum": {
+        "baseline": 2908292,
+        "candidate": 2846958
+      },
+      "maximum": {
+        "baseline": 3563041,
+        "candidate": 3702583
+      }
+    },
+    {
+      "width": 2048,
+      "metric": "allocate_ns",
+      "medians": {
+        "baseline": 44833.5,
+        "candidate": 43146.5
+      },
+      "candidate_change_percent": -3.7628112906643474,
+      "p95": {
+        "baseline": 81917,
+        "candidate": 61917
+      },
+      "minimum": {
+        "baseline": 39750,
+        "candidate": 39208
+      },
+      "maximum": {
+        "baseline": 84834,
+        "candidate": 63667
+      }
+    },
+    {
+      "width": 2048,
+      "metric": "write_ns",
+      "medians": {
+        "baseline": 6257916.0,
+        "candidate": 6466354.0
+      },
+      "candidate_change_percent": 3.330789355433983,
+      "p95": {
+        "baseline": 7959958,
+        "candidate": 7619417
+      },
+      "minimum": {
+        "baseline": 5990208,
+        "candidate": 5944166
+      },
+      "maximum": {
+        "baseline": 12804500,
+        "candidate": 8427166
+      }
+    },
+    {
+      "width": 2048,
+      "metric": "read_ns",
+      "medians": {
+        "baseline": 46908542.0,
+        "candidate": 47079229.5
+      },
+      "candidate_change_percent": 0.36387295942814646,
+      "p95": {
+        "baseline": 48942500,
+        "candidate": 49196292
+      },
+      "minimum": {
+        "baseline": 43231167,
+        "candidate": 44809375
+      },
+      "maximum": {
+        "baseline": 48988084,
+        "candidate": 49445292
+      }
+    },
+    {
+      "width": 2048,
+      "metric": "total_ns",
+      "medians": {
+        "baseline": 53682604.0,
+        "candidate": 53789458.0
+      },
+      "candidate_change_percent": 0.19904772130652226,
+      "p95": {
+        "baseline": 56797292,
+        "candidate": 56070250
+      },
+      "minimum": {
+        "baseline": 49543500,
+        "candidate": 50895416
+      },
+      "maximum": {
+        "baseline": 58482041,
+        "candidate": 56725333
+      }
+    }
+  ]
+}

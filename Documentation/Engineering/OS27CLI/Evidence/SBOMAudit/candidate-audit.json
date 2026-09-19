@@ -1,0 +1,436 @@
+{
+  "audit_scope": "Original final candidate build-associated SBOMs; field/provenance checks only.",
+  "schema_validation_status": "open: installed SwiftPM skipped missing schemas; no complete JSON Schema/SHACL validation executed in this follow-up. Original field definitions and official references were inspected during the prior Swift 6.4 qualification.",
+  "primary_sources": {
+    "spdx_json_schema": "https://spdx.org/schema/3.0.1/spdx-json-schema.json",
+    "spdx_json_schema_draft": "2020-12",
+    "spdx_semantic_model": "https://spdx.org/rdf/3.0.1/spdx-model.ttl",
+    "spdx_validation_requirements": "https://spdx.github.io/spdx-spec/v3.0.1/serializations/",
+    "spdx_spec_version_definition": "https://spdx.github.io/spdx-spec/v3.0.1/model/Core/Properties/specVersion/",
+    "cyclonedx_json_schema": "https://cyclonedx.org/schema/bom-1.7.schema.json",
+    "cyclonedx_json_schema_draft": "draft-07",
+    "schema_source_revision": "Versioned official URLs inspected via web 2026-09-19; no locally downloaded bytes/hash are claimed."
+  },
+  "results": [
+    {
+      "repository": "SwiftJ2K",
+      "format": "spdx",
+      "path": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/candidate/SwiftJ2K/sboms/spdx/spdx3-3.0.1-SwiftJ2K-c213db53913367063d4204a5561a89b1071bbf00-modified-all-2026-09-19T09_34_01Z.json",
+      "sha256": "414737f90bb529a8675c1e704c6785b8c3ce65a371317ef35bc8813fe7cac310",
+      "candidate_report_status": "passed_requested_checks",
+      "source_commit": "c213db53913367063d4204a5561a89b1071bbf00",
+      "command_exit": 0,
+      "build_associated_command": true,
+      "product_option_matches": true,
+      "json_parse": "passed",
+      "json_schema_validation": "not_executed",
+      "semantic_validation": "not_executed",
+      "findings": [
+        {
+          "kind": "specVersion_semantic_mismatch",
+          "json_pointer": "/@graph/2/specVersion",
+          "value": "6.4.0-dev",
+          "evidence": "SPDX specVersion describes SPDX specification version, not the generator software version; no whole-document schema execution is claimed."
+        },
+        {
+          "kind": "nonstandard_package_property",
+          "json_pointer": "/@graph/8/externalUrl",
+          "value": "pkg:swift/github.com/Raster-Lab/swiftj2k@c213db53913367063d4204a5561a89b1071bbf00-modified",
+          "evidence": "Official SPDX 3.0.1 JSON Schema has no externalUrl property, defines software_packageUrl, and prohibits unevaluated graph-item properties. This is field inspection, not executed full schema validation."
+        },
+        {
+          "kind": "nonstandard_package_property",
+          "json_pointer": "/@graph/9/externalUrl",
+          "value": "pkg:swift/github.com/Raster-Lab/swiftj2k:SwiftJ2K@c213db53913367063d4204a5561a89b1071bbf00-modified",
+          "evidence": "Official SPDX 3.0.1 JSON Schema has no externalUrl property, defines software_packageUrl, and prohibits unevaluated graph-item properties. This is field inspection, not executed full schema validation."
+        }
+      ],
+      "sha256_matches_build_report": true,
+      "context": "https://spdx.org/rdf/3.0.1/spdx-context.jsonld",
+      "packages": [
+        {
+          "name": "swiftj2k",
+          "version": "c213db53913367063d4204a5561a89b1071bbf00-modified",
+          "id": "urn:spdx:swiftj2k",
+          "externalUrl": "pkg:swift/github.com/Raster-Lab/swiftj2k@c213db53913367063d4204a5561a89b1071bbf00-modified"
+        },
+        {
+          "name": "SwiftJ2K",
+          "version": "c213db53913367063d4204a5561a89b1071bbf00-modified",
+          "id": "urn:spdx:swiftj2k:SwiftJ2K",
+          "externalUrl": "pkg:swift/github.com/Raster-Lab/swiftj2k:SwiftJ2K@c213db53913367063d4204a5561a89b1071bbf00-modified"
+        }
+      ],
+      "package_versions_match_source": true,
+      "sdk_components_present": false
+    },
+    {
+      "repository": "SwiftJ2K",
+      "format": "cyclonedx",
+      "path": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/candidate/SwiftJ2K/sboms/cyclonedx/cyclonedx1-1.7-SwiftJ2K-c213db53913367063d4204a5561a89b1071bbf00-modified-all-2026-09-19T09_34_03Z.json",
+      "sha256": "b9113a7b17635be5b75ad30a8e3f259d6ceba37c1bd6ac9e9836e022bf25f930",
+      "candidate_report_status": "passed_requested_checks",
+      "source_commit": "c213db53913367063d4204a5561a89b1071bbf00",
+      "command_exit": 0,
+      "build_associated_command": true,
+      "product_option_matches": true,
+      "json_parse": "passed",
+      "json_schema_validation": "not_executed",
+      "semantic_validation": "not_executed",
+      "findings": [
+        {
+          "kind": "duplicate_bom_ref",
+          "value": "swiftj2k:SwiftJ2K",
+          "json_pointers": [
+            "/components/1/bom-ref",
+            "/metadata/component/bom-ref"
+          ],
+          "evidence": "Official CycloneDX 1.7 component.bom-ref description requires identifiers to be unique across the BOM. This is a directly checked uniqueness finding, not a claim that JSON Schema engines enforce it."
+        }
+      ],
+      "sha256_matches_build_report": true,
+      "schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
+      "spec_version": "1.7",
+      "packages": [
+        {
+          "name": "swiftj2k",
+          "version": "c213db53913367063d4204a5561a89b1071bbf00-modified",
+          "id": "swiftj2k",
+          "purl": "pkg:swift/github.com/Raster-Lab/swiftj2k@c213db53913367063d4204a5561a89b1071bbf00-modified"
+        },
+        {
+          "name": "SwiftJ2K",
+          "version": "c213db53913367063d4204a5561a89b1071bbf00-modified",
+          "id": "swiftj2k:SwiftJ2K",
+          "purl": "pkg:swift/github.com/Raster-Lab/swiftj2k:SwiftJ2K@c213db53913367063d4204a5561a89b1071bbf00-modified"
+        }
+      ],
+      "package_versions_match_source": true,
+      "sdk_components_present": false,
+      "declared_dependency_graph": [
+        {
+          "dependsOn": [
+            "swiftj2k:SwiftJ2K"
+          ],
+          "ref": "swiftj2k"
+        }
+      ],
+      "core_product_licence_present": false
+    },
+    {
+      "repository": "SwiftJLS",
+      "format": "spdx",
+      "path": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/candidate/SwiftJLS/sboms/spdx/spdx3-3.0.1-SwiftJLS-e1cbc3a23c4ada64f2d5db4c5330bd9710950797-modified-all-2026-09-19T09_33_58Z.json",
+      "sha256": "283ff31ca76c94d19751bbb5bc42f1fc04141c1f77fcbbcfa5476b08502855aa",
+      "candidate_report_status": "passed_requested_checks",
+      "source_commit": "e1cbc3a23c4ada64f2d5db4c5330bd9710950797",
+      "command_exit": 0,
+      "build_associated_command": true,
+      "product_option_matches": true,
+      "json_parse": "passed",
+      "json_schema_validation": "not_executed",
+      "semantic_validation": "not_executed",
+      "findings": [
+        {
+          "kind": "specVersion_semantic_mismatch",
+          "json_pointer": "/@graph/2/specVersion",
+          "value": "6.4.0-dev",
+          "evidence": "SPDX specVersion describes SPDX specification version, not the generator software version; no whole-document schema execution is claimed."
+        },
+        {
+          "kind": "nonstandard_package_property",
+          "json_pointer": "/@graph/8/externalUrl",
+          "value": "pkg:swift/github.com/Raster-Lab/swiftjls@e1cbc3a23c4ada64f2d5db4c5330bd9710950797-modified",
+          "evidence": "Official SPDX 3.0.1 JSON Schema has no externalUrl property, defines software_packageUrl, and prohibits unevaluated graph-item properties. This is field inspection, not executed full schema validation."
+        },
+        {
+          "kind": "nonstandard_package_property",
+          "json_pointer": "/@graph/9/externalUrl",
+          "value": "pkg:swift/github.com/Raster-Lab/swiftjls:SwiftJLS@e1cbc3a23c4ada64f2d5db4c5330bd9710950797-modified",
+          "evidence": "Official SPDX 3.0.1 JSON Schema has no externalUrl property, defines software_packageUrl, and prohibits unevaluated graph-item properties. This is field inspection, not executed full schema validation."
+        }
+      ],
+      "sha256_matches_build_report": true,
+      "context": "https://spdx.org/rdf/3.0.1/spdx-context.jsonld",
+      "packages": [
+        {
+          "name": "swiftjls",
+          "version": "e1cbc3a23c4ada64f2d5db4c5330bd9710950797-modified",
+          "id": "urn:spdx:swiftjls",
+          "externalUrl": "pkg:swift/github.com/Raster-Lab/swiftjls@e1cbc3a23c4ada64f2d5db4c5330bd9710950797-modified"
+        },
+        {
+          "name": "SwiftJLS",
+          "version": "e1cbc3a23c4ada64f2d5db4c5330bd9710950797-modified",
+          "id": "urn:spdx:swiftjls:SwiftJLS",
+          "externalUrl": "pkg:swift/github.com/Raster-Lab/swiftjls:SwiftJLS@e1cbc3a23c4ada64f2d5db4c5330bd9710950797-modified"
+        }
+      ],
+      "package_versions_match_source": true,
+      "sdk_components_present": false
+    },
+    {
+      "repository": "SwiftJLS",
+      "format": "cyclonedx",
+      "path": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/candidate/SwiftJLS/sboms/cyclonedx/cyclonedx1-1.7-SwiftJLS-e1cbc3a23c4ada64f2d5db4c5330bd9710950797-modified-all-2026-09-19T09_34_00Z.json",
+      "sha256": "a31b911a08ec291428997b1e8f095dfdcc4fe65e740d9c38131fe69b609e06af",
+      "candidate_report_status": "passed_requested_checks",
+      "source_commit": "e1cbc3a23c4ada64f2d5db4c5330bd9710950797",
+      "command_exit": 0,
+      "build_associated_command": true,
+      "product_option_matches": true,
+      "json_parse": "passed",
+      "json_schema_validation": "not_executed",
+      "semantic_validation": "not_executed",
+      "findings": [
+        {
+          "kind": "duplicate_bom_ref",
+          "value": "swiftjls:SwiftJLS",
+          "json_pointers": [
+            "/components/1/bom-ref",
+            "/metadata/component/bom-ref"
+          ],
+          "evidence": "Official CycloneDX 1.7 component.bom-ref description requires identifiers to be unique across the BOM. This is a directly checked uniqueness finding, not a claim that JSON Schema engines enforce it."
+        }
+      ],
+      "sha256_matches_build_report": true,
+      "schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
+      "spec_version": "1.7",
+      "packages": [
+        {
+          "name": "swiftjls",
+          "version": "e1cbc3a23c4ada64f2d5db4c5330bd9710950797-modified",
+          "id": "swiftjls",
+          "purl": "pkg:swift/github.com/Raster-Lab/swiftjls@e1cbc3a23c4ada64f2d5db4c5330bd9710950797-modified"
+        },
+        {
+          "name": "SwiftJLS",
+          "version": "e1cbc3a23c4ada64f2d5db4c5330bd9710950797-modified",
+          "id": "swiftjls:SwiftJLS",
+          "purl": "pkg:swift/github.com/Raster-Lab/swiftjls:SwiftJLS@e1cbc3a23c4ada64f2d5db4c5330bd9710950797-modified"
+        }
+      ],
+      "package_versions_match_source": true,
+      "sdk_components_present": false,
+      "declared_dependency_graph": [
+        {
+          "dependsOn": [
+            "swiftjls:SwiftJLS"
+          ],
+          "ref": "swiftjls"
+        }
+      ],
+      "core_product_licence_present": false
+    },
+    {
+      "repository": "SwiftJXL",
+      "format": "spdx",
+      "path": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/candidate/SwiftJXL/sboms/spdx/spdx3-3.0.1-SwiftJXL-64c5b50bfb6c3fa830a502ad887e6dcf867fa9a0-modified-all-2026-09-19T09_33_59Z.json",
+      "sha256": "433bfaca98f648d1739dde6db44d80db7d9f180d3f62f6442db34c5593af3cf2",
+      "candidate_report_status": "passed_requested_checks",
+      "source_commit": "64c5b50bfb6c3fa830a502ad887e6dcf867fa9a0",
+      "command_exit": 0,
+      "build_associated_command": true,
+      "product_option_matches": true,
+      "json_parse": "passed",
+      "json_schema_validation": "not_executed",
+      "semantic_validation": "not_executed",
+      "findings": [
+        {
+          "kind": "specVersion_semantic_mismatch",
+          "json_pointer": "/@graph/2/specVersion",
+          "value": "6.4.0-dev",
+          "evidence": "SPDX specVersion describes SPDX specification version, not the generator software version; no whole-document schema execution is claimed."
+        },
+        {
+          "kind": "nonstandard_package_property",
+          "json_pointer": "/@graph/8/externalUrl",
+          "value": "pkg:swift/github.com/Raster-Lab/swiftjxl@64c5b50bfb6c3fa830a502ad887e6dcf867fa9a0-modified",
+          "evidence": "Official SPDX 3.0.1 JSON Schema has no externalUrl property, defines software_packageUrl, and prohibits unevaluated graph-item properties. This is field inspection, not executed full schema validation."
+        },
+        {
+          "kind": "nonstandard_package_property",
+          "json_pointer": "/@graph/9/externalUrl",
+          "value": "pkg:swift/github.com/Raster-Lab/swiftjxl:SwiftJXL@64c5b50bfb6c3fa830a502ad887e6dcf867fa9a0-modified",
+          "evidence": "Official SPDX 3.0.1 JSON Schema has no externalUrl property, defines software_packageUrl, and prohibits unevaluated graph-item properties. This is field inspection, not executed full schema validation."
+        }
+      ],
+      "sha256_matches_build_report": true,
+      "context": "https://spdx.org/rdf/3.0.1/spdx-context.jsonld",
+      "packages": [
+        {
+          "name": "swiftjxl",
+          "version": "64c5b50bfb6c3fa830a502ad887e6dcf867fa9a0-modified",
+          "id": "urn:spdx:swiftjxl",
+          "externalUrl": "pkg:swift/github.com/Raster-Lab/swiftjxl@64c5b50bfb6c3fa830a502ad887e6dcf867fa9a0-modified"
+        },
+        {
+          "name": "SwiftJXL",
+          "version": "64c5b50bfb6c3fa830a502ad887e6dcf867fa9a0-modified",
+          "id": "urn:spdx:swiftjxl:SwiftJXL",
+          "externalUrl": "pkg:swift/github.com/Raster-Lab/swiftjxl:SwiftJXL@64c5b50bfb6c3fa830a502ad887e6dcf867fa9a0-modified"
+        }
+      ],
+      "package_versions_match_source": true,
+      "sdk_components_present": false
+    },
+    {
+      "repository": "SwiftJXL",
+      "format": "cyclonedx",
+      "path": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/candidate/SwiftJXL/sboms/cyclonedx/cyclonedx1-1.7-SwiftJXL-64c5b50bfb6c3fa830a502ad887e6dcf867fa9a0-modified-all-2026-09-19T09_34_00Z.json",
+      "sha256": "bc1b5d86a14b481959e75a6e686da001e02d8aaf4554a1e0fd420d3549621041",
+      "candidate_report_status": "passed_requested_checks",
+      "source_commit": "64c5b50bfb6c3fa830a502ad887e6dcf867fa9a0",
+      "command_exit": 0,
+      "build_associated_command": true,
+      "product_option_matches": true,
+      "json_parse": "passed",
+      "json_schema_validation": "not_executed",
+      "semantic_validation": "not_executed",
+      "findings": [
+        {
+          "kind": "duplicate_bom_ref",
+          "value": "swiftjxl:SwiftJXL",
+          "json_pointers": [
+            "/components/1/bom-ref",
+            "/metadata/component/bom-ref"
+          ],
+          "evidence": "Official CycloneDX 1.7 component.bom-ref description requires identifiers to be unique across the BOM. This is a directly checked uniqueness finding, not a claim that JSON Schema engines enforce it."
+        }
+      ],
+      "sha256_matches_build_report": true,
+      "schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
+      "spec_version": "1.7",
+      "packages": [
+        {
+          "name": "swiftjxl",
+          "version": "64c5b50bfb6c3fa830a502ad887e6dcf867fa9a0-modified",
+          "id": "swiftjxl",
+          "purl": "pkg:swift/github.com/Raster-Lab/swiftjxl@64c5b50bfb6c3fa830a502ad887e6dcf867fa9a0-modified"
+        },
+        {
+          "name": "SwiftJXL",
+          "version": "64c5b50bfb6c3fa830a502ad887e6dcf867fa9a0-modified",
+          "id": "swiftjxl:SwiftJXL",
+          "purl": "pkg:swift/github.com/Raster-Lab/swiftjxl:SwiftJXL@64c5b50bfb6c3fa830a502ad887e6dcf867fa9a0-modified"
+        }
+      ],
+      "package_versions_match_source": true,
+      "sdk_components_present": false,
+      "declared_dependency_graph": [
+        {
+          "dependsOn": [
+            "swiftjxl:SwiftJXL"
+          ],
+          "ref": "swiftjxl"
+        }
+      ],
+      "core_product_licence_present": false
+    },
+    {
+      "repository": "SwiftJLI",
+      "format": "spdx",
+      "path": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/candidate/SwiftJLI/sboms/spdx/spdx3-3.0.1-SwiftJLI-3931d9df7c057e2fcc748fd4641f57159c271a0e-modified-all-2026-09-19T09_34_00Z.json",
+      "sha256": "4dccfc7dfadd1461a44abf2e6c3b22eb40d4efe88d7a67537c302485736f6dc4",
+      "candidate_report_status": "passed_requested_checks",
+      "source_commit": "3931d9df7c057e2fcc748fd4641f57159c271a0e",
+      "command_exit": 0,
+      "build_associated_command": true,
+      "product_option_matches": true,
+      "json_parse": "passed",
+      "json_schema_validation": "not_executed",
+      "semantic_validation": "not_executed",
+      "findings": [
+        {
+          "kind": "specVersion_semantic_mismatch",
+          "json_pointer": "/@graph/2/specVersion",
+          "value": "6.4.0-dev",
+          "evidence": "SPDX specVersion describes SPDX specification version, not the generator software version; no whole-document schema execution is claimed."
+        },
+        {
+          "kind": "nonstandard_package_property",
+          "json_pointer": "/@graph/8/externalUrl",
+          "value": "pkg:swift/github.com/Raster-Lab/swiftjli@3931d9df7c057e2fcc748fd4641f57159c271a0e-modified",
+          "evidence": "Official SPDX 3.0.1 JSON Schema has no externalUrl property, defines software_packageUrl, and prohibits unevaluated graph-item properties. This is field inspection, not executed full schema validation."
+        },
+        {
+          "kind": "nonstandard_package_property",
+          "json_pointer": "/@graph/9/externalUrl",
+          "value": "pkg:swift/github.com/Raster-Lab/swiftjli:SwiftJLI@3931d9df7c057e2fcc748fd4641f57159c271a0e-modified",
+          "evidence": "Official SPDX 3.0.1 JSON Schema has no externalUrl property, defines software_packageUrl, and prohibits unevaluated graph-item properties. This is field inspection, not executed full schema validation."
+        }
+      ],
+      "sha256_matches_build_report": true,
+      "context": "https://spdx.org/rdf/3.0.1/spdx-context.jsonld",
+      "packages": [
+        {
+          "name": "swiftjli",
+          "version": "3931d9df7c057e2fcc748fd4641f57159c271a0e-modified",
+          "id": "urn:spdx:swiftjli",
+          "externalUrl": "pkg:swift/github.com/Raster-Lab/swiftjli@3931d9df7c057e2fcc748fd4641f57159c271a0e-modified"
+        },
+        {
+          "name": "SwiftJLI",
+          "version": "3931d9df7c057e2fcc748fd4641f57159c271a0e-modified",
+          "id": "urn:spdx:swiftjli:SwiftJLI",
+          "externalUrl": "pkg:swift/github.com/Raster-Lab/swiftjli:SwiftJLI@3931d9df7c057e2fcc748fd4641f57159c271a0e-modified"
+        }
+      ],
+      "package_versions_match_source": true,
+      "sdk_components_present": false
+    },
+    {
+      "repository": "SwiftJLI",
+      "format": "cyclonedx",
+      "path": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/candidate/SwiftJLI/sboms/cyclonedx/cyclonedx1-1.7-SwiftJLI-3931d9df7c057e2fcc748fd4641f57159c271a0e-modified-all-2026-09-19T09_34_01Z.json",
+      "sha256": "67125dfd430298189c35fa91344005d8e3a6314cea3762748fcb1406a2d0fe8d",
+      "candidate_report_status": "passed_requested_checks",
+      "source_commit": "3931d9df7c057e2fcc748fd4641f57159c271a0e",
+      "command_exit": 0,
+      "build_associated_command": true,
+      "product_option_matches": true,
+      "json_parse": "passed",
+      "json_schema_validation": "not_executed",
+      "semantic_validation": "not_executed",
+      "findings": [
+        {
+          "kind": "duplicate_bom_ref",
+          "value": "swiftjli:SwiftJLI",
+          "json_pointers": [
+            "/components/1/bom-ref",
+            "/metadata/component/bom-ref"
+          ],
+          "evidence": "Official CycloneDX 1.7 component.bom-ref description requires identifiers to be unique across the BOM. This is a directly checked uniqueness finding, not a claim that JSON Schema engines enforce it."
+        }
+      ],
+      "sha256_matches_build_report": true,
+      "schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
+      "spec_version": "1.7",
+      "packages": [
+        {
+          "name": "swiftjli",
+          "version": "3931d9df7c057e2fcc748fd4641f57159c271a0e-modified",
+          "id": "swiftjli",
+          "purl": "pkg:swift/github.com/Raster-Lab/swiftjli@3931d9df7c057e2fcc748fd4641f57159c271a0e-modified"
+        },
+        {
+          "name": "SwiftJLI",
+          "version": "3931d9df7c057e2fcc748fd4641f57159c271a0e-modified",
+          "id": "swiftjli:SwiftJLI",
+          "purl": "pkg:swift/github.com/Raster-Lab/swiftjli:SwiftJLI@3931d9df7c057e2fcc748fd4641f57159c271a0e-modified"
+        }
+      ],
+      "package_versions_match_source": true,
+      "sdk_components_present": false,
+      "declared_dependency_graph": [
+        {
+          "dependsOn": [
+            "swiftjli:SwiftJLI"
+          ],
+          "ref": "swiftjli"
+        }
+      ],
+      "core_product_licence_present": false
+    }
+  ]
+}

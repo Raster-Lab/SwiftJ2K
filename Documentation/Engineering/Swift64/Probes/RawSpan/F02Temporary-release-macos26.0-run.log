@@ -1,0 +1,3 @@
+$ /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary-release-macos26.0
+exit: 0
+F02 passed: typed/raw scratch, 3 exact destructions including partial initialisation throw, empty and bounded capacities

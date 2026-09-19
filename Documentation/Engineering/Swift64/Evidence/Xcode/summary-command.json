@@ -1,0 +1,14 @@
+{
+  "command": [
+    "xcrun",
+    "xcresulttool",
+    "get",
+    "test-results",
+    "summary",
+    "--path",
+    "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/Tests.xcresult"
+  ],
+  "exit_code": 0,
+  "stderr": "",
+  "outside_sandbox": true
+}

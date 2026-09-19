@@ -1,0 +1,2 @@
+$ xcrun swiftc -swift-version 6 -strict-concurrency=complete -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache -target arm64-apple-macosx27.0 -parse-as-library /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary.swift -o /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary-macos27.0
+exit: 0

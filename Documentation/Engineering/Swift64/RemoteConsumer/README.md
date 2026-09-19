@@ -1,0 +1,9 @@
+# Published-revision consumer — SwiftJ2K
+
+A fresh standalone consumer fetched only `https://github.com/Raster-Lab/SwiftJ2K.git` at `c19ff80c94eabff959d485b6b7eb3d3d931f3bf8` and built and executed the exact Swift fence in the repository's MIGRATION.md with Xcode Swift 6.4 / Swift Build. Command exit **0**; the example prints that storage migration passes while predecessor codec routing must remain. Package.resolved contains exactly one dependency pinned to that revision. The checked-out source/test/script/core-manifest hashes exactly match the previously validated candidate report; result.json contains the comparisons, command arguments and manifest/example/lockfile hashes.
+
+These are independent remote resolution and public API checks. No sibling repository path or local dependency override is used. The subsequently added qualification documentation does not change tested inputs. `SHA256SUMS.txt` pins the retained text evidence; build caches, downloaded source copies and executables remain local and are excluded.
+
+The initial consumer was placed in a directory named `SwiftJ2K`. SwiftPM derives package identity from that directory, colliding with the dependency and rejecting product resolution before compilation (exit 1). Its manifest, error log and result are preserved under InitialDirectoryIdentityCollision. A new `RemoteConsumer-SwiftJ2K` directory removed the test-harness naming collision; no library change was required. This is not a hidden package test failure or a retry-until-green test policy.
+
+`runner.py` preserves the executed audit script's original workspace assumptions and external published-source pin record. Source hashes, exact argv/cwd and Package.resolved are the result evidence; copied scripts are not claimed relocatable. Run a new independently pinned consumer with fresh directories to reproduce the check.

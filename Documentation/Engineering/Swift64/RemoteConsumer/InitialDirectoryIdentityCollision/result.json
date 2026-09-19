@@ -1,0 +1,27 @@
+{
+  "repository": "SwiftJ2K",
+  "url": "https://github.com/Raster-Lab/SwiftJ2K.git",
+  "revision": "c19ff80c94eabff959d485b6b7eb3d3d931f3bf8",
+  "argv": [
+    "xcrun",
+    "swift",
+    "run",
+    "--disable-sandbox",
+    "--build-system",
+    "swiftbuild",
+    "--jobs",
+    "2",
+    "--cache-path",
+    "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/url-consumers/SwiftJ2K/cache",
+    "--config-path",
+    "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/url-consumers/SwiftJ2K/config",
+    "--security-path",
+    "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/url-consumers/SwiftJ2K/security",
+    "MigrationExample"
+  ],
+  "cwd": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/url-consumers/SwiftJ2K",
+  "developer_dir": "/Applications/Xcode.app/Contents/Developer",
+  "exit_code": 1,
+  "example_sha256": "e238b9ad529dcccac32f4831a797ae98f804407cdba033e8734abacc14fb5425",
+  "manifest_sha256": "0fb51988fe5d193e69e57fcc0fa592ac73a40d679c53ce3fbb7e4e8c82d3ae51"
+}

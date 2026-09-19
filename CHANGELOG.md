@@ -1,5 +1,12 @@
 # Change log
 
+## 12.1.0-dev.1 — Swift 6.4 upgrade, 2026-09-19 (unreleased)
+
+- Require Swift tools/compiler 6.4, retaining Swift 6 language mode and OS 26 deployment floors.
+- Advance the coordinated common contract to 0.3.0 and the earlier unreleased 12.0.0 version target to 12.1.0.
+- Adopt checked native-order span access for UInt16 samples with explicit endian conversion; preserve public API and owning-storage semantics.
+- Add the supplied upgrade references, F01–F13 feature register, headless Swift Build validation and exact evidence. No codec capability, stable release or tag is added.
+
 ## Unreleased — application migration guide, 2026-09-18
 
 - Added MIGRATION.md for humans and coding agents moving applications from J2KSwift, with verified dependency/API mappings, precision and ownership changes, explicit feature gaps, and staged rollout/rollback guidance.
@@ -36,3 +43,7 @@
 - Updated all seven shared documents and their SHA-256 manifest. This is documentation only; no source migration, codec execution or performance claim.
 
 The foundation document version is 0.2.0. It is separate from the intended library version.
+
+## OS 27 and CLI foundation — 19 September 2026
+
+Owner-authorised Apple platform floors now use 27.0. Development version 12.1.0-dev.2, common contract 0.4.0. The standalone `swiftj2k` provides help/version/capabilities, five diagnostic levels and a matching section 1 manual installed/updated with the binary. Codec commands remain unavailable. Endian-aware span overloads use the new floor without changing public ownership semantics. See [qualification and limitations](Documentation/Engineering/OS27CLI/README.md). Historical evidence and supplied documents remain unchanged.

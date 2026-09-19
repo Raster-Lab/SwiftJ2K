@@ -1,6 +1,6 @@
 # SwiftJ2K — lossless JPEG 2000 ↔ HTJ2K transcoding
 
-Native-transcoding requirements introduced in contract **0.2.0**; the current common contract is **0.2.1**. Implementation instructions, 18 September 2026. The Milestone 1 API shape exists, but no successor transcoding algorithm has been implemented or qualified. Read AGENTS.md, IMPLEMENTATION.md and the common contracts first.
+Native-transcoding requirements introduced in contract **0.2.0**; the current common contract is **0.4.0**. Implementation instructions, 18 September 2026. The Milestone 1 API shape exists, but no successor transcoding algorithm has been implemented or qualified. Read AGENTS.md, IMPLEMENTATION.md and the common contracts first.
 
 Application maintainers replacing predecessor transcoder calls should start with [MIGRATION.md](MIGRATION.md); operational cutover remains blocked pending qualified native transcoding.
 

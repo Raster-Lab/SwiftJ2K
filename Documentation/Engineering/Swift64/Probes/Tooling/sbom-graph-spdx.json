@@ -1,0 +1,33 @@
+{
+  "name": "sbom-graph-spdx",
+  "argv": [
+    "xcrun",
+    "swift",
+    "package",
+    "--package-path",
+    "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/tooling/Fixture",
+    "--scratch-path",
+    "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/tooling/scratch",
+    "--cache-path",
+    "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/tooling/cache",
+    "--config-path",
+    "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/tooling/config",
+    "--security-path",
+    "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/tooling/security",
+    "--disable-sandbox",
+    "--build-system",
+    "swiftbuild",
+    "generate-sbom",
+    "--product",
+    "ToolingProbe",
+    "--sbom-spec",
+    "spdx",
+    "--sbom-output-dir",
+    "../sbom-graph-spdx",
+    "--sbom-filter",
+    "all"
+  ],
+  "cwd": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/tooling/Fixture",
+  "exit": 0,
+  "seconds": 0.7085602283477783
+}

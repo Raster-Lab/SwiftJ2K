@@ -1,0 +1,28 @@
+Building for production...
+[Pre-planning 1 / 156]
+[Planning deferred tasks]
+[40 / 73]
+[43 / 77] SwiftJLI
+[44 / 113] SwiftJLI
+[50 / 115]
+[58 / 115]
+[63 / 115]
+[66 / 115]
+[67 / 115]
+[70 / 115]
+[72 / 115]
+[74 / 115]
+[79 / 115]
+[81 / 115]
+[82 / 115]
+[85 / 115] SwiftJLI
+[88 / 115] SwiftJLI
+[111 / 116]
+[111 / 116] ContractHarness-product
+[113 / 117] ContractHarness-product
+[115 / 117] ContractHarness-product
+[116 / 117] ContractHarness-product
+Build complete! (8.60 secs)
+PASS: 12-in-16, 5x3 padded storage, 1 pixel allocation, 0 adapter copy bytes, shared identity, concurrent reads, second writer rejected
+PASS: 16-in-16, 5x3 padded storage, 1 pixel allocation, 0 adapter copy bytes, shared identity, concurrent reads, second writer rejected
+PASS: local write-lease mapping and exact UInt16 maximum

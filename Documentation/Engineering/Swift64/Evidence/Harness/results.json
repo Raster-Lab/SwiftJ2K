@@ -1,0 +1,48 @@
+{
+  "records": [
+    {
+      "check": "debug",
+      "command": "xcrun swift run --disable-sandbox --build-system swiftbuild --jobs 2 --cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/harness/cache --config-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/harness/config --security-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/harness/security --scratch-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/harness/debug --package-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Integration/ContractHarness ContractHarness",
+      "exit_code": 0,
+      "passes": [
+        "PASS: 12-in-16, 5x3 padded storage, 1 pixel allocation, 0 adapter copy bytes, shared identity, concurrent reads, second writer rejected",
+        "PASS: 16-in-16, 5x3 padded storage, 1 pixel allocation, 0 adapter copy bytes, shared identity, concurrent reads, second writer rejected",
+        "PASS: local write-lease mapping and exact UInt16 maximum"
+      ]
+    },
+    {
+      "check": "release",
+      "command": "xcrun swift run --disable-sandbox --build-system swiftbuild --jobs 2 --cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/harness/cache --config-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/harness/config --security-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/harness/security --scratch-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/harness/release --package-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Integration/ContractHarness -c release ContractHarness",
+      "exit_code": 0,
+      "passes": [
+        "PASS: 12-in-16, 5x3 padded storage, 1 pixel allocation, 0 adapter copy bytes, shared identity, concurrent reads, second writer rejected",
+        "PASS: 16-in-16, 5x3 padded storage, 1 pixel allocation, 0 adapter copy bytes, shared identity, concurrent reads, second writer rejected",
+        "PASS: local write-lease mapping and exact UInt16 maximum"
+      ]
+    },
+    {
+      "check": "asan",
+      "command": "xcrun swift run --disable-sandbox --build-system swiftbuild --jobs 2 --cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/harness/cache --config-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/harness/config --security-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/harness/security --scratch-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/harness/asan --package-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Integration/ContractHarness --sanitize address ContractHarness",
+      "exit_code": 0,
+      "passes": [
+        "PASS: 12-in-16, 5x3 padded storage, 1 pixel allocation, 0 adapter copy bytes, shared identity, concurrent reads, second writer rejected",
+        "PASS: 16-in-16, 5x3 padded storage, 1 pixel allocation, 0 adapter copy bytes, shared identity, concurrent reads, second writer rejected",
+        "PASS: local write-lease mapping and exact UInt16 maximum"
+      ]
+    },
+    {
+      "check": "tsan",
+      "command": "xcrun swift run --disable-sandbox --build-system swiftbuild --jobs 2 --cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/harness/cache --config-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/harness/config --security-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/harness/security --scratch-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/harness/tsan --package-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Integration/ContractHarness --sanitize thread ContractHarness",
+      "exit_code": 0,
+      "passes": [
+        "PASS: 12-in-16, 5x3 padded storage, 1 pixel allocation, 0 adapter copy bytes, shared identity, concurrent reads, second writer rejected",
+        "PASS: 16-in-16, 5x3 padded storage, 1 pixel allocation, 0 adapter copy bytes, shared identity, concurrent reads, second writer rejected",
+        "PASS: local write-lease mapping and exact UInt16 maximum"
+      ]
+    }
+  ],
+  "source_sha256": {
+    "SwiftJ2K/Integration/ContractHarness/Package.swift": "90fb41552569414befbc10e6ab0591d1c232b7e5c5df8da509bcec19bef2b2d2",
+    "SwiftJ2K/Integration/ContractHarness/Sources/ContractHarness/main.swift": "ef21c8e98b7a9d54e6101fdba7987e9b95a82b74f4b557b20edcbd202825827d"
+  }
+}

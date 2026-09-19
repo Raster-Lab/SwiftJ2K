@@ -67,8 +67,11 @@ public struct Image: Sendable {
             guard bytes.count >= descriptor.requiredByteCount else {
                 throw CodecError(.storageUnavailable, "Provider returned insufficient capacity.")
             }
-            let a = UInt16(bytes[offset]), b = UInt16(bytes[offset + 1])
-            return descriptor.byteOrder == .littleEndian ? a | b << 8 : a << 8 | b
+            // The provider retains sealed storage for this synchronous borrow.
+            // Descriptor and capacity checks above prove the two-byte extent.
+            let span = unsafe RawSpan(_unsafeBytes: bytes)
+            let order: Swift.ByteOrder = descriptor.byteOrder == .littleEndian ? .littleEndian : .bigEndian
+            return span.load(fromByteOffset: offset, as: UInt16.self, order)
         }
     }
 }
@@ -154,10 +157,14 @@ public final class ImageDestination: Sendable {
                         throw CodecError(.invalidArgument, "Sample exceeds declared meaningful precision.")
                     }
                     let offset = plane.offset + y * plane.rowBytes + x * plane.pixelStride
-                    let low = UInt8(truncatingIfNeeded: value)
-                    let high = UInt8(truncatingIfNeeded: value >> 8)
-                    bytes[offset] = descriptor.byteOrder == .littleEndian ? low : high
-                    bytes[offset + 1] = descriptor.byteOrder == .littleEndian ? high : low
+                    // The exclusive lease retains these two bytes. External
+                    // providers need not initialise samples before this write.
+                    let sampleBytes = UnsafeMutableRawBufferPointer(
+                        rebasing: bytes[offset..<(offset + MemoryLayout<UInt16>.size)])
+                    var output = unsafe OutputRawSpan(buffer: sampleBytes, initializedCount: 0)
+                    output.append(value, as: UInt16.self,
+                                  descriptor.byteOrder == .littleEndian ? .littleEndian : .bigEndian)
+                    _ = unsafe output.finalize(for: sampleBytes)
                 }
             }
         }

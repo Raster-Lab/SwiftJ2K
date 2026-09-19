@@ -1,0 +1,6 @@
+Building for production...
+Build complete! (0.16 secs)
+warning: Bundle 'SwiftPM_SBOMModel' with schemas not found - skipping SBOM validation
+Creating SBOMs...
+- created cyclonedx1 v1.7 SBOM at /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/candidate/SwiftJ2K/sboms/cyclonedx/cyclonedx1-1.7-SwiftJ2K-c213db53913367063d4204a5561a89b1071bbf00-modified-all-2026-09-19T09_34_03Z.json
+SBOMs created  (0.12 secs)

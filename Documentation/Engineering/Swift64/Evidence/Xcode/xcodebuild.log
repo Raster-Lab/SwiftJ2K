@@ -1,0 +1,605 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -scheme SwiftJ2K -destination platform=macOS,arch=arm64 -derivedDataPath /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData -resultBundlePath /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/Tests.xcresult -parallel-testing-enabled NO -jobs 2 CODE_SIGNING_ALLOWED=NO
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+Resolve Package Graph
+2026-09-19 03:46:27.833 xcodebuild[13394:2774694] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+
+
+Resolved source packages:
+  SwiftJ2K: /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+
+Writing result bundle at path:
+	/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/Tests.xcresult
+
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:macOS, arch:arm64, id:REDACTED-HARDWARE-ID, name:My Mac }
+{ platform:macOS, arch:arm64, variant:Mac Catalyst, id:REDACTED-HARDWARE-ID, name:My Mac }
+{ platform:macOS, arch:arm64, variant:DriverKit, id:REDACTED-HARDWARE-ID, name:My Mac }
+{ platform:macOS, arch:arm64, variant:Designed for [iPad,iPhone], id:REDACTED-HARDWARE-ID, name:My Mac }
+Build Preparation
+Build task concurrency set to 2 via user default IDEBuildOperationMaxNumberOfConcurrentCompileTasks
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (3 targets)
+    Target 'SwiftJ2K-product' in project 'SwiftJ2K'
+        ➜ Explicit dependency on target 'SwiftJ2K' in project 'SwiftJ2K'
+    Target 'SwiftJ2KTests-product' in project 'SwiftJ2K'
+        ➜ Explicit dependency on target 'SwiftJ2K' in project 'SwiftJ2K'
+    Target 'SwiftJ2K' in project 'SwiftJ2K' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 71789457b7626bb56032c2e46177d2e1
+Build description path: /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/XCBuildData/71789457b7626bb56032c2e46177d2e1.xcbuilddata
+CreateBuildDirectory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/ModuleCache.noindex
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-create-build-directory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/ModuleCache.noindex
+
+CreateBuildDirectory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-create-build-directory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/CompilationCache.noindex
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-create-build-directory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/CompilationCache.noindex
+
+CreateBuildDirectory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-create-build-directory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products
+
+CreateBuildDirectory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-create-build-directory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex
+
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKStatCaches.noindex/macosx27.0-26A425-e829b21a6f8c9b70876ba0858053c0447231f6df4def33e022ae2eb8f782df1a.sdkstatcache
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -o /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKStatCaches.noindex/macosx27.0-26A425-e829b21a6f8c9b70876ba0858053c0447231f6df4def33e022ae2eb8f782df1a.sdkstatcache
+
+CreateBuildDirectory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-create-build-directory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug
+
+CreateBuildDirectory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-create-build-directory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/PackageFrameworks
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-create-build-directory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/PackageFrameworks
+
+CreateBuildDirectory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/PrecompiledHeaders
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-create-build-directory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/PrecompiledHeaders
+
+CreateBuildDirectory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-create-build-directory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-create-build-directory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug
+
+WriteAuxiliaryFile /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/empty-SwiftJ2KTests.plist (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    write-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/empty-SwiftJ2KTests.plist
+
+WriteAuxiliaryFile /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/SwiftJ2KTests.DependencyStaticMetadataFileList (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    write-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/SwiftJ2KTests.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/SwiftJ2KTests.DependencyMetadataFileList (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    write-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/SwiftJ2KTests.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests_const_extract_protocols.json (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    write-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.SwiftFileList (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    write-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.SwiftFileList
+
+WriteAuxiliaryFile /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.SwiftConstValuesFileList (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    write-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.LinkFileList (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    write-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.LinkFileList
+
+WriteAuxiliaryFile /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests-OutputFileMap.json (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    write-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests-OutputFileMap.json
+
+WriteAuxiliaryFile /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/SwiftJ2K.modulemap (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    write-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/SwiftJ2K.modulemap
+
+WriteAuxiliaryFile /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/SwiftJ2K.DependencyStaticMetadataFileList (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    write-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/SwiftJ2K.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/SwiftJ2K.DependencyMetadataFileList (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    write-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/SwiftJ2K.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K_const_extract_protocols.json (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    write-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.SwiftFileList (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    write-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.SwiftFileList
+
+WriteAuxiliaryFile /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.SwiftConstValuesFileList (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    write-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.LinkFileList (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    write-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.LinkFileList
+
+WriteAuxiliaryFile /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K-OutputFileMap.json (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    write-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K-OutputFileMap.json
+
+Copy /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/GeneratedModuleMaps/SwiftJ2K.modulemap /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/SwiftJ2K.modulemap (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/SwiftJ2K.modulemap /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/GeneratedModuleMaps
+
+MkDir /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.xctest/Contents/MacOS (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    /bin/mkdir -p /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.xctest/Contents/MacOS
+
+MkDir /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.xctest/Contents (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    /bin/mkdir -p /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.xctest/Contents
+
+MkDir /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.xctest (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    /bin/mkdir -p /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.xctest
+
+SwiftDriver SwiftJ2K normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name SwiftJ2K -Onone @/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -target arm64-apple-macos26.0 -g -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -c -j18 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKStatCaches.noindex/macosx27.0-26A425-e829b21a6f8c9b70876ba0858053c0447231f6df4def33e022ae2eb8f782df1a.sdkstatcache -output-file-map /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name swiftj2k -emit-const-values -const-gather-protocols-list /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K_const_extract_protocols.json -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/include -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/DerivedSources-normal/arm64 -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/DerivedSources/arm64 -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K-Swift.h -working-directory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/ptrauth-C9RA818L38ES8348265NGL7OF.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/_Builtin_stddef-6TEQSRHKJGMOC6Y31KODNHQRZ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/_Builtin_float-XUAV3R37DPLJG3483NDO21T5.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/ptrcheck-9UDV1S4F9M26R9WQ9L6N58MK7.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/_Builtin_stdbool-F3A3TR4FFH94UOEN7JGO5UNMW.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/_Builtin_stdarg-410FZQDT0Y733N1P1UHWB1G3Z.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/_AvailabilityInternal-DS5NGSXQLLTD3BND3TDU7XRMP.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/_SwiftConcurrencyShims-EZUQY33PO49MV6BLQDQHLWB19.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/SwiftShims-1LSVIUNMI76GO54KNRF5Z7W4Y.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/_DarwinFoundation1-CM1SPIU9ZJUQEYBTO1PWF6V5R.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/_DarwinFoundation2-9BMUSH920FLKGLJFFH59GHBQX.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/_Builtin_limits-28Q5P5SFAU68DMDLTE78PI1QQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/_Builtin_stdint-CA361DKAJU2DAMCYPE1PDME0D.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/sys_types-3ZSSNA65CZCC51HPD9HGIYTC8.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/string_h-CAJ5GEOUYRH1BD380F0NIPKXX.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/libDER-4DIAXPQ5D18QFNQBGYQFTGFSJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/_DarwinFoundation3-94PFW71HUHM1XRK2FQMQFZXY0.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/_Builtin_inttypes-2UF0JH8SVE65K81JHAUP6CRDC.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/Darwin-8G4SM1HNL1XFIA8C7WP22XZD5.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/libkern-5004ND69YI8JIJS8D0QUTQZM9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/MachO-BHARPH58HX0YX1JDYYL3AXHNQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/launch-4UNTMDXJVW4419520PJLBICJ4.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/ObjectiveC-AGQ9ZS42URH3VULSZY02KJR8G.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/os_object-8PLWECVL3LJ6BQT6F370HHCT1.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/os_workgroup-46RF4YONE4KIFR0K7F2P6ETF3.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/Dispatch-22TSULXY832RUAYW8HRLFDHJB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/XPC-1DBE2WOYRCVVY10ZRQXZUAGJW.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/CoreFoundation-3S2FAZK3K94O5CTQYTEGI7R58.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/CFNetwork-CEYO958J44BQHGQUVBQFBT5VU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/Security-AUAWU55947KJGKN18100GEGPA.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/IOKit-6A77G1PJDGIZUS7E19LL279WG.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/DiskArbitration-563Y3359HU5TM9PKFIYZB8766.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/CoreServices-5KO7HHRMWY9DP9ANXPJ1HOV1N.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules/Foundation-9VBH62URNVJ0BZR5O8JKYLGVG.pcm
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ SwiftJ2K (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ ImageStorage.swift /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Sources/SwiftJ2K/ImageStorage.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Sources/SwiftJ2K/ImageStorage.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-SwiftPerFileCompile ImageStorage.swift
+
+SwiftCompile normal arm64 Compiling\ Errors.swift /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Sources/SwiftJ2K/Errors.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Sources/SwiftJ2K/Errors.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-SwiftPerFileCompile Errors.swift
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for SwiftJ2K (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftDriver\ Compilation\ Requirements SwiftJ2K normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name SwiftJ2K -Onone @/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -target arm64-apple-macos26.0 -g -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -c -j18 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKStatCaches.noindex/macosx27.0-26A425-e829b21a6f8c9b70876ba0858053c0447231f6df4def33e022ae2eb8f782df1a.sdkstatcache -output-file-map /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name swiftj2k -emit-const-values -const-gather-protocols-list /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K_const_extract_protocols.json -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/include -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/DerivedSources-normal/arm64 -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/DerivedSources/arm64 -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K-Swift.h -working-directory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal arm64 Compiling Errors.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 Compiling\ Transcoding.swift /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Sources/SwiftJ2K/Transcoding.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Sources/SwiftJ2K/Transcoding.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-SwiftPerFileCompile Transcoding.swift
+
+SwiftMergeGeneratedHeaders /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/GeneratedModuleMaps/SwiftJ2K-Swift.h /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K-Swift.h (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    builtin-swiftHeaderTool -arch arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K-Swift.h -o /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/GeneratedModuleMaps/SwiftJ2K-Swift.h
+
+SwiftDriverJobDiscovery normal arm64 Compiling ImageStorage.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+Copy /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2K.swiftmodule/arm64-apple-macos.swiftmodule /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.swiftmodule (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.swiftmodule /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2K.swiftmodule/arm64-apple-macos.swiftmodule
+
+Copy /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2K.swiftmodule/arm64-apple-macos.swiftdoc /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.swiftdoc (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.swiftdoc /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2K.swiftmodule/arm64-apple-macos.swiftdoc
+
+Copy /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2K.swiftmodule/arm64-apple-macos.abi.json /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.abi.json (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.abi.json /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2K.swiftmodule/arm64-apple-macos.abi.json
+
+Copy /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2K.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.swiftsourceinfo (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.swiftsourceinfo /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2K.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo
+
+SwiftCompile normal arm64 Compiling\ ImageDescriptor.swift /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Sources/SwiftJ2K/ImageDescriptor.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Sources/SwiftJ2K/ImageDescriptor.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-SwiftPerFileCompile ImageDescriptor.swift
+
+SwiftDriverJobDiscovery normal arm64 Compiling Transcoding.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 Compiling\ CodecAPI.swift /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Sources/SwiftJ2K/CodecAPI.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Sources/SwiftJ2K/CodecAPI.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-SwiftPerFileCompile CodecAPI.swift
+
+SwiftDriverJobDiscovery normal arm64 Compiling ImageDescriptor.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 Compiling\ Image.swift /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Sources/SwiftJ2K/Image.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Sources/SwiftJ2K/Image.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-SwiftPerFileCompile Image.swift
+
+SwiftDriverJobDiscovery normal arm64 Compiling CodecAPI.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 Compiling\ Options.swift /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Sources/SwiftJ2K/Options.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Sources/SwiftJ2K/Options.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-SwiftPerFileCompile Options.swift
+
+SwiftDriverJobDiscovery normal arm64 Compiling Image.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftDriver SwiftJ2KTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name SwiftJ2KTests -Onone @/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -target arm64-apple-macos26.0 -g -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/PackageFrameworks -F /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -c -j18 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKStatCaches.noindex/macosx27.0-26A425-e829b21a6f8c9b70876ba0858053c0447231f6df4def33e022ae2eb8f782df1a.sdkstatcache -output-file-map /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name swiftj2k -emit-const-values -const-gather-protocols-list /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests_const_extract_protocols.json -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/include -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/DerivedSources-normal/arm64 -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/DerivedSources/arm64 -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal arm64 Compiling Options.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftDriver\ Compilation SwiftJ2K normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name SwiftJ2K -Onone @/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -target arm64-apple-macos26.0 -g -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -c -j18 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKStatCaches.noindex/macosx27.0-26A425-e829b21a6f8c9b70876ba0858053c0447231f6df4def33e022ae2eb8f782df1a.sdkstatcache -output-file-map /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name swiftj2k -emit-const-values -const-gather-protocols-list /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K_const_extract_protocols.json -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/include -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/DerivedSources-normal/arm64 -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/DerivedSources/arm64 -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K-Swift.h -working-directory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2K.o normal (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-macos26.0 -r -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -O0 -Xlinker -no_warn_duplicate_libraries -F/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug -F/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -filelist /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.LinkFileList -nostdlib -Xlinker -object_path_lto -Xlinker /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K_lto.o -Xlinker -no_deduplicate -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.swiftmodule -o /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2K.o
+
+ExtractAppIntentsMetadata (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.2eg2cZ/Metal.xctoolchain --module-name SwiftJ2K --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk --xcode-version 27A266a --platform-family macOS --deployment-target 26.0 --bundle-identifier swiftj2k.SwiftJ2K --output /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2K.appintents --target-triple arm64-apple-macos26.0 --binary-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2K.o --dependency-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K_dependency_info.dat --stringsdata-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.SwiftFileList --metadata-file-list /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/SwiftJ2K.DependencyMetadataFileList --static-metadata-file-list /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/SwiftJ2K.DependencyStaticMetadataFileList --swift-const-vals-list /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2K-t.build/Objects-normal/arm64/SwiftJ2K.SwiftConstValuesFileList --force --compile-time-extraction --deployment-aware-processing --no-app-shortcuts-localization
+2026-09-19 03:46:32.673 appintentsmetadataprocessor[13448:2775073] Starting appintentsmetadataprocessor export
+2026-09-19 03:46:32.726 appintentsmetadataprocessor[13448:2775073] Extracted no relevant App Intents symbols, skipping writing output
+
+ProcessInfoPlistFile /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.xctest/Contents/Info.plist /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/empty-SwiftJ2KTests.plist (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    builtin-infoPlistUtility /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/empty-SwiftJ2KTests.plist -producttype com.apple.product-type.bundle.unit-test -expandbuildsettings -platform macosx -o /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.xctest/Contents/Info.plist
+
+SwiftExplicitDependencyCompileModuleFromInterface arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/Testing-2DYXH27PRVX4.swiftmodule
+
+SwiftExplicitDependencyCompileModuleFromInterface arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/_Testing_Foundation-2ZE81039HRDTX.swiftmodule
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ SwiftJ2KTests (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ BehaviourTests.swift /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Tests/SwiftJ2KTests/BehaviourTests.swift (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Tests/SwiftJ2KTests/BehaviourTests.swift (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-SwiftPerFileCompile BehaviourTests.swift
+
+SwiftCompile normal arm64 Compiling\ DescriptorTests.swift /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Tests/SwiftJ2KTests/DescriptorTests.swift (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Tests/SwiftJ2KTests/DescriptorTests.swift (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-SwiftPerFileCompile DescriptorTests.swift
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for SwiftJ2KTests (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+
+SwiftDriver\ Compilation\ Requirements SwiftJ2KTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name SwiftJ2KTests -Onone @/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -target arm64-apple-macos26.0 -g -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/PackageFrameworks -F /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -c -j18 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKStatCaches.noindex/macosx27.0-26A425-e829b21a6f8c9b70876ba0858053c0447231f6df4def33e022ae2eb8f782df1a.sdkstatcache -output-file-map /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name swiftj2k -emit-const-values -const-gather-protocols-list /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests_const_extract_protocols.json -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/include -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/DerivedSources-normal/arm64 -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/DerivedSources/arm64 -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal arm64 Compiling BehaviourTests.swift (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 Compiling\ Swift64SampleAccessTests.swift /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Tests/SwiftJ2KTests/Swift64SampleAccessTests.swift (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Tests/SwiftJ2KTests/Swift64SampleAccessTests.swift (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-SwiftPerFileCompile Swift64SampleAccessTests.swift
+
+SwiftDriverJobDiscovery normal arm64 Compiling DescriptorTests.swift (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+
+Copy /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.swiftmodule/arm64-apple-macos.swiftmodule /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.swiftmodule (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.swiftmodule /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.swiftmodule/arm64-apple-macos.swiftmodule
+
+Copy /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.swiftmodule/arm64-apple-macos.swiftdoc /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.swiftdoc (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.swiftdoc /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.swiftmodule/arm64-apple-macos.swiftdoc
+
+Copy /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.swiftmodule/arm64-apple-macos.abi.json /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.abi.json (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.abi.json /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.swiftmodule/arm64-apple-macos.abi.json
+
+Copy /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.swiftsourceinfo (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.swiftsourceinfo /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo
+
+SwiftCompile normal arm64 Compiling\ ContractTests.swift /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Tests/SwiftJ2KTests/ContractTests.swift (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Tests/SwiftJ2KTests/ContractTests.swift (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-SwiftPerFileCompile ContractTests.swift
+
+SwiftDriverJobDiscovery normal arm64 Compiling Swift64SampleAccessTests.swift (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 Compiling\ LimitTests.swift /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Tests/SwiftJ2KTests/LimitTests.swift (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Tests/SwiftJ2KTests/LimitTests.swift (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-SwiftPerFileCompile LimitTests.swift
+
+SwiftCompile normal arm64 Compiling\ CancellationPublicationTests.swift /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Tests/SwiftJ2KTests/CancellationPublicationTests.swift (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Tests/SwiftJ2KTests/CancellationPublicationTests.swift (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-SwiftPerFileCompile CancellationPublicationTests.swift
+
+SwiftDriverJobDiscovery normal arm64 Compiling ContractTests.swift (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 Compiling\ OwnershipTests.swift /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Tests/SwiftJ2KTests/OwnershipTests.swift (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Tests/SwiftJ2KTests/OwnershipTests.swift (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-SwiftPerFileCompile OwnershipTests.swift
+
+SwiftDriverJobDiscovery normal arm64 Compiling CancellationPublicationTests.swift (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+
+SwiftDriverJobDiscovery normal arm64 Compiling LimitTests.swift (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+
+SwiftDriverJobDiscovery normal arm64 Compiling OwnershipTests.swift (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+
+SwiftDriver\ Compilation SwiftJ2KTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name SwiftJ2KTests -Onone @/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -target arm64-apple-macos26.0 -g -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/PackageFrameworks -F /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -c -j18 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKStatCaches.noindex/macosx27.0-26A425-e829b21a6f8c9b70876ba0858053c0447231f6df4def33e022ae2eb8f782df1a.sdkstatcache -output-file-map /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name swiftj2k -emit-const-values -const-gather-protocols-list /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests_const_extract_protocols.json -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/include -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/DerivedSources-normal/arm64 -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/DerivedSources/arm64 -Xcc -I/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.xctest/Contents/MacOS/SwiftJ2KTests normal (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -Xlinker -reproducible -target arm64-apple-macos26.0 -Xlinker -bundle -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -Xlinker -no_warn_duplicate_libraries -L/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug -L/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug -L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug -F/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/PackageFrameworks -F/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug -Fsystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks @/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.LinkFileList -Xlinker -rpath -Xlinker @loader_path -Xlinker -rpath -Xlinker /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/PackageFrameworks -Xlinker -rpath -Xlinker @loader_path/../../.. -Xlinker -rpath -Xlinker @loader_path/Frameworks -Xlinker -rpath -Xlinker @loader_path/../Frameworks -Xlinker -object_path_lto -Xlinker /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests_lto.o -Xclang-linker -rdynamic -Xlinker -no_deduplicate -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests_dependency_info.dat -link-objc-runtime -profile-generate -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.swiftmodule -Xlinker -needed_framework -Xlinker XCTest -framework XCTest -Xlinker -needed-lXCTestSwiftSupport -lXCTestSwiftSupport -o /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.xctest/Contents/MacOS/SwiftJ2KTests
+
+CopySwiftLibs /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.xctest (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    builtin-swiftStdLibTool --copy --verbose --scan-executable /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.xctest/Contents/MacOS/SwiftJ2KTests --scan-folder /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.xctest/Contents/Frameworks --scan-folder /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.xctest/Contents/PlugIns --scan-folder /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.xctest/Contents/Library/SystemExtensions --scan-folder /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.xctest/Contents/Extensions --platform macosx --toolchain /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.2eg2cZ/Metal.xctoolchain --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.xctest/Contents/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+Ignoring --strip-bitcode because --sign was not passed
+
+ExtractAppIntentsMetadata (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.2eg2cZ/Metal.xctoolchain --module-name SwiftJ2KTests --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk --xcode-version 27A266a --platform-family macOS --deployment-target 26.0 --bundle-identifier swiftj2k.SwiftJ2KTests --output /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.xctest/Contents/Resources --target-triple arm64-apple-macos26.0 --binary-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.xctest/Contents/MacOS/SwiftJ2KTests --dependency-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests_dependency_info.dat --stringsdata-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.SwiftFileList --metadata-file-list /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/SwiftJ2KTests.DependencyMetadataFileList --static-metadata-file-list /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/SwiftJ2KTests.DependencyStaticMetadataFileList --swift-const-vals-list /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftJ2K.build/Debug/SwiftJ2KTests-p.build/Objects-normal/arm64/SwiftJ2KTests.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --no-app-shortcuts-localization
+2026-09-19 03:46:35.428 appintentsmetadataprocessor[13500:2775349] Starting appintentsmetadataprocessor export
+2026-09-19 03:46:35.428 appintentsmetadataprocessor[13500:2775349] warning: Metadata extraction skipped, no AppIntents.framework dependency found
+
+RegisterExecutionPolicyException /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.xctest (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    builtin-RegisterExecutionPolicyException /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.xctest
+
+Touch /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.xctest (in target 'SwiftJ2KTests-product' from project 'SwiftJ2K')
+    cd /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+    /usr/bin/touch -c /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Products/Debug/SwiftJ2KTests.xctest
+
+PruneExplicitPrecompiledModules /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/SDKExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+2026-09-19 03:46:35.538 xcodebuild[13394:2774733]  DVTAssertions: Warning in IDEFrameworks/IDEFoundation/Execution/LaunchSystem/IDELaunchSession.m:395
+Details:  setRunnablePIDWithDiagnostics:logSection:andCompletionHandler: called without a completion handler - blocking until diagnostics setup completes. Callers should migrate to using a completion handler for better performance.
+Object:   <IDELaunchSession: 0x7c35198300>
+Method:   -setRunnablePIDWithDiagnostics:logSection:andCompletionHandler:
+Thread:   <NSThread: 0x7c364058c0>{number = 7, name = (null)}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+Test Suite 'All tests' started at 2026-09-19 03:46:37.534.
+Test Suite 'All tests' passed at 2026-09-19 03:46:37.535.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+􀟈 Test run started.
+􀄵 Testing Library Version: 2084
+􀄵 Target Platform: arm64e-apple-macos14.0
+􀟈 Test publicOperationsRejectCodecWorkAndAdvertiseEmptyCapabilities() started.
+􁁛 Test publicOperationsRejectCodecWorkAndAdvertiseEmptyCapabilities() passed after 0.001 seconds.
+􀟈 Test configurationsAndBackendRequestsRejectUnsupportedChoices() started.
+􁁛 Test configurationsAndBackendRequestsRejectUnsupportedChoices() passed after 0.001 seconds.
+􀟈 Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() started.
+􁁛 Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() passed after 0.001 seconds.
+􀟈 Test cancellationDuringSyntheticRowsInvalidatesDestination() started.
+􁁛 Test cancellationDuringSyntheticRowsInvalidatesDestination() passed after 0.001 seconds.
+􀟈 Test cancellationIsCheckedBeforeAllocatingStorage() started.
+􁁛 Test cancellationIsCheckedBeforeAllocatingStorage() passed after 0.001 seconds.
+􀟈 Test unknownMeasurementsStayUnknownAndMetadataIsBounded() started.
+􁁛 Test unknownMeasurementsStayUnknownAndMetadataIsBounded() passed after 0.001 seconds.
+􀟈 Test metadataAndDestinationLimitsUseCallerBudget() started.
+􁁛 Test metadataAndDestinationLimitsUseCallerBudget() passed after 0.001 seconds.
+􀟈 Test explicitLargerMetadataLimitIsHonoured() started.
+􁁛 Test explicitLargerMetadataLimitIsHonoured() passed after 0.001 seconds.
+􀟈 Test safeSampleAccessHonoursExplicitBigEndian() started.
+􁁛 Test safeSampleAccessHonoursExplicitBigEndian() passed after 0.001 seconds.
+􀟈 Test decoderPreservesTaskCancellationError() started.
+􁁛 Test decoderPreservesTaskCancellationError() passed after 0.001 seconds.
+􀟈 Test cancellationInProviderFinalisationPreventsPublication(_:) started.
+􀟈 Test case passing 1 argument point → .sealing to cancellationInProviderFinalisationPreventsPublication(_:) started.
+​􀟈 Test case passing 1 argument point → .validatingSealedStorage to cancellationInProviderFinalisationPreventsPublication(_:) started.
+​􁁛 Test cancellationInProviderFinalisationPreventsPublication(_:) with 2 test cases passed after 0.001 seconds.
+􀟈 Test syntheticExactSamplesAndPadding(precision:) started.
+􀟈 Test case passing 1 argument precision → 12 to syntheticExactSamplesAndPadding(precision:) started.
+​􀟈 Test case passing 1 argument precision → 16 to syntheticExactSamplesAndPadding(precision:) started.
+​􁁛 Test syntheticExactSamplesAndPadding(precision:) with 2 test cases passed after 0.001 seconds.
+􀟈 Test safeWriterRejectsOutOfRangeInsteadOfTruncating() started.
+􁁛 Test safeWriterRejectsOutOfRangeInsteadOfTruncating() passed after 0.001 seconds.
+􀟈 Test descriptorMutationRejectsInvalidStridesAndOffsets() started.
+􁁛 Test descriptorMutationRejectsInvalidStridesAndOffsets() passed after 0.001 seconds.
+􀟈 Test integerOverflowWithExplicitLargeLimitsThrows() started.
+􁁛 Test integerOverflowWithExplicitLargeLimitsThrows() passed after 0.001 seconds.
+􀟈 Test borrowedStorageRejectsForgedLeasesAndPublication() started.
+􁁛 Test borrowedStorageRejectsForgedLeasesAndPublication() passed after 0.001 seconds.
+􀟈 Test cancellationInsideWriteCannotPublishPartialImage() started.
+􁁛 Test cancellationInsideWriteCannotPublishPartialImage() passed after 0.001 seconds.
+􀟈 Test independentPublicCallShapesFailHonestly() started.
+􁁛 Test independentPublicCallShapesFailHonestly() passed after 0.001 seconds.
+􀟈 Suite "Descriptor validation" started.
+􀟈 Test paddedOddDimensionsAndPrecision() started.
+􁁛 Test paddedOddDimensionsAndPrecision() passed after 0.001 seconds.
+􀟈 Test finalRowNeedsOnlyItsActualSampleBytes() started.
+􁁛 Test finalRowNeedsOnlyItsActualSampleBytes() passed after 0.001 seconds.
+􀟈 Test rejectsInvalidGeometryAndPrecision() started.
+􁁛 Test rejectsInvalidGeometryAndPrecision() passed after 0.001 seconds.
+􀟈 Test rejectsArithmeticOverflowBeforeAllocation() started.
+􁁛 Test rejectsArithmeticOverflowBeforeAllocation() passed after 0.001 seconds.
+􀟈 Test rejectsMisalignedOffsetsAndStrides() started.
+􁁛 Test rejectsMisalignedOffsetsAndStrides() passed after 0.001 seconds.
+􀟈 Test rejectsOverlappingPlanesAndIncompleteMapping() started.
+􁁛 Test rejectsOverlappingPlanesAndIncompleteMapping() passed after 0.001 seconds.
+􀟈 Test semanticMetadataMustAgreeWithComponents() started.
+􁁛 Test semanticMetadataMustAgreeWithComponents() passed after 0.001 seconds.
+􀟈 Test deterministicLayoutMutation() started.
+􁁛 Test deterministicLayoutMutation() passed after 0.001 seconds.
+􁁛 Suite "Descriptor validation" passed after 0.003 seconds.
+􀟈 Test independentAllocationAndMemoryCeilingsAreEnforced() started.
+􁁛 Test independentAllocationAndMemoryCeilingsAreEnforced() passed after 0.001 seconds.
+􀟈 Test paddedStorageCountsTowardsDecodedLimit() started.
+􁁛 Test paddedStorageCountsTowardsDecodedLimit() passed after 0.001 seconds.
+􀟈 Test pixelAndDimensionLimitsRejectBeforeAllocation() started.
+􁁛 Test pixelAndDimensionLimitsRejectBeforeAllocation() passed after 0.001 seconds.
+􀟈 Test invalidResourceProfilesAndProgressFailPredictably() started.
+􁁛 Test invalidResourceProfilesAndProgressFailPredictably() passed after 0.001 seconds.
+􀟈 Test adaptersShareWriterAuthorityAndRejectForgedLease() started.
+􁁛 Test adaptersShareWriterAuthorityAndRejectForgedLease() passed after 0.001 seconds.
+􀟈 Test reentrantLeaseOperationsRejectWithoutDeadlocking() started.
+􁁛 Test reentrantLeaseOperationsRejectWithoutDeadlocking() passed after 0.001 seconds.
+􀟈 Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() started.
+􁁛 Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() passed after 0.001 seconds.
+􀟈 Test concurrentAdaptersReserveExactlyOneWriter() started.
+􁁛 Test concurrentAdaptersReserveExactlyOneWriter() passed after 0.001 seconds.
+􀟈 Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() started.
+􁁛 Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() passed after 0.001 seconds.
+􀟈 Test sealedOwnerSupportsConcurrentReadersAndNestedRead() started.
+􁁛 Test sealedOwnerSupportsConcurrentReadersAndNestedRead() passed after 0.001 seconds.
+􀟈 Test failedFillInvalidatesDestination() started.
+􁁛 Test failedFillInvalidatesDestination() passed after 0.001 seconds.
+􀟈 Test abandonedDestinationInvalidatesItsReservedOwner() started.
+􁁛 Test abandonedDestinationInvalidatesItsReservedOwner() passed after 0.001 seconds.
+􀟈 Suite "Swift 6.4 sample access" started.
+􀟈 Test readsIndependentGoldenBytesFromOddPhysicalAddress() started.
+􁁛 Test readsIndependentGoldenBytesFromOddPhysicalAddress() passed after 0.001 seconds.
+􀟈 Test writesGoldenBytesForPackedAndPadded12And16BitSamples() started.
+􁁛 Test writesGoldenBytesForPackedAndPadded12And16BitSamples() passed after 0.001 seconds.
+􀟈 Test initialisesExternalSampleBytesAtOddAddressWithoutChangingPadding() started.
+􁁛 Test initialisesExternalSampleBytesAtOddAddressWithoutChangingPadding() passed after 0.001 seconds.
+􀟈 Test refusesShortProviderBeforeLoadingSample() started.
+􁁛 Test refusesShortProviderBeforeLoadingSample() passed after 0.001 seconds.
+􀟈 Test rejectsCoordinatesBeforeOffsetArithmetic() started.
+􁁛 Test rejectsCoordinatesBeforeOffsetArithmetic() passed after 0.001 seconds.
+􀟈 Test outOfPrecisionWriteInvalidatesDestination() started.
+􁁛 Test outOfPrecisionWriteInvalidatesDestination() passed after 0.001 seconds.
+􁁛 Suite "Swift 6.4 sample access" passed after 0.002 seconds.
+􁁛 Test run with 44 tests in 2 suites passed after 0.018 seconds.
+2026-09-19 03:46:37.825 xcodebuild[13394:2774694] [MT] IDETestOperationsObserverDebug: 2.370 elapsed -- Testing started completed.
+2026-09-19 03:46:37.825 xcodebuild[13394:2774694] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-09-19 03:46:37.825 xcodebuild[13394:2774694] [MT] IDETestOperationsObserverDebug: 2.370 sec, +2.370 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/Tests.xcresult
+
+** TEST SUCCEEDED **
+
+Testing started

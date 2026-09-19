@@ -1,0 +1,20 @@
+Building for production...
+[Planning deferred tasks]
+[19 / 27]
+[20 / 28] SwiftJLI
+[31 / 63]
+[36 / 63]
+[39 / 63]
+[40 / 63]
+[44 / 63]
+[47 / 63]
+[52 / 63]
+[53 / 63]
+[54 / 63]
+[55 / 63]
+[56 / 63] SwiftJLI
+Build complete! (3.92 secs)
+warning: Bundle 'SwiftPM_SBOMModel' with schemas not found - skipping SBOM validation
+Creating SBOMs...
+- created spdx3 v3.0.1 SBOM at /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/tooling/script-smoke-v3/sboms/spdx/spdx3-3.0.1-SwiftJLI-62e9502082a90bbabedf3d554b58e6dc8356b30a-modified-all-2026-09-18T22_09_07Z.json
+SBOMs created  (0.10 secs)

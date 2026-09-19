@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Scripts/install-cli.sh",
+    "--prefix",
+    "/usr/local",
+    "--destdir",
+    "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/install-builds/SwiftJ2K/stage",
+    "--scratch-path",
+    "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/install-builds/SwiftJ2K/build",
+    "--disable-package-sandbox"
+  ],
+  "environment": {
+    "DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer",
+    "CLANG_MODULE_CACHE_PATH": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/install-builds/SwiftJ2K/modules",
+    "SWIFTPM_MODULECACHE_OVERRIDE": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/install-builds/SwiftJ2K/modules"
+  },
+  "exit_code": 0,
+  "binary_sha256": "2cf5b3d3e3256936e7ca9abaae82501c2f9cae802138c03a9a4752912342efb1",
+  "manual_sha256": "eb3e055ad6e5994c0588ae0824641ff54af5ae9b305c1543b8e709d036bee4b2",
+  "version_stdout": "swiftj2k 12.1.0-dev.2\n",
+  "version_exit_code": 0
+}

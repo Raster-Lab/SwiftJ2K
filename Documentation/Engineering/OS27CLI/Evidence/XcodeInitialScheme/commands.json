@@ -1,0 +1,26 @@
+[
+  {
+    "label": "tests",
+    "argv": [
+      "xcodebuild",
+      "test",
+      "-scheme",
+      "SwiftJ2K",
+      "-destination",
+      "platform=macOS,arch=arm64",
+      "-jobs",
+      "2",
+      "CODE_SIGNING_ALLOWED=NO",
+      "-derivedDataPath",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/xcode/SwiftJ2K/DerivedData",
+      "-resultBundlePath",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/xcode/SwiftJ2K/Tests.xcresult",
+      "-parallel-testing-enabled",
+      "NO"
+    ],
+    "cwd": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K",
+    "exit_code": 66,
+    "log": "tests.log",
+    "outside_sandbox": true
+  }
+]

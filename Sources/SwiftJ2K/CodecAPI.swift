@@ -95,7 +95,7 @@ public struct Encoder: Sendable {
     public var capabilities: CodecCapabilities { Self.capabilities }
     public init(configuration: EncoderConfiguration = .default) throws { self.configuration = configuration }
 
-    /// `@concurrent` explicitly selects the generic executor in Swift 6.2.
+    /// `@concurrent` explicitly selects the generic executor (available since Swift 6.2).
     @concurrent public func encode(_ image: Image, options: EncodeOptions = .init()) async throws -> EncodedImage {
         try Task.checkCancellation()
         try validateOperation(options.resourceLimits, options.executionPolicy)

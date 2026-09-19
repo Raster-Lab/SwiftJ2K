@@ -1,0 +1,52 @@
+􀟈  Test run started.
+􀄵  Testing Library Version: 2084
+􀄵  Target Platform: arm64e-apple-macos14.0
+􀟈  Test adaptersShareWriterAuthorityAndRejectForgedLease() started.
+􀟈  Test reentrantLeaseOperationsRejectWithoutDeadlocking() started.
+􀟈  Test sealedOwnerSupportsConcurrentReadersAndNestedRead() started.
+􀟈  Test cancellationInProviderFinalisationPreventsPublication(_:) started.
+􀟈  Test concurrentAdaptersReserveExactlyOneWriter() started.
+􀟈  Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() started.
+􀟈  Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() started.
+􀟈  Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() started.
+􀟈  Test decoderPreservesTaskCancellationError() started.
+􀟈  Test cancellationDuringSyntheticRowsInvalidatesDestination() started.
+􀟈  Test cancellationIsCheckedBeforeAllocatingStorage() started.
+􀟈  Test case passing 1 argument point → .validatingSealedStorage to cancellationInProviderFinalisationPreventsPublication(_:) started.
+􀟈  Test case passing 1 argument point → .sealing to cancellationInProviderFinalisationPreventsPublication(_:) started.
+􀟈  Test sealedOwnerSupportsConcurrentReadersAndNestedRead() started (repetition 2).
+􀟈  Test cancellationIsCheckedBeforeAllocatingStorage() started (repetition 2).
+􀟈  Test sealedOwnerSupportsConcurrentReadersAndNestedRead() started (repetition 3).
+􀟈  Test reentrantLeaseOperationsRejectWithoutDeadlocking() started (repetition 2).
+􀟈  Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() started (repetition 2).
+􀟈  Test cancellationIsCheckedBeforeAllocatingStorage() started (repetition 3).
+􀟈  Test concurrentAdaptersReserveExactlyOneWriter() started (repetition 2).
+􀟈  Test reentrantLeaseOperationsRejectWithoutDeadlocking() started (repetition 3).
+􀟈  Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() started (repetition 3).
+􀟈  Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() started (repetition 2).
+􁁛  Test sealedOwnerSupportsConcurrentReadersAndNestedRead() passed after 0.001 seconds.
+􁁛  Test cancellationIsCheckedBeforeAllocatingStorage() passed after 0.001 seconds.
+􀟈  Test adaptersShareWriterAuthorityAndRejectForgedLease() started (repetition 2).
+􀟈  Test decoderPreservesTaskCancellationError() started (repetition 2).
+􀟈  Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() started (repetition 3).
+􁁛  Test reentrantLeaseOperationsRejectWithoutDeadlocking() passed after 0.001 seconds.
+􁁛  Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() passed after 0.001 seconds.
+􀟈  Test decoderPreservesTaskCancellationError() started (repetition 3).
+􀟈  Test adaptersShareWriterAuthorityAndRejectForgedLease() started (repetition 3).
+􀟈  Test concurrentAdaptersReserveExactlyOneWriter() started (repetition 3).
+􁁛  Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() passed after 0.001 seconds.
+􁁛  Test decoderPreservesTaskCancellationError() passed after 0.001 seconds.
+􀟈  Test case passing 1 argument point → .sealing to cancellationInProviderFinalisationPreventsPublication(_:) started (repetition 2).
+􀟈  Test cancellationDuringSyntheticRowsInvalidatesDestination() started (repetition 2).
+􁁛  Test adaptersShareWriterAuthorityAndRejectForgedLease() passed after 0.001 seconds.
+􀟈  Test case passing 1 argument point → .validatingSealedStorage to cancellationInProviderFinalisationPreventsPublication(_:) started (repetition 2).
+􁁛  Test concurrentAdaptersReserveExactlyOneWriter() passed after 0.001 seconds.
+􀟈  Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() started (repetition 2).
+􀟈  Test case passing 1 argument point → .sealing to cancellationInProviderFinalisationPreventsPublication(_:) started (repetition 3).
+􀟈  Test cancellationDuringSyntheticRowsInvalidatesDestination() started (repetition 3).
+􀟈  Test case passing 1 argument point → .validatingSealedStorage to cancellationInProviderFinalisationPreventsPublication(_:) started (repetition 3).
+􀟈  Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() started (repetition 3).
+􁁛  Test cancellationDuringSyntheticRowsInvalidatesDestination() passed after 0.001 seconds.
+􁁛  Test cancellationInProviderFinalisationPreventsPublication(_:) with 2 test cases passed after 0.001 seconds.
+􁁛  Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() passed after 0.001 seconds.
+􁁛  Test run with 11 tests in 0 suites passed after 0.001 seconds.

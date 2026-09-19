@@ -1,0 +1,227 @@
+[
+  {
+    "label": "F01Portable-release-macos26.0-compile",
+    "argv": [
+      "xcrun",
+      "swiftc",
+      "-v",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache",
+      "-target",
+      "arm64-apple-macosx26.0",
+      "-O",
+      "-parse-as-library",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable.swift",
+      "-o",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable-release-macos26.0"
+    ],
+    "command": "xcrun swiftc -v -swift-version 6 -strict-concurrency=complete -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache -target arm64-apple-macosx26.0 -O -parse-as-library /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable.swift -o /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable-release-macos26.0",
+    "exit": 0,
+    "stdout": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -c -primary-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable.swift -target arm64-apple-macosx26.0 -Xllvm -aarch64-use-tbi -enable-objc-interop -stack-check -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache -no-color-diagnostics -Xcc -fno-color-diagnostics -swift-version 6 -O -new-driver-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-driver -strict-concurrency=complete -empty-abi-descriptor -no-auto-bridging-header-chaining -module-name main -disable-clang-spi -target-sdk-version 27.0 -target-sdk-name macosx27.0 -external-plugin-path '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/swift/host/plugins#/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/bin/swift-plugin-server' -external-plugin-path '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/local/lib/swift/host/plugins#/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/bin/swift-plugin-server' -in-process-plugin-server-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/libSwiftInProcPluginServer.dylib -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/local/lib/swift/host/plugins -enable-default-cmo -parse-as-library -o /var/folders/nq/fwb7mwjn1q5gwmt6hy61hh5m0000gp/T/TemporaryDirectory.lTJ3U5/F01Portable-1.o\n/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang /var/folders/nq/fwb7mwjn1q5gwmt6hy61hh5m0000gp/T/TemporaryDirectory.lTJ3U5/F01Portable-1.o -O3 --sysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk --target=arm64-apple-macosx26.0 -L /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx -L /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk/usr/lib/swift -o /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable-release-macos26.0\n",
+    "stderr": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx26.0\n"
+  },
+  {
+    "label": "F01Portable-release-macos26.0-run",
+    "argv": [
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable-release-macos26.0"
+    ],
+    "command": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable-release-macos26.0",
+    "exit": 0,
+    "stdout": "F01 portable passed: unaligned load/store, endian conversion, signed minimum, bounded truncation/offset rejection, preserved sentinels\n",
+    "stderr": ""
+  },
+  {
+    "label": "F01Portable-strict-memory-safety-macos26.0",
+    "argv": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-memory-safety",
+      "-warnings-as-errors",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache",
+      "-target",
+      "arm64-apple-macosx26.0",
+      "-parse-as-library",
+      "-typecheck",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable.swift"
+    ],
+    "command": "xcrun swiftc -swift-version 6 -strict-memory-safety -warnings-as-errors -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache -target arm64-apple-macosx26.0 -parse-as-library -typecheck /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable.swift",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "F01Portable-x86_64-macos26.0-typecheck",
+    "argv": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache",
+      "-target",
+      "x86_64-apple-macosx26.0",
+      "-parse-as-library",
+      "-typecheck",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable.swift"
+    ],
+    "command": "xcrun swiftc -swift-version 6 -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache -target x86_64-apple-macosx26.0 -parse-as-library -typecheck /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable.swift",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "F01Portable-linkage",
+    "argv": [
+      "xcrun",
+      "otool",
+      "-L",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable-release-macos26.0"
+    ],
+    "command": "xcrun otool -L /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable-release-macos26.0",
+    "exit": 0,
+    "stdout": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Portable-release-macos26.0:\n\t/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.0.0)\n\t/usr/lib/swift/libswiftCore.dylib (compatibility version 0.0.0, current version 0.0.0)\n\t/usr/lib/swift/libswift_Concurrency.dylib (compatibility version 0.0.0, current version 0.0.0)\n",
+    "stderr": ""
+  },
+  {
+    "label": "F02Temporary-release-macos26.0-compile",
+    "argv": [
+      "xcrun",
+      "swiftc",
+      "-v",
+      "-swift-version",
+      "6",
+      "-strict-concurrency=complete",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache",
+      "-target",
+      "arm64-apple-macosx26.0",
+      "-O",
+      "-parse-as-library",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary.swift",
+      "-o",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary-release-macos26.0"
+    ],
+    "command": "xcrun swiftc -v -swift-version 6 -strict-concurrency=complete -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache -target arm64-apple-macosx26.0 -O -parse-as-library /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary.swift -o /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary-release-macos26.0",
+    "exit": 0,
+    "stdout": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -c -primary-file /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary.swift -target arm64-apple-macosx26.0 -Xllvm -aarch64-use-tbi -enable-objc-interop -stack-check -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache -no-color-diagnostics -Xcc -fno-color-diagnostics -swift-version 6 -O -new-driver-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-driver -strict-concurrency=complete -empty-abi-descriptor -no-auto-bridging-header-chaining -module-name main -disable-clang-spi -target-sdk-version 27.0 -target-sdk-name macosx27.0 -external-plugin-path '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/swift/host/plugins#/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/bin/swift-plugin-server' -external-plugin-path '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/local/lib/swift/host/plugins#/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/bin/swift-plugin-server' -in-process-plugin-server-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/libSwiftInProcPluginServer.dylib -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/local/lib/swift/host/plugins -enable-default-cmo -parse-as-library -o /var/folders/nq/fwb7mwjn1q5gwmt6hy61hh5m0000gp/T/TemporaryDirectory.LX84uU/F02Temporary-1.o\n/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang /var/folders/nq/fwb7mwjn1q5gwmt6hy61hh5m0000gp/T/TemporaryDirectory.LX84uU/F02Temporary-1.o -O3 --sysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk --target=arm64-apple-macosx26.0 -L /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx -L /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk/usr/lib/swift -o /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary-release-macos26.0\n",
+    "stderr": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx26.0\n"
+  },
+  {
+    "label": "F02Temporary-release-macos26.0-run",
+    "argv": [
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary-release-macos26.0"
+    ],
+    "command": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary-release-macos26.0",
+    "exit": 0,
+    "stdout": "F02 passed: typed/raw scratch, 3 exact destructions including partial initialisation throw, empty and bounded capacities\n",
+    "stderr": ""
+  },
+  {
+    "label": "F02Temporary-strict-memory-safety-macos26.0",
+    "argv": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-strict-memory-safety",
+      "-warnings-as-errors",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache",
+      "-target",
+      "arm64-apple-macosx26.0",
+      "-parse-as-library",
+      "-typecheck",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary.swift"
+    ],
+    "command": "xcrun swiftc -swift-version 6 -strict-memory-safety -warnings-as-errors -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache -target arm64-apple-macosx26.0 -parse-as-library -typecheck /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary.swift",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "F02Temporary-x86_64-macos26.0-typecheck",
+    "argv": [
+      "xcrun",
+      "swiftc",
+      "-swift-version",
+      "6",
+      "-module-cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache",
+      "-target",
+      "x86_64-apple-macosx26.0",
+      "-parse-as-library",
+      "-typecheck",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary.swift"
+    ],
+    "command": "xcrun swiftc -swift-version 6 -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache -target x86_64-apple-macosx26.0 -parse-as-library -typecheck /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary.swift",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "F02Temporary-linkage",
+    "argv": [
+      "xcrun",
+      "otool",
+      "-L",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary-release-macos26.0"
+    ],
+    "command": "xcrun otool -L /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary-release-macos26.0",
+    "exit": 0,
+    "stdout": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F02Temporary-release-macos26.0:\n\t/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.0.0)\n\t/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)\n\t/usr/lib/swift/libswiftCore.dylib (compatibility version 0.0.0, current version 0.0.0)\n\t/usr/lib/swift/libswift_Concurrency.dylib (compatibility version 0.0.0, current version 0.0.0)\n",
+    "stderr": ""
+  },
+  {
+    "label": "compiler",
+    "argv": [
+      "xcrun",
+      "swiftc",
+      "--version"
+    ],
+    "command": "xcrun swiftc --version",
+    "exit": 0,
+    "stdout": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0\n",
+    "stderr": "swift-driver version: 1.168.6 "
+  },
+  {
+    "label": "xcode",
+    "argv": [
+      "xcodebuild",
+      "-version"
+    ],
+    "command": "xcodebuild -version",
+    "exit": 0,
+    "stdout": "Xcode 27.0\nBuild version 27A266a\n",
+    "stderr": ""
+  },
+  {
+    "label": "host",
+    "argv": [
+      "sw_vers"
+    ],
+    "command": "sw_vers",
+    "exit": 0,
+    "stdout": "ProductName:\t\tmacOS\nProductVersion:\t\t27.0\nBuildVersion:\t\t26A428\n",
+    "stderr": ""
+  },
+  {
+    "label": "target26-info",
+    "argv": [
+      "xcrun",
+      "swiftc",
+      "-target",
+      "arm64-apple-macosx26.0",
+      "-print-target-info"
+    ],
+    "command": "xcrun swiftc -target arm64-apple-macosx26.0 -print-target-info",
+    "exit": 0,
+    "stdout": "{\n  \"compilerVersion\": \"Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\",\n  \"swiftCompilerTag\": \"swiftlang-6.4.0.34.1\",\n  \"target\": {\n    \"triple\": \"arm64-apple-macosx26.0\",\n    \"unversionedTriple\": \"arm64-apple-macosx\",\n    \"moduleTriple\": \"arm64-apple-macos\",\n    \"platform\": \"macosx\",\n    \"arch\": \"arm64\",\n    \"pointerWidthInBits\": 64,\n    \"pointerWidthInBytes\": 8,\n    \"swiftRuntimeCompatibilityVersion\": \"6.2\",\n    \"compatibilityLibraries\": [ ],\n    \"openbsdBTCFIEnabled\": false,\n    \"librariesRequireRPath\": false\n  },\n  \"paths\": {\n    \"runtimeLibraryPaths\": [\n      \"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx\",\n      \"/usr/lib/swift\"\n    ],\n    \"runtimeLibraryImportPaths\": [\n      \"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx\"\n    ],\n    \"runtimeResourcePath\": \"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift\"\n  }\n}\n",
+    "stderr": ""
+  }
+]

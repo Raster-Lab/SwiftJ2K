@@ -1,0 +1,78 @@
+􀟈  Test run started.
+􀄵  Testing Library Version: 2084
+􀄵  Target Platform: arm64e-apple-macos14.0
+􀟈  Test cancellationInProviderFinalisationPreventsPublication(_:) started.
+􀟈  Test configurationsAndBackendRequestsRejectUnsupportedChoices() started.
+􀟈  Test abandonedDestinationInvalidatesItsReservedOwner() started.
+􀟈  Test decoderPreservesTaskCancellationError() started.
+􀟈  Test paddedStorageCountsTowardsDecodedLimit() started.
+􀟈  Test extremeIntegerInputsThrowWithoutOverflowTraps() started.
+􀟈  Suite "Swift 6.4 sample access" started.
+􀟈  Test independentAllocationAndMemoryCeilingsAreEnforced() started.
+􀟈  Test sealedOwnerSupportsConcurrentReadersAndNestedRead() started.
+􀟈  Test unknownMeasurementsStayUnknownAndMetadataIsBounded() started.
+􀟈  Test adaptersShareWriterAuthorityAndRejectForgedLease() started.
+􀟈  Test meaningfulPrecisionRejectsInvalidValues() started.
+􀟈  Test planarDescriptorsMapEveryComponentAndRejectOverlap() started.
+􀟈  Test invalidResourceProfilesAndProgressFailPredictably() started.
+􀟈  Test reentrantLeaseOperationsRejectWithoutDeadlocking() started.
+􀟈  Test pixelAndDimensionLimitsRejectBeforeAllocation() started.
+􀟈  Test failedFillInvalidatesDestination() started.
+􀟈  Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() started.
+􀟈  Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() started.
+􀟈  Test metadataAndDestinationLimitsUseCallerBudget() started.
+􀟈  Test shortCapacityAndInvalidStrideAreRejected() started.
+􀟈  Test concurrentAdaptersReserveExactlyOneWriter() started.
+􀟈  Test cancellationDuringSyntheticRowsInvalidatesDestination() started.
+􀟈  Test explicitLargerMetadataLimitIsHonoured() started.
+􀟈  Test nativeByteOrderIsResolvedAndColourMeaningValidated() started.
+􀟈  Test paddedOddSizedSamplesPreservePrecision(_:) started.
+􀟈  Test cancellationIsCheckedBeforeAllocatingStorage() started.
+􀟈  Test safeSampleAccessHonoursExplicitBigEndian() started.
+􀟈  Test case passing 1 argument point → .sealing to cancellationInProviderFinalisationPreventsPublication(_:) started.
+􀟈  Test case passing 1 argument point → .validatingSealedStorage to cancellationInProviderFinalisationPreventsPublication(_:) started.
+􀟈  Test publicOperationsRejectCodecWorkAndAdvertiseEmptyCapabilities() started.
+􀟈  Test readsIndependentGoldenBytesFromOddPhysicalAddress() started.
+􀟈  Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() started.
+􀟈  Test rejectsCoordinatesBeforeOffsetArithmetic() started.
+􀟈  Test writesGoldenBytesForPackedAndPadded12And16BitSamples() started.
+􀟈  Test refusesShortProviderBeforeLoadingSample() started.
+􀟈  Test outOfPrecisionWriteInvalidatesDestination() started.
+􀟈  Test case passing 1 argument precision → 12 to paddedOddSizedSamplesPreservePrecision(_:) started.
+􀟈  Test case passing 1 argument precision → 16 to paddedOddSizedSamplesPreservePrecision(_:) started.
+􁁛  Test reentrantLeaseOperationsRejectWithoutDeadlocking() passed after 0.001 seconds.
+􁁛  Test adaptersShareWriterAuthorityAndRejectForgedLease() passed after 0.001 seconds.
+􁁛  Test abandonedDestinationInvalidatesItsReservedOwner() passed after 0.001 seconds.
+􁁛  Test safeSampleAccessHonoursExplicitBigEndian() passed after 0.001 seconds.
+􁁛  Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() passed after 0.001 seconds.
+􁁛  Test failedFillInvalidatesDestination() passed after 0.001 seconds.
+􁁛  Test paddedOddSizedSamplesPreservePrecision(_:) with 2 test cases passed after 0.001 seconds.
+􁁛  Test readsIndependentGoldenBytesFromOddPhysicalAddress() passed after 0.001 seconds.
+􁁛  Test planarDescriptorsMapEveryComponentAndRejectOverlap() passed after 0.001 seconds.
+􁁛  Test unknownMeasurementsStayUnknownAndMetadataIsBounded() passed after 0.001 seconds.
+􁁛  Test publicOperationsRejectCodecWorkAndAdvertiseEmptyCapabilities() passed after 0.001 seconds.
+􁁛  Test paddedStorageCountsTowardsDecodedLimit() passed after 0.001 seconds.
+􁁛  Test pixelAndDimensionLimitsRejectBeforeAllocation() passed after 0.001 seconds.
+􁁛  Test configurationsAndBackendRequestsRejectUnsupportedChoices() passed after 0.001 seconds.
+􁁛  Test rejectsCoordinatesBeforeOffsetArithmetic() passed after 0.001 seconds.
+􁁛  Test outOfPrecisionWriteInvalidatesDestination() passed after 0.001 seconds.
+􁁛  Test decoderPreservesTaskCancellationError() passed after 0.001 seconds.
+􁁛  Test sealedOwnerSupportsConcurrentReadersAndNestedRead() passed after 0.001 seconds.
+􁁛  Test nativeByteOrderIsResolvedAndColourMeaningValidated() passed after 0.001 seconds.
+􁁛  Test metadataAndDestinationLimitsUseCallerBudget() passed after 0.001 seconds.
+􁁛  Test cancellationIsCheckedBeforeAllocatingStorage() passed after 0.001 seconds.
+􁁛  Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() passed after 0.001 seconds.
+􁁛  Test concurrentAdaptersReserveExactlyOneWriter() passed after 0.001 seconds.
+􁁛  Test invalidResourceProfilesAndProgressFailPredictably() passed after 0.001 seconds.
+􁁛  Test refusesShortProviderBeforeLoadingSample() passed after 0.001 seconds.
+􁁛  Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() passed after 0.001 seconds.
+􁁛  Test shortCapacityAndInvalidStrideAreRejected() passed after 0.001 seconds.
+􁁛  Test cancellationInProviderFinalisationPreventsPublication(_:) with 2 test cases passed after 0.001 seconds.
+􁁛  Test cancellationDuringSyntheticRowsInvalidatesDestination() passed after 0.001 seconds.
+􁁛  Test meaningfulPrecisionRejectsInvalidValues() passed after 0.001 seconds.
+􁁛  Test independentAllocationAndMemoryCeilingsAreEnforced() passed after 0.002 seconds.
+􁁛  Test writesGoldenBytesForPackedAndPadded12And16BitSamples() passed after 0.001 seconds.
+􁁛  Test extremeIntegerInputsThrowWithoutOverflowTraps() passed after 0.002 seconds.
+􁁛  Suite "Swift 6.4 sample access" passed after 0.002 seconds.
+􁁛  Test explicitLargerMetadataLimitIsHonoured() passed after 0.001 seconds.
+􁁛  Test run with 34 tests in 1 suite passed after 0.002 seconds.

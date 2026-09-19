@@ -1,0 +1,150 @@
+[
+  {
+    "repository": "SwiftJ2K",
+    "file": "work/os27/cli-sbom/SwiftJ2K/spdx/spdx3-3.0.1-swiftj2k-c213db53913367063d4204a5561a89b1071bbf00-modified-all-2026-09-19T09_36_23Z.json",
+    "sha256": "6b1a1d648fe50330a60bd57b656395182b0203df9e16f3e44ce58264d79e2604",
+    "json_parse": "passed",
+    "schema_validation": "unexecuted",
+    "findings": [
+      {
+        "pointer": "/@graph/2/specVersion",
+        "value": "6.4.0-dev"
+      },
+      {
+        "pointer": "/@graph/8/externalUrl",
+        "value": "pkg:swift/github.com/Raster-Lab/swiftj2k@c213db53913367063d4204a5561a89b1071bbf00-modified"
+      },
+      {
+        "pointer": "/@graph/9/externalUrl",
+        "value": "pkg:swift/github.com/Raster-Lab/swiftj2k:swiftj2k@c213db53913367063d4204a5561a89b1071bbf00-modified"
+      }
+    ]
+  },
+  {
+    "repository": "SwiftJ2K",
+    "file": "work/os27/cli-sbom/SwiftJ2K/cyclonedx/cyclonedx1-1.7-swiftj2k-c213db53913367063d4204a5561a89b1071bbf00-modified-all-2026-09-19T09_36_25Z.json",
+    "sha256": "d66d0f7ba9dbf31975416e0be7828ad08721ca22b4c315f9e424424011ed508a",
+    "json_parse": "passed",
+    "schema_validation": "unexecuted",
+    "findings": [
+      {
+        "duplicate_bom_ref": "swiftj2k:swiftj2k",
+        "pointers": [
+          "/components/1/bom-ref",
+          "/metadata/component/bom-ref"
+        ]
+      }
+    ]
+  },
+  {
+    "repository": "SwiftJLS",
+    "file": "work/os27/cli-sbom/SwiftJLS/spdx/spdx3-3.0.1-swiftjls-e1cbc3a23c4ada64f2d5db4c5330bd9710950797-modified-all-2026-09-19T09_36_23Z.json",
+    "sha256": "603f06ec562bbb909fae4664b916875cf7624769c8d09f6a3f355aab0bfc8916",
+    "json_parse": "passed",
+    "schema_validation": "unexecuted",
+    "findings": [
+      {
+        "pointer": "/@graph/2/specVersion",
+        "value": "6.4.0-dev"
+      },
+      {
+        "pointer": "/@graph/8/externalUrl",
+        "value": "pkg:swift/github.com/Raster-Lab/swiftjls@e1cbc3a23c4ada64f2d5db4c5330bd9710950797-modified"
+      },
+      {
+        "pointer": "/@graph/9/externalUrl",
+        "value": "pkg:swift/github.com/Raster-Lab/swiftjls:swiftjls@e1cbc3a23c4ada64f2d5db4c5330bd9710950797-modified"
+      }
+    ]
+  },
+  {
+    "repository": "SwiftJLS",
+    "file": "work/os27/cli-sbom/SwiftJLS/cyclonedx/cyclonedx1-1.7-swiftjls-e1cbc3a23c4ada64f2d5db4c5330bd9710950797-modified-all-2026-09-19T09_36_25Z.json",
+    "sha256": "0dcee02172c51981ecd152a66b6ef29d563ea94492f8043a01a49649433030ae",
+    "json_parse": "passed",
+    "schema_validation": "unexecuted",
+    "findings": [
+      {
+        "duplicate_bom_ref": "swiftjls:swiftjls",
+        "pointers": [
+          "/components/1/bom-ref",
+          "/metadata/component/bom-ref"
+        ]
+      }
+    ]
+  },
+  {
+    "repository": "SwiftJXL",
+    "file": "work/os27/cli-sbom/SwiftJXL/spdx/spdx3-3.0.1-swiftjxl-64c5b50bfb6c3fa830a502ad887e6dcf867fa9a0-modified-all-2026-09-19T09_36_23Z.json",
+    "sha256": "b71f161f1b1e15692b9ed6ad03a6bdbcc3b83ec9aabf0f74ef246f91bdd1ffc6",
+    "json_parse": "passed",
+    "schema_validation": "unexecuted",
+    "findings": [
+      {
+        "pointer": "/@graph/2/specVersion",
+        "value": "6.4.0-dev"
+      },
+      {
+        "pointer": "/@graph/8/externalUrl",
+        "value": "pkg:swift/github.com/Raster-Lab/swiftjxl@64c5b50bfb6c3fa830a502ad887e6dcf867fa9a0-modified"
+      },
+      {
+        "pointer": "/@graph/9/externalUrl",
+        "value": "pkg:swift/github.com/Raster-Lab/swiftjxl:swiftjxl@64c5b50bfb6c3fa830a502ad887e6dcf867fa9a0-modified"
+      }
+    ]
+  },
+  {
+    "repository": "SwiftJXL",
+    "file": "work/os27/cli-sbom/SwiftJXL/cyclonedx/cyclonedx1-1.7-swiftjxl-64c5b50bfb6c3fa830a502ad887e6dcf867fa9a0-modified-all-2026-09-19T09_36_25Z.json",
+    "sha256": "97168e6192697888b8f201cf7c1ee19d3103b13b1e9543d34d812169cf62833a",
+    "json_parse": "passed",
+    "schema_validation": "unexecuted",
+    "findings": [
+      {
+        "duplicate_bom_ref": "swiftjxl:swiftjxl",
+        "pointers": [
+          "/components/1/bom-ref",
+          "/metadata/component/bom-ref"
+        ]
+      }
+    ]
+  },
+  {
+    "repository": "SwiftJLI",
+    "file": "work/os27/cli-sbom/SwiftJLI/spdx/spdx3-3.0.1-swiftjli-3931d9df7c057e2fcc748fd4641f57159c271a0e-modified-all-2026-09-19T09_36_23Z.json",
+    "sha256": "ac3f57dd27750b4e1f4ca3df1c4d7d5045e95b3580ed154ac8984271d534dce2",
+    "json_parse": "passed",
+    "schema_validation": "unexecuted",
+    "findings": [
+      {
+        "pointer": "/@graph/2/specVersion",
+        "value": "6.4.0-dev"
+      },
+      {
+        "pointer": "/@graph/8/externalUrl",
+        "value": "pkg:swift/github.com/Raster-Lab/swiftjli@3931d9df7c057e2fcc748fd4641f57159c271a0e-modified"
+      },
+      {
+        "pointer": "/@graph/9/externalUrl",
+        "value": "pkg:swift/github.com/Raster-Lab/swiftjli:swiftjli@3931d9df7c057e2fcc748fd4641f57159c271a0e-modified"
+      }
+    ]
+  },
+  {
+    "repository": "SwiftJLI",
+    "file": "work/os27/cli-sbom/SwiftJLI/cyclonedx/cyclonedx1-1.7-swiftjli-3931d9df7c057e2fcc748fd4641f57159c271a0e-modified-all-2026-09-19T09_36_25Z.json",
+    "sha256": "c01f08851b83d4caedb9c22a9cff85053751defb736652bad05ec02d3abeba13",
+    "json_parse": "passed",
+    "schema_validation": "unexecuted",
+    "findings": [
+      {
+        "duplicate_bom_ref": "swiftjli:swiftjli",
+        "pointers": [
+          "/components/1/bom-ref",
+          "/metadata/component/bom-ref"
+        ]
+      }
+    ]
+  }
+]

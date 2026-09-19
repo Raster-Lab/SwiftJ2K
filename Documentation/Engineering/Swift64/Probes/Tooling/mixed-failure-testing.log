@@ -1,0 +1,11 @@
+􀟈  Test run started.
+􀄵  Testing Library Version: 2084
+􀄵  Target Platform: arm64e-apple-macos14.0
+􀟈  Test mixedFrameworkAssertion() started.
+􀢄  Test mixedFrameworkAssertion() recorded an issue at ToolingTests.swift:15:1: Issue recorded
+􀇿  Test mixedFrameworkAssertion() recorded a warning at ToolingTests.swift:15:1: An API was misused
+􀄵  Replace XCTest API such as 'XCTAssert' with a Swift Testing equivalent such as '#expect'.
+􀢄  Test mixedFrameworkAssertion() failed after 0.001 seconds with 2 issues (including 1 warning).
+􀢄  Test run with 1 test in 0 suites failed after 0.001 seconds with 2 issues (including 1 warning).
+Note: Some test targets reported failures:
+  - ToolingTests (Swift Testing)
