@@ -1,6 +1,6 @@
 # Unit, regression, interoperability and security testing
 
-Contract **0.3.0**. Required evidence for coding agents. Executed Milestone 1 results are recorded separately in each repository; later codec and release gates remain requirements.
+Contract **0.4.0**. Required evidence for coding agents. Executed Milestone 1 results are recorded separately in each repository; later codec and release gates remain requirements.
 
 ## General rules
 
@@ -90,3 +90,7 @@ For J2K ↔ HTJ2K, test each direction and both round trips with conformant inde
 For existing lossy JPEG ↔ JPEG XL, compare restored JPEG length and every byte, record SHA-256, and reconstruct with only the JXL available to the operation. Test both independent interoperability directions and actual JXL image decoding. Cover every claimed JPEG/metadata profile; explicitly reject unsupported reconstruction cases. Include missing/corrupt reconstruction metadata, noncanonical padding, expanded-metadata limits and attempts to invoke pixel fallback or supply the original JPEG. Source-based diagnostic reconstruction is not acceptance evidence.
 
 For both operations, verify bounded workspace/copies, cancellation/owner lifetime, source and destination limits, native standalone consumption, and absence of intermediate file or external-process I/O. CLI tests exercise one-process transcode commands, pipes, errors and output publication. Distinguish source inspection, test presence, executed tests and unexecuted coverage. Native transcoder milestones supplement the initial J2K → JPEG-LS shared-image proof; they do not expand Milestone 1 into codec implementation.
+
+## CLI foundation acceptance — contract 0.4.0
+
+Run `Scripts/test-cli.py` against the built executable. Cover help/version/command-local help, JSON capability truth, verbosity levels and aliases, range/usage errors, quiet conflicts, stderr separation, unavailable operations without input/output access, and deterministic closed-pipe errors. Stage installation under a temporary prefix (including spaces), replace a stale manual on update and verify `man -M` discovery plus rendered text. These tests supplement library/Xcode tests and do not prove codec stream interoperability.

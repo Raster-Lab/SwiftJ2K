@@ -1,0 +1,10 @@
+{
+  "workspace" : {
+    "name" : "SwiftJ2K",
+    "schemes" : [
+      "swiftj2k",
+      "SwiftJ2K",
+      "SwiftJ2K-Package"
+    ]
+  }
+}

@@ -1,6 +1,6 @@
 # Migrating applications from J2KSwift to SwiftJ2K
 
-The successor now requires Swift 6.4 and retains its OS 26 deployment floors. See the [Swift 6.4 upgrade record](Documentation/Engineering/Swift64/README.md) for development versioning and validation; current codec availability is unchanged.
+The successor now requires Swift 6.4 and retains its OS 27 deployment floors. See the [Swift 6.4 upgrade record](Documentation/Engineering/Swift64/README.md) for development versioning and validation; current codec availability is unchanged.
 
 For application maintainers and coding agents. This guide covers **consumer application migration**; [IMPLEMENTATION.md](IMPLEMENTATION.md) governs migration of codec algorithms into this library.
 
@@ -8,7 +8,7 @@ For application maintainers and coding agents. This guide covers **consumer appl
 
 **The current successor is Milestone 1 API/ownership feasibility, not a replacement JPEG 2000 codec.** You can trial its descriptors, owning storage and common call shapes. `Encoder`, `Decoder` and `Transcoder` advertise no codec capabilities; encode, decode, inspect and transcode reject with defined errors. Keep the predecessor supplying real compression/decompression until the exact successor features your application needs are implemented and independently qualified. An unsupported error must not become an empty file, a black image or a successful migration result.
 
-This guide uses suite contract **0.3.0**, [current successor source](Sources/SwiftJ2K), and [J2KSwift snapshot 768f6b53](https://github.com/Raster-Lab/J2KSwift/tree/768f6b53499b806fd0304962056e1fc7833f12e5). These are source snapshots, not a claim that every older release has the same API. Record your application's actual resolved revision and compare it before applying the mappings below. See [HISTORY.md](HISTORY.md) for provenance and [MILESTONE1.md](Documentation/MILESTONE1.md) for executed tests and missing gates. Intended version `12.1.0` is not a published release.
+This guide uses suite contract **0.4.0**, [current successor source](Sources/SwiftJ2K), and [J2KSwift snapshot 768f6b53](https://github.com/Raster-Lab/J2KSwift/tree/768f6b53499b806fd0304962056e1fc7833f12e5). These are source snapshots, not a claim that every older release has the same API. Record your application's actual resolved revision and compare it before applying the mappings below. See [HISTORY.md](HISTORY.md) for provenance and [MILESTONE1.md](Documentation/MILESTONE1.md) for executed tests and missing gates. Intended version `12.1.0` is not a published release.
 
 ## Dependency, product and platform changes
 
@@ -18,8 +18,8 @@ This guide uses suite contract **0.3.0**, [current successor source](Sources/Swi
 | Principal SwiftPM products/imports | `J2KCore`, `J2KCodec` | Product/module `SwiftJ2K`; use `import SwiftJ2K` in the new adapter target |
 | Shared protocol dependency | `CompressionFamily` conformances on J2K types | No inherited conformances or shared runtime package; adapt local concrete types explicitly |
 | Minimum tools | Consult the application pin; inspected predecessor uses Swift 6.2 | Swift 6.4 tools minimum, Swift 6 language mode |
-| Apple deployment floors | Inspected manifest: macOS 15, iOS/tvOS 18, watchOS 10, visionOS 1 | All five successor deployment floors are 26.0; older-OS applications cannot replace their existing target directly |
-| CLI | `j2k` | `swiftj2k` is planned, not an installed executable |
+| Apple deployment floors | Inspected manifest: macOS 15, iOS/tvOS 18, watchOS 10, visionOS 1 | All five successor deployment floors are 27.0; older-OS applications cannot replace their existing target directly |
+| CLI | `j2k` | `swiftj2k` provides help/version/capabilities; codec commands remain unavailable |
 
 In an isolated application migration branch, add the successor URL `https://github.com/Raster-Lab/SwiftJ2K.git` to SwiftPM or Xcode Package Dependencies, select a reviewed immutable revision containing `Package.swift`, and add `.product(name: "SwiftJ2K", package: "SwiftJ2K")` to the new adapter target. Pin the reviewed Swift 6.4 candidate revision recorded by your application; an earlier feasibility revision does not include this upgrade. Do not use `from: "12.1.0"` until an actual qualifying release exists. Commit the application's updated `Package.resolved` where appropriate. Package identities derive from repository/directory names; give a standalone consumer a distinct name/directory.
 
@@ -97,7 +97,7 @@ Resource limits are finite and count row padding, retained storage and metadata.
 | `J2KFileFormat`, `J2KMetal`, `J2KDecoder.preWarm()` and native acceleration controls | No direct successor product or warm-up replacement; retain legacy route until separately supported |
 | `JPIP`, `J2K3D`, `J2KDICOMHelpers` | Not replaced by the common image API; retain or explicitly defer each integration |
 | `j2kd`, `J2KDaemonProtocol`, `J2KDaemonCore`, `J2KDaemonClient`, `J2KTestApp` | No successor equivalent in this milestone; application/service migration is separate |
-| `j2k` commands, exit codes, scripts and pipes | Do not rename commands to a nonexistent `swiftj2k`; qualify a future CLI separately |
+| `j2k` commands, exit codes, scripts and pipes | Keep codec scripts on `j2k`; `swiftj2k` currently provides diagnostic commands only ([CLI guide](CLI.md)) |
 | Native J2K ↔ HTJ2K transcode | Follow [TRANSCODING.md](TRANSCODING.md); future lossless preservation means exact samples/interpretation, not identical compressed bytes |
 
 Predecessor transcoder success is not by itself an oracle: recorded zero-on-error and packet/quantisation limitations require independent validation. Keep original compressed fixtures immutable. Existing file-format bytes are not rewritten merely because a Swift package is renamed.

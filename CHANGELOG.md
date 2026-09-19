@@ -43,3 +43,7 @@
 - Updated all seven shared documents and their SHA-256 manifest. This is documentation only; no source migration, codec execution or performance claim.
 
 The foundation document version is 0.2.0. It is separate from the intended library version.
+
+## OS 27 and CLI foundation — 19 September 2026
+
+Owner-authorised Apple platform floors now use 27.0. Development version 12.1.0-dev.2, common contract 0.4.0. The standalone `swiftj2k` provides help/version/capabilities, five diagnostic levels and a matching section 1 manual installed/updated with the binary. Codec commands remain unavailable. Endian-aware span overloads use the new floor without changing public ownership semantics. See [qualification and limitations](Documentation/Engineering/OS27CLI/README.md). Historical evidence and supplied documents remain unchanged.

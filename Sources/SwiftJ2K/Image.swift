@@ -70,11 +70,8 @@ public struct Image: Sendable {
             // The provider retains sealed storage for this synchronous borrow.
             // Descriptor and capacity checks above prove the two-byte extent.
             let span = unsafe RawSpan(_unsafeBytes: bytes)
-            let value = span.load(fromByteOffset: offset, as: UInt16.self)
-            // Native-order loading plus integer conversion also supports OS 26;
-            // the Swift.ByteOrder overload requires Apple OS 27.
-            return descriptor.byteOrder == .littleEndian
-                ? UInt16(littleEndian: value) : UInt16(bigEndian: value)
+            let order: Swift.ByteOrder = descriptor.byteOrder == .littleEndian ? .littleEndian : .bigEndian
+            return span.load(fromByteOffset: offset, as: UInt16.self, order)
         }
     }
 }
@@ -160,14 +157,13 @@ public final class ImageDestination: Sendable {
                         throw CodecError(.invalidArgument, "Sample exceeds declared meaningful precision.")
                     }
                     let offset = plane.offset + y * plane.rowBytes + x * plane.pixelStride
-                    let stored = descriptor.byteOrder == .littleEndian
-                        ? value.littleEndian : value.bigEndian
                     // The exclusive lease retains these two bytes. External
                     // providers need not initialise samples before this write.
                     let sampleBytes = UnsafeMutableRawBufferPointer(
                         rebasing: bytes[offset..<(offset + MemoryLayout<UInt16>.size)])
                     var output = unsafe OutputRawSpan(buffer: sampleBytes, initializedCount: 0)
-                    output.append(stored, as: UInt16.self)
+                    output.append(value, as: UInt16.self,
+                                  descriptor.byteOrder == .littleEndian ? .littleEndian : .bigEndian)
                     _ = unsafe output.finalize(for: sampleBytes)
                 }
             }

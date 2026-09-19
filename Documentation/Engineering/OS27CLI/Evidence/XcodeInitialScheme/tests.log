@@ -1,0 +1,15 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -scheme SwiftJ2K -destination platform=macOS,arch=arm64 -jobs 2 CODE_SIGNING_ALLOWED=NO -derivedDataPath /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/xcode/SwiftJ2K/DerivedData -resultBundlePath /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/xcode/SwiftJ2K/Tests.xcresult -parallel-testing-enabled NO
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+Resolve Package Graph
+2026-09-19 15:04:13.559 xcodebuild[35202:3488890] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+
+
+Resolved source packages:
+  SwiftJ2K: /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K
+
+xcodebuild: error: Scheme SwiftJ2K is not currently configured for the test action.
+

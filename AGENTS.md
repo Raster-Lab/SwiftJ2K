@@ -4,7 +4,9 @@ Applies to Claude, Codex and other coding agents working in this repository.
 
 ## Start here
 
-For the compiler upgrade, read the [Swift 6.4 manifesto](Documentation/Engineering/Swift64/Swift_6.4_Upgrade_Manifesto_v1.0.0.md), [suite supplement](Documentation/Engineering/Swift64/Swift_Image_Compression_Suite_Swift_6.4_Supplement_v1.0.0.md), then the [current upgrade record and feature register](Documentation/Engineering/Swift64/README.md). Preserve the supplied files byte-for-byte. Current contract 0.3.0 supersedes their older inspected contract snapshot; historical evidence is not rewritten.
+Current owner-approved baseline: Apple OS 27.0 and the CLI foundation; read [current qualification](Documentation/Engineering/OS27CLI/README.md) before applying historical OS 26 feature decisions.
+
+For the compiler upgrade, read the [Swift 6.4 manifesto](Documentation/Engineering/Swift64/Swift_6.4_Upgrade_Manifesto_v1.0.0.md), [suite supplement](Documentation/Engineering/Swift64/Swift_Image_Compression_Suite_Swift_6.4_Supplement_v1.0.0.md), then the [historical upgrade record and feature register](Documentation/Engineering/Swift64/README.md). Preserve the supplied files byte-for-byte. Current contract 0.4.0 supersedes their older inspected contract snapshot; historical evidence is not rewritten.
 
 Read `README.md`, `HISTORY.md`, this file and `IMPLEMENTATION.md`, then all seven common contract documents in `Documentation/`. Read the repository-specific `TRANSCODING.md` when present before work affecting transcoding. `CLAUDE.md` points here and is not a separate policy. Follow the precedence in `Documentation/SUITE_POLICY.md`.
 
@@ -43,3 +45,7 @@ State what behaviour changed and why, exact source/baseline/contract revisions, 
 "Read AGENTS.md, IMPLEMENTATION.md, HISTORY.md and the common contract. Carry out Milestone 1 only: validate the local public API and owning-memory contract in Swift 6.4, with meaningful descriptor, lifetime, concurrency and independent-consumer tests. Use synthetic buffers for the adapter experiment and preserve repository independence. Do not migrate codec algorithms or implement the real transcoder in this milestone. Return a reviewable PR, exact test evidence and any concrete contract issue requiring a coordinated revision."
 
 Later task prompts must name the next milestone explicitly. Repository creation and documentation publication are separate from authorising codec implementation.
+
+## Current platform and CLI direction
+
+The owner approved Apple OS 27.0 minima and the CLI foundation in contract 0.4.0. Read [OS 27/CLI qualification](Documentation/Engineering/OS27CLI/README.md) and [CLI.md](CLI.md); these supersede OS 26 constraints and feature deferrals based only on that older floor. Preserve archived inputs and records. Keep help, verbosity, VERSION, man pages and installer behaviour aligned. Library code must not terminate a process; the executable alone maps documented CLI exit statuses. Codec implementations still require their assigned milestone.

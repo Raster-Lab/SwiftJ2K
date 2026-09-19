@@ -3,7 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "Consumer",
-    platforms: [.macOS(.v26)],
+    platforms: [.macOS(.v27)],
     dependencies: [.package(path: "../..")],
     targets: [.executableTarget(name: "Consumer", dependencies: [.product(name: "SwiftJ2K", package: "SwiftJ2K")])],
     swiftLanguageModes: [.v6]

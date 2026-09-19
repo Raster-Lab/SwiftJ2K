@@ -3,7 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "ContractHarness",
-    platforms: [.macOS(.v26)],
+    platforms: [.macOS(.v27)],
     dependencies: [
         .package(name: "SwiftJ2K", path: "../.."), .package(path: "../../../SwiftJLS"),
         .package(path: "../../../SwiftJXL"), .package(path: "../../../SwiftJLI")

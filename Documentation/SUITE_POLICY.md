@@ -1,6 +1,6 @@
 # Swift Image Compression Suite — implementation baseline
 
-Contract version: **0.3.0**. Updated: **19 September 2026**.
+Contract version: **0.4.0**. Updated: **19 September 2026**.
 Status: **engineering specification; Milestone 1 implementation evidence is recorded in MILESTONE1.md. Later codec and platform gates remain planned**.
 
 This is the common engineering specification for four independent successor libraries. It records the owner's accepted direction and makes concrete implementation choices for the coding agent. Milestone 1 public API shapes and owning storage have been compiler-validated to the coverage recorded in MILESTONE1.md and Engineering/Swift64/README.md. Planned codec behaviour, engineering thresholds and unexecuted platforms remain qualification gates; those records do not constitute a separate human approval. Do not describe this baseline as a released SDK or a conformance certificate.
@@ -80,3 +80,9 @@ The owner assigned a Swift 6.4 upgrade of the four successors before Milestone 2
 The owner also requested version increments. Because none of the successors has a released library tag, advance the unreleased targets by one minor version: SwiftJ2K 12.0.0 → 12.1.0, SwiftJLS 1.0.0 → 1.1.0, SwiftJXL 2.0.0 → 2.1.0 and SwiftJLI 1.0.0 → 1.1.0. Each VERSION file identifies its first `-dev.1` candidate. These are development identifiers and intended future releases, not published tags, backwards binary-compatibility assertions or completed codec qualification. Historical release/provenance records remain unchanged.
 
 All seven shared documents and their SHA-256 manifest advance together. Public signatures are unchanged. Safe native-order span sample access may use explicit fixed-width integer endian conversion without raising the runtime floor. Record F01–F13 dispositions and exact tests, including compiler/platform gaps, in [the upgrade record](Engineering/Swift64/README.md). Swift 6.4 adoption grants no later codec milestone or release authorisation.
+
+## Contract revision 0.4.0 — 19 September 2026
+
+The owner explicitly raised the Apple baseline to macOS/iOS/iPadOS/tvOS/visionOS/watchOS **27.0**, retaining Swift 6.4 and Swift 6 language mode. This supersedes OS 26 preservation instructions in contract 0.3.0 and the immutable supplied manifesto/supplement. Linux retains its independent Ubuntu 24.04 reference distribution. Update active manifests, examples, validation consumers and instructions; preserve historical OS 26 evidence as history.
+
+The owner also authorised CLI help, selectable verbosity and UNIX manual support ahead of codec milestones. Implement only honest help/version/capability reporting and explicitly unsupported codec verbs. Each standalone executable and installer carries its matching man page. CLI rules CLI-07..09 apply consistently. The libraries retain their public API and owning-memory semantics; safe endian-aware span operations may now use their OS 27 overloads. Other newly available language/runtime features still require an actual use and justification. No codec algorithm milestone or release is authorised by this foundation change. Development identifiers advance to `-dev.2`; stable targets remain unchanged. See [the OS 27 and CLI record](Engineering/OS27CLI/README.md).

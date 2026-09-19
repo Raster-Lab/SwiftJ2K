@@ -2,3 +2,7 @@
 .swiftpm/
 .DS_Store
 *.xcresult
+
+# Local compiler coverage artefacts
+*.profraw
+*.profdata

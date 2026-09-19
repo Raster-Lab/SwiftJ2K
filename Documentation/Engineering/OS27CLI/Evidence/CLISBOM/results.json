@@ -1,0 +1,74 @@
+[
+  {
+    "argv": [
+      "xcrun",
+      "swift",
+      "build",
+      "--package-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K",
+      "--scratch-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/candidate/SwiftJ2K/build/release",
+      "--cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/candidate/SwiftJ2K/cache",
+      "--config-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/candidate/SwiftJ2K/config",
+      "--security-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/candidate/SwiftJ2K/security",
+      "--disable-sandbox",
+      "--build-system",
+      "swiftbuild",
+      "--jobs",
+      "2",
+      "-c",
+      "release",
+      "--product",
+      "swiftj2k",
+      "--sbom-spec",
+      "spdx",
+      "--sbom-output-dir",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/cli-sbom/SwiftJ2K/spdx"
+    ],
+    "exit_code": 0,
+    "product": "swiftj2k",
+    "files": {
+      "spdx/spdx3-3.0.1-swiftj2k-c213db53913367063d4204a5561a89b1071bbf00-modified-all-2026-09-19T09_36_23Z.json": "6b1a1d648fe50330a60bd57b656395182b0203df9e16f3e44ce58264d79e2604"
+    },
+    "conformance": "unqualified; installed schema bundle absent; see existing field-audit limitations"
+  },
+  {
+    "argv": [
+      "xcrun",
+      "swift",
+      "build",
+      "--package-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K",
+      "--scratch-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/candidate/SwiftJ2K/build/release",
+      "--cache-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/candidate/SwiftJ2K/cache",
+      "--config-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/candidate/SwiftJ2K/config",
+      "--security-path",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/candidate/SwiftJ2K/security",
+      "--disable-sandbox",
+      "--build-system",
+      "swiftbuild",
+      "--jobs",
+      "2",
+      "-c",
+      "release",
+      "--product",
+      "swiftj2k",
+      "--sbom-spec",
+      "cyclonedx",
+      "--sbom-output-dir",
+      "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/cli-sbom/SwiftJ2K/cyclonedx"
+    ],
+    "exit_code": 0,
+    "product": "swiftj2k",
+    "files": {
+      "cyclonedx/cyclonedx1-1.7-swiftj2k-c213db53913367063d4204a5561a89b1071bbf00-modified-all-2026-09-19T09_36_25Z.json": "d66d0f7ba9dbf31975416e0be7828ad08721ca22b4c315f9e424424011ed508a"
+    },
+    "conformance": "unqualified; installed schema bundle absent; see existing field-audit limitations"
+  }
+]

@@ -1,0 +1,61 @@
+[
+  {
+    "label": "xcode",
+    "argv": [
+      "xcodebuild",
+      "-version"
+    ],
+    "exit_code": 0,
+    "outside_sandbox": true
+  },
+  {
+    "label": "swift",
+    "argv": [
+      "xcrun",
+      "swift",
+      "--version"
+    ],
+    "exit_code": 0,
+    "outside_sandbox": true
+  },
+  {
+    "label": "os",
+    "argv": [
+      "sw_vers"
+    ],
+    "exit_code": 0,
+    "outside_sandbox": true
+  },
+  {
+    "label": "cpu",
+    "argv": [
+      "sysctl",
+      "-n",
+      "machdep.cpu.brand_string"
+    ],
+    "exit_code": 0,
+    "outside_sandbox": true
+  },
+  {
+    "label": "power",
+    "argv": [
+      "pmset",
+      "-g",
+      "batt"
+    ],
+    "exit_code": 0,
+    "outside_sandbox": true
+  },
+  {
+    "label": "runtimes",
+    "argv": [
+      "xcrun",
+      "simctl",
+      "list",
+      "runtimes",
+      "--json"
+    ],
+    "exit_code": 0,
+    "outside_sandbox": true
+  }
+]

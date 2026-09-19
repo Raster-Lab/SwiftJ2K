@@ -4,10 +4,12 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftJ2K",
-    platforms: [.macOS(.v26), .iOS(.v26), .tvOS(.v26), .visionOS(.v26), .watchOS(.v26)],
-    products: [.library(name: "SwiftJ2K", targets: ["SwiftJ2K"])],
+    platforms: [.macOS(.v27), .iOS(.v27), .tvOS(.v27), .visionOS(.v27), .watchOS(.v27)],
+    products: [.library(name: "SwiftJ2K", targets: ["SwiftJ2K"]),
+               .executable(name: "swiftj2k", targets: ["SwiftJ2KCLI"])],
     targets: [
         .target(name: "SwiftJ2K"),
+        .executableTarget(name: "SwiftJ2KCLI", dependencies: ["SwiftJ2K"]),
         .testTarget(name: "SwiftJ2KTests", dependencies: ["SwiftJ2K"])
     ],
     swiftLanguageModes: [.v6]

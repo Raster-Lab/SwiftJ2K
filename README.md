@@ -12,11 +12,11 @@ Read [MIGRATION.md — J2KSwift to SwiftJ2K](MIGRATION.md) for dependency/produc
 
 ## Swift 6.4 development candidate
 
-Current development version: **12.1.0-dev.1** ([VERSION](VERSION)); shared contract **0.3.0**. This increments the earlier unreleased 12.0.0 target and creates no release/tag. See the [upgrade record](Documentation/Engineering/Swift64/README.md) for adopted features, exact Xcode/Swift Build evidence and open platform gates. The historical [Milestone 1 evidence](Documentation/MILESTONE1.md) remains unchanged.
+Current development version: **12.1.0-dev.2** ([VERSION](VERSION)); shared contract **0.4.0**. This increments the earlier unreleased 12.0.0 target and creates no release/tag. See the [current qualification record](Documentation/Engineering/OS27CLI/README.md) for adopted features, exact Xcode/Swift Build evidence and open platform gates. The historical [Milestone 1 evidence](Documentation/MILESTONE1.md) remains unchanged.
 
 ## Intended platform baseline
 
-Swift 6.4 minimum, Swift 6 language mode and complete concurrency checking. Apple OS deployment minima: macOS, iOS/iPadOS, tvOS, visionOS and watchOS 26.0. Apple Silicon is the primary optimisation target. macOS x86_64 and Linux ARM64/x86_64 are included with cleanly separated platform/architecture support. Ubuntu 24.04 is the initial Linux engineering baseline. These are requirements, not completed qualification claims.
+Swift 6.4 minimum, Swift 6 language mode and complete concurrency checking. Apple OS deployment minima: macOS, iOS/iPadOS, tvOS, visionOS and watchOS 27.0. Apple Silicon is the primary optimisation target. macOS x86_64 and Linux ARM64/x86_64 are included with cleanly separated platform/architecture support. Ubuntu 24.04 is the initial Linux engineering baseline. These are requirements, not completed qualification claims.
 
 ## Start reading
 
@@ -37,4 +37,8 @@ Planned standalone **lossless J2K ↔ HTJ2K transcoding** keeps intermediate coe
 
 The four independent libraries are SwiftJ2K, SwiftJLS, SwiftJXL and SwiftJLI, all intended to live under Raster-Lab. A future optional umbrella adapts them for codec selection and in-process transcoding. The codecs do not depend on that umbrella. SwiftCompressionFamily is not part of this successor plan. The common contract is mirrored documentation plus behavioural tests, not a shared runtime package.
 
-The main module is `SwiftJ2K`; `swiftj2k` remains a planned CLI. A [compiled independent consumer](Examples/Consumer) demonstrates the current storage API. Features from the predecessor are migration candidates whose exact coverage must be verified; see IMPLEMENTATION.md. Nothing here changes the predecessor repository's current maintenance configuration.
+The main module is `SwiftJ2K`; `swiftj2k` provides CLI help/version/capabilities. A [compiled independent consumer](Examples/Consumer) demonstrates the current storage API. Features from the predecessor are migration candidates whose exact coverage must be verified; see IMPLEMENTATION.md. Nothing here changes the predecessor repository's current maintenance configuration.
+
+## Command-line help and manual
+
+The diagnostic CLI now provides `-h` / `--help`, `help <command>`, version and truthful capability reporting. Codec commands remain unavailable. Verbosity has five levels: `-v`, `-vv`, `--verbose 1..5`, `--verbose=+++` and `-verbose: 3`; diagnostics use stderr and `--quiet` suppresses optional messages. See [CLI usage and installation](CLI.md). The installer updates both the executable and its UNIX man page together. [OS 27/CLI qualification](Documentation/Engineering/OS27CLI/README.md) supersedes the earlier OS 26 upgrade decision; earlier evidence remains historical.

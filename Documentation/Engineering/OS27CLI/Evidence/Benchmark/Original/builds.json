@@ -1,0 +1,14 @@
+{
+  "baseline": {
+    "executable": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/benchmark/baseline/.build/out/Products/Release/StorageBench",
+    "size_bytes": 325328,
+    "command": "xcrun swift build --disable-sandbox --build-system swiftbuild -c release --jobs 2 --cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/benchmark/baseline/cache --config-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/benchmark/baseline/config --security-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/benchmark/baseline/security",
+    "source_sha256": "a5f050b9334d533cd4f0d01b73bb7e465b9e50718abf7c07eb80dc0109e97e0e"
+  },
+  "candidate": {
+    "executable": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/benchmark/candidate/.build/out/Products/Release/StorageBench",
+    "size_bytes": 324768,
+    "command": "xcrun swift build --disable-sandbox --build-system swiftbuild -c release --jobs 2 --cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/benchmark/candidate/cache --config-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/benchmark/candidate/config --security-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/benchmark/candidate/security",
+    "source_sha256": "4dfb7a32d89f03a9679b1b5f9071af5a6176f335e96faf400fba2b7a0c9debf7"
+  }
+}
