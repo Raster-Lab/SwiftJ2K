@@ -1,0 +1,69 @@
+{
+  "repository": "SwiftJ2K",
+  "url": "https://github.com/Raster-Lab/SwiftJ2K.git",
+  "revision": "4957daf8caab470a09aae393c8703b4fd93842c3",
+  "argv": [
+    "xcrun",
+    "swift",
+    "run",
+    "--disable-sandbox",
+    "--build-system",
+    "swiftbuild",
+    "--jobs",
+    "2",
+    "--cache-path",
+    "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/url-consumers/RemoteConsumer-SwiftJ2K/cache",
+    "--config-path",
+    "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/url-consumers/RemoteConsumer-SwiftJ2K/config",
+    "--security-path",
+    "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/url-consumers/RemoteConsumer-SwiftJ2K/security",
+    "MigrationExample"
+  ],
+  "cwd": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/url-consumers/RemoteConsumer-SwiftJ2K",
+  "developer_dir": "/Applications/Xcode.app/Contents/Developer",
+  "exit_code": 0,
+  "example_sha256": "e238b9ad529dcccac32f4831a797ae98f804407cdba033e8734abacc14fb5425",
+  "manifest_sha256": "6bf3ab4105104cde9f04f9a622b44490275606ad22f75c2fb911b93fcf17b98d",
+  "resolved": {
+    "originHash": "6bf3ab4105104cde9f04f9a622b44490275606ad22f75c2fb911b93fcf17b98d",
+    "pins": [
+      {
+        "identity": "swiftj2k",
+        "kind": "remoteSourceControl",
+        "location": "https://github.com/Raster-Lab/SwiftJ2K.git",
+        "state": {
+          "revision": "4957daf8caab470a09aae393c8703b4fd93842c3"
+        }
+      }
+    ],
+    "version": 3
+  },
+  "checkout_head": "4957daf8caab470a09aae393c8703b4fd93842c3",
+  "tested_input_hashes_match": true,
+  "source_files_sha256": {
+    "Package.swift": "3ddc95c4bebc4c03ab5d9c8dca9f6ee031c845f47ce3c205023eca9fe5798d10",
+    "VERSION": "99f7205baf97734e7f88e5a5d30e98e3d4f7e41831a9086041603a5bd4e45c5c",
+    "Sources/SwiftJ2KCLI/main.swift": "174ce06e478145490f9e7480147e8e861f29f258bd5a5570b42274afb694ce69",
+    "Sources/SwiftJ2K/Options.swift": "082a589b2172282b6a66ea3bd6e72f6d865671a782cb1b3839549db3e575f622",
+    "Sources/SwiftJ2K/ImageDescriptor.swift": "a6d91691d00c0bee8f19986f7bd95739589794898e3c163e80923885d21c5a96",
+    "Sources/SwiftJ2K/ImageStorage.swift": "8bc26a7d1237260dbb607fe2612f55d05a9376365371573332190e78308095cd",
+    "Sources/SwiftJ2K/CodecAPI.swift": "f2744a85794dc40f46e9062e01bed9484ea4eca14ae729bbe870e589839b0e91",
+    "Sources/SwiftJ2K/Transcoding.swift": "ded0e4c738b299b64478cdf05fbe49aed3d93cc726fef8e1ed262d5bc7ca12ed",
+    "Sources/SwiftJ2K/Image.swift": "4dfb7a32d89f03a9679b1b5f9071af5a6176f335e96faf400fba2b7a0c9debf7",
+    "Sources/SwiftJ2K/Errors.swift": "cfae3357b4aba0e62df1ed6096b8af951d39d0155184b8881c737d48ec936643",
+    "Tests/SwiftJ2KTests/ContractTests.swift": "fb0fe2d891638341676644d2161c2f2d6d434a5345223925b1c0b4f4d3cf701e",
+    "Tests/SwiftJ2KTests/CancellationPublicationTests.swift": "26c492fcf872a1817b79380fd0aacb255acaca311ef5408e88148eabc534acda",
+    "Tests/SwiftJ2KTests/Swift64SampleAccessTests.swift": "236e3f581cc4d27388c788fb6ed622aeb3d6ce84387953e3e67d3ba25dc77351",
+    "Tests/SwiftJ2KTests/BehaviourTests.swift": "ba279cba9f127950598ff33f00e0c43c9fb6cdbb09157d87bcf502826ac6232d",
+    "Tests/SwiftJ2KTests/DescriptorTests.swift": "32b5d921d6f8948362770a00b6bb9e2d64d98696e1f8975533961c9bafd60abe",
+    "Tests/SwiftJ2KTests/LimitTests.swift": "b457efe5e070c221a9ae4d2c2b5cb43d45ebb08bf3512fe56e218fd246f7b6fa",
+    "Tests/SwiftJ2KTests/OwnershipTests.swift": "34fc730ffc3ba0d9bba78c10cd77bcf1bda34eafcaffd85dfbb24db37f998606",
+    "Scripts/validate.sh": "5fde61d2ab79718a455979ffd6909cdbc9592445c09a02f1fce45a7c316a0365",
+    "Scripts/validate-swift64.py": "cf9f9a0ef5f529206e37a99819d020014d2327aaa168d8a9e9f695099e087dbf",
+    "Scripts/test-cli.py": "1bd6ae8f0ef5b0464356ec83a9d68bc9ed8092659196ad2f5a3475bf4d8a0ff7",
+    "Scripts/README.md": "04241727241c5e39c460ba9ce92e6fc8cb8592cd53931aacd372ba6f7416fa1f",
+    "Scripts/install-cli.sh": "7c6b94d5115a4f0b3372d09588cfbac5efb58e9332b50e35b99e850f32540eb1",
+    "ManPages/swiftj2k.1": "eb3e055ad6e5994c0588ae0824641ff54af5ae9b305c1543b8e709d036bee4b2"
+  },
+  "package_resolved_sha256": "294497133dde45824e8e3c6edad86cf9bcc05ae138eb5ae065794cf1f0a264c6"
+}
