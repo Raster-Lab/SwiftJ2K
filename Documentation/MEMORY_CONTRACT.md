@@ -1,6 +1,6 @@
 # Common image memory and ownership contract
 
-Contract **0.6.0**. All requirements below apply independently in each codec.
+Contract **0.7.0**. All requirements below apply independently in each codec.
 
 ## Existing memory layouts, no new image format
 

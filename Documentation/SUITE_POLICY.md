@@ -1,18 +1,20 @@
 # Swift Image Compression Suite — implementation baseline
 
-Contract version: **0.6.0**. Updated: **20 September 2026**.
+Contract version: **0.7.0**. Updated: **20 September 2026**.
 Status: **engineering specification; Milestone 1 implementation evidence is recorded in MILESTONE1.md. Later codec and platform gates remain planned**.
 
 This is the common engineering specification for four independent successor libraries. It records the owner's accepted direction and makes concrete implementation choices for the coding agent. Milestone 1 public API shapes and owning storage have been compiler-validated to the coverage recorded in MILESTONE1.md and Engineering/Swift64/README.md. Planned codec behaviour, engineering thresholds and unexecuted platforms remain qualification gates; those records do not constitute a separate human approval. Do not describe this baseline as a released SDK or a conformance certificate.
 
 ## Decisions and boundaries
 
-| Successor under Raster-Lab | Predecessor | Intended first stable release |
+| Contract repository | Codec library it specifies | Intended first stable release |
 | --- | --- | --- |
 | SwiftJ2K | J2KSwift | 12.1.0 |
 | SwiftJLS | JLSwift | 1.1.0 |
 | SwiftJXL | JXLSwift | 2.1.0 |
 | SwiftJLI | JLISwift | 1.1.0 |
+
+Decision D1, taken at contract 0.7.0, settles what these two columns mean. The shipping codec library is the existing repository in the right-hand column; the repository in the left-hand column holds that codec's copy of the shared contract, the reference implementation of the shared image layer, and its share of the cross-codec conformance harness. The release numbers continue the existing version lines. Codec sources are not relocated.
 
 The public family name is **Swift Image Compression Suite**. Raster-Lab remains the GitHub organisation; copyright attribution remains accurate. Each codec has its own repository, implementation, package and release sequence. HTJ2K remains a mode of SwiftJ2K.
 
@@ -110,3 +112,17 @@ Seven rules are amended. MEM-03 requires a multi-plane layout to state the dista
 Impact differs by codec and is recorded rather than averaged. JPEG-LS needs a row stride in two loops. JPEG 2000 needs its final-output stage extracted, carries a `[Double]` workspace at four times the final frame, emits big-endian 16-bit samples against the shared layout's little-endian, and is `async`, so it drives the owner requirement. JPEG XL and jpegli need one read stage and one write stage each and carry `Int32` workspace at twice the final frame; jpegli additionally needs its image initialiser relaxed, which is the clearest single instance of the type being the obstacle. Required actions: shared-storage APIs take owners; multi-plane layouts carry an explicit plane stride; every codec states its workspace bound; safe owning constructors ship alongside unsafe adoption.
 
 All seven shared documents and their SHA-256 manifest advance together; `MEMORY_CONTRACT.md`, `TESTING.md` and this file carry the substantive changes. Every figure cited comes from a developer machine and none has been reproduced in continuous integration, which remains blocked; the results show magnitude and direction, not a release gate. The spikes are exploratory and are not proposed for merge into the predecessor repositories. This revision authorises no codec milestone or release.
+
+## Contract revision 0.7.0 — 20 September 2026
+
+**Decision D1: the shipping codec libraries are the existing repositories. Codec sources are not relocated into the contract repositories.** This settles the open question of whether the suite reaches its goal by migrating the codecs into four new repositories or by evolving the existing ones under the same contract. Nothing is deleted and no source moves; what changes is where the remaining work is directed.
+
+The decision follows from what the Milestone 3 spikes measured. All four codec interiors were shown contract-capable through single-point changes, and the obstacle to `requireSharedStorage` is the public image type rather than the codec. That layer is additive work of the same size whichever repository it is built in. Migration therefore buys a clean public surface that in-place evolution also buys, while additionally paying to relocate roughly 219,000 lines of codec source and 184,000 lines of tests together with their fixtures and cross-codec oracles — with no continuous integration available to catch what such a move breaks.
+
+The rest of the case is arithmetic. The contract repositories hold about 1,000 lines of source and 800 of tests each; abandoning migration discards almost nothing that has been built. The existing libraries hold around 219,000 lines across eleven release cycles for JPEG 2000 alone. Three in-house consumers already resolve them by URL at pinned released versions — DICOMKit depends on all four, CompressionFamily on two, VoxeliaValidation on one — and none references a contract repository. Migration would have to re-point every one of them or maintain two public surfaces indefinitely.
+
+The obstacles to evolving in place proved smaller on inspection than they looked. POL-01 is already satisfied: JXLSwift refers to J2KSwift only in comments describing naming parity, not as a dependency, and JLISwift has no external package dependency at all. POL-02 costs one extraction: J2KSwift's dependency on CompressionFamily is confined to two conformance files, which move to a separate package so the core library resolves alone. The larger true costs are that J2KSwift ships thirteen products including a daemon, which must be inventoried under POL-05 and split so the codec library is independently consumable, and that each library's existing public surface must be carried alongside the contract surface or retired through a deliberate major version.
+
+Two consequences need the owner's explicit attention rather than an agent's assumption. JLSwift and JLISwift are Apache-2.0, while the contract repositories and their new files are MIT; POL-07 authorises relicensing in-house predecessor code, but JLSwift was deliberately relicensed to Apache-2.0 on 26 August 2026, so mixing or converting should be a decision rather than a side effect. The licences are compatible in the direction of adding MIT files to an Apache-2.0 tree, and no action is forced. Separately, POL-03 is unaffected: it already states that the seven documents define a specification rather than a runtime module and that every module implements its own concrete types with the same meaning and public shape, so the Milestone 1 types already built in the contract repositories become the reference implementation of that shape rather than wasted work.
+
+Required actions: Milestone 3 work targets the existing libraries; the contract repositories keep the seven shared documents, the reference implementation and the conformance harness; J2KSwift extracts its CompressionFamily conformance and inventories its products under POL-05; each library states how its existing public surface relates to the contract surface. No platform, precision, ownership or fidelity rule changes, and this revision authorises no codec milestone or release. The decision is recorded on documentation evidence gathered on one machine; continuous integration remains blocked and has verified none of it.

@@ -1,6 +1,6 @@
 # Platform and build contract
 
-Contract **0.6.0**. The table is intended support, not a claim of completed builds.
+Contract **0.7.0**. The table is intended support, not a claim of completed builds.
 
 | Environment | Minimum / architecture | Validation responsibility |
 | --- | --- | --- |

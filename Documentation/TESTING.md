@@ -1,6 +1,6 @@
 # Unit, regression, interoperability and security testing
 
-Contract **0.6.0**. Required evidence for coding agents. Executed Milestone 1 results are recorded separately in each repository; later codec and release gates remain requirements.
+Contract **0.7.0**. Required evidence for coding agents. Executed Milestone 1 results are recorded separately in each repository; later codec and release gates remain requirements.
 
 ## General rules
 
