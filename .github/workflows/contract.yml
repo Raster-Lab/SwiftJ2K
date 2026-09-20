@@ -1,0 +1,106 @@
+name: Milestone 1 contract
+
+# Contract 0.5.0 PLAT-01: Swift 6.2 is the manifest minimum and Swift 6.4 the
+# qualified primary toolchain, so both are built and tested here. A gate that
+# cannot run is an unexecuted gate, not a pass (POL-08), so every job below uses
+# a generally available image or runner. No OS 27 job exists because no stable
+# runner ships those SDKs.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: contract-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  contract-identity:
+    name: Shared contract byte-identity
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      # POL-03 requires the seven shared documents to stay byte-identical across
+      # all four repositories. Checking the recorded manifest here catches local
+      # drift immediately; cross-repository comparison belongs to the suite
+      # harness, which cannot run from inside one repository.
+      - name: Verify COMMON_CONTRACT_SHA256.txt matches the documents
+        working-directory: Documentation
+        run: sha256sum -c COMMON_CONTRACT_SHA256.txt
+
+  linux:
+    name: Swift ${{ matrix.swift }} / ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        swift: ['6.2', '6.4']
+        runner: [ubuntu-24.04, ubuntu-24.04-arm]
+    runs-on: ${{ matrix.runner }}
+    container: swift:${{ matrix.swift }}-noble
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - run: swift --version
+      - run: swift build
+      - run: swift test
+      - run: swift build -c release
+      - run: swift test -c release
+
+  macos:
+    name: macOS 26 / Swift 6.2
+    runs-on: macos-26
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - run: swift --version
+      - run: xcodebuild -version
+      - run: swift build
+      - run: swift test
+      - name: Address sanitizer
+        run: swift test --scratch-path .build/asan --sanitize address
+      - name: Thread sanitizer
+        run: swift test --scratch-path .build/tsan --sanitize thread
+
+  independent-consumer:
+    name: Independent consumer resolves at tools 6.2
+    runs-on: ubuntu-24.04
+    container: swift:6.2-noble
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          path: package
+      # POL-01/POL-02: a consumer must build against this package alone, with no
+      # sibling checkout and no suite dependency, on the declared manifest floor.
+      - name: Build a fresh consumer against the checkout
+        run: |
+          set -eux
+          NAME="$(grep -m1 -oE 'name: "Swift[A-Z0-9]+"' "$GITHUB_WORKSPACE/package/Package.swift" \
+                  | grep -oE 'Swift[A-Z0-9]+')"
+          mkdir -p /tmp/consumer/Sources/Consumer
+          cd /tmp/consumer
+          {
+            echo '// swift-tools-version: 6.2'
+            echo 'import PackageDescription'
+            echo 'let package = Package('
+            echo '    name: "Consumer",'
+            echo "    dependencies: [.package(path: \"$GITHUB_WORKSPACE/package\")],"
+            echo '    targets: [.executableTarget(name: "Consumer", dependencies: ['
+            echo "        .product(name: \"$NAME\", package: \"$NAME\")])]"
+            echo ')'
+          } > Package.swift
+          printf 'import %s\nprint("consumer built")\n' "$NAME" > Sources/Consumer/main.swift
+          swift build
+          swift run Consumer

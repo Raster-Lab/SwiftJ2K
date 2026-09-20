@@ -1,0 +1,26 @@
+[
+  {
+    "command": "xcrun swiftc -swift-version 6 -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache -target arm64-apple-macosx26.0 -Onone -parse-as-library /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Output.swift -o /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Output-debug",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Output-debug",
+    "exit": 0,
+    "stdout": "F01 OutputRawSpan passed: uninitialised odd-address sample and preserved sentinels\n",
+    "stderr": ""
+  },
+  {
+    "command": "xcrun swiftc -swift-version 6 -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache -target arm64-apple-macosx26.0 -O -parse-as-library /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Output.swift -o /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Output-release",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01Output-release",
+    "exit": 0,
+    "stdout": "F01 OutputRawSpan passed: uninitialised odd-address sample and preserved sentinels\n",
+    "stderr": ""
+  }
+]

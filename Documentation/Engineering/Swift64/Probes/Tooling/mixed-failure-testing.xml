@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="TestResults" errors="0" tests="1" failures="1" skipped="0" time="0.001834708">
+    <testcase classname="ToolingTests" name="mixedFrameworkAssertion()" time="0.001634416" >
+      <failure message="Issue recorded (error)" />
+    </testcase>
+  </testsuite>
+</testsuites>

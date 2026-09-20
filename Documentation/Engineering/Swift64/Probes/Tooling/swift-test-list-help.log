@@ -1,0 +1,20 @@
+OVERVIEW: Lists test methods in specifier format
+
+USAGE: swift test list [--skip-build] [--enable-xctest] [--disable-xctest] [--enable-swift-testing] [--disable-swift-testing] [--attachments-path <attachments-path>]
+
+OPTIONS:
+  --skip-build            Skip building the test target.
+  --enable-xctest/--disable-xctest
+                          Determines whether the build includes XCTest support.
+  --enable-swift-testing/--disable-swift-testing
+                          Determines whether the build includes Swift Testing
+                          support.
+  --attachments-path <attachments-path>
+                          Path where attachments should be written (Swift
+                          Testing only). This path must be an existing
+                          directory the current user can write to. If not
+                          specified, any attachments created during testing are
+                          discarded.
+  --version               Show the version.
+  -h, -help, --help       Show help information.
+

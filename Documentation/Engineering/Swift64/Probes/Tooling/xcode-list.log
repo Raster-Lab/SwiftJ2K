@@ -1,0 +1,18 @@
+2026-09-19 03:32:13.199 xcodebuild[3123:2706072]  DVTFilePathFSEvents: Failed to start fs event stream.
+2026-09-19 03:32:13.362 xcodebuild[3123:2706043] [MT] DVTDeveloperPaths: Failed to get length of DARWIN_USER_CACHE_DIR from confstr(3), error = Error Domain=NSPOSIXErrorDomain Code=5 "Input/output error". Using NSCachesDirectory instead.
+2026-09-19 03:32:13.730 xcodebuild[3123:2706071] CoreSimulatorService connection became invalid.  Simulator services will no longer be available.
+2026-09-19 03:32:13.811 xcodebuild[3123:2706043] [MT] DVTAssertions: Warning in DVTFrameworks/DVTFoundation/FileTypes/DVTFileDataTypeDetection.m:80
+Details:  detectedTypeIdentifier (com.apple.binary-property-list) does not conform to matchedTypeIdentifier in MagicFileDataTypeDetector extenson com.apple.property-list. When both are specified, this conformance is required unless overridden by setting allowNonInheritance. extension.identifier:Xcode.MagicFileDataTypeDetector.BinaryPlist
+Object:   <DVTFileDataTypeDetectionMagicCache: 0x765a30c120>
+Method:   -initWithExtension:
+Thread:   <_NSMainThread: 0x1010512e0>{number = 1, name = main}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+2026-09-19 03:32:13.812 xcodebuild[3123:2706043] [MT] DVTAssertions: Warning in DVTFrameworks/DVTFoundation/FileTypes/DVTFileDataTypeDetection.m:80
+Details:  detectedTypeIdentifier (com.apple.xml-property-list) does not conform to matchedTypeIdentifier in MagicFileDataTypeDetector extenson com.apple.property-list. When both are specified, this conformance is required unless overridden by setting allowNonInheritance. extension.identifier:Xcode.MagicFileDataTypeDetector.XMLPlist
+Object:   <DVTFileDataTypeDetectionMagicCache: 0x765a30c120>
+Method:   -initWithExtension:
+Thread:   <_NSMainThread: 0x1010512e0>{number = 1, name = main}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+2026-09-19 03:32:13.821 xcodebuild[3123:2706043] Writing error result bundle to /var/folders/nq/fwb7mwjn1q5gwmt6hy61hh5m0000gp/T/ResultBundle_2026-19-09_03-32-0013.xcresult
+xcodebuild: error: The directory /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/tooling/Fixture does not contain an Xcode project, workspace or package.
+

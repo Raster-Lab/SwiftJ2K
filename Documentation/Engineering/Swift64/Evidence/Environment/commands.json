@@ -1,0 +1,82 @@
+[
+  {
+    "label": "swift",
+    "command": [
+      "xcrun",
+      "swift",
+      "--version"
+    ],
+    "exit_code": 0
+  },
+  {
+    "label": "xcode",
+    "command": [
+      "xcodebuild",
+      "-version"
+    ],
+    "exit_code": 0
+  },
+  {
+    "label": "sdk",
+    "command": [
+      "xcodebuild",
+      "-showsdks"
+    ],
+    "exit_code": 0
+  },
+  {
+    "label": "target-info",
+    "command": [
+      "xcrun",
+      "swiftc",
+      "-print-target-info"
+    ],
+    "exit_code": 0
+  },
+  {
+    "label": "os",
+    "command": [
+      "sw_vers"
+    ],
+    "exit_code": 0
+  },
+  {
+    "label": "cpu",
+    "command": [
+      "sysctl",
+      "-n",
+      "machdep.cpu.brand_string"
+    ],
+    "exit_code": 1
+  },
+  {
+    "label": "power",
+    "command": [
+      "pmset",
+      "-g",
+      "batt"
+    ],
+    "exit_code": 0
+  },
+  {
+    "label": "simulators",
+    "command": [
+      "xcrun",
+      "simctl",
+      "list",
+      "devices",
+      "available",
+      "--json"
+    ],
+    "exit_code": 1
+  },
+  {
+    "label": "metal",
+    "command": [
+      "xcrun",
+      "metal",
+      "--version"
+    ],
+    "exit_code": 1
+  }
+]

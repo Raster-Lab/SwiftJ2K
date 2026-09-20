@@ -1,0 +1,18 @@
+ToolingTests.MixedXCTest/testTestingAssertion
+ToolingTests.mixedFrameworkAssertion()
+ToolingTests.resourceRoundTrip()
+ToolingTests.targetedRepetition(_:)
+Building for debugging...
+[Planning deferred tasks]
+[20 / 31] ToolingTests-product
+[37 / 68]
+[43 / 68]
+[47 / 68]
+[50 / 68]
+[53 / 68]
+[54 / 68]
+[57 / 68] ToolingTests-product
+[62 / 68] ToolingTests-product
+[64 / 68] ToolingTests-product
+[68 / 68] ToolingTests-product
+Build complete! (3.33 secs)

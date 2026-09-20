@@ -1,0 +1,113 @@
+warning: /Users/suresh/Library/org.swift.swiftpm/configuration is not accessible or not writable, disabling user-level cache features.
+warning: /Users/suresh/Library/org.swift.swiftpm/security is not accessible or not writable, disabling user-level cache features.
+warning: /Users/suresh/Library/Caches/org.swift.swiftpm is not accessible or not writable, disabling user-level cache features.
+warning: 'swiftj2k': failed storing manifest for 'swiftj2k' in cache: attempt to write a readonly database
+Building for debugging...
+[0/7] <workspace>/outputs/SwiftJ2K/.build/tsan/arm64-apple-macosx/debug/SwiftJ2KPackageTests.derived/runner.swift
+[1/7] Write sources
+[4/7] Write swift-version--58304C5D6DBC2206.txt
+[6/15] Compiling SwiftJ2K Options.swift
+[7/15] Compiling SwiftJ2K Transcoding.swift
+[8/15] Compiling SwiftJ2K ImageStorage.swift
+[9/15] Compiling SwiftJ2K CodecAPI.swift
+[10/15] Compiling SwiftJ2K Image.swift
+[11/15] Compiling SwiftJ2K Errors.swift
+[12/15] Emitting module SwiftJ2K
+[13/15] Compiling SwiftJ2K ImageDescriptor.swift
+[14/21] Compiling SwiftJ2KTests OwnershipTests.swift
+[15/21] Compiling SwiftJ2KTests DescriptorTests.swift
+[16/21] Compiling SwiftJ2KTests LimitTests.swift
+[17/21] Emitting module SwiftJ2KTests
+[18/21] Compiling SwiftJ2KTests ContractTests.swift
+[19/21] Compiling SwiftJ2KTests BehaviourTests.swift
+[20/23] Emitting module SwiftJ2KPackageTests
+[21/23] Compiling SwiftJ2KPackageTests runner.swift
+[21/23] Write Objects.LinkFileList
+[22/23] Linking SwiftJ2KPackageTests
+Build complete! (6.25s)
+Test Suite 'All tests' started at 2026-09-18 16:14:23.404.
+Test Suite 'All tests' passed at 2026-09-18 16:14:23.426.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.022) seconds
+􀟈  Test run started.
+􀄵  Testing Library Version: 2084
+􀄵  Target Platform: arm64e-apple-macos14.0
+􀟈  Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() started.
+􀟈  Test cancellationDuringSyntheticRowsInvalidatesDestination() started.
+􀟈  Test reentrantLeaseOperationsRejectWithoutDeadlocking() started.
+􀟈  Test cancellationInsideWriteCannotPublishPartialImage() started.
+􀟈  Test descriptorMutationRejectsInvalidStridesAndOffsets() started.
+􀟈  Test failedFillInvalidatesDestination() started.
+􀟈  Test unknownMeasurementsStayUnknownAndMetadataIsBounded() started.
+􀟈  Suite "Descriptor validation" started.
+􀟈  Test metadataAndDestinationLimitsUseCallerBudget() started.
+􀟈  Test paddedStorageCountsTowardsDecodedLimit() started.
+􀟈  Test adaptersShareWriterAuthorityAndRejectForgedLease() started.
+􀟈  Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() started.
+􀟈  Test sealedOwnerSupportsConcurrentReadersAndNestedRead() started.
+􀟈  Test syntheticExactSamplesAndPadding(precision:) started.
+􀟈  Test integerOverflowWithExplicitLargeLimitsThrows() started.
+􀟈  Test abandonedDestinationInvalidatesItsReservedOwner() started.
+􀟈  Test borrowedStorageRejectsForgedLeasesAndPublication() started.
+􀟈  Test invalidResourceProfilesAndProgressFailPredictably() started.
+􀟈  Test safeSampleAccessHonoursExplicitBigEndian() started.
+􀟈  Test independentAllocationAndMemoryCeilingsAreEnforced() started.
+􀟈  Test explicitLargerMetadataLimitIsHonoured() started.
+􀟈  Test decoderPreservesTaskCancellationError() started.
+􀟈  Test publicOperationsRejectCodecWorkAndAdvertiseEmptyCapabilities() started.
+􀟈  Test concurrentAdaptersReserveExactlyOneWriter() started.
+􀟈  Test cancellationIsCheckedBeforeAllocatingStorage() started.
+􀟈  Test independentPublicCallShapesFailHonestly() started.
+􀟈  Test configurationsAndBackendRequestsRejectUnsupportedChoices() started.
+􀟈  Test pixelAndDimensionLimitsRejectBeforeAllocation() started.
+􀟈  Test case passing 1 argument precision → 12 to syntheticExactSamplesAndPadding(precision:) started.
+􀟈  Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() started.
+􀟈  Test case passing 1 argument precision → 16 to syntheticExactSamplesAndPadding(precision:) started.
+􀟈  Test safeWriterRejectsOutOfRangeInsteadOfTruncating() started.
+􀟈  Test rejectsMisalignedOffsetsAndStrides() started.
+􀟈  Test semanticMetadataMustAgreeWithComponents() started.
+􀟈  Test paddedOddDimensionsAndPrecision() started.
+􀟈  Test rejectsInvalidGeometryAndPrecision() started.
+􀟈  Test finalRowNeedsOnlyItsActualSampleBytes() started.
+􀟈  Test rejectsOverlappingPlanesAndIncompleteMapping() started.
+􀟈  Test deterministicLayoutMutation() started.
+􀟈  Test rejectsArithmeticOverflowBeforeAllocation() started.
+􁁛  Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() passed after 0.001 seconds.
+􁁛  Test reentrantLeaseOperationsRejectWithoutDeadlocking() passed after 0.001 seconds.
+􁁛  Test abandonedDestinationInvalidatesItsReservedOwner() passed after 0.001 seconds.
+􁁛  Test syntheticExactSamplesAndPadding(precision:) with 2 test cases passed after 0.001 seconds.
+􁁛  Test unknownMeasurementsStayUnknownAndMetadataIsBounded() passed after 0.001 seconds.
+􁁛  Test failedFillInvalidatesDestination() passed after 0.001 seconds.
+􁁛  Test safeSampleAccessHonoursExplicitBigEndian() passed after 0.001 seconds.
+􁁛  Test adaptersShareWriterAuthorityAndRejectForgedLease() passed after 0.002 seconds.
+􁁛  Test integerOverflowWithExplicitLargeLimitsThrows() passed after 0.001 seconds.
+􁁛  Test paddedStorageCountsTowardsDecodedLimit() passed after 0.002 seconds.
+􁁛  Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() passed after 0.001 seconds.
+􁁛  Test metadataAndDestinationLimitsUseCallerBudget() passed after 0.002 seconds.
+􁁛  Tewarning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+st paddedOddDimensionsAndPrecision() passed after 0.001 seconds.
+􁁛  Test independentAllocationAndMemoryCeilingsAreEnforced() passed after 0.001 seconds.
+􁁛  Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() passed after 0.002 seconds.
+􁁛  Test safeWriterRejectsOutOfRangeInsteadOfTruncating() passed after 0.001 seconds.
+􁁛  Test invalidResourceProfilesAndProgressFailPredictably() passed after 0.001 seconds.
+􁁛  Test semanticMetadataMustAgreeWithComponents() passed after 0.001 seconds.
+􁁛  Test pixelAndDimensionLimitsRejectBeforeAllocation() passed after 0.001 seconds.
+􁁛  Test finalRowNeedsOnlyItsActualSampleBytes() passed after 0.001 seconds.
+􁁛  Test configurationsAndBackendRequestsRejectUnsupportedChoices() passed after 0.001 seconds.
+􁁛  Test cancellationInsideWriteCannotPublishPartialImage() passed after 0.002 seconds.
+􁁛  Test sealedOwnerSupportsConcurrentReadersAndNestedRead() passed after 0.002 seconds.
+􁁛  Test borrowedStorageRejectsForgedLeasesAndPublication() passed after 0.002 seconds.
+􁁛  Test decoderPreservesTaskCancellationError() passed after 0.001 seconds.
+􁁛  Test cancellationIsCheckedBeforeAllocatingStorage() passed after 0.001 seconds.
+􁁛  Test rejectsArithmeticOverflowBeforeAllocation() passed after 0.001 seconds.
+􁁛  Test publicOperationsRejectCodecWorkAndAdvertiseEmptyCapabilities() passed after 0.002 seconds.
+􁁛  Test rejectsOverlappingPlanesAndIncompleteMapping() passed after 0.001 seconds.
+􁁛  Test rejectsMisalignedOffsetsAndStrides() passed after 0.001 seconds.
+􁁛  Test concurrentAdaptersReserveExactlyOneWriter() passed after 0.001 seconds.
+􁁛  Test rejectsInvalidGeometryAndPrecision() passed after 0.001 seconds.
+􁁛  Test cancellationDuringSyntheticRowsInvalidatesDestination() passed after 0.002 seconds.
+􁁛  Test independentPublicCallShapesFailHonestly() passed after 0.002 seconds.
+􁁛  Test descriptorMutationRejectsInvalidStridesAndOffsets() passed after 0.003 seconds.
+􁁛  Test deterministicLayoutMutation() passed after 0.002 seconds.
+􁁛  Suite "Descriptor validation" passed after 0.003 seconds.
+􁁛  Test explicitLargerMetadataLimitIsHonoured() passed after 0.004 seconds.
+􁁛  Test run with 37 tests in 1 suite passed after 0.005 seconds.

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="TestResults" errors="0" tests="11" failures="0" skipped="0" time="0.001429875">
+    <testcase classname="SwiftJLITests" name="sealedOwnerSupportsConcurrentReadersAndNestedRead()" time="0.0004735" />
+    <testcase classname="SwiftJLITests" name="safeSampleWriterRejectsOutOfRangeWithoutTruncating()" time="0.001145125" />
+    <testcase classname="SwiftJLITests" name="adaptersShareWriterAuthorityAndRejectForgedLease()" time="0.000891083" />
+    <testcase classname="SwiftJLITests" name="imageRetainsAdapterUntilLastImageReleaseExactlyOnce()" time="0.000678209" />
+    <testcase classname="SwiftJLITests" name="reentrantLeaseOperationsRejectWithoutDeadlocking()" time="0.000603541" />
+    <testcase classname="SwiftJLITests" name="decoderPreservesTaskCancellationError()" time="0.000668459" />
+    <testcase classname="SwiftJLITests" name="cancellationInProviderFinalisationPreventsPublication(_:)" time="0.001206833" />
+    <testcase classname="SwiftJLITests" name="cancellationIsCheckedBeforeAllocatingStorage()" time="0.000556209" />
+    <testcase classname="SwiftJLITests" name="concurrentAdaptersReserveExactlyOneWriter()" time="0.000909416" />
+    <testcase classname="SwiftJLITests" name="sameTokenCannotAuthoriseConcurrentOverlappingBorrows()" time="0.000695542" />
+    <testcase classname="SwiftJLITests" name="cancellationDuringSyntheticRowsInvalidatesDestination()" time="0.001025291" />
+  </testsuite>
+</testsuites>

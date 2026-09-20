@@ -1,0 +1,31 @@
+{
+  "command": [
+    "/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild",
+    "test",
+    "-scheme",
+    "SwiftJ2K",
+    "-destination",
+    "platform=macOS,arch=arm64",
+    "-derivedDataPath",
+    "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData",
+    "-resultBundlePath",
+    "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/Tests.xcresult",
+    "-parallel-testing-enabled",
+    "NO",
+    "-jobs",
+    "2",
+    "CODE_SIGNING_ALLOWED=NO"
+  ],
+  "command_display_from_log": "/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -scheme SwiftJ2K -destination platform=macOS,arch=arm64 -derivedDataPath /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/DerivedData -resultBundlePath /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64/xcode/SwiftJ2K/Tests.xcresult -parallel-testing-enabled NO -jobs 2 CODE_SIGNING_ALLOWED=NO",
+  "cwd": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K",
+  "developer_dir": "/Applications/Xcode.app/Contents/Developer",
+  "exit_code": 0,
+  "outside_sandbox": true,
+  "result": "Passed",
+  "record_kind": "Reconstructed archival command record, not an original process record.",
+  "provenance": {
+    "argv": "Exact invocation printed by xcodebuild in xcodebuild.log; parsed with shlex.split.",
+    "cwd_developer_dir_exit_code_outside_sandbox": "Parent agent execution report: final per-repository runs exited 0 outside the sandbox.",
+    "result": "Original log TEST SUCCEEDED and xcresulttool summary result Passed."
+  }
+}

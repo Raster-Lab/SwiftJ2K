@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Scripts/test-cli.py", line 95, in <module>
+    if __name__=='__main__':sys.exit(main())
+  File "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Scripts/test-cli.py", line 83, in main
+    lint=run([mandoc,'-T','lint',page]);assert not lint.stderr,lint.stderr
+  File "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Scripts/test-cli.py", line 24, in run
+    save();assert r.returncode==expected,(argv,r.returncode,r.stderr);return r
+AssertionError: (['/usr/bin/mandoc', '-T', 'lint', PosixPath('/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/first-cli-test/cli stage spaces usvvqun8/stage with spaces/opt/suite tools/share/man/man1/swiftj2k.1')], 2, '')

@@ -1,0 +1,32 @@
+Building for debugging...
+[0/10] Write sources
+[5/10] Write ContractHarness-entitlement.plist
+[6/10] Write swift-version--58304C5D6DBC2206.txt
+[8/19] Compiling SwiftJLS CodecAPI.swift
+[9/19] Compiling SwiftJLS Errors.swift
+[10/19] Compiling SwiftJLS Image.swift
+[11/19] Compiling SwiftJXL ImageDescriptor.swift
+[12/19] Emitting module SwiftJXL
+[16/22] Emitting module SwiftJLS
+[17/25] Compiling SwiftJLS ImageStorage.swift
+[18/25] Compiling SwiftJLS Options.swift
+[19/25] Compiling SwiftJXL Transcoding.swift
+[20/25] Compiling SwiftJLS ImageDescriptor.swift
+[23/34] Emitting module SwiftJLI
+[24/37] Emitting module SwiftJ2K
+[25/40] Compiling SwiftJ2K CodecAPI.swift
+[26/40] Compiling SwiftJ2K Errors.swift
+[27/40] Compiling SwiftJ2K Image.swift
+[28/40] Compiling SwiftJ2K ImageStorage.swift
+[29/40] Compiling SwiftJ2K Options.swift
+[30/40] Compiling SwiftJLI ImageDescriptor.swift
+[31/40] Compiling SwiftJ2K Transcoding.swift
+[38/42] Emitting module ContractHarness
+[39/42] Compiling ContractHarness main.swift
+[39/42] Write Objects.LinkFileList
+[40/42] Linking ContractHarness
+[41/42] Applying ContractHarness
+Build of product 'ContractHarness' complete! (4.46s)
+PASS: 12-in-16, 5x3 padded storage, 1 pixel allocation, 0 adapter copy bytes, shared identity, concurrent reads, second writer rejected
+PASS: 16-in-16, 5x3 padded storage, 1 pixel allocation, 0 adapter copy bytes, shared identity, concurrent reads, second writer rejected
+PASS: local write-lease mapping and exact UInt16 maximum

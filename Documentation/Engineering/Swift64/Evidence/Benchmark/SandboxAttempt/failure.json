@@ -1,0 +1,5 @@
+{
+  "status": "reporting failed after measured loops",
+  "reason": "/usr/bin/time -l could not read kern.clockrate inside sandbox; wrapper returned nonzero; raw timing records were not persisted by initial runner",
+  "next_step": "Preserve this attempt and rerun outside sandbox with timing records persisted before wrapper status checks"
+}

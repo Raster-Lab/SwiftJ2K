@@ -1,0 +1,21 @@
+Building for production...
+[Planning deferred tasks]
+[19 / 27]
+[20 / 28] SwiftJ2K
+[27 / 63]
+[31 / 63]
+[36 / 63]
+[38 / 63]
+[40 / 63]
+[43 / 63]
+[45 / 63]
+[47 / 63]
+[52 / 63]
+[54 / 63]
+[55 / 63]
+[56 / 63] SwiftJ2K
+Build complete! (4.79 secs)
+warning: Bundle 'SwiftPM_SBOMModel' with schemas not found - skipping SBOM validation
+Creating SBOMs...
+- created spdx3 v3.0.1 SBOM at /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/os27/candidate/SwiftJ2K/sboms/spdx/spdx3-3.0.1-SwiftJ2K-c213db53913367063d4204a5561a89b1071bbf00-modified-all-2026-09-19T09_34_01Z.json
+SBOMs created  (0.11 secs)

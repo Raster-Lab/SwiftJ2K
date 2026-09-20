@@ -1,0 +1,27 @@
+$ xcrun swift test --package-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJLS --scratch-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/focused-tests/SwiftJLS/scratch --cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/focused-tests/SwiftJLS/cache --manifest-cache local --disable-sandbox --build-system swiftbuild --jobs 2 --filter Swift64SampleAccessTests
+exit: 0
+􀟈  Test run started.
+􀄵  Testing Library Version: 2084
+􀄵  Target Platform: arm64e-apple-macos14.0
+􀟈  Suite "Swift 6.4 sample access" started.
+􀟈  Test readsIndependentGoldenBytesFromOddPhysicalAddress() started.
+􀟈  Test rejectsCoordinatesBeforeOffsetArithmetic() started.
+􀟈  Test outOfPrecisionWriteInvalidatesDestination() started.
+􀟈  Test writesGoldenBytesForPackedAndPadded12And16BitSamples() started.
+􀟈  Test refusesShortProviderBeforeLoadingSample() started.
+􁁛  Test readsIndependentGoldenBytesFromOddPhysicalAddress() passed after 0.001 seconds.
+􁁛  Test refusesShortProviderBeforeLoadingSample() passed after 0.001 seconds.
+􁁛  Test outOfPrecisionWriteInvalidatesDestination() passed after 0.001 seconds.
+􁁛  Test rejectsCoordinatesBeforeOffsetArithmetic() passed after 0.001 seconds.
+􁁛  Test writesGoldenBytesForPackedAndPadded12And16BitSamples() passed after 0.001 seconds.
+􁁛  Suite "Swift 6.4 sample access" passed after 0.001 seconds.
+􁁛  Test run with 5 tests in 1 suite passed after 0.001 seconds.
+warning: /Users/suresh/Library/org.swift.swiftpm/configuration is not accessible or not writable, disabling user-level cache features.
+warning: /Users/suresh/Library/org.swift.swiftpm/security is not accessible or not writable, disabling user-level cache features.
+Building for debugging...
+[2 / 13] SwiftJLSTests-product
+[4 / 15] SwiftJLSTests-product
+[7 / 13] SwiftJLSTests-product
+[9 / 13] SwiftJLSTests-product
+[13 / 13] SwiftJLSTests-product
+Build complete! (1.07 secs)

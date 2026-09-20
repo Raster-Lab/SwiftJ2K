@@ -1,0 +1,36 @@
+Building for debugging...
+[Planning deferred tasks]
+[41 / 80]
+[44 / 84] SwiftJ2K
+[45 / 133] SwiftJLI
+[52 / 148]
+[57 / 148]
+[62 / 148]
+[64 / 148]
+[68 / 148]
+[71 / 148]
+[75 / 148]
+[76 / 148]
+[78 / 148]
+[79 / 148]
+[82 / 148] SwiftJXL
+[83 / 148] SwiftJLS
+[110 / 148] SwiftJXL
+[112 / 148] SwiftJXL
+[114 / 148] SwiftJXL-product
+[116 / 148] SwiftJLS
+[119 / 148] SwiftJXL-product
+[121 / 148] SwiftJLS-product
+[125 / 148] SwiftJLI
+[127 / 148] SwiftJLI-product
+[129 / 148] SwiftJ2K-product
+[131 / 148] SwiftJ2K
+[135 / 148] SwiftJ2K
+[136 / 148] ContractHarness-product
+[144 / 149] ContractHarness-product
+[147 / 151] ContractHarness-product
+[149 / 151] ContractHarness-product
+Build complete! (7.14 secs)
+PASS: 12-in-16, 5x3 padded storage, 1 pixel allocation, 0 adapter copy bytes, shared identity, concurrent reads, second writer rejected
+PASS: 16-in-16, 5x3 padded storage, 1 pixel allocation, 0 adapter copy bytes, shared identity, concurrent reads, second writer rejected
+PASS: local write-lease mapping and exact UInt16 maximum

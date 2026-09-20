@@ -1,0 +1,12 @@
+{
+  "name": "xcode-list",
+  "argv": [
+    "xcrun",
+    "xcodebuild",
+    "-list",
+    "-json"
+  ],
+  "cwd": "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/tooling/Fixture",
+  "exit": 66,
+  "seconds": 0.8957350254058838
+}

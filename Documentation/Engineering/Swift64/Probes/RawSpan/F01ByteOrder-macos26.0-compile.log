@@ -1,0 +1,30 @@
+$ xcrun swiftc -swift-version 6 -strict-concurrency=complete -module-cache-path /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/module-cache -target arm64-apple-macosx26.0 -parse-as-library /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01ByteOrder.swift -o /Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01ByteOrder-macos26.0
+exit: 1
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01ByteOrder.swift:6:30: error: 'load(fromByteOffset:as:_:)' is only available in macOS 27.0 or newer
+ 1 | @main struct F01ByteOrder {
+   |              `- note: add '@available' attribute to enclosing struct
+ 2 |     static func main() {
+   |                 `- note: add '@available' attribute to enclosing static method
+ 3 |         var bytes: [UInt8] = [0, 0x34, 0x12, 0]
+ 4 |         bytes.withUnsafeMutableBytes { buffer in
+ 5 |             var span = unsafe MutableRawSpan(_unsafeBytes: buffer)
+ 6 |             let value = span.load(fromByteOffset: 1, as: UInt16.self, .littleEndian)
+   |                              |- error: 'load(fromByteOffset:as:_:)' is only available in macOS 27.0 or newer
+   |                              `- note: add 'if #available' version check
+ 7 |             span.storeBytes(of: value, toByteOffset: 1, as: UInt16.self, .bigEndian)
+ 8 |         }
+
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/rawspan/F01ByteOrder.swift:7:18: error: 'storeBytes(of:toByteOffset:as:_:)' is only available in macOS 27.0 or newer
+ 1 | @main struct F01ByteOrder {
+   |              `- note: add '@available' attribute to enclosing struct
+ 2 |     static func main() {
+   |                 `- note: add '@available' attribute to enclosing static method
+ 3 |         var bytes: [UInt8] = [0, 0x34, 0x12, 0]
+ 4 |         bytes.withUnsafeMutableBytes { buffer in
+ 5 |             var span = unsafe MutableRawSpan(_unsafeBytes: buffer)
+ 6 |             let value = span.load(fromByteOffset: 1, as: UInt16.self, .littleEndian)
+ 7 |             span.storeBytes(of: value, toByteOffset: 1, as: UInt16.self, .bigEndian)
+   |                  |- error: 'storeBytes(of:toByteOffset:as:_:)' is only available in macOS 27.0 or newer
+   |                  `- note: add 'if #available' version check
+ 8 |         }
+ 9 |         precondition(bytes == [0, 0x12, 0x34, 0])

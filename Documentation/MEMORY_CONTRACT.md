@@ -1,6 +1,6 @@
 # Common image memory and ownership contract
 
-Contract **0.2.0**. All requirements below apply independently in each codec.
+Contract **0.5.0**. All requirements below apply independently in each codec.
 
 ## Existing memory layouts, no new image format
 
@@ -99,3 +99,34 @@ Validate resource limits before allocation and re-check on frame/layout changes.
 Borrow or transfer compatible coefficient storage between stages without redundant whole-coefficient duplication solely to enter a legacy adapter. Report necessary allocation, transformation and copying costs; do not claim universal zero allocations or copies for compressed bytes, entropy work or container assembly. Enforce limits on expanded reconstruction metadata and restored output as well as coefficient dimensions. No intermediate file, temporary memory-mapped scratch file or spill-to-disk fallback. This is an application I/O guarantee, not a promise that the operating system never pages memory.
 
 When J2K ↔ HTJ2K uses a qualified sample path, MEM-05..13 apply unchanged: one final uncompressed allocation, sealed before encoding, with no extra final-image handoff copy under `requireSharedStorage`. Coefficient-only paths must not allocate a pixel image merely to satisfy an interface. In both paths retain all owners across async work, keep borrows scoped, join workers on error/cancellation and publish no partial success.
+
+## Milestone 1 concrete lease refinement — 0.2.1
+
+Every module exports its own `StorageWriteLease: Sendable, Hashable` with an immutable UUID identity and a public fresh-token initialiser for advanced provider implementations. Tokens may be copied; only the issuing provider's current state and exact token identity authorise access. A forged, stale or foreign token fails. The local protocols use these signatures:
+
+```swift
+public protocol ReadOnlyImageStorage: Sendable {
+    var byteCount: Int { get }
+    var allocationID: UUID { get }
+    func withUnsafeBytes<R>(_ body: (UnsafeRawBufferPointer) throws -> R) throws -> R
+}
+public protocol WritableImageStorage: Sendable {
+    var byteCount: Int { get }
+    var allocationID: UUID { get }
+    func reserveWrite() throws -> StorageWriteLease
+    func withUnsafeMutableBytes<R>(lease: StorageWriteLease,
+        _ body: (UnsafeMutableRawBufferPointer) throws -> R) throws -> R
+    func finishAndSeal(lease: StorageWriteLease) throws -> any ReadOnlyImageStorage
+    func abortAndInvalidate(lease: StorageWriteLease) throws
+}
+```
+
+The provider serialises lifecycle transitions and rejects overlapping or reentrant mutable borrows, even when wrappers forward the same lease. Finishing or aborting while a mutable borrow is active must fail rather than race or deadlock. Successful sealing permanently removes mutable access; the returned read owner retains the same allocation and UUID. A writable provider alone is not a readable image. Advanced implementations must initialise the complete published capacity, including any padding, before sealing and must retain the actual allocation throughout all borrows. Unsafe closure pointers must not escape; these APIs do not make arbitrary caller pointer misuse safe.
+
+`ImageDestination` reserves its provider once, retains it, and offers a synchronous `write(_:) throws -> Image` operation for the feasibility experiment. The closure fills synthetic samples; returning successfully seals the initialised allocation. Throwing or cancellation invalidates it. Abandoning an unsealed destination invalidates its reservation. A copyable destination reference cannot grant a second writer. This operation is an explicit memory-construction utility, not a decoder or private compressed format. Real decoders will use the same lifecycle after all bounded work is joined.
+
+An adapter maps descriptors and local lease tokens explicitly while forwarding one underlying provider's authoritative lifecycle, capacity and allocation UUID. Independently declared protocols remain distinct Swift types. No pointer cast, copied pixel array or inferred type identity is permitted to substitute for that mapping.
+
+Preflight rejection before a write begins does not invalidate a caller's existing destination reservation. Once a fill/write operation begins, thrown errors or cancellation invalidate it and prevent image publication. This distinction lets a caller correct an unsupported operation request without exposing partially written samples. The feasibility codec stubs always reject during preflight and never begin a write.
+
+`Image` and `ImageDestination` constructors additionally accept `limits: ResourceLimits = .default`; allocating destinations retain their supplied limits through publication. ICC and image metadata share the metadata ceiling, and metadata plus retained pixel capacity count towards the operation's admission budget. This preserves explicit caller overrides rather than silently restoring default limits when sealing.

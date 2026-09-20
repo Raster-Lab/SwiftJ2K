@@ -1,0 +1,77 @@
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F03_F06_unique_iteration.swift:4:17: error: 'UniqueArray' is only available in macOS 27.0 or newer
+ 1 | 
+ 2 | struct Element: ~Copyable { var number: Int }
+ 3 | func run() {
+   |      `- note: add '@available' attribute to enclosing global function
+ 4 |     var array = UniqueArray<Element>(capacity: 3)
+   |                 |- error: 'UniqueArray' is only available in macOS 27.0 or newer
+   |                 `- note: add 'if #available' version check
+ 5 |     array.append(Element(number: 1))
+ 6 |     array.append(Element(number: 2))
+
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F03_F06_unique_iteration.swift:4:36: error: 'init(capacity:)' is only available in macOS 27.0 or newer
+ 1 | 
+ 2 | struct Element: ~Copyable { var number: Int }
+ 3 | func run() {
+   |      `- note: add '@available' attribute to enclosing global function
+ 4 |     var array = UniqueArray<Element>(capacity: 3)
+   |                                    |- error: 'init(capacity:)' is only available in macOS 27.0 or newer
+   |                                    `- note: add 'if #available' version check
+ 5 |     array.append(Element(number: 1))
+ 6 |     array.append(Element(number: 2))
+
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F03_F06_unique_iteration.swift:5:11: error: 'append' is only available in macOS 27.0 or newer
+ 1 | 
+ 2 | struct Element: ~Copyable { var number: Int }
+ 3 | func run() {
+   |      `- note: add '@available' attribute to enclosing global function
+ 4 |     var array = UniqueArray<Element>(capacity: 3)
+ 5 |     array.append(Element(number: 1))
+   |           |- error: 'append' is only available in macOS 27.0 or newer
+   |           `- note: add 'if #available' version check
+ 6 |     array.append(Element(number: 2))
+ 7 |     var total = 0
+
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F03_F06_unique_iteration.swift:6:11: error: 'append' is only available in macOS 27.0 or newer
+ 1 | 
+ 2 | struct Element: ~Copyable { var number: Int }
+ 3 | func run() {
+   |      `- note: add '@available' attribute to enclosing global function
+ 4 |     var array = UniqueArray<Element>(capacity: 3)
+ 5 |     array.append(Element(number: 1))
+ 6 |     array.append(Element(number: 2))
+   |           |- error: 'append' is only available in macOS 27.0 or newer
+   |           `- note: add 'if #available' version check
+ 7 |     var total = 0
+ 8 |     for element in array { total += element.number }
+
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F03_F06_unique_iteration.swift:9:38: error: 'count' is only available in macOS 27.0 or newer
+ 1 | 
+ 2 | struct Element: ~Copyable { var number: Int }
+ 3 | func run() {
+   |      `- note: add '@available' attribute to enclosing global function
+ 4 |     var array = UniqueArray<Element>(capacity: 3)
+ 5 |     array.append(Element(number: 1))
+   :
+ 7 |     var total = 0
+ 8 |     for element in array { total += element.number }
+ 9 |     precondition(total == 3 && array.count == 2)
+   |                                      |- error: 'count' is only available in macOS 27.0 or newer
+   |                                      `- note: add 'if #available' version check
+10 |     print("F03/F06: noncopyable element iteration passed")
+11 | }
+
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F03_F06_unique_iteration.swift:8:5: error: for-in loop requires 'UniqueArray<Element>' to conform to 'Iterable', which is only available in macOS 27.0 or newer
+ 1 | 
+ 2 | struct Element: ~Copyable { var number: Int }
+ 3 | func run() {
+   |      `- note: add '@available' attribute to enclosing global function
+ 4 |     var array = UniqueArray<Element>(capacity: 3)
+ 5 |     array.append(Element(number: 1))
+ 6 |     array.append(Element(number: 2))
+ 7 |     var total = 0
+ 8 |     for element in array { total += element.number }
+   |     |- error: for-in loop requires 'UniqueArray<Element>' to conform to 'Iterable', which is only available in macOS 27.0 or newer
+   |     `- note: add 'if #available' version check
+ 9 |     precondition(total == 3 && array.count == 2)
+10 |     print("F03/F06: noncopyable element iteration passed")

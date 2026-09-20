@@ -1,0 +1,7 @@
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F10_optional_put.swift:4:30: error: value of type 'Element?' has no member 'put'
+2 | struct Element: ~Copyable { var number: Int }
+3 | func trial(_ optional: inout Element?) {
+4 |     var reference = optional.put(Element(number: 3))
+  |                              `- error: value of type 'Element?' has no member 'put'
+5 |     reference.value.number += 1
+6 | }

@@ -1,0 +1,46 @@
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F04_unique_box.swift:4:15: error: 'UniqueBox' is only available in macOS 27.0 or newer
+ 1 | 
+ 2 | struct Element: ~Copyable { var number: Int }
+ 3 | func run() {
+   |      `- note: add '@available' attribute to enclosing global function
+ 4 |     var box = UniqueBox(Element(number: 3))
+   |               |- error: 'UniqueBox' is only available in macOS 27.0 or newer
+   |               `- note: add 'if #available' version check
+ 5 |     box.value.number += 1
+ 6 |     let value = box.consume()
+
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F04_unique_box.swift:4:15: error: 'init(_:)' is only available in macOS 27.0 or newer
+ 1 | 
+ 2 | struct Element: ~Copyable { var number: Int }
+ 3 | func run() {
+   |      `- note: add '@available' attribute to enclosing global function
+ 4 |     var box = UniqueBox(Element(number: 3))
+   |               |- error: 'init(_:)' is only available in macOS 27.0 or newer
+   |               `- note: add 'if #available' version check
+ 5 |     box.value.number += 1
+ 6 |     let value = box.consume()
+
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F04_unique_box.swift:5:9: error: 'value' is only available in macOS 27.0 or newer
+ 1 | 
+ 2 | struct Element: ~Copyable { var number: Int }
+ 3 | func run() {
+   |      `- note: add '@available' attribute to enclosing global function
+ 4 |     var box = UniqueBox(Element(number: 3))
+ 5 |     box.value.number += 1
+   |         |- error: 'value' is only available in macOS 27.0 or newer
+   |         `- note: add 'if #available' version check
+ 6 |     let value = box.consume()
+ 7 |     precondition(value.number == 4)
+
+/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/ownership/F04_unique_box.swift:6:21: error: 'consume()' is only available in macOS 27.0 or newer
+ 1 | 
+ 2 | struct Element: ~Copyable { var number: Int }
+ 3 | func run() {
+   |      `- note: add '@available' attribute to enclosing global function
+ 4 |     var box = UniqueBox(Element(number: 3))
+ 5 |     box.value.number += 1
+ 6 |     let value = box.consume()
+   |                     |- error: 'consume()' is only available in macOS 27.0 or newer
+   |                     `- note: add 'if #available' version check
+ 7 |     precondition(value.number == 4)
+ 8 |     print("F04: unique box mutation and consume passed")

@@ -1,6 +1,6 @@
 # Platform and build contract
 
-Contract **0.2.0**. The table is intended support, not a claim of completed builds.
+Contract **0.5.0**. The table is intended support, not a claim of completed builds.
 
 | Environment | Minimum / architecture | Validation responsibility |
 | --- | --- | --- |
@@ -13,9 +13,9 @@ Contract **0.2.0**. The table is intended support, not a claim of completed buil
 | Linux ARM64 | Ubuntu 24.04 reference distribution; AArch64 | Native build/run, scalar core, CLI and regression; optional ARM optimisation |
 | Linux x86_64 | Ubuntu 24.04 reference distribution | Native build/run, scalar core, CLI and regression; isolated Intel optimisation |
 
-**PLAT-01.** Minimum tools/compiler Swift 6.2, Swift 6 language mode and complete concurrency checking throughout library, CLI and test targets. Keep a Swift 6.2 build to enforce the minimum even when CI also uses a newer stable toolchain. Pin SDK/toolchain/container revisions in evidence. Use an Xcode supporting OS 26 SDKs. iPadOS uses the iOS SwiftPM deployment setting. Linux has its own distribution/runtime baseline; it has no Apple-style OS 26 floor. Ubuntu 24.04 is this foundation's concrete engineering baseline; wider distribution support needs evidence and a recorded expansion.
+**PLAT-01.** The manifest minimum is Swift 6.2, with Swift 6 language mode and complete concurrency checking throughout library, CLI and test targets. Swift 6.4 is the qualified primary toolchain: build and test on it, and pin its build identity in evidence. Both are supported compilers, and CI runs both, because a manifest minimum is a resolution floor rather than a statement of which toolchain is preferred. Raising the manifest floor strands every consumer on an older toolchain, so it requires its own contract change and a recorded consumer impact. Pin SDK/toolchain/container revisions in evidence. Use an Xcode supporting OS 26 SDKs. iPadOS uses the iOS SwiftPM deployment setting. Linux has its own distribution/runtime baseline; it has no Apple-style OS 26 floor. Ubuntu 24.04 is this foundation's concrete engineering baseline; wider distribution support needs evidence and a recorded expansion.
 
-**PLAT-02.** The Apple deployment minimum is exactly 26.0 unless an approved contract change raises it. An SDK update alone must not raise package minima. Do not assume watchOS shares every framework or architecture of macOS/iOS. Probe API availability per target. No 32-bit Intel or general Linux ARMv7 support is implied. Windows is outside the current scope.
+**PLAT-02.** The Apple deployment minimum is exactly 26.0 unless an approved contract change raises it. A deployment floor may only be raised against a released SDK with a generally available toolchain and a stable continuous-integration runner; a public preview or beta SDK is not sufficient evidence. Adopting an API that is unavailable below the floor is a reason to choose a different API, not a reason to raise the floor. An SDK update alone must not raise package minima. Do not assume watchOS shares every framework or architecture of macOS/iOS. Probe API availability per target. No 32-bit Intel or general Linux ARMv7 support is implied. Windows is outside the current scope.
 
 ## Compile-time segregation
 
@@ -29,7 +29,7 @@ Use Swift target-platform and architecture compilation conditions and target/dep
 
 ## Build and packaging acceptance
 
-The coding agent must create the package and CI later. This documentation foundation intentionally has no Package.swift, workflows, sources, generated binaries or test implementation.
+Milestone 1 establishes the standalone package and contract tests. Consult each repository's evidence for executed builds; this platform table remains the intended qualification matrix, not a declaration that every target has passed.
 
 When implemented, validate a fresh URL-based consumer of each library, using a versioned prerelease when dependency resolution requires one. It must not discover sibling checkouts or require another suite package. Do not require manifest unsafe flags that make the package unusable as a dependency. Keep examples, benchmarks and CLI entry points out of library test linkage where they can hijack a test executable's main function.
 
@@ -38,3 +38,13 @@ For every target, retain exact build/test invocations, SDK version, target tripl
 Initial CI should run complete core correctness on macOS arm64 and both Linux architectures, plus an Apple SDK build matrix. Add native macOS Intel and representative Apple runtime checks before the stable release claims those targets. Resource-limited Watch tests use their explicit profile; they must not be disabled merely to make the matrix green.
 
 References: [Swift Linux toolchains](https://www.swift.org/install/linux/ubuntu/24_04/), [Xcode SDK compatibility](https://developer.apple.com/xcode/system-requirements), [Swift compilation conditions](https://github.com/swiftlang/swift-book/blob/main/TSPL.docc/ReferenceManual/Statements.md#conditional-compilation-block).
+
+## Swift 6.4 build qualification — contract 0.5.0
+
+Use the Swift Build engine explicitly and record clean/incremental, debug/release and standalone-consumer results. Do not hide a failed engine qualification behind an unreported native-engine fallback. Record target actor isolation, upcoming features, memory-safety settings, exact SDKs and the source of each adopted API's deployment availability. Build-associated SBOMs are distinct from package-graph inventories; report schema-validation failures and components outside the package graph. See [the upgrade record](Engineering/Swift64/README.md).
+
+An API that a newer toolchain introduces is not automatically adoptable. Check its deployment availability against PLAT-02 before use. Where a convenience API is gated above the floor, express the same operation with primitives available at the floor: the contract fixes required behaviour, such as the explicit byte order in MEM-01, never the standard-library spelling used to achieve it. Record the substitution and the property being preserved. Byte-order sample access is the worked example — it uses explicit fixed-width integer conversion and does not raise the runtime floor.
+
+## Command-line packaging — contract 0.4.0
+
+The macOS/Linux executable is an independent product in each package and depends only on its own library. CLI entry points do not participate in library test linkage. `Scripts/install-cli.sh` installs/updates the binary and its section 1 manual together, supports an absolute prefix and DESTDIR staging, and verifies a prebuilt binary against VERSION. New package-manager distribution recipes must include the matching man page; copying only a binary is not a complete supported installation. Direct `man -M PREFIX/share/man <tool>` works without an index refresh. Native Linux execution still requires its own qualification.

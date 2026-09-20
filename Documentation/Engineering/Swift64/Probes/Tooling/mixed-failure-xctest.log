@@ -1,0 +1,4 @@
+The bundle “ToolingTests” couldn’t be loaded because it doesn’t contain a version for the current architecture. Try installing a universal version of the bundle.
+(dlopen_preflight(/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/tooling/scratch/out/Products/Debug/ToolingTests.xctest/Contents/MacOS/ToolingTests) => false, tried: '/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/work/swift64-probes/tooling/scratch/out/Products/Debug/ToolingTests' (no such file), '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/ToolingTests' (no such file))
+Note: Some test targets reported failures:
+  - ToolingTests (XCTest)

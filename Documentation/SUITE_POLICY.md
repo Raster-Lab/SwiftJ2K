@@ -1,18 +1,18 @@
 # Swift Image Compression Suite — implementation baseline
 
-Contract version: **0.2.0**. Prepared: **17 September 2026**.
-Status: **documentation foundation; implementation and validation not yet performed**.
+Contract version: **0.5.0**. Updated: **20 September 2026**.
+Status: **engineering specification; Milestone 1 implementation evidence is recorded in MILESTONE1.md. Later codec and platform gates remain planned**.
 
-This is the common engineering specification for four independent successor libraries. It records the owner's accepted direction and makes concrete implementation choices for the coding agent. Detailed API designs and engineering thresholds in this foundation have not been compiler-validated or separately human-approved; demonstrate them in the first contract milestone before substantial migration. Do not describe this baseline as a released SDK or a conformance certificate.
+This is the common engineering specification for four independent successor libraries. It records the owner's accepted direction and makes concrete implementation choices for the coding agent. Milestone 1 public API shapes and owning storage have been compiler-validated to the coverage recorded in MILESTONE1.md and Engineering/Swift64/README.md. Planned codec behaviour, engineering thresholds and unexecuted platforms remain qualification gates; those records do not constitute a separate human approval. Do not describe this baseline as a released SDK or a conformance certificate.
 
 ## Decisions and boundaries
 
 | Successor under Raster-Lab | Predecessor | Intended first stable release |
 | --- | --- | --- |
-| SwiftJ2K | J2KSwift | 12.0.0 |
-| SwiftJLS | JLSwift | 1.0.0 |
-| SwiftJXL | JXLSwift | 2.0.0 |
-| SwiftJLI | JLISwift | 1.0.0 |
+| SwiftJ2K | J2KSwift | 12.1.0 |
+| SwiftJLS | JLSwift | 1.1.0 |
+| SwiftJXL | JXLSwift | 2.1.0 |
+| SwiftJLI | JLISwift | 1.1.0 |
 
 The public family name is **Swift Image Compression Suite**. Raster-Lab remains the GitHub organisation; copyright attribution remains accurate. Each codec has its own repository, implementation, package and release sequence. HTJ2K remains a mode of SwiftJ2K.
 
@@ -47,7 +47,7 @@ Keep each shared document byte-identical across the four repositories. Any contr
 
 ## First coding task — Milestone 1
 
-Start with contract feasibility, as numbered in every repository's `IMPLEMENTATION.md`. Establish the Swift 6.2 package and local API/owning-memory types, validate descriptors, and prove the adapter and ownership lifecycle using synthetic sample buffers. Settle the concrete lease-token signatures once and mirror the refinement across all four repositories before codec migration. Keep any API-shape experiments or test doubles clearly separate from advertised codec functionality.
+Start with contract feasibility, as numbered in every repository's `IMPLEMENTATION.md`. Establish the package and local API/owning-memory types, validate descriptors, and prove the adapter and ownership lifecycle using synthetic sample buffers. Settle the concrete lease-token signatures once and mirror the refinement across all four repositories before codec migration. Keep any API-shape experiments or test doubles clearly separate from advertised codec functionality.
 
 Milestone 1 does not migrate codec algorithms or implement a real compressed-image transcode. Its exit evidence is compiling common call shapes, meaningful descriptor/lifetime/concurrency tests and independent consumer use. The complete end-to-end proof below belongs to Milestones 2 and 3. Each later milestone remains a separately assigned coding task.
 
@@ -66,3 +66,35 @@ Clarifies the milestone sequence for all four codecs and their adapters: Milesto
 Adds owner-requested in-memory J2K ↔ HTJ2K transcoding and reversible existing-JPEG ↔ JPEG XL recompression/reconstruction instructions. Defines a consistent native format-pair API/CLI extension, separates exact samples from original-JPEG byte restoration, and adds memory, regression, interoperability and performance gates. The seven shared documents and manifest are mirrored across all four repositories; only SwiftJ2K/SwiftJXL receive the native pair requirement and detailed local TRANSCODING.md instructions. Standalone packaging, MIT licensing, platform floors, intended library versions and the first coding milestone remain unchanged. This revision contains documentation and source-review findings only; no codec tests or benchmarks were run.
 
 References: [Swift API design](https://www.swift.org/documentation/api-design-guidelines/), [Swift package descriptions](https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html), and each predecessor's pinned history in `HISTORY.md`.
+
+## Contract revision 0.2.1 — 18 September 2026
+
+Milestone 1 fixes the concrete local storage lease signatures in MEM-05. Each module retains its independent Swift types and ships no sibling dependency. A provider owns the authoritative allocation lifecycle; a copyable token is an identifier, not evidence of exclusive access by itself. Providers must reject invalid, reentrant and concurrent mutable borrows and prevent publication during a mutable borrow. API-shape implementations must advertise no codec capabilities until actual compressed-format work is qualified.
+
+The corresponding implementation and executed evidence are recorded in each repository's `MILESTONE1.md`; this common specification does not certify all platforms or a working codec. The required deployment floors, later codec milestones, native transcoding requirements and release gates are unchanged. All seven documents and the hash manifest advance together.
+
+## Contract revision 0.3.0 — 19 September 2026
+
+The owner assigned a Swift 6.4 upgrade of the four successors before Milestone 2, following SWIFT64-MANIFESTO-001 and SWIFT64-SICS-001 version 1.0.0. Their compiler direction supersedes earlier 6.2 minimum instructions. Preserve Swift 6 language mode, OS 26 deployment floors, module-local public signatures, ownership/fidelity semantics and the existing milestone boundary. The supplement's inspected 0.2.0 snapshot is historical; this revision builds on the implemented 0.2.1 lease contract.
+
+The owner also requested version increments. Because none of the successors has a released library tag, advance the unreleased targets by one minor version: SwiftJ2K 12.0.0 → 12.1.0, SwiftJLS 1.0.0 → 1.1.0, SwiftJXL 2.0.0 → 2.1.0 and SwiftJLI 1.0.0 → 1.1.0. Each VERSION file identifies its first `-dev.1` candidate. These are development identifiers and intended future releases, not published tags, backwards binary-compatibility assertions or completed codec qualification. Historical release/provenance records remain unchanged.
+
+All seven shared documents and their SHA-256 manifest advance together. Public signatures are unchanged. Safe native-order span sample access may use explicit fixed-width integer endian conversion without raising the runtime floor. Record F01–F13 dispositions and exact tests, including compiler/platform gaps, in [the upgrade record](Engineering/Swift64/README.md). Swift 6.4 adoption grants no later codec milestone or release authorisation.
+
+## Contract revision 0.4.0 — 19 September 2026
+
+The owner explicitly raised the Apple baseline to macOS/iOS/iPadOS/tvOS/visionOS/watchOS **27.0**, retaining Swift 6.4 and Swift 6 language mode. This supersedes OS 26 preservation instructions in contract 0.3.0 and the immutable supplied manifesto/supplement. Linux retains its independent Ubuntu 24.04 reference distribution. Update active manifests, examples, validation consumers and instructions; preserve historical OS 26 evidence as history.
+
+The owner also authorised CLI help, selectable verbosity and UNIX manual support ahead of codec milestones. Implement only honest help/version/capability reporting and explicitly unsupported codec verbs. Each standalone executable and installer carries its matching man page. CLI rules CLI-07..09 apply consistently. The libraries retain their public API and owning-memory semantics; safe endian-aware span operations may now use their OS 27 overloads. Other newly available language/runtime features still require an actual use and justification. No codec algorithm milestone or release is authorised by this foundation change. Development identifiers advance to `-dev.2`; stable targets remain unchanged. See [the OS 27 and CLI record](Engineering/OS27CLI/README.md).
+
+## Contract revision 0.5.0 — 20 September 2026
+
+**The Apple deployment floor returns to 26.0, reversing the 0.4.0 raise to 27.0.** The CLI authorisation in 0.4.0 stands unchanged; only the platform floor and the compiler minimum are revised.
+
+The owner raised the floor to 27.0 in 0.4.0 on the understanding that OS 27 was an available baseline. Verification found otherwise. Xcode 27 is a public preview with a 27.2 beta; no generally available Xcode ships OS 27 SDKs, and no stable `macos-27` continuous-integration runner exists, so every OS 27 qualification claim is currently unreproducible. Swift 6.4.0, released 15 September 2026, rejects a 27.0 deployment target outright: its supported range ends at 26.5.x. The raise therefore could not be validated on any supported configuration.
+
+The raise also had a cause worth recording. It was not an independent platform decision: 0.4.0 adopted the byte-order overloads of `RawSpan.load(fromByteOffset:as:_:)` and `OutputRawSpan.append(_:as:_:)`, which are gated to OS 27, and the floor moved so that they would compile. Contract 0.3.0 had already specified the correct treatment — explicit fixed-width integer endian conversion, without raising the runtime floor — and that rule is restored. PLAT-02 now states the general principle: an API gated above the floor is a reason to choose a different API, not a reason to raise the floor.
+
+**The compiler minimum returns to Swift 6.2, with Swift 6.4 as the qualified primary toolchain.** 0.3.0 made 6.4 the minimum and declared 6.2 historical. A manifest floor is a resolution constraint on consumers, and every current consumer of the predecessor libraries resolves at tools version 6.2; a 6.4 floor would strand them for no functional gain. Both toolchains are supported and both run in CI. The sources build unchanged on each.
+
+Impact on all four codecs and their adapters is identical, since the affected sample-access code and manifests are mirrored. Required actions: Apple platform minima return to 26.0 in every manifest, example and validation consumer; `swift-tools-version` returns to 6.2; byte-order sample access uses explicit fixed-width integer conversion; CI covers Swift 6.2 and 6.4. Public signatures, ownership and fidelity semantics, milestone boundaries, Linux scope, development identifiers and stable release targets are unchanged. OS 27 and Swift 6.4 evidence recorded under 0.3.0 and 0.4.0 is retained as history and marked superseded rather than deleted; it may be regenerated if and when Xcode 27 reaches general availability. All seven shared documents and their SHA-256 manifest advance together. This revision authorises no codec milestone or release.

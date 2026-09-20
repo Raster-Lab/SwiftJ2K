@@ -1,0 +1,2 @@
+6a6f671a221adcc8f1323ca13546dba7a8996c5799c2a1796ed242c336c31435  Swift_6.4_Upgrade_Manifesto_v1.0.0.md
+9ed7df7fa878cf9a6702d7ecb9d3369f7c835a40c7e8d2e6a3038c32258653b2  Swift_Image_Compression_Suite_Swift_6.4_Supplement_v1.0.0.md

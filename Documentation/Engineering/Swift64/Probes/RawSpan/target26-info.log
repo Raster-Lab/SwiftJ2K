@@ -1,0 +1,29 @@
+$ xcrun swiftc -target arm64-apple-macosx26.0 -print-target-info
+exit: 0
+{
+  "compilerVersion": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)",
+  "swiftCompilerTag": "swiftlang-6.4.0.34.1",
+  "target": {
+    "triple": "arm64-apple-macosx26.0",
+    "unversionedTriple": "arm64-apple-macosx",
+    "moduleTriple": "arm64-apple-macos",
+    "platform": "macosx",
+    "arch": "arm64",
+    "pointerWidthInBits": 64,
+    "pointerWidthInBytes": 8,
+    "swiftRuntimeCompatibilityVersion": "6.2",
+    "compatibilityLibraries": [ ],
+    "openbsdBTCFIEnabled": false,
+    "librariesRequireRPath": false
+  },
+  "paths": {
+    "runtimeLibraryPaths": [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx",
+      "/usr/lib/swift"
+    ],
+    "runtimeLibraryImportPaths": [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx"
+    ],
+    "runtimeResourcePath": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift"
+  }
+}

@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Scripts/test-cli.py", line 102, in <module>
+    if __name__=='__main__':sys.exit(main())
+  File "/Users/suresh/Documents/Codex/2026-09-18/create-coding-agents-to-start-work/outputs/SwiftJ2K/Scripts/test-cli.py", line 85, in main
+    assert 'DIAGNOSTIC LEVELS' in rendered.stdout and tool in rendered.stdout
+AssertionError

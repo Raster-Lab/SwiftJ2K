@@ -4,9 +4,17 @@ Applies to Claude, Codex and other coding agents working in this repository.
 
 ## Start here
 
+Current owner-approved baseline: Apple OS 26.0 and the CLI foundation. Contract 0.5.0 reversed the 0.4.0 raise to OS 27; the OS 27 records under Documentation/Engineering/OS27CLI are superseded history, not the current baseline.
+
+For the compiler upgrade, read the [Swift 6.4 manifesto](Documentation/Engineering/Swift64/Swift_6.4_Upgrade_Manifesto_v1.0.0.md), [suite supplement](Documentation/Engineering/Swift64/Swift_Image_Compression_Suite_Swift_6.4_Supplement_v1.0.0.md), then the [historical upgrade record and feature register](Documentation/Engineering/Swift64/README.md). Preserve the supplied files byte-for-byte. Current contract 0.5.0 supersedes their older inspected contract snapshot; historical evidence is not rewritten.
+
 Read `README.md`, `HISTORY.md`, this file and `IMPLEMENTATION.md`, then all seven common contract documents in `Documentation/`. Read the repository-specific `TRANSCODING.md` when present before work affecting transcoding. `CLAUDE.md` points here and is not a separate policy. Follow the precedence in `Documentation/SUITE_POLICY.md`.
 
-This initial repository contains documentation only. It does not authorise an agent merely reading it to start migration. When the owner assigns an implementation task, execute only that milestone. The present foundation contains no Package.swift, source, tests, executable workflow or binary. Do not report these instructions as implemented functionality.
+This repository began with documentation only. Reading its instructions does not by itself authorise codec migration. When the owner assigns an implementation task, execute only that milestone. The original foundation contained no package or source. Milestone 1 now has a feasibility implementation; see Documentation/MILESTONE1.md for executed evidence. Do not report planned codec instructions as implemented functionality.
+
+## Application migration tasks
+
+Read [MIGRATION.md](MIGRATION.md) before changing applications that consume J2KSwift. It covers consumer migration; [IMPLEMENTATION.md](IMPLEMENTATION.md) governs codec implementation. Verify the application's pinned predecessor and target capabilities, preserve required unsupported features, and report blockers rather than claiming a storage-only adapter completes migration. Work only in application repositories explicitly assigned by the owner.
 
 ## Required working method
 
@@ -19,7 +27,7 @@ This initial repository contains documentation only. It does not authorise an ag
 
 ## Non-negotiable engineering rules
 
-- Swift 6.2 minimum, Swift 6 language mode and complete concurrency checking. Expensive codec work must have a defined executor policy and bounded cancellation points.
+- Swift 6.4 minimum, Swift 6 language mode and complete concurrency checking. Expensive codec work must have a defined executor policy and bounded cancellation points.
 - Validate untrusted sizes, offsets, strides, entropy counts and lengths with checked arithmetic. Throw defined errors. No input-dependent force unwrap/cast, assertion trap, uncontrolled allocation or process exit.
 - No raw pointer may outlive its scoped borrow; no array/Data buffer pointer becomes an async storage owner. Retain owners and join CPU/GPU work before release. Raw unsafe borrow APIs document caller obligations; closure syntax alone does not prove pointer non-escape.
 - An unchecked concurrency annotation needs a local written proof and relevant lifetime/race tests. Do not weaken language mode or globally suppress diagnostics to pass CI.
@@ -34,6 +42,10 @@ State what behaviour changed and why, exact source/baseline/contract revisions, 
 
 ## Ready-to-use first task prompt
 
-"Read AGENTS.md, IMPLEMENTATION.md, HISTORY.md and the common contract. Carry out Milestone 1 only: validate the local public API and owning-memory contract in Swift 6.2, with meaningful descriptor, lifetime, concurrency and independent-consumer tests. Use synthetic buffers for the adapter experiment and preserve repository independence. Do not migrate codec algorithms or implement the real transcoder in this milestone. Return a reviewable PR, exact test evidence and any concrete contract issue requiring a coordinated revision."
+"Read AGENTS.md, IMPLEMENTATION.md, HISTORY.md and the common contract. Carry out Milestone 1 only: validate the local public API and owning-memory contract in Swift 6.4, with meaningful descriptor, lifetime, concurrency and independent-consumer tests. Use synthetic buffers for the adapter experiment and preserve repository independence. Do not migrate codec algorithms or implement the real transcoder in this milestone. Return a reviewable PR, exact test evidence and any concrete contract issue requiring a coordinated revision."
 
 Later task prompts must name the next milestone explicitly. Repository creation and documentation publication are separate from authorising codec implementation.
+
+## Current platform and CLI direction
+
+The owner approved the CLI foundation in contract 0.4.0 and reverted the Apple minima to 26.0 in contract 0.5.0. Read [CLI.md](CLI.md) for the CLI foundation; the [OS 27/CLI record](Documentation/Engineering/OS27CLI/README.md) is superseded history for its platform claims, and its CLI content remains current. Do not adopt an API gated above OS 26. Preserve archived inputs and records. Keep help, verbosity, VERSION, man pages and installer behaviour aligned. Library code must not terminate a process; the executable alone maps documented CLI exit statuses. Codec implementations still require their assigned milestone.

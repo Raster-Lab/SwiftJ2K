@@ -1,0 +1,18 @@
+{
+  "command": "DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcrun simctl list runtimes --json",
+  "execution": "outside sandbox after sandbox service access failed",
+  "exit_code": 0,
+  "runtimes": [
+    {
+      "name": "iOS 17.4",
+      "version": "17.4",
+      "build": "21E213",
+      "isAvailable": true,
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    }
+  ],
+  "requiredOS26orNewerAvailable": false
+}

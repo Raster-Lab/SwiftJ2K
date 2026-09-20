@@ -1,0 +1,9 @@
+SwiftJ2K spdx 414737f90bb529a8675c1e704c6785b8c3ce65a371317ef35bc8813fe7cac310 ['specVersion_semantic_mismatch', 'nonstandard_package_property', 'nonstandard_package_property']
+SwiftJ2K cyclonedx b9113a7b17635be5b75ad30a8e3f259d6ceba37c1bd6ac9e9836e022bf25f930 ['duplicate_bom_ref']
+SwiftJLS spdx 283ff31ca76c94d19751bbb5bc42f1fc04141c1f77fcbbcfa5476b08502855aa ['specVersion_semantic_mismatch', 'nonstandard_package_property', 'nonstandard_package_property']
+SwiftJLS cyclonedx a31b911a08ec291428997b1e8f095dfdcc4fe65e740d9c38131fe69b609e06af ['duplicate_bom_ref']
+SwiftJXL spdx 433bfaca98f648d1739dde6db44d80db7d9f180d3f62f6442db34c5593af3cf2 ['specVersion_semantic_mismatch', 'nonstandard_package_property', 'nonstandard_package_property']
+SwiftJXL cyclonedx bc1b5d86a14b481959e75a6e686da001e02d8aaf4554a1e0fd420d3549621041 ['duplicate_bom_ref']
+SwiftJLI spdx 4dccfc7dfadd1461a44abf2e6c3b22eb40d4efe88d7a67537c302485736f6dc4 ['specVersion_semantic_mismatch', 'nonstandard_package_property', 'nonstandard_package_property']
+SwiftJLI cyclonedx 67125dfd430298189c35fa91344005d8e3a6314cea3762748fcb1406a2d0fe8d ['duplicate_bom_ref']
+8 SBOMs audited; original files unchanged; full schema/semantic qualification remains open.

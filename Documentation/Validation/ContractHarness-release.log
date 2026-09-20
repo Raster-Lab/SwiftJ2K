@@ -1,0 +1,14 @@
+Building for production...
+[0/8] Write sources
+[5/8] Write swift-version--58304C5D6DBC2206.txt
+[7/10] Compiling SwiftJXL CodecAPI.swift
+[8/10] Compiling SwiftJLS CodecAPI.swift
+[9/12] Compiling SwiftJLI CodecAPI.swift
+[10/12] Compiling SwiftJ2K CodecAPI.swift
+[11/13] Compiling ContractHarness main.swift
+[11/13] Write Objects.LinkFileList
+[12/13] Linking ContractHarness
+Build of product 'ContractHarness' complete! (4.80s)
+PASS: 12-in-16, 5x3 padded storage, 1 pixel allocation, 0 adapter copy bytes, shared identity, concurrent reads, second writer rejected
+PASS: 16-in-16, 5x3 padded storage, 1 pixel allocation, 0 adapter copy bytes, shared identity, concurrent reads, second writer rejected
+PASS: local write-lease mapping and exact UInt16 maximum
