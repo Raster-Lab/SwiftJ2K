@@ -110,8 +110,8 @@ private struct PublishedUninitialisedSamples: ReadOnlyImageStorage {
     }
 }
 
-@Suite("Swift 6.4 sample access")
-struct Swift64SampleAccessTests {
+@Suite("Byte-order sample access")
+struct SampleAccessTests {
     private func expectCategory(_ category: CodecError.Category,
                                 sourceLocation: SourceLocation = #_sourceLocation,
                                 _ body: () throws -> Void) {

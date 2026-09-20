@@ -1,10 +1,14 @@
-// swift-tools-version: 6.4
+// swift-tools-version: 6.2
 // SPDX-License-Identifier: MIT
 import PackageDescription
 
+// The manifest floor stays at the 6.2 minimum that SUITE_POLICY.md PLAT-01
+// fixes, so a 6.2 or 6.3 consumer can still resolve this package. That is a
+// resolution floor, not a ceiling: the sources build unchanged under the 6.4
+// toolchain, and CI is expected to exercise both.
 let package = Package(
     name: "SwiftJ2K",
-    platforms: [.macOS(.v27), .iOS(.v27), .tvOS(.v27), .visionOS(.v27), .watchOS(.v27)],
+    platforms: [.macOS(.v26), .iOS(.v26), .tvOS(.v26), .visionOS(.v26), .watchOS(.v26)],
     products: [.library(name: "SwiftJ2K", targets: ["SwiftJ2K"]),
                .executable(name: "swiftj2k", targets: ["SwiftJ2KCLI"])],
     targets: [

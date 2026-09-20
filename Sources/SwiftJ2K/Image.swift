@@ -69,9 +69,7 @@ public struct Image: Sendable {
             }
             // The provider retains sealed storage for this synchronous borrow.
             // Descriptor and capacity checks above prove the two-byte extent.
-            let span = unsafe RawSpan(_unsafeBytes: bytes)
-            let order: Swift.ByteOrder = descriptor.byteOrder == .littleEndian ? .littleEndian : .bigEndian
-            return span.load(fromByteOffset: offset, as: UInt16.self, order)
+            return try loadUInt16(bytes, at: offset, order: descriptor.byteOrder)
         }
     }
 }
@@ -159,16 +157,53 @@ public final class ImageDestination: Sendable {
                     let offset = plane.offset + y * plane.rowBytes + x * plane.pixelStride
                     // The exclusive lease retains these two bytes. External
                     // providers need not initialise samples before this write.
-                    let sampleBytes = UnsafeMutableRawBufferPointer(
-                        rebasing: bytes[offset..<(offset + MemoryLayout<UInt16>.size)])
-                    var output = unsafe OutputRawSpan(buffer: sampleBytes, initializedCount: 0)
-                    output.append(value, as: UInt16.self,
-                                  descriptor.byteOrder == .littleEndian ? .littleEndian : .bigEndian)
-                    _ = unsafe output.finalize(for: sampleBytes)
+                    try storeUInt16(value, into: bytes, at: offset, order: descriptor.byteOrder)
                 }
             }
         }
     }
+}
+
+// MARK: - Byte-order-explicit 16-bit sample access
+
+// These replace the `RawSpan.load(fromByteOffset:as:_:)` and
+// `OutputRawSpan.append(_:as:_:)` byte-order operations. Those standard-library
+// entry points are annotated `@available(macOS 27, *)` and equivalents, so using
+// them would raise every Apple deployment floor above the 26.0 baseline that
+// PLATFORMS.md PLAT-02 fixes. They are a spelling convenience, not a capability:
+// the contract requires an explicit byte order (MEM-01), never a particular
+// standard-library type to express it.
+//
+// Assembling each sample byte-wise keeps two properties the span types provided
+// implicitly and that the accessors depend on:
+//
+//   * Alignment independence. MEM-03 permits any plane `offset`, so a sample may
+//     begin at an odd address. Byte access has no alignment precondition.
+//   * A bounds check before the allocation is touched (MEM-04). A raw buffer
+//     subscript is unchecked in release builds, so the guards below are load
+//     bearing, not defensive duplication of the descriptor arithmetic.
+
+@inline(__always)
+private func loadUInt16(_ bytes: UnsafeRawBufferPointer, at offset: Int,
+                        order: ByteOrder) throws -> UInt16 {
+    guard offset >= 0, offset <= bytes.count - MemoryLayout<UInt16>.size else {
+        throw CodecError(.storageUnavailable, "Sample extent lies outside the retained allocation.")
+    }
+    let first = UInt16(bytes[offset]), second = UInt16(bytes[offset + 1])
+    return order == .littleEndian ? first | (second << 8) : (first << 8) | second
+}
+
+@inline(__always)
+private func storeUInt16(_ value: UInt16, into bytes: UnsafeMutableRawBufferPointer,
+                         at offset: Int, order: ByteOrder) throws {
+    guard offset >= 0, offset <= bytes.count - MemoryLayout<UInt16>.size else {
+        throw CodecError(.storageUnavailable, "Sample extent lies outside the retained allocation.")
+    }
+    let low = UInt8(truncatingIfNeeded: value), high = UInt8(truncatingIfNeeded: value >> 8)
+    // Assigning through the raw buffer initialises these bytes, so a provider
+    // may hand over uninitialised sample storage under the exclusive lease.
+    bytes[offset] = order == .littleEndian ? low : high
+    bytes[offset + 1] = order == .littleEndian ? high : low
 }
 
 private func validateGreyscale16(_ descriptor: ImageDescriptor) throws {
