@@ -1,21 +1,21 @@
 # Platform and build contract
 
-Contract **0.4.0**. The table is intended support, not a claim of completed builds.
+Contract **0.5.0**. The table is intended support, not a claim of completed builds.
 
 | Environment | Minimum / architecture | Validation responsibility |
 | --- | --- | --- |
-| macOS | 27.0; Apple arm64 primary | Full core, CLI, unit/regression, memory, performance and acceleration tests |
-| macOS | 27.0; Intel x86_64 secondary | Native build/run and core/CLI correctness; isolated Intel support |
-| iOS and iPadOS | 27.0; supported Apple devices and simulators | Library build, simulator tests and representative device tests |
-| tvOS | 27.0; supported Apple devices and simulators | Library build and applicable runtime tests |
-| visionOS | 27.0; supported Apple devices and simulators | Library build and applicable runtime tests |
-| watchOS | 27.0; SDK-supported Watch architectures and simulators | Library build, bounded-memory runtime profile, cancellation/resource tests |
+| macOS | 26.0; Apple arm64 primary | Full core, CLI, unit/regression, memory, performance and acceleration tests |
+| macOS | 26.0; Intel x86_64 secondary | Native build/run and core/CLI correctness; isolated Intel support |
+| iOS and iPadOS | 26.0; supported Apple devices and simulators | Library build, simulator tests and representative device tests |
+| tvOS | 26.0; supported Apple devices and simulators | Library build and applicable runtime tests |
+| visionOS | 26.0; supported Apple devices and simulators | Library build and applicable runtime tests |
+| watchOS | 26.0; SDK-supported Watch architectures and simulators | Library build, bounded-memory runtime profile, cancellation/resource tests |
 | Linux ARM64 | Ubuntu 24.04 reference distribution; AArch64 | Native build/run, scalar core, CLI and regression; optional ARM optimisation |
 | Linux x86_64 | Ubuntu 24.04 reference distribution | Native build/run, scalar core, CLI and regression; isolated Intel optimisation |
 
-**PLAT-01.** Minimum tools/compiler Swift 6.4, Swift 6 language mode and complete concurrency checking throughout library, CLI and test targets. Pin the qualified Swift 6.4 build identity; retain the preceding source/toolchain reference for rollback. Swift 6.2 is historical, not a supported compiler for new 6.4-only source. Pin SDK/toolchain/container revisions in evidence. Use an Xcode supporting OS 27 SDKs. iPadOS uses the iOS SwiftPM deployment setting. Linux has its own distribution/runtime baseline; it has no Apple-style OS 27 floor. Ubuntu 24.04 is this foundation's concrete engineering baseline; wider distribution support needs evidence and a recorded expansion.
+**PLAT-01.** The manifest minimum is Swift 6.2, with Swift 6 language mode and complete concurrency checking throughout library, CLI and test targets. Swift 6.4 is the qualified primary toolchain: build and test on it, and pin its build identity in evidence. Both are supported compilers, and CI runs both, because a manifest minimum is a resolution floor rather than a statement of which toolchain is preferred. Raising the manifest floor strands every consumer on an older toolchain, so it requires its own contract change and a recorded consumer impact. Pin SDK/toolchain/container revisions in evidence. Use an Xcode supporting OS 26 SDKs. iPadOS uses the iOS SwiftPM deployment setting. Linux has its own distribution/runtime baseline; it has no Apple-style OS 26 floor. Ubuntu 24.04 is this foundation's concrete engineering baseline; wider distribution support needs evidence and a recorded expansion.
 
-**PLAT-02.** The Apple deployment minimum is exactly 27.0 unless an approved contract change raises it. An SDK update alone must not raise package minima. Do not assume watchOS shares every framework or architecture of macOS/iOS. Probe API availability per target. No 32-bit Intel or general Linux ARMv7 support is implied. Windows is outside the current scope.
+**PLAT-02.** The Apple deployment minimum is exactly 26.0 unless an approved contract change raises it. A deployment floor may only be raised against a released SDK with a generally available toolchain and a stable continuous-integration runner; a public preview or beta SDK is not sufficient evidence. Adopting an API that is unavailable below the floor is a reason to choose a different API, not a reason to raise the floor. An SDK update alone must not raise package minima. Do not assume watchOS shares every framework or architecture of macOS/iOS. Probe API availability per target. No 32-bit Intel or general Linux ARMv7 support is implied. Windows is outside the current scope.
 
 ## Compile-time segregation
 
@@ -39,9 +39,11 @@ Initial CI should run complete core correctness on macOS arm64 and both Linux ar
 
 References: [Swift Linux toolchains](https://www.swift.org/install/linux/ubuntu/24_04/), [Xcode SDK compatibility](https://developer.apple.com/xcode/system-requirements), [Swift compilation conditions](https://github.com/swiftlang/swift-book/blob/main/TSPL.docc/ReferenceManual/Statements.md#conditional-compilation-block).
 
-## Swift 6.4 build qualification — contract 0.4.0
+## Swift 6.4 build qualification — contract 0.5.0
 
-Use the Swift Build engine explicitly and record clean/incremental, debug/release and standalone-consumer results. Do not hide a failed engine qualification behind an unreported native-engine fallback. Record target actor isolation, upcoming features, memory-safety settings, exact SDKs and the source of each adopted API's deployment availability. The owner raised Apple deployment floors to OS 27. APIs requiring OS 27 may now be adopted when they serve an actual implementation need and pass target-specific checks; availability alone does not justify changing ownership or adding unused abstractions. Build-associated SBOMs are distinct from package-graph inventories; report schema-validation failures and components outside the package graph. See [the upgrade record](Engineering/Swift64/README.md).
+Use the Swift Build engine explicitly and record clean/incremental, debug/release and standalone-consumer results. Do not hide a failed engine qualification behind an unreported native-engine fallback. Record target actor isolation, upcoming features, memory-safety settings, exact SDKs and the source of each adopted API's deployment availability. Build-associated SBOMs are distinct from package-graph inventories; report schema-validation failures and components outside the package graph. See [the upgrade record](Engineering/Swift64/README.md).
+
+An API that a newer toolchain introduces is not automatically adoptable. Check its deployment availability against PLAT-02 before use. Where a convenience API is gated above the floor, express the same operation with primitives available at the floor: the contract fixes required behaviour, such as the explicit byte order in MEM-01, never the standard-library spelling used to achieve it. Record the substitution and the property being preserved. Byte-order sample access is the worked example — it uses explicit fixed-width integer conversion and does not raise the runtime floor.
 
 ## Command-line packaging — contract 0.4.0
 

@@ -55,4 +55,4 @@ Update CHANGELOG.md and migration provenance. Provide the exact commands, commit
 
 ## Owner-authorised OS 27 and CLI foundation
 
-Before codec migration, the owner raised Apple floors to 27.0 and requested executable help, verbosity and UNIX manuals. This bounded CLI foundation implements help/version/capabilities only; codec commands remain explicitly unavailable. See [CLI.md](CLI.md) and [new evidence](Documentation/Engineering/OS27CLI/README.md). The later codec/CLI milestones still govern real payload operations.
+Before codec migration, the owner requested executable help, verbosity and UNIX manuals. Apple floors were briefly raised to 27.0 in contract 0.4.0 and returned to 26.0 in 0.5.0. This bounded CLI foundation implements help/version/capabilities only; codec commands remain explicitly unavailable. See [CLI.md](CLI.md) and [new evidence](Documentation/Engineering/OS27CLI/README.md). The later codec/CLI milestones still govern real payload operations.

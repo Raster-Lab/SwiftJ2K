@@ -1,6 +1,6 @@
 # Common API contract
 
-Contract **0.4.0**. Normative implementation specification. Consult MILESTONE1.md for the implemented feasibility surface; codec operations remain deferred.
+Contract **0.5.0**. Normative implementation specification. Consult MILESTONE1.md for the implemented feasibility surface; codec operations remain deferred.
 
 ## Public naming and module boundary
 
@@ -21,7 +21,7 @@ Contract **0.4.0**. Normative implementation specification. Consult MILESTONE1.m
 | `CodecCapabilities` | Explicit supported modes, sample types, precision ranges, layouts and optional features |
 | `CodecError` | Stable error category, safe diagnostic context and optional underlying error |
 
-The tables below specify public call shapes implemented by Milestone 1 and behaviour required of later codec milestones. Preserve their Swift 6.4 implementation and independent-consumer tests. Do not invent alternate spellings in individual repositories.
+The tables below specify public call shapes implemented by Milestone 1 and behaviour required of later codec milestones. Preserve their implementation and independent-consumer tests on every supported toolchain. Do not invent alternate spellings in individual repositories.
 
 ## Common operations
 
@@ -63,7 +63,7 @@ The default is lossless in the API and CLI. Unsupported lossless requests fail. 
 
 ## Concurrency, progress and cancellation
 
-**API-11.** Public immutable values conform to `Sendable` when their ownership makes it valid. Public mutable raw pointers are not freely Sendable. No default main-actor isolation for codec kernels. Select an explicit Swift 6.4 execution strategy so expensive work cannot block the caller's UI actor. Use bounded structured task groups; keep task-local scratch per operation; join child work and GPU completion before releasing memory. A dependency or annotation that merely suppresses diagnostics is not evidence of safety.
+**API-11.** Public immutable values conform to `Sendable` when their ownership makes it valid. Public mutable raw pointers are not freely Sendable. No default main-actor isolation for codec kernels. Select an explicit Swift 6 execution strategy so expensive work cannot block the caller's UI actor. Use bounded structured task groups; keep task-local scratch per operation; join child work and GPU completion before releasing memory. A dependency or annotation that merely suppresses diagnostics is not evidence of safety.
 
 **API-12.** Check cancellation before allocation, between bounded work units and before successful publication. Default operation deadline is part of resource limits. After cancellation, do not return a successful frame or expose a partially written destination. One in-flight hardware unit may complete before safe release; test and document that bound. Never free storage while hardware or workers still reference it.
 

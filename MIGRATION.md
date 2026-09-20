@@ -18,7 +18,7 @@ This guide uses suite contract **0.4.0**, [current successor source](Sources/Swi
 | Principal SwiftPM products/imports | `J2KCore`, `J2KCodec` | Product/module `SwiftJ2K`; use `import SwiftJ2K` in the new adapter target |
 | Shared protocol dependency | `CompressionFamily` conformances on J2K types | No inherited conformances or shared runtime package; adapt local concrete types explicitly |
 | Minimum tools | Consult the application pin; inspected predecessor uses Swift 6.2 | Swift 6.4 tools minimum, Swift 6 language mode |
-| Apple deployment floors | Inspected manifest: macOS 15, iOS/tvOS 18, watchOS 10, visionOS 1 | All five successor deployment floors are 27.0; older-OS applications cannot replace their existing target directly |
+| Apple deployment floors | Inspected manifest: macOS 15, iOS/tvOS 18, watchOS 10, visionOS 1 | All five successor deployment floors are 26.0; older-OS applications cannot replace their existing target directly |
 | CLI | `j2k` | `swiftj2k` provides help/version/capabilities; codec commands remain unavailable |
 
 In an isolated application migration branch, add the successor URL `https://github.com/Raster-Lab/SwiftJ2K.git` to SwiftPM or Xcode Package Dependencies, select a reviewed immutable revision containing `Package.swift`, and add `.product(name: "SwiftJ2K", package: "SwiftJ2K")` to the new adapter target. Pin the reviewed Swift 6.4 candidate revision recorded by your application; an earlier feasibility revision does not include this upgrade. Do not use `from: "12.1.0"` until an actual qualifying release exists. Commit the application's updated `Package.resolved` where appropriate. Package identities derive from repository/directory names; give a standalone consumer a distinct name/directory.

@@ -1,6 +1,6 @@
 # swiftj2k: help, diagnostics and installation
 
-Version **12.1.0-dev.2**; Swift 6.4 / Swift 6, Apple OS minimum **27.0**. The CLI targets macOS and Linux; Linux execution remains a qualification requirement. No external parser package or sibling codec is required. Current commands report help, version and the library's actual capabilities. Encode/decode/inspect/validate/transcode remain unavailable (exit 4), without opening input, consuming stdin or creating output. Their help describes reserved syntax only.
+Version **12.1.0-dev.2**; Swift 6.2 minimum with Swift 6.4 qualified / Swift 6, Apple OS minimum **26.0**. The CLI targets macOS and Linux; Linux execution remains a qualification requirement. No external parser package or sibling codec is required. Current commands report help, version and the library's actual capabilities. Encode/decode/inspect/validate/transcode remain unavailable (exit 4), without opening input, consuming stdin or creating output. Their help describes reserved syntax only.
 
 ```sh
 swift run swiftj2k --help

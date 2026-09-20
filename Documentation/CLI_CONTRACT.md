@@ -1,6 +1,6 @@
 # Command-line and transcoding contract
 
-Contract **0.4.0**. The executable foundation provides help, version and actual capability reporting. Codec operations remain unavailable and return exit 4 before reading input or creating output.
+Contract **0.5.0**. The executable foundation provides help, version and actual capability reporting. Codec operations remain unavailable and return exit 4 before reading input or creating output.
 
 ## Native codec commands
 

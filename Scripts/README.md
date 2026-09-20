@@ -1,6 +1,6 @@
 # Headless Swift 6.4 validation
 
-`validate.sh` invokes the Python 3 standard-library runner. Run it from any directory; it finds this repository from its own location. It selects Xcode through `DEVELOPER_DIR`, never changes `xcode-select`, and requires the qualified **Xcode 27.0 build 27A266a / Apple Swift 6.4 build swiftlang-6.4.0.34.1**. A different toolchain fails before build qualification. Changing that pin requires a deliberate qualification update.
+`validate.sh` invokes the Python 3 standard-library runner. Run it from any directory; it finds this repository from its own location. It selects Xcode through `DEVELOPER_DIR`, never changes `xcode-select`, and accepts Swift 6.2 or Swift 6.4, the two compilers contract 0.5.0 PLAT-01 supports. The exact toolchain identity is recorded in the report as evidence rather than enforced as an admission gate.
 
 ```sh
 DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer ./Scripts/validate.sh
@@ -31,4 +31,4 @@ This script covers local macOS validation of the existing Milestone 1 API/storag
 
 ## OS 27 and CLI checks
 
-Active packages and generated consumers now require Apple OS 27.0. The owner-approved CLI foundation is a separate executable product, with no main entry point in library tests. After building its release binary, run `python3 Scripts/test-cli.py --binary /absolute/path/to/the/tool --output /new/evidence/directory` for process-level help/verbosity/stream and staged install/man-page checks. The check requires `man` and `mandoc`; missing manual tools fail explicitly. `install-cli.sh --help` describes install/update and DESTDIR staging. Read [CLI.md](../CLI.md) and [current evidence](../Documentation/Engineering/OS27CLI/README.md).
+Active packages and generated consumers require Apple OS 26.0 and resolve at swift-tools-version 6.2. The owner-approved CLI foundation is a separate executable product, with no main entry point in library tests. After building its release binary, run `python3 Scripts/test-cli.py --binary /absolute/path/to/the/tool --output /new/evidence/directory` for process-level help/verbosity/stream and staged install/man-page checks. The check requires `man` and `mandoc`; missing manual tools fail explicitly. `install-cli.sh --help` describes install/update and DESTDIR staging. Read [CLI.md](../CLI.md) and [current evidence](../Documentation/Engineering/OS27CLI/README.md).

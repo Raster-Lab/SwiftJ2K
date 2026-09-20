@@ -15,8 +15,16 @@ import sys
 import time
 import xml.etree.ElementTree as ET
 
-EXPECTED_SWIFT = "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)"
-EXPECTED_XCODE = "Xcode 27.0\nBuild version 27A266a"
+# Contract 0.5.0: Swift 6.2 is the manifest minimum and 6.4 the qualified
+# primary toolchain, so both are accepted here. Pinning one exact build string
+# made this script unrunnable on every machine but the one that produced the
+# original evidence, and pinning a preview Xcode made it unrunnable in CI at
+# all. The exact toolchain identity is still recorded in the report below; it
+# is evidence, not an admission gate.
+ACCEPTED_SWIFT = (
+    re.compile(r"Apple Swift version 6\.2(\.\d+)?\b"),
+    re.compile(r"Apple Swift version 6\.4(\.\d+)?\b"),
+)
 DEFAULT_CHECKS = "debug,release,consumer,repetition,sbom"
 CHECKS = {"debug", "release", "consumer", "repetition", "sbom", "asan", "tsan"}
 REPETITION_FILTER = r"(?i)(cancell|writer|lease|retain|concurrent|publication)"
@@ -158,9 +166,20 @@ def main() -> int:
 
     try:
         actual_swift = run("swift-version", ["xcrun", "swift", "--version"])
-        actual_xcode = run("xcode-version", ["xcrun", "xcodebuild", "-version"])
-        if EXPECTED_SWIFT not in actual_swift or EXPECTED_XCODE not in actual_xcode:
-            raise RuntimeError("Toolchain differs from the qualified Xcode 27A266a / Swift 6.4 build; qualify and update the pin deliberately")
+        # Xcode is recorded when present. It is not required: the Linux gates and
+        # a swift.org toolchain on macOS have no xcodebuild, and demanding one
+        # would fail those runs for a reason unrelated to what is being checked.
+        try:
+            actual_xcode = run("xcode-version", ["xcrun", "xcodebuild", "-version"])
+        except Exception:
+            actual_xcode = "unavailable"
+        if not any(pattern.search(actual_swift) for pattern in ACCEPTED_SWIFT):
+            raise RuntimeError(
+                "Swift 6.2 or 6.4 is required by contract 0.5.0 PLAT-01; found: "
+                + actual_swift.strip().splitlines()[0]
+            )
+        report["toolchain_swift"] = actual_swift.strip()
+        report["toolchain_xcode"] = actual_xcode.strip()
         report["source_commit"] = run("source-commit", ["git", "rev-parse", "HEAD"]).strip()
         report["working_tree"] = run("working-tree", ["git", "status", "--short"])
         report["manifest_sha256"] = hashlib.sha256(manifest.encode()).hexdigest()

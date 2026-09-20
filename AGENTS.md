@@ -4,9 +4,9 @@ Applies to Claude, Codex and other coding agents working in this repository.
 
 ## Start here
 
-Current owner-approved baseline: Apple OS 27.0 and the CLI foundation; read [current qualification](Documentation/Engineering/OS27CLI/README.md) before applying historical OS 26 feature decisions.
+Current owner-approved baseline: Apple OS 26.0 and the CLI foundation. Contract 0.5.0 reversed the 0.4.0 raise to OS 27; the OS 27 records under Documentation/Engineering/OS27CLI are superseded history, not the current baseline.
 
-For the compiler upgrade, read the [Swift 6.4 manifesto](Documentation/Engineering/Swift64/Swift_6.4_Upgrade_Manifesto_v1.0.0.md), [suite supplement](Documentation/Engineering/Swift64/Swift_Image_Compression_Suite_Swift_6.4_Supplement_v1.0.0.md), then the [historical upgrade record and feature register](Documentation/Engineering/Swift64/README.md). Preserve the supplied files byte-for-byte. Current contract 0.4.0 supersedes their older inspected contract snapshot; historical evidence is not rewritten.
+For the compiler upgrade, read the [Swift 6.4 manifesto](Documentation/Engineering/Swift64/Swift_6.4_Upgrade_Manifesto_v1.0.0.md), [suite supplement](Documentation/Engineering/Swift64/Swift_Image_Compression_Suite_Swift_6.4_Supplement_v1.0.0.md), then the [historical upgrade record and feature register](Documentation/Engineering/Swift64/README.md). Preserve the supplied files byte-for-byte. Current contract 0.5.0 supersedes their older inspected contract snapshot; historical evidence is not rewritten.
 
 Read `README.md`, `HISTORY.md`, this file and `IMPLEMENTATION.md`, then all seven common contract documents in `Documentation/`. Read the repository-specific `TRANSCODING.md` when present before work affecting transcoding. `CLAUDE.md` points here and is not a separate policy. Follow the precedence in `Documentation/SUITE_POLICY.md`.
 
@@ -48,4 +48,4 @@ Later task prompts must name the next milestone explicitly. Repository creation 
 
 ## Current platform and CLI direction
 
-The owner approved Apple OS 27.0 minima and the CLI foundation in contract 0.4.0. Read [OS 27/CLI qualification](Documentation/Engineering/OS27CLI/README.md) and [CLI.md](CLI.md); these supersede OS 26 constraints and feature deferrals based only on that older floor. Preserve archived inputs and records. Keep help, verbosity, VERSION, man pages and installer behaviour aligned. Library code must not terminate a process; the executable alone maps documented CLI exit statuses. Codec implementations still require their assigned milestone.
+The owner approved the CLI foundation in contract 0.4.0 and reverted the Apple minima to 26.0 in contract 0.5.0. Read [CLI.md](CLI.md) for the CLI foundation; the [OS 27/CLI record](Documentation/Engineering/OS27CLI/README.md) is superseded history for its platform claims, and its CLI content remains current. Do not adopt an API gated above OS 26. Preserve archived inputs and records. Keep help, verbosity, VERSION, man pages and installer behaviour aligned. Library code must not terminate a process; the executable alone maps documented CLI exit statuses. Codec implementations still require their assigned milestone.

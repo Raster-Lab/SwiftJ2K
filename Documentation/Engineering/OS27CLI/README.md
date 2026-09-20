@@ -1,5 +1,12 @@
 # SwiftJ2K: OS 27 and CLI qualification
 
+> **Superseded for its platform claims — contract 0.5.0, 20 September 2026.**
+> The Apple deployment floors recorded below as active are **no longer current**: contract
+> 0.5.0 returned them to 26.0. No generally available Xcode ships OS 27 SDKs, no stable
+> `macos-27` CI runner exists, and Swift 6.4.0 rejects a 27.0 deployment target, so the OS 27
+> results here cannot currently be reproduced and must not be cited as qualification. They are
+> retained as history and may be regenerated if Xcode 27 reaches general availability.
+> The CLI help, verbosity, manual and installer content in this record remains current.
 **Development candidate 12.1.0-dev.2, shared contract 0.4.0, 19 September 2026.** The owner authorised macOS/iOS 27 and corresponding Apple platforms, comprehensive command-line help, selectable verbosity and UNIX manuals before codec milestones. Active Apple minima are now **macOS, iOS/iPadOS, tvOS, visionOS and watchOS 27.0**. Swift tools 6.4 / Swift 6 language mode remain. Linux retains its independent Ubuntu 24.04 reference distribution and still needs native qualification.
 
 The successor branch is `codex/swift-6-4-upgrade`, continuing [draft PR #5](https://github.com/Raster-Lab/SwiftJ2K/pull/5) from [`c213db53913367063d4204a5561a89b1071bbf00`](https://github.com/Raster-Lab/SwiftJ2K/commit/c213db53913367063d4204a5561a89b1071bbf00). That PR is stacked on the Milestone 1 draft. No merge, tag, release or codec algorithm implementation is included. Source and history in the legacy repositories are untouched. The preceding working tree was clean.

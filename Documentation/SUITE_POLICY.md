@@ -1,6 +1,6 @@
 # Swift Image Compression Suite — implementation baseline
 
-Contract version: **0.4.0**. Updated: **19 September 2026**.
+Contract version: **0.5.0**. Updated: **20 September 2026**.
 Status: **engineering specification; Milestone 1 implementation evidence is recorded in MILESTONE1.md. Later codec and platform gates remain planned**.
 
 This is the common engineering specification for four independent successor libraries. It records the owner's accepted direction and makes concrete implementation choices for the coding agent. Milestone 1 public API shapes and owning storage have been compiler-validated to the coverage recorded in MILESTONE1.md and Engineering/Swift64/README.md. Planned codec behaviour, engineering thresholds and unexecuted platforms remain qualification gates; those records do not constitute a separate human approval. Do not describe this baseline as a released SDK or a conformance certificate.
@@ -47,7 +47,7 @@ Keep each shared document byte-identical across the four repositories. Any contr
 
 ## First coding task — Milestone 1
 
-Start with contract feasibility, as numbered in every repository's `IMPLEMENTATION.md`. Establish the Swift 6.4 package and local API/owning-memory types, validate descriptors, and prove the adapter and ownership lifecycle using synthetic sample buffers. Settle the concrete lease-token signatures once and mirror the refinement across all four repositories before codec migration. Keep any API-shape experiments or test doubles clearly separate from advertised codec functionality.
+Start with contract feasibility, as numbered in every repository's `IMPLEMENTATION.md`. Establish the package and local API/owning-memory types, validate descriptors, and prove the adapter and ownership lifecycle using synthetic sample buffers. Settle the concrete lease-token signatures once and mirror the refinement across all four repositories before codec migration. Keep any API-shape experiments or test doubles clearly separate from advertised codec functionality.
 
 Milestone 1 does not migrate codec algorithms or implement a real compressed-image transcode. Its exit evidence is compiling common call shapes, meaningful descriptor/lifetime/concurrency tests and independent consumer use. The complete end-to-end proof below belongs to Milestones 2 and 3. Each later milestone remains a separately assigned coding task.
 
@@ -86,3 +86,15 @@ All seven shared documents and their SHA-256 manifest advance together. Public s
 The owner explicitly raised the Apple baseline to macOS/iOS/iPadOS/tvOS/visionOS/watchOS **27.0**, retaining Swift 6.4 and Swift 6 language mode. This supersedes OS 26 preservation instructions in contract 0.3.0 and the immutable supplied manifesto/supplement. Linux retains its independent Ubuntu 24.04 reference distribution. Update active manifests, examples, validation consumers and instructions; preserve historical OS 26 evidence as history.
 
 The owner also authorised CLI help, selectable verbosity and UNIX manual support ahead of codec milestones. Implement only honest help/version/capability reporting and explicitly unsupported codec verbs. Each standalone executable and installer carries its matching man page. CLI rules CLI-07..09 apply consistently. The libraries retain their public API and owning-memory semantics; safe endian-aware span operations may now use their OS 27 overloads. Other newly available language/runtime features still require an actual use and justification. No codec algorithm milestone or release is authorised by this foundation change. Development identifiers advance to `-dev.2`; stable targets remain unchanged. See [the OS 27 and CLI record](Engineering/OS27CLI/README.md).
+
+## Contract revision 0.5.0 — 20 September 2026
+
+**The Apple deployment floor returns to 26.0, reversing the 0.4.0 raise to 27.0.** The CLI authorisation in 0.4.0 stands unchanged; only the platform floor and the compiler minimum are revised.
+
+The owner raised the floor to 27.0 in 0.4.0 on the understanding that OS 27 was an available baseline. Verification found otherwise. Xcode 27 is a public preview with a 27.2 beta; no generally available Xcode ships OS 27 SDKs, and no stable `macos-27` continuous-integration runner exists, so every OS 27 qualification claim is currently unreproducible. Swift 6.4.0, released 15 September 2026, rejects a 27.0 deployment target outright: its supported range ends at 26.5.x. The raise therefore could not be validated on any supported configuration.
+
+The raise also had a cause worth recording. It was not an independent platform decision: 0.4.0 adopted the byte-order overloads of `RawSpan.load(fromByteOffset:as:_:)` and `OutputRawSpan.append(_:as:_:)`, which are gated to OS 27, and the floor moved so that they would compile. Contract 0.3.0 had already specified the correct treatment — explicit fixed-width integer endian conversion, without raising the runtime floor — and that rule is restored. PLAT-02 now states the general principle: an API gated above the floor is a reason to choose a different API, not a reason to raise the floor.
+
+**The compiler minimum returns to Swift 6.2, with Swift 6.4 as the qualified primary toolchain.** 0.3.0 made 6.4 the minimum and declared 6.2 historical. A manifest floor is a resolution constraint on consumers, and every current consumer of the predecessor libraries resolves at tools version 6.2; a 6.4 floor would strand them for no functional gain. Both toolchains are supported and both run in CI. The sources build unchanged on each.
+
+Impact on all four codecs and their adapters is identical, since the affected sample-access code and manifests are mirrored. Required actions: Apple platform minima return to 26.0 in every manifest, example and validation consumer; `swift-tools-version` returns to 6.2; byte-order sample access uses explicit fixed-width integer conversion; CI covers Swift 6.2 and 6.4. Public signatures, ownership and fidelity semantics, milestone boundaries, Linux scope, development identifiers and stable release targets are unchanged. OS 27 and Swift 6.4 evidence recorded under 0.3.0 and 0.4.0 is retained as history and marked superseded rather than deleted; it may be regenerated if and when Xcode 27 reaches general availability. All seven shared documents and their SHA-256 manifest advance together. This revision authorises no codec milestone or release.
