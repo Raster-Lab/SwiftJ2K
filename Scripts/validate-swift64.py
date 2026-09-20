@@ -62,7 +62,7 @@ def main() -> int:
     env["SWIFTPM_MODULECACHE_OVERRIDE"] = str(output / "swift-cache")
     report = {"package": name, "repository": str(repo), "started_utc": stamp,
               "developer_dir": env["DEVELOPER_DIR"], "build_engine": "swiftbuild",
-              "expected_swift": EXPECTED_SWIFT, "expected_xcode": EXPECTED_XCODE,
+              "accepted_swift": [pattern.pattern for pattern in ACCEPTED_SWIFT],
               "selected_checks": sorted(selected), "not_run_checks": sorted(CHECKS - selected),
               "package_sandbox_disabled": args.disable_package_sandbox, "build_jobs": args.jobs,
               "commands": [], "test_runs": [], "sboms": [], "open_gates": [], "status": "running"}

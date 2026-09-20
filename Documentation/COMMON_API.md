@@ -1,6 +1,6 @@
 # Common API contract
 
-Contract **0.5.0**. Normative implementation specification. Consult MILESTONE1.md for the implemented feasibility surface; codec operations remain deferred.
+Contract **0.6.0**. Normative implementation specification. Consult MILESTONE1.md for the implemented feasibility surface; codec operations remain deferred.
 
 ## Public naming and module boundary
 

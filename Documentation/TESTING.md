@@ -1,6 +1,6 @@
 # Unit, regression, interoperability and security testing
 
-Contract **0.5.0**. Required evidence for coding agents. Executed Milestone 1 results are recorded separately in each repository; later codec and release gates remain requirements.
+Contract **0.6.0**. Required evidence for coding agents. Executed Milestone 1 results are recorded separately in each repository; later codec and release gates remain requirements.
 
 ## General rules
 
@@ -94,3 +94,17 @@ For both operations, verify bounded workspace/copies, cancellation/owner lifetim
 ## CLI foundation acceptance — contract 0.4.0
 
 Run `Scripts/test-cli.py` against the built executable. Cover help/version/command-local help, JSON capability truth, verbosity levels and aliases, range/usage errors, quiet conflicts, stderr separation, unavailable operations without input/output access, and deterministic closed-pipe errors. Stage installation under a temporary prefix (including spaces), replace a stale manual on update and verify `man -M` discovery plus rendered text. These tests supplement library/Xcode tests and do not prove codec stream interoperability.
+
+## Shared-storage evidence bar — contract 0.6.0
+
+**TEST-09.** A shared-storage claim carries five independent pieces of evidence, and the Milestone 3 spikes showed each one catching something the others missed.
+
+Compare the refactored shipped path against the unmodified predecessor byte for byte, over a corpus that reaches every branch the change touched — both bit widths, both sign conventions, one and several components, packed and padded rows, odd widths, tiled and lossy routes, and any accelerated route that reaches the same stage. Where a library's own suite cannot run on the available host, say so and name the substitute rather than reporting silence as a pass.
+
+On the encode side compare codestreams, not samples. Any difference in what the input stage read changes entropy-coding decisions, so byte identity tests the whole input path at once; sample comparison passed a spike whose shared encode had silently dropped its container wrapper. Change only the caller's row padding and require the codestream to be unchanged, which is the direct test that padding cannot reach the output. On the decode side require exact samples, an allocation identity matching the caller's, caller padding still holding its sentinel, and a round trip that uses a different row stride on each side so a stride cannot be mistaken for the width.
+
+Prove the tests are load-bearing by mutation: make the path ignore the caller's row stride, and make it use the wrong byte order, and record how many expectations fail. A mutation that changes nothing means the evidence is decorative.
+
+Take copy accounting from allocator telemetry in an ordinary build, and state the build. A sanitizer may quarantine freed blocks and report them as live, which makes the same figures meaningless; run the correctness sections under the sanitizers and the accounting sections outside them.
+
+Exercise the ownership rules, not only the happy path: a refused layout leaves a destination reusable, a sealed destination refuses a second writer, concurrent readers of one source agree, and any `@unchecked Sendable` bridge runs under both the thread and address sanitizers. Report the check count, and report failures with the numbers attached.
