@@ -30,6 +30,10 @@ Milestone 2 is implemented on branch `milestone2/scalar-lossless-j2k` against pr
 
 The shared-storage path is proved for the scalar lossless codec: caller-destination decode and sealed-source encode with telemetry-checked zero pixel allocations and copies, sentinel padding, stride independence, mutation testing and the extended contract harness with both reference decoders ([MILESTONE3.md](Documentation/MILESTONE3.md)). The cross-codec JPEG-LS leg of the first suite pair is unexecuted because SwiftJLS advertises no encoder; it is the corresponding codec extension (SwiftJ2K re-encode from the same owner) that passes. Native transcoding remains at Milestone 1 capability.
 
+### Milestone 4 status — executed 22 September 2026
+
+Decoder coverage now spans the Part 1 greyscale lossless syntax: any tile grid and origin, quality layers, all code-block styles, all progression orders, precincts, SOP/EPH, tile-parts and tile-part overrides, validated against 44 OpenJPEG and Kakadu fixtures. The CLI codec verbs operate through the NRRD profile. Encoding remains single-tile, single-layer, default style. Still deferred: HTJ2K, 9/7 and quantised coding, colour, signed and sub-sampled components, ROI, POC, PPM/PPT, JP2/JPH containers, acceleration, the auxiliary products and native transcoding. Evidence and executed platforms: [MILESTONE4.md](Documentation/MILESTONE4.md).
+
 
 ### Migration focus
 

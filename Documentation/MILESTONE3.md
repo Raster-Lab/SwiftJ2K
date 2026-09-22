@@ -40,7 +40,7 @@ Host: Apple M5, macOS 26.5.1, Xcode 26.2 (17C52), Apple Swift 6.2.3, Swift 6 lan
 - **Round trip with different strides on each side**: decode into a padded owner, encode from it with one read borrow and no pixel allocation, the codestream equals the codestream of a packed copy of the same samples byte for byte, and the result decodes into a second owner with a different prefix and padding with sentinels intact.
 - **Both copy policies** take the same path and report no copy.
 - **Mutation testing**: unmutated path fails 0 checks; ignoring the row stride fails 3 of 3 (padding disturbed, samples wrong, encoder reads padding and rejects it); wrong byte order fails 2 of 3 (padding untouched by design, samples wrong, encoder rejects out-of-range samples).
-- **Ownership rules**: a precision mismatch is refused in preflight with no write borrow and the destination reusable; cancellation after admission throws `CancellationError`, invalidates the destination and never starts a write; a cancelled encode publishes nothing and leaves the source encodable; six concurrent encodes from one caller owner agree byte for byte while a writer request on the sealed owner fails.
+- **Ownership rules**: a precision mismatch is refused in preflight with no write borrow and the destination reusable; cancellation after admission throws `CancellationError` and invalidates the destination (since Milestone 4 the single write borrow spans the whole decode, so it has begun; nothing is published); a cancelled encode publishes nothing and leaves the source encodable; six concurrent encodes from one caller owner agree byte for byte while a writer request on the sealed owner fails.
 
 ### Contract harness (`Integration/ContractHarness`)
 

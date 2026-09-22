@@ -1,32 +1,102 @@
-.TH SWIFTJ2K 1 "September 22, 2026" "12.1.0-dev.4" "Swift Image Compression Suite"
+.TH SWIFTJ2K 1 "September 22, 2026" "12.1.0-dev.5" "Swift Image Compression Suite"
 .SH NAME
-swiftj2k \- help, version and capability reporting for SwiftJ2K
+swiftj2k \- lossless JPEG 2000 encode, decode, inspect and validate for SwiftJ2K
 .SH SYNOPSIS
 .B swiftj2k
 .RI [ options ] " command " [ options ]
 .SH DESCRIPTION
-This development tool provides help, version and truthful library capability
-reporting.
-The library implements scalar lossless JPEG 2000 Part 1 coding for unsigned
-greyscale images; the reserved encode, decode, inspect and validate commands
-and native transcode are not yet wired to it and return 4 without opening
-input, consuming standard input or creating output.
+The standalone executable of the SwiftJ2K library. It losslessly encodes
+unsigned greyscale images (1 to 16 meaningful bits in 16-bit samples) to raw
+JPEG 2000 Part 1 codestreams, decodes such codestreams (any tile grid,
+quality layers, code-block styles and progression orders, reversible 5/3
+wavelet, no quantisation), inspects and validates them, and reports the
+library's capabilities. Images enter and leave through the NRRD interchange
+profile below; a shell pipe carries bytes, never shared storage. Native
+JPEG 2000 to HTJ2K transcoding is reserved and returns 4.
 Build with Swift 6.2 or later (6.4 qualified) in Swift 6 language mode. Apple OS
-minimum is 26.0.
-CLI hosts are macOS and Linux; consult qualification records for executed
-coverage.
+minimum is 26.0. CLI hosts are macOS and Linux; consult the qualification
+records for executed coverage.
 .SH COMMANDS
+.TP
+.B encode \-i IMAGE.nrrd \-o OUT.j2k [\-\-levels N] [\-\-code-block WxH] [\-\-precision N]
+Encode one NRRD greyscale image to a raw codestream: reversible 5/3 wavelet,
+one tile, one layer, default code-block style. \-\-levels selects 0..32
+decomposition levels (default min(5, floor(log2(min(width, height))))),
+\-\-code-block a power-of-two size from 4 to 1024 whose area is at most 4096
+(default 64x64), and \-\-precision the meaningful bits when the NRRD header
+carries no swiftj2k.meaningfulbits key (default 16). A key that contradicts
+\-\-precision is a usage error.
+.TP
+.B decode \-i IN.j2k \-o IMAGE.nrrd
+Decode a codestream to the NRRD profile with little-endian samples and the
+codestream's meaningful bits recorded in the header key.
+.TP
+.B inspect \-i IN.j2k [\-\-json]
+Report geometry, precision and format from the headers without decoding
+samples; output on stdout as text or one JSON document.
+.TP
+.B validate \-i IN.j2k [\-\-json]
+Fully decode in memory and report success or the defined failure; no output
+file is written.
 .TP
 .B capabilities [\-\-json]
 Report actual library encode/decode/inspect support. JSON is one document on
 stdout.
-True values describe the library API, not the reserved CLI commands.
 .TP
 .B help [command]
 Show global or command-specific help. No arguments also show global help.
 .TP
 .B version
 Show the development version.
+.TP
+.B transcode
+Reserved; returns 4 without opening input or creating output.
+.SH INPUT AND OUTPUT OPTIONS
+.TP
+.B \-i, \-\-input PATH
+Input file, or \- for standard input, which is read completely first.
+.TP
+.B \-o, \-\-output PATH
+Final output file, or \- for binary standard output. A file is written to a
+sibling temporary file and renamed into place; an existing file is refused
+(exit 6) unless \-\-overwrite is given; nothing partial remains after a
+failure. Binary standard output cannot be rolled back and a closed pipe is
+reported as exit 6.
+.TP
+.B \-\-input-format j2k|nrrd, \-\-output-format j2k|nrrd
+Declare formats; the declaration is checked against the bytes and a mismatch
+is exit 4. Without a declaration the format is detected from the bytes only,
+never from a filename.
+.TP
+.B \-\-overwrite
+Permit replacing an existing output file.
+.TP
+.B \-\-json
+For inspect and validate, a JSON document on stdout. For encode and decode,
+a JSON report on stderr so that binary stdout stays clean.
+.SH LIMIT AND POLICY OPTIONS
+.TP
+.B \-\-mode lossless
+The only mode; near-lossless, lossy and \-\-max-error return 4.
+.TP
+.B \-\-backend scalar
+The only backend; any other name returns 4.
+.TP
+.B \-\-copy-policy require-sharing|allow-copy
+Accepted; neither policy copies on this path.
+.TP
+.B \-\-threads N, \-\-max-memory BYTES, \-\-timeout SECONDS
+Worker limit 1..8, admission budget in bytes for input, output and workspace,
+and the operation deadline (exit 5 when exceeded).
+.SH NRRD PROFILE
+Attached header ending in an empty line, magic NRRD0001 to NRRD0005, fields
+type: uint16, dimension: 2, sizes: W H, encoding: raw and endian: little or
+big. The key swiftj2k.meaningfulbits:=N (1..16) records the declared
+precision; decode always writes it. Detached data files, line or byte skips,
+block sizes, other types, dimensions and encodings are refused (exit 4);
+a data length other than W*H*2 bytes is malformed (exit 3). Comments are
+ignored. This is the CLI-04 interchange profile of the suite contract, not a
+private format.
 .SH OPTIONS
 .TP
 .B \-h, \-\-help
@@ -52,31 +122,23 @@ Default 0 reports errors only. Levels are cumulative:
 1 summary; 2 stages; 3 capability/configuration details; 4 elapsed timing;
 5 bounded trace. Invalid levels or totals above 5 return 2.
 Explicit levels set and repeated flags increment in argument order.
-Diagnostics use stderr. Requested help/version/capability data uses stdout.
-No payload bytes, metadata, raw addresses or input/output paths are logged.
-.SH RESERVED CODEC SYNTAX
-Codec command help lists reserved \-i/\-\-input, \-o/\-\-output,
-\-\-input-format, \-\-output-format, \-\-mode, \-\-max-error,
-\-\-backend, \-\-copy-policy, \-\-threads, \-\-max-memory,
-\-\-timeout, \-\-overwrite and \-\-json.
-These are not implemented payload operations. A single hyphen will denote
-standard
-input/output in a future codec command. Default future mode is lossless and
-copy
-policy is require-sharing. No private intermediate image format is
-implemented.
+Diagnostics use stderr. Requested help/version/capability/inspection data uses
+stdout. No payload bytes, metadata, raw addresses or input/output paths are
+logged.
 .SH EXIT STATUS
-0 success/help/version; 2 invalid usage; 4 unsupported operation;
-6 output I/O failure including a closed pipe.
-Future codec statuses reserve 3 malformed input, 5 resource/deadline,
-7 internal failure and 130 user cancellation.
+0 success; 2 invalid usage or argument; 3 malformed input; 4 unsupported
+format, feature, layout or backend; 5 resource limit or deadline; 6 I/O or
+storage failure, including an existing output without \-\-overwrite and a
+closed pipe; 7 internal failure; 130 interrupted by SIGINT, with nothing
+published.
 .SH EXAMPLES
 .nf
-swiftj2k \-h
-swiftj2k help capabilities
+swiftj2k encode \-i slice.nrrd \-o slice.j2k \-\-precision 12
+swiftj2k decode \-i slice.j2k \-o slice.nrrd \-\-overwrite
+swiftj2k decode \-i \- \-o \- < slice.j2k | swiftj2k encode \-i \- \-\-input-format nrrd \-o out.j2k
+swiftj2k inspect \-i slice.j2k \-\-json
+swiftj2k validate \-i slice.j2k
 swiftj2k capabilities \-\-json \-vv
-swiftj2k capabilities \-verbose: 3
-swiftj2k capabilities \-\-verbose=+++++
 .fi
 .SH INSTALLATION
 Scripts/install-cli.sh installs or updates the executable and this page
@@ -91,5 +153,4 @@ No index refresh is needed for direct lookup; no sudo runs automatically.
 .SH SEE ALSO
 .BR man (1)
 .PP
-CLI.md and Documentation/Engineering/OS27CLI/README.md in the SwiftJ2K
-repository.
+CLI.md and Documentation/MILESTONE4.md in the SwiftJ2K repository.

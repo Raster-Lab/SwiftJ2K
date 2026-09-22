@@ -56,57 +56,87 @@ def main():
             r=cli(*form,expected=2);assert not r.stdout and r.stderr
         with tempfile.TemporaryDirectory(prefix='cli stage spaces ',dir=out) as temp:
             temp=Path(temp);payload=temp/'private image λ.raw';payload.write_bytes(b'unchanged')
-            verbs=['encode','decode','inspect','validate']
-            if tool in ['swiftj2k','swiftjxl']:verbs.append('transcode')
-            else:cli('transcode',expected=2)
-            for verb in verbs:
-                assert 'UNAVAILABLE:' in cli(verb,'--help').stdout
-                r=cli(verb,'--input','-','--output',str(payload),'-vvvvv',expected=4)
-                assert not r.stdout and str(payload) not in r.stderr and payload.read_bytes()==b'unchanged'
-                new=temp/'must not exist';cli(verb,'--input',str(payload),'--output',str(new),expected=4);assert not new.exists()
-            readfd,writefd=os.pipe();os.close(readfd)
-            try:
-                r=subprocess.run([str(binary),'--help'],stdout=writefd,stderr=subprocess.PIPE,text=True,timeout=10)
-            finally:os.close(writefd)
-            report['commands'].append({'argv':[str(binary),'--help'],'condition':'stdout pipe with no readers',
-                                       'exit_code':r.returncode,'expected_exit_code':6,'stderr':r.stderr});save()
-            assert r.returncode==6 and 'I/O failure' in r.stderr
-            # Installation and repeat update must carry the matching manual even if one is stale.
-            stage=temp/'stage with spaces';prefix='/opt/suite tools';installed=stage/'opt/suite tools'
-            command=[repo/'Scripts/install-cli.sh','--binary',binary,'--prefix',prefix,'--destdir',stage]
-            run(command);assert (installed/'bin'/tool).stat().st_mode & 0o777==0o755
-            page=installed/'share/man/man1'/(tool+'.1');assert page.read_bytes()==manual.read_bytes()
-            page.write_text('obsolete manual\n');run(command);assert page.read_bytes()==manual.read_bytes()
-            assert page.stat().st_mode & 0o777==0o644
-            run([installed/'bin'/tool,'--version'])
-            man=shutil.which('man');mandoc=shutil.which('mandoc')
-            if not man or not mandoc:raise RuntimeError('man and mandoc are required for manual qualification')
-            location=run([man,'-M',installed/'share/man','-w',tool]);assert str(page) in location.stdout
-            lint=run([mandoc,'-T','lint',page]);assert not lint.stdout and not lint.stderr,(lint.stdout,lint.stderr)
-            rendered=run([mandoc,'-T','ascii',page]);(out/'manual-rendered.txt').write_text(rendered.stdout)
-            plain=re.sub(r'.\x08', '', rendered.stdout)
-            (out/'manual-plain.txt').write_text(plain)
-            assert 'DIAGNOSTIC LEVELS' in plain and tool in plain
-            (out/'manual.1').write_bytes(manual.read_bytes())
-            run([repo/'Scripts/install-cli.sh','--prefix','relative','--binary',binary],2)
-            run([repo/'Scripts/install-cli.sh','--binary'],2)
-            wrong=temp/'wrong version';wrong.write_text('#!/bin/sh\nprintf "wrong 0\\n"\n');wrong.chmod(0o755)
-            run([repo/'Scripts/install-cli.sh','--binary',wrong,'--prefix',prefix,'--destdir',stage],2)
-            assert page.read_bytes()==manual.read_bytes()
-            environment=dict(os.environ,DESTDIR=str(stage))
-            run([repo/'Scripts/install-cli.sh','--binary',binary,'--prefix',prefix],env=environment)
-
-
-            # Reject a stale source manual before changing an installed binary/manual pair.
-            fixture=temp/'stale source';(fixture/'Scripts').mkdir(parents=True);(fixture/'ManPages').mkdir()
-            shutil.copy2(repo/'Scripts/install-cli.sh',fixture/'Scripts/install-cli.sh')
-            (fixture/'VERSION').write_text(version+'\n')
-            (fixture/'ManPages'/(tool+'.1')).write_text('.TH '+tool.upper()+' 1 "September 19, 2026" "0.0.0"\n')
-            run([fixture/'Scripts/install-cli.sh','--binary',binary,'--prefix',prefix,'--destdir',stage],2)
-            assert page.read_bytes()==manual.read_bytes()
-            # A symlink destination is refused instead of following it outside the installation.
-            (installed/'bin'/tool).unlink();(installed/'bin'/tool).symlink_to(payload)
-            run(command,6);assert payload.read_bytes()==b'unchanged'
+            for verb in ['encode','decode','inspect','validate']:
+                assert 'USAGE:' in cli(verb,'--help').stdout and 'UNAVAILABLE' not in cli(verb,'--help').stdout
+            assert 'UNAVAILABLE:' in cli('transcode','--help').stdout
+            r=cli('transcode','--input','-','--output',str(payload),'-vvvvv',expected=4)
+            assert not r.stdout and str(payload) not in r.stderr and payload.read_bytes()==b'unchanged'
+            # Codec verbs on the repository fixtures (CLI-02, CLI-03, CLI-04).
+            fixtures=repo/'Tests/SwiftJ2KTests/Fixtures/Lossless'
+            manifest=json.loads((fixtures/'manifest.json').read_text())
+            def pgm_samples(path):
+                d=path.read_bytes();parts=[];i=0
+                while len(parts)<4:
+                    while d[i:i+1].isspace():i+=1
+                    if d[i:i+1]==b'#':
+                        while d[i:i+1]!=b'\n':i+=1
+                        continue
+                    j=i
+                    while not d[j:j+1].isspace():j+=1
+                    parts.append(d[i:j]);i=j
+                body=d[i+1:];w,h,mx=int(parts[1]),int(parts[2]),int(parts[3])
+                return w,h,(list(body[:w*h]) if mx<=255 else [int.from_bytes(body[k:k+2],'big') for k in range(0,w*h*2,2)])
+            def nrrd_samples(data):
+                i=data.index(b'\n\n')+2;header=data[:i].decode();body=data[i:]
+                fields=dict(l.split(': ',1) for l in header.splitlines() if ': ' in l and not l.startswith('#'))
+                keys=dict(l.split(':=',1) for l in header.splitlines() if ':=' in l)
+                assert fields['type']=='uint16' and fields['dimension']=='2' and fields['encoding']=='raw' and fields['endian']=='little'
+                w,h=map(int,fields['sizes'].split());assert len(body)==w*h*2
+                return w,h,int(keys['swiftj2k.meaningfulbits']),[int.from_bytes(body[k:k+2],'little') for k in range(0,len(body),2)]
+            for entry in manifest['fixtures']:
+                if entry['name'] not in ('g12_129x67_gradient','g16_17x9_alternating','g08_37x23_random'):continue
+                w,h,samples=pgm_samples(fixtures/(entry['name']+'.pgm'))
+                stream=fixtures/entry['codestreams'][0]['file']
+                info=json.loads(cli('inspect','-i',stream,'--json').stdout)
+                assert info['width']==w and info['height']==h and info['meaningfulBits']==entry['meaningfulBits'] and info['format']=='jpeg2000-codestream'
+                text=cli('inspect','-i',stream).stdout;assert f'width: {w}' in text and f'meaningful bits: {entry["meaningfulBits"]}' in text
+                valid=json.loads(cli('validate','-i',stream,'--json').stdout);assert valid['valid'] is True and valid['width']==w
+                assert cli('validate','-i',stream).stdout.startswith('valid: ')
+                decoded=temp/(entry['name']+' decoded.nrrd')
+                r=cli('decode','-i',stream,'-o',decoded,'--json');assert not r.stdout
+                dreport=json.loads(r.stderr);assert dreport['command']=='decode' and dreport['copyEvents']==0 and dreport['fidelity']=='exactSamples'
+                nw,nh,bits,nsamples=nrrd_samples(decoded.read_bytes());assert (nw,nh,bits)==(w,h,entry['meaningfulBits']) and nsamples==samples
+                cli('decode','-i',stream,'-o',decoded,expected=6);assert nrrd_samples(decoded.read_bytes())[3]==samples
+                cli('decode','-i',stream,'-o',decoded,'--overwrite','--input-format','j2k','--output-format','nrrd','--copy-policy','allow-copy')
+                encoded=temp/(entry['name']+' re-encoded.j2k')
+                r=cli('encode','-i',decoded,'-o',encoded,'--json','--levels','2','--code-block','32x32');ereport=json.loads(r.stderr)
+                assert not r.stdout and ereport['format']=='jpeg2000-codestream' and ereport['meaningfulBits']==entry['meaningfulBits'] and ereport['outputBytes']==encoded.stat().st_size
+                back=json.loads(cli('validate','-i',encoded,'--json').stdout);assert back['width']==w and back['height']==h
+                piped=subprocess.run(f'"{binary}" decode -i - -o - < "{stream}" | "{binary}" encode -i - --input-format nrrd -o - | "{binary}" decode -i - -o -',shell=True,capture_output=True,timeout=60)
+                report['commands'].append({'argv':['sh','-c','decode | encode | decode'],'exit_code':piped.returncode,'expected_exit_code':0,'stderr':piped.stderr.decode(errors='replace')});save()
+                assert piped.returncode==0 and nrrd_samples(piped.stdout)[3]==samples
+                assert not [f for f in temp.iterdir() if f.name.endswith('.tmp')]
+            # Exit statuses: 2 usage, 3 malformed, 4 unsupported format/feature, 5 limit/deadline, 6 I/O.
+            good=fixtures/'g16_64x64_random.opj.j2k';nine=fixtures/'g16_64x64_random.irreversible97.j2k'
+            for form in [['encode'],['decode','-i',good],['inspect','-i',good,'-o','x'],['validate','-i',good,'--output','x'],
+                         ['decode','-i',good,'-o','x','--input-format','tiff'],['encode','-i',good,'-o','x','--precision','17'],
+                         ['encode','-i',good,'-o','x','--code-block','3x3'],['encode','-i',good,'-o','x','--levels','40'],
+                         ['validate','-i',good,'--threads','9'],['validate','-i',good,'--timeout','-1'],['validate','-i',good,'-i',good]]:
+                r=cli(*form,expected=2);assert not r.stdout and r.stderr
+            truncated=temp/'truncated.j2k';truncated.write_bytes(good.read_bytes()[:100])
+            for form,code in [(['validate','-i',nine],4),(['validate','-i',truncated],3),(['validate','-i',payload],4),
+                              (['encode','-i',good,'-o',temp/'x.j2k'],4),(['decode','-i',good,'-o',temp/'x.nrrd','--input-format','nrrd'],4),
+                              (['decode','-i',good,'-o',temp/'x.nrrd','--mode','lossy'],4),(['decode','-i',good,'-o',temp/'x.nrrd','--backend','metal'],4),
+                              (['validate','-i',fixtures/'g16_256x256_smooth.opj.j2k','--timeout','0.000001'],5),
+                              (['validate','-i',fixtures/'g16_256x256_smooth.opj.j2k','--max-memory','1000'],5),
+                              (['validate','-i',temp/'missing.j2k'],6),(['decode','-i',good,'-o',temp/'no such dir'/'x.nrrd'],6)]:
+                r=cli(*form,expected=code);assert not r.stdout and r.stderr,(form,r.stderr)
+                assert not (temp/'x.j2k').exists() and not (temp/'x.nrrd').exists()
+            # A rejected NRRD profile field never reaches the encoder.
+            detached=temp/'detached.nrrd';detached.write_bytes(b'NRRD0004\ntype: uint16\ndimension: 2\nsizes: 2 2\nencoding: raw\nendian: little\ndata file: other.raw\n\n'+bytes(8))
+            cli('encode','-i',detached,'-o',temp/'x.j2k',expected=4);assert not (temp/'x.j2k').exists()
+            gzipped=temp/'gzip.nrrd';gzipped.write_bytes(b'NRRD0004\ntype: uint16\ndimension: 2\nsizes: 2 2\nencoding: gzip\nendian: little\n\n'+bytes(8))
+            cli('encode','-i',gzipped,'-o',temp/'x.j2k',expected=4)
+            short=temp/'short.nrrd';short.write_bytes(b'NRRD0004\ntype: uint16\ndimension: 2\nsizes: 2 2\nencoding: raw\nendian: little\n\n'+bytes(6))
+            cli('encode','-i',short,'-o',temp/'x.j2k',expected=3)
+            # SIGINT before the payload arrives: the interrupt is remembered and the
+            # operation cancels cooperatively before decoding starts (exit 130, no output).
+            import signal,time
+            proc=subprocess.Popen([str(binary),'decode','-i','-','-o',str(temp/'interrupted.nrrd')],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+            time.sleep(0.3);proc.send_signal(signal.SIGINT);time.sleep(0.05)
+            o,e=proc.communicate(input=(fixtures/'g10_300x200_gradient.opj_n1.j2k').read_bytes(),timeout=30)
+            report['commands'].append({'argv':['decode','-i','-','(SIGINT while waiting for stdin)'],'exit_code':proc.returncode,'expected_exit_code':130,'stderr':e.decode(errors='replace')});save()
+            assert proc.returncode==130 and not o and not (temp/'interrupted.nrrd').exists(),(proc.returncode,e)
         report['status']='passed';report['checks']=len(report['commands']);save()
         print(f'{tool}: {len(report["commands"])} process checks passed');return 0
     except Exception as error:

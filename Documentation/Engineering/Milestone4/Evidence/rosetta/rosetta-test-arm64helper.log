@@ -1,0 +1,25 @@
+[0/1] Planning build
+Building for debugging...
+[0/6] <build>/x86_64-apple-macosx/debug/SwiftJ2KPackageTests.derived/runner.swift
+[1/9] Write sources
+[3/9] Copying Fixtures
+[4/9] Write swift-version-6ED5EA0491098587.txt
+[6/17] Compiling SwiftJ2KTests SharedStorageTests.swift
+[7/17] Compiling SwiftJ2KTests ContractTests.swift
+[8/18] Compiling SwiftJ2KTests resource_bundle_accessor.swift
+[9/18] Compiling SwiftJ2KTests OwnershipTests.swift
+[10/18] Compiling SwiftJ2KTests SampleAccessTests.swift
+[11/18] Compiling SwiftJ2KTests DescriptorTests.swift
+[12/18] Compiling SwiftJ2KTests LimitTests.swift
+[13/18] Emitting module SwiftJ2KTests
+[14/18] Compiling SwiftJ2KTests CancellationPublicationTests.swift
+[15/18] Compiling SwiftJ2KTests BehaviourTests.swift
+[16/18] Compiling SwiftJ2KTests LosslessCodecTests.swift
+[17/20] Compiling SwiftJ2KPackageTests runner.swift
+[18/20] Emitting module SwiftJ2KPackageTests
+[18/20] Write Objects.LinkFileList
+[19/20] Linking SwiftJ2KPackageTests
+Build complete! (7.97s)
+error: Exited with unexpected signal code 5
+swiftpm_testing_helper/Entrypoint.swift:34: Fatal error: Failed to open test bundle at path <build>/x86_64-apple-macosx/debug/SwiftJ2KPackageTests.xctest/Contents/MacOS/SwiftJ2KPackageTests: dlopen(<build>/x86_64-apple-macosx/debug/SwiftJ2KPackageTests.xctest/Contents/MacOS/SwiftJ2KPackageTests, 0x0101): tried: '/Applications/Xcode-26.2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/SwiftJ2KPackageTests' (no such file), '<build>/x86_64-apple-macosx/debug/SwiftJ2KPackageTests.xctest/Contents/MacOS/SwiftJ2KPackageTests' (mach-o file, but is an incompatible architecture (have 'x86_64', need 'arm64e' or 'arm64e.v1' or 'arm64' or 'arm64')), '/System/Volumes/Preboot/Cryptexes/OS<build>/x86_64-apple-macosx/debug/SwiftJ2KPackageTests.xctest/Contents/MacOS/SwiftJ2KPackageTests' (no such file), '<build>/x86_64-apple-macosx/debug/SwiftJ2KPackageTests.xctest/Contents/MacOS/SwiftJ2KPackageTests' (mach-o file, but is an incompatible architecture (have 'x86_64', need 'arm64e' or 'arm64e.v1' or 'arm64' or 'arm64'))
+exit 1

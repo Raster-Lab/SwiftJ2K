@@ -1,5 +1,14 @@
 # Change log
 
+## 12.1.0-dev.5 — Milestone 4 feature, CLI and platform coverage, 2026-09-22 (unreleased)
+
+- Decoder coverage of the remaining Part 1 greyscale syntax: any tile grid and image or tile origin (general-origin 5/3 lifting and band geometry on the reference grid), quality layers, all six code-block style bits (bypass with raw passes, reset, termination on each pass, vertically causal, predictable termination, segmentation symbols), codeword segments, all five progression orders, precincts, SOP/EPH, several tile-parts and tile-part header COD/COC/QCD/QCC overrides. 44 new OpenJPEG and Kakadu fixtures cover these, each cross-decoded by both tools.
+- CLI: `encode`, `decode`, `inspect` and `validate` are wired to the library over the CLI-04 NRRD interchange profile with `-` for pipes, atomic output with `--overwrite`, format checks against the bytes, JSON reports, every contract exit status and cooperative SIGINT cancellation (130). `transcode` stays reserved. `Scripts/test-cli.py` now runs 147 process checks including the codec verbs.
+- Every tile is decoded inside the destination's single write borrow, so a decode cancelled after admission has begun its write borrow before it invalidates the destination (Milestone 3 record updated).
+- Platform: Linux (Ubuntu 24.04, Swift 6.2) build and test in a container and macOS x86_64 under Rosetta are recorded in MILESTONE4.md where they executed. Two Darwin-only assumptions were removed on the way: `OwnedImageStorage` no longer relies on `Mutex.withLockIfAvailable` returning `nil` on same-thread reentry (Linux traps instead), and the CLI publishes output files with POSIX `rename(2)` because swift-corelibs-foundation's `replaceItemAt` fails on Linux.
+- Tests: the concurrent-borrow ownership test starts its second writer on a dedicated thread instead of the global dispatch queue, which the full parallel suite could starve past the test's five-second wait; 78 Swift Testing declarations.
+- Not in this milestone: HTJ2K, 9/7 and quantised coding, colour and signed components, sub-sampling, JP2 containers, multi-tile or multi-layer *encoding*, acceleration and native transcoding.
+
 ## 12.1.0-dev.4 — Milestone 3 shared-storage proof, 2026-09-22 (unreleased)
 
 - Prove the required-sharing path of the scalar lossless codec: decode writes final samples only into the caller's allocation, encode reads the sealed caller allocation once, and both report zero pixel allocations and no copy events. Task-local allocation telemetry (`StorageTelemetry`) counts every pixel and workspace allocation the module makes so the reports are checked against instrumentation, not address equality.

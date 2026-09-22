@@ -1,27 +1,39 @@
 // SPDX-License-Identifier: Apache-2.0
 //
-// Scalar lossless JPEG 2000 Part 1 pipeline for the initial shared profile:
-// one unsigned greyscale component of 1–16 bits, one tile at the origin,
-// reversible 5/3 wavelet, no quantisation, default code-block style, one
-// quality layer, raw codestream (no JP2 container).
+// Scalar lossless JPEG 2000 Part 1 pipeline for the shared greyscale profile:
+// one unsigned component of 1–16 bits, reversible 5/3 wavelet, no
+// quantisation, raw codestream. Decoding (Milestone 4) covers any tile grid
+// and image or tile origin, quality layers, every code-block style, every
+// progression order, precincts, SOP/EPH and tile-part header overrides.
+// Encoding emits one tile at the origin, one layer, default style.
 //
-// Provenance: new implementation for SwiftJ2K Milestone 2, fitted to the
-// Milestone 1 `Image`/`ImageDestination` contract. It replaces the
-// predecessor's `EncoderPipeline`/`DecoderPipeline` (Raster-Lab/J2KSwift
-// 7acc9ae4), whose scalar path is interleaved with HT, GPU, ROI, multi-tile
-// and rate-control code and which imports Metal unconditionally.
+// Provenance: new implementation for SwiftJ2K, fitted to the Milestone 1
+// `Image`/`ImageDestination` contract. It replaces the predecessor's
+// `EncoderPipeline`/`DecoderPipeline` (Raster-Lab/J2KSwift 7acc9ae4).
 import Foundation
+
+/// A validated description of one tile of a decodable codestream.
+struct TileProfile: Sendable {
+    let index: Int
+    let x0: Int, x1: Int, y0: Int, y1: Int
+    let codingStyle: CodingStyleSegment
+    let magnitudeBitPlanes: [Int]         // per QCD band index
+    let geometry: TileGeometry
+    let dataRanges: [Range<Int>]          // tile-part data ranges in part order
+    var width: Int { x1 - x0 }
+    var height: Int { y1 - y0 }
+}
 
 /// A validated description of a codestream the scalar path can decode.
 struct LosslessProfile: Sendable {
-    let width: Int
+    let width: Int                        // image area on the reference grid
     let height: Int
+    let originX: Int, originY: Int        // XOsiz, YOsiz
     let precision: Int
-    let codingStyle: CodingStyleSegment
-    let quantization: QuantizationSegment
-    let geometry: TileGeometry
-    let magnitudeBitPlanes: [Int]         // per QCD band index
-    let tileData: [Range<Int>]            // tile-part data ranges in part order
+    let tiles: [TileProfile]
+    var codeBlockCount: Int { tiles.reduce(0) { $0 + $1.geometry.codeBlockCount } }
+    var largestTilePixels: Int { tiles.map { $0.width * $0.height }.max() ?? 0 }
+    var largestTileBytes: Int { tiles.map { $0.dataRanges.reduce(0) { $0 + $1.count } }.max() ?? 0 }
 }
 
 /// Cooperative cancellation plus the operation deadline from `ResourceLimits`.
@@ -54,78 +66,90 @@ enum ScalarLosslessCodec {
             throw CodecError(.unsupportedFeature, "Only single-component (greyscale) codestreams are supported.")
         }
         let component = size.components[0]
-        guard !component.signed else {
-            throw CodecError(.unsupportedFeature, "Signed components are not supported.")
-        }
+        guard !component.signed else { throw CodecError(.unsupportedFeature, "Signed components are not supported.") }
         guard component.precision <= 16 else {
             throw CodecError(.unsupportedFeature, "Component precision above 16 bits is not supported.")
         }
         guard component.horizontalSeparation == 1, component.verticalSeparation == 1 else {
             throw CodecError(.unsupportedFeature, "Sub-sampled components are not supported.")
         }
-        guard size.originX == 0, size.originY == 0, size.tileOriginX == 0, size.tileOriginY == 0 else {
-            throw CodecError(.unsupportedFeature, "Non-zero image or tile origins are not supported.")
+        // Tile grid (B.3).
+        let tilesWide = Wavelet53.ceilDiv(size.width - size.tileOriginX, size.tileWidth)
+        let tilesHigh = Wavelet53.ceilDiv(size.height - size.tileOriginY, size.tileHeight)
+        guard tilesWide >= 1, tilesHigh >= 1, tilesWide * tilesHigh <= 65535 else {
+            throw CodecError(.malformedInput, "Tile grid is empty or exceeds 65535 tiles.")
         }
-        guard size.tileWidth >= size.width, size.tileHeight >= size.height else {
-            throw CodecError(.unsupportedFeature, "Multi-tile codestreams are not supported.")
+        // Group tile-parts by tile and check their order.
+        var partsByTile: [Int: [TilePartRecord]] = [:]
+        for part in parsed.tileParts { partsByTile[part.tileIndex, default: []].append(part) }
+        var tiles: [TileProfile] = []
+        for (tileIndex, parts) in partsByTile.sorted(by: { $0.key < $1.key }) {
+            guard tileIndex < tilesWide * tilesHigh else {
+                throw CodecError(.malformedInput, "Tile-parts reference a tile the SIZ grid does not contain.")
+            }
+            let ordered = parts.sorted { $0.partIndex < $1.partIndex }
+            for (expected, part) in ordered.enumerated() {
+                guard part.partIndex == expected, part.partCount == 0 || part.partCount == ordered.count else {
+                    throw CodecError(.malformedInput, "Tile-part indices are not contiguous.")
+                }
+            }
+            let (cod, qcd) = parsed.effectiveParameters(tile: tileIndex)
+            try validateCodingStyle(cod, quantization: qcd)
+            let p = tileIndex % tilesWide, q = tileIndex / tilesWide
+            let tx0 = max(size.tileOriginX + p * size.tileWidth, size.originX)
+            let ty0 = max(size.tileOriginY + q * size.tileHeight, size.originY)
+            let tx1 = min(size.tileOriginX + (p + 1) * size.tileWidth, size.width)
+            let ty1 = min(size.tileOriginY + (q + 1) * size.tileHeight, size.height)
+            guard tx1 > tx0, ty1 > ty0 else { throw CodecError(.malformedInput, "Tile has an empty area.") }
+            let bandCount = 3 * cod.decompositionLevels + 1
+            guard qcd.exponents.count >= bandCount else {
+                throw CodecError(.malformedInput, "QCD lists fewer bands than the decomposition needs.")
+            }
+            var magnitudeBitPlanes: [Int] = []
+            for exponent in qcd.exponents.prefix(bandCount) {
+                let mb = qcd.guardBits + exponent - 1
+                guard mb >= 1, mb <= BitPlaneCoder.maximumMagnitudeBitPlanes else {
+                    throw CodecError(.malformedInput, "Band exponent and guard bits give an unusable bit-plane count.")
+                }
+                magnitudeBitPlanes.append(mb)
+            }
+            let geometry = try Tier2.makeTileGeometry(x0: tx0, x1: tx1, y0: ty0, y1: ty1, codingStyle: cod)
+            tiles.append(TileProfile(index: tileIndex, x0: tx0, x1: tx1, y0: ty0, y1: ty1, codingStyle: cod,
+                                     magnitudeBitPlanes: magnitudeBitPlanes, geometry: geometry,
+                                     dataRanges: ordered.map(\.dataRange)))
         }
-        let cod = parsed.codingStyle
-        guard cod.reversible else {
-            throw CodecError(.unsupportedFeature, "The irreversible 9/7 wavelet is not supported.")
+        guard tiles.count == tilesWide * tilesHigh else {
+            throw CodecError(.malformedInput, "Codestream lacks tile-parts for \(tilesWide * tilesHigh - tiles.count) of its tiles.")
         }
-        guard cod.layers == 1 else {
-            throw CodecError(.unsupportedFeature, "Multiple quality layers are not supported.")
-        }
-        guard cod.codeBlockStyle == 0 else {
-            throw CodecError(.unsupportedFeature, "Code-block style bits (bypass, reset, termination, causal, segmentation) are not supported.")
+        return LosslessProfile(width: size.width - size.originX, height: size.height - size.originY,
+                               originX: size.originX, originY: size.originY,
+                               precision: component.precision, tiles: tiles)
+    }
+
+    private static func validateCodingStyle(_ cod: CodingStyleSegment, quantization qcd: QuantizationSegment) throws {
+        guard cod.reversible else { throw CodecError(.unsupportedFeature, "The irreversible 9/7 wavelet is not supported.") }
+        guard cod.codeBlockStyle & 0xC0 == 0 else {
+            throw CodecError(.unsupportedFeature, "Part 15 (HTJ2K) block coding is not supported.")
         }
         guard cod.componentTransform == 0 else {
             throw CodecError(.malformedInput, "A component transform is signalled for a single component.")
         }
-        let qcd = parsed.quantization
-        guard qcd.style == .none else {
-            throw CodecError(.unsupportedFeature, "Quantised (lossy) codestreams are not supported.")
-        }
-        let bandCount = 3 * cod.decompositionLevels + 1
-        guard qcd.exponents.count >= bandCount else {
-            throw CodecError(.malformedInput, "QCD lists fewer bands than the decomposition needs.")
-        }
-        var magnitudeBitPlanes: [Int] = []
-        for exponent in qcd.exponents.prefix(bandCount) {
-            let mb = qcd.guardBits + exponent - 1
-            guard mb >= 1, mb <= BitPlaneCoder.maximumMagnitudeBitPlanes else {
-                throw CodecError(.malformedInput, "Band exponent and guard bits give an unusable bit-plane count.")
-            }
-            magnitudeBitPlanes.append(mb)
-        }
-        // Exactly one tile: every tile-part must belong to tile 0, in order.
-        let parts = parsed.tileParts.sorted { $0.partIndex < $1.partIndex }
-        guard parts.allSatisfy({ $0.tileIndex == 0 }) else {
-            throw CodecError(.malformedInput, "Tile-parts reference a tile the SIZ grid does not contain.")
-        }
-        for (expected, part) in parts.enumerated() {
-            guard part.partIndex == expected, part.partCount == 0 || part.partCount == parts.count else {
-                throw CodecError(.malformedInput, "Tile-part indices are not contiguous.")
-            }
-        }
-        let geometry = try Tier2.makeTileGeometry(width: size.width, height: size.height, codingStyle: cod)
-        return LosslessProfile(width: size.width, height: size.height, precision: component.precision,
-                               codingStyle: cod, quantization: qcd, geometry: geometry,
-                               magnitudeBitPlanes: magnitudeBitPlanes, tileData: parts.map(\.dataRange))
+        guard qcd.style == .none else { throw CodecError(.unsupportedFeature, "Quantised (lossy) codestreams are not supported.") }
     }
 
-    /// Bound on algorithm workspace for a `width × height` plane (MEM-10):
-    /// one `Int32` coefficient plane plus per-block coder scratch.
-    static func workspaceBytes(width: Int, height: Int) throws -> Int {
-        let plane = try checkedMultiply(checkedMultiply(width, height), 4)
+    /// Bound on algorithm workspace (MEM-10): one `Int32` coefficient plane of
+    /// the largest tile, the largest joined tile data, and per-block scratch.
+    static func workspaceBytes(profile: LosslessProfile) throws -> Int {
+        try workspaceBytes(planePixels: profile.largestTilePixels, joinedBytes: profile.largestTileBytes)
+    }
+    static func workspaceBytes(planePixels: Int, joinedBytes: Int) throws -> Int {
+        let plane = try checkedMultiply(planePixels, 4)
         let blockScratch = BitPlaneCoder.maximumCoefficients * (4 + 4 + 1) + 66 * 66 + 4096
-        return try checkedAdd(plane, blockScratch)
+        return try checkedAdd(checkedAdd(plane, joinedBytes), blockScratch)
     }
 
     // MARK: - Decoding
 
-    /// Decodes into `destination`, which must already match the codestream.
-    /// Returns the sealed image and the workspace bound that was admitted.
     static func decode(bytes: [UInt8], profile: LosslessProfile, into destination: ImageDestination,
                        limits: ResourceLimits, progress: (@Sendable (ProgressUpdate) -> Void)?) throws -> (Image, Int) {
         let descriptor = destination.descriptor
@@ -135,7 +159,7 @@ enum ScalarLosslessCodec {
               descriptor.meaningfulBits == profile.precision else {
             throw CodecError(.incompatibleImageLayout, "Destination descriptor does not match the codestream geometry or precision.")
         }
-        let workspace = try workspaceBytes(width: profile.width, height: profile.height)
+        let workspace = try workspaceBytes(profile: profile)
         guard workspace <= limits.maximumWorkspaceBytes else {
             throw CodecError(.resourceLimitExceeded, "Decoder workspace exceeds the operation limit.")
         }
@@ -148,8 +172,6 @@ enum ScalarLosslessCodec {
             return try decodeAdmitted(bytes: bytes, profile: profile, into: destination, workspace: workspace,
                                       work: work, progress: progress)
         } catch {
-            // Admission passed, so this is a failed decode: the destination
-            // must not remain publishable.
             destination.invalidateAfterFailure()
             throw error
         }
@@ -159,77 +181,78 @@ enum ScalarLosslessCodec {
                                        workspace: Int, work: WorkGuard,
                                        progress: (@Sendable (ProgressUpdate) -> Void)?) throws -> (Image, Int) {
         let descriptor = destination.descriptor
-        // Concatenate tile-part data only when there is more than one part.
-        let tileBytes: [UInt8]
-        let tileRange: Range<Int>
-        if profile.tileData.count == 1 {
-            tileBytes = bytes
-            tileRange = profile.tileData[0]
-        } else {
-            var joined: [UInt8] = []
-            joined.reserveCapacity(profile.tileData.reduce(0) { $0 + $1.count })
-            for range in profile.tileData { joined.append(contentsOf: bytes[range]) }
-            tileBytes = joined
-            tileRange = 0..<joined.count
-            StorageTelemetry.recordWorkspaceAllocation(bytes: joined.count)
-        }
-
-        let geometry = profile.geometry
-        let contributions = try Tier2.decodePackets(geometry: geometry, codingStyle: profile.codingStyle,
-                                                    bytes: tileBytes, range: tileRange, cancellation: work.check)
-        let total = geometry.codeBlockCount
-        var completed = 0
-        progress?(try ProgressUpdate(phase: .processing, completedUnits: 0, totalUnits: total))
-
-        let stride = profile.width
-        var plane = [Int32](repeating: 0, count: profile.width * profile.height)
-        StorageTelemetry.recordWorkspaceAllocation(bytes: plane.count * 4)
-        for resolution in geometry.resolutions {
-            for (p, precinct) in resolution.precincts.enumerated() {
-                for (b, precinctBand) in precinct.bands.enumerated() {
-                    let band = resolution.bands[precinctBand.bandIndex]
-                    let mb = profile.magnitudeBitPlanes[band.quantizationIndex]
-                    for (k, block) in precinctBand.blocks.enumerated() {
-                        try work.check()
-                        let contribution = contributions[resolution.index][p][b][k]
-                        completed += 1
-                        guard contribution.included, contribution.passes > 0 else { continue }
-                        let coefficients = try BitPlaneCoder.decode(
-                            bytes: tileBytes, start: contribution.dataStart, end: contribution.dataEnd,
-                            width: block.width, height: block.height, orientation: band.orientation,
-                            zeroBitPlanes: contribution.zeroBitPlanes, passCount: contribution.passes,
-                            magnitudeBitPlanes: mb)
-                        for row in 0..<block.height {
-                            let planeRow = (band.planeY + block.y0 + row) * stride + band.planeX + block.x0
-                            for column in 0..<block.width {
-                                plane[planeRow + column] = coefficients[row * block.width + column]
-                            }
-                        }
-                        if completed & 7 == 0 {
-                            progress?(try ProgressUpdate(phase: .processing, completedUnits: completed, totalUnits: total))
-                        }
-                    }
-                }
-            }
-        }
-        try Wavelet53.inverse(plane: &plane, stride: stride, width: profile.width, height: profile.height,
-                              levels: profile.codingStyle.decompositionLevels, cancellation: work.check)
-
-        // Final-output stage: DC shift, clamp, write straight into the destination.
-        let shift = Int32(1) << Int32(profile.precision - 1)
-        let maximum = Int32((1 << profile.precision) - 1)
         let layout = descriptor.planes[0]
         let mutation = SharedPathMutation.active
         let rowBytes = mutation == .ignoreRowStride ? profile.width * layout.pixelStride : layout.rowBytes
         let order = mutation == .wrongByteOrder ? descriptor.byteOrder.opposite : descriptor.byteOrder
-        let image = try destination.write { bytes in
-            for y in 0..<profile.height {
+        let shift = Int32(1) << Int32(profile.precision - 1)
+        let maximum = Int32((1 << profile.precision) - 1)
+        let total = profile.codeBlockCount
+        var completed = 0
+        progress?(try ProgressUpdate(phase: .processing, completedUnits: 0, totalUnits: total))
+
+        // All tiles are decoded inside the one exclusive write borrow of the
+        // destination; each tile's workspace is released before the next.
+        let image = try destination.write { output in
+            for tile in profile.tiles {
                 try work.check()
-                let rowOffset = layout.offset + y * rowBytes
-                let planeRow = y * stride
-                for x in 0..<profile.width {
-                    let value = min(max(plane[planeRow + x] + shift, 0), maximum)
-                    try storeUInt16(UInt16(value), into: bytes, at: rowOffset + x * layout.pixelStride, order: order)
+                let tileBytes: [UInt8]
+                let tileRange: Range<Int>
+                if tile.dataRanges.count == 1 {
+                    tileBytes = bytes; tileRange = tile.dataRanges[0]
+                } else {
+                    var joined: [UInt8] = []
+                    joined.reserveCapacity(tile.dataRanges.reduce(0) { $0 + $1.count })
+                    for range in tile.dataRanges { joined.append(contentsOf: bytes[range]) }
+                    tileBytes = joined; tileRange = 0..<joined.count
+                    StorageTelemetry.recordWorkspaceAllocation(bytes: joined.count)
+                }
+                let geometry = tile.geometry
+                let style = CodeBlockStyle(bits: tile.codingStyle.codeBlockStyle)
+                let contributions = try Tier2.decodePackets(geometry: geometry, codingStyle: tile.codingStyle,
+                                                            bytes: tileBytes, range: tileRange, cancellation: work.check)
+                let stride = tile.width
+                var plane = [Int32](repeating: 0, count: tile.width * tile.height)
+                StorageTelemetry.recordWorkspaceAllocation(bytes: plane.count * 4)
+                for resolution in geometry.resolutions {
+                    for (p, precinct) in resolution.precincts.enumerated() {
+                        for (b, precinctBand) in precinct.bands.enumerated() {
+                            let band = resolution.bands[precinctBand.bandIndex]
+                            let mb = tile.magnitudeBitPlanes[band.quantizationIndex]
+                            for (k, block) in precinctBand.blocks.enumerated() {
+                                try work.check()
+                                let contribution = contributions[resolution.index][p][b][k]
+                                completed += 1
+                                guard contribution.included, contribution.passes > 0 else { continue }
+                                let coefficients = try BitPlaneCoder.decode(
+                                    segments: contribution.segments, width: block.width, height: block.height,
+                                    orientation: band.orientation, zeroBitPlanes: contribution.zeroBitPlanes,
+                                    passCount: contribution.passes, magnitudeBitPlanes: mb, style: style)
+                                for row in 0..<block.height {
+                                    let planeRow = (band.planeY + block.y0 - band.y0 + row) * stride + band.planeX + block.x0 - band.x0
+                                    for column in 0..<block.width {
+                                        plane[planeRow + column] = coefficients[row * block.width + column]
+                                    }
+                                }
+                                if completed & 7 == 0 {
+                                    progress?(try ProgressUpdate(phase: .processing, completedUnits: completed, totalUnits: total))
+                                }
+                            }
+                        }
+                    }
+                }
+                try Wavelet53.inverse(plane: &plane, stride: stride, x0: tile.x0, x1: tile.x1, y0: tile.y0, y1: tile.y1,
+                                      levels: tile.codingStyle.decompositionLevels, cancellation: work.check)
+                // Final-output stage: DC shift, clamp, write into the caller's plane.
+                for row in 0..<tile.height {
+                    try work.check()
+                    let y = tile.y0 - profile.originY + row
+                    let rowOffset = layout.offset + y * rowBytes
+                    for column in 0..<tile.width {
+                        let x = tile.x0 - profile.originX + column
+                        let value = min(max(plane[row * stride + column] + shift, 0), maximum)
+                        try storeUInt16(UInt16(value), into: output, at: rowOffset + x * layout.pixelStride, order: order)
+                    }
                 }
             }
         }
@@ -244,8 +267,6 @@ enum ScalarLosslessCodec {
         let codeBlockHeightExponent: Int
     }
 
-    /// Reads the sealed image directly (MEM-10) and returns the codestream and
-    /// the workspace bound that was admitted.
     static func encode(image: Image, parameters: EncodeParameters, limits: ResourceLimits,
                        progress: (@Sendable (ProgressUpdate) -> Void)?) throws -> ([UInt8], Int) {
         let descriptor = image.descriptor
@@ -257,7 +278,7 @@ enum ScalarLosslessCodec {
             throw CodecError(.unsupportedFeature, "Raw codestream output cannot carry ICC or metadata; none is silently dropped.")
         }
         let width = descriptor.width, height = descriptor.height, precision = descriptor.meaningfulBits
-        let workspace = try workspaceBytes(width: width, height: height)
+        let workspace = try workspaceBytes(planePixels: width * height, joinedBytes: 0)
         guard workspace <= limits.maximumWorkspaceBytes else {
             throw CodecError(.resourceLimitExceeded, "Encoder workspace exceeds the operation limit.")
         }
@@ -273,7 +294,7 @@ enum ScalarLosslessCodec {
                                      codeBlockWidthExponent: parameters.codeBlockWidthExponent,
                                      codeBlockHeightExponent: parameters.codeBlockHeightExponent,
                                      codeBlockStyle: 0, reversible: true, precinctExponents: [])
-        let geometry = try Tier2.makeTileGeometry(width: width, height: height, codingStyle: cod)
+        let geometry = try Tier2.makeTileGeometry(x0: 0, x1: width, y0: 0, y1: height, codingStyle: cod)
         var exponents: [Int] = []
         for resolution in geometry.resolutions {
             for band in resolution.bands { exponents.append(precision + band.gain) }
@@ -306,7 +327,7 @@ enum ScalarLosslessCodec {
                 }
             }
         }
-        try Wavelet53.forward(plane: &plane, stride: stride, width: width, height: height,
+        try Wavelet53.forward(plane: &plane, stride: stride, x0: 0, x1: width, y0: 0, y1: height,
                               levels: cod.decompositionLevels, cancellation: work.check)
 
         let total = geometry.codeBlockCount
@@ -326,7 +347,7 @@ enum ScalarLosslessCodec {
                         try work.check()
                         coefficients.removeAll(keepingCapacity: true)
                         for row in 0..<block.height {
-                            let planeRow = (band.planeY + block.y0 + row) * stride + band.planeX + block.x0
+                            let planeRow = (band.planeY + block.y0 - band.y0 + row) * stride + band.planeX + block.x0 - band.x0
                             coefficients.append(contentsOf: plane[planeRow..<planeRow + block.width])
                         }
                         perBlock.append(try BitPlaneCoder.encode(coefficients: coefficients, width: block.width,

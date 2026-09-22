@@ -2,7 +2,7 @@
 
 JPEG 2000 and HTJ2K for the **Swift Image Compression Suite**.
 
-**Status: Milestones 2 and 3 implemented and tested on macOS arm64: the scalar lossless codec and its shared-storage proof. The library encodes and decodes scalar lossless JPEG 2000 Part 1 codestreams for the shared profile: unsigned greyscale, 1–16 bits, one tile, reversible 5/3 wavelet, one layer, raw codestream. HTJ2K, lossy coding, colour, tiles, containers, acceleration and native transcoding are not yet implemented.** The intended first stable library version is **12.1.0**; it is not a published release. The standalone Swift package has no external dependencies, and its capabilities advertise exactly the coverage above. Executed evidence and open gates are in [MILESTONE2.md](Documentation/MILESTONE2.md).
+**Status: Milestones 2, 3 and 4 implemented and tested on macOS arm64: the scalar lossless codec, its shared-storage proof, decoder coverage of the full Part 1 greyscale lossless syntax, and a working command-line tool. The library encodes and decodes scalar lossless JPEG 2000 Part 1 codestreams for the shared profile: unsigned greyscale, 1–16 bits, one tile, reversible 5/3 wavelet, one layer, raw codestream. HTJ2K, lossy coding, colour, tiles, containers, acceleration and native transcoding are not yet implemented.** The intended first stable library version is **12.1.0**; it is not a published release. The standalone Swift package has no external dependencies, and its capabilities advertise exactly the coverage above. Executed evidence and open gates are in [MILESTONE2.md](Documentation/MILESTONE2.md).
 
 SwiftJ2K is the standalone successor to [J2KSwift](https://github.com/Raster-Lab/J2KSwift). The successor is intended to provide a harmonised API, explicit memory ownership, high-precision sample preservation and efficient shared-storage integration. It has no mandatory dependency on another suite library or CompressionFamily. Apache-2.0 licensing applies to these documents and subsequent authorised in-house implementation; third-party material retains its own terms.
 
@@ -12,7 +12,7 @@ Read [MIGRATION.md — J2KSwift to SwiftJ2K](MIGRATION.md) for dependency/produc
 
 ## Swift 6.4 development candidate
 
-Current development version: **12.1.0-dev.4** ([VERSION](VERSION)); shared contract **0.9.0**. This increments the earlier unreleased 12.0.0 target and creates no release/tag. See the [current qualification record](Documentation/Engineering/OS27CLI/README.md) for adopted features, exact Xcode/Swift Build evidence and open platform gates. The historical [Milestone 1 evidence](Documentation/MILESTONE1.md) remains unchanged.
+Current development version: **12.1.0-dev.5** ([VERSION](VERSION)); shared contract **0.9.0**. This increments the earlier unreleased 12.0.0 target and creates no release/tag. See the [current qualification record](Documentation/Engineering/OS27CLI/README.md) for adopted features, exact Xcode/Swift Build evidence and open platform gates. The historical [Milestone 1 evidence](Documentation/MILESTONE1.md) remains unchanged.
 
 ## Intended platform baseline
 
@@ -20,7 +20,7 @@ Swift 6.2 manifest minimum with Swift 6.4 as the qualified primary toolchain, Sw
 
 ## Start reading
 
-Milestone 1 established the API and memory contract with synthetic buffers ([evidence](Documentation/MILESTONE1.md)). Milestone 2 migrated the scalar lossless JPEG 2000 path from the pinned predecessor and validated it against OpenJPEG and Kakadu ([evidence and open gates](Documentation/MILESTONE2.md), [file-level provenance](HISTORY.md)). Milestone 3 proved the required-sharing decode-into and encode-from path with instrumentation, mutation testing and the contract harness ([evidence](Documentation/MILESTONE3.md)); its JPEG-LS leg waits for a SwiftJLS encoder. Use the task prompts in [AGENTS.md](AGENTS.md).
+Milestone 1 established the API and memory contract with synthetic buffers ([evidence](Documentation/MILESTONE1.md)). Milestone 2 migrated the scalar lossless JPEG 2000 path from the pinned predecessor and validated it against OpenJPEG and Kakadu ([evidence and open gates](Documentation/MILESTONE2.md), [file-level provenance](HISTORY.md)). Milestone 3 proved the required-sharing decode-into and encode-from path with instrumentation, mutation testing and the contract harness ([evidence](Documentation/MILESTONE3.md)); its JPEG-LS leg waits for a SwiftJLS encoder. Milestone 4 extended decoding to tiles, origins, layers, every code-block style and progression order, and wired the CLI ([evidence](Documentation/MILESTONE4.md)). Use the task prompts in [AGENTS.md](AGENTS.md).
 
 - [Coding-agent entry point](AGENTS.md) and [codec-specific implementation plan](IMPLEMENTATION.md).
 - [Suite policy](Documentation/SUITE_POLICY.md) and [common API](Documentation/COMMON_API.md).
@@ -41,4 +41,4 @@ The main module is `SwiftJ2K`; `swiftj2k` provides CLI help/version/capabilities
 
 ## Command-line help and manual
 
-The diagnostic CLI provides `-h` / `--help`, `help <command>`, version and truthful capability reporting; since Milestone 2 the capability output advertises the library's scalar lossless coverage. The CLI codec verbs are not yet wired to the library and remain unavailable (exit 4) until the CLI milestone. Verbosity has five levels: `-v`, `-vv`, `--verbose 1..5`, `--verbose=+++` and `-verbose: 3`; diagnostics use stderr and `--quiet` suppresses optional messages. See [CLI usage and installation](CLI.md). The installer updates both the executable and its UNIX man page together. [OS 27/CLI qualification](Documentation/Engineering/OS27CLI/README.md) supersedes the earlier OS 26 upgrade decision; earlier evidence remains historical.
+The `swiftj2k` executable encodes, decodes, inspects and validates lossless greyscale JPEG 2000 codestreams through the contract's NRRD interchange profile, with pipes, atomic output, JSON reports and the full exit-status map; `transcode` stays reserved. Verbosity has five levels: `-v`, `-vv`, `--verbose 1..5`, `--verbose=+++` and `-verbose: 3`; diagnostics use stderr and `--quiet` suppresses optional messages. See [CLI usage and installation](CLI.md). The installer updates both the executable and its UNIX man page together. [OS 27/CLI qualification](Documentation/Engineering/OS27CLI/README.md) supersedes the earlier OS 26 upgrade decision; earlier evidence remains historical.

@@ -31,8 +31,16 @@ final class SentinelStorage: WritableImageStorage, @unchecked Sendable {
     }
     deinit { allocation.deallocate() }
 
+    private let engaged = Atomic<Bool>(false)
     private func locked<R>(_ body: (inout Phase) throws -> R) throws -> R {
-        guard let result = try phase.withLockIfAvailable({ try body(&$0) }) else {
+        guard !engaged.load(ordering: .acquiring) else {
+            throw CodecError(.storageUnavailable, "Sentinel provider is already borrowed.")
+        }
+        guard let result = try phase.withLockIfAvailable({ state -> R in
+            engaged.store(true, ordering: .releasing)
+            defer { engaged.store(false, ordering: .releasing) }
+            return try body(&state)
+        }) else {
             throw CodecError(.storageUnavailable, "Sentinel provider is already borrowed.")
         }
         return result
@@ -291,7 +299,9 @@ private func failuresUnderMutation(_ mutation: SharedPathMutation) async throws 
         Issue.record("cancelled decode published")
     } catch is CancellationError {}
     #expect(cancelledOwner.isInvalid)
-    #expect(cancelledOwner.borrows.withLock { $0.writes } == 0, "no write began before cancellation")
+    // Since Milestone 4 every tile is decoded inside the single write borrow, so the
+    // borrow has begun; cancellation must still leave the owner invalid and unpublished.
+    #expect(cancelledOwner.borrows.withLock { $0.writes } == 1)
     #expect(throws: CodecError.self) { try cancelled.writeUInt16 { _, _ in 0 } }
 }
 

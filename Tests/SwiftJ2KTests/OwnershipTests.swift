@@ -94,7 +94,11 @@ private final class ReadAdapter: ReadOnlyImageStorage {
     let release = DispatchSemaphore(value: 0)
     let done = DispatchSemaphore(value: 0)
     let result = Mutex(false)
-    DispatchQueue.global().async {
+    // A dedicated thread, not the global dispatch queue: while the whole suite
+    // runs in parallel on every core, a default-QoS dispatch block can be
+    // starved for seconds and the 5-second waits below would report a
+    // scheduling delay as an ownership failure.
+    let writer = Thread {
         defer { done.signal() }
         do {
             try storage.withUnsafeMutableBytes(lease: lease) { bytes in
@@ -105,6 +109,7 @@ private final class ReadAdapter: ReadOnlyImageStorage {
             }
         } catch { }
     }
+    writer.start()
     guard entered.wait(timeout: .now() + 5) == .success else {
         release.signal()
         Issue.record("First writer did not enter its scoped borrow.")
