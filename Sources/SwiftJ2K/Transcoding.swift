@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: Apache-2.0
 import Foundation
 
 /// Native compressed endpoints. No direction is implemented in Milestone 1.

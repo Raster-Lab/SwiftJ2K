@@ -11,7 +11,7 @@ The owner chose four fresh repositories under Raster-Lab, with independent codec
 | Inspected source snapshot | [768f6b53499b806fd0304962056e1fc7833f12e5](https://github.com/Raster-Lab/J2KSwift/commit/768f6b53499b806fd0304962056e1fc7833f12e5) |
 | Highest stable-shaped tag observed | [v11.0.3](https://github.com/Raster-Lab/J2KSwift/tree/v11.0.3) |
 | Source-tree licence observed | MIT |
-| Successor licence | MIT, for owner-authorised in-house material |
+| Successor licence | Apache-2.0, for owner-authorised in-house material (contract 0.8.0) |
 | Inspection date | 2026-09-17 |
 
 The tag and the inspected branch snapshot are separate references; this record does not assert they resolve to the same commit. Before migrating a tagged baseline, resolve annotated tags to commits and record the exact chosen SHA. The pinned snapshot above was read for documentation preparation; it was not independently built or regression-tested in this task.
@@ -20,7 +20,7 @@ The tag and the inspected branch snapshot are separate references; this record d
 
 The coding agent must record source repository, commit, original path and successor path for each migrated subsystem, and distinguish copied/adapted in-house material from new implementation. Record retained tests, fixture licences and explicit product/feature dispositions. Keep predecessor bug history accessible through links. Do not import old tags, rewrite predecessor history or imply all historical commits have been relicensed.
 
-The owner states the implementation is in-house and has authorised MIT relicensing. Preserve accurate original copyright years and ownership. Audit any third-party dependencies, tools or fixtures separately. The MIT root licence is not authority to remove another party's notices.
+The owner states the implementation is in-house and has authorised Apache-2.0 relicensing (contract 0.8.0; the foundation recorded this as MIT). Preserve accurate original copyright years and ownership. Audit any third-party dependencies, tools or fixtures separately. The root licence is not authority to remove another party's notices.
 
 The originals are intended to become maintenance projects while new development moves here. No predecessor settings, README, branch, release, licence or archive flag was changed during this documentation preparation. Maintenance announcements and downstream DICOMKit/Voxelia migration are separate work.
 
@@ -64,3 +64,13 @@ The Milestone 3 spikes decided it. All four codec interiors proved contract-capa
 J2KSwift keeps its codec, its 144,755 lines of source and its 129,822 lines of tests. It carries the largest in-place obligations: thirteen products including a daemon to inventory and split under POL-05, and a CompressionFamily dependency confined to two conformance files to extract so the core library resolves alone. DICOMKit and CompressionFamily both consume it by URL at pinned released versions.
 
 Two matters are referred to the owner rather than assumed: the Apache-2.0 and MIT split between the existing libraries and the contract repositories, which POL-07 authorises resolving but which should be a deliberate choice; and the inventory and splitting of auxiliary predecessor products under POL-05. The decision rests on documentation evidence gathered on one machine and authorises no codec milestone or release.
+
+## Decision D2 — codec libraries relocate here, 22 September 2026
+
+Contract 0.8.0 supersedes Decision D1. The owner has reaffirmed the repository foundation v0.1.0 as the guidance for this migration and instructed that the codecs move into the successor repositories. Under document precedence rule 1 the owner's current explicit decision outranks a previous contract revision.
+
+J2KSwift relocates here: 144,755 lines of source and 129,822 lines of tests, with its fixtures and oracles. The predecessor source is MIT-licensed and is relicensed to Apache-2.0 under POL-07 as amended; Raster Images Private Limited holds that copyright, and third-party fixtures and dependencies keep their own terms. It carries the largest obligations: thirteen products including a daemon to inventory and split under POL-05, a CompressionFamily dependency confined to two conformance files to extract, 226 MB of test fixtures with no Git LFS configured and whose provenance must be audited before they enter this history, and no CI workflow of any kind. DICOMKit and CompressionFamily both consume it by URL.
+
+The sequence is a final J2KSwift release at v12.0.0, then relocation, then a first stable 12.1.0 here once the TEST-07 gates pass, then a maintenance window on the predecessor, then its archive. J2KSwift is not renamed or deleted: this repository's HISTORY.md and MIGRATION.md pin its commits and source files by permalink, and those links are the provenance record.
+
+D1's measurements are retained as the risk register rather than discarded. The continuous-integration objection is unresolved and becomes a precondition: the organisation's Actions billing remains locked, a re-run of JLSwift's CI on 22 September 2026 completed with `steps=0`, and no codec source moves before CI executes and passes here. This record authorises no codec milestone and no release.
