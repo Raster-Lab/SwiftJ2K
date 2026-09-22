@@ -1,5 +1,14 @@
 # Change log
 
+## 12.1.0 — 2026-09-22 (release commit prepared; tag pending the continuous-integration precondition)
+
+First stable line of SwiftJ2K, the successor to J2KSwift for the scalar lossless JPEG 2000 path. This entry consolidates the `12.1.0-dev.1` to `dev.6` development identifiers below; nothing in the library changed between `12.1.0-dev.6` and this version except the version string itself. Contract 0.9.0.
+
+- **Capabilities.** Decoding of JPEG 2000 Part 1 codestreams with a single unsigned greyscale component of 1 to 16 bits and the 5/3 reversible transform: any tile grid and origin, quality layers, all code-block styles, all progression orders, precincts, SOP/EPH and tile-parts. Encoding of the same image class as a single-tile, single-layer, default-style codestream. Decode into caller-owned storage with zero pixel allocations and no copies, reported per operation. Resource limits, cancellation and error categories per the shared contract. The `swiftj2k` CLI (`encode`, `decode`, `inspect`, `validate`, `capabilities`) over the NRRD interchange profile; `transcode` reserved. Not implemented and not claimed: HTJ2K, lossy coding, colour and signed components, containers, acceleration, native transcoding, JPIP, JP3D, multi-tile, multi-layer or non-default-style encoding.
+- **Platforms.** Swift 6.2 minimum, Swift 6.4 qualified; macOS 26 and iOS 26 built and tested (iOS on the simulator); Linux arm64 (Ubuntu 24.04, Swift 6.2) built and tested in a container; macOS x86_64 under Rosetta built and CLI-tested. tvOS, watchOS, visionOS, Linux x86_64 and physical devices are unexecuted.
+- **Release gates** executed at this commit are listed in [Documentation/RELEASE-12.1.0.md](Documentation/RELEASE-12.1.0.md), added by the release task alongside its evidence. The stable tag `v12.1.0` is created only after contract 0.9.0's continuous-integration precondition is met; that document records whether it was.
+- Supersedes the withdrawn unreleased 12.0.0 target and the Apple OS 27 floor (Decision D3, floors 26.0).
+
 ## 12.1.0-dev.6 — Milestone 5 release preparation, 2026-09-22 (unreleased)
 
 - Release preparation without a tag. Fresh URL-based consumption of the repository at a pinned revision verified on macOS and Linux (one package in the dependency graph); `Examples/MigrationExample` added as the executable program reproduced in the rewritten MIGRATION.md; `THIRD_PARTY_NOTICES.md` records relicensed predecessor code, synthetic fixtures and every development oracle; SECURITY.md records the repository's actual security settings and a supported-version policy; `Documentation/RELEASE.md` is the procedure the explicit release task follows.
