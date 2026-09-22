@@ -1,0 +1,9 @@
+created: <scratch>/release/csdd.sparseimage
+/dev/disk14         	GUID_partition_scheme          	
+/dev/disk14s1       	EFI                            	
+/dev/disk14s2       	Apple_APFS                     	
+/dev/disk17         	EF57347C-0000-11AA-AA11-0030654	
+/dev/disk17s1       	41504653-0000-11AA-AA11-0030654	<scratch>/release/csdd
+hdiutil exit 0
+   File System Personality:   Case-sensitive APFS
+   Name (User Visible):       APFS (Case-sensitive)

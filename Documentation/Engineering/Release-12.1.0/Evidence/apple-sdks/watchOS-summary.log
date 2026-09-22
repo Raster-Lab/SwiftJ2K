@@ -1,0 +1,2 @@
+xcodebuild: error: Unable to find a destination matching the provided destination specifier:
+		{ platform:tvOS, id:dvtdevice-DVTiOSDevicePlaceholder-appletvos:placeholder, name:Any tvOS Device, error:tvOS 26.2 is not installed. Please download and install the platform from Xcode > Settings > 

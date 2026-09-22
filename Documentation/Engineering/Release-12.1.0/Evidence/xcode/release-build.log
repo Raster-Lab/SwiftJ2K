@@ -1,0 +1,9 @@
+Building for production...
+[0/5] Write sources
+[2/5] Write swift-version-6ED5EA0491098587.txt
+[4/6] Compiling SwiftJ2K BitIO.swift
+[5/7] Compiling SwiftJ2KCLI main.swift
+[5/7] Write Objects.LinkFileList
+[6/7] Linking swiftj2k
+Build complete! (9.82s)
+release-build exit 0

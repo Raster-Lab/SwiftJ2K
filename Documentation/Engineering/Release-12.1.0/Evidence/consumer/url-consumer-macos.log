@@ -1,0 +1,18 @@
+swift-driver version: 1.127.14.1 Apple Swift version 6.2.3 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
+Target: arm64-apple-macosx26.0
+Fetching https://github.com/Raster-Lab/SwiftJ2K.git from cache
+Fetched https://github.com/Raster-Lab/SwiftJ2K.git from cache (1.40s)
+Creating working copy for https://github.com/Raster-Lab/SwiftJ2K.git
+Working copy of https://github.com/Raster-Lab/SwiftJ2K.git resolved at 67273dbb5a195c1b2a1f47f311d9a1e4cd7f9203
+.
+└── swiftj2k<https://github.com/Raster-Lab/SwiftJ2K.git@unspecified>
+Building for production...
+[0/5] Write sources
+[2/5] Write swift-version-6ED5EA0491098587.txt
+[4/6] Compiling SwiftJ2K BitIO.swift
+[5/7] Compiling URLConsumer main.swift
+[5/7] Write Objects.LinkFileList
+[6/7] Linking URLConsumer
+Build of product 'URLConsumer' complete! (11.12s)
+Independent SwiftJ2K consumer passed; 106-byte lossless codestream round-tripped.
+url-consumer-macos exit 0

@@ -1,0 +1,8 @@
+load before: 19:04  up 4 days, 21:38, 1 user, load averages: 2.66 2.37 3.33
+ 98.5       07:23 /opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python
+ 15.0    20:25:51 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  3.9 04-21:36:52 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+load after: 19:04  up 4 days, 21:38, 1 user, load averages: 3.00 2.45 3.35
+ 98.5       07:27 /opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python
+ 13.9    20:25:55 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+ 10.3 04-21:36:56 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd

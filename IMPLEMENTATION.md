@@ -39,6 +39,10 @@ Decoder coverage now spans the Part 1 greyscale lossless syntax: any tile grid a
 
 Release preparation without a tag: fresh URL-based consumption on macOS and Linux, MIGRATION.md rewritten with an executable example, THIRD_PARTY_NOTICES.md, SECURITY.md's supported-version policy, RELEASE.md as the procedure for the explicit release task, and the previously unexecuted gates run on the Swift 6.4 toolchain (Swift Build engine, AddressSanitizer, ThreadSanitizer, SBOMs), plus one-hour fuzz campaigns per decode entry point, an Apple SDK build matrix and an iOS simulator run ([MILESTONE5.md](Documentation/MILESTONE5.md)). The DICOMKit audit of decision M3 was executed: `J2KDICOMCodestreamDetector` has no DICOMKit equivalent for its CAP-marker transfer-syntax sniff, so that file transplants to DICOMKit in DICOMKit's own task. Contract 0.9.0's continuous-integration precondition remained unmet; the stable tag waits for the release task.
 
+### Release 12.1.0 task status — executed 22 September 2026
+
+Owner-assigned release task following [Documentation/RELEASE.md](Documentation/RELEASE.md). Version set to 12.1.0 (commit `67273db`); every gate of the procedure executed on that commit and recorded in [Documentation/RELEASE-12.1.0.md](Documentation/RELEASE-12.1.0.md). The stable tag was **not** cut: contract 0.9.0's continuous-integration precondition (Actions jobs at `steps=0`) and the private-vulnerability-reporting precondition are unmet, both organisation-owner actions. When they hold, RELEASE.md steps 3 to 6 apply to the release pull request's merge commit.
+
 ### Migration focus
 
 - The CompressionFamily coupling is already out of the predecessor: J2KSwift pull request 489 (merged 22 September 2026, `7acc9ae`) moved `Sources/J2KCore/CompressionFamilyConformance.swift` and `Sources/J2KCodec/CompressionFamilyConformance.swift` into the separate package `Adapters/J2KCompressionFamily`, and the J2KSwift root manifest declares no external dependency. Nothing from that adapter package migrates; provide the agreed local common surface instead. Do not copy the protocol source into each module and claim it is one shared Swift type.

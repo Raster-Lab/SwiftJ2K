@@ -1,0 +1,214 @@
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Iteration 1 started.
+◇ Test cancellationDuringDecodeInvalidatesTheDestination() started.
+◇ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() started.
+◇ Test reentrantLeaseOperationsRejectWithoutDeadlocking() started.
+◇ Test cancellationInProviderFinalisationPreventsPublication(_:) started.
+◇ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() started.
+◇ Test concurrentAdaptersReserveExactlyOneWriter() started.
+◇ Test adaptersShareWriterAuthorityAndRejectForgedLease() started.
+◇ Test sealedOwnerSupportsConcurrentReadersAndNestedRead() started.
+◇ Test cancellationInsideWriteCannotPublishPartialImage() started.
+◇ Test progressIsMonotonicAndCompletesAfterPublication() started.
+◇ Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() started.
+◇ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() started.
+◇ Test cancellationDuringSyntheticRowsInvalidatesDestination() started.
+◇ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() started.
+◇ Test decoderPreservesTaskCancellationError() started.
+◇ Test cancellationIsCheckedBeforeAllocatingStorage() started.
+◇ Test safeWriterRejectsOutOfRangeInsteadOfTruncating() started.
+◇ Test borrowedStorageRejectsForgedLeasesAndPublication() started.
+◇ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() started.
+◇ Test case passing 1 argument point → .sealing to cancellationInProviderFinalisationPreventsPublication(_:) started.
+◇ Test case passing 1 argument point → .validatingSealedStorage to cancellationInProviderFinalisationPreventsPublication(_:) started.
+✔ Test adaptersShareWriterAuthorityAndRejectForgedLease() passed after 0.001 seconds.
+✔ Test reentrantLeaseOperationsRejectWithoutDeadlocking() passed after 0.001 seconds.
+✔ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() passed after 0.001 seconds.
+✔ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() passed after 0.001 seconds.
+✔ Test concurrentAdaptersReserveExactlyOneWriter() passed after 0.001 seconds.
+✔ Test sealedOwnerSupportsConcurrentReadersAndNestedRead() passed after 0.001 seconds.
+✔ Test cancellationInsideWriteCannotPublishPartialImage() passed after 0.001 seconds.
+✔ Test safeWriterRejectsOutOfRangeInsteadOfTruncating() passed after 0.001 seconds.
+✔ Test cancellationIsCheckedBeforeAllocatingStorage() passed after 0.001 seconds.
+✔ Test decoderPreservesTaskCancellationError() passed after 0.001 seconds.
+✔ Test borrowedStorageRejectsForgedLeasesAndPublication() passed after 0.001 seconds.
+✔ Test cancellationDuringSyntheticRowsInvalidatesDestination() passed after 0.001 seconds.
+✔ Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() passed after 0.001 seconds.
+✔ Test cancellationInProviderFinalisationPreventsPublication(_:) with 2 test cases passed after 0.001 seconds.
+✔ Test cancellationDuringDecodeInvalidatesTheDestination() passed after 0.019 seconds.
+✔ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() passed after 0.019 seconds.
+✔ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() passed after 0.245 seconds.
+✔ Test progressIsMonotonicAndCompletesAfterPublication() passed after 0.377 seconds.
+✔ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() passed after 0.588 seconds.
+◇ Iteration 1 ended after 0.589 seconds.
+◇ Iteration 2 started.
+◇ Test concurrentAdaptersReserveExactlyOneWriter() started.
+◇ Test cancellationInsideWriteCannotPublishPartialImage() started.
+◇ Test reentrantLeaseOperationsRejectWithoutDeadlocking() started.
+◇ Test sealedOwnerSupportsConcurrentReadersAndNestedRead() started.
+◇ Test cancellationInProviderFinalisationPreventsPublication(_:) started.
+◇ Test progressIsMonotonicAndCompletesAfterPublication() started.
+◇ Test cancellationDuringDecodeInvalidatesTheDestination() started.
+◇ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() started.
+◇ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() started.
+◇ Test adaptersShareWriterAuthorityAndRejectForgedLease() started.
+◇ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() started.
+◇ Test decoderPreservesTaskCancellationError() started.
+◇ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() started.
+◇ Test borrowedStorageRejectsForgedLeasesAndPublication() started.
+◇ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() started.
+◇ Test cancellationIsCheckedBeforeAllocatingStorage() started.
+◇ Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() started.
+◇ Test safeWriterRejectsOutOfRangeInsteadOfTruncating() started.
+◇ Test case passing 1 argument point → .sealing to cancellationInProviderFinalisationPreventsPublication(_:) started.
+◇ Test case passing 1 argument point → .validatingSealedStorage to cancellationInProviderFinalisationPreventsPublication(_:) started.
+◇ Test cancellationDuringSyntheticRowsInvalidatesDestination() started.
+✔ Test reentrantLeaseOperationsRejectWithoutDeadlocking() passed after 0.001 seconds.
+✔ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() passed after 0.001 seconds.
+✔ Test adaptersShareWriterAuthorityAndRejectForgedLease() passed after 0.001 seconds.
+✔ Test borrowedStorageRejectsForgedLeasesAndPublication() passed after 0.001 seconds.
+✔ Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() passed after 0.001 seconds.
+✔ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() passed after 0.001 seconds.
+✔ Test decoderPreservesTaskCancellationError() passed after 0.001 seconds.
+✔ Test concurrentAdaptersReserveExactlyOneWriter() passed after 0.001 seconds.
+✔ Test safeWriterRejectsOutOfRangeInsteadOfTruncating() passed after 0.001 seconds.
+✔ Test cancellationIsCheckedBeforeAllocatingStorage() passed after 0.001 seconds.
+✔ Test cancellationDuringSyntheticRowsInvalidatesDestination() passed after 0.001 seconds.
+✔ Test cancellationInsideWriteCannotPublishPartialImage() passed after 0.002 seconds.
+✔ Test sealedOwnerSupportsConcurrentReadersAndNestedRead() passed after 0.002 seconds.
+✔ Test cancellationInProviderFinalisationPreventsPublication(_:) with 2 test cases passed after 0.002 seconds.
+✔ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() passed after 0.015 seconds.
+✔ Test cancellationDuringDecodeInvalidatesTheDestination() passed after 0.016 seconds.
+✔ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() passed after 0.215 seconds.
+✔ Test progressIsMonotonicAndCompletesAfterPublication() passed after 0.372 seconds.
+✔ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() passed after 0.560 seconds.
+◇ Iteration 2 ended after 0.560 seconds.
+◇ Iteration 3 started.
+◇ Test concurrentAdaptersReserveExactlyOneWriter() started.
+◇ Test sealedOwnerSupportsConcurrentReadersAndNestedRead() started.
+◇ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() started.
+◇ Test cancellationInProviderFinalisationPreventsPublication(_:) started.
+◇ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() started.
+◇ Test reentrantLeaseOperationsRejectWithoutDeadlocking() started.
+◇ Test cancellationInsideWriteCannotPublishPartialImage() started.
+◇ Test cancellationDuringSyntheticRowsInvalidatesDestination() started.
+◇ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() started.
+◇ Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() started.
+◇ Test cancellationDuringDecodeInvalidatesTheDestination() started.
+◇ Test decoderPreservesTaskCancellationError() started.
+◇ Test borrowedStorageRejectsForgedLeasesAndPublication() started.
+◇ Test adaptersShareWriterAuthorityAndRejectForgedLease() started.
+◇ Test progressIsMonotonicAndCompletesAfterPublication() started.
+◇ Test safeWriterRejectsOutOfRangeInsteadOfTruncating() started.
+◇ Test case passing 1 argument point → .sealing to cancellationInProviderFinalisationPreventsPublication(_:) started.
+◇ Test case passing 1 argument point → .validatingSealedStorage to cancellationInProviderFinalisationPreventsPublication(_:) started.
+◇ Test cancellationIsCheckedBeforeAllocatingStorage() started.
+◇ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() started.
+✔ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() passed after 0.001 seconds.
+✔ Test reentrantLeaseOperationsRejectWithoutDeadlocking() passed after 0.001 seconds.
+◇ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() started.
+✔ Test adaptersShareWriterAuthorityAndRejectForgedLease() passed after 0.001 seconds.
+✔ Test sealedOwnerSupportsConcurrentReadersAndNestedRead() passed after 0.001 seconds.
+✔ Test concurrentAdaptersReserveExactlyOneWriter() passed after 0.001 seconds.
+✔ Test cancellationInProviderFinalisationPreventsPublication(_:) with 2 test cases passed after 0.001 seconds.
+✔ Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() passed after 0.001 seconds.
+✔ Test safeWriterRejectsOutOfRangeInsteadOfTruncating() passed after 0.001 seconds.
+✔ Test cancellationInsideWriteCannotPublishPartialImage() passed after 0.001 seconds.
+✔ Test decoderPreservesTaskCancellationError() passed after 0.001 seconds.
+✔ Test borrowedStorageRejectsForgedLeasesAndPublication() passed after 0.001 seconds.
+✔ Test cancellationIsCheckedBeforeAllocatingStorage() passed after 0.001 seconds.
+✔ Test cancellationDuringSyntheticRowsInvalidatesDestination() passed after 0.001 seconds.
+✔ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() passed after 0.001 seconds.
+✔ Test cancellationDuringDecodeInvalidatesTheDestination() passed after 0.017 seconds.
+✔ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() passed after 0.017 seconds.
+✔ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() passed after 0.220 seconds.
+✔ Test progressIsMonotonicAndCompletesAfterPublication() passed after 0.365 seconds.
+✔ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() passed after 0.547 seconds.
+◇ Iteration 3 ended after 0.547 seconds.
+◇ Iteration 4 started.
+◇ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() started.
+◇ Test reentrantLeaseOperationsRejectWithoutDeadlocking() started.
+◇ Test progressIsMonotonicAndCompletesAfterPublication() started.
+◇ Test concurrentAdaptersReserveExactlyOneWriter() started.
+◇ Test sealedOwnerSupportsConcurrentReadersAndNestedRead() started.
+◇ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() started.
+◇ Test cancellationDuringDecodeInvalidatesTheDestination() started.
+◇ Test cancellationInsideWriteCannotPublishPartialImage() started.
+◇ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() started.
+◇ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() started.
+◇ Test cancellationDuringSyntheticRowsInvalidatesDestination() started.
+◇ Test decoderPreservesTaskCancellationError() started.
+◇ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() started.
+◇ Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() started.
+◇ Test safeWriterRejectsOutOfRangeInsteadOfTruncating() started.
+◇ Test cancellationInProviderFinalisationPreventsPublication(_:) started.
+◇ Test borrowedStorageRejectsForgedLeasesAndPublication() started.
+◇ Test cancellationIsCheckedBeforeAllocatingStorage() started.
+◇ Test adaptersShareWriterAuthorityAndRejectForgedLease() started.
+◇ Test case passing 1 argument point → .sealing to cancellationInProviderFinalisationPreventsPublication(_:) started.
+✔ Test reentrantLeaseOperationsRejectWithoutDeadlocking() passed after 0.001 seconds.
+◇ Test case passing 1 argument point → .validatingSealedStorage to cancellationInProviderFinalisationPreventsPublication(_:) started.
+✔ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() passed after 0.001 seconds.
+✔ Test borrowedStorageRejectsForgedLeasesAndPublication() passed after 0.001 seconds.
+✔ Test adaptersShareWriterAuthorityAndRejectForgedLease() passed after 0.001 seconds.
+✔ Test safeWriterRejectsOutOfRangeInsteadOfTruncating() passed after 0.001 seconds.
+✔ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() passed after 0.001 seconds.
+✔ Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() passed after 0.001 seconds.
+✔ Test decoderPreservesTaskCancellationError() passed after 0.001 seconds.
+✔ Test cancellationInsideWriteCannotPublishPartialImage() passed after 0.001 seconds.
+✔ Test cancellationInProviderFinalisationPreventsPublication(_:) with 2 test cases passed after 0.001 seconds.
+✔ Test cancellationIsCheckedBeforeAllocatingStorage() passed after 0.001 seconds.
+✔ Test cancellationDuringSyntheticRowsInvalidatesDestination() passed after 0.001 seconds.
+✔ Test sealedOwnerSupportsConcurrentReadersAndNestedRead() passed after 0.001 seconds.
+✔ Test concurrentAdaptersReserveExactlyOneWriter() passed after 0.001 seconds.
+✔ Test cancellationDuringDecodeInvalidatesTheDestination() passed after 0.015 seconds.
+✔ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() passed after 0.017 seconds.
+✔ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() passed after 0.248 seconds.
+✔ Test progressIsMonotonicAndCompletesAfterPublication() passed after 0.399 seconds.
+✔ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() passed after 0.572 seconds.
+◇ Iteration 4 ended after 0.572 seconds.
+◇ Iteration 5 started.
+◇ Test cancellationInsideWriteCannotPublishPartialImage() started.
+◇ Test concurrentAdaptersReserveExactlyOneWriter() started.
+◇ Test sealedOwnerSupportsConcurrentReadersAndNestedRead() started.
+◇ Test progressIsMonotonicAndCompletesAfterPublication() started.
+◇ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() started.
+◇ Test adaptersShareWriterAuthorityAndRejectForgedLease() started.
+◇ Test cancellationDuringDecodeInvalidatesTheDestination() started.
+◇ Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() started.
+◇ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() started.
+◇ Test cancellationInProviderFinalisationPreventsPublication(_:) started.
+◇ Test cancellationDuringSyntheticRowsInvalidatesDestination() started.
+◇ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() started.
+◇ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() started.
+◇ Test decoderPreservesTaskCancellationError() started.
+◇ Test cancellationIsCheckedBeforeAllocatingStorage() started.
+◇ Test reentrantLeaseOperationsRejectWithoutDeadlocking() started.
+◇ Test borrowedStorageRejectsForgedLeasesAndPublication() started.
+◇ Test case passing 1 argument point → .sealing to cancellationInProviderFinalisationPreventsPublication(_:) started.
+◇ Test case passing 1 argument point → .validatingSealedStorage to cancellationInProviderFinalisationPreventsPublication(_:) started.
+◇ Test safeWriterRejectsOutOfRangeInsteadOfTruncating() started.
+◇ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() started.
+✔ Test adaptersShareWriterAuthorityAndRejectForgedLease() passed after 0.001 seconds.
+✔ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() passed after 0.001 seconds.
+✔ Test concurrentAdaptersReserveExactlyOneWriter() passed after 0.001 seconds.
+✔ Test reentrantLeaseOperationsRejectWithoutDeadlocking() passed after 0.001 seconds.
+✔ Test sealedOwnerSupportsConcurrentReadersAndNestedRead() passed after 0.001 seconds.
+✔ Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() passed after 0.001 seconds.
+✔ Test cancellationDuringSyntheticRowsInvalidatesDestination() passed after 0.001 seconds.
+✔ Test safeWriterRejectsOutOfRangeInsteadOfTruncating() passed after 0.001 seconds.
+✔ Test cancellationInProviderFinalisationPreventsPublication(_:) with 2 test cases passed after 0.001 seconds.
+✔ Test cancellationInsideWriteCannotPublishPartialImage() passed after 0.001 seconds.
+✔ Test decoderPreservesTaskCancellationError() passed after 0.001 seconds.
+✔ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() passed after 0.001 seconds.
+✔ Test borrowedStorageRejectsForgedLeasesAndPublication() passed after 0.001 seconds.
+✔ Test cancellationIsCheckedBeforeAllocatingStorage() passed after 0.001 seconds.
+✔ Test cancellationDuringDecodeInvalidatesTheDestination() passed after 0.019 seconds.
+✔ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() passed after 0.020 seconds.
+✔ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() passed after 0.239 seconds.
+✔ Test progressIsMonotonicAndCompletesAfterPublication() passed after 0.372 seconds.
+✔ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() passed after 0.548 seconds.
+◇ Iteration 5 ended after 0.548 seconds.
+✔ Test run with 95 tests in 0 suites passed after 2.819 seconds.

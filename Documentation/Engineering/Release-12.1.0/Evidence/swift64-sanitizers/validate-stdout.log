@@ -1,0 +1,14 @@
+SwiftJ2K: swift-version
+SwiftJ2K: xcode-version
+SwiftJ2K: source-commit
+SwiftJ2K: working-tree
+SwiftJ2K: swift-build-help
+SwiftJ2K: swift-test-help
+SwiftJ2K: swift-package-help
+SwiftJ2K: target-info
+SwiftJ2K: asan-discovery
+SwiftJ2K: asan-tests
+SwiftJ2K: tsan-discovery
+SwiftJ2K: tsan-tests
+Evidence: <scratch>/release/swift64-sanitizers/report.json
+validate sanitizers exit 0

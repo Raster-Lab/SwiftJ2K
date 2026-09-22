@@ -1,0 +1,4 @@
+​​✔ Test encoderOutputDecodesExactlyWithDefaultOptions(name:) with 10 test cases passed after 15.548 seconds.
+✔ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() passed after 15.880 seconds.
+✔ Test run with 78 tests in 2 suites passed after 15.953 seconds.
+** TEST SUCCEEDED **
