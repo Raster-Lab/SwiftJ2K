@@ -1,0 +1,9 @@
+iOS exit 0 0 errors
+iOS-Simulator exit 0 0 errors
+tvOS exit 70 4 errors
+tvOS-Simulator exit 70 4 errors
+watchOS exit 70 4 errors
+watchOS-Simulator exit 70 4 errors
+visionOS exit 70 4 errors
+visionOS-Simulator exit 70 4 errors
+macOS exit 0 0 errors

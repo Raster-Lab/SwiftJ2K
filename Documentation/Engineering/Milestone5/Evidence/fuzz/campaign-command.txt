@@ -1,0 +1,8 @@
+Executed 22 September 2026 (IST) from the repository root, release build of Integration/FuzzHarness under Xcode 26.2 (Apple Swift 6.2.3), native build system.
+
+S=<scratch>; B=$S/fuzz-build/release/FuzzHarness; C=$PWD/Tests/SwiftJ2KTests/Fixtures/Lossless
+for e in inspect decode decodeInto; do
+  $B --entry $e --seconds 3600 --seed 20260922 --corpus $C --output $S/fuzz/$e > $S/fuzz/$e.log 2>&1 &
+done; wait
+
+The three campaigns ran concurrently. Each <entry>.log holds the harness's final line and the process exit code; <entry>-summary.json is the harness's own final summary (verbatim). harness-sha256.txt records the binary and source hashes taken before the run.
