@@ -49,6 +49,43 @@ Build on the validated common local memory types to implement the direct unsigne
 
 Implement lossless J2K ↔ HTJ2K using [TRANSCODING.md](TRANSCODING.md) and the common native format-pair API/CLI. Audit the recorded predecessor limitations in Milestone 2; qualify the in-memory native operation in Milestone 3 and extend profiles in Milestone 4. Preserve the initial J2K → JPEG-LS proof and the Milestone 1 feasibility boundary.
 
+## Product dispositions (POL-05)
+
+Decided 22 September 2026 under contract 0.8.0 §3, which requires this inventory before any subsystem is relocated. Measured at predecessor J2KSwift `2fa9a3d` with `swift package dump-package`. "Imports" counts files across DICOMKit, CompressionFamily, VoxeliaValidation, DICOMAdapter, RasterOneImage, OneImageViewer-iOS and telerad-dicom-viewer containing a top-level `import <module>`.
+
+POL-05 requires every product to be explicitly **retained** (migrates, stays a public product), **adapted** (migrates with a changed shape — folded into the principal module, renamed, or re-expressed through the common API) or **deferred** (does not migrate for the first stable; stays with the predecessor through the maintenance window). Deferred is not deleted.
+
+| Predecessor product | Files / lines | Imports | Disposition | Successor | Basis |
+| --- | --- | --- | --- | --- | --- |
+| `J2KCore` | 22 / 8,927 | 15 | Adapted | internal target of `SwiftJ2K` | API-01 names the principal product and module exactly `SwiftJ2K` and allows internal targets to preserve useful algorithm boundaries |
+| `J2KCodec` | 82 / 63,930 | 6 | Adapted | internal target of `SwiftJ2K` | API-01 |
+| `J2KFileFormat` | 8 / 7,323 | 1 | Adapted | internal target of `SwiftJ2K` | API-01 |
+| `J2KContract` | 7 / 1,106 | 0 | Adapted — folded in | `SwiftJ2K` | It exists because `CompressionMode`, `EncodedImage` and `ImageMetadata` already meant something else inside a module named `J2KSwift`. The rename dissolves the collision. Contract 0.8.0 §5 forbids two parallel surfaces in one module. |
+| `J2KMetal` | 22 / 19,244 | 1 | Adapted | internal target, selected through `executionPolicy` | API-07 makes a backend a per-operation option reported back in `OperationReport`; PLAT-05 makes acceleration optional and availability-guarded |
+| `J2K3D` (JP3D) | 29 / 8,879 | 5 | **Retained** | `SwiftJ2K3D` | API-13 treats volume coding as a clearly named extension operation rather than an interchangeable common one |
+| `JPIP` | 30 / 13,955 | 2 | **Retained** | `SwiftJ2KJPIP` | API-13 names JPIP explicitly as not interchangeable with the single-image contract |
+| `J2KDICOMHelpers` | 11 / 1,647 | 0 | Deferred — retired | none | POL-05 keeps transfer-syntax negotiation and photometric policy in consumers. DICOMKit already owns `DICOMCore/PhotometricInterpretation.swift` and `DICOMCore/TransferSyntaxConverter.swift`, and nothing imports this product. |
+| `j2k` (exec) | 1 / 16 + `J2KCLICore` | — | Adapted — renamed | `swiftj2k` | CLI-01 fixes the successor executable names |
+| `j2kd` (exec) | 1 / 82 | — | Deferred | none | macOS-only XPC daemon; no importer, and a daemon-plus-fallback execution model is not part of the contract's operation surface |
+| `J2KDaemonProtocol` | 1 / 177 | 0 | Deferred | none | as `j2kd` |
+| `J2KDaemonCore` | 2 / 414 | 0 | Deferred | none | as `j2kd` |
+| `J2KDaemonClient` | 1 / 275 | 0 | Deferred | none | as `j2kd` |
+| `J2KTestApp` (exec) | 23 / 7,475 | 0 | Deferred — dev tooling | none | TESTING keeps development-only tools outside the shipped dependency graph |
+
+**Product list after migration:** `SwiftJ2K`, `SwiftJ2K3D`, `SwiftJ2KJPIP` (libraries) and `swiftj2k` (executable). Fourteen products become four.
+
+`Sources/J2KCore/CompressionFamilyConformance.swift` and `Sources/J2KCodec/CompressionFamilyConformance.swift` are the entire CompressionFamily coupling and move to a separate package under contract 0.8.0 §4, so `SwiftJ2K` resolves alone. CompressionFamily itself is untouched and stays available to predecessor consumers under POL-04.
+
+### Decisions recorded with these dispositions
+
+**M1 — `J2KMetal` becomes an internal target.** A caller requests acceleration through `executionPolicy` and reads back the backend actually used, instead of importing the backend module. This is a source change rather than a rename for DICOMKit's `Sources/DICOMCore/CodecBackend.swift`, its single importing file, and belongs in DICOMKit's separately assigned cutover task.
+
+**M2 — `SwiftJ2K3D` and `SwiftJ2KJPIP` ship in the first stable 12.1.0.** DICOMKit imports the two across seven files — `DICOMCore/JP3DCodec.swift`, `DICOMKit/JP3DVolumeDocument.swift`, `DICOMKit/JP3DVolumeBridge.swift`, `DICOMKit/DICOMKit+Volume.swift`, `DICOMKit/DICOMVolume.swift`, `DICOMKit/DICOMJPIPClient.swift` and the `dicom-jpip` executable. Deferring them past 12.1.0 would leave DICOMKit unable to complete its cutover and extend the predecessor maintenance window indefinitely, so they migrate carrying their existing public surface. Aligning that surface with the common contract is later milestone work under API-13, not a condition of the move.
+
+**M3 — `J2KDICOMHelpers` retires with the predecessor.** It is not transplanted into a consumer, because DICOMKit already implements the same domain. One audit before the predecessor is archived: confirm `J2KDICOMCodestreamDetector` has a DICOMKit equivalent. If it does not, that single file transplants to DICOMKit and the rest still retires.
+
+**CLI surface.** Retained and adapted: the CLI-01 verbs `encode`, `decode`, `inspect` (renamed from `Info`), `validate` and `capabilities`, plus `transcode` under POL-09. Deferred to a CLI milestone after the first stable: `Batch`, `Benchmark`, `Compare`, `Convert`, `Completions`, `Headless`, `InProcBench` and the `Encode3D`/`Decode3D`/`JPIPClient`/`JPIPServer` commands. Deferred under POL-05: `DICOMSupport`. Deferred as predecessor-compatibility surface: `OPJCompress`, `OPJDecompress` and `OPJDump` — these are native Swift commands mirroring OpenJPEG's flag syntax, not shell-outs, so POL-01 does not forbid them; they are simply not part of the successor's contract surface.
+
 ## Required handover
 
 Update CHANGELOG.md and migration provenance. Provide the exact commands, commits, fixture hashes and outcomes; report tests not run and why, unsupported cases, allocation/copy evidence and performance impact. Map each advertised feature to a test and capability entry. Keep DICOMKit/Voxelia source changes outside this repository task unless the owner separately assigns them.

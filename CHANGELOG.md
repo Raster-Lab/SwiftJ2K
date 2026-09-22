@@ -85,3 +85,10 @@ Owner-authorised Apple platform floors now use 27.0. Development version 12.1.0-
 - Licence changed from MIT to **Apache-2.0** for this repository, its in-house source and its documentation, amending POL-07 and settling the split that 0.7.0 referred to the owner. LICENSE replaced, NOTICE added, SPDX identifiers updated (29 files).
 - Recorded as preconditions rather than resolved: continuous integration must execute before any source moves (Actions billing is still locked, verified 22 September 2026), the POL-05 product inventory must be signed off, and the Apple 26.0 deployment floor against current consumer floors is referred to the owner.
 - All seven shared documents stay byte-identical; `SUITE_POLICY.md` and the SHA-256 manifest advance together. No platform, precision, ownership, fidelity or testing rule changes. This revision authorises no codec milestone and no release.
+
+## Product dispositions under POL-05 — 22 September 2026
+
+- Inventoried every J2KSwift product and recorded it as retained, adapted or deferred in [IMPLEMENTATION.md](IMPLEMENTATION.md), as contract 0.8.0 §3 requires before any subsystem is relocated. Fourteen products become four: `SwiftJ2K`, `SwiftJ2K3D`, `SwiftJ2KJPIP` and `swiftj2k`. `J2KCore`, `J2KCodec`, `J2KFileFormat`, `J2KContract` and `J2KMetal` fold into the principal module; `J2K3D` and `JPIP` stay separate products and ship in 12.1.0 because DICOMKit imports them across seven files; `J2KDICOMHelpers`, the three daemon products, `j2kd` and `J2KTestApp` are deferred, none of them with an in-house importer.
+- Measured at predecessor `2fa9a3d` with `swift package dump-package`, with an import census across DICOMKit, CompressionFamily, VoxeliaValidation, DICOMAdapter, RasterOneImage, OneImageViewer-iOS and telerad-dicom-viewer. Every deferred product has zero in-house importers.
+- Deferred is not deleted: a deferred product stays with the predecessor through its maintenance window. No shared contract document changes, no source moves, and no release or milestone is authorised by this record.
+
