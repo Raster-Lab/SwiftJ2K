@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: MIT
+# SPDX-License-Identifier: Apache-2.0
 """Black-box CLI and staged binary/manual installation regression checks."""
 import argparse, hashlib, json, os, re, shutil, subprocess, sys, tempfile
 from pathlib import Path

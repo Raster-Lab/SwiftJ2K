@@ -1,20 +1,20 @@
 # Swift Image Compression Suite — implementation baseline
 
-Contract version: **0.7.0**. Updated: **20 September 2026**.
+Contract version: **0.8.0**. Updated: **22 September 2026**.
 Status: **engineering specification; Milestone 1 implementation evidence is recorded in MILESTONE1.md. Later codec and platform gates remain planned**.
 
 This is the common engineering specification for four independent successor libraries. It records the owner's accepted direction and makes concrete implementation choices for the coding agent. Milestone 1 public API shapes and owning storage have been compiler-validated to the coverage recorded in MILESTONE1.md and Engineering/Swift64/README.md. Planned codec behaviour, engineering thresholds and unexecuted platforms remain qualification gates; those records do not constitute a separate human approval. Do not describe this baseline as a released SDK or a conformance certificate.
 
 ## Decisions and boundaries
 
-| Contract repository | Codec library it specifies | Intended first stable release |
+| Successor (shipping library) | Predecessor (maintenance) | Intended first stable release |
 | --- | --- | --- |
 | SwiftJ2K | J2KSwift | 12.1.0 |
 | SwiftJLS | JLSwift | 1.1.0 |
 | SwiftJXL | JXLSwift | 2.1.0 |
 | SwiftJLI | JLISwift | 1.1.0 |
 
-Decision D1, taken at contract 0.7.0, settles what these two columns mean. The shipping codec library is the existing repository in the right-hand column; the repository in the left-hand column holds that codec's copy of the shared contract, the reference implementation of the shared image layer, and its share of the cross-codec conformance harness. The release numbers continue the existing version lines. Codec sources are not relocated.
+Decision D2, taken at contract 0.8.0, settles what these two columns mean and supersedes Decision D1. The shipping codec library is the successor in the left-hand column. Codec sources relocate there from the predecessor in the right-hand column, which becomes a maintenance project and is archived once its consumers have moved. Each successor keeps the seven shared documents, the reference implementation of the shared image layer and its share of the cross-codec conformance harness, and the migrated codec is fitted to that surface rather than placed beside it. The release numbers continue the existing version lines.
 
 The public family name is **Swift Image Compression Suite**. Raster-Lab remains the GitHub organisation; copyright attribution remains accurate. Each codec has its own repository, implementation, package and release sequence. HTJ2K remains a mode of SwiftJ2K.
 
@@ -30,7 +30,7 @@ The public family name is **Swift Image Compression Suite**. Raster-Lab remains 
 
 **POL-06 Priorities.** Performance, reliability and security guide every change. Correctness, memory safety and defined fidelity are release constraints. Optimisation must not relax bounds checks, hide unsupported inputs, silently lower precision or bypass cancellation. Keep a correct scalar Swift reference path. Retain audited native hot paths only where measured, independently selectable and removable. Do not add C/C++ for routine parsing or to replace an in-house codec with a foreign runtime.
 
-**POL-07 Licence and provenance.** New in-house files and documentation are MIT licensed. The owner has authorised relicensing of in-house predecessor code. Preserve original authorship/copyright years where appropriate; record each migrated path's source commit. This does not relicense third-party dependencies or fixtures. Review their notices independently. Existing published predecessor tags retain their original history and licence texts; never rewrite tags.
+**POL-07 Licence and provenance.** The four successor repositories, their in-house source and their documentation are Apache-2.0 licensed, by owner decision of 22 September 2026 recorded in contract revision 0.8.0. This supersedes the MIT baseline of the repository foundation and settles the split the 0.7.0 revision referred to the owner. The owner has authorised relicensing of in-house predecessor code, including the MIT-licensed J2KSwift and JXLSwift source; Raster Images Private Limited holds that copyright. Preserve original authorship/copyright years where appropriate; record each migrated path's source commit. This does not relicense third-party dependencies or fixtures. Review their notices independently. Existing published predecessor tags retain their original history and licence texts; never rewrite tags.
 
 **POL-08 Truthful status.** Documentation requirements are planned until implemented and tested. Do not copy historical test counts, benchmark numbers or production-readiness claims into the successor README. Record measured results with exact revisions, platform and test commands. A missing required environment is an unexecuted gate, not a pass.
 
@@ -126,3 +126,27 @@ The obstacles to evolving in place proved smaller on inspection than they looked
 Two consequences need the owner's explicit attention rather than an agent's assumption. JLSwift and JLISwift are Apache-2.0, while the contract repositories and their new files are MIT; POL-07 authorises relicensing in-house predecessor code, but JLSwift was deliberately relicensed to Apache-2.0 on 26 August 2026, so mixing or converting should be a decision rather than a side effect. The licences are compatible in the direction of adding MIT files to an Apache-2.0 tree, and no action is forced. Separately, POL-03 is unaffected: it already states that the seven documents define a specification rather than a runtime module and that every module implements its own concrete types with the same meaning and public shape, so the Milestone 1 types already built in the contract repositories become the reference implementation of that shape rather than wasted work.
 
 Required actions: Milestone 3 work targets the existing libraries; the contract repositories keep the seven shared documents, the reference implementation and the conformance harness; J2KSwift extracts its CompressionFamily conformance and inventories its products under POL-05; each library states how its existing public surface relates to the contract surface. No platform, precision, ownership or fidelity rule changes, and this revision authorises no codec milestone or release. The decision is recorded on documentation evidence gathered on one machine; continuous integration remains blocked and has verified none of it.
+
+## Contract revision 0.8.0 — 22 September 2026
+
+**Decision D2: the codec libraries relocate into the successor repositories. Decision D1 is superseded.** The owner has reaffirmed the repository foundation v0.1.0 as the guidance for this migration and instructed that the codecs move to SwiftJ2K, SwiftJLS, SwiftJXL and SwiftJLI. Under document precedence rule 1 the owner's current explicit decision outranks a previous contract revision, so D1 no longer states the suite's direction.
+
+The foundation is unambiguous about that direction and is restored in full. Its policy table pairs each successor with the predecessor it replaces and an intended first stable release. Its `IMPLEMENTATION.md` makes Milestone 2 a *migration baseline* that inventories predecessor subsystems and products and migrates the smallest native scalar lossless path with provenance reconciliation. Its `HISTORY.md` states that the originals are intended to become maintenance projects while new development moves to the successor. Its `AGENTS.md` directs the agent to compile an isolated ownership experiment *before moving large codec subsystems*. Migration was the plan of record from 17 September 2026; D1 was the departure from it.
+
+D1's measurements are retained as this revision's risk register rather than discarded as a rejected argument. Relocation still moves roughly 219,000 lines of codec source and 184,000 lines of tests together with their fixtures and cross-codec oracles. Three in-house consumers still resolve the predecessors by URL at pinned released versions — DICOMKit depends on all four, CompressionFamily on two, VoxeliaValidation on one — and none references a successor. Those costs are accepted, not refuted.
+
+**The continuous-integration objection is not resolved and becomes a precondition.** The organisation's Actions billing remains locked. A re-run of JLSwift's CI workflow on 22 September 2026 completed with `steps=0`, so nothing executed. Under POL-08 that is an unexecuted gate, and a relocation of this size with no automated verification has nothing to catch what it breaks. No codec source may move before continuous integration executes and passes on the repository it moves into. J2KSwift additionally has no CI workflow of any kind and needs one written before its migration begins.
+
+Consequences and required actions:
+
+1. **Licence.** All four successors ship Apache-2.0, amending POL-07. Each replaces its MIT `LICENSE`, adds a `NOTICE`, and updates its SPDX identifiers and documentation. Published predecessor tags keep their original history and licence texts; third-party dependencies, tools and fixtures keep their own terms, and this decision is not authority to remove another party's notices.
+2. **Deployment floor — open, and referred to the owner.** PLAT-01 and PLAT-02 fix the Apple deployment minimum at 26.0, and every successor manifest already declares it. Every current in-house consumer resolves a predecessor at macOS 12–15 and iOS 15–18. API-01 designates the predecessor repositories as the supported compatibility route for older APIs and platforms, so the floor is deliberate rather than a defect; it does mean that no existing consumer can adopt a successor until it raises its own deployment target. This revision does not change the floor and does not decide the consumer question.
+3. **Product inventory before any source moves (POL-05).** J2KSwift ships thirteen products including a daemon, JXLSwift four, JLSwift two plus its public `PNGSupport` and `TIFFSupport` helpers, JLISwift three. Each is explicitly retained, adapted or deferred, with its successor product name recorded, before its subsystem is relocated.
+4. **Dependency extraction (POL-01, POL-02).** J2KSwift's CompressionFamily conformance is confined to two files and moves to a separate package so the migrated core library resolves alone. CompressionFamily itself is untouched and remains available to predecessor consumers under POL-04.
+5. **Reference implementation.** The Milestone 1 types already built in each successor are the surface the migrated codec is fitted to. Where a migrated contract layer duplicates them, one of the two is retired deliberately and the choice recorded; two parallel surfaces in one module are not an acceptable migration outcome.
+6. **Predecessors.** Each receives a final release, then a maintenance window accepting security and correctness fixes only, then an archive once its consumers have moved. Predecessors are not renamed or deleted: the successors' `HISTORY.md` and `MIGRATION.md` pin predecessor commits and source files by permalink, and those links are the provenance record.
+7. **Consumers.** Re-pointing DICOMKit, and the applications that reach the codecs through it, is a separate owner-assigned task and is not authorised here.
+
+Migration order is JLSwift into SwiftJLS first, as the pilot: it is the smallest at 15,112 lines of source and 19,976 of tests, it has no package dependency to extract, and it is the codec named in the suite's first cross-codec proof. JLISwift, JXLSwift and J2KSwift follow, largest last.
+
+No platform, precision, ownership, fidelity or testing rule changes in this revision. It authorises no codec milestone and no release, and no stable tag may be cut in any repository while the gates in TEST-07 are unexecuted.
