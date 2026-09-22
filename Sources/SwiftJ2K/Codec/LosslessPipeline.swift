@@ -171,6 +171,7 @@ enum ScalarLosslessCodec {
             for range in profile.tileData { joined.append(contentsOf: bytes[range]) }
             tileBytes = joined
             tileRange = 0..<joined.count
+            StorageTelemetry.recordWorkspaceAllocation(bytes: joined.count)
         }
 
         let geometry = profile.geometry
@@ -182,6 +183,7 @@ enum ScalarLosslessCodec {
 
         let stride = profile.width
         var plane = [Int32](repeating: 0, count: profile.width * profile.height)
+        StorageTelemetry.recordWorkspaceAllocation(bytes: plane.count * 4)
         for resolution in geometry.resolutions {
             for (p, precinct) in resolution.precincts.enumerated() {
                 for (b, precinctBand) in precinct.bands.enumerated() {
@@ -217,15 +219,17 @@ enum ScalarLosslessCodec {
         let shift = Int32(1) << Int32(profile.precision - 1)
         let maximum = Int32((1 << profile.precision) - 1)
         let layout = descriptor.planes[0]
+        let mutation = SharedPathMutation.active
+        let rowBytes = mutation == .ignoreRowStride ? profile.width * layout.pixelStride : layout.rowBytes
+        let order = mutation == .wrongByteOrder ? descriptor.byteOrder.opposite : descriptor.byteOrder
         let image = try destination.write { bytes in
             for y in 0..<profile.height {
                 try work.check()
-                let rowOffset = layout.offset + y * layout.rowBytes
+                let rowOffset = layout.offset + y * rowBytes
                 let planeRow = y * stride
                 for x in 0..<profile.width {
                     let value = min(max(plane[planeRow + x] + shift, 0), maximum)
-                    try storeUInt16(UInt16(value), into: bytes, at: rowOffset + x * layout.pixelStride,
-                                    order: descriptor.byteOrder)
+                    try storeUInt16(UInt16(value), into: bytes, at: rowOffset + x * layout.pixelStride, order: order)
                 }
             }
         }
@@ -282,15 +286,19 @@ enum ScalarLosslessCodec {
         let layout = descriptor.planes[0]
         let stride = width
         var plane = [Int32](repeating: 0, count: width * height)
+        StorageTelemetry.recordWorkspaceAllocation(bytes: plane.count * 4)
+        let mutation = SharedPathMutation.active
+        let rowBytes = mutation == .ignoreRowStride ? width * layout.pixelStride : layout.rowBytes
+        let order = mutation == .wrongByteOrder ? descriptor.byteOrder.opposite : descriptor.byteOrder
         try image.storage.withUnsafeBytes { bytes in
             guard bytes.count >= descriptor.requiredByteCount else {
                 throw CodecError(.storageUnavailable, "Provider returned insufficient capacity.")
             }
             for y in 0..<height {
                 try work.check()
-                let rowOffset = layout.offset + y * layout.rowBytes
+                let rowOffset = layout.offset + y * rowBytes
                 for x in 0..<width {
-                    let sample = try loadUInt16(bytes, at: rowOffset + x * layout.pixelStride, order: descriptor.byteOrder)
+                    let sample = try loadUInt16(bytes, at: rowOffset + x * layout.pixelStride, order: order)
                     guard sample <= maximum else {
                         throw CodecError(.invalidArgument, "A sample exceeds the declared meaningful precision.")
                     }

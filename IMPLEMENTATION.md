@@ -26,6 +26,10 @@ Work one owner-assigned milestone at a time. Preserve internal algorithm names w
 
 Milestone 2 is implemented on branch `milestone2/scalar-lossless-j2k` against predecessor `7acc9ae415e7d0bc7d441e0f0277d5e150bd19ca`; evidence is in [MILESTONE2.md](Documentation/MILESTONE2.md) and file-level provenance in [HISTORY.md](HISTORY.md). The migrated scalar path covers: raw JPEG 2000 Part 1 codestreams, one unsigned greyscale component of 1–16 bits, one tile at the origin, reversible 5/3 wavelet with 0–32 levels, no quantisation, default code-block style, one quality layer, any precinct partition, LRCP/RLCP/RPCL progression (PCRL/CPRL only with one precinct per resolution), SOP/EPH markers, several tile-parts, PLT/TLM/COM segments skipped. Everything else in the "Migration focus" list below remains a capability to add: HTJ2K, 9/7 and quantised coding, tiles, layers, colour and signed components, sub-sampling, ROI, POC, PPM/PPT, JP2/JPH containers, acceleration, the auxiliary products, and native transcoding. Contract 0.9.0's continuous-integration precondition was still unmet when this milestone was executed, so the branch is local evidence rather than a merge candidate.
 
+### Milestone 3 status — executed 22 September 2026
+
+The shared-storage path is proved for the scalar lossless codec: caller-destination decode and sealed-source encode with telemetry-checked zero pixel allocations and copies, sentinel padding, stride independence, mutation testing and the extended contract harness with both reference decoders ([MILESTONE3.md](Documentation/MILESTONE3.md)). The cross-codec JPEG-LS leg of the first suite pair is unexecuted because SwiftJLS advertises no encoder; it is the corresponding codec extension (SwiftJ2K re-encode from the same owner) that passes. Native transcoding remains at Milestone 1 capability.
+
 
 ### Migration focus
 

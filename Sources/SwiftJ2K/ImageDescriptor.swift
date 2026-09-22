@@ -2,7 +2,18 @@
 import Foundation
 
 public enum SampleType: Sendable { case unsignedInteger, signedInteger, floatingPoint }
-public enum ByteOrder: Sendable { case littleEndian, bigEndian, native }
+public enum ByteOrder: Sendable {
+    case littleEndian, bigEndian, native
+    /// The other concrete order; `native` resolves first. Used only by the
+    /// test-only shared-path mutation.
+    var opposite: ByteOrder {
+        switch self {
+        case .littleEndian: return .bigEndian
+        case .bigEndian: return .littleEndian
+        case .native: return UInt16(littleEndian: 1) == 1 ? .bigEndian : .littleEndian
+        }
+    }
+}
 public enum ComponentRole: Sendable, Equatable {
     case grey, red, green, blue, alpha
     case uninterpreted(String)

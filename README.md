@@ -2,7 +2,7 @@
 
 JPEG 2000 and HTJ2K for the **Swift Image Compression Suite**.
 
-**Status: Milestone 2 migration baseline implemented and tested on macOS arm64. The library encodes and decodes scalar lossless JPEG 2000 Part 1 codestreams for the shared profile: unsigned greyscale, 1–16 bits, one tile, reversible 5/3 wavelet, one layer, raw codestream. HTJ2K, lossy coding, colour, tiles, containers, acceleration and native transcoding are not yet implemented.** The intended first stable library version is **12.1.0**; it is not a published release. The standalone Swift package has no external dependencies, and its capabilities advertise exactly the coverage above. Executed evidence and open gates are in [MILESTONE2.md](Documentation/MILESTONE2.md).
+**Status: Milestones 2 and 3 implemented and tested on macOS arm64: the scalar lossless codec and its shared-storage proof. The library encodes and decodes scalar lossless JPEG 2000 Part 1 codestreams for the shared profile: unsigned greyscale, 1–16 bits, one tile, reversible 5/3 wavelet, one layer, raw codestream. HTJ2K, lossy coding, colour, tiles, containers, acceleration and native transcoding are not yet implemented.** The intended first stable library version is **12.1.0**; it is not a published release. The standalone Swift package has no external dependencies, and its capabilities advertise exactly the coverage above. Executed evidence and open gates are in [MILESTONE2.md](Documentation/MILESTONE2.md).
 
 SwiftJ2K is the standalone successor to [J2KSwift](https://github.com/Raster-Lab/J2KSwift). The successor is intended to provide a harmonised API, explicit memory ownership, high-precision sample preservation and efficient shared-storage integration. It has no mandatory dependency on another suite library or CompressionFamily. Apache-2.0 licensing applies to these documents and subsequent authorised in-house implementation; third-party material retains its own terms.
 
@@ -12,7 +12,7 @@ Read [MIGRATION.md — J2KSwift to SwiftJ2K](MIGRATION.md) for dependency/produc
 
 ## Swift 6.4 development candidate
 
-Current development version: **12.1.0-dev.3** ([VERSION](VERSION)); shared contract **0.9.0**. This increments the earlier unreleased 12.0.0 target and creates no release/tag. See the [current qualification record](Documentation/Engineering/OS27CLI/README.md) for adopted features, exact Xcode/Swift Build evidence and open platform gates. The historical [Milestone 1 evidence](Documentation/MILESTONE1.md) remains unchanged.
+Current development version: **12.1.0-dev.4** ([VERSION](VERSION)); shared contract **0.9.0**. This increments the earlier unreleased 12.0.0 target and creates no release/tag. See the [current qualification record](Documentation/Engineering/OS27CLI/README.md) for adopted features, exact Xcode/Swift Build evidence and open platform gates. The historical [Milestone 1 evidence](Documentation/MILESTONE1.md) remains unchanged.
 
 ## Intended platform baseline
 
@@ -20,7 +20,7 @@ Swift 6.2 manifest minimum with Swift 6.4 as the qualified primary toolchain, Sw
 
 ## Start reading
 
-Milestone 1 established the API and memory contract with synthetic buffers ([evidence](Documentation/MILESTONE1.md)). Milestone 2 migrated the scalar lossless JPEG 2000 path from the pinned predecessor and validated it against OpenJPEG and Kakadu ([evidence and open gates](Documentation/MILESTONE2.md), [file-level provenance](HISTORY.md)). The first real shared-storage transcode proof with SwiftJLS follows in Milestone 3. Use the task prompts in [AGENTS.md](AGENTS.md).
+Milestone 1 established the API and memory contract with synthetic buffers ([evidence](Documentation/MILESTONE1.md)). Milestone 2 migrated the scalar lossless JPEG 2000 path from the pinned predecessor and validated it against OpenJPEG and Kakadu ([evidence and open gates](Documentation/MILESTONE2.md), [file-level provenance](HISTORY.md)). Milestone 3 proved the required-sharing decode-into and encode-from path with instrumentation, mutation testing and the contract harness ([evidence](Documentation/MILESTONE3.md)); its JPEG-LS leg waits for a SwiftJLS encoder. Use the task prompts in [AGENTS.md](AGENTS.md).
 
 - [Coding-agent entry point](AGENTS.md) and [codec-specific implementation plan](IMPLEMENTATION.md).
 - [Suite policy](Documentation/SUITE_POLICY.md) and [common API](Documentation/COMMON_API.md).

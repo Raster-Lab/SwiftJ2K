@@ -202,5 +202,198 @@ final class JLSWriteAdapter: SwiftJLS.WritableImageStorage, Sendable {
         try require(image.storage.allocationID == owner.allocationID, "Writable adapter changed identity.")
         try image.storage.withUnsafeBytes { try require($0[0] == 255 && $0[1] == 255, "Mapped write failed.") }
         print("PASS: local write-lease mapping and exact UInt16 maximum")
+        try await SharedStorageProof.run()
+    }
+}
+
+// MARK: - Milestone 3: a real codestream through one owner (TESTING TEST-02 shape)
+
+/// Decodes an OpenJPEG-made lossless JPEG 2000 codestream straight into a
+/// harness-owned, sentinel-filled allocation, hands a sealed read view of the
+/// same owner to the other modules, re-encodes from that owner with SwiftJ2K,
+/// and has the reference tools decode the result. SwiftJLS advertises no
+/// encoder yet, so the JPEG-LS leg of TEST-02 is attempted and recorded as
+/// unexecuted rather than simulated.
+enum SharedStorageProof {
+    static let fixturesDirectory = URL(fileURLWithPath: #filePath)
+        .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+        .deletingLastPathComponent().deletingLastPathComponent()
+        .appendingPathComponent("Tests/SwiftJ2KTests/Fixtures/Lossless")
+
+    /// Sentinel-filled caller allocation; borrows are counted by the harness.
+    final class SentinelOwner: SwiftJ2K.WritableImageStorage, @unchecked Sendable {
+        let allocationID = UUID()
+        let byteCount: Int
+        let allocation: UnsafeMutableRawPointer
+        let metrics: Metrics
+        private enum Phase { case available, writing(SwiftJ2K.StorageWriteLease), sealed, invalid }
+        private let phase = Mutex(Phase.available)
+        init(byteCount: Int, metrics: Metrics) {
+            self.byteCount = byteCount; self.metrics = metrics
+            allocation = .allocate(byteCount: byteCount, alignment: 2)
+            allocation.initializeMemory(as: UInt8.self, repeating: 0xA5, count: byteCount)
+            metrics.counts.withLock { $0.allocations += 1 }
+        }
+        deinit { allocation.deallocate() }
+        func reserveWrite() throws -> SwiftJ2K.StorageWriteLease {
+            try phase.withLock { phase in
+                guard case .available = phase else { throw SwiftJ2K.CodecError(.storageUnavailable, "Owner is not available.") }
+                let lease = SwiftJ2K.StorageWriteLease(); phase = .writing(lease); return lease
+            }
+        }
+        func withUnsafeMutableBytes<R>(lease: SwiftJ2K.StorageWriteLease, _ body: (UnsafeMutableRawBufferPointer) throws -> R) throws -> R {
+            try phase.withLock { phase in
+                guard case .writing(let current) = phase, current == lease else { throw SwiftJ2K.CodecError(.storageUnavailable, "Bad lease.") }
+                metrics.counts.withLock { $0.writes += 1 }
+                return try body(UnsafeMutableRawBufferPointer(start: allocation, count: byteCount))
+            }
+        }
+        func finishAndSeal(lease: SwiftJ2K.StorageWriteLease) throws -> any SwiftJ2K.ReadOnlyImageStorage {
+            try phase.withLock { phase in
+                guard case .writing(let current) = phase, current == lease else { throw SwiftJ2K.CodecError(.storageUnavailable, "Bad lease.") }
+                phase = .sealed
+                return SentinelReadView(owner: self)
+            }
+        }
+        func abortAndInvalidate(lease: SwiftJ2K.StorageWriteLease) throws {
+            try phase.withLock { phase in
+                guard case .writing(let current) = phase, current == lease else { throw SwiftJ2K.CodecError(.storageUnavailable, "Bad lease.") }
+                phase = .invalid
+            }
+        }
+        func read<R>(_ body: (UnsafeRawBufferPointer) throws -> R) throws -> R {
+            let sealed = phase.withLock { if case .sealed = $0 { return true }; return false }
+            guard sealed else { throw SwiftJ2K.CodecError(.storageUnavailable, "Owner is not sealed.") }
+            metrics.counts.withLock { $0.reads += 1 }
+            return try body(UnsafeRawBufferPointer(start: allocation, count: byteCount))
+        }
+    }
+    struct SentinelReadView: SwiftJ2K.ReadOnlyImageStorage {
+        let owner: SentinelOwner
+        var byteCount: Int { owner.byteCount }
+        var allocationID: UUID { owner.allocationID }
+        func withUnsafeBytes<R>(_ body: (UnsafeRawBufferPointer) throws -> R) throws -> R { try owner.read(body) }
+    }
+
+    static func pgmSamples(_ url: URL, count: Int) throws -> [UInt16] {
+        let data = [UInt8](try Data(contentsOf: url))
+        var fields: [String] = []; var i = 0
+        while fields.count < 4 {
+            while data[i] == 0x20 || data[i] == 0x0A || data[i] == 0x0D || data[i] == 0x09 { i += 1 }
+            if data[i] == 0x23 { while data[i] != 0x0A { i += 1 }; continue }
+            var j = i
+            while !(data[j] == 0x20 || data[j] == 0x0A || data[j] == 0x0D || data[j] == 0x09) { j += 1 }
+            fields.append(String(decoding: data[i..<j], as: UTF8.self)); i = j
+        }
+        i += 1
+        if (Int(fields[3]) ?? 0) <= 255 { return data[i..<i + count].map { UInt16($0) } }
+        return (0..<count).map { UInt16(data[i + 2 * $0]) << 8 | UInt16(data[i + 2 * $0 + 1]) }
+    }
+
+    static func liveHeapBytes() -> Int {
+        var stats = malloc_statistics_t()
+        malloc_zone_statistics(nil, &stats)
+        return Int(stats.size_in_use)
+    }
+
+    static func openDescriptors() -> Int {
+        (try? FileManager.default.contentsOfDirectory(atPath: "/dev/fd").count) ?? -1
+    }
+
+    static func run() async throws {
+        let cases: [(name: String, file: String, width: Int, height: Int, bits: Int, prefix: Int, padding: Int)] = [
+            ("g12_129x67_gradient", "g12_129x67_gradient.opj.j2k", 129, 67, 12, 6, 10),
+            ("g16_17x9_alternating", "g16_17x9_alternating.kdu.j2k", 17, 9, 16, 2, 4),
+            ("g16_256x256_smooth", "g16_256x256_smooth.opj_b32.j2k", 256, 256, 16, 0, 0),
+        ]
+        for c in cases {
+            let expected = try pgmSamples(fixturesDirectory.appendingPathComponent(c.name + ".pgm"), count: c.width * c.height)
+            let codestream = try Data(contentsOf: fixturesDirectory.appendingPathComponent(c.file))
+            let rowBytes = c.width * 2 + c.padding
+            let capacity = c.prefix + rowBytes * c.height
+            let metrics = Metrics()
+            let descriptorsBefore = openDescriptors()
+            let heapBefore = liveHeapBytes()
+
+            // 2. One owner, one destination.
+            let owner = SentinelOwner(byteCount: capacity, metrics: metrics)
+            let descriptor = try SwiftJ2K.ImageDescriptor.greyscale16(width: c.width, height: c.height, meaningfulBits: c.bits, rowBytes: rowBytes, offset: c.prefix)
+            let destination = try SwiftJ2K.ImageDestination(descriptor: descriptor, storage: owner)
+            let decoder = try SwiftJ2K.Decoder()
+            let info = try decoder.inspect(codestream)
+            try require(info.descriptor.width == c.width && info.descriptor.meaningfulBits == c.bits, "Inspection disagrees with the fixture.")
+
+            // 3. Decode straight into it.
+            let decoded = try await decoder.decode(codestream, into: destination)
+            let heapAfterDecode = liveHeapBytes()
+            try require(decoded.image.storage.allocationID == owner.allocationID, "Decode changed the allocation identity.")
+            try require(decoded.report.pixelAllocationCount == 0 && decoded.report.copyEvents.isEmpty, "Decode reported an allocation or copy.")
+            try owner.read { bytes in
+                for i in 0..<c.prefix { try require(bytes[i] == 0xA5, "Prefix byte was written.") }
+                for y in 0..<c.height {
+                    for p in (c.width * 2)..<rowBytes { try require(bytes[c.prefix + y * rowBytes + p] == 0xA5, "Padding byte was written.") }
+                    for x in 0..<c.width {
+                        let at = c.prefix + y * rowBytes + x * 2
+                        try require(UInt16(bytes[at]) | UInt16(bytes[at + 1]) << 8 == expected[y * c.width + x], "Decoded sample differs.")
+                    }
+                }
+            }
+
+            // 4. The same owner, seen by the other modules through explicit adapters.
+            let jlsImage = try SwiftJLS.Image(descriptor: .greyscale16(width: c.width, height: c.height, meaningfulBits: c.bits, rowBytes: rowBytes, offset: c.prefix),
+                                              storage: SwiftJLSReadAdapter(underlying: decoded.image.storage))
+            try require(jlsImage.storage.allocationID == owner.allocationID, "SwiftJLS adapter changed identity.")
+            var jpegLSLeg = "unexecuted: SwiftJLS advertises canEncode == \(SwiftJLS.Encoder.capabilities.canEncode)"
+            do {
+                _ = try await SwiftJLS.Encoder().encode(jlsImage)
+                jpegLSLeg = "executed"
+            } catch let error as SwiftJLS.CodecError {
+                try require(error.category == .unsupportedFeature, "SwiftJLS failed for an unexpected reason: \(error.message)")
+            }
+
+            // Corresponding codec extension: SwiftJ2K re-encodes from the same sealed owner.
+            let readsBefore = metrics.counts.withLock { $0.reads }
+            let encoded = try await SwiftJ2K.Encoder().encode(decoded.image)
+            let readsAfter = metrics.counts.withLock { $0.reads }
+            try require(readsAfter == readsBefore + 1, "Encoder did not read the owner exactly once.")
+            try require(encoded.report.pixelAllocationCount == 0 && encoded.report.copyEvents.isEmpty, "Encode reported an allocation or copy.")
+            let heapAfterEncode = liveHeapBytes()
+
+            // 5. Independent decoders read the re-encoded output.
+            var oracles: [String] = []
+            let temporary = FileManager.default.temporaryDirectory.appendingPathComponent("swiftj2k-harness-\(UUID().uuidString)")
+            try FileManager.default.createDirectory(at: temporary, withIntermediateDirectories: true)
+            defer { try? FileManager.default.removeItem(at: temporary) }
+            let input = temporary.appendingPathComponent("re-encoded.j2k")
+            try encoded.data.write(to: input)
+            for (label, tool, extra) in [("OpenJPEG", "/opt/homebrew/bin/opj_decompress", [String]()), ("Kakadu", "/usr/local/bin/kdu_expand", ["-quiet"])]
+            where FileManager.default.isExecutableFile(atPath: tool) {
+                let output = temporary.appendingPathComponent(label + ".pgm")
+                let process = Process()
+                process.executableURL = URL(fileURLWithPath: tool)
+                process.arguments = ["-i", input.path, "-o", output.path] + extra
+                process.standardOutput = FileHandle.nullDevice; process.standardError = FileHandle.nullDevice
+                try process.run(); process.waitUntilExit()
+                try require(process.terminationStatus == 0, "\(label) rejected the re-encoded codestream.")
+                try require(try pgmSamples(output, count: c.width * c.height) == expected, "\(label) decoded different samples.")
+                oracles.append(label)
+            }
+
+            // 6. Accounting: harness counters, module report and the process allocator.
+            let counts = metrics.counts.withLock { $0 }
+            try require(counts.allocations == 1 && counts.writes == 1, "Expected exactly one owner allocation and one write borrow.")
+            let heldAfterDecode = heapAfterDecode - heapBefore
+            try require(heldAfterDecode < capacity + 64 * 1024,
+                        "Live heap grew by \(heldAfterDecode) bytes after decode; the coefficient workspace (\(c.width * c.height * 4) bytes) was not released or a second frame is retained.")
+            try require(openDescriptors() == descriptorsBefore, "A file descriptor was opened by the library path.")
+
+            // 7. A second writer, and a mutation attempt while readers are active, are refused.
+            do {
+                _ = try owner.reserveWrite()
+                throw ExperimentFailure(message: "A second writer was accepted on the sealed owner.")
+            } catch let error as SwiftJ2K.CodecError { try require(error.category == .storageUnavailable, "Unexpected second-writer error.") }
+
+            print("PASS: \(c.name) \(c.width)x\(c.height)@\(c.bits) prefix \(c.prefix) padding \(c.padding): decoded into the caller owner (1 allocation, 1 write borrow, identity kept, padding intact), re-encoded from it (\(readsAfter - readsBefore) read borrow, \(encoded.data.count) bytes, workspace \(encoded.report.peakWorkspaceBytes ?? -1) bytes), live heap +\(heldAfterDecode) B after decode and +\(heapAfterEncode - heapBefore) B after encode, oracles \(oracles.isEmpty ? "none available" : oracles.joined(separator: "+")) exact; JPEG-LS leg \(jpegLSLeg)")
+        }
     }
 }

@@ -8,7 +8,7 @@ import Glibc
 #endif
 
 private let tool = "swiftj2k"
-private let version = "12.1.0-dev.3"
+private let version = "12.1.0-dev.4"
 private let reserved = ["encode", "decode", "inspect", "validate", "transcode"]
 private let valueOptions: Set<String> = ["--input", "-i", "--output", "-o", "--input-format", "--output-format",
     "--mode", "--max-error", "--backend", "--copy-policy", "--threads", "--max-memory", "--timeout"]
