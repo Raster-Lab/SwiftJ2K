@@ -1,0 +1,106 @@
+[0/1] Planning build
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Test roundTripThroughCallerStorageWithDifferentStridesOnEachSide() started.
+◇ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() started.
+◇ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() started.
+◇ Test mutationsOfStrideAndByteOrderAreCaughtByTheSharedStorageChecks() started.
+◇ Test failedFillInvalidatesDestination() started.
+◇ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() started.
+◇ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() started.
+◇ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() started.
+✔ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() passed after 0.001 seconds.
+✔ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() passed after 0.001 seconds.
+✔ Test failedFillInvalidatesDestination() passed after 0.001 seconds.
+✔ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() passed after 0.042 seconds.
+✔ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() passed after 0.363 seconds.
+✔ Test roundTripThroughCallerStorageWithDifferentStridesOnEachSide() passed after 0.710 seconds.
+✔ Test mutationsOfStrideAndByteOrderAreCaughtByTheSharedStorageChecks() passed after 1.639 seconds.
+✔ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() passed after 2.075 seconds.
+✔ Test run with 8 tests in 0 suites passed after 2.075 seconds.
+repetition 1 exit 0
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Test roundTripThroughCallerStorageWithDifferentStridesOnEachSide() started.
+◇ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() started.
+◇ Test failedFillInvalidatesDestination() started.
+◇ Test mutationsOfStrideAndByteOrderAreCaughtByTheSharedStorageChecks() started.
+◇ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() started.
+◇ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() started.
+◇ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() started.
+◇ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() started.
+✔ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() passed after 0.001 seconds.
+✔ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() passed after 0.001 seconds.
+✔ Test failedFillInvalidatesDestination() passed after 0.001 seconds.
+✔ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() passed after 0.048 seconds.
+✔ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() passed after 0.353 seconds.
+✔ Test roundTripThroughCallerStorageWithDifferentStridesOnEachSide() passed after 0.720 seconds.
+✔ Test mutationsOfStrideAndByteOrderAreCaughtByTheSharedStorageChecks() passed after 1.621 seconds.
+✔ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() passed after 2.054 seconds.
+✔ Test run with 8 tests in 0 suites passed after 2.054 seconds.
+repetition 2 exit 0
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() started.
+◇ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() started.
+◇ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() started.
+◇ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() started.
+◇ Test roundTripThroughCallerStorageWithDifferentStridesOnEachSide() started.
+◇ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() started.
+◇ Test mutationsOfStrideAndByteOrderAreCaughtByTheSharedStorageChecks() started.
+◇ Test failedFillInvalidatesDestination() started.
+✔ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() passed after 0.001 seconds.
+✔ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() passed after 0.001 seconds.
+✔ Test failedFillInvalidatesDestination() passed after 0.001 seconds.
+✔ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() passed after 0.047 seconds.
+✔ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() passed after 0.354 seconds.
+✔ Test roundTripThroughCallerStorageWithDifferentStridesOnEachSide() passed after 0.737 seconds.
+✔ Test mutationsOfStrideAndByteOrderAreCaughtByTheSharedStorageChecks() passed after 1.690 seconds.
+✔ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() passed after 2.100 seconds.
+✔ Test run with 8 tests in 0 suites passed after 2.100 seconds.
+repetition 3 exit 0
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() started.
+◇ Test failedFillInvalidatesDestination() started.
+◇ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() started.
+◇ Test roundTripThroughCallerStorageWithDifferentStridesOnEachSide() started.
+◇ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() started.
+◇ Test mutationsOfStrideAndByteOrderAreCaughtByTheSharedStorageChecks() started.
+◇ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() started.
+◇ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() started.
+✔ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() passed after 0.001 seconds.
+✔ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() passed after 0.001 seconds.
+✔ Test failedFillInvalidatesDestination() passed after 0.001 seconds.
+✔ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() passed after 0.044 seconds.
+✔ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() passed after 0.332 seconds.
+✔ Test roundTripThroughCallerStorageWithDifferentStridesOnEachSide() passed after 0.681 seconds.
+✔ Test mutationsOfStrideAndByteOrderAreCaughtByTheSharedStorageChecks() passed after 1.621 seconds.
+✔ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() passed after 2.054 seconds.
+✔ Test run with 8 tests in 0 suites passed after 2.055 seconds.
+repetition 4 exit 0
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Test failedFillInvalidatesDestination() started.
+◇ Test mutationsOfStrideAndByteOrderAreCaughtByTheSharedStorageChecks() started.
+◇ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() started.
+◇ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() started.
+◇ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() started.
+◇ Test roundTripThroughCallerStorageWithDifferentStridesOnEachSide() started.
+◇ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() started.
+◇ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() started.
+✔ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() passed after 0.001 seconds.
+✔ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() passed after 0.001 seconds.
+✔ Test failedFillInvalidatesDestination() passed after 0.001 seconds.
+✔ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() passed after 0.048 seconds.
+✔ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() passed after 0.375 seconds.
+✔ Test roundTripThroughCallerStorageWithDifferentStridesOnEachSide() passed after 0.758 seconds.
+✔ Test mutationsOfStrideAndByteOrderAreCaughtByTheSharedStorageChecks() passed after 1.686 seconds.
+✔ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() passed after 2.108 seconds.
+✔ Test run with 8 tests in 0 suites passed after 2.108 seconds.
+repetition 5 exit 0

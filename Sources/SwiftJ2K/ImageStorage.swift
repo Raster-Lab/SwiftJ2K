@@ -58,6 +58,7 @@ public final class OwnedImageStorage: WritableImageStorage, Sendable {
         }
         self.byteCount = byteCount; self.allocationID = UUID()
         self.state = Mutex(State(bytes: [UInt8](repeating: 0, count: byteCount)))
+        StorageTelemetry.recordPixelAllocation(bytes: byteCount)
     }
 
     public func reserveWrite() throws -> StorageWriteLease {

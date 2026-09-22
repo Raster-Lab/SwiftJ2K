@@ -1,5 +1,12 @@
 # Change log
 
+## 12.1.0-dev.4 — Milestone 3 shared-storage proof, 2026-09-22 (unreleased)
+
+- Prove the required-sharing path of the scalar lossless codec: decode writes final samples only into the caller's allocation, encode reads the sealed caller allocation once, and both report zero pixel allocations and no copy events. Task-local allocation telemetry (`StorageTelemetry`) counts every pixel and workspace allocation the module makes so the reports are checked against instrumentation, not address equality.
+- Add TEST-09 evidence: sentinel-filled caller providers with prefix and row padding, different strides on each side of a round trip, both copy policies, concurrent readers with a refused writer, cancellation during decode and during encode, and mutation testing through a task-local `SharedPathMutation` hook (ignoring the row stride fails 3 of 3 checks, the wrong byte order 2 of 3).
+- Extend the development-only contract harness with a real codestream: OpenJPEG and Kakadu fixtures decoded into a harness-owned sentinel allocation, viewed through the SwiftJLS adapter, re-encoded from the same owner and decoded by both reference tools; process allocator statistics and open-descriptor counts are recorded. The JPEG-LS leg of TEST-02 is attempted and recorded as unexecuted because SwiftJLS has no encoder yet.
+- 77 Swift Testing declarations; evidence in [MILESTONE3.md](Documentation/MILESTONE3.md). No public API change; no codec capability change.
+
 ## 12.1.0-dev.3 — Milestone 2 migration baseline, 2026-09-22 (unreleased)
 
 - Implement the scalar lossless JPEG 2000 Part 1 path for the shared profile: unsigned greyscale 1–16 bit, one tile at the origin, reversible 5/3 wavelet, no quantisation, default code-block style, one quality layer, raw codestream. `Encoder.encode`, `Decoder.inspect`, `Decoder.decode` and `Decoder.decode(_:into:)` now operate; capabilities advertise exactly this coverage.
