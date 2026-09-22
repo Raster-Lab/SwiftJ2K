@@ -8,7 +8,7 @@ import Glibc
 #endif
 
 private let tool = "swiftj2k"
-private let version = "12.1.0-dev.2"
+private let version = "12.1.0-dev.3"
 private let reserved = ["encode", "decode", "inspect", "validate", "transcode"]
 private let valueOptions: Set<String> = ["--input", "-i", "--output", "-o", "--input-format", "--output-format",
     "--mode", "--max-error", "--backend", "--copy-policy", "--threads", "--max-memory", "--timeout"]
@@ -122,7 +122,7 @@ private func help(_ command: String?) -> String {
 
             Report this library's current encode/decode/inspect support without reading files.
             --json writes one JSON document to stdout; diagnostics stay on stderr.
-            Empty formats and false support values mean codec algorithms are unavailable.
+            True support values describe the library API; the CLI codec commands stay reserved until the CLI milestone.
 
             \(common)
 
@@ -160,14 +160,14 @@ private func help(_ command: String?) -> String {
     USAGE: \(tool) [OPTIONS] <command> [OPTIONS]
 
     COMMANDS
-      capabilities [--json]      Report actual library support (currently empty).
+      capabilities [--json]      Report actual library support (scalar lossless JPEG 2000).
       help [command]             Show global or command-specific help.
       version                    Show the development version.
       \(reserved.joined(separator: ", "))
-                                Reserved; codec algorithms are unavailable (exit 4).
+                                Reserved; unavailable until the CLI milestone (exit 4).
 
-    Requires Swift 6.4 to build; Apple OS baseline 27.0. CLI hosts: macOS/Linux.
-    This development tool provides help/version/capabilities, not compression yet.
+    Swift 6.2 minimum, Swift 6.4 qualified; Apple OS baseline 26.0. CLI hosts: macOS/Linux.
+    This development tool provides help/version/capabilities; codec commands follow in the CLI milestone.
 
     \(common)
 
@@ -203,14 +203,14 @@ private func run() throws -> Int32 {
     try diagnostic(1, "development version \(version)")
     try diagnostic(2, "reporting \(options.command ?? "help")")
     guard options.command == "capabilities" else {
-        try write("\(tool): unsupported feature: codec algorithms are not implemented; no input/output opened.\n", to: .standardError)
+        try write("\(tool): unsupported feature: the CLI codec commands are not wired to the library yet; no input/output opened.\n", to: .standardError)
         return 4
     }
-    let encoder = Encoder.capabilities
-    let decoder = Decoder.capabilities
+    let encoder = SwiftJ2K.Encoder.capabilities
+    let decoder = SwiftJ2K.Decoder.capabilities
     let formats = Array(Set(encoder.formats + decoder.formats)).sorted()
     if options.json {
-        let payload: [String: Any] = ["tool": tool, "version": version, "minimumAppleOS": "27.0",
+        let payload: [String: Any] = ["tool": tool, "version": version, "minimumAppleOS": "26.0",
             "canEncode": encoder.canEncode, "canDecode": decoder.canDecode,
             "canInspect": decoder.canInspect, "formats": formats]
         let data = try JSONSerialization.data(withJSONObject: payload, options: [.sortedKeys])

@@ -1,0 +1,86 @@
+[0/1] Planning build
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Test cancellationDuringDecodeInvalidatesTheDestination() started.
+◇ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() started.
+◇ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() started.
+◇ Test decodeIntoCallerStorageKeepsIdentityAndLeavesPaddingUntouched() started.
+◇ Test encoderIgnoresRowPaddingAndReadsSharedStorageOnce() started.
+◇ Test failedFillInvalidatesDestination() started.
+✔ Test failedFillInvalidatesDestination() passed after 0.002 seconds.
+✔ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() passed after 0.002 seconds.
+✔ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() passed after 0.002 seconds.
+✔ Test decodeIntoCallerStorageKeepsIdentityAndLeavesPaddingUntouched() passed after 0.007 seconds.
+✔ Test encoderIgnoresRowPaddingAndReadsSharedStorageOnce() passed after 0.021 seconds.
+✔ Test cancellationDuringDecodeInvalidatesTheDestination() passed after 0.050 seconds.
+✔ Test run with 6 tests in 0 suites passed after 0.051 seconds.
+repetition 1 exit 0
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Test failedFillInvalidatesDestination() started.
+◇ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() started.
+◇ Test cancellationDuringDecodeInvalidatesTheDestination() started.
+◇ Test decodeIntoCallerStorageKeepsIdentityAndLeavesPaddingUntouched() started.
+◇ Test encoderIgnoresRowPaddingAndReadsSharedStorageOnce() started.
+◇ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() started.
+✔ Test failedFillInvalidatesDestination() passed after 0.002 seconds.
+✔ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() passed after 0.002 seconds.
+✔ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() passed after 0.002 seconds.
+✔ Test decodeIntoCallerStorageKeepsIdentityAndLeavesPaddingUntouched() passed after 0.006 seconds.
+✔ Test encoderIgnoresRowPaddingAndReadsSharedStorageOnce() passed after 0.027 seconds.
+✔ Test cancellationDuringDecodeInvalidatesTheDestination() passed after 0.048 seconds.
+✔ Test run with 6 tests in 0 suites passed after 0.048 seconds.
+repetition 2 exit 0
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Test encoderIgnoresRowPaddingAndReadsSharedStorageOnce() started.
+◇ Test decodeIntoCallerStorageKeepsIdentityAndLeavesPaddingUntouched() started.
+◇ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() started.
+◇ Test cancellationDuringDecodeInvalidatesTheDestination() started.
+◇ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() started.
+◇ Test failedFillInvalidatesDestination() started.
+✔ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() passed after 0.002 seconds.
+✔ Test failedFillInvalidatesDestination() passed after 0.003 seconds.
+✔ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() passed after 0.004 seconds.
+✔ Test decodeIntoCallerStorageKeepsIdentityAndLeavesPaddingUntouched() passed after 0.011 seconds.
+✔ Test encoderIgnoresRowPaddingAndReadsSharedStorageOnce() passed after 0.032 seconds.
+✔ Test cancellationDuringDecodeInvalidatesTheDestination() passed after 0.058 seconds.
+✔ Test run with 6 tests in 0 suites passed after 0.058 seconds.
+repetition 3 exit 0
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() started.
+◇ Test decodeIntoCallerStorageKeepsIdentityAndLeavesPaddingUntouched() started.
+◇ Test encoderIgnoresRowPaddingAndReadsSharedStorageOnce() started.
+◇ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() started.
+◇ Test cancellationDuringDecodeInvalidatesTheDestination() started.
+◇ Test failedFillInvalidatesDestination() started.
+✔ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() passed after 0.001 seconds.
+✔ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() passed after 0.001 seconds.
+✔ Test failedFillInvalidatesDestination() passed after 0.001 seconds.
+✔ Test decodeIntoCallerStorageKeepsIdentityAndLeavesPaddingUntouched() passed after 0.004 seconds.
+✔ Test encoderIgnoresRowPaddingAndReadsSharedStorageOnce() passed after 0.017 seconds.
+✔ Test cancellationDuringDecodeInvalidatesTheDestination() passed after 0.044 seconds.
+✔ Test run with 6 tests in 0 suites passed after 0.044 seconds.
+repetition 4 exit 0
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Test cancellationDuringDecodeInvalidatesTheDestination() started.
+◇ Test decodeIntoCallerStorageKeepsIdentityAndLeavesPaddingUntouched() started.
+◇ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() started.
+◇ Test encoderIgnoresRowPaddingAndReadsSharedStorageOnce() started.
+◇ Test failedFillInvalidatesDestination() started.
+◇ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() started.
+✔ Test failedFillInvalidatesDestination() passed after 0.005 seconds.
+✔ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() passed after 0.005 seconds.
+✔ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() passed after 0.005 seconds.
+✔ Test decodeIntoCallerStorageKeepsIdentityAndLeavesPaddingUntouched() passed after 0.013 seconds.
+✔ Test encoderIgnoresRowPaddingAndReadsSharedStorageOnce() passed after 0.026 seconds.
+✔ Test cancellationDuringDecodeInvalidatesTheDestination() passed after 0.052 seconds.
+✔ Test run with 6 tests in 0 suites passed after 0.052 seconds.
+repetition 5 exit 0

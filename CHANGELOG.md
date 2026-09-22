@@ -1,5 +1,15 @@
 # Change log
 
+## 12.1.0-dev.3 — Milestone 2 migration baseline, 2026-09-22 (unreleased)
+
+- Implement the scalar lossless JPEG 2000 Part 1 path for the shared profile: unsigned greyscale 1–16 bit, one tile at the origin, reversible 5/3 wavelet, no quantisation, default code-block style, one quality layer, raw codestream. `Encoder.encode`, `Decoder.inspect`, `Decoder.decode` and `Decoder.decode(_:into:)` now operate; capabilities advertise exactly this coverage.
+- Migrate the MQ coder, EBCOT context formation, bit-plane coder, tag tree and 5/3 lifting kernels from J2KSwift `7acc9ae4` with provenance headers, Apache-2.0 SPDX identifiers and the unsafe-pointer, rate-control, bypass and tracing paths removed. Codestream syntax, tier-2 packet coding, tile geometry and the pipeline are new implementations fitted to the Milestone 1 image types. See [HISTORY.md](HISTORY.md) for the file-level record.
+- Add `CodecOptions.decompositionLevels` and `codeBlockWidth`/`codeBlockHeight` with explicit validation; the default level count adapts to the image.
+- Add deterministic synthetic fixtures with 51 OpenJPEG and Kakadu codestreams, cross-decoded by both tools, plus unsupported-feature variants; 69 Swift Testing declarations cover exact decode, round trips, oracle decoding of successor output, shared-storage identity and padding, truncation and bit-flip robustness, limits, cancellation and progress. Evidence: [MILESTONE2.md](Documentation/MILESTONE2.md).
+- Decoding failures after admission now invalidate the destination; preflight rejections still leave it reusable.
+- CLI: capability output, help and manual describe the library coverage; the CLI codec verbs stay reserved (exit 4) until the CLI milestone. The executable's reported Apple minimum returns to 26.0 and the Swift 6.4 wording to "6.2 minimum, 6.4 qualified", matching contract 0.5.0. `Scripts/test-cli.py` and `Scripts/validate-swift64.py` accept the Swift 6.2 toolchain's `swift package -help` form.
+- Not in this milestone: HTJ2K, 9/7 irreversible and quantised (lossy) coding, multiple tiles or layers, colour or signed components, sub-sampling, JP2 containers, precinct-major progressions with several precincts, half-LSB reconstruction of truncated code-blocks, acceleration and native transcoding. Contract 0.9.0's continuous-integration precondition remains unmet (see MILESTONE2.md).
+
 ## 12.1.0-dev.1 — Swift 6.4 upgrade, 2026-09-19 (unreleased)
 
 - Require Swift tools/compiler 6.4, retaining Swift 6 language mode and OS 26 deployment floors.

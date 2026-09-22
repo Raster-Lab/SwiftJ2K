@@ -14,7 +14,7 @@ let package = Package(
     targets: [
         .target(name: "SwiftJ2K"),
         .executableTarget(name: "SwiftJ2KCLI", dependencies: ["SwiftJ2K"]),
-        .testTarget(name: "SwiftJ2KTests", dependencies: ["SwiftJ2K"])
+        .testTarget(name: "SwiftJ2KTests", dependencies: ["SwiftJ2K"], resources: [.copy("Fixtures")])
     ],
     swiftLanguageModes: [.v6]
 )

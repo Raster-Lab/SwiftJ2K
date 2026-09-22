@@ -95,15 +95,19 @@ import SwiftJ2K
     #expect(throws: CodecError.self) { try destination.write { _ in } }
 }
 
-@Test func independentPublicCallShapesFailHonestly() async throws {
+@Test func independentPublicCallShapesReportTheirActualCoverage() async throws {
     let encoder = try SwiftJ2K.Encoder(configuration: EncoderConfiguration(mode: .lossless))
     let decoder = try SwiftJ2K.Decoder(configuration: .init())
     let transcoder = try SwiftJ2K.Transcoder(configuration: .init(mode: .lossless))
-    #expect(!encoder.capabilities.canEncode && !decoder.capabilities.canDecode)
+    #expect(encoder.capabilities.canEncode && decoder.capabilities.canDecode && decoder.capabilities.canInspect)
+    #expect(encoder.capabilities.formats == ["jpeg2000-codestream"] && decoder.capabilities.compressionModes == [.lossless])
+    #expect(encoder.capabilities.availableBackends == [.scalarCPU] && decoder.capabilities.meaningfulPrecision == 1...16)
     #expect(transcoder.capabilities.isEmpty)
     let image = try ImageDestination.allocate(descriptor: .greyscale16(width: 1, height: 1))
         .writeUInt16 { _, _ in 65535 }
-    await #expect(throws: CodecError.self) { try await encoder.encode(image) }
+    let encoded = try await encoder.encode(image)
+    #expect(try await decoder.decode(encoded.data).image.sampleUInt16(x: 0, y: 0) == 65535)
+    // Empty or foreign bytes are rejected with the defined categories.
     #expect(throws: CodecError.self) { try decoder.inspect(Data()) }
     await #expect(throws: CodecError.self) { try await decoder.decode(Data()) }
     let destination = try ImageDestination.allocate(descriptor: .greyscale16(width: 1, height: 1))

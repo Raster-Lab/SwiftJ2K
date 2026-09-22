@@ -82,3 +82,36 @@ Decision D3 keeps the Apple deployment floor at 26.0 and places the cost of adop
 This repository is last in sequence, and its migration is preceded by the CompressionFamily conformance extraction (0.8.0 item 4) and the fixture provenance audit, both done in or about J2KSwift before any source moves. The predecessor's current release candidate is v12.0.0-rc.1; its promotion is the predecessor's own release task and is not authorised here.
 
 The continuous-integration precondition from 0.8.0 stands. Actions billing remained locked on 22 September 2026, so every workflow in the suite is written and unexecuted. No codec source moves here before CI executes and passes here.
+
+## Milestone 2 — scalar lossless migration baseline, 22 September 2026
+
+The owner assigned Milestone 2 for this repository on 22 September 2026, ahead of the 0.9.0 programme sequence that placed SwiftJ2K last. Under document precedence rule 1 that assignment governs; the work stays on branch `milestone2/scalar-lossless-j2k` and the unmet gates below are recorded rather than waived.
+
+| Item | Recorded source |
+| --- | --- |
+| Pinned predecessor revision | [7acc9ae415e7d0bc7d441e0f0277d5e150bd19ca](https://github.com/Raster-Lab/J2KSwift/commit/7acc9ae415e7d0bc7d441e0f0277d5e150bd19ca) (`origin/main`, `v12.0.0-rc.1-6`, the CompressionFamily extraction of contract 0.8.0 item 4) |
+| Contract | 0.9.0 |
+| Successor base | `c390b50e7a96c4e7bb598e69bd8b7c047a1350eb` |
+| Licence of migrated material | MIT at source; Apache-2.0 here under POL-07, copyright Raster Images Private Limited / Raster-Lab; SPDX identifiers added |
+
+**Continuous-integration gate.** Contract 0.9.0 requires CI to execute and pass on this repository before codec source moves in. On 22 September 2026 every GitHub Actions job on `Raster-Lab/SwiftJ2K` (run 35702137934) and on the predecessor still ended with `steps=0` under the billing lock. The precondition is therefore unmet; this migration is a feature branch with local evidence only, not a merge candidate until a workflow run shows non-zero steps.
+
+**Inventory finding.** The predecessor has no separable scalar core. Its Part 1 path lives inside `J2KEncoderPipeline.swift` (7,692 lines) and `J2KDecoderPipeline.swift` (6,239 lines), which also hold HTJ2K, Metal, multi-tile, multi-layer, ROI and rate-control code, import `J2KMetal` unconditionally, and declare their own `SubbandInfo` twice. The standalone `J2KTier2Coding.swift` MQ-codes packet headers, which B.10 does not allow, and is referenced only by its own tests. The migration therefore takes the self-contained algorithm files and writes the syntax, tier-2 and pipeline layers new against the Milestone 1 image types.
+
+| Successor file | Disposition | Predecessor source (at `7acc9ae4`) |
+| --- | --- | --- |
+| `Sources/SwiftJ2K/Codec/MQCoder.swift` | Adapted | `Sources/J2KCodec/J2KMQCoder.swift` — table, CODEMPS/CODELPS/BYTEOUT/FLUSH, software-conventions decoder; raw-pointer buffers, checkpoints, bypass coders and tracing removed |
+| `Sources/SwiftJ2K/Codec/ContextModeling.swift` | Adapted | `Sources/J2KCodec/J2KContextModeling.swift` — label grouping, significance and sign tables, initial states; unaligned raw loads replaced by a padded state plane |
+| `Sources/SwiftJ2K/Codec/BitPlaneCoder.swift` | Adapted | `Sources/J2KCodec/J2KBitPlaneCoder.swift` — three-pass scan and run-length rules only; bypass, per-pass segments, distortion accounting, SIMD, scratch pools, tracing not migrated |
+| `Sources/SwiftJ2K/Codec/TagTree.swift` | Adapted | `Sources/J2KCodec/J2KTagTree.swift` |
+| `Sources/SwiftJ2K/Codec/Wavelet53.swift` | Adapted kernels, new 2-D driver | `Sources/J2KCodec/J2KDWT1D.swift` (`forwardTransform53`, `inverseTransform53`, symmetric extension) |
+| `Sources/SwiftJ2K/Codec/BitIO.swift` | New | `Sources/J2KCore/J2KBitReader.swift` / `J2KBitWriter.swift` inspected only |
+| `Sources/SwiftJ2K/Codec/Codestream.swift` | New | pipeline marker parsers inspected for field order and defect history |
+| `Sources/SwiftJ2K/Codec/Tier2.swift` | New | `writePacket` / `extractTileData` inspected; `J2KTier2Coding.swift` rejected |
+| `Sources/SwiftJ2K/Codec/LosslessPipeline.swift` | New | replaces `EncoderPipeline` / `DecoderPipeline` for the scalar profile |
+
+**Predecessor baseline (TEST-04).** At `7acc9ae4` on this host the predecessor's own `J2KCodecTests` target does not compile: `Tests/J2KCodecTests/V8_8_DaemonOverheadDecomposition.swift` imports `J2KDaemonClient`, which the target does not declare. With that one file set aside in a scratch worktree, the seventeen suites that cover the scalar path (DWT, MQ termination, tier-2, marker, integrity, bit-plane, byte-order, PGM round trip, lossless stress and medical gate) executed 211 XCTest cases with 0 failures and 11 skips in 1,629 s; the skips are the predecessor's own PNG/TIFF and HTJ2K variants. The raw log and xUnit file are under [Documentation/Engineering/Milestone2/Evidence](Documentation/Engineering/Milestone2/Evidence). Existing test totals remain historical, not successor acceptance evidence.
+
+**Fixtures.** No predecessor fixture was copied. `Scripts/generate-lossless-fixtures.py` produces ten deterministic synthetic greyscale images (XorShift32 seeds recorded) and encodes them with OpenJPEG 2.5.4 and Kakadu 8.4.1 into 51 lossless codestreams, each cross-decoded exactly by both tools before it is admitted; the manifest records SHA-256 values, geometry, precision and sample digests. Kakadu is a test oracle only and ships nothing into the package.
+
+**Transcoder audit (TRANSCODING.md, Milestone 2 item).** Re-inspected `Sources/J2KCodec/J2KTranscoder.swift` at `7acc9ae4`: `decodeLegacyCodeBlock` and `decodeHTCodeBlock` still catch failures and return empty coefficient arrays, `metadataPreserved: true` is still set unconditionally, and `J2KTranscoderTests.swift` still skips its async and parallel transcode tests with parser-hang explanations. None of that code was transferred.

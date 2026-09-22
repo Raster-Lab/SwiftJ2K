@@ -1,4 +1,4 @@
-.TH SWIFTJ2K 1 "September 19, 2026" "12.1.0-dev.2" "Swift Image Compression Suite"
+.TH SWIFTJ2K 1 "September 22, 2026" "12.1.0-dev.3" "Swift Image Compression Suite"
 .SH NAME
 swiftj2k \- help, version and capability reporting for SwiftJ2K
 .SH SYNOPSIS
@@ -7,11 +7,12 @@ swiftj2k \- help, version and capability reporting for SwiftJ2K
 .SH DESCRIPTION
 This development tool provides help, version and truthful library capability
 reporting.
-Codec algorithms are not implemented. Reserved encode, decode, inspect and
-validate
-commands and native transcode return 4 without opening input, consuming
-standard input or creating output.
-Build with Swift 6.4 in Swift 6 language mode. Apple OS minimum is 27.0.
+The library implements scalar lossless JPEG 2000 Part 1 coding for unsigned
+greyscale images; the reserved encode, decode, inspect and validate commands
+and native transcode are not yet wired to it and return 4 without opening
+input, consuming standard input or creating output.
+Build with Swift 6.2 or later (6.4 qualified) in Swift 6 language mode. Apple OS
+minimum is 26.0.
 CLI hosts are macOS and Linux; consult qualification records for executed
 coverage.
 .SH COMMANDS
@@ -19,7 +20,7 @@ coverage.
 .B capabilities [\-\-json]
 Report actual library encode/decode/inspect support. JSON is one document on
 stdout.
-False support values and empty formats mean unavailable algorithms.
+True values describe the library API, not the reserved CLI commands.
 .TP
 .B help [command]
 Show global or command-specific help. No arguments also show global help.
