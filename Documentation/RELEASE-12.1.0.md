@@ -8,7 +8,7 @@ Executed 22 September 2026 on the owner's explicit release task ("start the rele
 
 | Precondition | State at the release task | Checked by |
 | --- | --- | --- |
-| Continuous integration executes with non-zero steps | **Unmet.** The latest run on `main` (`a964b7c`, the Milestone 5 merge) ended with all seven jobs at `steps=0`; the release pull request's run 35735384787 on `67273dbb…` likewise ended with all seven jobs at `steps=0` (failure within 2 to 10 seconds, no step executed) | `gh api repos/Raster-Lab/SwiftJ2K/actions/runs/<id>/jobs` |
+| Continuous integration executes with non-zero steps | **Unmet.** The latest run on `main` (`a964b7c`, the Milestone 5 merge) ended with all seven jobs at `steps=0`; the release pull request's run 35735384787 on `67273dbb…` likewise ended with all seven jobs at `steps=0` (failure within 2 to 10 seconds, no step executed), and run 35741491915 on the record commit `3da1665…` stayed queued for several minutes and then ended the same way, every job `completed failure steps=0` | `gh api repos/Raster-Lab/SwiftJ2K/actions/runs/<id>/jobs` |
 | Private vulnerability reporting enabled | **Unmet.** `{"enabled": false}` | `gh api repos/Raster-Lab/SwiftJ2K/private-vulnerability-reporting` |
 | Owner assigned the release task explicitly | Met, 22 September 2026 | this task |
 
