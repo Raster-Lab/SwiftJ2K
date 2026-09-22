@@ -189,9 +189,14 @@ def main() -> int:
         report["source_files_sha256"] = {str(p.relative_to(repo)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(source_files)}
         resolved = repo / "Package.resolved"
         report["package_resolved_sha256"] = hashlib.sha256(resolved.read_bytes()).hexdigest() if resolved.exists() else None
-        for verb in ("build", "test", "package"):
+        for verb in ("build", "test"):
             run(f"swift-{verb}-help", swift(verb, "help") + ["--help"])
-        run("swift-sbom-help", swift("package", "help") + ["generate-sbom", "--help"])
+        # Swift 6.2's `swift package` rejects a help flag placed after other
+        # options and only accepts the bare form; 6.4 accepts both. Contract
+        # 0.5.0 PLAT-01 admits both compilers, so the bare form is recorded.
+        run("swift-package-help", ["xcrun", "swift", "package", "-help"])
+        if "sbom" in selected:
+            run("swift-sbom-help", swift("package", "help") + ["generate-sbom", "--help"])
         run("target-info", ["xcrun", "swiftc", "-print-target-info"])
         for config in ("debug", "release"):
             if config in selected:

@@ -99,6 +99,19 @@ public final class ImageDestination: Sendable {
     }
     deinit { try? storage.abortAndInvalidate(lease: lease) }
 
+    /// A decoder calls this when its operation fails after admission but
+    /// before the final write began, so that a failed decode never leaves a
+    /// destination that can still be published (MEMORY_CONTRACT "Failure and
+    /// limits"). Preflight rejections do not call it.
+    func invalidateAfterFailure() {
+        let first = started.withLock { value in
+            guard !value else { return false }
+            value = true
+            return true
+        }
+        if first { try? storage.abortAndInvalidate(lease: lease) }
+    }
+
     public static func allocate(descriptor: ImageDescriptor, limits: ResourceLimits = .default) throws -> ImageDestination {
         try descriptor.validate(limits: limits)
         guard try checkedAdd(descriptor.requiredByteCount, descriptor.iccProfile?.count ?? 0) <= limits.maximumMemoryBytes else {
@@ -184,8 +197,8 @@ public final class ImageDestination: Sendable {
 //     bearing, not defensive duplication of the descriptor arithmetic.
 
 @inline(__always)
-private func loadUInt16(_ bytes: UnsafeRawBufferPointer, at offset: Int,
-                        order: ByteOrder) throws -> UInt16 {
+func loadUInt16(_ bytes: UnsafeRawBufferPointer, at offset: Int,
+                order: ByteOrder) throws -> UInt16 {
     guard offset >= 0, offset <= bytes.count - MemoryLayout<UInt16>.size else {
         throw CodecError(.storageUnavailable, "Sample extent lies outside the retained allocation.")
     }
@@ -194,8 +207,8 @@ private func loadUInt16(_ bytes: UnsafeRawBufferPointer, at offset: Int,
 }
 
 @inline(__always)
-private func storeUInt16(_ value: UInt16, into bytes: UnsafeMutableRawBufferPointer,
-                         at offset: Int, order: ByteOrder) throws {
+func storeUInt16(_ value: UInt16, into bytes: UnsafeMutableRawBufferPointer,
+                 at offset: Int, order: ByteOrder) throws {
     guard offset >= 0, offset <= bytes.count - MemoryLayout<UInt16>.size else {
         throw CodecError(.storageUnavailable, "Sample extent lies outside the retained allocation.")
     }

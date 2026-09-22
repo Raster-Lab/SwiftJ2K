@@ -13,13 +13,20 @@ import SwiftJ2K
         }
         let encoder = try SwiftJ2K.Encoder()
         let decoder = try SwiftJ2K.Decoder()
-        guard !encoder.capabilities.canEncode, !decoder.capabilities.canDecode else {
-            throw SwiftJ2K.CodecError(.internalFailure, "Unexpected codec capability.")
+        guard encoder.capabilities.canEncode, decoder.capabilities.canDecode else {
+            throw SwiftJ2K.CodecError(.internalFailure, "Scalar lossless coverage is not advertised.")
         }
-        do {
-            _ = try await encoder.encode(image)
-            throw SwiftJ2K.CodecError(.internalFailure, "Unimplemented encoding succeeded.")
-        } catch let error as SwiftJ2K.CodecError where error.category == .unsupportedFeature {}
-        print("Independent SwiftJ2K consumer passed; synthetic storage only.")
+        let encoded = try await encoder.encode(image)
+        let info = try decoder.inspect(encoded.data)
+        guard info.descriptor.width == 3, info.descriptor.meaningfulBits == 12 else {
+            throw SwiftJ2K.CodecError(.internalFailure, "Inspection disagrees with the source descriptor.")
+        }
+        let decoded = try await decoder.decode(encoded.data)
+        for y in 0..<2 {
+            for x in 0..<3 where try decoded.image.sampleUInt16(x: x, y: y) != image.sampleUInt16(x: x, y: y) {
+                throw SwiftJ2K.CodecError(.internalFailure, "Lossless round trip changed a sample.")
+            }
+        }
+        print("Independent SwiftJ2K consumer passed; \(encoded.data.count)-byte lossless codestream round-tripped.")
     }
 }

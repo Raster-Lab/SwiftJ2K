@@ -1,8 +1,43 @@
 // SPDX-License-Identifier: Apache-2.0
 import Foundation
 
-/// No codec-specific controls are implemented during contract feasibility.
-public struct CodecOptions: Sendable, Equatable { public init() {} }
+/// JPEG 2000 controls with explicit names and units (API-04). Milestone 2
+/// exposes the two structural choices of the scalar lossless path; block
+/// coding, progression and container controls arrive with their capabilities.
+public struct CodecOptions: Sendable, Equatable {
+    /// Number of 5/3 wavelet decomposition levels, 0...32. `nil` selects
+    /// `min(5, floor(log2(min(width, height))))`, the largest count the common
+    /// reference encoders accept for the image.
+    public let decompositionLevels: Int?
+    /// Code-block dimensions in samples: powers of two from 4 to 1024 whose
+    /// product does not exceed 4096 (ISO/IEC 15444-1 Table A.18).
+    public let codeBlockWidth: Int
+    public let codeBlockHeight: Int
+
+    public init() {
+        decompositionLevels = nil; codeBlockWidth = 64; codeBlockHeight = 64
+    }
+
+    public init(decompositionLevels: Int? = nil, codeBlockWidth: Int = 64, codeBlockHeight: Int = 64) throws {
+        if let levels = decompositionLevels {
+            guard levels >= 0, levels <= 32 else {
+                throw CodecError(.invalidArgument, "Decomposition levels must lie in 0...32.")
+            }
+        }
+        for size in [codeBlockWidth, codeBlockHeight] {
+            guard size >= 4, size <= 1024, size & (size - 1) == 0 else {
+                throw CodecError(.invalidArgument, "Code-block dimensions must be powers of two from 4 to 1024.")
+            }
+        }
+        guard codeBlockWidth * codeBlockHeight <= 4096 else {
+            throw CodecError(.invalidArgument, "Code-block area must not exceed 4096 samples.")
+        }
+        self.decompositionLevels = decompositionLevels
+        self.codeBlockWidth = codeBlockWidth
+        self.codeBlockHeight = codeBlockHeight
+    }
+}
+
 public struct EncoderConfiguration: Sendable, Equatable {
     public let mode: CompressionMode
     public let codecOptions: CodecOptions
@@ -11,7 +46,7 @@ public struct EncoderConfiguration: Sendable, Equatable {
             throw CodecError(.invalidArgument, "Near-lossless error must be positive.")
         }
         guard mode == .lossless else {
-            throw CodecError(.unsupportedFeature, "Only the default lossless configuration is modelled in Milestone 1.")
+            throw CodecError(.unsupportedFeature, "Only lossless encoding is implemented; lossy and near-lossless modes are not available.")
         }
         self.mode = mode; self.codecOptions = codecOptions
     }
@@ -36,6 +71,9 @@ public struct CodecCapabilities: Sendable, Equatable {
     public static let contractOnly = Self(formats: [], compressionModes: [], sampleTypes: [],
         meaningfulPrecision: nil, layouts: [], availableBackends: [],
         canInspect: false, canEncode: false, canDecode: false)
+
+    /// The shared layout every operation accepts: MEM-03 with 16-bit storage.
+    public static let sharedGreyscaleLayout = "unsigned-greyscale-16bit-single-plane"
 }
 
 public struct CopyEvent: Sendable, Equatable {
@@ -88,47 +126,123 @@ public struct DecodedImage: Sendable {
     public let report: OperationReport
 }
 
-/// Contract feasibility holder. No real compressed format is supported yet.
+/// Scalar lossless JPEG 2000 Part 1 encoder for the shared greyscale profile.
 public struct Encoder: Sendable {
     public let configuration: EncoderConfiguration
-    public static let capabilities = CodecCapabilities.contractOnly
+    public static let capabilities = CodecCapabilities(
+        formats: [ScalarLosslessCodec.format], compressionModes: [.lossless],
+        sampleTypes: [.unsignedInteger], meaningfulPrecision: 1...16,
+        layouts: [CodecCapabilities.sharedGreyscaleLayout], availableBackends: [.scalarCPU],
+        canInspect: false, canEncode: true, canDecode: false)
     public var capabilities: CodecCapabilities { Self.capabilities }
     public init(configuration: EncoderConfiguration = .default) throws { self.configuration = configuration }
 
     /// `@concurrent` explicitly selects the generic executor (available since Swift 6.2).
+    /// The image's storage is borrowed only inside synchronous work (MEM-08).
     @concurrent public func encode(_ image: Image, options: EncodeOptions = .init()) async throws -> EncodedImage {
+        let clock = ContinuousClock()
+        let started = clock.now
         try Task.checkCancellation()
         try validateOperation(options.resourceLimits, options.executionPolicy)
         guard image.storage.byteCount <= options.resourceLimits.maximumDecodedBytes,
               image.storage.byteCount <= options.resourceLimits.maximumMemoryBytes else {
             throw CodecError(.resourceLimitExceeded, "Image exceeds operation limits.")
         }
-        throw CodecError(.unsupportedFeature, "Codec algorithms are deferred; Milestone 1 provides API and storage only.")
+        let descriptor = image.descriptor
+        let smallest = min(descriptor.width, descriptor.height)
+        let deepest = Int.bitWidth - 1 - smallest.leadingZeroBitCount   // floor(log2(smallest))
+        let levels: Int
+        if let requested = configuration.codecOptions.decompositionLevels {
+            guard requested <= deepest else {
+                throw CodecError(.invalidArgument, "Decomposition levels exceed floor(log2(min(width, height))) = \(deepest) for this image.")
+            }
+            levels = requested
+        } else {
+            levels = min(5, deepest)
+        }
+        let parameters = ScalarLosslessCodec.EncodeParameters(
+            decompositionLevels: levels,
+            codeBlockWidthExponent: configuration.codecOptions.codeBlockWidth.trailingZeroBitCount,
+            codeBlockHeightExponent: configuration.codecOptions.codeBlockHeight.trailingZeroBitCount)
+        options.progress?(try ProgressUpdate(phase: .inspecting, completedUnits: 0))
+        let (bytes, workspace) = try ScalarLosslessCodec.encode(image: image, parameters: parameters,
+                                                                limits: options.resourceLimits, progress: options.progress)
+        guard bytes.count <= options.resourceLimits.maximumCompressedBytes else {
+            throw CodecError(.resourceLimitExceeded, "Encoded output exceeds the compressed-size limit.")
+        }
+        try Task.checkCancellation()
+        let elapsed = clock.now - started
+        let report = OperationReport(backend: .scalarCPU, fidelity: .exactSamples, copyEvents: [],
+                                     pixelAllocationCount: 0, peakPixelBytes: image.storage.byteCount,
+                                     peakWorkspaceBytes: workspace,
+                                     elapsedSeconds: Double(elapsed.components.seconds) + Double(elapsed.components.attoseconds) / 1e18)
+        options.progress?(try ProgressUpdate(phase: .completed, completedUnits: 1, totalUnits: 1))
+        return EncodedImage(data: Data(bytes), encoding: EncodingDescription(format: ScalarLosslessCodec.format, mode: .lossless),
+                            report: report)
     }
 }
 
-/// Inspection and both decode call shapes deliberately reject compressed input.
+/// Scalar lossless JPEG 2000 Part 1 decoder for the shared greyscale profile.
 public struct Decoder: Sendable {
     public let configuration: DecoderConfiguration
-    public static let capabilities = CodecCapabilities.contractOnly
+    public static let capabilities = CodecCapabilities(
+        formats: [ScalarLosslessCodec.format], compressionModes: [.lossless],
+        sampleTypes: [.unsignedInteger], meaningfulPrecision: 1...16,
+        layouts: [CodecCapabilities.sharedGreyscaleLayout], availableBackends: [.scalarCPU],
+        canInspect: true, canEncode: false, canDecode: true)
     public var capabilities: CodecCapabilities { Self.capabilities }
     public init(configuration: DecoderConfiguration = .init()) throws { self.configuration = configuration }
 
+    /// Bounded structural inspection: parses the main and tile-part headers only.
     public func inspect(_ data: Data, options: DecodeOptions = .init()) throws -> ImageInfo {
         try validateInput(data, options)
-        throw CodecError(.unsupportedFeature, "Format inspection is deferred until codec migration.")
+        let profile = try ScalarLosslessCodec.inspect([UInt8](data), limits: options.resourceLimits)
+        let descriptor = try ImageDescriptor.greyscale16(width: profile.width, height: profile.height,
+                                                         meaningfulBits: profile.precision,
+                                                         limits: options.resourceLimits)
+        return ImageInfo(format: ScalarLosslessCodec.format, descriptor: descriptor, frameCount: 1, metadata: .empty)
     }
+
+    /// Allocates one final destination and decodes through the same path as
+    /// caller-supplied storage (MEM-10).
     @concurrent public func decode(_ data: Data, options: DecodeOptions = .init()) async throws -> DecodedImage {
         try Task.checkCancellation()
         try validateInput(data, options)
-        throw CodecError(.unsupportedFeature, "Codec algorithms are deferred; no image was decoded.")
+        let bytes = [UInt8](data)
+        let profile = try ScalarLosslessCodec.inspect(bytes, limits: options.resourceLimits)
+        let descriptor = try ImageDescriptor.greyscale16(width: profile.width, height: profile.height,
+                                                         meaningfulBits: profile.precision,
+                                                         limits: options.resourceLimits)
+        let destination = try ImageDestination.allocate(descriptor: descriptor, limits: options.resourceLimits)
+        return try run(bytes: bytes, profile: profile, into: destination, options: options, allocations: 1)
     }
+
+    /// Decodes final samples directly into `destination`. Preflight failures
+    /// leave the destination reusable; failures after writing starts invalidate it.
     @concurrent public func decode(_ data: Data, into destination: ImageDestination,
                                   options: DecodeOptions = .init()) async throws -> DecodedImage {
         try Task.checkCancellation()
         try validateInput(data, options)
-        // Preflight rejection performs no write; the caller may still initialise it.
-        throw CodecError(.unsupportedFeature, "Codec algorithms are deferred; destination was not written.")
+        let bytes = [UInt8](data)
+        let profile = try ScalarLosslessCodec.inspect(bytes, limits: options.resourceLimits)
+        return try run(bytes: bytes, profile: profile, into: destination, options: options, allocations: 0)
+    }
+
+    private func run(bytes: [UInt8], profile: LosslessProfile, into destination: ImageDestination,
+                     options: DecodeOptions, allocations: Int) throws -> DecodedImage {
+        let clock = ContinuousClock()
+        let started = clock.now
+        options.progress?(try ProgressUpdate(phase: .inspecting, completedUnits: 0))
+        let (image, workspace) = try ScalarLosslessCodec.decode(bytes: bytes, profile: profile, into: destination,
+                                                                limits: options.resourceLimits, progress: options.progress)
+        try Task.checkCancellation()
+        let elapsed = clock.now - started
+        let report = OperationReport(backend: .scalarCPU, fidelity: .exactSamples, copyEvents: [],
+                                     pixelAllocationCount: allocations, peakPixelBytes: image.storage.byteCount,
+                                     peakWorkspaceBytes: workspace,
+                                     elapsedSeconds: Double(elapsed.components.seconds) + Double(elapsed.components.attoseconds) / 1e18)
+        options.progress?(try ProgressUpdate(phase: .completed, completedUnits: 1, totalUnits: 1))
+        return DecodedImage(image: image, report: report)
     }
 }
 

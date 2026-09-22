@@ -1,0 +1,837 @@
+[0/1] Planning build
+Test Suite 'Selected tests' started at 2026-09-22 14:31:32.035.
+Test Suite 'J2KSwiftPackageTests.xctest' started at 2026-09-22 14:31:32.036.
+Test Suite 'DWTCoefficientsTest' started at 2026-09-22 14:31:32.036.
+Test Case '-[J2KCodecTests.DWTCoefficientsTest testDWTCoefficients8x8]' started.
+Test Case '-[J2KCodecTests.DWTCoefficientsTest testDWTCoefficients8x8]' passed (0.003 seconds).
+Test Suite 'DWTCoefficientsTest' passed at 2026-09-22 14:31:32.040.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.003 (0.003) seconds
+Test Suite 'DWTRoundtripTest' started at 2026-09-22 14:31:32.040.
+Test Case '-[J2KCodecTests.DWTRoundtripTest testDWTRoundtrip1Level]' started.
+Test Case '-[J2KCodecTests.DWTRoundtripTest testDWTRoundtrip1Level]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.DWTRoundtripTest testDWTRoundtrip5Level]' started.
+Test Case '-[J2KCodecTests.DWTRoundtripTest testDWTRoundtrip5Level]' passed (0.057 seconds).
+Test Case '-[J2KCodecTests.DWTRoundtripTest testDWTRoundtrip5LevelOptimized]' started.
+Test Case '-[J2KCodecTests.DWTRoundtripTest testDWTRoundtrip5LevelOptimized]' passed (0.038 seconds).
+Test Case '-[J2KCodecTests.DWTRoundtripTest testDWTRoundtripOddDimensions]' started.
+Test Case '-[J2KCodecTests.DWTRoundtripTest testDWTRoundtripOddDimensions]' passed (0.001 seconds).
+Test Suite 'DWTRoundtripTest' passed at 2026-09-22 14:31:32.138.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.098 (0.098) seconds
+Test Suite 'J2KBitPlaneDecoderFixTests' started at 2026-09-22 14:31:32.138.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests test16x16Block]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests test16x16Block]' passed (0.005 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests test8x8Block]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests test8x8Block]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testAllColumnsRLC]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testAllColumnsRLC]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testAllNegativeValues]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testAllNegativeValues]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testFailingDataSeed3]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testFailingDataSeed3]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testFailingDataSeed53]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testFailingDataSeed53]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testFourValuesCorners]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testFourValuesCorners]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testFourValuesDiagonal]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testFourValuesDiagonal]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testFourValuesFullColumn]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testFourValuesFullColumn]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testHHSubband]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testHHSubband]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testHLSubband]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testHLSubband]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testLargeValues]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testLargeValues]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testLastColumnRLCFalse]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testLastColumnRLCFalse]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testLastColumnRLCTrue]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testLastColumnRLCTrue]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testLHSubband]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testLHSubband]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testMixedSigns]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testMixedSigns]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testNonSquareBlock4x8]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testNonSquareBlock4x8]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testNonSquareBlock8x4]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testNonSquareBlock8x4]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testPowerOfTwoValues]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testPowerOfTwoValues]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testSinglePassPrefixPerformanceBound]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testSinglePassPrefixPerformanceBound]' passed (0.210 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testSinglePassPrefixStopsAtLogicalBlockBoundary]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testSinglePassPrefixStopsAtLogicalBlockBoundary]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testSingleValueAtPosition0]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testSingleValueAtPosition0]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testSingleValueAtPosition15]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testSingleValueAtPosition15]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testSingleValueAtPosition3]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testSingleValueAtPosition3]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testSmallValues]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testSmallValues]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testThreeValuesInSameColumn]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testThreeValuesInSameColumn]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testThreeValuesInSameRow]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testThreeValuesInSameRow]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testThreeValuesOriginalFailingCase]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testThreeValuesOriginalFailingCase]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testThreeValuesScattered]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testThreeValuesScattered]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testTwoValuesAdjacentDiagonal]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testTwoValuesAdjacentDiagonal]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testTwoValuesAdjacentHorizontal]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testTwoValuesAdjacentHorizontal]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testTwoValuesAdjacentVertical]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testTwoValuesAdjacentVertical]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testTwoValuesInDifferentColumns]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testTwoValuesInDifferentColumns]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testTwoValuesInSameColumn]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testTwoValuesInSameColumn]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testTwoValuesSeparated]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testTwoValuesSeparated]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testZeroPassCodeBlockShortCircuitsToZeros]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneDecoderFixTests testZeroPassCodeBlockShortCircuitsToZeros]' passed (0.046 seconds).
+Test Suite 'J2KBitPlaneDecoderFixTests' passed at 2026-09-22 14:31:32.421.
+	 Executed 36 tests, with 0 failures (0 unexpected) in 0.279 (0.282) seconds
+Test Suite 'J2KBitPlaneMinimalTest' started at 2026-09-22 14:31:32.421.
+Test Case '-[J2KCodecTests.J2KBitPlaneMinimalTest testLog2EdgeCase]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneMinimalTest testLog2EdgeCase]' passed (0.003 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneMinimalTest testPowerOfTwoBoundary]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneMinimalTest testPowerOfTwoBoundary]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KBitPlaneMinimalTest testTinyBlock4x4PowerOfTwo]' started.
+Test Case '-[J2KCodecTests.J2KBitPlaneMinimalTest testTinyBlock4x4PowerOfTwo]' passed (0.001 seconds).
+Test Suite 'J2KBitPlaneMinimalTest' passed at 2026-09-22 14:31:32.425.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.004 (0.004) seconds
+Test Suite 'J2KByteOrderRoundTripTests' started at 2026-09-22 14:31:32.425.
+Test Case '-[J2KCodecTests.J2KByteOrderRoundTripTests testLoaderTagsByteOrder_PGM_BigEndian]' started.
+Test Case '-[J2KCodecTests.J2KByteOrderRoundTripTests testLoaderTagsByteOrder_PGM_BigEndian]' passed (0.005 seconds).
+Test Case '-[J2KCodecTests.J2KByteOrderRoundTripTests testPGM_16bit_RoundTrip_PixelValues]' started.
+<predecessor-worktree>/Tests/J2KCodecTests/J2KByteOrderRoundTripTests.swift:40: -[J2KCodecTests.J2KByteOrderRoundTripTests testPGM_16bit_RoundTrip_PixelValues] : Test skipped - Release-built j2k CLI not found; run `swift build -c release` first
+Test Case '-[J2KCodecTests.J2KByteOrderRoundTripTests testPGM_16bit_RoundTrip_PixelValues]' skipped (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KByteOrderRoundTripTests testPNG_16bit_RoundTrip_BytesIdentical]' started.
+<predecessor-worktree>/Tests/J2KCodecTests/J2KByteOrderRoundTripTests.swift:40: -[J2KCodecTests.J2KByteOrderRoundTripTests testPNG_16bit_RoundTrip_BytesIdentical] : Test skipped - Release-built j2k CLI not found; run `swift build -c release` first
+Test Case '-[J2KCodecTests.J2KByteOrderRoundTripTests testPNG_16bit_RoundTrip_BytesIdentical]' skipped (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KByteOrderRoundTripTests testTIFF_16bit_RoundTrip_BytesIdentical]' started.
+<predecessor-worktree>/Tests/J2KCodecTests/J2KByteOrderRoundTripTests.swift:40: -[J2KCodecTests.J2KByteOrderRoundTripTests testTIFF_16bit_RoundTrip_BytesIdentical] : Test skipped - Release-built j2k CLI not found; run `swift build -c release` first
+Test Case '-[J2KCodecTests.J2KByteOrderRoundTripTests testTIFF_16bit_RoundTrip_BytesIdentical]' skipped (0.000 seconds).
+Test Suite 'J2KByteOrderRoundTripTests' passed at 2026-09-22 14:31:32.432.
+	 Executed 4 tests, with 3 tests skipped and 0 failures (0 unexpected) in 0.007 (0.007) seconds
+Test Suite 'J2KCODCOCMarkerTests' started at 2026-09-22 14:31:32.432.
+Test Case '-[J2KCodecTests.J2KCODCOCMarkerTests testCOCMarkerGeneration]' started.
+Test Case '-[J2KCodecTests.J2KCODCOCMarkerTests testCOCMarkerGeneration]' passed (0.002 seconds).
+Test Case '-[J2KCodecTests.J2KCODCOCMarkerTests testCOCMarkerHTJ2KMode]' started.
+Test Case '-[J2KCodecTests.J2KCODCOCMarkerTests testCOCMarkerHTJ2KMode]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KCODCOCMarkerTests testCODMarkerHTJ2KLossless]' started.
+Test Case '-[J2KCodecTests.J2KCODCOCMarkerTests testCODMarkerHTJ2KLossless]' passed (0.096 seconds).
+Test Case '-[J2KCodecTests.J2KCODCOCMarkerTests testCODMarkerHTJ2KMode]' started.
+Test Case '-[J2KCodecTests.J2KCODCOCMarkerTests testCODMarkerHTJ2KMode]' passed (0.012 seconds).
+Test Case '-[J2KCodecTests.J2KCODCOCMarkerTests testCODMarkerLegacyMode]' started.
+Test Case '-[J2KCodecTests.J2KCODCOCMarkerTests testCODMarkerLegacyMode]' passed (0.011 seconds).
+Test Case '-[J2KCodecTests.J2KCODCOCMarkerTests testCODMarkerLosslessMode]' started.
+Test Case '-[J2KCodecTests.J2KCODCOCMarkerTests testCODMarkerLosslessMode]' passed (0.006 seconds).
+Test Case '-[J2KCodecTests.J2KCODCOCMarkerTests testCODParsingHTJ2KMode]' started.
+Test Case '-[J2KCodecTests.J2KCODCOCMarkerTests testCODParsingHTJ2KMode]' passed (0.116 seconds).
+Test Case '-[J2KCodecTests.J2KCODCOCMarkerTests testCODParsingLegacyMode]' started.
+Test Case '-[J2KCodecTests.J2KCODCOCMarkerTests testCODParsingLegacyMode]' passed (0.013 seconds).
+Test Case '-[J2KCodecTests.J2KCODCOCMarkerTests testCODRoundTripLegacy]' started.
+Test Case '-[J2KCodecTests.J2KCODCOCMarkerTests testCODRoundTripLegacy]' passed (0.044 seconds).
+Test Case '-[J2KCodecTests.J2KCODCOCMarkerTests testCODRoundTripLossless]' started.
+Test Case '-[J2KCodecTests.J2KCODCOCMarkerTests testCODRoundTripLossless]' passed (0.011 seconds).
+Test Suite 'J2KCODCOCMarkerTests' passed at 2026-09-22 14:31:32.745.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.312 (0.313) seconds
+Test Suite 'J2KCodestreamIntegrityTests' started at 2026-09-22 14:31:32.745.
+Test Case '-[J2KCodecTests.J2KCodestreamIntegrityTests testCalibratedThresholds]' started.
+Test Case '-[J2KCodecTests.J2KCodestreamIntegrityTests testCalibratedThresholds]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KCodestreamIntegrityTests testCleanRoundTripIsIntact]' started.
+Test Case '-[J2KCodecTests.J2KCodestreamIntegrityTests testCleanRoundTripIsIntact]' passed (0.036 seconds).
+Test Case '-[J2KCodecTests.J2KCodestreamIntegrityTests testCorruptedEntropyDataIsRejected]' started.
+Test Case '-[J2KCodecTests.J2KCodestreamIntegrityTests testCorruptedEntropyDataIsRejected]' passed (6.328 seconds).
+Test Case '-[J2KCodecTests.J2KCodestreamIntegrityTests testLenientModeReturnsImageAndReport]' started.
+Test Case '-[J2KCodecTests.J2KCodestreamIntegrityTests testLenientModeReturnsImageAndReport]' passed (0.046 seconds).
+Test Case '-[J2KCodecTests.J2KCodestreamIntegrityTests testMissingEOCIsDetected]' started.
+Test Case '-[J2KCodecTests.J2KCodestreamIntegrityTests testMissingEOCIsDetected]' passed (0.042 seconds).
+Test Case '-[J2KCodecTests.J2KCodestreamIntegrityTests testPartialDecodeSuppressesUnderReadAnomalies]' started.
+Test Case '-[J2KCodecTests.J2KCodestreamIntegrityTests testPartialDecodeSuppressesUnderReadAnomalies]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KCodestreamIntegrityTests testRejectionCarriesTheReport]' started.
+Test Case '-[J2KCodecTests.J2KCodestreamIntegrityTests testRejectionCarriesTheReport]' passed (0.031 seconds).
+Test Case '-[J2KCodecTests.J2KCodestreamIntegrityTests testReportIsIndependentOfChunkOrder]' started.
+Test Case '-[J2KCodecTests.J2KCodestreamIntegrityTests testReportIsIndependentOfChunkOrder]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KCodestreamIntegrityTests testSmallOverReadIsNotAnAnomaly]' started.
+Test Case '-[J2KCodecTests.J2KCodestreamIntegrityTests testSmallOverReadIsNotAnAnomaly]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KCodestreamIntegrityTests testStrictIsDefaultAndAcceptsCleanData]' started.
+Test Case '-[J2KCodecTests.J2KCodestreamIntegrityTests testStrictIsDefaultAndAcceptsCleanData]' passed (0.031 seconds).
+Test Suite 'J2KCodestreamIntegrityTests' passed at 2026-09-22 14:31:39.261.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 6.515 (6.516) seconds
+Test Suite 'J2KDWT1DTests' started at 2026-09-22 14:31:39.261.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testAllBoundaryExtensionsMatch97]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testAllBoundaryExtensionsMatch97]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testAllZeros53]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testAllZeros53]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testAllZeros97]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testAllZeros97]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testAlternatingSignal53]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testAlternatingSignal53]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testConstantSignal53]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testConstantSignal53]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testConstantSignal97]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testConstantSignal97]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testCustomFilterCDF97Equivalent]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testCustomFilterCDF97Equivalent]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testCustomFilterEquality]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testCustomFilterEquality]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testCustomFilterLeGall53Equivalent]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testCustomFilterLeGall53Equivalent]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testCustomFilterReconstruction]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testCustomFilterReconstruction]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testCustomFilterWithSimpleCoefficients]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testCustomFilterWithSimpleCoefficients]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testEmptySignalError]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testEmptySignalError]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testEmptySubbandsError]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testEmptySubbandsError]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testEnergyConservation97]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testEnergyConservation97]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testEvenLength53]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testEvenLength53]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testForwardTransform53Simple]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testForwardTransform53Simple]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testForwardTransform97Simple]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testForwardTransform97Simple]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testHighpassContainsDetails53]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testHighpassContainsDetails53]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testIncompatibleSubbandSizesError]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testIncompatibleSubbandSizesError]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testInverseTransform53Simple]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testInverseTransform53Simple]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testInverseTransform97Simple]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testInverseTransform97Simple]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testLiftingStepEquality]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testLiftingStepEquality]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testLowpassContainsApproximation53]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testLowpassContainsApproximation53]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testMinimumSignalLength53]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testMinimumSignalLength53]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testMinimumSignalLength97]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testMinimumSignalLength97]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testNearPerfectReconstruction97WithRandomData]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testNearPerfectReconstruction97WithRandomData]' passed (0.003 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testNearPerfectReconstruction97WithVariousLengths]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testNearPerfectReconstruction97WithVariousLengths]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testOddLength53]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testOddLength53]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testPerfectReconstruction53WithRandomData]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testPerfectReconstruction53WithRandomData]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testPerfectReconstruction53WithVariousLengths]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testPerfectReconstruction53WithVariousLengths]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testPerformanceForward53]' started.
+<predecessor-worktree>/Tests/J2KCodecTests/J2KDWT1DTests.swift:574: Test Case '-[J2KCodecTests.J2KDWT1DTests testPerformanceForward53]' measured [Time, seconds] average: 0.038, relative standard deviation: 2.970%, values: [0.040631, 0.039434, 0.038763, 0.038727, 0.037633, 0.036560, 0.036807, 0.038597, 0.038453, 0.038001], performanceMetricID:com.apple.XCTPerformanceMetric_WallClockTime, baselineName: "", baselineAverage: , polarity: prefers smaller, maxPercentRegression: 10.000%, maxPercentRelativeStandardDeviation: 10.000%, maxRegression: 0.100, maxStandardDeviation: 0.100
+Test Case '-[J2KCodecTests.J2KDWT1DTests testPerformanceForward53]' passed (1.452 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testPerformanceForward97]' started.
+<predecessor-worktree>/Tests/J2KCodecTests/J2KDWT1DTests.swift:620: Test Case '-[J2KCodecTests.J2KDWT1DTests testPerformanceForward97]' measured [Time, seconds] average: 0.073, relative standard deviation: 2.834%, values: [0.076075, 0.069673, 0.070392, 0.076491, 0.073648, 0.073082, 0.073058, 0.074095, 0.074568, 0.072193], performanceMetricID:com.apple.XCTPerformanceMetric_WallClockTime, baselineName: "", baselineAverage: , polarity: prefers smaller, maxPercentRegression: 10.000%, maxPercentRelativeStandardDeviation: 10.000%, maxRegression: 0.100, maxStandardDeviation: 0.100
+Test Case '-[J2KCodecTests.J2KDWT1DTests testPerformanceForward97]' passed (0.989 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testPerformanceInverse53]' started.
+<predecessor-worktree>/Tests/J2KCodecTests/J2KDWT1DTests.swift:588: Test Case '-[J2KCodecTests.J2KDWT1DTests testPerformanceInverse53]' measured [Time, seconds] average: 0.038, relative standard deviation: 1.646%, values: [0.039641, 0.038365, 0.038463, 0.037849, 0.037502, 0.037753, 0.038019, 0.038074, 0.037263, 0.038463], performanceMetricID:com.apple.XCTPerformanceMetric_WallClockTime, baselineName: "", baselineAverage: , polarity: prefers smaller, maxPercentRegression: 10.000%, maxPercentRelativeStandardDeviation: 10.000%, maxRegression: 0.100, maxStandardDeviation: 0.100
+Test Case '-[J2KCodecTests.J2KDWT1DTests testPerformanceInverse53]' passed (0.636 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testPerformanceRoundTrip53]' started.
+<predecessor-worktree>/Tests/J2KCodecTests/J2KDWT1DTests.swift:602: Test Case '-[J2KCodecTests.J2KDWT1DTests testPerformanceRoundTrip53]' measured [Time, seconds] average: 0.077, relative standard deviation: 1.530%, values: [0.077654, 0.078907, 0.077392, 0.077184, 0.076340, 0.077321, 0.076877, 0.078784, 0.074539, 0.076613], performanceMetricID:com.apple.XCTPerformanceMetric_WallClockTime, baselineName: "", baselineAverage: , polarity: prefers smaller, maxPercentRegression: 10.000%, maxPercentRelativeStandardDeviation: 10.000%, maxRegression: 0.100, maxStandardDeviation: 0.100
+Test Case '-[J2KCodecTests.J2KDWT1DTests testPerformanceRoundTrip53]' passed (1.023 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testPerformanceRoundTrip97]' started.
+<predecessor-worktree>/Tests/J2KCodecTests/J2KDWT1DTests.swift:630: Test Case '-[J2KCodecTests.J2KDWT1DTests testPerformanceRoundTrip97]' measured [Time, seconds] average: 0.144, relative standard deviation: 2.915%, values: [0.150334, 0.148875, 0.146383, 0.148157, 0.143176, 0.140809, 0.138202, 0.142987, 0.139329, 0.139304], performanceMetricID:com.apple.XCTPerformanceMetric_WallClockTime, baselineName: "", baselineAverage: , polarity: prefers smaller, maxPercentRegression: 10.000%, maxPercentRelativeStandardDeviation: 10.000%, maxRegression: 0.100, maxStandardDeviation: 0.100
+Test Case '-[J2KCodecTests.J2KDWT1DTests testPerformanceRoundTrip97]' passed (1.690 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testPeriodicBoundaryExtension53]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testPeriodicBoundaryExtension53]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testSingleElementSignalError]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testSingleElementSignalError]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testSymmetricBoundaryExtension53]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testSymmetricBoundaryExtension53]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT1DTests testZeroPaddingBoundaryExtension53]' started.
+Test Case '-[J2KCodecTests.J2KDWT1DTests testZeroPaddingBoundaryExtension53]' passed (0.000 seconds).
+Test Suite 'J2KDWT1DTests' passed at 2026-09-22 14:31:45.066.
+	 Executed 39 tests, with 0 failures (0 unexpected) in 5.801 (5.805) seconds
+Test Suite 'J2KDWT2DTests' started at 2026-09-22 14:31:45.066.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testArbitraryDecompositionDifferentLevels]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testArbitraryDecompositionDifferentLevels]' passed (0.002 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testArbitraryDecompositionEqualLevels]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testArbitraryDecompositionEqualLevels]' passed (0.002 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testArbitraryDecompositionNegativeLevelsError]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testArbitraryDecompositionNegativeLevelsError]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testArbitraryDecompositionZeroLevelsError]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testArbitraryDecompositionZeroLevelsError]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testBoundaryExtensionPeriodic]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testBoundaryExtensionPeriodic]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testBoundaryExtensionSymmetric]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testBoundaryExtensionSymmetric]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testBoundaryExtensionZeroPadding]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testBoundaryExtensionZeroPadding]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testConstantImage]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testConstantImage]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testDecompositionStructureEquality]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testDecompositionStructureEquality]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testDyadicDecompositionStructure]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testDyadicDecompositionStructure]' passed (0.004 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testEmptyImageError]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testEmptyImageError]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testEmptySubbandsError]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testEmptySubbandsError]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testForwardTransform2x2]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testForwardTransform2x2]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testForwardTransform4x4]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testForwardTransform4x4]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testForwardTransform97_4x4]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testForwardTransform97_4x4]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testIncompatibleSubbandsError]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testIncompatibleSubbandsError]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testInconsistentRowLengthsError]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testInconsistentRowLengthsError]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testInvalidMultiLevelError]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testInvalidMultiLevelError]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testMultiLevelDecomposition2Levels]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testMultiLevelDecomposition2Levels]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testMultiLevelDecomposition3Levels]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testMultiLevelDecomposition3Levels]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testMultiLevelPerfectReconstruction]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testMultiLevelPerfectReconstruction]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testNearPerfectReconstruction97]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testNearPerfectReconstruction97]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testNonSquareImages]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testNonSquareImages]' passed (0.013 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testOddDimensions]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testOddDimensions]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testPerfectReconstruction4x4]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testPerfectReconstruction4x4]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testPerfectReconstruction8x8]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testPerfectReconstruction8x8]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testRandomData]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testRandomData]' passed (0.006 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testReconstruction97_8x8]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testReconstruction97_8x8]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testRectangularImage]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testRectangularImage]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testTooManyLevelsError]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testTooManyLevelsError]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testTooSmallImageError]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testTooSmallImageError]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testTransformReversibilityWithBothFilters]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testTransformReversibilityWithBothFilters]' passed (0.011 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testVariousImageSizes]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testVariousImageSizes]' passed (0.069 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testWaveletPacketDecomposition]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testWaveletPacketDecomposition]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testWaveletPacketEmptyPatternError]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testWaveletPacketEmptyPatternError]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KDWT2DTests testWaveletPacketInvalidPatternError]' started.
+Test Case '-[J2KCodecTests.J2KDWT2DTests testWaveletPacketInvalidPatternError]' passed (0.000 seconds).
+Test Suite 'J2KDWT2DTests' passed at 2026-09-22 14:31:45.184.
+	 Executed 36 tests, with 0 failures (0 unexpected) in 0.115 (0.118) seconds
+Test Suite 'J2KLosslessImageStressTests' started at 2026-09-22 14:31:45.184.
+Test Case '-[J2KCodecTests.J2KLosslessImageStressTests testLosslessStressHighBitDepthImagesStayBitExact]' started.
+Test Case '-[J2KCodecTests.J2KLosslessImageStressTests testLosslessStressHighBitDepthImagesStayBitExact]' passed (0.105 seconds).
+Test Case '-[J2KCodecTests.J2KLosslessImageStressTests testLosslessStressHTJ2KGrayscalePatternMatrix]' started.
+Test Case '-[J2KCodecTests.J2KLosslessImageStressTests testLosslessStressHTJ2KGrayscalePatternMatrix]' passed (0.161 seconds).
+Test Case '-[J2KCodecTests.J2KLosslessImageStressTests testLosslessStressLegacyGrayscaleOddDimensionMatrix]' started.
+Test Case '-[J2KCodecTests.J2KLosslessImageStressTests testLosslessStressLegacyGrayscaleOddDimensionMatrix]' passed (0.646 seconds).
+Test Case '-[J2KCodecTests.J2KLosslessImageStressTests testLosslessStressSequentialMixedModeCyclesStayExact]' started.
+Test Case '-[J2KCodecTests.J2KLosslessImageStressTests testLosslessStressSequentialMixedModeCyclesStayExact]' passed (0.392 seconds).
+Test Suite 'J2KLosslessImageStressTests' passed at 2026-09-22 14:31:46.489.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 1.304 (1.305) seconds
+Test Suite 'J2KLosslessMedicalGateTests' started at 2026-09-22 14:31:46.489.
+Test Case '-[J2KCodecTests.J2KLosslessMedicalGateTests testJ2KSwiftLosslessHTvsEBCOTOnMedicalCorpus]' started.
+Test Case '-[J2KCodecTests.J2KLosslessMedicalGateTests testJ2KSwiftLosslessHTvsEBCOTOnMedicalCorpus]' passed (256.527 seconds).
+Test Case '-[J2KCodecTests.J2KLosslessMedicalGateTests testLosslessCrossCodecMatrixAcrossMedicalCorpus_DefaultModes]' started.
+Test Case '-[J2KCodecTests.J2KLosslessMedicalGateTests testLosslessCrossCodecMatrixAcrossMedicalCorpus_DefaultModes]' passed (124.999 seconds).
+Test Case '-[J2KCodecTests.J2KLosslessMedicalGateTests testLosslessCrossCodecMatrixAcrossMedicalCorpus_EBCOTFair]' started.
+Test Case '-[J2KCodecTests.J2KLosslessMedicalGateTests testLosslessCrossCodecMatrixAcrossMedicalCorpus_EBCOTFair]' passed (1105.960 seconds).
+Test Case '-[J2KCodecTests.J2KLosslessMedicalGateTests testLosslessCrossCodecMatrixAcrossMedicalCorpus_HTFair]' started.
+Test Case '-[J2KCodecTests.J2KLosslessMedicalGateTests testLosslessCrossCodecMatrixAcrossMedicalCorpus_HTFair]' passed (100.412 seconds).
+Test Case '-[J2KCodecTests.J2KLosslessMedicalGateTests testLosslessRoundTripBitExactAcrossMedicalCorpus]' started.
+Test Case '-[J2KCodecTests.J2KLosslessMedicalGateTests testLosslessRoundTripBitExactAcrossMedicalCorpus]' passed (23.025 seconds).
+Test Suite 'J2KLosslessMedicalGateTests' passed at 2026-09-22 14:58:37.413.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 1610.923 (1610.924) seconds
+Test Suite 'J2KMarkerTests' started at 2026-09-22 14:58:37.413.
+Test Case '-[J2KCoreTests.J2KMarkerTests testFindMarkers]' started.
+Test Case '-[J2KCoreTests.J2KMarkerTests testFindMarkers]' passed (0.000 seconds).
+Test Case '-[J2KCoreTests.J2KMarkerTests testMarkerCanAppearInMainHeader]' started.
+Test Case '-[J2KCoreTests.J2KMarkerTests testMarkerCanAppearInMainHeader]' passed (0.000 seconds).
+Test Case '-[J2KCoreTests.J2KMarkerTests testMarkerCanAppearInTileHeader]' started.
+Test Case '-[J2KCoreTests.J2KMarkerTests testMarkerCanAppearInTileHeader]' passed (0.000 seconds).
+Test Case '-[J2KCoreTests.J2KMarkerTests testMarkerHasSegment]' started.
+Test Case '-[J2KCoreTests.J2KMarkerTests testMarkerHasSegment]' passed (0.000 seconds).
+Test Case '-[J2KCoreTests.J2KMarkerTests testMarkerIsDelimiting]' started.
+Test Case '-[J2KCoreTests.J2KMarkerTests testMarkerIsDelimiting]' passed (0.000 seconds).
+Test Case '-[J2KCoreTests.J2KMarkerTests testMarkerName]' started.
+Test Case '-[J2KCoreTests.J2KMarkerTests testMarkerName]' passed (0.000 seconds).
+Test Case '-[J2KCoreTests.J2KMarkerTests testMarkerSegmentInitialization]' started.
+Test Case '-[J2KCoreTests.J2KMarkerTests testMarkerSegmentInitialization]' passed (0.000 seconds).
+Test Case '-[J2KCoreTests.J2KMarkerTests testMarkerSegmentTotalLength]' started.
+Test Case '-[J2KCoreTests.J2KMarkerTests testMarkerSegmentTotalLength]' passed (0.000 seconds).
+Test Case '-[J2KCoreTests.J2KMarkerTests testMarkerValues]' started.
+Test Case '-[J2KCoreTests.J2KMarkerTests testMarkerValues]' passed (0.000 seconds).
+Test Case '-[J2KCoreTests.J2KMarkerTests testParseInvalidMarker]' started.
+Test Case '-[J2KCoreTests.J2KMarkerTests testParseInvalidMarker]' passed (0.000 seconds).
+Test Case '-[J2KCoreTests.J2KMarkerTests testParseMainHeader]' started.
+Test Case '-[J2KCoreTests.J2KMarkerTests testParseMainHeader]' passed (0.000 seconds).
+Test Case '-[J2KCoreTests.J2KMarkerTests testParseMainHeaderWithoutSOC]' started.
+Test Case '-[J2KCoreTests.J2KMarkerTests testParseMainHeaderWithoutSOC]' passed (0.000 seconds).
+Test Case '-[J2KCoreTests.J2KMarkerTests testParseMarkerSegmentSOC]' started.
+Test Case '-[J2KCoreTests.J2KMarkerTests testParseMarkerSegmentSOC]' passed (0.000 seconds).
+Test Case '-[J2KCoreTests.J2KMarkerTests testParseMarkerSegmentWithData]' started.
+Test Case '-[J2KCoreTests.J2KMarkerTests testParseMarkerSegmentWithData]' passed (0.000 seconds).
+Test Case '-[J2KCoreTests.J2KMarkerTests testParseTruncatedSegment]' started.
+Test Case '-[J2KCoreTests.J2KMarkerTests testParseTruncatedSegment]' passed (0.000 seconds).
+Test Case '-[J2KCoreTests.J2KMarkerTests testValidateBasicStructure]' started.
+Test Case '-[J2KCoreTests.J2KMarkerTests testValidateBasicStructure]' passed (0.000 seconds).
+Test Suite 'J2KMarkerTests' passed at 2026-09-22 14:58:37.417.
+	 Executed 16 tests, with 0 failures (0 unexpected) in 0.002 (0.004) seconds
+Test Suite 'J2KPGMRoundTripTests' started at 2026-09-22 14:58:37.417.
+Test Case '-[J2KCodecTests.J2KPGMRoundTripTests testRoundTrip_12bit_HTJ2K]' started.
+<predecessor-worktree>/Tests/J2KCodecTests/J2KPGMRoundTripTests.swift:70: -[J2KCodecTests.J2KPGMRoundTripTests testRoundTrip_12bit_HTJ2K] : Test skipped - Release-built j2k CLI not found at <predecessor-worktree>/.build/release/j2k; run `swift build -c release` first
+Test Case '-[J2KCodecTests.J2KPGMRoundTripTests testRoundTrip_12bit_HTJ2K]' skipped (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KPGMRoundTripTests testRoundTrip_12bit_Part1]' started.
+<predecessor-worktree>/Tests/J2KCodecTests/J2KPGMRoundTripTests.swift:70: -[J2KCodecTests.J2KPGMRoundTripTests testRoundTrip_12bit_Part1] : Test skipped - Release-built j2k CLI not found at <predecessor-worktree>/.build/release/j2k; run `swift build -c release` first
+Test Case '-[J2KCodecTests.J2KPGMRoundTripTests testRoundTrip_12bit_Part1]' skipped (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KPGMRoundTripTests testRoundTrip_16bit_HTJ2K]' started.
+<predecessor-worktree>/Tests/J2KCodecTests/J2KPGMRoundTripTests.swift:70: -[J2KCodecTests.J2KPGMRoundTripTests testRoundTrip_16bit_HTJ2K] : Test skipped - Release-built j2k CLI not found at <predecessor-worktree>/.build/release/j2k; run `swift build -c release` first
+Test Case '-[J2KCodecTests.J2KPGMRoundTripTests testRoundTrip_16bit_HTJ2K]' skipped (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KPGMRoundTripTests testRoundTrip_16bit_Part1]' started.
+<predecessor-worktree>/Tests/J2KCodecTests/J2KPGMRoundTripTests.swift:70: -[J2KCodecTests.J2KPGMRoundTripTests testRoundTrip_16bit_Part1] : Test skipped - Release-built j2k CLI not found at <predecessor-worktree>/.build/release/j2k; run `swift build -c release` first
+Test Case '-[J2KCodecTests.J2KPGMRoundTripTests testRoundTrip_16bit_Part1]' skipped (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KPGMRoundTripTests testRoundTrip_8bit_HTJ2K]' started.
+<predecessor-worktree>/Tests/J2KCodecTests/J2KPGMRoundTripTests.swift:70: -[J2KCodecTests.J2KPGMRoundTripTests testRoundTrip_8bit_HTJ2K] : Test skipped - Release-built j2k CLI not found at <predecessor-worktree>/.build/release/j2k; run `swift build -c release` first
+Test Case '-[J2KCodecTests.J2KPGMRoundTripTests testRoundTrip_8bit_HTJ2K]' skipped (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KPGMRoundTripTests testRoundTrip_8bit_Part1]' started.
+<predecessor-worktree>/Tests/J2KCodecTests/J2KPGMRoundTripTests.swift:70: -[J2KCodecTests.J2KPGMRoundTripTests testRoundTrip_8bit_Part1] : Test skipped - Release-built j2k CLI not found at <predecessor-worktree>/.build/release/j2k; run `swift build -c release` first
+Test Case '-[J2KCodecTests.J2KPGMRoundTripTests testRoundTrip_8bit_Part1]' skipped (0.000 seconds).
+Test Suite 'J2KPGMRoundTripTests' passed at 2026-09-22 14:58:37.420.
+	 Executed 6 tests, with 6 tests skipped and 0 failures (0 unexpected) in 0.002 (0.003) seconds
+Test Suite 'J2KRLCMinimalRoundTripTest' started at 2026-09-22 14:58:37.420.
+Test Case '-[J2KCodecTests.J2KRLCMinimalRoundTripTest test16x16OriginalPattern]' started.
+Test Case '-[J2KCodecTests.J2KRLCMinimalRoundTripTest test16x16OriginalPattern]' passed (0.002 seconds).
+Test Case '-[J2KCodecTests.J2KRLCMinimalRoundTripTest test4x4Block]' started.
+Test Case '-[J2KCodecTests.J2KRLCMinimalRoundTripTest test4x4Block]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KRLCMinimalRoundTripTest test4x4BlockHL]' started.
+Test Case '-[J2KCodecTests.J2KRLCMinimalRoundTripTest test4x4BlockHL]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KRLCMinimalRoundTripTest testDefaultTermination]' started.
+Test Case '-[J2KCodecTests.J2KRLCMinimalRoundTripTest testDefaultTermination]' passed (0.020 seconds).
+Test Case '-[J2KCodecTests.J2KRLCMinimalRoundTripTest testSingleColumnRLC]' started.
+Test Case '-[J2KCodecTests.J2KRLCMinimalRoundTripTest testSingleColumnRLC]' passed (0.001 seconds).
+Test Suite 'J2KRLCMinimalRoundTripTest' passed at 2026-09-22 14:58:37.444.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.023 (0.024) seconds
+Test Suite 'J2KRoundTripValidationTest' started at 2026-09-22 14:58:37.444.
+Test Case '-[J2KCodecTests.J2KRoundTripValidationTest testConstantImageOpenJPEG]' started.
+Test Case '-[J2KCodecTests.J2KRoundTripValidationTest testConstantImageOpenJPEG]' passed (0.003 seconds).
+Test Case '-[J2KCodecTests.J2KRoundTripValidationTest testDecodeOpenJPEGRef]' started.
+Test Case '-[J2KCodecTests.J2KRoundTripValidationTest testDecodeOpenJPEGRef]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KRoundTripValidationTest testEBCOTDirectRoundTrip]' started.
+Test Case '-[J2KCodecTests.J2KRoundTripValidationTest testEBCOTDirectRoundTrip]' passed (0.001 seconds).
+Test Case '-[J2KCodecTests.J2KRoundTripValidationTest testLosslessRoundTrip32x32]' started.
+Input (level-shifted):
+[-128, -96, -64, -32, 0, 32, 64, 96]
+[-112, -80, -48, -16, 16, 48, 80, 112]
+[-96, -64, -32, 0, 32, 64, 96, 127]
+[-80, -48, -16, 16, 48, 80, 112, 127]
+[-64, -32, 0, 32, 64, 96, 127, 127]
+[-48, -16, 16, 48, 80, 112, 127, 127]
+[-32, 0, 32, 64, 96, 127, 127, 127]
+[-16, 16, 48, 80, 112, 127, 127, 127]
+
+LL subband:
+[-128, -64, 0, 72]
+[-96, -32, 32, 104]
+[-64, 0, 64, 127]
+[-28, 36, 104, 131]
+
+LH subband:
+[0, 0, 0, 0]
+[0, 0, 0, 1]
+[0, 0, 0, 0]
+[16, 16, 14, -2]
+
+HL subband:
+[0, 0, 0, 33]
+[0, 0, 0, 31]
+[0, 0, 1, 0]
+[0, 0, 14, 0]
+
+HH subband:
+[0, 0, 0, 1]
+[0, 0, 0, -1]
+[0, 0, 1, 0]
+[0, 0, -8, 0]
+DWT 1-level roundtrip: maxErr=0
+DWT 5-level roundtrip (standard): maxErr=0, errCount=0/16384
+DWT 5-level roundtrip (optimized): maxErr=0, errCount=0/16384
+DWT 2-level 13x17 roundtrip: maxErr=0, errCount=0/221
+
+=== Testing log2 edge case ===
+  1 (2^0, needs 1 bits): active=1, zero=11 -> 0 ❌
+    ERROR: Expected 1, got 0
+  2 (2^1, needs 2 bits): active=2, zero=10 -> 0 ❌
+    ERROR: Expected 2, got 0
+  4 (2^2, needs 3 bits): active=3, zero=9 -> 0 ❌
+    ERROR: Expected 4, got 0
+  8 (2^3, needs 4 bits): active=4, zero=8 -> 8 ✓
+  16 (2^4, needs 5 bits): active=5, zero=7 -> 16 ✓
+  32 (2^5, needs 6 bits): active=6, zero=6 -> 32 ✓
+  64 (2^6, needs 7 bits): active=7, zero=5 -> 64 ✓
+  128 (2^7, needs 8 bits): active=8, zero=4 -> 128 ✓
+  256 (2^8, needs 9 bits): active=9, zero=3 -> 256 ✓
+  512 (2^9, needs 10 bits): active=10, zero=2 -> 512 ✓
+  1024 (2^10, needs 11 bits): active=11, zero=1 -> 1024 ✓
+  2048 (2^11, needs 12 bits): active=12, zero=0 -> 2048 ✓
+
+=== Testing power-of-2 boundary (2047 vs 2048) ===
+Test values: [2047, 2048, 2049, 1024]
+Binary representations:
+  [0]: 2047 = 0b011111111111 (needs 11 bits)
+  [1]: 2048 = 0b100000000000 (needs 12 bits)
+  [2]: 2049 = 0b100000000001 (needs 12 bits)
+  [3]: 1024 = 0b010000000000 (needs 11 bits)
+
+Encoded: 27 bytes, zero bit planes: 0
+
+Results:
+  [0]: 2047 -> 2047 ✓
+  [1]: 2048 -> 2048 ✓
+  [2]: 2049 -> 2049 ✓
+  [3]: 1024 -> 1024 ✓
+
+=== Testing 4x4 with power-of-2 value ===
+Test coefficients:
+  [0]: 2048 (0x800)
+  [1]: 1024 (0x400)
+  [2]: 2047 (0x7ff)
+  [3]: 2048 (0x800)
+Encoded: 29 bytes
+Zero bit planes: 0
+Pass count: 34
+
+Results:
+  [0]: 2048 ✓
+  [1]: 1024 ✓
+  [2]: 2047 ✓
+  [3]: 2048 ✓
+
+=== v5.38 M4 — J2KSwift HT vs EBCOT lossless on medical corpus ===
+| Modality | Shape | Raw KB | HT KB | HT× | EBCOT KB | EBCOT× | EBCOT vs HT | HT enc / dec ms | EBCOT enc / dec ms |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| MR-small | 180×180 | 63 | 44 | 1.43× | 30 | 2.09× | -31.6% | 37.8 / 33.4 | 172.0 / 159.6 |
+| CT | 512×512 | 512 | 426 | 1.20× | 324 | 1.58× | -24.0% | 248.6 / 210.2 | 1414.9 / 1415.2 |
+| CT | 512×512 | 512 | 396 | 1.29× | 308 | 1.66× | -22.3% | 251.9 / 213.6 | 1339.2 / 1362.9 |
+| MR | 886×886 | 1533 | 165 | 9.25× | 135 | 11.33× | -18.4% | 358.9 / 536.7 | 1568.8 / 1367.7 |
+| XA | 1024×1024 | 2048 | 1583 | 1.29× | 1337 | 1.53× | -15.6% | 456.4 / 547.5 | 7802.2 / 6192.1 |
+| PX | 2459×1316 | 6320 | 6302 | 1.00× | 5485 | 1.15× | -13.0% | 1073.3 / 2038.9 | 20329.7 / 26274.4 |
+| DX | 2800×2288 | 12512 | 12407 | 1.01× | 10559 | 1.18× | -14.9% | 2006.6 / 2870.1 | 50392.8 / 38974.5 |
+
+=== v5.38 M2-default — codec-default modes (mixed HT/EBCOT) — Lossless BYTES + RATIO (median of 5 runs) ===
+| Modality | Shape | Raw KB | J2KSwift KB | OpenJPEG KB | OpenJPH KB | Grok KB | Kakadu KB | J2KSwift× | OpenJPEG× | OpenJPH× | Grok× | Kakadu× |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| MR-small | 180×180 | 63 | 44 | 30 | 44 | 30 | 30 | 1.43× | 2.09× | 1.43× | 2.09× | 2.09× |
+| CT | 512×512 | 512 | 426 | 324 | 426 | 324 | 324 | 1.20× | 1.58× | 1.20× | 1.58× | 1.58× |
+| CT | 512×512 | 512 | 396 | 308 | 396 | 308 | 308 | 1.29× | 1.66× | 1.29× | 1.66× | 1.66× |
+| MR | 886×886 | 1533 | 165 | 135 | 163 | 135 | 135 | 9.25× | 11.33× | 9.36× | 11.33× | 11.32× |
+| XA | 1024×1024 | 2048 | 1583 | 1337 | 1583 | 1337 | 1337 | 1.29× | 1.53× | 1.29× | 1.53× | 1.53× |
+| PX | 2459×1316 | 6320 | 6302 | 5485 | 6280 | 5485 | 5485 | 1.00× | 1.15× | 1.01× | 1.15× | 1.15× |
+| DX | 2800×2288 | 12512 | 12407 | 10559 | 12384 | 10559 | 10559 | 1.01× | 1.18× | 1.01× | 1.18× | 1.18× |
+
+=== v5.38 M2-default — codec-default modes (mixed HT/EBCOT) — Lossless ENCODE TIME (ms, median of 5) ===
+| Modality | Shape | J2KSwift | OpenJPEG | OpenJPH | Grok | Kakadu | Fastest | Margin → next |
+|---|---|---:|---:|---:|---:|---:|:---|---:|
+| MR-small | 180×180 | 35.3 | 20.9 | 12.9 | 29.1 | 6.3 | Kakadu | 2.0× → OpenJPH |
+| CT | 512×512 | 248.5 | 94.5 | 19.3 | 47.9 | 13.1 | Kakadu | +6.2 ms → OpenJPH |
+| CT | 512×512 | 244.9 | 90.4 | 19.5 | 38.2 | 12.8 | Kakadu | 1.5× → OpenJPH |
+| MR | 886×886 | 340.6 | 91.7 | 20.8 | 34.7 | 9.9 | Kakadu | 2.1× → OpenJPH |
+| XA | 1024×1024 | 378.7 | 324.1 | 37.6 | 111.5 | 27.9 | Kakadu | +9.8 ms → OpenJPH |
+| PX | 2459×1316 | 987.3 | 1164.3 | 96.4 | 223.7 | 97.9 | OpenJPH | +1.4 ms → Kakadu |
+| DX | 2800×2288 | 1962.6 | 2225.5 | 176.8 | 299.4 | 181.7 | OpenJPH | +4.8 ms → Kakadu |
+
+=== v5.38 M2-default — codec-default modes (mixed HT/EBCOT) — Lossless DECODE TIME (ms, median of 5) ===
+| Modality | Shape | J2KSwift | OpenJPEG | OpenJPH | Grok | Kakadu | Fastest | Margin → next |
+|---|---|---:|---:|---:|---:|---:|:---|---:|
+| MR-small | 180×180 | 29.7 | 19.7 | 12.9 | 20.8 | 6.3 | Kakadu | 2.0× → OpenJPH |
+| CT | 512×512 | 197.0 | 102.1 | 16.7 | 51.5 | 13.8 | Kakadu | +2.9 ms → OpenJPH |
+| CT | 512×512 | 199.5 | 95.1 | 16.8 | 47.0 | 13.1 | Kakadu | +3.7 ms → OpenJPH |
+| MR | 886×886 | 466.4 | 105.4 | 20.4 | 34.2 | 11.3 | Kakadu | 1.8× → OpenJPH |
+| XA | 1024×1024 | 547.6 | 338.7 | 30.1 | 119.1 | 33.2 | OpenJPH | +3.1 ms → Kakadu |
+| PX | 2459×1316 | 1990.4 | 1164.2 | 69.8 | 218.0 | 104.8 | OpenJPH | 1.5× → Kakadu |
+| DX | 2800×2288 | 3013.4 | 2244.2 | 126.2 | 321.0 | 188.1 | OpenJPH | +61.9 ms → Kakadu |
+
+=== v5.38 M2-default — codec-default modes (mixed HT/EBCOT) — Roundtrip + cross-decode matrix ===
+| Modality | Shape | OpenJPEG self | OpenJPH self | Grok self | Kakadu self | OpenJPEG ←J2K | OpenJPH ←J2K | Grok ←J2K | Kakadu ←J2K |
+|---|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| MR-small | 180×180 | ✓ | ✓ | ✓ | ✓ | — | ✓ | — | — |
+| CT | 512×512 | ✓ | ✓ | ✓ | ✓ | — | ✓ | — | — |
+| CT | 512×512 | ✓ | ✓ | ✓ | ✓ | — | ✓ | — | — |
+| MR | 886×886 | ✓ | ✓ | ✓ | ✓ | — | ✓ | — | — |
+| XA | 1024×1024 | ✓ | ✓ | ✓ | ✓ | — | ✓ | — | — |
+| PX | 2459×1316 | ✓ | ✓ | ✓ | ✓ | — | ✓ | — | — |
+| DX | 2800×2288 | ✓ | ✓ | ✓ | ✓ | — | ✓ | — | — |
+
+=== v5.38 EBCOT-fair — every codec emitting EBCOT/Part-1 — Lossless BYTES + RATIO (median of 5 runs) ===
+| Modality | Shape | Raw KB | J2KSwift KB | OpenJPEG KB | OpenJPH KB | Grok KB | Kakadu KB | J2KSwift× | OpenJPEG× | OpenJPH× | Grok× | Kakadu× |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| MR-small | 180×180 | 63 | 30 | 30 | N/A | 30 | 30 | 2.09× | 2.09× | N/A | 2.09× | 2.09× |
+| CT | 512×512 | 512 | 324 | 324 | N/A | 324 | 324 | 1.58× | 1.58× | N/A | 1.58× | 1.58× |
+| CT | 512×512 | 512 | 308 | 308 | N/A | 308 | 308 | 1.66× | 1.66× | N/A | 1.66× | 1.66× |
+| MR | 886×886 | 1533 | 135 | 135 | N/A | 135 | 135 | 11.33× | 11.33× | N/A | 11.33× | 11.32× |
+| XA | 1024×1024 | 2048 | 1337 | 1337 | N/A | 1337 | 1337 | 1.53× | 1.53× | N/A | 1.53× | 1.53× |
+| PX | 2459×1316 | 6320 | 5485 | 5485 | N/A | 5485 | 5485 | 1.15× | 1.15× | N/A | 1.15× | 1.15× |
+| DX | 2800×2288 | 12512 | 10559 | 10559 | N/A | 10559 | 10559 | 1.18× | 1.18× | N/A | 1.18× | 1.18× |
+
+=== v5.38 EBCOT-fair — every codec emitting EBCOT/Part-1 — Lossless ENCODE TIME (ms, median of 5) ===
+| Modality | Shape | J2KSwift | OpenJPEG | OpenJPH | Grok | Kakadu | Fastest | Margin → next |
+|---|---|---:|---:|---:|---:|---:|:---|---:|
+| MR-small | 180×180 | 155.5 | 18.8 | N/A | 33.7 | 7.1 | Kakadu | 2.7× → OpenJPEG |
+| CT | 512×512 | 1426.9 | 97.2 | N/A | 52.4 | 15.4 | Kakadu | 3.4× → Grok |
+| CT | 512×512 | 1362.7 | 93.3 | N/A | 45.0 | 13.7 | Kakadu | 3.3× → Grok |
+| MR | 886×886 | 1596.8 | 93.3 | N/A | 49.6 | 10.2 | Kakadu | 4.9× → Grok |
+| XA | 1024×1024 | 7774.4 | 350.4 | N/A | 78.5 | 28.4 | Kakadu | 2.8× → Grok |
+| PX | 2459×1316 | 20276.4 | 1152.1 | N/A | 177.0 | 92.5 | Kakadu | 1.9× → Grok |
+| DX | 2800×2288 | 50692.4 | 2280.1 | N/A | 379.1 | 173.5 | Kakadu | 2.2× → Grok |
+
+=== v5.38 EBCOT-fair — every codec emitting EBCOT/Part-1 — Lossless DECODE TIME (ms, median of 5) ===
+| Modality | Shape | J2KSwift | OpenJPEG | OpenJPH | Grok | Kakadu | Fastest | Margin → next |
+|---|---|---:|---:|---:|---:|---:|:---|---:|
+| MR-small | 180×180 | 163.0 | 20.4 | N/A | 24.6 | 6.9 | Kakadu | 2.9× → OpenJPEG |
+| CT | 512×512 | 1528.4 | 99.2 | N/A | 58.5 | 14.9 | Kakadu | 3.9× → Grok |
+| CT | 512×512 | 1384.9 | 100.0 | N/A | 51.2 | 14.2 | Kakadu | 3.6× → Grok |
+| MR | 886×886 | 1360.5 | 110.0 | N/A | 44.3 | 12.3 | Kakadu | 3.6× → Grok |
+| XA | 1024×1024 | 6044.0 | 343.6 | N/A | 113.8 | 30.8 | Kakadu | 3.7× → Grok |
+| PX | 2459×1316 | 26630.9 | 1160.6 | N/A | 240.9 | 98.6 | Kakadu | 2.4× → Grok |
+| DX | 2800×2288 | 41086.1 | 2255.1 | N/A | 366.2 | 179.9 | Kakadu | 2.0× → Grok |
+
+=== v5.38 EBCOT-fair — every codec emitting EBCOT/Part-1 — Roundtrip + cross-decode matrix ===
+| Modality | Shape | OpenJPEG self | OpenJPH self | Grok self | Kakadu self | OpenJPEG ←J2K | OpenJPH ←J2K | Grok ←J2K | Kakadu ←J2K |
+|---|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| MR-small | 180×180 | ✓ | N/A | ✓ | ✓ | ✓ | N/A | ✓ | ✓ |
+| CT | 512×512 | ✓ | N/A | ✓ | ✓ | ✓ | N/A | ✓ | ✓ |
+| CT | 512×512 | ✓ | N/A | ✓ | ✓ | ✓ | N/A | ✓ | ✓ |
+| MR | 886×886 | ✓ | N/A | ✓ | ✓ | ✓ | N/A | ✓ | ✓ |
+| XA | 1024×1024 | ✓ | N/A | ✓ | ✓ | ✓ | N/A | ✓ | ✓ |
+| PX | 2459×1316 | ✓ | N/A | ✓ | ✓ | ✓ | N/A | ✓ | ✓ |
+| DX | 2800×2288 | ✓ | N/A | ✓ | ✓ | ✓ | N/A | ✓ | ✓ |
+
+=== v5.38 HT-fair — every codec emitting HT/Part-15 — Lossless BYTES + RATIO (median of 5 runs) ===
+| Modality | Shape | Raw KB | J2KSwift KB | OpenJPEG KB | OpenJPH KB | Grok KB | Kakadu KB | J2KSwift× | OpenJPEG× | OpenJPH× | Grok× | Kakadu× |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| MR-small | 180×180 | 63 | 44 | N/A | 44 | 44 | 44 | 1.43× | N/A | 1.43× | 1.43× | 1.43× |
+| CT | 512×512 | 512 | 426 | N/A | 426 | 426 | 426 | 1.20× | N/A | 1.20× | 1.20× | 1.20× |
+| CT | 512×512 | 512 | 396 | N/A | 396 | 396 | 396 | 1.29× | N/A | 1.29× | 1.29× | 1.29× |
+| MR | 886×886 | 1533 | 165 | N/A | 163 | 165 | 163 | 9.25× | N/A | 9.36× | 9.29× | 9.35× |
+| XA | 1024×1024 | 2048 | 1583 | N/A | 1583 | 1583 | 1583 | 1.29× | N/A | 1.29× | 1.29× | 1.29× |
+| PX | 2459×1316 | 6320 | 6302 | N/A | 6280 | 6280 | 6280 | 1.00× | N/A | 1.01× | 1.01× | 1.01× |
+| DX | 2800×2288 | 12512 | 12407 | N/A | 12384 | 12384 | 12385 | 1.01× | N/A | 1.01× | 1.01× | 1.01× |
+
+=== v5.38 HT-fair — every codec emitting HT/Part-15 — Lossless ENCODE TIME (ms, median of 5) ===
+| Modality | Shape | J2KSwift | OpenJPEG | OpenJPH | Grok | Kakadu | Fastest | Margin → next |
+|---|---|---:|---:|---:|---:|---:|:---|---:|
+| MR-small | 180×180 | 36.8 | N/A | 14.2 | 24.1 | 6.6 | Kakadu | 2.2× → OpenJPH |
+| CT | 512×512 | 250.2 | N/A | 20.3 | 26.3 | 7.4 | Kakadu | 2.7× → OpenJPH |
+| CT | 512×512 | 252.0 | N/A | 20.5 | 33.9 | 7.8 | Kakadu | 2.6× → OpenJPH |
+| MR | 886×886 | 401.6 | N/A | 21.2 | 31.2 | 8.4 | Kakadu | 2.5× → OpenJPH |
+| XA | 1024×1024 | 411.7 | N/A | 38.2 | 61.3 | 10.3 | Kakadu | 3.7× → OpenJPH |
+| PX | 2459×1316 | 942.4 | N/A | 99.1 | 83.8 | 21.8 | Kakadu | 3.8× → Grok |
+| DX | 2800×2288 | 3565.5 | N/A | 210.3 | 118.2 | 40.9 | Kakadu | 2.9× → Grok |
+
+=== v5.38 HT-fair — every codec emitting HT/Part-15 — Lossless DECODE TIME (ms, median of 5) ===
+| Modality | Shape | J2KSwift | OpenJPEG | OpenJPH | Grok | Kakadu | Fastest | Margin → next |
+|---|---|---:|---:|---:|---:|---:|:---|---:|
+| MR-small | 180×180 | 32.6 | N/A | 13.4 | 17.3 | 5.8 | Kakadu | 2.3× → OpenJPH |
+| CT | 512×512 | 202.7 | N/A | 17.8 | 21.7 | 7.8 | Kakadu | 2.3× → OpenJPH |
+| CT | 512×512 | 204.0 | N/A | 17.7 | 21.5 | 7.2 | Kakadu | 2.4× → OpenJPH |
+| MR | 886×886 | 484.3 | N/A | 21.0 | 26.5 | 10.3 | Kakadu | 2.0× → OpenJPH |
+| XA | 1024×1024 | 568.4 | N/A | 31.3 | 36.2 | 13.0 | Kakadu | 2.4× → OpenJPH |
+| PX | 2459×1316 | 2018.5 | N/A | 72.2 | 60.1 | 27.3 | Kakadu | 2.2× → Grok |
+| DX | 2800×2288 | 5176.3 | N/A | 149.4 | 82.8 | 41.9 | Kakadu | 2.0× → Grok |
+
+=== v5.38 HT-fair — every codec emitting HT/Part-15 — Roundtrip + cross-decode matrix ===
+| Modality | Shape | OpenJPEG self | OpenJPH self | Grok self | Kakadu self | OpenJPEG ←J2K | OpenJPH ←J2K | Grok ←J2K | Kakadu ←J2K |
+|---|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| MR-small | 180×180 | N/A | ✓ | ✓ | ✓ | N/A | ✓ | ✓ | ✓ |
+| CT | 512×512 | N/A | ✓ | ✓ | ✓ | N/A | ✓ | ✓ | ✓ |
+| CT | 512×512 | N/A | ✓ | ✓ | ✓ | N/A | ✓ | ✓ | ✓ |
+| MR | 886×886 | N/A | ✓ | ✓ | ✓ | N/A | ✓ | ✓ | ✓ |
+| XA | 1024×1024 | N/A | ✓ | ✓ | ✓ | N/A | ✓ | ✓ | ✓ |
+| PX | 2459×1316 | N/A | ✓ | ✓ | ✓ | N/A | ✓ | ✓ | ✓ |
+| DX | 2800×2288 | N/A | ✓ | ✓ | ✓ | N/A | ✓ | ✓ | ✓ |
+
+=== v5.38 M1 — J2KSwift lossless roundtrip across medical corpus ===
+| Modality | Shape | Raw KB | J2KSwift KB | Ratio vs raw | Encode ms | Decode ms |
+|---|---|---:|---:|---:|---:|---:|
+| MR-small | 180×180 | 63 | 44 | 1.43x | 39.4 | 33.9 |
+| CT | 512×512 | 512 | 426 | 1.20x | 263.4 | 227.1 |
+| CT | 512×512 | 512 | 396 | 1.29x | 294.0 | 237.3 |
+| MR | 886×886 | 1533 | 165 | 9.25x | 477.5 | 588.7 |
+| XA | 1024×1024 | 2048 | 1583 | 1.29x | 465.7 | 585.2 |
+| PX | 2459×1316 | 6320 | 6302 | 1.00x | 950.3 | 2054.2 |
+| DX | 2800×2288 | 12512 | 12407 | 1.01x | 2009.6 | 3192.0 |
+16x16 LL: 0 mismatches out of 256
+4x4 RLC test: passes=7, zeroBP=1, segments=[1, 1, 2, 1, 1, 2, 2], bytes=10
+Input:   [0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 7, 0]
+Decoded: [0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 7, 0]
+HL Input:   [0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 7, 0]
+HL Decoded: [0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 7, 0]
+=== MQ Coder Stress Test ===
+MQ stress test: 0/5000 mismatches, first at -1
+ISO+default: 0/961 mismatches, data=1176 bytes, passes=28
+Encoder symbols: 0, Decoder symbols: 0
+
+=== MQ Replay Test ===
+Replay: 0/0 mismatches, first at -1
+Encoded data bytes around positions 280-290:
+  byte[275] = 0xB2
+  byte[276] = 0x97
+  byte[277] = 0x89
+  byte[278] = 0x1F
+  byte[279] = 0x18
+  byte[280] = 0x04
+  byte[281] = 0x00
+  byte[282] = 0xF1
+  byte[283] = 0xA0
+  byte[284] = 0xEE
+  byte[285] = 0x2F
+  byte[286] = 0x13
+  byte[287] = 0xC4
+  byte[288] = 0xD8
+  byte[289] = 0x0E
+  byte[290] = 0x16
+  byte[291] = 0x05
+  byte[292] = 0x55
+  byte[293] = 0xA9
+  byte[294] = 0x38
+Encoder pass count: 0, Decoder pass count: 0
+First SYMBOL divergence at index -1
+First A-register divergence at index -1
+First LABEL divergence at index -1
+Default termination: input=[0, 0, 5, 0] decoded=[0, 0, 5, 0]
+1x4 RLC test: passes=7, zeroBP=1, segments=[1, 1, 1, 2, 1, 2, 2], bytes=10
+Predictable termination: input=[0, 0, 5, 0] decoded=[0, 0, 5, 0]
+
+--- Direct MQ round-trip test ---
+MQ test 0: pred=MATCH data=["1b"], def=MATCH data=["1b"]
+MQ test 1: pred=MATCH data=["03"], def=MATCH data=["03"]
+MQ test 2: pred=MATCH data=["17"], def=MATCH data=["17"]
+Const128: 82 bytes
+Const200: 102 bytes
+SKIP: no ref file
+[EBCOT_RT] encoded: 15 bytes, passes=19, zbp=3
+[EBCOT_RT] decoded: [-118, -108, -98, -88, -78, -68, -58, -48, -118, -108, -98, -88, -78, -68, -58, -48]
+Encoded size: 132 bytes (0-level DWT)
+Orig first 8: [10, 20, 30, 40, 50, 60, 70, 80]
+Dec  first 8: [10, 20, 30, 40, 50, 60, 70, 80]
+Dec all: [10, 20, 30, 40, 50, 60, 70, 80, 10, 20, 30, 40, 50, 60, 70, 80, 10, 20, 30, 40, 50, 60, 70, 80, 10, 20, 30, 40, 50, 60, 70, 80, 10, 20, 30, 40, 50, 60, 70, 80Test Case '-[J2KCodecTests.J2KRoundTripValidationTest testLosslessRoundTrip32x32]' passed (0.003 seconds).
+Test Case '-[J2KCodecTests.J2KRoundTripValidationTest testLossyRoundTrip512x512]' started.
+Test Case '-[J2KCodecTests.J2KRoundTripValidationTest testLossyRoundTrip512x512]' passed (3.115 seconds).
+Test Case '-[J2KCodecTests.J2KRoundTripValidationTest testLossyRoundTrip64x64]' started.
+Test Case '-[J2KCodecTests.J2KRoundTripValidationTest testLossyRoundTrip64x64]' passed (0.053 seconds).
+Test Suite 'J2KRoundTripValidationTest' passed at 2026-09-22 14:58:40.619.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 3.175 (3.176) seconds
+Test Suite 'J2KTier2CodingTests' started at 2026-09-22 14:58:40.619.
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testCompletePacketEncoding]' started.
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testCompletePacketEncoding]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testEmptyPacketHeader]' started.
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testEmptyPacketHeader]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testLayerFormationEmptyCodeBlocks]' started.
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testLayerFormationEmptyCodeBlocks]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testLayerFormationLossless]' started.
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testLayerFormationLossless]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testLayerFormationMultipleLayers]' started.
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testLayerFormationMultipleLayers]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testLayerFormationRDOptimization]' started.
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testLayerFormationRDOptimization]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testLayerFormationSingleLayer]' started.
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testLayerFormationSingleLayer]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testNonEmptyPacketHeader]' started.
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testNonEmptyPacketHeader]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testPacketHeaderEncodingPerformance]' started.
+<predecessor-worktree>/Tests/J2KCodecTests/J2KTier2CodingTests.swift:519: Test Case '-[J2KCodecTests.J2KTier2CodingTests testPacketHeaderEncodingPerformance]' measured [Time, seconds] average: 0.000, relative standard deviation: 12.175%, values: [0.000276, 0.000197, 0.000194, 0.000193, 0.000193, 0.000193, 0.000193, 0.000193, 0.000193, 0.000193], performanceMetricID:com.apple.XCTPerformanceMetric_WallClockTime, baselineName: "", baselineAverage: , polarity: prefers smaller, maxPercentRegression: 10.000%, maxPercentRelativeStandardDeviation: 10.000%, maxRegression: 0.100, maxStandardDeviation: 0.100
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testPacketHeaderEncodingPerformance]' passed (0.270 seconds).
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testPacketHeaderReaderEmptyPacket]' started.
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testPacketHeaderReaderEmptyPacket]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testPacketHeaderReaderSingleCodeBlock]' started.
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testPacketHeaderReaderSingleCodeBlock]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testPacketHeaderRoundTrip]' started.
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testPacketHeaderRoundTrip]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testPacketHeaderWriterEmptyPacket]' started.
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testPacketHeaderWriterEmptyPacket]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testPacketHeaderWriterInvalidData]' started.
+<predecessor-worktree>/Tests/J2KCodecTests/J2KTier2CodingTests.swift:196: -[J2KCodecTests.J2KTier2CodingTests testPacketHeaderWriterInvalidData] : Test skipped - Known CI failure: does not throw expected error
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testPacketHeaderWriterInvalidData]' skipped (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testPacketHeaderWriterMultipleCodeBlocks]' started.
+<predecessor-worktree>/Tests/J2KCodecTests/J2KTier2CodingTests.swift:145: -[J2KCodecTests.J2KTier2CodingTests testPacketHeaderWriterMultipleCodeBlocks] : Test skipped - Known CI failure: data length assertion
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testPacketHeaderWriterMultipleCodeBlocks]' skipped (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testPacketHeaderWriterMultipleHeaders]' started.
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testPacketHeaderWriterMultipleHeaders]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testPacketHeaderWriterSingleCodeBlock]' started.
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testPacketHeaderWriterSingleCodeBlock]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testProgressionOrderCount]' started.
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testProgressionOrderCount]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testProgressionOrderDescriptions]' started.
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testProgressionOrderDescriptions]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testProgressionOrderNames]' started.
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testProgressionOrderNames]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testProgressionOrderRawValues]' started.
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testProgressionOrderRawValues]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testQualityLayerCreation]' started.
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testQualityLayerCreation]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testQualityLayerLossless]' started.
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testQualityLayerLossless]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testQualityLayerWithContributions]' started.
+Test Case '-[J2KCodecTests.J2KTier2CodingTests testQualityLayerWithContributions]' passed (0.000 seconds).
+Test Suite 'J2KTier2CodingTests' passed at 2026-09-22 14:58:40.895.
+	 Executed 24 tests, with 2 tests skipped and 0 failures (0 unexpected) in 0.274 (0.276) seconds
+Test Suite 'MQCoderTerminationTests' started at 2026-09-22 14:58:40.895.
+Test Case '-[J2KCodecTests.MQCoderTerminationTests testSimpleSequence]' started.
+Test Case '-[J2KCodecTests.MQCoderTerminationTests testSimpleSequence]' passed (0.000 seconds).
+Test Case '-[J2KCodecTests.MQCoderTerminationTests testVariousSymbolCounts]' started.
+Test Case '-[J2KCodecTests.MQCoderTerminationTests testVariousSymbolCounts]' passed (0.000 seconds).
+Test Suite 'MQCoderTerminationTests' passed at 2026-09-22 14:58:40.895.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'J2KSwiftPackageTests.xctest' passed at 2026-09-22 14:58:40.895.
+	 Executed 211 tests, with 11 tests skipped and 0 failures (0 unexpected) in 1628.838 (1628.859) seconds
+Test Suite 'Selected tests' passed at 2026-09-22 14:58:40.896.
+	 Executed 211 tests, with 11 tests skipped and 0 failures (0 unexpected) in 1628.838 (1628.861) seconds
+, 10, 20, 30, 40, 50, 60, 70, 80, 10, 20, 30, 40, 50, 60, 70, 80, 10, 20, 30, 40, 50, 60, 70, 80]
+Encode #1: symbol=false, state=30, mps=false
+         After: state=31, mps=false
+Encode #2: symbol=false, state=31, mps=false
+         After: state=31, mps=false
+Encode #3: symbol=false, state=31, mps=false
+         After: state=31, mps=false
+Encode #4: symbol=false, state=31, mps=false
+         After: state=31, mps=false
+Encode #5: symbol=false, state=31, mps=false
+         After: state=31, mps=false
+
+Encoded data: 2 bytes
+Bytes: FF 7F
+
+Decode #1: state=30, mps=false
+         Result: symbol=false, state=31
+
+Decode #2: state=31, mps=false
+         Result: symbol=false, state=31
+
+Decode #3: state=31, mps=false
+         Result: symbol=false, state=31
+
+Decode #4: state=31, mps=false
+         Result: symbol=false, state=31
+
+Decode #5: state=31, mps=false
+         Result: symbol=false, state=31
+
+✓ ALL SYMBOLS DECODED CORRECTLY
+PASS at count=1
+PASS at count=2
+PASS at count=3
+PASS at count=4
+PASS at count=5
+PASS at count=6
+PASS at count=7
+PASS at count=8
+PASS at count=9
+PASS at count=10
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.
+exit 0

@@ -22,6 +22,10 @@ Do not migrate code from moving main without recording the selected revision. Re
 
 Work one owner-assigned milestone at a time. Preserve internal algorithm names where helpful, but provide the agreed common public module surface. Do not publish a stable version or announce complete platform support while required gates are missing.
 
+### Milestone 2 status — executed 22 September 2026
+
+Milestone 2 is implemented on branch `milestone2/scalar-lossless-j2k` against predecessor `7acc9ae415e7d0bc7d441e0f0277d5e150bd19ca`; evidence is in [MILESTONE2.md](Documentation/MILESTONE2.md) and file-level provenance in [HISTORY.md](HISTORY.md). The migrated scalar path covers: raw JPEG 2000 Part 1 codestreams, one unsigned greyscale component of 1–16 bits, one tile at the origin, reversible 5/3 wavelet with 0–32 levels, no quantisation, default code-block style, one quality layer, any precinct partition, LRCP/RLCP/RPCL progression (PCRL/CPRL only with one precinct per resolution), SOP/EPH markers, several tile-parts, PLT/TLM/COM segments skipped. Everything else in the "Migration focus" list below remains a capability to add: HTJ2K, 9/7 and quantised coding, tiles, layers, colour and signed components, sub-sampling, ROI, POC, PPM/PPT, JP2/JPH containers, acceleration, the auxiliary products, and native transcoding. Contract 0.9.0's continuous-integration precondition was still unmet when this milestone was executed, so the branch is local evidence rather than a merge candidate.
+
 
 ### Migration focus
 

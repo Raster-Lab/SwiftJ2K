@@ -4,32 +4,30 @@ import Synchronization
 import Testing
 import SwiftJ2K
 
-@Test func publicOperationsRejectCodecWorkAndAdvertiseEmptyCapabilities() async throws {
+@Test func publicOperationsRejectForeignBytesAndAdvertiseScalarLosslessCoverage() async throws {
     let encoder = try SwiftJ2K.Encoder()
     let decoder = try SwiftJ2K.Decoder()
     #expect(encoder.configuration.mode == .lossless)
-    #expect(!encoder.capabilities.canEncode)
-    #expect(!decoder.capabilities.canDecode && !decoder.capabilities.canInspect)
-    #expect(encoder.capabilities.formats.isEmpty && decoder.capabilities.formats.isEmpty)
-    #expect(encoder.capabilities.availableBackends.isEmpty)
+    #expect(encoder.capabilities.canEncode && !encoder.capabilities.canDecode)
+    #expect(decoder.capabilities.canDecode && decoder.capabilities.canInspect && !decoder.capabilities.canEncode)
+    #expect(encoder.capabilities.formats == decoder.capabilities.formats)
+    #expect(encoder.capabilities.availableBackends == [.scalarCPU])
+    #expect(encoder.capabilities.layouts == [CodecCapabilities.sharedGreyscaleLayout])
     let descriptor = try ImageDescriptor.greyscale16(width: 1, height: 1)
-    let image = try ImageDestination.allocate(descriptor: descriptor).writeUInt16 { _, _ in 65535 }
     let destination = try ImageDestination.allocate(descriptor: descriptor)
-    #expect(throws: CodecError(.unsupportedFeature, "Format inspection is deferred until codec migration.")) {
-        try decoder.inspect(Data())
-    }
     do {
-        _ = try await encoder.encode(image)
-        Issue.record("Milestone 1 must not emit a pretend JPEG.")
-    } catch let error as CodecError { #expect(error.category == .unsupportedFeature) }
+        _ = try decoder.inspect(Data())
+        Issue.record("Empty input inspected.")
+    } catch let error as CodecError { #expect(error.category == .malformedInput) }
     do {
+        // A JPEG (not JPEG 2000) SOI/EOI pair is a different format, not an image.
         _ = try await decoder.decode(Data([0xff, 0xd8, 0xff, 0xd9]))
-        Issue.record("Milestone 1 must not return a pretend decoded image.")
-    } catch let error as CodecError { #expect(error.category == .unsupportedFeature) }
+        Issue.record("A JPEG marker pair must not decode.")
+    } catch let error as CodecError { #expect(error.category == .unsupportedFormat) }
     do {
         _ = try await decoder.decode(Data(), into: destination)
-        Issue.record("Milestone 1 must reject decode into storage.")
-    } catch let error as CodecError { #expect(error.category == .unsupportedFeature) }
+        Issue.record("Empty input decoded into storage.")
+    } catch let error as CodecError { #expect(error.category == .malformedInput) }
     // Rejection is preflight: no write began and the caller's reserved owner remains usable.
     let next = try destination.writeUInt16 { _, _ in 123 }
     #expect(try next.sampleUInt16(x: 0, y: 0) == 123)

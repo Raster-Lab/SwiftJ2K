@@ -21,6 +21,8 @@ Reviewed predecessor: [J2KSwift at 768f6b53499b806fd0304962056e1fc7833f12e5](htt
 
 No predecessor tests or codec benchmarks were executed during this documentation review. Do not repeat its headline speedup or preservation claims without new evidence.
 
+**Milestone 2 audit, 22 September 2026.** Re-inspected at the pinned migration revision `7acc9ae415e7d0bc7d441e0f0277d5e150bd19ca`: `decodeLegacyCodeBlock` and `decodeHTCodeBlock` still catch decode failures and return empty coefficient arrays, `metadataPreserved: true` is still unconditional, and `J2KTranscoderTests.swift` still skips its async and parallel transcode tests as parser hangs. None of `J2KTranscoder.swift` was migrated. The scalar Part 1 decoder and encoder that Milestone 2 added are the qualified sample path a later transcoder may build on; `Transcoder.capabilities` stays empty.
+
 ## Processing paths
 
 **Preferred coefficient path.** Parse real packet/code-block boundaries and entropy-decode into bounded, owned quantised-wavelet coefficient storage; encode those coefficients using the target conformant block coder and build valid target packets/markers. Avoid inverse/forward wavelet transforms, dequantisation/requantisation, colour conversion and pixel materialisation. The coefficient objects are private algorithm workspace, not a new public image file format. Retain them across asynchronous work and reuse compatible storage without a redundant full-coefficient copy solely for a handoff.

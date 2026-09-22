@@ -1,9 +1,9 @@
-// swift-tools-version: 6.4
+// swift-tools-version: 6.2
 import PackageDescription
 
 let package = Package(
     name: "ContractHarness",
-    platforms: [.macOS(.v27)],
+    platforms: [.macOS(.v26)],
     dependencies: [
         .package(name: "SwiftJ2K", path: "../.."), .package(path: "../../../SwiftJLS"),
         .package(path: "../../../SwiftJXL"), .package(path: "../../../SwiftJLI")

@@ -1,0 +1,29 @@
+Building for debugging...
+[0/7] Write sources
+[2/7] Write Consumer-entitlement.plist
+[3/7] Write swift-version-6ED5EA0491098587.txt
+[5/23] Compiling SwiftJ2K ImageStorage.swift
+[6/23] Compiling SwiftJ2K Options.swift
+[7/23] Compiling SwiftJ2K Errors.swift
+[8/23] Compiling SwiftJ2K Image.swift
+[9/23] Compiling SwiftJ2K LosslessPipeline.swift
+[10/23] Compiling SwiftJ2K MQCoder.swift
+[11/23] Compiling SwiftJ2K BitIO.swift
+[12/23] Compiling SwiftJ2K BitPlaneCoder.swift
+[13/24] Compiling SwiftJ2K ImageDescriptor.swift
+[14/24] Emitting module SwiftJ2K
+[15/24] Compiling SwiftJ2K Wavelet53.swift
+[16/24] Compiling SwiftJ2K CodecAPI.swift
+[17/24] Compiling SwiftJ2K Codestream.swift
+[18/24] Compiling SwiftJ2K ContextModeling.swift
+[19/24] Compiling SwiftJ2K TagTree.swift
+[20/24] Compiling SwiftJ2K Tier2.swift
+[21/24] Compiling SwiftJ2K Transcoding.swift
+[22/26] Emitting module Consumer
+[23/26] Compiling Consumer main.swift
+[23/26] Write Objects.LinkFileList
+[24/26] Linking Consumer
+[25/26] Applying Consumer
+Build of product 'Consumer' complete! (22.37s)
+Independent SwiftJ2K consumer passed; 106-byte lossless codestream round-tripped.
+exit 0
