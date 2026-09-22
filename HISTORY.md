@@ -74,3 +74,11 @@ J2KSwift relocates here: 144,755 lines of source and 129,822 lines of tests, wit
 The sequence is a final J2KSwift release at v12.0.0, then relocation, then a first stable 12.1.0 here once the TEST-07 gates pass, then a maintenance window on the predecessor, then its archive. J2KSwift is not renamed or deleted: this repository's HISTORY.md and MIGRATION.md pin its commits and source files by permalink, and those links are the provenance record.
 
 D1's measurements are retained as the risk register rather than discarded. The continuous-integration objection is unresolved and becomes a precondition: the organisation's Actions billing remains locked, a re-run of JLSwift's CI on 22 September 2026 completed with `steps=0`, and no codec source moves before CI executes and passes here. This record authorises no codec milestone and no release.
+
+## Contract 0.9.0 — floor decision and programme sequence, 22 September 2026
+
+Decision D3 keeps the Apple deployment floor at 26.0 and places the cost of adoption on each consumer at its own cutover. DICOMKit consumes J2KSwift from 11.0.3 at macOS 15 / iOS 18 / tvOS 18 / visionOS 2; CompressionFamily (floor macOS 13 / iOS 16) declares no dependency on J2KSwift and is never re-pointed. J2KSwift is the supported route for those consumers until they raise their floors and re-point, and it is archived only after the last of them has moved.
+
+This repository is last in sequence, and its migration is preceded by the CompressionFamily conformance extraction (0.8.0 item 4) and the fixture provenance audit, both done in or about J2KSwift before any source moves. The predecessor's current release candidate is v12.0.0-rc.1; its promotion is the predecessor's own release task and is not authorised here.
+
+The continuous-integration precondition from 0.8.0 stands. Actions billing remained locked on 22 September 2026, so every workflow in the suite is written and unexecuted. No codec source moves here before CI executes and passes here.

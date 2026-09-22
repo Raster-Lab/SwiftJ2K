@@ -1,6 +1,6 @@
 # Swift Image Compression Suite — implementation baseline
 
-Contract version: **0.8.0**. Updated: **22 September 2026**.
+Contract version: **0.9.0**. Updated: **22 September 2026**.
 Status: **engineering specification; Milestone 1 implementation evidence is recorded in MILESTONE1.md. Later codec and platform gates remain planned**.
 
 This is the common engineering specification for four independent successor libraries. It records the owner's accepted direction and makes concrete implementation choices for the coding agent. Milestone 1 public API shapes and owning storage have been compiler-validated to the coverage recorded in MILESTONE1.md and Engineering/Swift64/README.md. Planned codec behaviour, engineering thresholds and unexecuted platforms remain qualification gates; those records do not constitute a separate human approval. Do not describe this baseline as a released SDK or a conformance certificate.
@@ -148,5 +148,32 @@ Consequences and required actions:
 7. **Consumers.** Re-pointing DICOMKit, and the applications that reach the codecs through it, is a separate owner-assigned task and is not authorised here.
 
 Migration order is JLSwift into SwiftJLS first, as the pilot: it is the smallest at 15,112 lines of source and 19,976 of tests, it has no package dependency to extract, and it is the codec named in the suite's first cross-codec proof. JLISwift, JXLSwift and J2KSwift follow, largest last.
+
+No platform, precision, ownership, fidelity or testing rule changes in this revision. It authorises no codec milestone and no release, and no stable tag may be cut in any repository while the gates in TEST-07 are unexecuted.
+
+## Contract revision 0.9.0 — 22 September 2026
+
+**Decision D3: the Apple deployment floor stays at 26.0, and each consumer raises its own floor when it cuts over to a successor.** Contract 0.8.0 referred the floor to the owner. PLAT-01 and PLAT-02 are unchanged: every successor declares Apple 26.0, and that floor is deliberate. The consumer question is settled in the other direction. No successor lowers its floor to meet a consumer; a consumer raises its floor to 26.0 in the same change that re-points it from a predecessor to a successor, and until that change the predecessor remains its supported route under API-01. The consumer floors measured on 22 September 2026 are the record of what that costs:
+
+| Consumer | Declared Apple floor | Predecessor dependencies in its manifest |
+| --- | --- | --- |
+| DICOMKit | macOS 15, iOS 18, tvOS 18, visionOS 2 | J2KSwift from 11.0.3, JLSwift from 0.9.0, JLISwift from 0.5.0, JXLSwift from 1.4.0 |
+| VoxeliaValidation | macOS 15, iOS 18, tvOS 18, visionOS 2 | JLSwift pinned at revision `299b9a2` |
+| CompressionFamily | macOS 13, iOS 16, tvOS 16, watchOS 9, visionOS 1 | none; predecessors conform to it, and it stays available to them under POL-04 |
+
+Re-pointing DICOMKit remains a separate owner-assigned task (0.8.0, item 7). CompressionFamily is never re-pointed.
+
+**The continuous-integration precondition stands, and its record is corrected.** Verified on 22 September 2026: run 35677481694 of SwiftJLS's Milestone 1 contract workflow on `main` ended with all seven jobs at `steps=0` and the message "The job was not started because your account is locked due to a billing issue." JLSwift's CI run 35684674145 the same morning reports the same message. The 0.8.0 statement that J2KSwift has no CI workflow of any kind is superseded: J2KSwift merged a tiered build-and-test gate on 22 September 2026 (its pull request 488), and every successor carries the Milestone 1 contract workflow. Every one of those workflows is written and unexecuted. The rule does not change: no codec source moves before continuous integration executes and passes on the repository it moves into.
+
+**Programme sequence.** The phases below make the 0.8.0 order concrete so that milestones can be assigned in turn. Each milestone remains a separately assigned coding task, and a phase is not a licence to begin the next.
+
+1. *Preconditions.* Actions billing is unlocked and a successor workflow run executes with non-zero steps. The machine that runs the gates has a full Xcode toolchain, because `swift test` with Swift Testing does not run on Command Line Tools alone (0.8.0 verification). This decision on the floor.
+2. *JLSwift into SwiftJLS*, the pilot: Milestones 2 to 5 in order, then the predecessor's final feature release, maintenance window and archive. What the pilot teaches is applied to the other three before they start.
+3. *JLISwift into SwiftJLI.*
+4. *JXLSwift into SwiftJXL.*
+5. *J2KSwift into SwiftJ2K*, preceded by the CompressionFamily conformance extraction (0.8.0, item 4) and the fixture provenance audit, both of which happen in or about the predecessor before any source moves.
+6. *Consumers.* DICOMKit raises its floor to 26.0 and re-points all four dependencies in one owner-assigned task; VoxeliaValidation re-points JLSwift. A predecessor is archived only after its last in-house consumer has moved.
+
+**Work permitted before the CI precondition is met.** A codec source move means adding predecessor codec implementation or codec test files to a successor. Everything short of that may proceed now: documentation, inventories and dispositions; provenance audits; selecting and recording the pinned predecessor revision for Milestone 2; recording the reconciliation choice of 0.8.0 item 5; the dependency extraction inside J2KSwift; and predecessor release candidates on the predecessor's own gates. For the record, and not authorised by this revision, the predecessors' current candidates are JLSwift v0.10.0-rc.1, JLISwift v0.6.0-rc.1, JXLSwift v1.5.0-rc.1 and J2KSwift v12.0.0-rc.1.
 
 No platform, precision, ownership, fidelity or testing rule changes in this revision. It authorises no codec milestone and no release, and no stable tag may be cut in any repository while the gates in TEST-07 are unexecuted.
