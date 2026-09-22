@@ -211,8 +211,8 @@ def main() -> int:
             (consumer / "Sources/Consumer").mkdir(parents=True)
             package_path = json.dumps(str(repo))
             (consumer / "Package.swift").write_text(
-                '// swift-tools-version: 6.4\nimport PackageDescription\n'
-                'let package = Package(name: "FreshConsumer", platforms: [.macOS(.v27)],\n'
+                '// swift-tools-version: 6.2\nimport PackageDescription\n'
+                'let package = Package(name: "FreshConsumer", platforms: [.macOS(.v26)],\n'
                 f' dependencies: [.package(path: {package_path})],\n'
                 f' targets: [.executableTarget(name: "Consumer", dependencies: [.product(name: "{name}", package: "{name}")])],\n'
                 ' swiftLanguageModes: [.v6])\n')
@@ -221,11 +221,12 @@ def main() -> int:
                 'let d = try ImageDescriptor.greyscale16(width: 3, height: 1, meaningfulBits: 16, rowBytes: 8)\n'
                 'let image = try ImageDestination.allocate(descriptor: d).writeUInt16 { x, _ in [UInt16(0), 65535, 4095][x] }\n'
                 'guard try image.sampleUInt16(x: 1, y: 0) == 65535 else { throw CodecError(.internalFailure, "Sample mismatch") }\n'
-                'let encoder = try Encoder()\n'
-                'guard !encoder.capabilities.canEncode else { throw CodecError(.internalFailure, "Update this Milestone 1 consumer") }\n'
-                'do { _ = try await encoder.encode(image); throw CodecError(.internalFailure, "Unexpected codec success") }\n'
-                'catch let error as CodecError where error.category == .unsupportedFeature {}\n'
-                'print("Fresh independent consumer passed")\n')
+                'let encoder = try Encoder(), decoder = try Decoder()\n'
+                'guard encoder.capabilities.canEncode, decoder.capabilities.canDecode else { throw CodecError(.internalFailure, "Scalar lossless coverage is not advertised") }\n'
+                'let encoded = try await encoder.encode(image)\n'
+                'let decoded = try await decoder.decode(encoded.data)\n'
+                'for x in 0..<3 where try decoded.image.sampleUInt16(x: x, y: 0) != image.sampleUInt16(x: x, y: 0) { throw CodecError(.internalFailure, "Round trip changed a sample") }\n'
+                'print("Fresh independent consumer passed; \\(encoded.data.count)-byte codestream round-tripped")\n')
             run("fresh-local-consumer", swift("run", "consumer", consumer) + ["Consumer"])
             report["open_gates"].append("Fresh URL-based consumer resolution is separate from this local consumer check")
         if "repetition" in selected:

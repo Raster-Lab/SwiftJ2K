@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: Apache-2.0
 """Deterministic synthetic greyscale fixtures for SwiftJ2K Milestone 2.
 Writes PGM (P5, big-endian 16-bit when maxval > 255) plus independent
 lossless JPEG 2000 codestreams from OpenJPEG and Kakadu, and a manifest with

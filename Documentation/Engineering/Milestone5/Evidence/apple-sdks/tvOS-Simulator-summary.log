@@ -1,0 +1,4 @@
+xcodebuild: error: Unable to find a destination matching the provided destination specifier:
+		{ platform:tvOS, id:dvtdevice-DVTiOSDevicePlaceholder-appletvos:placeholder, name:Any tvOS Device, error:tvOS 26.2 is not installed. Please download and install the platform from Xcode > Settings > Components. }
+		{ platform:visionOS, id:dvtdevice-DVTiOSDevicePlaceholder-xros:placeholder, name:Any visionOS Device, error:visionOS 26.2 is not installed. Please download and install the platform from Xcode > Settings > Components. }
+		{ platform:watchOS, id:dvtdevice-DVTiOSDevicePlaceholder-watchos:placeholder, name:Any watchOS Device, error:watchOS 26.2 is not installed. Please download and install the platform from Xcode > Settings > Components. }

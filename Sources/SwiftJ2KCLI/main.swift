@@ -15,7 +15,7 @@ import Glibc
 #endif
 
 private let tool = "swiftj2k"
-private let version = "12.1.0-dev.5"
+private let version = "12.1.0-dev.6"
 private let codecCommands = ["encode", "decode", "inspect", "validate", "transcode"]
 private let valueOptions: Set<String> = ["--input", "-i", "--output", "-o", "--input-format", "--output-format",
     "--mode", "--max-error", "--backend", "--copy-policy", "--threads", "--max-memory", "--timeout",

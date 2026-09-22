@@ -1,0 +1,7 @@
+Swift version 6.2.4 (swift-6.2.4-RELEASE)
+Creating working copy for https://github.com/Raster-Lab/SwiftJ2K.git
+Working copy of https://github.com/Raster-Lab/SwiftJ2K.git resolved at 45a36992f2daab547cc058097b648f71053e3cab
+.
+└── swiftj2k<https://github.com/Raster-Lab/SwiftJ2K.git@unspecified>
+Independent SwiftJ2K consumer passed; 106-byte lossless codestream round-tripped.
+linux url-consumer exit 0

@@ -1,5 +1,11 @@
 # Change log
 
+## 12.1.0-dev.6 — Milestone 5 release preparation, 2026-09-22 (unreleased)
+
+- Release preparation without a tag. Fresh URL-based consumption of the repository at a pinned revision verified on macOS and Linux (one package in the dependency graph); `Examples/MigrationExample` added as the executable program reproduced in the rewritten MIGRATION.md; `THIRD_PARTY_NOTICES.md` records relicensed predecessor code, synthetic fixtures and every development oracle; SECURITY.md records the repository's actual security settings and a supported-version policy; `Documentation/RELEASE.md` is the procedure the explicit release task follows.
+- Gates executed on the Swift 6.4 toolchain that Swift 6.2.3 could not run on this host: Swift Build engine debug/release builds and tests, AddressSanitizer, ThreadSanitizer and build-associated SPDX/CycloneDX SBOMs (schema validation still open). One-hour mutation fuzz campaigns per decode entry point (`Integration/FuzzHarness`, new), an Apple SDK build matrix (iOS, iOS Simulator, macOS; tvOS/watchOS/visionOS components not installed) and an iOS simulator test run. Evidence in [MILESTONE5.md](Documentation/MILESTONE5.md).
+- `Scripts/validate-swift64.py` generates its fresh consumer at tools 6.2 and macOS 26.0 with a real round trip; SPDX headers added to three active files. No library or CLI behaviour change; capabilities unchanged. Contract 0.9.0's continuous-integration precondition remains unmet.
+
 ## 12.1.0-dev.5 — Milestone 4 feature, CLI and platform coverage, 2026-09-22 (unreleased)
 
 - Decoder coverage of the remaining Part 1 greyscale syntax: any tile grid and image or tile origin (general-origin 5/3 lifting and band geometry on the reference grid), quality layers, all six code-block style bits (bypass with raw passes, reset, termination on each pass, vertically causal, predictable termination, segmentation symbols), codeword segments, all five progression orders, precincts, SOP/EPH, several tile-parts and tile-part header COD/COC/QCD/QCC overrides. 44 new OpenJPEG and Kakadu fixtures cover these, each cross-decoded by both tools.

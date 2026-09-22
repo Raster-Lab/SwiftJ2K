@@ -1,0 +1,631 @@
+Command line invocation:
+    /Applications/Xcode-26.2.app/Contents/Developer/usr/bin/xcodebuild test -scheme SwiftJ2K-Package -destination "platform=iOS Simulator,name=iPhone 17 Pro,OS=26.2" -derivedDataPath <scratch>/sdk-matrix/dd-test -resultBundlePath <scratch>/sdk-matrix/ios-sim.xcresult
+
+Resolve Package Graph
+2026-09-22 17:45:19.184 xcodebuild[61254:9509299] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+
+
+Resolved source packages:
+  SwiftJ2K: <repo>
+
+Writing result bundle at path:
+	<scratch>/sdk-matrix/ios-sim.xcresult
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (5 targets)
+    Target 'swiftj2k' in project 'SwiftJ2K'
+        ➜ Explicit dependency on target 'SwiftJ2K' in project 'SwiftJ2K'
+    Target 'SwiftJ2K' in project 'SwiftJ2K'
+        ➜ Explicit dependency on target 'SwiftJ2K' in project 'SwiftJ2K'
+    Target 'SwiftJ2KTests' in project 'SwiftJ2K'
+        ➜ Explicit dependency on target 'SwiftJ2K_SwiftJ2KTests' in project 'SwiftJ2K'
+        ➜ Explicit dependency on target 'SwiftJ2K' in project 'SwiftJ2K'
+    Target 'SwiftJ2K' in project 'SwiftJ2K' (no dependencies)
+    Target 'SwiftJ2K_SwiftJ2KTests' in project 'SwiftJ2K' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode-26.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode-26.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode-26.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 66d9e1e1737f30039bec03a311786f32
+Build description path: <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/XCBuildData/66d9e1e1737f30039bec03a311786f32.xcbuilddata
+ClangStatCache /Applications/Xcode-26.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk <scratch>/sdk-matrix/dd-test/SDKStatCaches.noindex/iphonesimulator26.2-23C53-dc75598d0054f22ec865fa860f139d72de8d003c055b2f0067f239787668d8d4.sdkstatcache
+    cd <repo>/.swiftpm/xcode
+    /Applications/Xcode-26.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -o <scratch>/sdk-matrix/dd-test/SDKStatCaches.noindex/iphonesimulator26.2-23C53-dc75598d0054f22ec865fa860f139d72de8d003c055b2f0067f239787668d8d4.sdkstatcache
+
+CreateBuildDirectory <scratch>/sdk-matrix/dd-test/Build/Products
+    cd <repo>/.swiftpm/xcode
+    builtin-create-build-directory <scratch>/sdk-matrix/dd-test/Build/Products
+
+CreateBuildDirectory <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex
+    cd <repo>/.swiftpm/xcode
+    builtin-create-build-directory <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex
+
+CreateBuildDirectory <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+    cd <repo>/.swiftpm/xcode
+    builtin-create-build-directory <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+CreateBuildDirectory <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/ExplicitPrecompiledModules
+    cd <repo>/.swiftpm/xcode
+    builtin-create-build-directory <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+CreateBuildDirectory <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+    cd <repo>/.swiftpm/xcode
+    builtin-create-build-directory <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+
+CreateBuildDirectory <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator
+    cd <repo>/.swiftpm/xcode
+    builtin-create-build-directory <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator
+
+CreateBuildDirectory <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/PackageFrameworks
+    cd <repo>/.swiftpm/xcode
+    builtin-create-build-directory <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/PackageFrameworks
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/swiftj2k.DependencyStaticMetadataFileList (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/swiftj2k.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K_SwiftJ2KTests.build/empty-SwiftJ2K_SwiftJ2KTests.plist (in target 'SwiftJ2K_SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K_SwiftJ2KTests.build/empty-SwiftJ2K_SwiftJ2KTests.plist
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/swiftj2k.DependencyMetadataFileList (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/swiftj2k.DependencyMetadataFileList
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/DerivedSources/Entitlements-Simulated.plist (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/DerivedSources/Entitlements-Simulated.plist
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k.SwiftFileList (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k.SwiftFileList
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k_const_extract_protocols.json (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k_const_extract_protocols.json
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k.LinkFileList (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k.LinkFileList
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k-OutputFileMap.json (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k-OutputFileMap.json
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K_SwiftJ2KTests.build/SwiftJ2K_SwiftJ2KTests.DependencyStaticMetadataFileList (in target 'SwiftJ2K_SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K_SwiftJ2KTests.build/SwiftJ2K_SwiftJ2KTests.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K_SwiftJ2KTests.build/SwiftJ2K_SwiftJ2KTests.DependencyMetadataFileList (in target 'SwiftJ2K_SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K_SwiftJ2KTests.build/SwiftJ2K_SwiftJ2KTests.DependencyMetadataFileList
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/SwiftJ2KTests.DependencyStaticMetadataFileList (in target 'SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/SwiftJ2KTests.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/SwiftJ2KTests.DependencyMetadataFileList (in target 'SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/SwiftJ2KTests.DependencyMetadataFileList
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/empty-SwiftJ2KTests.plist (in target 'SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/empty-SwiftJ2KTests.plist
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/Objects-normal/arm64/SwiftJ2KTests_const_extract_protocols.json (in target 'SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/Objects-normal/arm64/SwiftJ2KTests_const_extract_protocols.json
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/Objects-normal/arm64/SwiftJ2KTests.SwiftFileList (in target 'SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/Objects-normal/arm64/SwiftJ2KTests.SwiftFileList
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/Objects-normal/arm64/SwiftJ2KTests.SwiftConstValuesFileList (in target 'SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/Objects-normal/arm64/SwiftJ2KTests.SwiftConstValuesFileList
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/Objects-normal/arm64/SwiftJ2KTests.LinkFileList (in target 'SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/Objects-normal/arm64/SwiftJ2KTests.LinkFileList
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/Objects-normal/arm64/SwiftJ2KTests-OutputFileMap.json (in target 'SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/Objects-normal/arm64/SwiftJ2KTests-OutputFileMap.json
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/DerivedSources/resource_bundle_accessor.swift (in target 'SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/DerivedSources/resource_bundle_accessor.swift
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/SwiftJ2K.modulemap (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/SwiftJ2K.modulemap
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/SwiftJ2K.DependencyStaticMetadataFileList (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/SwiftJ2K.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/SwiftJ2K.DependencyMetadataFileList (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/SwiftJ2K.DependencyMetadataFileList
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K_const_extract_protocols.json (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K_const_extract_protocols.json
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.SwiftFileList (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.SwiftFileList
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.SwiftConstValuesFileList (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.SwiftConstValuesFileList
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.LinkFileList (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.LinkFileList
+
+WriteAuxiliaryFile <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K-OutputFileMap.json (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>
+    write-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K-OutputFileMap.json
+
+MkDir <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K_SwiftJ2KTests.bundle (in target 'SwiftJ2K_SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>
+    /bin/mkdir -p <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K_SwiftJ2KTests.bundle
+
+Copy <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/SwiftJ2K.modulemap <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/SwiftJ2K.modulemap (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/SwiftJ2K.modulemap <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator
+
+MkDir <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2KTests.xctest (in target 'SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>
+    /bin/mkdir -p <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2KTests.xctest
+
+ProcessInfoPlistFile <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K_SwiftJ2KTests.bundle/Info.plist <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K_SwiftJ2KTests.build/empty-SwiftJ2K_SwiftJ2KTests.plist (in target 'SwiftJ2K_SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>
+    builtin-infoPlistUtility <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K_SwiftJ2KTests.build/empty-SwiftJ2K_SwiftJ2KTests.plist -producttype com.apple.product-type.bundle -expandbuildsettings -format binary -platform iphonesimulator -o <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K_SwiftJ2KTests.bundle/Info.plist
+
+CpResource <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K_SwiftJ2KTests.bundle/Fixtures <repo>/Tests/SwiftJ2KTests/Fixtures (in target 'SwiftJ2K_SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks <repo>/Tests/SwiftJ2KTests/Fixtures <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K_SwiftJ2KTests.bundle
+
+CodeSign <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K_SwiftJ2KTests.bundle (in target 'SwiftJ2K_SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K_SwiftJ2KTests.bundle
+
+RegisterExecutionPolicyException <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K_SwiftJ2KTests.bundle (in target 'SwiftJ2K_SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>
+    builtin-RegisterExecutionPolicyException <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K_SwiftJ2KTests.bundle
+
+Touch <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K_SwiftJ2KTests.bundle (in target 'SwiftJ2K_SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>
+    /usr/bin/touch -c <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K_SwiftJ2KTests.bundle
+
+SwiftDriver SwiftJ2K normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    builtin-SwiftDriver -- /Applications/Xcode-26.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name SwiftJ2K -Onone -enforce-exclusivity\=checked @<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE -DXcode -plugin-path /Applications/Xcode-26.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target arm64-apple-ios26.0-simulator -g -module-cache-path <scratch>/sdk-matrix/dd-test/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <scratch>/sdk-matrix/dd-test/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator -F /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <scratch>/sdk-matrix/dd-test/SDKStatCaches.noindex/iphonesimulator26.2-23C53-dc75598d0054f22ec865fa860f139d72de8d003c055b2f0067f239787668d8d4.sdkstatcache -output-file-map <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <scratch>/sdk-matrix/dd-test/ModuleCache.noindex -sdk-module-cache-path <scratch>/sdk-matrix/dd-test/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.swiftmodule -validate-clang-modules-once -clang-build-session-file <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/Session.modulevalidation -package-name swiftj2k -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K_const_extract_protocols.json -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/include -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/DerivedSources-normal/arm64 -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/DerivedSources/arm64 -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K-Swift.h -working-directory <repo>/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/_Builtin_stdarg-4RENYYQ80OFVIBMIBAQ99539X.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/_AvailabilityInternal-U8GWI5L75D7ED05N15V1NSRV.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/_Builtin_stddef-C8UQPMK4F96TPYBX27LZHZRVB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/SwiftShims-7X7DPL2B9DK7OME3W6XT0S25Z.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/_Builtin_stdbool-1YDWGQQWC0DV07O958OGPB53I.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/_Builtin_float-6X520VIEWAKM0D8ZI6JNKG6ZU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/ptrauth-ENDBWCWEJ2SURPGVBG6LIC98K.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/ptrcheck-27MG79FPU5V2WGF4I521N04JJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/_SwiftConcurrencyShims-3FTOK3EWV717AAOORKGN6XU37.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/_DarwinFoundation1-8JT14XM1ZWX5UVCI8DXJE1TBP.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/_DarwinFoundation2-66WCK0X2QKNXSNU4SJOCA0R7Z.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/_Builtin_limits-3Q5MIDYOWKOBVEWKM1FXNKV2.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/_Builtin_stdint-BAJ261CLWQTPVRMOGD7PVWTSL.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/sys_types-71RO1B4MHNVLDVQ3DKG4RMDXW.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/_DarwinFoundation3-628RNH3BQTEKR8XMXFBL6QL08.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/_Builtin_inttypes-9PGSHE511JLQ17OI8SIHY9U7D.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/Darwin-4BEH21SPGPC75E8MMRPTB3AHR.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/ObjectiveC-81JYB1LGSGJ5O4FP6E69Z8QUG.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/os_object-65CRIPRIV0WVUAYI4JSASA92L.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/os_workgroup-4GXB2FN7MKKZKVV22TCSARXV.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/Dispatch-1OJTVHD3FH3W6J0MPRPHPLK6E.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/CoreFoundation-BWCDDUO1ZJ5YX4BXR9KQTGJ2Z.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/XPC-7BVGROYU7OAYHD8024MMJDHZH.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/Security-9FL3BTUGRBYJWE9TMR7D35YGH.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/CFNetwork-DSV0XO1LZ6OMZUGD0N6ED6Y00.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/Foundation-60R2YOCNOA5E4R08RH93IXQ57.pcm
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ SwiftJ2K (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+EmitSwiftModule normal arm64 (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ Errors.swift,\ Image.swift <repo>/Sources/SwiftJ2K/Errors.swift <repo>/Sources/SwiftJ2K/Image.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Errors.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Image.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ Transcoding.swift <repo>/Sources/SwiftJ2K/Transcoding.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Transcoding.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ Telemetry.swift <repo>/Sources/SwiftJ2K/Telemetry.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Telemetry.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ Wavelet53.swift,\ CodecAPI.swift <repo>/Sources/SwiftJ2K/Codec/Wavelet53.swift <repo>/Sources/SwiftJ2K/CodecAPI.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Codec/Wavelet53.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/CodecAPI.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ Codestream.swift,\ ContextModeling.swift <repo>/Sources/SwiftJ2K/Codec/Codestream.swift <repo>/Sources/SwiftJ2K/Codec/ContextModeling.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Codec/Codestream.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Codec/ContextModeling.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ Options.swift <repo>/Sources/SwiftJ2K/Options.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Options.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ LosslessPipeline.swift,\ MQCoder.swift <repo>/Sources/SwiftJ2K/Codec/LosslessPipeline.swift <repo>/Sources/SwiftJ2K/Codec/MQCoder.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Codec/LosslessPipeline.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Codec/MQCoder.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ BitIO.swift,\ BitPlaneCoder.swift <repo>/Sources/SwiftJ2K/Codec/BitIO.swift <repo>/Sources/SwiftJ2K/Codec/BitPlaneCoder.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Codec/BitIO.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Codec/BitPlaneCoder.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ ImageDescriptor.swift,\ ImageStorage.swift <repo>/Sources/SwiftJ2K/ImageDescriptor.swift <repo>/Sources/SwiftJ2K/ImageStorage.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/ImageDescriptor.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/ImageStorage.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ TagTree.swift,\ Tier2.swift <repo>/Sources/SwiftJ2K/Codec/TagTree.swift <repo>/Sources/SwiftJ2K/Codec/Tier2.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Codec/TagTree.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Codec/Tier2.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for SwiftJ2K (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftDriver\ Compilation\ Requirements SwiftJ2K normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode-26.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name SwiftJ2K -Onone -enforce-exclusivity\=checked @<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE -DXcode -plugin-path /Applications/Xcode-26.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target arm64-apple-ios26.0-simulator -g -module-cache-path <scratch>/sdk-matrix/dd-test/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <scratch>/sdk-matrix/dd-test/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator -F /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <scratch>/sdk-matrix/dd-test/SDKStatCaches.noindex/iphonesimulator26.2-23C53-dc75598d0054f22ec865fa860f139d72de8d003c055b2f0067f239787668d8d4.sdkstatcache -output-file-map <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <scratch>/sdk-matrix/dd-test/ModuleCache.noindex -sdk-module-cache-path <scratch>/sdk-matrix/dd-test/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.swiftmodule -validate-clang-modules-once -clang-build-session-file <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/Session.modulevalidation -package-name swiftj2k -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K_const_extract_protocols.json -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/include -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/DerivedSources-normal/arm64 -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/DerivedSources/arm64 -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K-Swift.h -working-directory <repo>/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal arm64 Compiling Telemetry.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftMergeGeneratedHeaders <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/SwiftJ2K-Swift.h <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K-Swift.h (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>
+    builtin-swiftHeaderTool -arch arm64 <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K-Swift.h -o <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/SwiftJ2K-Swift.h
+
+Copy <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K.swiftmodule/arm64-apple-ios-simulator.swiftmodule <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.swiftmodule (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.swiftmodule <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K.swiftmodule/arm64-apple-ios-simulator.swiftmodule
+
+Copy <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K.swiftmodule/arm64-apple-ios-simulator.swiftdoc <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.swiftdoc (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.swiftdoc <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K.swiftmodule/arm64-apple-ios-simulator.swiftdoc
+
+Copy <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K.swiftmodule/arm64-apple-ios-simulator.abi.json <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.abi.json (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.abi.json <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K.swiftmodule/arm64-apple-ios-simulator.abi.json
+
+Copy <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.swiftsourceinfo (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.swiftsourceinfo <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
+
+ProcessProductPackaging "" <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/swiftj2k-Simulated.xcent (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "FAKETEAMID.swiftj2k.swiftj2k";
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/swiftj2k-Simulated.xcent
+
+ProcessProductPackagingDER <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/swiftj2k-Simulated.xcent <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/swiftj2k-Simulated.xcent.der (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>
+    /usr/bin/derq query -f xml -i <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/swiftj2k-Simulated.xcent -o <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/swiftj2k-Simulated.xcent.der --raw
+
+SwiftDriver swiftj2k normal arm64 com.apple.xcode.tools.swift.compiler (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    builtin-SwiftDriver -- /Applications/Xcode-26.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name swiftj2k -Onone -enforce-exclusivity\=checked @<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode-26.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target arm64-apple-ios26.0-simulator -g -module-cache-path <scratch>/sdk-matrix/dd-test/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <scratch>/sdk-matrix/dd-test/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/PackageFrameworks -F <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator -F /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <scratch>/sdk-matrix/dd-test/SDKStatCaches.noindex/iphonesimulator26.2-23C53-dc75598d0054f22ec865fa860f139d72de8d003c055b2f0067f239787668d8d4.sdkstatcache -output-file-map <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <scratch>/sdk-matrix/dd-test/ModuleCache.noindex -sdk-module-cache-path <scratch>/sdk-matrix/dd-test/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k.swiftmodule -validate-clang-modules-once -clang-build-session-file <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/Session.modulevalidation -package-name swiftj2k -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k_const_extract_protocols.json -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/include -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/DerivedSources-normal/arm64 -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/DerivedSources/arm64 -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory <repo>/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ swiftj2k (in target 'swiftj2k' from project 'SwiftJ2K')
+
+EmitSwiftModule normal arm64 (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftDriver SwiftJ2KTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    builtin-SwiftDriver -- /Applications/Xcode-26.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name SwiftJ2KTests -Onone -enforce-exclusivity\=checked @<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/Objects-normal/arm64/SwiftJ2KTests.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE -DXcode -plugin-path /Applications/Xcode-26.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target arm64-apple-ios26.0-simulator -g -module-cache-path <scratch>/sdk-matrix/dd-test/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <scratch>/sdk-matrix/dd-test/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/PackageFrameworks -F <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator -F /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <scratch>/sdk-matrix/dd-test/SDKStatCaches.noindex/iphonesimulator26.2-23C53-dc75598d0054f22ec865fa860f139d72de8d003c055b2f0067f239787668d8d4.sdkstatcache -output-file-map <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/Objects-normal/arm64/SwiftJ2KTests-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <scratch>/sdk-matrix/dd-test/ModuleCache.noindex -sdk-module-cache-path <scratch>/sdk-matrix/dd-test/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/Objects-normal/arm64/SwiftJ2KTests.swiftmodule -validate-clang-modules-once -clang-build-session-file <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/Session.modulevalidation -package-name swiftj2k -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/Objects-normal/arm64/SwiftJ2KTests_const_extract_protocols.json -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/include -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/DerivedSources-normal/arm64 -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/DerivedSources/arm64 -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory <repo>/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal arm64 Compiling TagTree.swift, Tier2.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 Compiling\ ImageDescriptor.swift,\ ImageStorage.swift <repo>/Sources/SwiftJ2K/ImageDescriptor.swift <repo>/Sources/SwiftJ2K/ImageStorage.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/ImageDescriptor.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/ImageStorage.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling Wavelet53.swift, CodecAPI.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 Compiling\ LosslessPipeline.swift,\ MQCoder.swift <repo>/Sources/SwiftJ2K/Codec/LosslessPipeline.swift <repo>/Sources/SwiftJ2K/Codec/MQCoder.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Codec/LosslessPipeline.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Codec/MQCoder.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling ImageDescriptor.swift, ImageStorage.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 Compiling\ TagTree.swift,\ Tier2.swift <repo>/Sources/SwiftJ2K/Codec/TagTree.swift <repo>/Sources/SwiftJ2K/Codec/Tier2.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Codec/TagTree.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Codec/Tier2.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling Errors.swift, Image.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 Compiling\ Transcoding.swift <repo>/Sources/SwiftJ2K/Transcoding.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Transcoding.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftExplicitDependencyCompileModuleFromInterface arm64 <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/Testing-1O0D0PFL694OK.swiftmodule
+
+SwiftDriverJobDiscovery normal arm64 Compiling Transcoding.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 Compiling\ Codestream.swift,\ ContextModeling.swift <repo>/Sources/SwiftJ2K/Codec/Codestream.swift <repo>/Sources/SwiftJ2K/Codec/ContextModeling.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Codec/Codestream.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Codec/ContextModeling.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling Options.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 Compiling\ Telemetry.swift <repo>/Sources/SwiftJ2K/Telemetry.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Telemetry.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling Codestream.swift, ContextModeling.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 Compiling\ BitIO.swift,\ BitPlaneCoder.swift <repo>/Sources/SwiftJ2K/Codec/BitIO.swift <repo>/Sources/SwiftJ2K/Codec/BitPlaneCoder.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Codec/BitIO.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Codec/BitPlaneCoder.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling BitIO.swift, BitPlaneCoder.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 Compiling\ Options.swift <repo>/Sources/SwiftJ2K/Options.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Options.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for swiftj2k (in target 'swiftj2k' from project 'SwiftJ2K')
+
+SwiftDriverJobDiscovery normal arm64 Compiling Transcoding.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+
+SwiftDriver\ Compilation\ Requirements swiftj2k normal arm64 com.apple.xcode.tools.swift.compiler (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode-26.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name swiftj2k -Onone -enforce-exclusivity\=checked @<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode-26.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target arm64-apple-ios26.0-simulator -g -module-cache-path <scratch>/sdk-matrix/dd-test/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <scratch>/sdk-matrix/dd-test/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/PackageFrameworks -F <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator -F /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <scratch>/sdk-matrix/dd-test/SDKStatCaches.noindex/iphonesimulator26.2-23C53-dc75598d0054f22ec865fa860f139d72de8d003c055b2f0067f239787668d8d4.sdkstatcache -output-file-map <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <scratch>/sdk-matrix/dd-test/ModuleCache.noindex -sdk-module-cache-path <scratch>/sdk-matrix/dd-test/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k.swiftmodule -validate-clang-modules-once -clang-build-session-file <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/Session.modulevalidation -package-name swiftj2k -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k_const_extract_protocols.json -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/include -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/DerivedSources-normal/arm64 -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/DerivedSources/arm64 -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory <repo>/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftCompile normal arm64 Compiling\ Wavelet53.swift,\ CodecAPI.swift <repo>/Sources/SwiftJ2K/Codec/Wavelet53.swift <repo>/Sources/SwiftJ2K/CodecAPI.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Codec/Wavelet53.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/CodecAPI.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+Copy <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/swiftj2k.swiftmodule/arm64-apple-ios-simulator.swiftmodule <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k.swiftmodule (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k.swiftmodule <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/swiftj2k.swiftmodule/arm64-apple-ios-simulator.swiftmodule
+
+SwiftDriverJobDiscovery normal arm64 Compiling LosslessPipeline.swift, MQCoder.swift (in target 'SwiftJ2K' from project 'SwiftJ2K')
+
+Copy <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/swiftj2k.swiftmodule/arm64-apple-ios-simulator.swiftdoc <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k.swiftdoc (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k.swiftdoc <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/swiftj2k.swiftmodule/arm64-apple-ios-simulator.swiftdoc
+
+Copy <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/swiftj2k.swiftmodule/arm64-apple-ios-simulator.abi.json <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k.abi.json (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k.abi.json <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/swiftj2k.swiftmodule/arm64-apple-ios-simulator.abi.json
+
+Copy <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/swiftj2k.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k.swiftsourceinfo (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/swiftj2k.build/Objects-normal/arm64/swiftj2k.swiftsourceinfo <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/swiftj2k.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
+
+SwiftCompile normal arm64 Compiling\ Errors.swift,\ Image.swift <repo>/Sources/SwiftJ2K/Errors.swift <repo>/Sources/SwiftJ2K/Image.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Errors.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 <repo>/Sources/SwiftJ2K/Image.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling Telemetry.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+
+SwiftDriver\ Compilation SwiftJ2K normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    builtin-Swift-Compilation -- /Applications/Xcode-26.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name SwiftJ2K -Onone -enforce-exclusivity\=checked @<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE -DXcode -plugin-path /Applications/Xcode-26.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target arm64-apple-ios26.0-simulator -g -module-cache-path <scratch>/sdk-matrix/dd-test/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <scratch>/sdk-matrix/dd-test/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator -F /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <scratch>/sdk-matrix/dd-test/SDKStatCaches.noindex/iphonesimulator26.2-23C53-dc75598d0054f22ec865fa860f139d72de8d003c055b2f0067f239787668d8d4.sdkstatcache -output-file-map <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <scratch>/sdk-matrix/dd-test/ModuleCache.noindex -sdk-module-cache-path <scratch>/sdk-matrix/dd-test/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.swiftmodule -validate-clang-modules-once -clang-build-session-file <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/Session.modulevalidation -package-name swiftj2k -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K_const_extract_protocols.json -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/include -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/DerivedSources-normal/arm64 -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/DerivedSources/arm64 -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K-Swift.h -working-directory <repo>/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+Ld <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K.o normal (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>
+    /Applications/Xcode-26.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios26.0-simulator -r -isysroot /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -O0 -L<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L<scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator -L/Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F<scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator -iframework /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -filelist <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.LinkFileList -nostdlib -Xlinker -object_path_lto -Xlinker <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode-26.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.swiftmodule @<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K-linker-args.resp -o <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K.o
+
+ExtractAppIntentsMetadata (in target 'SwiftJ2K' from project 'SwiftJ2K')
+    cd <repo>
+    /Applications/Xcode-26.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.3.7003.10.BNPtBc/Metal.xctoolchain --module-name SwiftJ2K --sdk-root /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk --xcode-version 17C52 --platform-family iOS --deployment-target 26.0 --bundle-identifier swiftj2k.SwiftJ2K --output <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K.appintents --target-triple arm64-apple-ios26.0-simulator --binary-file <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/SwiftJ2K.o --dependency-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K_dependency_info.dat --stringsdata-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.SwiftFileList --metadata-file-list <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/SwiftJ2K.DependencyMetadataFileList --static-metadata-file-list <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/SwiftJ2K.DependencyStaticMetadataFileList --swift-const-vals-list <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2K.build/Objects-normal/arm64/SwiftJ2K.SwiftConstValuesFileList --force --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-09-22 17:45:29.079 appintentsmetadataprocessor[61335:9509777] Starting appintentsmetadataprocessor export
+2026-09-22 17:45:29.462 appintentsmetadataprocessor[61335:9509777] Extracted no relevant App Intents symbols, skipping writing output
+
+SwiftExplicitDependencyCompileModuleFromInterface arm64 <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/_Testing_Foundation-3NMI3TPTT3XSO.swiftmodule
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ SwiftJ2KTests (in target 'SwiftJ2KTests' from project 'SwiftJ2K')
+
+EmitSwiftModule normal arm64 (in target 'SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ BehaviourTests.swift <repo>/Tests/SwiftJ2KTests/BehaviourTests.swift (in target 'SwiftJ2KTests' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 <repo>/Tests/SwiftJ2KTests/BehaviourTests.swift (in target 'SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling Options.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 Compiling\ OwnershipTests.swift <repo>/Tests/SwiftJ2KTests/OwnershipTests.swift (in target 'SwiftJ2KTests' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 <repo>/Tests/SwiftJ2KTests/OwnershipTests.swift (in target 'SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ SharedStorageTests.swift <repo>/Tests/SwiftJ2KTests/SharedStorageTests.swift (in target 'SwiftJ2KTests' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 <repo>/Tests/SwiftJ2KTests/SharedStorageTests.swift (in target 'SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling ImageDescriptor.swift, ImageStorage.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+
+SwiftCompile normal arm64 Compiling\ resource_bundle_accessor.swift <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/DerivedSources/resource_bundle_accessor.swift (in target 'SwiftJ2KTests' from project 'SwiftJ2K')
+Failed frontend command:
+/Applications/Xcode-26.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -c -primary-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/DerivedSources/resource_bundle_accessor.swift <repo>/Tests/SwiftJ2KTests/BehaviourTests.swift <repo>/Tests/SwiftJ2KTests/CancellationPublicationTests.swift <repo>/Tests/SwiftJ2KTests/ContractTests.swift <repo>/Tests/SwiftJ2KTests/DescriptorTests.swift <repo>/Tests/SwiftJ2KTests/LimitTests.swift <repo>/Tests/SwiftJ2KTests/LosslessCodecTests.swift <repo>/Tests/SwiftJ2KTests/OwnershipTests.swift <repo>/Tests/SwiftJ2KTests/SampleAccessTests.swift <repo>/Tests/SwiftJ2KTests/SharedStorageTests.swift -emit-dependencies-path <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/Objects-normal/arm64/resource_bundle_accessor.d -emit-const-values-path <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/Objects-normal/arm64/resource_bundle_accessor.swiftconstvalues -emit-reference-dependencies-path <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/Objects-normal/arm64/resource_bundle_accessor.swiftdeps -serialize-diagnostics-path <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/Objects-normal/arm64/resource_bundle_accessor.dia -target arm64-apple-ios26.0-simulator -disable-cross-import-overlay-search -swift-module-cross-import Testing /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/Testing.framework/Modules/Testing.swiftcrossimport/Foundation.swiftoverlay -load-resolved-plugin /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libFoundationMacros.dylib\#/Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#FoundationMacros -load-resolved-plugin /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libObservationMacros.dylib\#/Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#ObservationMacros -load-resolved-plugin /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libSwiftMacros.dylib\#/Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#SwiftMacros -load-resolved-plugin /Applications/Xcode-26.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing/libTestingMacros.dylib\#\#TestingMacros -disable-implicit-swift-modules -Xcc -fno-implicit-modules -Xcc -fno-implicit-module-maps -explicit-swift-module-map-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/Objects-normal/arm64/SwiftJ2KTests-dependencies-1.json -Xllvm -aarch64-use-tbi -enable-objc-interop -sdk /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -I <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/PackageFrameworks -F <scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator -F /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode-26.2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -no-color-diagnostics -Xcc -fno-color-diagnostics -enable-testing -g -debug-info-format\=dwarf -dwarf-version\=5 -module-cache-path <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -profile-generate -profile-coverage-mapping -swift-version 6 -enforce-exclusivity\=checked -Onone -D SWIFT_PACKAGE -D DEBUG -D SWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE -D Xcode -serialize-debugging-options -const-gather-protocols-file <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/Objects-normal/arm64/SwiftJ2KTests_const_extract_protocols.json -enable-experimental-feature DebugDescriptionMacro -empty-abi-descriptor -validate-clang-modules-once -clang-build-session-file <scratch>/sdk-matrix/dd-test/ModuleCache.noindex/Session.modulevalidation -Xcc -working-directory -Xcc <repo>/.swiftpm/xcode -enable-anonymous-context-mangled-names -file-compilation-dir <repo>/.swiftpm/xcode -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -Xcc -ivfsstatcache -Xcc <scratch>/sdk-matrix/dd-test/SDKStatCaches.noindex/iphonesimulator26.2-23C53-dc75598d0054f22ec865fa860f139d72de8d003c055b2f0067f239787668d8d4.sdkstatcache -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Products/Debug-iphonesimulator/include -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/DerivedSources-normal/arm64 -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/DerivedSources/arm64 -Xcc -I<scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -no-auto-bridging-header-chaining -module-name SwiftJ2KTests -package-name swiftj2k -frontend-parseable-output -disable-clang-spi -target-sdk-version 26.2 -target-sdk-name iphonesimulator26.2 -clang-target arm64-apple-ios26.2-simulator -in-process-plugin-server-path /Applications/Xcode-26.2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/libSwiftInProcPluginServer.dylib -o <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/Objects-normal/arm64/resource_bundle_accessor.o -index-unit-output-path /SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/Objects-normal/arm64/resource_bundle_accessor.o -index-store-path <scratch>/sdk-matrix/dd-test/Index.noindex/DataStore -index-system-modules
+
+SwiftCompile normal arm64 <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/DerivedSources/resource_bundle_accessor.swift (in target 'SwiftJ2KTests' from project 'SwiftJ2K')
+    cd <repo>/.swiftpm/xcode
+    
+<repo>/Tests/SwiftJ2KTests/BehaviourTests.swift:5:8: error: cannot load module 'swiftj2k' as 'SwiftJ2K'
+import SwiftJ2K
+       ^
+
+SwiftDriverJobDiscovery normal arm64 Compiling Errors.swift, Image.swift (in target 'swiftj2k' from project 'SwiftJ2K')
+
+
+Test session results, code coverage, and logs:
+	<scratch>/sdk-matrix/ios-sim.xcresult
+
+Testing failed:
+	Cannot load module 'swiftj2k' as 'SwiftJ2K'
+	Testing cancelled because the build failed.
+
+** TEST FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 Compiling\ resource_bundle_accessor.swift <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/DerivedSources/resource_bundle_accessor.swift (in target 'SwiftJ2KTests' from project 'SwiftJ2K')
+	SwiftCompile normal arm64 <scratch>/sdk-matrix/dd-test/Build/Intermediates.noindex/SwiftJ2K.build/Debug-iphonesimulator/SwiftJ2KTests.build/DerivedSources/resource_bundle_accessor.swift (in target 'SwiftJ2KTests' from project 'SwiftJ2K')
+	Testing workspace SwiftJ2K with scheme SwiftJ2K-Package
+(3 failures)
+ios-sim exit 65
