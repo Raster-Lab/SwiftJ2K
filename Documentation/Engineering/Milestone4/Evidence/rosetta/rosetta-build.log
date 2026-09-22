@@ -1,0 +1,10 @@
+[0/1] Planning build
+Building for debugging...
+[0/5] Write sources
+[1/5] Write swift-version-6ED5EA0491098587.txt
+[3/5] Compiling SwiftJ2KTests OwnershipTests.swift
+[4/5] Emitting module SwiftJ2KTests
+[4/6] Write Objects.LinkFileList
+[5/6] Linking SwiftJ2KPackageTests
+Build complete! (0.85s)
+exit 0

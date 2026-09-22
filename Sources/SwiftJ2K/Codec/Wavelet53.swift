@@ -1,139 +1,178 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 // Reversible 5/3 discrete wavelet transform (ISO/IEC 15444-1 Annex F, F.3.8.2
-// and F.4.8.2, lifting form with periodic symmetric extension).
+// and F.4.8.2, lifting form with periodic symmetric extension) over signals
+// that start at an arbitrary coordinate `i0`, as tiles and image origins
+// require (Milestone 4). Parity of the absolute coordinate decides which
+// samples are low-pass.
 //
-// Provenance: the one-dimensional lifting kernels are adapted from
-// Raster-Lab/J2KSwift at commit 7acc9ae415e7d0bc7d441e0f0277d5e150bd19ca,
-// Sources/J2KCodec/J2KDWT1D.swift (`forwardTransform53`, `inverseTransform53`
-// and the symmetric extension helper; MIT, relicensed Apache-2.0 under
-// POL-07). The two-dimensional driver is new: it works in place on the
-// standard nested subband layout (LL top-left, HL top-right, LH bottom-left,
-// HH bottom-right) for a tile anchored at the origin, applying VER_SD then
-// HOR_SD on analysis and HOR_SR then VER_SR on synthesis, in the order the
-// standard fixes so that other decoders reconstruct the same integers.
+// Provenance: the one-dimensional lifting kernels were adapted in Milestone 2
+// from Raster-Lab/J2KSwift at commit 7acc9ae415e7d0bc7d441e0f0277d5e150bd19ca,
+// Sources/J2KCodec/J2KDWT1D.swift (MIT, relicensed Apache-2.0 under POL-07),
+// for the origin-0 case; the general-origin form below follows the standard's
+// equations F-5, F-6, F-7 and F-8 directly. The two-dimensional driver works
+// in place on the nested subband layout, applying VER_SD then HOR_SD on
+// analysis and HOR_SR then VER_SR on synthesis.
 
 enum Wavelet53 {
-    /// Splits one signal of length `n` (origin 0) into `ceil(n/2)` low-pass
-    /// and `floor(n/2)` high-pass coefficients.
-    static func analyse(_ x: [Int32], count n: Int, into low: inout [Int32], _ high: inout [Int32]) {
-        let lowCount = (n + 1) / 2, highCount = n / 2
+    /// ceil(a / b) for b > 0 and any sign of a.
+    @inline(__always)
+    static func ceilDiv(_ a: Int, _ b: Int) -> Int { a >= 0 ? (a + b - 1) / b : -((-a) / b) }
+
+    /// floor(a / b) for b > 0 and any sign of a.
+    @inline(__always)
+    static func floorDiv(_ a: Int, _ b: Int) -> Int { a >= 0 ? a / b : -((-a + b - 1) / b) }
+
+    /// ceil(value / 2^power).
+    static func ceilDivPowerOfTwo(_ value: Int, _ power: Int) -> Int {
+        power > 0 ? ceilDiv(value, 1 << power) : value
+    }
+
+    /// Number of low-pass samples of the interval [i0, i1).
+    static func lowCount(_ i0: Int, _ i1: Int) -> Int { ceilDiv(i1, 2) - ceilDiv(i0, 2) }
+    /// Number of high-pass samples of the interval [i0, i1).
+    static func highCount(_ i0: Int, _ i1: Int) -> Int { floorDiv(i1, 2) - floorDiv(i0, 2) }
+
+    /// Periodic symmetric extension of an interleaved signal stored in
+    /// `y[0..<n]` for coordinates [i0, i0+n): value at absolute coordinate `i`.
+    @inline(__always)
+    private static func extended(_ y: [Int32], i0: Int, n: Int, at i: Int) -> Int32 {
+        var k = i - i0
+        if n == 1 { return y[0] }
+        let period = 2 * (n - 1)
+        k = ((k % period) + period) % period
+        if k >= n { k = period - k }
+        return y[k]
+    }
+
+    /// 1D_SD: analyses `x` (coordinates [i0, i0+n)) into `low`/`high`.
+    static func analyse(_ x: [Int32], i0: Int, count n: Int, into low: inout [Int32], _ high: inout [Int32]) {
+        let i1 = i0 + n
         if n == 1 {
-            low[0] = x[0]
+            if i0 & 1 == 0 { low[0] = x[0] } else { high[0] = x[0] * 2 }
             return
         }
-        // Y(2n+1) = X(2n+1) - floor((X(2n) + X(2n+2)) / 2)
-        for i in 0..<highCount {
-            let left = x[2 * i]
-            let right = 2 * i + 2 < n ? x[2 * i + 2] : x[2 * i]   // X(n) mirrors X(n-2)
-            high[i] = x[2 * i + 1] - ((left + right) >> 1)
+        // Y(2n+1) = X(2n+1) - floor((X(2n) + X(2n+2)) / 2) for odd coordinates in [i0-1, i1+1)
+        // Y(2n)   = X(2n) + floor((Y(2n-1) + Y(2n+1) + 2) / 4) for even coordinates in [i0, i1)
+        var oddValues: [Int32] = []            // Y at odd coordinates from firstOdd upward
+        let firstOdd = (i0 - 1) | 1            // largest odd <= i0 - 1... (i0-1)|1 is odd and >= i0-1
+        let lastOdd = ((i1 + 1) & ~1) - 1      // largest odd < i1 + 1
+        oddValues.reserveCapacity((lastOdd - firstOdd) / 2 + 1)
+        var i = firstOdd
+        while i <= lastOdd {
+            let left = extended(x, i0: i0, n: n, at: i - 1), right = extended(x, i0: i0, n: n, at: i + 1)
+            oddValues.append(extended(x, i0: i0, n: n, at: i) - ((left + right) >> 1))
+            i += 2
         }
-        // Y(2n) = X(2n) + floor((Y(2n-1) + Y(2n+1) + 2) / 4)
-        for i in 0..<lowCount {
-            let left = i > 0 ? high[i - 1] : high[0]
-            let right = i < highCount ? high[i] : high[highCount - 1]
-            low[i] = x[2 * i] + ((left + right + 2) >> 2)
+        @inline(__always) func oddY(_ coordinate: Int) -> Int32 { oddValues[(coordinate - firstOdd) / 2] }
+        var lowIndex = 0, highIndex = 0
+        for coordinate in i0..<i1 {
+            if coordinate & 1 == 0 {
+                low[lowIndex] = x[coordinate - i0] + ((oddY(coordinate - 1) + oddY(coordinate + 1) + 2) >> 2)
+                lowIndex += 1
+            } else {
+                high[highIndex] = oddY(coordinate)
+                highIndex += 1
+            }
         }
     }
 
-    /// Inverse of `analyse`: reconstructs `n` samples from `ceil(n/2)` low-pass
-    /// and `floor(n/2)` high-pass coefficients.
-    static func synthesise(low: [Int32], high: [Int32], count n: Int, into x: inout [Int32]) {
-        let lowCount = (n + 1) / 2, highCount = n / 2
+    /// 1D_SR: reconstructs `x` over [i0, i0+n) from `low`/`high`.
+    static func synthesise(low: [Int32], high: [Int32], i0: Int, count n: Int, into x: inout [Int32]) {
+        let i1 = i0 + n
         if n == 1 {
-            x[0] = low[0]
+            x[0] = i0 & 1 == 0 ? low[0] : high[0] / 2
             return
         }
-        // X(2n) = Y(2n) - floor((Y(2n-1) + Y(2n+1) + 2) / 4)
-        for i in 0..<lowCount {
-            let left = i > 0 ? high[i - 1] : high[0]
-            let right = i < highCount ? high[i] : high[highCount - 1]
-            x[2 * i] = low[i] - ((left + right + 2) >> 2)
+        // Interleave into Y over [i0, i1).
+        var y = [Int32](repeating: 0, count: n)
+        var lowIndex = 0, highIndex = 0
+        for coordinate in i0..<i1 {
+            if coordinate & 1 == 0 { y[coordinate - i0] = low[lowIndex]; lowIndex += 1 }
+            else { y[coordinate - i0] = high[highIndex]; highIndex += 1 }
         }
-        // X(2n+1) = Y(2n+1) + floor((X(2n) + X(2n+2)) / 2)
-        for i in 0..<highCount {
-            let left = x[2 * i]
-            let right = 2 * i + 2 < n ? x[2 * i + 2] : x[2 * i]
-            x[2 * i + 1] = high[i] + ((left + right) >> 1)
+        // X(2n) = Y(2n) - floor((Y(2n-1) + Y(2n+1) + 2) / 4) for even coordinates in [i0-1, i1+1)
+        var evenValues: [Int32] = []
+        let firstEven = (i0 - 1) & ~1          // largest even <= i0 - 1
+        let lastEven = i1 & ~1                 // largest even <= i1 (covers X(2n+2) at the right edge)
+        evenValues.reserveCapacity((lastEven - firstEven) / 2 + 1)
+        var i = firstEven
+        while i <= lastEven {
+            let left = extended(y, i0: i0, n: n, at: i - 1), right = extended(y, i0: i0, n: n, at: i + 1)
+            evenValues.append(extended(y, i0: i0, n: n, at: i) - ((left + right + 2) >> 2))
+            i += 2
+        }
+        @inline(__always) func evenX(_ coordinate: Int) -> Int32 { evenValues[(coordinate - firstEven) / 2] }
+        // X(2n+1) = Y(2n+1) + floor((X(2n) + X(2n+2)) / 2) for odd coordinates in [i0, i1)
+        for coordinate in i0..<i1 {
+            x[coordinate - i0] = coordinate & 1 == 0
+                ? evenX(coordinate)
+                : y[coordinate - i0] + ((evenX(coordinate - 1) + evenX(coordinate + 1)) >> 1)
         }
     }
 
-    /// Forward transform of the top-left `width × height` region of `plane`
-    /// (row stride `stride`) for `levels` levels, leaving the nested subband
-    /// layout in place. Coefficient magnitudes grow by at most two bits, so
-    /// 16-bit samples never approach the `Int32` range.
-    static func forward(plane: inout [Int32], stride: Int, width: Int, height: Int,
+    /// Forward transform of a tile-component whose samples occupy the region
+    /// [x0, x1) × [y0, y1) of the reference grid, stored in `plane` with row
+    /// stride `stride` and origin at `plane[0]`, for `levels` levels, leaving
+    /// the nested subband layout in place.
+    static func forward(plane: inout [Int32], stride: Int, x0: Int, x1: Int, y0: Int, y1: Int,
                         levels: Int, cancellation: () throws -> Void) throws {
-        var w = width, h = height
-        var line = [Int32](repeating: 0, count: max(width, height))
-        var low = [Int32](repeating: 0, count: (max(width, height) + 1) / 2)
-        var high = [Int32](repeating: 0, count: max(width, height) / 2)
-        for _ in 0..<levels {
-            guard w > 0, h > 0 else { break }
+        var line = [Int32](repeating: 0, count: max(x1 - x0, y1 - y0))
+        var low = [Int32](repeating: 0, count: line.count / 2 + 1)
+        var high = [Int32](repeating: 0, count: line.count / 2 + 1)
+        for level in 1...max(levels, 1) where levels > 0 {
+            let rx0 = ceilDivPowerOfTwo(x0, level - 1), rx1 = ceilDivPowerOfTwo(x1, level - 1)
+            let ry0 = ceilDivPowerOfTwo(y0, level - 1), ry1 = ceilDivPowerOfTwo(y1, level - 1)
+            let w = rx1 - rx0, h = ry1 - ry0
+            guard w > 0, h > 0 else { continue }
             // VER_SD on every column, then HOR_SD on every row (F.4.8.2).
-            if h > 1 {
-                for x in 0..<w {
-                    for y in 0..<h { line[y] = plane[y * stride + x] }
-                    analyse(line, count: h, into: &low, &high)
-                    let lowCount = (h + 1) / 2
-                    for i in 0..<lowCount { plane[i * stride + x] = low[i] }
-                    for i in 0..<(h / 2) { plane[(lowCount + i) * stride + x] = high[i] }
-                    if x & 63 == 63 { try cancellation() }
-                }
+            let lowH = lowCount(ry0, ry1), lowW = lowCount(rx0, rx1)
+            for x in 0..<w {
+                for y in 0..<h { line[y] = plane[y * stride + x] }
+                analyse(line, i0: ry0, count: h, into: &low, &high)
+                for i in 0..<lowH { plane[i * stride + x] = low[i] }
+                for i in 0..<(h - lowH) { plane[(lowH + i) * stride + x] = high[i] }
+                if x & 63 == 63 { try cancellation() }
             }
-            if w > 1 {
-                for y in 0..<h {
-                    for x in 0..<w { line[x] = plane[y * stride + x] }
-                    analyse(line, count: w, into: &low, &high)
-                    let lowCount = (w + 1) / 2
-                    for i in 0..<lowCount { plane[y * stride + i] = low[i] }
-                    for i in 0..<(w / 2) { plane[y * stride + lowCount + i] = high[i] }
-                    if y & 63 == 63 { try cancellation() }
-                }
+            for y in 0..<h {
+                for x in 0..<w { line[x] = plane[y * stride + x] }
+                analyse(line, i0: rx0, count: w, into: &low, &high)
+                for i in 0..<lowW { plane[y * stride + i] = low[i] }
+                for i in 0..<(w - lowW) { plane[y * stride + lowW + i] = high[i] }
+                if y & 63 == 63 { try cancellation() }
             }
-            w = (w + 1) / 2; h = (h + 1) / 2
             try cancellation()
         }
     }
 
     /// Inverse transform: reverses `forward` for the same geometry.
-    static func inverse(plane: inout [Int32], stride: Int, width: Int, height: Int,
+    static func inverse(plane: inout [Int32], stride: Int, x0: Int, x1: Int, y0: Int, y1: Int,
                         levels: Int, cancellation: () throws -> Void) throws {
-        var line = [Int32](repeating: 0, count: max(width, height))
-        var low = [Int32](repeating: 0, count: (max(width, height) + 1) / 2)
-        var high = [Int32](repeating: 0, count: max(width, height) / 2)
+        var line = [Int32](repeating: 0, count: max(x1 - x0, y1 - y0))
+        var low = [Int32](repeating: 0, count: line.count / 2 + 1)
+        var high = [Int32](repeating: 0, count: line.count / 2 + 1)
         for level in Swift.stride(from: levels, through: 1, by: -1) {
-            // Resolution r = levels - level + 1 has dimensions ceil(size / 2^(level-1)).
-            let w = ceilDivPowerOfTwo(width, level - 1), h = ceilDivPowerOfTwo(height, level - 1)
+            let rx0 = ceilDivPowerOfTwo(x0, level - 1), rx1 = ceilDivPowerOfTwo(x1, level - 1)
+            let ry0 = ceilDivPowerOfTwo(y0, level - 1), ry1 = ceilDivPowerOfTwo(y1, level - 1)
+            let w = rx1 - rx0, h = ry1 - ry0
             guard w > 0, h > 0 else { continue }
             // HOR_SR on every row, then VER_SR on every column (F.3.8).
-            if w > 1 {
-                let lowCount = (w + 1) / 2
-                for y in 0..<h {
-                    for i in 0..<lowCount { low[i] = plane[y * stride + i] }
-                    for i in 0..<(w / 2) { high[i] = plane[y * stride + lowCount + i] }
-                    synthesise(low: low, high: high, count: w, into: &line)
-                    for x in 0..<w { plane[y * stride + x] = line[x] }
-                    if y & 63 == 63 { try cancellation() }
-                }
+            let lowW = lowCount(rx0, rx1), lowH = lowCount(ry0, ry1)
+            for y in 0..<h {
+                for i in 0..<lowW { low[i] = plane[y * stride + i] }
+                for i in 0..<(w - lowW) { high[i] = plane[y * stride + lowW + i] }
+                synthesise(low: low, high: high, i0: rx0, count: w, into: &line)
+                for x in 0..<w { plane[y * stride + x] = line[x] }
+                if y & 63 == 63 { try cancellation() }
             }
-            if h > 1 {
-                let lowCount = (h + 1) / 2
-                for x in 0..<w {
-                    for i in 0..<lowCount { low[i] = plane[i * stride + x] }
-                    for i in 0..<(h / 2) { high[i] = plane[(lowCount + i) * stride + x] }
-                    synthesise(low: low, high: high, count: h, into: &line)
-                    for y in 0..<h { plane[y * stride + x] = line[y] }
-                    if x & 63 == 63 { try cancellation() }
-                }
+            for x in 0..<w {
+                for i in 0..<lowH { low[i] = plane[i * stride + x] }
+                for i in 0..<(h - lowH) { high[i] = plane[(lowH + i) * stride + x] }
+                synthesise(low: low, high: high, i0: ry0, count: h, into: &line)
+                for y in 0..<h { plane[y * stride + x] = line[y] }
+                if x & 63 == 63 { try cancellation() }
             }
             try cancellation()
         }
-    }
-
-    /// ceil(value / 2^power) for non-negative values.
-    static func ceilDivPowerOfTwo(_ value: Int, _ power: Int) -> Int {
-        guard power > 0 else { return value }
-        return (value + (1 << power) - 1) >> power
     }
 }

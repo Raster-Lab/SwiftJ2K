@@ -146,36 +146,41 @@ struct StatePlane: Sendable {
     func index(x: Int, y: Int) -> Int { (y + 1) * stride + x + 1 }
 
     /// Significance-table key for the coefficient at padded index `i`.
+    /// `ignoreBelow` implements vertically causal context formation (D.7):
+    /// the row below is treated as insignificant.
     @inline(__always)
-    func significanceKey(at i: Int) -> Int {
+    func significanceKey(at i: Int, ignoreBelow: Bool) -> Int {
         let s = CoefficientFlag.significant
         let h = Int(flags[i - 1] & s) + Int(flags[i + 1] & s)
-        let v = Int(flags[i - stride] & s) + Int(flags[i + stride] & s)
-        let d = Int(flags[i - stride - 1] & s) + Int(flags[i - stride + 1] & s)
-              + Int(flags[i + stride - 1] & s) + Int(flags[i + stride + 1] & s)
+        var v = Int(flags[i - stride] & s)
+        var d = Int(flags[i - stride - 1] & s) + Int(flags[i - stride + 1] & s)
+        if !ignoreBelow {
+            v += Int(flags[i + stride] & s)
+            d += Int(flags[i + stride - 1] & s) + Int(flags[i + stride + 1] & s)
+        }
         return h * 15 + v * 5 + d
     }
 
     /// Packed sign-context entry for the coefficient at padded index `i`.
     @inline(__always)
-    func signEntry(at i: Int) -> UInt8 {
+    func signEntry(at i: Int, ignoreBelow: Bool) -> UInt8 {
         @inline(__always) func contribution(_ f: UInt8) -> Int {
             guard f & CoefficientFlag.significant != 0 else { return 0 }
             return f & CoefficientFlag.negative != 0 ? -1 : 1
         }
         var h = contribution(flags[i - 1]) + contribution(flags[i + 1])
-        var v = contribution(flags[i - stride]) + contribution(flags[i + stride])
+        var v = contribution(flags[i - stride]) + (ignoreBelow ? 0 : contribution(flags[i + stride]))
         h = max(-1, min(1, h)); v = max(-1, min(1, v))
         return ContextTables.sign[(h + 1) * 3 + (v + 1)]
     }
 
-    /// Whether any of the eight neighbours of padded index `i` is significant.
+    /// Whether any considered neighbour of padded index `i` is significant.
     @inline(__always)
-    func hasSignificantNeighbour(at i: Int) -> Bool {
+    func hasSignificantNeighbour(at i: Int, ignoreBelow: Bool) -> Bool {
         let s = CoefficientFlag.significant
-        return (flags[i - 1] | flags[i + 1] | flags[i - stride] | flags[i + stride]
-              | flags[i - stride - 1] | flags[i - stride + 1]
-              | flags[i + stride - 1] | flags[i + stride + 1]) & s != 0
+        var union = flags[i - 1] | flags[i + 1] | flags[i - stride] | flags[i - stride - 1] | flags[i - stride + 1]
+        if !ignoreBelow { union |= flags[i + stride] | flags[i + stride - 1] | flags[i + stride + 1] }
+        return union & s != 0
     }
 
     /// Clears the per-bit-plane visited flag on every coefficient.

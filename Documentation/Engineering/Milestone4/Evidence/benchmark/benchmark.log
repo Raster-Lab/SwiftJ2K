@@ -1,0 +1,10 @@
+g16_64x64_random         encode swiftj2k     9.2 ms  openjpeg     7.6 ms  kakadu     5.5 ms
+g16_64x64_random         decode swiftj2k    14.8 ms  openjpeg    11.2 ms  kakadu     8.8 ms
+g12_129x67_gradient      encode swiftj2k    15.0 ms  openjpeg    11.2 ms  kakadu     8.4 ms
+g12_129x67_gradient      decode swiftj2k    15.2 ms  openjpeg    10.3 ms  kakadu     7.6 ms
+g16_256x256_smooth       encode swiftj2k    25.5 ms  openjpeg    19.1 ms  kakadu     7.0 ms
+g16_256x256_smooth       decode swiftj2k    32.5 ms  openjpeg    21.3 ms  kakadu     6.7 ms
+g10_300x200_gradient     encode swiftj2k    16.2 ms  openjpeg    11.6 ms  kakadu     4.6 ms
+g10_300x200_gradient     decode swiftj2k    18.8 ms  openjpeg    11.4 ms  kakadu     4.4 ms
+written <scratch>/results.json
+bench exit 0

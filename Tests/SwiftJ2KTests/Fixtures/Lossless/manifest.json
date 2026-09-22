@@ -1119,5 +1119,867 @@
     "produced": true,
     "sha256": "98aa2e3f283b22d2ab6e99ee17e1671c408b301d215023cffa778b5d7a823b0c",
     "note": "three components; must be rejected"
-  }
+  },
+  "syntax_variants": [
+    {
+      "base": "g12_129x67_gradient",
+      "file": "g12_129x67_gradient.syntax.layers3_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-r",
+        "40,20,1",
+        "-n",
+        "4"
+      ],
+      "note": "three quality layers, last lossless",
+      "produced": true,
+      "sha256": "d890e2c931d90fc1e21821994da6a9bb44741604c9d659e03948981db610c8b3",
+      "bytes": 3635,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g12_129x67_gradient",
+      "file": "g12_129x67_gradient.syntax.layers3_kdu.j2k",
+      "tool": "kdu",
+      "args": [
+        "Clayers=3",
+        "Clevels=3"
+      ],
+      "note": "three quality layers (Kakadu)",
+      "produced": true,
+      "sha256": "9e5e8178c2b95d71d11ccad190382f8a0790f6c82c4d6a2d631732200ed3b0fe",
+      "bytes": 3750,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g12_129x67_gradient",
+      "file": "g12_129x67_gradient.syntax.bypass_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-M",
+        "1",
+        "-n",
+        "4"
+      ],
+      "note": "selective arithmetic bypass",
+      "produced": true,
+      "sha256": "8f173d0e619f348834db2eea5e15dbd80726cf6a28452a879a5ee2324f2d3b15",
+      "bytes": 5957,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g12_129x67_gradient",
+      "file": "g12_129x67_gradient.syntax.reset_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-M",
+        "2",
+        "-n",
+        "4"
+      ],
+      "note": "context reset on each pass",
+      "produced": true,
+      "sha256": "879e4a3eda6d9819a397b96a775e307d54f1e24c30ba447f7b127c1e8495dda6",
+      "bytes": 3765,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g12_129x67_gradient",
+      "file": "g12_129x67_gradient.syntax.restart_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-M",
+        "4",
+        "-n",
+        "4"
+      ],
+      "note": "termination on each pass",
+      "produced": true,
+      "sha256": "483af1b765c44b6555281ae6816cfa700283bc05d1c4cd25e33bde3ba64dd96a",
+      "bytes": 4094,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g12_129x67_gradient",
+      "file": "g12_129x67_gradient.syntax.causal_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-M",
+        "8",
+        "-n",
+        "4"
+      ],
+      "note": "vertically causal contexts",
+      "produced": true,
+      "sha256": "4002a6fe1353f2a8ec48d343f9549e93e27988de615f7134ef0c95013604170c",
+      "bytes": 3617,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g12_129x67_gradient",
+      "file": "g12_129x67_gradient.syntax.erterm_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-M",
+        "16",
+        "-n",
+        "4"
+      ],
+      "note": "predictable termination",
+      "produced": true,
+      "sha256": "126189fe73ed92443fbdb4e61c3a95b65a599ed655841ba096eaae4754fe68a0",
+      "bytes": 3605,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g12_129x67_gradient",
+      "file": "g12_129x67_gradient.syntax.segsym_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-M",
+        "32",
+        "-n",
+        "4"
+      ],
+      "note": "segmentation symbols",
+      "produced": true,
+      "sha256": "64d74a42c3491831889c91b405392e9b1529d66615df6ac1217c2f3f793d4d66",
+      "bytes": 3667,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g12_129x67_gradient",
+      "file": "g12_129x67_gradient.syntax.allstyles_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-M",
+        "63",
+        "-n",
+        "4"
+      ],
+      "note": "all six code-block style bits",
+      "produced": true,
+      "sha256": "daa8a0be051f3ca3ba5bae5ae7b347f01b0c1a5742a59ab1c0b1f22bc9760403",
+      "bytes": 6029,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g12_129x67_gradient",
+      "file": "g12_129x67_gradient.syntax.bypass_restart_kdu.j2k",
+      "tool": "kdu",
+      "args": [
+        "Cmodes=BYPASS|RESTART",
+        "Clevels=3"
+      ],
+      "note": "bypass with restart (Kakadu)",
+      "produced": true,
+      "sha256": "4bd351037302be2ffe6459d609994456d02d94042f31cd00541eaa3a746cfc8b",
+      "bytes": 6090,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g12_129x67_gradient",
+      "file": "g12_129x67_gradient.syntax.allstyles_kdu.j2k",
+      "tool": "kdu",
+      "args": [
+        "Cmodes=BYPASS|RESET|RESTART|CAUSAL|ERTERM|SEGMARK",
+        "Clevels=3"
+      ],
+      "note": "all style bits (Kakadu)",
+      "produced": true,
+      "sha256": "b8fe2847f57cfbc79278913f8552cc7fcbba18f868fe1f14d361dfef3f26bbb3",
+      "bytes": 6103,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g12_129x67_gradient",
+      "file": "g12_129x67_gradient.syntax.tiles37x29_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-t",
+        "37,29",
+        "-n",
+        "3"
+      ],
+      "note": "4x3 tiles of 37x29",
+      "produced": true,
+      "sha256": "b92b88c3202c1bdf015e16fcbdd365e3063afb954bcff3646ef2cd2106b60f17",
+      "bytes": 4382,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g12_129x67_gradient",
+      "file": "g12_129x67_gradient.syntax.tiles64_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-t",
+        "64,64",
+        "-n",
+        "4"
+      ],
+      "note": "3x2 tiles of 64x64",
+      "produced": true,
+      "sha256": "7a89bc177c30ed2100cf18618d213a336ebe3d8bf15462f29c2f9ccbb24c14a2",
+      "bytes": 3880,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g12_129x67_gradient",
+      "file": "g12_129x67_gradient.syntax.origin_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-d",
+        "3,5",
+        "-n",
+        "4"
+      ],
+      "note": "image origin (3,5)",
+      "produced": true,
+      "sha256": "dc98bbce0e394f5d418054623a13f49d900761b532b9353fd717409ca6c17ec0",
+      "bytes": 3744,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g12_129x67_gradient",
+      "file": "g12_129x67_gradient.syntax.origin_tiles_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-d",
+        "3,5",
+        "-T",
+        "1,2",
+        "-t",
+        "40,30",
+        "-n",
+        "3"
+      ],
+      "note": "image origin (3,5), tile origin (1,2), 40x30 tiles",
+      "produced": true,
+      "sha256": "efeb8e632c91ba9b712bf349e7282d39fbf6402af669aa6db7e38347b27c3278",
+      "bytes": 4483,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g12_129x67_gradient",
+      "file": "g12_129x67_gradient.syntax.tiles_kdu.j2k",
+      "tool": "kdu",
+      "args": [
+        "Stiles={29,37}",
+        "Clevels=3"
+      ],
+      "note": "tiles 37 wide 29 high (Kakadu)",
+      "produced": true,
+      "sha256": "e750281a35d1bcac320214981984e7550543b6dabd52de7e56056c28bc7b1c6e",
+      "bytes": 4544,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g12_129x67_gradient",
+      "file": "g12_129x67_gradient.syntax.origin_kdu.j2k",
+      "tool": "kdu",
+      "args": [
+        "Sorigin={5,3}",
+        "Clevels=3"
+      ],
+      "note": "image origin (3,5) (Kakadu)",
+      "produced": true,
+      "sha256": "7d51e38a04a03fdc4c8797b20a2c4772b90b58061668d8f2c34c8ce9c5dad585",
+      "bytes": 3816,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g12_129x67_gradient",
+      "file": "g12_129x67_gradient.syntax.pcrl_precincts_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-c",
+        "[32,32],[32,32],[32,32],[32,32]",
+        "-p",
+        "PCRL",
+        "-n",
+        "4"
+      ],
+      "note": "PCRL with several precincts",
+      "produced": true,
+      "sha256": "a38248cb91468e8569171419009a01e1e71cbeeadd61789f0fbca0f8ac9e2124",
+      "bytes": 3975,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g12_129x67_gradient",
+      "file": "g12_129x67_gradient.syntax.cprl_precincts_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-c",
+        "[32,32],[32,32],[32,32],[32,32]",
+        "-p",
+        "CPRL",
+        "-n",
+        "4"
+      ],
+      "note": "CPRL with several precincts",
+      "produced": true,
+      "sha256": "6e66e8fd0f02e007941a173b1e7d0bf7f52f03a7928d4c3b701c704a05e30276",
+      "bytes": 3975,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g12_129x67_gradient",
+      "file": "g12_129x67_gradient.syntax.rpcl_precincts_kdu.j2k",
+      "tool": "kdu",
+      "args": [
+        "Corder=RPCL",
+        "Cprecincts={32,32}",
+        "Clevels=3"
+      ],
+      "note": "RPCL with several precincts (Kakadu)",
+      "produced": true,
+      "sha256": "7e17d1d52d3b2388892adf28ff988d64896c59df6f38bf98046be3a5739fc316",
+      "bytes": 4044,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g12_129x67_gradient",
+      "file": "g12_129x67_gradient.syntax.everything_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-t",
+        "40,30",
+        "-r",
+        "30,1",
+        "-M",
+        "63",
+        "-c",
+        "[32,32],[32,32],[32,32]",
+        "-p",
+        "PCRL",
+        "-SOP",
+        "-EPH",
+        "-n",
+        "3"
+      ],
+      "note": "tiles + layers + styles + precincts + PCRL + SOP/EPH",
+      "produced": true,
+      "sha256": "5050fda3abb83776710a7bfe012d1aa7120ca08cbbc4808c334d1679a433b0f7",
+      "bytes": 11856,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g12_129x67_gradient",
+      "file": "g12_129x67_gradient.syntax.everything_kdu.j2k",
+      "tool": "kdu",
+      "args": [
+        "Stiles={30,40}",
+        "Clayers=2",
+        "Cmodes=BYPASS|RESTART|SEGMARK",
+        "Cprecincts={32,32}",
+        "Corder=CPRL",
+        "Cuse_sop=yes",
+        "Cuse_eph=yes",
+        "Clevels=3",
+        "ORGtparts=R"
+      ],
+      "note": "tiles + layers + styles + precincts + CPRL + SOP/EPH + tile-parts (Kakadu)",
+      "produced": true,
+      "sha256": "f3b33ce7c9630279a8cd70aa018e52a1d19b109bc0e3d21c96ecf980ba1c3ab9",
+      "bytes": 13395,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g16_64x64_random",
+      "file": "g16_64x64_random.syntax.layers3_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-r",
+        "40,20,1",
+        "-n",
+        "4"
+      ],
+      "note": "three quality layers, last lossless",
+      "produced": true,
+      "sha256": "8ec76c3365b0ef806eb6a0d8122333576ccc8348777b80daac2a7f54076ac28a",
+      "bytes": 8967,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g16_64x64_random",
+      "file": "g16_64x64_random.syntax.layers3_kdu.j2k",
+      "tool": "kdu",
+      "args": [
+        "Clayers=3",
+        "Clevels=3"
+      ],
+      "note": "three quality layers (Kakadu)",
+      "produced": true,
+      "sha256": "d682edfbbab453a83c859583288acea0f2ff19840846346cb9f2775d8327cbbf",
+      "bytes": 9091,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g16_64x64_random",
+      "file": "g16_64x64_random.syntax.bypass_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-M",
+        "1",
+        "-n",
+        "4"
+      ],
+      "note": "selective arithmetic bypass",
+      "produced": true,
+      "sha256": "0660212cac14b8cec967ba281bf45ce13d9f84c014a0475ede6926c6d3a08b2e",
+      "bytes": 9084,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g16_64x64_random",
+      "file": "g16_64x64_random.syntax.reset_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-M",
+        "2",
+        "-n",
+        "4"
+      ],
+      "note": "context reset on each pass",
+      "produced": true,
+      "sha256": "f3aa04b2b616481ce69256eec2f8d4bfb931cd2d8d1b3c095ea95ad668260b28",
+      "bytes": 8977,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g16_64x64_random",
+      "file": "g16_64x64_random.syntax.restart_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-M",
+        "4",
+        "-n",
+        "4"
+      ],
+      "note": "termination on each pass",
+      "produced": true,
+      "sha256": "f8ad414188e62065affd66e8561b6c2baa79c0b161412ba56479ce7ed5abd706",
+      "bytes": 9762,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g16_64x64_random",
+      "file": "g16_64x64_random.syntax.causal_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-M",
+        "8",
+        "-n",
+        "4"
+      ],
+      "note": "vertically causal contexts",
+      "produced": true,
+      "sha256": "9b964bf4c59d5e7c8b9b195e3a71305b2856456d6ae01cbe78e102a7f15efd7c",
+      "bytes": 8951,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g16_64x64_random",
+      "file": "g16_64x64_random.syntax.erterm_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-M",
+        "16",
+        "-n",
+        "4"
+      ],
+      "note": "predictable termination",
+      "produced": true,
+      "sha256": "66f3d2c349208e9602100d2f2a0a1969515b6f92e4e64993b1aa7a9faaf79906",
+      "bytes": 8951,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g16_64x64_random",
+      "file": "g16_64x64_random.syntax.segsym_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-M",
+        "32",
+        "-n",
+        "4"
+      ],
+      "note": "segmentation symbols",
+      "produced": true,
+      "sha256": "3722a228345eaa1fc950d6bb9d3b813417eaff75598cb025b8aea8b37a64180a",
+      "bytes": 9028,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g16_64x64_random",
+      "file": "g16_64x64_random.syntax.allstyles_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-M",
+        "63",
+        "-n",
+        "4"
+      ],
+      "note": "all six code-block style bits",
+      "produced": true,
+      "sha256": "137a822bd0c12b75f3beb6cd9c0014cedeee0243d1ddbb6f6d291a743ff75ab4",
+      "bytes": 9244,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g16_64x64_random",
+      "file": "g16_64x64_random.syntax.bypass_restart_kdu.j2k",
+      "tool": "kdu",
+      "args": [
+        "Cmodes=BYPASS|RESTART",
+        "Clevels=3"
+      ],
+      "note": "bypass with restart (Kakadu)",
+      "produced": true,
+      "sha256": "260b1b183492312f551b631063461938659fd56284a42cc97b10307e3fa2641b",
+      "bytes": 9133,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g16_64x64_random",
+      "file": "g16_64x64_random.syntax.allstyles_kdu.j2k",
+      "tool": "kdu",
+      "args": [
+        "Cmodes=BYPASS|RESET|RESTART|CAUSAL|ERTERM|SEGMARK",
+        "Clevels=3"
+      ],
+      "note": "all style bits (Kakadu)",
+      "produced": true,
+      "sha256": "58dbd9ef4d29320dc2dfd2a4f4d54431ee5f84b7b4e1f9aa1e336ac62fbcb69f",
+      "bytes": 9318,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g16_64x64_random",
+      "file": "g16_64x64_random.syntax.tiles37x29_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-t",
+        "37,29",
+        "-n",
+        "3"
+      ],
+      "note": "4x3 tiles of 37x29",
+      "produced": true,
+      "sha256": "bdbcab1dd0b1e184f6e5476b4f0ab6e924e3f2da0dd36e8d750d629342f27841",
+      "bytes": 9233,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g16_64x64_random",
+      "file": "g16_64x64_random.syntax.tiles64_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-t",
+        "64,64",
+        "-n",
+        "4"
+      ],
+      "note": "3x2 tiles of 64x64",
+      "produced": true,
+      "sha256": "6d8990fc8a0106cd5c9bab99cc17176c65c98ccee36903128a0cb015ba4774c0",
+      "bytes": 8950,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g16_64x64_random",
+      "file": "g16_64x64_random.syntax.origin_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-d",
+        "3,5",
+        "-n",
+        "4"
+      ],
+      "note": "image origin (3,5)",
+      "produced": true,
+      "sha256": "5442ad115208f5936bb353048140387d2c0672aef4bd28c4849a4ec1080f5ff5",
+      "bytes": 8945,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g16_64x64_random",
+      "file": "g16_64x64_random.syntax.origin_tiles_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-d",
+        "3,5",
+        "-T",
+        "1,2",
+        "-t",
+        "40,30",
+        "-n",
+        "3"
+      ],
+      "note": "image origin (3,5), tile origin (1,2), 40x30 tiles",
+      "produced": true,
+      "sha256": "c42f90d523131d149c1a6cb2fd23b464afafc194088d0f61f03829c4789d5657",
+      "bytes": 9238,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g16_64x64_random",
+      "file": "g16_64x64_random.syntax.tiles_kdu.j2k",
+      "tool": "kdu",
+      "args": [
+        "Stiles={29,37}",
+        "Clevels=3"
+      ],
+      "note": "tiles 37 wide 29 high (Kakadu)",
+      "produced": true,
+      "sha256": "c809b96b9921a2d7f10517c81b689e2f223c4fdbafa0e23fa8b5e1411a6c162e",
+      "bytes": 9388,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g16_64x64_random",
+      "file": "g16_64x64_random.syntax.origin_kdu.j2k",
+      "tool": "kdu",
+      "args": [
+        "Sorigin={5,3}",
+        "Clevels=3"
+      ],
+      "note": "image origin (3,5) (Kakadu)",
+      "produced": true,
+      "sha256": "8b9d5a4fa287913d343d9d831419b9261f9f7f4c4ecd67047abeda2f59090630",
+      "bytes": 9016,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g16_64x64_random",
+      "file": "g16_64x64_random.syntax.pcrl_precincts_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-c",
+        "[32,32],[32,32],[32,32],[32,32]",
+        "-p",
+        "PCRL",
+        "-n",
+        "4"
+      ],
+      "note": "PCRL with several precincts",
+      "produced": true,
+      "sha256": "3a5783679108104f16da52ae4b52ccb3bba3559b361a45ed1f019a8b52a95392",
+      "bytes": 9040,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g16_64x64_random",
+      "file": "g16_64x64_random.syntax.cprl_precincts_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-c",
+        "[32,32],[32,32],[32,32],[32,32]",
+        "-p",
+        "CPRL",
+        "-n",
+        "4"
+      ],
+      "note": "CPRL with several precincts",
+      "produced": true,
+      "sha256": "8831a6fc806f34583a29e0b5675a9b474d08de3f04307083db69a91b126d8819",
+      "bytes": 9040,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g16_64x64_random",
+      "file": "g16_64x64_random.syntax.rpcl_precincts_kdu.j2k",
+      "tool": "kdu",
+      "args": [
+        "Corder=RPCL",
+        "Cprecincts={32,32}",
+        "Clevels=3"
+      ],
+      "note": "RPCL with several precincts (Kakadu)",
+      "produced": true,
+      "sha256": "3f5b9866bf5e604220c3de561c275d49fb8939caada4a390e035fae5c0508a8a",
+      "bytes": 9114,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g16_64x64_random",
+      "file": "g16_64x64_random.syntax.everything_opj.j2k",
+      "tool": "opj",
+      "args": [
+        "-t",
+        "40,30",
+        "-r",
+        "30,1",
+        "-M",
+        "63",
+        "-c",
+        "[32,32],[32,32],[32,32]",
+        "-p",
+        "PCRL",
+        "-SOP",
+        "-EPH",
+        "-n",
+        "3"
+      ],
+      "note": "tiles + layers + styles + precincts + PCRL + SOP/EPH",
+      "produced": true,
+      "sha256": "cf3b0c886bc4e63c830e006803343b8c0b77302e49bed5f701db0285fe4f4102",
+      "bytes": 12170,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    },
+    {
+      "base": "g16_64x64_random",
+      "file": "g16_64x64_random.syntax.everything_kdu.j2k",
+      "tool": "kdu",
+      "args": [
+        "Stiles={30,40}",
+        "Clayers=2",
+        "Cmodes=BYPASS|RESTART|SEGMARK",
+        "Cprecincts={32,32}",
+        "Corder=CPRL",
+        "Cuse_sop=yes",
+        "Cuse_eph=yes",
+        "Clevels=3",
+        "ORGtparts=R"
+      ],
+      "note": "tiles + layers + styles + precincts + CPRL + SOP/EPH + tile-parts (Kakadu)",
+      "produced": true,
+      "sha256": "adcf194b830890c868e6ffeff853b0a1a8e9de4eec51ee25aad6f7e2f8c9359c",
+      "bytes": 12968,
+      "independent_decode_exact": {
+        "opj": true,
+        "kdu": true
+      }
+    }
+  ]
 }

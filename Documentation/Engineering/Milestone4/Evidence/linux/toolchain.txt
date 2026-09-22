@@ -1,0 +1,5 @@
+PRETTY_NAME="Ubuntu 24.04.5 LTS"
+NAME="Ubuntu"
+aarch64
+Swift version 6.2.4 (swift-6.2.4-RELEASE)
+Target: aarch64-unknown-linux-gnu

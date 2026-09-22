@@ -42,8 +42,16 @@ private final class UninitialisedSampleStorage: WritableImageStorage, @unchecked
 
     deinit { allocation.deallocate() }
 
+    private let engaged = Atomic<Bool>(false)
     private func locked<R>(_ body: (inout Phase) throws -> R) throws -> R {
-        guard let result = try phase.withLockIfAvailable({ state in try body(&state) }) else {
+        guard !engaged.load(ordering: .acquiring) else {
+            throw CodecError(.storageUnavailable, "Test provider is already borrowed.")
+        }
+        guard let result = try phase.withLockIfAvailable({ state -> R in
+            engaged.store(true, ordering: .releasing)
+            defer { engaged.store(false, ordering: .releasing) }
+            return try body(&state)
+        }) else {
             throw CodecError(.storageUnavailable, "Test provider is already borrowed.")
         }
         return result

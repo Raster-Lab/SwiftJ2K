@@ -6,3 +6,4 @@
 # Local compiler coverage artefacts
 *.profraw
 *.profdata
+.linux-build/

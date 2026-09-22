@@ -174,6 +174,63 @@ rgbj = os.path.join(OUT, "rgb8_16x16.opj.j2k")
 r = subprocess.run([OPJ, "-i", rgb, "-o", rgbj, "-n", "2"], capture_output=True, text=True)
 manifest["rgb_fixture"] = dict(file=os.path.basename(rgbj), produced=r.returncode == 0, sha256=sha(rgbj) if r.returncode == 0 else None, note="three components; must be rejected")
 os.remove(rgb)
+
+# Milestone 4 syntax coverage: quality layers, code-block styles, tiles and
+# origins, precinct-major progressions. All lossless; every file is
+# cross-decoded by both tools before admission.
+SYNTAX = [
+    ("layers3_opj",     "opj", ["-r", "40,20,1", "-n", "4"], "three quality layers, last lossless"),
+    ("layers3_kdu",     "kdu", ["Clayers=3", "Clevels=3"], "three quality layers (Kakadu)"),
+    ("bypass_opj",      "opj", ["-M", "1", "-n", "4"], "selective arithmetic bypass"),
+    ("reset_opj",       "opj", ["-M", "2", "-n", "4"], "context reset on each pass"),
+    ("restart_opj",     "opj", ["-M", "4", "-n", "4"], "termination on each pass"),
+    ("causal_opj",      "opj", ["-M", "8", "-n", "4"], "vertically causal contexts"),
+    ("erterm_opj",      "opj", ["-M", "16", "-n", "4"], "predictable termination"),
+    ("segsym_opj",      "opj", ["-M", "32", "-n", "4"], "segmentation symbols"),
+    ("allstyles_opj",   "opj", ["-M", "63", "-n", "4"], "all six code-block style bits"),
+    ("bypass_restart_kdu", "kdu", ["Cmodes=BYPASS|RESTART", "Clevels=3"], "bypass with restart (Kakadu)"),
+    ("allstyles_kdu",   "kdu", ["Cmodes=BYPASS|RESET|RESTART|CAUSAL|ERTERM|SEGMARK", "Clevels=3"], "all style bits (Kakadu)"),
+    ("tiles37x29_opj",  "opj", ["-t", "37,29", "-n", "3"], "4x3 tiles of 37x29"),
+    ("tiles64_opj",     "opj", ["-t", "64,64", "-n", "4"], "3x2 tiles of 64x64"),
+    ("origin_opj",      "opj", ["-d", "3,5", "-n", "4"], "image origin (3,5)"),
+    ("origin_tiles_opj","opj", ["-d", "3,5", "-T", "1,2", "-t", "40,30", "-n", "3"], "image origin (3,5), tile origin (1,2), 40x30 tiles"),
+    ("tiles_kdu",       "kdu", ["Stiles={29,37}", "Clevels=3"], "tiles 37 wide 29 high (Kakadu)"),
+    ("origin_kdu",      "kdu", ["Sorigin={5,3}", "Clevels=3"], "image origin (3,5) (Kakadu)"),
+    ("pcrl_precincts_opj", "opj", ["-c", "[32,32],[32,32],[32,32],[32,32]", "-p", "PCRL", "-n", "4"], "PCRL with several precincts"),
+    ("cprl_precincts_opj", "opj", ["-c", "[32,32],[32,32],[32,32],[32,32]", "-p", "CPRL", "-n", "4"], "CPRL with several precincts"),
+    ("rpcl_precincts_kdu", "kdu", ["Corder=RPCL", "Cprecincts={32,32}", "Clevels=3"], "RPCL with several precincts (Kakadu)"),
+    ("everything_opj",  "opj", ["-t", "40,30", "-r", "30,1", "-M", "63", "-c", "[32,32],[32,32],[32,32]", "-p", "PCRL", "-SOP", "-EPH", "-n", "3"], "tiles + layers + styles + precincts + PCRL + SOP/EPH"),
+    ("everything_kdu",  "kdu", ["Stiles={30,40}", "Clayers=2", "Cmodes=BYPASS|RESTART|SEGMARK", "Cprecincts={32,32}", "Corder=CPRL", "Cuse_sop=yes", "Cuse_eph=yes", "Clevels=3", "ORGtparts=R"], "tiles + layers + styles + precincts + CPRL + SOP/EPH + tile-parts (Kakadu)"),
+]
+manifest["syntax_variants"] = []
+for base in ["g12_129x67_gradient", "g16_64x64_random"]:
+    pgm = os.path.join(OUT, base + ".pgm")
+    _, _, _, px = read_pgm(pgm)
+    for suffix, tool, args, note in SYNTAX:
+        j2k = os.path.join(OUT, f"{base}.syntax.{suffix}.j2k")
+        if tool == "opj":
+            r = subprocess.run([OPJ, "-i", pgm, "-o", j2k, *args], capture_output=True, text=True)
+        else:
+            r = subprocess.run([KDU, "-i", pgm, "-o", j2k, "Creversible=yes", "-quiet", *args], capture_output=True, text=True)
+        if r.returncode != 0 or not os.path.exists(j2k):
+            manifest["syntax_variants"].append(dict(base=base, file=os.path.basename(j2k), note=note, produced=False,
+                                                    reason=(r.stdout + r.stderr).strip().splitlines()[0][:160] if (r.stdout + r.stderr).strip() else "no output"))
+            continue
+        ok = {}
+        for dn, dec in (("opj", OPJD), ("kdu", KDUD)):
+            outp = os.path.join(OUT, "tmp.pgm")
+            cmd = [dec, "-i", j2k, "-o", outp] + (["-quiet"] if dn == "kdu" else [])
+            rr = subprocess.run(cmd, capture_output=True, text=True)
+            if rr.returncode == 0 and os.path.exists(outp):
+                _, _, _, back = read_pgm(outp); ok[dn] = (back == px); os.remove(outp)
+            else:
+                ok[dn] = None
+        if not (ok.get("opj") and ok.get("kdu")):
+            os.remove(j2k)
+            manifest["syntax_variants"].append(dict(base=base, file=os.path.basename(j2k), note=note, produced=False, reason=f"not cross-decoded exactly: {ok}"))
+            continue
+        manifest["syntax_variants"].append(dict(base=base, file=os.path.basename(j2k), tool=tool, args=args, note=note, produced=True,
+                                                sha256=sha(j2k), bytes=os.path.getsize(j2k), independent_decode_exact=ok))
 json.dump(manifest, open(os.path.join(OUT, "manifest.json"), "w"), indent=2)
 for e in manifest["fixtures"]:
     print(e["name"], f'{e["width"]}x{e["height"]}@{e["meaningfulBits"]}', [ (c["file"].split(".")[1], c["bytes"], c["independent_decode_exact"]) for c in e["codestreams"]])

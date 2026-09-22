@@ -89,14 +89,41 @@ struct TilePartRecord: Sendable, Equatable {
     let dataRange: Range<Int>
 }
 
+/// Coding and quantization segments found in a tile's first tile-part
+/// header, which override the main header for that tile (A.4.2, Table A.5).
+struct TileHeaderOverrides: Sendable {
+    var codingStyle: CodingStyleSegment?
+    var componentCodingStyle: CodingStyleSegment?
+    var quantization: QuantizationSegment?
+    var componentQuantization: QuantizationSegment?
+}
+
 /// Everything the main header and the tile-part headers declare.
 struct ParsedCodestream: Sendable {
     let size: ImageSizeSegment
     let codingStyle: CodingStyleSegment           // COD merged with any COC for component 0
     let quantization: QuantizationSegment         // QCD merged with any QCC for component 0
     let tileParts: [TilePartRecord]
+    let tileOverrides: [Int: TileHeaderOverrides]
     let sawEndOfCodestream: Bool
     let mainHeaderMarkers: [UInt16]
+
+    /// Effective coding style and quantization for a tile (COC/QCC beat COD/QCD;
+    /// tile-part header segments beat main header segments).
+    func effectiveParameters(tile: Int) -> (CodingStyleSegment, QuantizationSegment) {
+        var cod = codingStyle, qcd = quantization
+        if let overrides = tileOverrides[tile] {
+            if let tileCOD = overrides.codingStyle {
+                // A tile COD replaces the main COD but not a main COC for this component; the
+                // component-specific segment always wins over the general one at the same scope.
+                cod = tileCOD
+            }
+            if let tileCOC = overrides.componentCodingStyle { cod = tileCOC }
+            if let tileQCD = overrides.quantization { qcd = tileQCD }
+            if let tileQCC = overrides.componentQuantization { qcd = tileQCC }
+        }
+        return (cod, qcd)
+    }
 }
 
 enum CodestreamSyntax {
@@ -165,6 +192,7 @@ enum CodestreamSyntax {
 
         // Tile-parts.
         var tileParts: [TilePartRecord] = []
+        var tileOverrides: [Int: TileHeaderOverrides] = [:]
         var sawEOC = false
         while !reader.isAtEnd {
             let marker = try reader.readUInt16()
@@ -184,12 +212,30 @@ enum CodestreamSyntax {
             let partIndex = Int(try reader.readUInt8())
             let partCount = Int(try reader.readUInt8())
             // Tile-part header markers until SOD.
+            var overrides = tileOverrides[tileIndex] ?? TileHeaderOverrides()
             while true {
                 let tileMarker = try reader.readUInt16()
                 if tileMarker == Marker.sod { break }
                 switch tileMarker {
-                case Marker.cod, Marker.coc, Marker.qcd, Marker.qcc, Marker.rgn, Marker.poc:
-                    throw CodecError(.unsupportedFeature, "Coding or quantization overrides in a tile-part header are not supported.")
+                case Marker.cod, Marker.coc, Marker.qcd, Marker.qcc:
+                    guard partIndex == 0 else {
+                        throw CodecError(.malformedInput, "Coding overrides are only allowed in a tile's first tile-part header.")
+                    }
+                    let payload = try readSegmentPayload(&reader, marker: tileMarker)
+                    switch tileMarker {
+                    case Marker.cod: overrides.codingStyle = try parseCOD(payload)
+                    case Marker.coc:
+                        let (component, segment) = try parseCOC(payload, componentCount: size.components.count)
+                        if component == 0 { overrides.componentCodingStyle = segment }
+                    case Marker.qcd: overrides.quantization = try parseQuantization(payload)
+                    default:
+                        let (component, segment) = try parseQCC(payload, componentCount: size.components.count)
+                        if component == 0 { overrides.componentQuantization = segment }
+                    }
+                case Marker.rgn:
+                    throw CodecError(.unsupportedFeature, "Region-of-interest (RGN) coding is not supported.")
+                case Marker.poc:
+                    throw CodecError(.unsupportedFeature, "Progression order changes (POC) are not supported.")
                 case Marker.ppt:
                     throw CodecError(.unsupportedFeature, "Packed packet headers (PPT) are not supported.")
                 case Marker.plt, Marker.com:
@@ -198,6 +244,7 @@ enum CodestreamSyntax {
                     throw CodecError(.malformedInput, "Unexpected marker \(String(tileMarker, radix: 16)) in a tile-part header.")
                 }
             }
+            tileOverrides[tileIndex] = overrides
             let dataStart = reader.position
             let dataEnd: Int
             if psot == 0 {
@@ -219,7 +266,8 @@ enum CodestreamSyntax {
         }
         guard !tileParts.isEmpty else { throw CodecError(.malformedInput, "Codestream contains no tile-part.") }
         return ParsedCodestream(size: size, codingStyle: codingStyle, quantization: quantization,
-                                tileParts: tileParts, sawEndOfCodestream: sawEOC, mainHeaderMarkers: markers)
+                                tileParts: tileParts, tileOverrides: tileOverrides,
+                                sawEndOfCodestream: sawEOC, mainHeaderMarkers: markers)
     }
 
     private static func readSegmentPayload(_ reader: inout ByteReader, marker: UInt16) throws -> [UInt8] {

@@ -16,10 +16,12 @@ enum Fixtures {
         let codestreams: [Codestream]
     }
     struct Variant: Decodable { let file: String; let note: String; let produced: Bool }
+    struct SyntaxVariant: Decodable { let base: String; let file: String; let note: String; let produced: Bool }
     struct Manifest: Decodable {
         let fixtures: [Entry]
         let variants_of_g16_64x64_random: [Variant]
         let rgb_fixture: Variant
+        let syntax_variants: [SyntaxVariant]
     }
 
     static let directory = Bundle.module.resourceURL!.appendingPathComponent("Fixtures/Lossless")
@@ -93,7 +95,8 @@ func independentCodestreamsDecodeToTheGeneratedSamples(key: String) async throws
     try expectSamples(decoded.image, equal: try Fixtures.samples(entry), width: entry.width, height: entry.height)
 }
 
-@Test(arguments: ["precincts", "sop_eph", "rpcl", "cprl", "kdu_tileparts", "kdu_plt"])
+@Test(arguments: ["precincts", "sop_eph", "rpcl", "cprl", "kdu_tileparts", "kdu_plt",
+                  "tiled", "layers2", "bypass", "termall", "segsym"])
 func supportedSyntaxVariantsDecodeExactly(variant: String) async throws {
     let entry = Fixtures.manifest.fixtures.first { $0.name == "g16_64x64_random" }!
     let data = try Fixtures.bytes("g16_64x64_random.\(variant).j2k")
@@ -101,11 +104,7 @@ func supportedSyntaxVariantsDecodeExactly(variant: String) async throws {
     try expectSamples(decoded.image, equal: try Fixtures.samples(entry), width: 64, height: 64)
 }
 
-@Test(arguments: [
-    ("irreversible97", "9/7"), ("tiled", "Multi-tile"), ("layers2", "Multiple quality layers"),
-    ("bypass", "Code-block style"), ("termall", "Code-block style"), ("segsym", "Code-block style"),
-    ("kdu_ht", "Part 15")
-])
+@Test(arguments: [("irreversible97", "9/7"), ("kdu_ht", "Part 15")])
 func validButUnsupportedCodestreamsAreRejectedBeforeDecoding(variant: String, expected: String) async throws {
     let data = try Fixtures.bytes("g16_64x64_random.\(variant).j2k")
     let decoder = try Decoder()
@@ -121,6 +120,20 @@ func validButUnsupportedCodestreamsAreRejectedBeforeDecoding(variant: String, ex
     }
     // Preflight rejection leaves the caller's destination reusable.
     #expect(try destination.writeUInt16 { _, _ in 5 }.sampleUInt16(x: 63, y: 63) == 5)
+}
+
+/// Milestone 4: layers, every code-block style, tiles, origins and
+/// precinct-major progressions from both reference encoders.
+@Test(arguments: Fixtures.manifest.syntax_variants.filter(\.produced).map(\.file))
+func syntaxCoverageVariantsDecodeExactly(file: String) async throws {
+    let variant = Fixtures.manifest.syntax_variants.first { $0.file == file }!
+    let entry = Fixtures.manifest.fixtures.first { $0.name == variant.base }!
+    let data = try Fixtures.bytes(file)
+    let decoder = try Decoder()
+    let info = try decoder.inspect(data)
+    #expect(info.descriptor.width == entry.width && info.descriptor.height == entry.height, "\(variant.note)")
+    let decoded = try await decoder.decode(data)
+    try expectSamples(decoded.image, equal: try Fixtures.samples(entry), width: entry.width, height: entry.height)
 }
 
 @Test func colourCodestreamsAreRejected() async throws {
@@ -444,9 +457,12 @@ func waveletForwardInverseIsIdentity(width: Int, height: Int) throws {
     }
     let original = plane
     let levels = min(5, Int.bitWidth - 1 - min(width, height).leadingZeroBitCount)
-    try Wavelet53.forward(plane: &plane, stride: width, width: width, height: height, levels: levels) {}
-    try Wavelet53.inverse(plane: &plane, stride: width, width: width, height: height, levels: levels) {}
-    #expect(plane == original)
+    for (x0, y0) in [(0, 0), (3, 5), (1, 0), (0, 7), (129, 64)] {
+        plane = original
+        try Wavelet53.forward(plane: &plane, stride: width, x0: x0, x1: x0 + width, y0: y0, y1: y0 + height, levels: levels) {}
+        try Wavelet53.inverse(plane: &plane, stride: width, x0: x0, x1: x0 + width, y0: y0, y1: y0 + height, levels: levels) {}
+        #expect(plane == original, "origin (\(x0), \(y0))")
+    }
 }
 
 @Test func tagTreeEncodesAndDecodesInclusionAndZeroBitPlanes() throws {

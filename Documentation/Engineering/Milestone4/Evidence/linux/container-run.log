@@ -1,0 +1,10 @@
+linux debug-build exit 0
+linux debug-test exit 0
+✔ Test run with 78 tests in 2 suites passed after 6.019 seconds.
+linux release-build exit 0
+apt exit 0
+linux cli-test exit 0
+swiftj2k: 147 process checks passed
+linux consumer exit 0
+Independent SwiftJ2K consumer passed; 106-byte lossless codestream round-tripped.
+docker exit 0
