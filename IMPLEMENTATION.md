@@ -25,7 +25,7 @@ Work one owner-assigned milestone at a time. Preserve internal algorithm names w
 
 ### Migration focus
 
-- Inspect `Sources/J2KCore/CompressionFamilyConformance.swift` and `Sources/J2KCodec/CompressionFamilyConformance.swift`. Remove the successor's mandatory CompressionFamily dependency and inherited conformances; provide the agreed local common surface instead. Do not copy the protocol source into each module and claim it is one shared Swift type.
+- The CompressionFamily coupling is already out of the predecessor: J2KSwift pull request 489 (merged 22 September 2026, `7acc9ae`) moved `Sources/J2KCore/CompressionFamilyConformance.swift` and `Sources/J2KCodec/CompressionFamilyConformance.swift` into the separate package `Adapters/J2KCompressionFamily`, and the J2KSwift root manifest declares no external dependency. Nothing from that adapter package migrates; provide the agreed local common surface instead. Do not copy the protocol source into each module and claim it is one shared Swift type.
 - Adapt the real `J2KDecoder`/decoder pipeline final-output stage to caller-provided storage. Existing `J2KImage` uses per-component data; `J2KImageBuffer` has copy-on-write owned storage and its Data constructor copies. Those APIs do not prove direct decode-into support. Eliminate final-frame copy-out on the required shared path, while accounting for DWT/coefficient workspace.
 - Route the initial unsigned greyscale lossless case through the conformant codec. Preserve declared component precision and sign rules. Inventory multi-tile, reversible/irreversible transform, subsampling, ROI, resolution/progressive, container and component capabilities before adapting them.
 - HTJ2K uses the same Encoder/Decoder contract with explicit block-coding options. Standard-compliant HT block format is required for advertised HTJ2K. Isolate any predecessor custom/non-Part-15 representation as legacy experimental material; it must not be selected by standard format defaults or claimed interoperable.
@@ -74,7 +74,7 @@ POL-05 requires every product to be explicitly **retained** (migrates, stays a p
 
 **Product list after migration:** `SwiftJ2K`, `SwiftJ2K3D`, `SwiftJ2KJPIP` (libraries) and `swiftj2k` (executable). Fourteen products become four.
 
-`Sources/J2KCore/CompressionFamilyConformance.swift` and `Sources/J2KCodec/CompressionFamilyConformance.swift` are the entire CompressionFamily coupling and move to a separate package under contract 0.8.0 §4, so `SwiftJ2K` resolves alone. CompressionFamily itself is untouched and stays available to predecessor consumers under POL-04.
+`Sources/J2KCore/CompressionFamilyConformance.swift` and `Sources/J2KCodec/CompressionFamilyConformance.swift` were the entire CompressionFamily coupling. Contract 0.8.0 §4 is satisfied: J2KSwift pull request 489 (merged 22 September 2026, `7acc9ae`) moved them, with their pin-down tests, into the separate package `Adapters/J2KCompressionFamily` in the predecessor repository, which depends on J2KSwift by path and on CompressionFamily by URL. The J2KSwift root manifest now declares no external dependency, so `SwiftJ2K` resolves alone. The adapter package is predecessor-compatibility surface and does not migrate. CompressionFamily itself is untouched and stays available to predecessor consumers under POL-04.
 
 ### Decisions recorded with these dispositions
 
