@@ -10,7 +10,7 @@ let package = Package(
     name: "SwiftJ2K",
     platforms: [.macOS(.v26), .iOS(.v26), .tvOS(.v26), .visionOS(.v26), .watchOS(.v26)],
     products: [.library(name: "SwiftJ2K", targets: ["SwiftJ2K"]),
-               .executable(name: "swiftj2k", targets: ["SwiftJ2KCLI"])],
+               .executable(name: "swiftj2k-cli", targets: ["SwiftJ2KCLI"])],
     targets: [
         .target(name: "SwiftJ2K"),
         .executableTarget(name: "SwiftJ2KCLI", dependencies: ["SwiftJ2K"]),

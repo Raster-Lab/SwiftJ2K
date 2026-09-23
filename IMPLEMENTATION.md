@@ -6,7 +6,7 @@ For applications upgrading from J2KSwift, use [MIGRATION.md](MIGRATION.md). This
 
 ## Source and destination
 
-Predecessor: [Raster-Lab/J2KSwift](https://github.com/Raster-Lab/J2KSwift) at inspected SHA `768f6b53499b806fd0304962056e1fc7833f12e5`. Highest stable-shaped tag observed: `v11.0.3` (resolve independently before choosing it as a baseline). Target module/product: `SwiftJ2K`. Target CLI: `swiftj2k`. Intended first stable library version: `12.1.0`.
+Predecessor: [Raster-Lab/J2KSwift](https://github.com/Raster-Lab/J2KSwift) at inspected SHA `768f6b53499b806fd0304962056e1fc7833f12e5`. Highest stable-shaped tag observed: `v11.0.3` (resolve independently before choosing it as a baseline). Target module/product: `SwiftJ2K`. Target CLI: `swiftj2k-cli`. Intended first stable library version: `12.1.0`.
 
 Do not migrate code from moving main without recording the selected revision. Reproduce relevant source tests and inspect source-level capabilities. Existing test totals and benchmark claims are historical, not successor acceptance evidence.
 
@@ -85,14 +85,14 @@ POL-05 requires every product to be explicitly **retained** (migrates, stays a p
 | `J2K3D` (JP3D) | 29 / 8,879 | 5 | **Retained** | `SwiftJ2K3D` | API-13 treats volume coding as a clearly named extension operation rather than an interchangeable common one |
 | `JPIP` | 30 / 13,955 | 2 | **Retained** | `SwiftJ2KJPIP` | API-13 names JPIP explicitly as not interchangeable with the single-image contract |
 | `J2KDICOMHelpers` | 11 / 1,647 | 0 | Deferred — retired | none | POL-05 keeps transfer-syntax negotiation and photometric policy in consumers. DICOMKit already owns `DICOMCore/PhotometricInterpretation.swift` and `DICOMCore/TransferSyntaxConverter.swift`, and nothing imports this product. |
-| `j2k` (exec) | 1 / 16 + `J2KCLICore` | — | Adapted — renamed | `swiftj2k` | CLI-01 fixes the successor executable names |
+| `j2k` (exec) | 1 / 16 + `J2KCLICore` | — | Adapted — renamed | `swiftj2k-cli` | CLI-01 fixes the successor executable names |
 | `j2kd` (exec) | 1 / 82 | — | Deferred | none | macOS-only XPC daemon; no importer, and a daemon-plus-fallback execution model is not part of the contract's operation surface |
 | `J2KDaemonProtocol` | 1 / 177 | 0 | Deferred | none | as `j2kd` |
 | `J2KDaemonCore` | 2 / 414 | 0 | Deferred | none | as `j2kd` |
 | `J2KDaemonClient` | 1 / 275 | 0 | Deferred | none | as `j2kd` |
 | `J2KTestApp` (exec) | 23 / 7,475 | 0 | Deferred — dev tooling | none | TESTING keeps development-only tools outside the shipped dependency graph |
 
-**Product list after migration:** `SwiftJ2K`, `SwiftJ2K3D`, `SwiftJ2KJPIP` (libraries) and `swiftj2k` (executable). Fourteen products become four.
+**Product list after migration:** `SwiftJ2K`, `SwiftJ2K3D`, `SwiftJ2KJPIP` (libraries) and `swiftj2k-cli` (executable). Fourteen products become four.
 
 `Sources/J2KCore/CompressionFamilyConformance.swift` and `Sources/J2KCodec/CompressionFamilyConformance.swift` were the entire CompressionFamily coupling. Contract 0.8.0 §4 is satisfied: J2KSwift pull request 489 (merged 22 September 2026, `7acc9ae`) moved them, with their pin-down tests, into the separate package `Adapters/J2KCompressionFamily` in the predecessor repository, which depends on J2KSwift by path and on CompressionFamily by URL. The J2KSwift root manifest now declares no external dependency, so `SwiftJ2K` resolves alone. The adapter package is predecessor-compatibility surface and does not migrate. CompressionFamily itself is untouched and stays available to predecessor consumers under POL-04.
 

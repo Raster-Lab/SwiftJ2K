@@ -1,8 +1,8 @@
-.TH SWIFTJ2K 1 "September 22, 2026" "12.1.0" "Swift Image Compression Suite"
+.TH SWIFTJ2K-CLI 1 "September 23, 2026" "12.1.0" "Swift Image Compression Suite"
 .SH NAME
-swiftj2k \- lossless JPEG 2000 encode, decode, inspect and validate for SwiftJ2K
+swiftj2k-cli \- lossless JPEG 2000 encode, decode, inspect and validate for SwiftJ2K
 .SH SYNOPSIS
-.B swiftj2k
+.B swiftj2k-cli
 .RI [ options ] " command " [ options ]
 .SH DESCRIPTION
 The standalone executable of the SwiftJ2K library. It losslessly encodes
@@ -133,12 +133,12 @@ closed pipe; 7 internal failure; 130 interrupted by SIGINT, with nothing
 published.
 .SH EXAMPLES
 .nf
-swiftj2k encode \-i slice.nrrd \-o slice.j2k \-\-precision 12
-swiftj2k decode \-i slice.j2k \-o slice.nrrd \-\-overwrite
-swiftj2k decode \-i \- \-o \- < slice.j2k | swiftj2k encode \-i \- \-\-input-format nrrd \-o out.j2k
-swiftj2k inspect \-i slice.j2k \-\-json
-swiftj2k validate \-i slice.j2k
-swiftj2k capabilities \-\-json \-vv
+swiftj2k-cli encode \-i slice.nrrd \-o slice.j2k \-\-precision 12
+swiftj2k-cli decode \-i slice.j2k \-o slice.nrrd \-\-overwrite
+swiftj2k-cli decode \-i \- \-o \- < slice.j2k | swiftj2k-cli encode \-i \- \-\-input-format nrrd \-o out.j2k
+swiftj2k-cli inspect \-i slice.j2k \-\-json
+swiftj2k-cli validate \-i slice.j2k
+swiftj2k-cli capabilities \-\-json \-vv
 .fi
 .SH INSTALLATION
 Scripts/install-cli.sh installs or updates the executable and this page
@@ -146,8 +146,8 @@ together.
 Use \-\-prefix for an absolute prefix (default /usr/local), \-\-destdir or
 DESTDIR
 for staging, and \-\-binary for a prebuilt binary matching VERSION.
-Files are PREFIX/bin/swiftj2k and PREFIX/share/man/man1/swiftj2k.1.
-For custom prefixes use man \-M PREFIX/share/man swiftj2k, or configure
+Files are PREFIX/bin/swiftj2k-cli and PREFIX/share/man/man1/swiftj2k-cli.1.
+For custom prefixes use man \-M PREFIX/share/man swiftj2k-cli, or configure
 MANPATH.
 No index refresh is needed for direct lookup; no sudo runs automatically.
 .SH SEE ALSO
