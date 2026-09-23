@@ -20,5 +20,5 @@ SwiftJ2K: repetition-discovery
 SwiftJ2K: repetition-tests
 SwiftJ2K: sbom-spdx
 SwiftJ2K: sbom-cyclonedx
-Evidence: <scratch>/release/swift64/report.json
+Evidence: <scratch>/release2/swift64/report.json
 validate default exit 0

@@ -1,0 +1,4 @@
+caffeinate pid 64228 (holds idle and system sleep while this shell runs)
+   pid 750(caffeinate): [0x00000074000181d6] 10:43:22 PreventUserIdleSystemSleep named: "caffeinate command-line tool"  
+	Details: caffeinate asserting forever
+Wed Sep 23 21:32:15 IST 2026

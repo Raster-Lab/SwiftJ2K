@@ -1,0 +1,29 @@
+Replay of the four inputs the interrupted campaigns kept as slow, with the release CLI binary on the same host, lid open, 23 September 2026 21:32 IST, load load averages: 12.49 10.47 10.82
+--- inspect/slow-13038935-24765ms.bin size 51366 bytes, sha256 7290669616af8a01
+inspect 37.2 ms: swiftj2k-cli: malformed input: Tile-part length (Psot) does not fit inside the codestream.
+validate exit 3 33.4 ms
+inspect 34.3 ms: swiftj2k-cli: malformed input: Tile-part length (Psot) does not fit inside the codestream.
+validate exit 3 34.2 ms
+inspect 35.7 ms: swiftj2k-cli: malformed input: Tile-part length (Psot) does not fit inside the codestream.
+validate exit 3 29.0 ms
+--- decode/slow-3302295-5115ms.bin size 65278 bytes, sha256 97cb00a5e54daac1
+inspect 37.1 ms: {"bytes":65278,"components":1,"format":"jpeg2000-codestream","frames":1,"height":256,"meaningfulBits":16,"sampleType":"u
+validate exit 0 48.8 ms
+inspect 35.0 ms: {"bytes":65278,"components":1,"format":"jpeg2000-codestream","frames":1,"height":256,"meaningfulBits":16,"sampleType":"u
+validate exit 0 47.6 ms
+inspect 33.8 ms: {"bytes":65278,"components":1,"format":"jpeg2000-codestream","frames":1,"height":256,"meaningfulBits":16,"sampleType":"u
+validate exit 0 51.2 ms
+--- decode/slow-3379624-5687ms.bin size 55 bytes, sha256 7534ec81d32ab264
+inspect 32.1 ms: swiftj2k-cli: malformed input: SIZ component count disagrees with the segment length.
+validate exit 3 29.9 ms
+inspect 31.5 ms: swiftj2k-cli: malformed input: SIZ component count disagrees with the segment length.
+validate exit 3 34.5 ms
+inspect 33.7 ms: swiftj2k-cli: malformed input: SIZ component count disagrees with the segment length.
+validate exit 3 30.1 ms
+--- decodeInto/slow-3501159-5685ms.bin size 9762 bytes, sha256 e12bad2fcacd907d
+inspect 32.9 ms: {"bytes":9762,"components":1,"format":"jpeg2000-codestream","frames":1,"height":64,"meaningfulBits":16,"sampleType":"uns
+validate exit 0 30.7 ms
+inspect 33.8 ms: {"bytes":9762,"components":1,"format":"jpeg2000-codestream","frames":1,"height":64,"meaningfulBits":16,"sampleType":"uns
+validate exit 0 33.2 ms
+inspect 34.0 ms: {"bytes":9762,"components":1,"format":"jpeg2000-codestream","frames":1,"height":64,"meaningfulBits":16,"sampleType":"uns
+validate exit 0 30.5 ms

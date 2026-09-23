@@ -1,8 +1,8 @@
 Fetching https://github.com/Raster-Lab/SwiftJ2K.git
-[1/1471] Fetching swiftj2k
-Fetched https://github.com/Raster-Lab/SwiftJ2K.git from cache (2.62s)
+[1/1605] Fetching swiftj2k
+Fetched https://github.com/Raster-Lab/SwiftJ2K.git from cache (2.65s)
 Creating working copy for https://github.com/Raster-Lab/SwiftJ2K.git
-Working copy of https://github.com/Raster-Lab/SwiftJ2K.git resolved at 67273dbb5a195c1b2a1f47f311d9a1e4cd7f9203
+Working copy of https://github.com/Raster-Lab/SwiftJ2K.git resolved at f3e13a061963dc5af62605071aa6d0243105f6f4
 .
 └── swiftj2k<https://github.com/Raster-Lab/SwiftJ2K.git@unspecified>
 Building for production...
@@ -12,5 +12,5 @@ Building for production...
 [5/7] Compiling URLConsumer main.swift
 [5/7] Write Objects.LinkFileList
 [6/7] Linking URLConsumer
-Build of product 'URLConsumer' complete! (15.06s)
+Build of product 'URLConsumer' complete! (14.91s)
 Independent SwiftJ2K consumer passed; 106-byte lossless codestream round-tripped.

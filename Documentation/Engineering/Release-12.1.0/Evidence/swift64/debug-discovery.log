@@ -1,21 +1,21 @@
 Building for debugging...
 [Pre-planning 1 / 154]
 [Planning deferred tasks]
+[18 / 29]
 [18 / 29] SwiftJ2KTests-product
 [19 / 41]
 [22 / 41] SwiftJ2KTests-product
 [23 / 41] SwiftJ2KTests-product
-[24 / 41] SwiftJ2KTests-product
-[25 / 41] SwiftJ2KTests-product
+[26 / 41] SwiftJ2KTests-product
 [30 / 41] SwiftJ2KTests-product
 [32 / 41] SwiftJ2KTests-product
 [33 / 41] SwiftJ2KTests-product
+[34 / 41] SwiftJ2KTests-product
 [35 / 41] SwiftJ2KTests-product
 [35 / 41] AllIncludingTests
 [35 / 41] SwiftJ2KTests-product
 [37 / 41] SwiftJ2KTests-product
-[39 / 41] SwiftJ2KTests-product
-Build complete! (8.67 secs)
+Build complete! (7.22 secs)
 SwiftJ2KTests.DescriptorTests/deterministicLayoutMutation()
 SwiftJ2KTests.DescriptorTests/finalRowNeedsOnlyItsActualSampleBytes()
 SwiftJ2KTests.DescriptorTests/paddedOddDimensionsAndPrecision()

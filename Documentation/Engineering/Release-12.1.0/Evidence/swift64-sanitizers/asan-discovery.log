@@ -5,45 +5,54 @@ Building for debugging...
 [48 / 82] SwiftJ2K
 [53 / 138]
 [57 / 138]
-[61 / 138]
-[64 / 138]
+[60 / 138]
+[63 / 138]
+[65 / 138]
 [66 / 138]
+[68 / 138]
 [69 / 138]
-[73 / 138]
-[77 / 138]
+[72 / 138]
+[75 / 138]
+[76 / 138]
 [79 / 138]
 [80 / 138]
 [83 / 138]
+[84 / 138]
+[85 / 138]
 [86 / 138]
-[87 / 138]
+[88 / 138]
 [90 / 138]
 [91 / 138]
 [92 / 138]
 [93 / 138]
 [96 / 138] SwiftJ2K
-[104 / 138] SwiftJ2K
-[106 / 138] swiftj2k-product
+[97 / 138] SwiftJ2K
+[99 / 138] SwiftJ2K
+[105 / 138] swiftj2k-cli-product
 [108 / 138] SwiftJ2K
+[109 / 138] SwiftJ2K
 [110 / 138] SwiftJ2K
 [110 / 138]
+[115 / 139]
 [117 / 139]
 [121 / 140] SwiftJ2KTests-product
-[123 / 142] swiftj2k-product
-[125 / 154] swiftj2k-product
-[126 / 154] SwiftJ2KTests-product
-[127 / 154] swiftj2k-product
-[129 / 154] SwiftJ2KTests-product
-[136 / 154] swiftj2k-product
+[123 / 142] swiftj2k-cli-product
+[124 / 142] swiftj2k-cli-product
+[126 / 154]
+[126 / 154] swiftj2k-cli-product
+[128 / 154] SwiftJ2KTests-product
+[132 / 154] SwiftJ2KTests-product
 [137 / 154] SwiftJ2KTests-product
 [140 / 154] SwiftJ2KTests-product
+[142 / 154] SwiftJ2KTests-product
 [143 / 154] SwiftJ2KTests-product
-[144 / 154] SwiftJ2KTests-product
 [145 / 154] SwiftJ2KTests-product
 [146 / 154] SwiftJ2KTests-product
-[146 / 154] AllIncludingTests
+[147 / 154]
 [148 / 154] SwiftJ2KTests-product
 [150 / 154] SwiftJ2KTests-product
-Build complete! (22.32 secs)
+[153 / 154] SwiftJ2KTests-product
+Build complete! (27.22 secs)
 SwiftJ2KTests.DescriptorTests/deterministicLayoutMutation()
 SwiftJ2KTests.DescriptorTests/finalRowNeedsOnlyItsActualSampleBytes()
 SwiftJ2KTests.DescriptorTests/paddedOddDimensionsAndPrecision()

@@ -5,5 +5,5 @@ Building for production...
 [5/7] Compiling FuzzHarness Fuzz.swift
 [5/7] Write Objects.LinkFileList
 [6/7] Linking FuzzHarness
-Build complete! (8.87s)
+Build complete! (15.45s)
 fuzz-harness-build exit 0

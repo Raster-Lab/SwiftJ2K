@@ -1,7 +1,7 @@
 {
   "package": "SwiftJ2K",
   "repository": "<repo>",
-  "started_utc": "20260922T133940Z",
+  "started_utc": "20260923T105819Z",
   "developer_dir": "/Applications/Xcode-26.2.app/Contents/Developer",
   "build_engine": "swiftbuild",
   "accepted_swift": [
@@ -32,7 +32,7 @@
       "cwd": "<repo>",
       "log": "swift-version.log",
       "exit_code": 0,
-      "seconds": 0.086
+      "seconds": 0.094
     },
     {
       "label": "xcode-version",
@@ -44,7 +44,7 @@
       "cwd": "<repo>",
       "log": "xcode-version.log",
       "exit_code": 0,
-      "seconds": 0.078
+      "seconds": 0.15
     },
     {
       "label": "source-commit",
@@ -56,7 +56,7 @@
       "cwd": "<repo>",
       "log": "source-commit.log",
       "exit_code": 0,
-      "seconds": 0.014
+      "seconds": 0.936
     },
     {
       "label": "working-tree",
@@ -68,7 +68,7 @@
       "cwd": "<repo>",
       "log": "working-tree.log",
       "exit_code": 0,
-      "seconds": 0.022
+      "seconds": 0.028
     },
     {
       "label": "swift-build-help",
@@ -79,13 +79,13 @@
         "--package-path",
         "<repo>",
         "--scratch-path",
-        "<scratch>/release/swift64-sanitizers/build/help",
+        "<scratch>/release2/swift64-sanitizers/build/help",
         "--cache-path",
-        "<scratch>/release/swift64-sanitizers/cache",
+        "<scratch>/release2/swift64-sanitizers/cache",
         "--config-path",
-        "<scratch>/release/swift64-sanitizers/config",
+        "<scratch>/release2/swift64-sanitizers/config",
         "--security-path",
-        "<scratch>/release/swift64-sanitizers/security",
+        "<scratch>/release2/swift64-sanitizers/security",
         "--build-system",
         "swiftbuild",
         "--jobs",
@@ -95,7 +95,7 @@
       "cwd": "<repo>",
       "log": "swift-build-help.log",
       "exit_code": 0,
-      "seconds": 0.049
+      "seconds": 0.052
     },
     {
       "label": "swift-test-help",
@@ -106,13 +106,13 @@
         "--package-path",
         "<repo>",
         "--scratch-path",
-        "<scratch>/release/swift64-sanitizers/build/help",
+        "<scratch>/release2/swift64-sanitizers/build/help",
         "--cache-path",
-        "<scratch>/release/swift64-sanitizers/cache",
+        "<scratch>/release2/swift64-sanitizers/cache",
         "--config-path",
-        "<scratch>/release/swift64-sanitizers/config",
+        "<scratch>/release2/swift64-sanitizers/config",
         "--security-path",
-        "<scratch>/release/swift64-sanitizers/security",
+        "<scratch>/release2/swift64-sanitizers/security",
         "--build-system",
         "swiftbuild",
         "--jobs",
@@ -122,7 +122,7 @@
       "cwd": "<repo>",
       "log": "swift-test-help.log",
       "exit_code": 0,
-      "seconds": 0.051
+      "seconds": 0.053
     },
     {
       "label": "swift-package-help",
@@ -135,7 +135,7 @@
       "cwd": "<repo>",
       "log": "swift-package-help.log",
       "exit_code": 0,
-      "seconds": 0.796
+      "seconds": 0.957
     },
     {
       "label": "target-info",
@@ -147,7 +147,7 @@
       "cwd": "<repo>",
       "log": "target-info.log",
       "exit_code": 0,
-      "seconds": 0.08
+      "seconds": 0.088
     },
     {
       "label": "asan-discovery",
@@ -158,13 +158,13 @@
         "--package-path",
         "<repo>",
         "--scratch-path",
-        "<scratch>/release/swift64-sanitizers/build/asan",
+        "<scratch>/release2/swift64-sanitizers/build/asan",
         "--cache-path",
-        "<scratch>/release/swift64-sanitizers/cache",
+        "<scratch>/release2/swift64-sanitizers/cache",
         "--config-path",
-        "<scratch>/release/swift64-sanitizers/config",
+        "<scratch>/release2/swift64-sanitizers/config",
         "--security-path",
-        "<scratch>/release/swift64-sanitizers/security",
+        "<scratch>/release2/swift64-sanitizers/security",
         "--build-system",
         "swiftbuild",
         "--jobs",
@@ -180,7 +180,7 @@
       "cwd": "<repo>",
       "log": "asan-discovery.log",
       "exit_code": 0,
-      "seconds": 24.366
+      "seconds": 29.504
     },
     {
       "label": "asan-tests",
@@ -191,13 +191,13 @@
         "--package-path",
         "<repo>",
         "--scratch-path",
-        "<scratch>/release/swift64-sanitizers/build/asan",
+        "<scratch>/release2/swift64-sanitizers/build/asan",
         "--cache-path",
-        "<scratch>/release/swift64-sanitizers/cache",
+        "<scratch>/release2/swift64-sanitizers/cache",
         "--config-path",
-        "<scratch>/release/swift64-sanitizers/config",
+        "<scratch>/release2/swift64-sanitizers/config",
         "--security-path",
-        "<scratch>/release/swift64-sanitizers/security",
+        "<scratch>/release2/swift64-sanitizers/security",
         "--build-system",
         "swiftbuild",
         "--jobs",
@@ -210,12 +210,12 @@
         "--disable-xctest",
         "--skip-build",
         "--xunit-output",
-        "<scratch>/release/swift64-sanitizers/asan-tests.xml"
+        "<scratch>/release2/swift64-sanitizers/asan-tests.xml"
       ],
       "cwd": "<repo>",
       "log": "asan-tests.log",
       "exit_code": 0,
-      "seconds": 5.501
+      "seconds": 6.773
     },
     {
       "label": "tsan-discovery",
@@ -226,13 +226,13 @@
         "--package-path",
         "<repo>",
         "--scratch-path",
-        "<scratch>/release/swift64-sanitizers/build/tsan",
+        "<scratch>/release2/swift64-sanitizers/build/tsan",
         "--cache-path",
-        "<scratch>/release/swift64-sanitizers/cache",
+        "<scratch>/release2/swift64-sanitizers/cache",
         "--config-path",
-        "<scratch>/release/swift64-sanitizers/config",
+        "<scratch>/release2/swift64-sanitizers/config",
         "--security-path",
-        "<scratch>/release/swift64-sanitizers/security",
+        "<scratch>/release2/swift64-sanitizers/security",
         "--build-system",
         "swiftbuild",
         "--jobs",
@@ -248,7 +248,7 @@
       "cwd": "<repo>",
       "log": "tsan-discovery.log",
       "exit_code": 0,
-      "seconds": 25.689
+      "seconds": 35.354
     },
     {
       "label": "tsan-tests",
@@ -259,13 +259,13 @@
         "--package-path",
         "<repo>",
         "--scratch-path",
-        "<scratch>/release/swift64-sanitizers/build/tsan",
+        "<scratch>/release2/swift64-sanitizers/build/tsan",
         "--cache-path",
-        "<scratch>/release/swift64-sanitizers/cache",
+        "<scratch>/release2/swift64-sanitizers/cache",
         "--config-path",
-        "<scratch>/release/swift64-sanitizers/config",
+        "<scratch>/release2/swift64-sanitizers/config",
         "--security-path",
-        "<scratch>/release/swift64-sanitizers/security",
+        "<scratch>/release2/swift64-sanitizers/security",
         "--build-system",
         "swiftbuild",
         "--jobs",
@@ -278,12 +278,12 @@
         "--disable-xctest",
         "--skip-build",
         "--xunit-output",
-        "<scratch>/release/swift64-sanitizers/tsan-tests.xml"
+        "<scratch>/release2/swift64-sanitizers/tsan-tests.xml"
       ],
       "cwd": "<repo>",
       "log": "tsan-tests.log",
       "exit_code": 0,
-      "seconds": 16.661
+      "seconds": 25.494
     }
   ],
   "test_runs": [
@@ -322,15 +322,15 @@
   "xctest_detected": false,
   "toolchain_swift": "Apple Swift version 6.4 (swift-6.4-RELEASE)\nTarget: arm64-apple-macosx26.0",
   "toolchain_xcode": "Xcode 26.2\nBuild version 17C52",
-  "source_commit": "67273dbb5a195c1b2a1f47f311d9a1e4cd7f9203",
-  "working_tree": "?? Documentation/RELEASE-12.1.0.md\n",
-  "manifest_sha256": "d1124830a89a7eafeef4f5b38c56fb76417e098b5b4c6426d1e287db624311b7",
+  "source_commit": "f3e13a061963dc5af62605071aa6d0243105f6f4",
+  "working_tree": " M Documentation/RELEASE-12.1.0.md\n",
+  "manifest_sha256": "b403437a541e5b6e23e9c4a72bdda2e8c91dd188be31e7fdd7b376bf5cee849d",
   "source_files_sha256": {
-    "Package.swift": "d1124830a89a7eafeef4f5b38c56fb76417e098b5b4c6426d1e287db624311b7",
+    "Package.swift": "b403437a541e5b6e23e9c4a72bdda2e8c91dd188be31e7fdd7b376bf5cee849d",
     "Scripts/README.md": "7cc22ddd50c61f1069a271604c199fff54e5c9f5b3b83fb59fc6f733aa4c8941",
-    "Scripts/benchmark-lossless.py": "4c20b4c18b81aceb33513ce6aa79878ca5ffb56742a98a079e34a8516d1f2815",
+    "Scripts/benchmark-lossless.py": "d1dc05244c862825b14ab4b67acbc9d711d2c86012e76031e5cb1710b278be63",
     "Scripts/generate-lossless-fixtures.py": "aab74584e34898d5e59c9c744e96abc63b8e1422f24405d42d75b00b9827d9f2",
-    "Scripts/install-cli.sh": "acdf46f830e33e49dfebeaa98f06316fc73bae484c14ba60d74acfdafb63699f",
+    "Scripts/install-cli.sh": "10ff1fbd8b59292545c245175090a8fedd27663b921409dff56deaa0a5952d55",
     "Scripts/test-cli.py": "35786aeca38423d24037afdac10be9136ec0e17c633f12cef630526f948fe991",
     "Scripts/validate-swift64.py": "da528d6e8bcf21a5bc369b2abec9a67c47737152fafff2c38ef884f2d07e83ef",
     "Scripts/validate.sh": "5edc7443bf7b061f728d652d45e1fb1d5c6e90d2666554a677d6a14a6a752311",
@@ -351,7 +351,7 @@
     "Sources/SwiftJ2K/Options.swift": "dd43c63592bf4d74c53626374fb4494b0815315f0f64bc1a2831f9c066b5d787",
     "Sources/SwiftJ2K/Telemetry.swift": "28381e81f80e821c8026e428e43e89ab96505d1878bafc117cd954dcdb4d9af2",
     "Sources/SwiftJ2K/Transcoding.swift": "d58824293db44bc9bbbd69b9e313b25f7e2fe0efa49a917c38c36c8120c9291e",
-    "Sources/SwiftJ2KCLI/main.swift": "9cfcdf901471140c69dd6adcfb4377cfe8573201a87f8dd3360b2ccd343c33fb",
+    "Sources/SwiftJ2KCLI/main.swift": "df65e2823d1ad210d3f89690ae4d63e470c61c25b31108e32a78a535f3570abc",
     "Tests/SwiftJ2KTests/BehaviourTests.swift": "9de3ed1ba8e86ce4f26c9f45d1c09a9126d5da44b530ce60f9d164e7aac371ff",
     "Tests/SwiftJ2KTests/CancellationPublicationTests.swift": "23c0de9146e2c4a09ec66fc45bd0d021fdbb77da05d5d7eef332faa05385570b",
     "Tests/SwiftJ2KTests/ContractTests.swift": "52e924794b409e25ceb17e440fd95feaf41ca168ffd8aff0fb6053d5eeb56c0e",
@@ -645,5 +645,5 @@
       "SwiftJ2KTests.waveletForwardInverseIsIdentity(width:height:)"
     ]
   },
-  "finished_utc": "2026-09-22T13:40:53.940629+00:00"
+  "finished_utc": "2026-09-23T10:59:59.392882+00:00"
 }

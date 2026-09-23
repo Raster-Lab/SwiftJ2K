@@ -19,10 +19,10 @@ Building for debugging...
 [19/25] Compiling SwiftJ2K Options.swift
 [20/25] Compiling SwiftJ2K Telemetry.swift
 [21/25] Compiling SwiftJ2K Transcoding.swift
-[22/28] Wrapping AST for SwiftJ2K for debugging
+[22/26] Wrapping AST for SwiftJ2K for debugging
 [24/28] Emitting module SwiftJ2KCLI
 [25/28] Compiling SwiftJ2KCLI main.swift
 [26/29] Wrapping AST for SwiftJ2KCLI for debugging
 [27/29] Write Objects.LinkFileList
-[28/29] Linking swiftj2k
-Build complete! (12.06s)
+[28/29] Linking swiftj2k-cli
+Build complete! (13.11s)

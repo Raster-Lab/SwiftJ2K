@@ -1,14 +1,14 @@
 linux debug-build exit 0
 linux debug-test exit 0
-✔ Test run with 78 tests in 2 suites passed after 5.400 seconds.
+✔ Test run with 78 tests in 2 suites passed after 5.832 seconds.
 linux release-build exit 0
-swiftj2k 12.1.0
+swiftj2k-cli 12.1.0
 apt exit 0
 linux cli-test exit 0
-swiftj2k: 147 process checks passed
+swiftj2k-cli: 147 process checks passed
 linux consumer exit 0
 Independent SwiftJ2K consumer passed; 106-byte lossless codestream round-tripped.
 linux url-consumer exit 0
-Working copy of https://github.com/Raster-Lab/SwiftJ2K.git resolved at 67273dbb5a195c1b2a1f47f311d9a1e4cd7f9203
+Working copy of https://github.com/Raster-Lab/SwiftJ2K.git resolved at f3e13a061963dc5af62605071aa6d0243105f6f4
 Independent SwiftJ2K consumer passed; 106-byte lossless codestream round-tripped.
 docker exit 0

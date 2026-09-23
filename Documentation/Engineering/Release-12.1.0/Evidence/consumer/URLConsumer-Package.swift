@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "URLConsumer",
     platforms: [.macOS(.v26)],
-    dependencies: [.package(url: "https://github.com/Raster-Lab/SwiftJ2K.git", revision: "67273dbb5a195c1b2a1f47f311d9a1e4cd7f9203")],
+    dependencies: [.package(url: "https://github.com/Raster-Lab/SwiftJ2K.git", revision: "f3e13a061963dc5af62605071aa6d0243105f6f4")],
     targets: [.executableTarget(name: "URLConsumer", dependencies: [.product(name: "SwiftJ2K", package: "SwiftJ2K")])],
     swiftLanguageModes: [.v6]
 )

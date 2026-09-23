@@ -1,39 +1,38 @@
 Building for debugging...
-[Pre-planning 7 / 66]
+[Pre-planning 1 / 66]
 [Planning deferred tasks]
 [23 / 38] SwiftJ2K
-[27 / 94]
-[30 / 94]
+[28 / 94]
 [32 / 94]
 [36 / 94]
-[38 / 94]
-[39 / 94]
-[41 / 94]
+[37 / 94]
+[40 / 94]
+[43 / 94]
 [44 / 94]
-[47 / 94]
-[49 / 94]
+[48 / 94]
 [51 / 94]
+[52 / 94]
 [54 / 94]
-[58 / 94]
-[59 / 94]
+[55 / 94]
+[57 / 94]
+[60 / 94]
 [61 / 94]
 [62 / 94]
-[64 / 94]
+[63 / 94]
 [65 / 94]
-[66 / 94]
 [67 / 94]
 [68 / 94]
 [71 / 94] SwiftJ2K
 [72 / 94] SwiftJ2K
-[79 / 94] SwiftJ2K
-[80 / 94] SwiftJ2K-product
-[81 / 94] SwiftJ2K
+[75 / 94] SwiftJ2K
+[80 / 94] SwiftJ2K
 [82 / 94] SwiftJ2K-product
-[84 / 94] SwiftJ2K
+[83 / 94] SwiftJ2K-product
 [85 / 94] SwiftJ2K
-[85 / 94] Consumer-product
-[90 / 95] Consumer-product
-[92 / 97] Consumer-product
+[88 / 95]
+[90 / 97] Consumer-product
+[93 / 97] SwiftJ2K
+[94 / 97] SwiftJ2K
 [95 / 97] Consumer-product
-Build complete! (17.79 secs)
+Build complete! (15.60 secs)
 Fresh independent consumer passed; 92-byte codestream round-tripped

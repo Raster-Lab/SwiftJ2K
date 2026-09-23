@@ -3,17 +3,18 @@ Building for production...
 [Planning deferred tasks]
 [12 / 30] SwiftJ2K
 [14 / 31] SwiftJ2K
-[24 / 38] SwiftJ2KTests-product
+[20 / 36] SwiftJ2KTests-product
+[25 / 39] swiftj2k-cli-product
 [26 / 39] SwiftJ2KTests-product
-[26 / 41] SwiftJ2KTests-product
+[27 / 41]
 [28 / 41] SwiftJ2KTests-product
 [29 / 41]
-[31 / 41] swiftj2k-product
-[32 / 41] swiftj2k-product
+[31 / 41] swiftj2k-cli-product
+[32 / 41] swiftj2k-cli-product
 [34 / 43] SwiftJ2KTests-product
 [39 / 43] SwiftJ2KTests-product
 [41 / 43] SwiftJ2KTests-product
-Build complete! (30.06 secs)
+Build complete! (33.94 secs)
 SwiftJ2KTests.DescriptorTests/deterministicLayoutMutation()
 SwiftJ2KTests.DescriptorTests/finalRowNeedsOnlyItsActualSampleBytes()
 SwiftJ2KTests.DescriptorTests/paddedOddDimensionsAndPrecision()

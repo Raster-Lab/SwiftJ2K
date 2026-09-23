@@ -110,10 +110,10 @@
     "g16_8x8_zero.opj_n2_b16.j2k",
     "rgb8_16x16.opj.j2k"
   ],
-  "elapsedSeconds" : 3600.0002199999999,
+  "elapsedSeconds" : 3600.000128875,
   "entry" : "inspect",
   "final" : true,
-  "iterations" : 13650790,
+  "iterations" : 13783050,
   "limits" : {
     "deadlineSeconds" : 5,
     "maximumDecodedBytes" : 67108864,
@@ -121,27 +121,27 @@
     "maximumWorkspaceBytes" : 268435456
   },
   "mutations" : {
-    "bitFlip" : 3412861,
-    "byteSet" : 3413167,
-    "deleteChunk" : 3410708,
-    "duplicateChunk" : 3412494,
-    "headerField" : 3412379,
-    "insertChunk" : 3412062,
-    "markerLength" : 3412318,
-    "splice" : 3411962,
-    "truncate" : 3412617,
-    "zeroRun" : 3415104
+    "bitFlip" : 3445494,
+    "byteSet" : 3442990,
+    "deleteChunk" : 3443613,
+    "duplicateChunk" : 3447518,
+    "headerField" : 3445317,
+    "insertChunk" : 3450095,
+    "markerLength" : 3448631,
+    "splice" : 3444697,
+    "truncate" : 3446037,
+    "zeroRun" : 3447195
   },
   "outcomes" : {
-    "malformedInput" : 11259400,
-    "resourceLimitExceeded" : 264160,
-    "success" : 1740786,
-    "unsupportedFeature" : 275450,
-    "unsupportedFormat" : 110994
+    "malformedInput" : 11370703,
+    "resourceLimitExceeded" : 265170,
+    "success" : 1756088,
+    "unsupportedFeature" : 278136,
+    "unsupportedFormat" : 112953
   },
-  "peakResidentBytes" : 16302080,
-  "seed" : 20260922,
-  "slowestMilliseconds" : 53.514499999999998,
+  "peakResidentBytes" : 16646144,
+  "seed" : 20260923,
+  "slowestMilliseconds" : 13.942625,
   "slowInputsKept" : 0,
   "unexpectedErrors" : 0
 }

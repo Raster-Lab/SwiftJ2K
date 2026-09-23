@@ -1,178 +1,101 @@
-==87858==WARN: Invalid dyld module map detected. This is most likely a bug in the sanitizer.
-==87858==WARN: Backtraces may be unreliable.
+==32546==WARN: Invalid dyld module map detected. This is most likely a bug in the sanitizer.
+==32546==WARN: Backtraces may be unreliable.
 ◇ Test run started.
 ↳ Testing Library Version: 1501
 ↳ Target Platform: arm64e-apple-macos14.0
-◇ Test descriptorMutationRejectsInvalidStridesAndOffsets() started.
-◇ Test supportedSyntaxVariantsDecodeExactly(variant:) started.
-◇ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() started.
-◇ Test pixelAndDimensionLimitsRejectBeforeAllocation() started.
-◇ Suite "Descriptor validation" started.
-◇ Test abandonedDestinationInvalidatesItsReservedOwner() started.
-◇ Test safeWriterRejectsOutOfRangeInsteadOfTruncating() started.
-◇ Test independentDecodersReadSuccessorCodestreams(name:) started.
-◇ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() started.
-◇ Test metadataAndDestinationLimitsUseCallerBudget() started.
-◇ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() started.
-◇ Test configurationsAndBackendRequestsRejectUnsupportedChoices() started.
-◇ Test adaptersShareWriterAuthorityAndRejectForgedLease() started.
-◇ Test encoderRejectsSamplesOutsideDeclaredPrecision() started.
-◇ Test invalidResourceProfilesAndProgressFailPredictably() started.
-◇ Test borrowedStorageRejectsForgedLeasesAndPublication() started.
-◇ Test explicitLargerMetadataLimitIsHonoured() started.
-◇ Test failedFillInvalidatesDestination() started.
-◇ Test waveletForwardInverseIsIdentity(width:height:) started.
-◇ Test cancellationInProviderFinalisationPreventsPublication(_:) started.
-◇ Test publicOperationsRejectForeignBytesAndAdvertiseScalarLosslessCoverage() started.
-◇ Test unknownMeasurementsStayUnknownAndMetadataIsBounded() started.
-◇ Test independentPublicCallShapesReportTheirActualCoverage() started.
-◇ Test concurrentAdaptersReserveExactlyOneWriter() started.
-◇ Test encoderOutputDecodesExactlyWithDefaultOptions(name:) started.
 ◇ Suite "Byte-order sample access" started.
-◇ Test integerOverflowWithExplicitLargeLimitsThrows() started.
-◇ Test truncatedCodestreamsFailWithDefinedErrors() started.
-◇ Test safeSampleAccessHonoursExplicitBigEndian() started.
-◇ Test incompatibleDestinationIsRejectedInPreflight() started.
-◇ Test independentAllocationAndMemoryCeilingsAreEnforced() started.
-◇ Test progressIsMonotonicAndCompletesAfterPublication() started.
-◇ Test codecOptionsAreValidatedExplicitly() started.
-◇ Test decodeIntoCallerStorageKeepsIdentityAndLeavesPaddingUntouched() started.
-◇ Test case passing 1 argument variant → "precincts" to supportedSyntaxVariantsDecodeExactly(variant:) started.
-◇ Test degenerateGeometriesRoundTrip(width:height:) started.
-◇ Test case passing 1 argument name → "g16_1x1_max" to independentDecodersReadSuccessorCodestreams(name:) started.
-◇ Test cancellationDuringDecodeInvalidatesTheDestination() started.
-◇ Test case passing 1 argument variant → "cprl" to supportedSyntaxVariantsDecodeExactly(variant:) started.
-◇ Test sealedOwnerSupportsConcurrentReadersAndNestedRead() started.
-◇ Test case passing 1 argument variant → "rpcl" to supportedSyntaxVariantsDecodeExactly(variant:) started.
-◇ Test case passing 1 argument variant → "kdu_tileparts" to supportedSyntaxVariantsDecodeExactly(variant:) started.
-◇ Test singleBitCorruptionNeverTrapsOrHangs() started.
-◇ Test decoderPreservesTaskCancellationError() started.
-◇ Test case passing 1 argument variant → "kdu_plt" to supportedSyntaxVariantsDecodeExactly(variant:) started.
-◇ Test case passing 1 argument variant → "sop_eph" to supportedSyntaxVariantsDecodeExactly(variant:) started.
-◇ Test allocatingDecodeUsesTheSameFinalOutputPathWithOneAllocation() started.
-◇ Test case passing 1 argument variant → "tiled" to supportedSyntaxVariantsDecodeExactly(variant:) started.
-◇ Test cancellationDuringSyntheticRowsInvalidatesDestination() started.
-◇ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() started.
-◇ Test case passing 1 argument variant → "layers2" to supportedSyntaxVariantsDecodeExactly(variant:) started.
-◇ Test case passing 1 argument variant → "bypass" to supportedSyntaxVariantsDecodeExactly(variant:) started.
-◇ Test independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument variant → "termall" to supportedSyntaxVariantsDecodeExactly(variant:) started.
-◇ Test validButUnsupportedCodestreamsAreRejectedBeforeDecoding(variant:expected:) started.
-◇ Test case passing 1 argument variant → "segsym" to supportedSyntaxVariantsDecodeExactly(variant:) started.
-◇ Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() started.
-◇ Test syntaxCoverageVariantsDecodeExactly(file:) started.
-◇ Test paddedStorageCountsTowardsDecodedLimit() started.
-◇ Test tagTreeEncodesAndDecodesInclusionAndZeroBitPlanes() started.
-◇ Test headerOnlyInputIsMalformedNotAnImage() started.
-◇ Test cancellationInsideWriteCannotPublishPartialImage() started.
+◇ Test encoderOutputDecodesExactlyWithDefaultOptions(name:) started.
 ◇ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() started.
-◇ Test extremeValuesSurviveEveryPrecision() started.
-◇ Test case passing 2 arguments width → 1, height → 1 to waveletForwardInverseIsIdentity(width:height:) started.
-◇ Test case passing 1 argument point → .sealing to cancellationInProviderFinalisationPreventsPublication(_:) started.
-◇ Test case passing 1 argument point → .validatingSealedStorage to cancellationInProviderFinalisationPreventsPublication(_:) started.
-◇ Test case passing 2 arguments width → 1, height → 9 to waveletForwardInverseIsIdentity(width:height:) started.
-◇ Test case passing 2 arguments width → 9, height → 1 to waveletForwardInverseIsIdentity(width:height:) started.
-◇ Test encoderIgnoresRowPaddingAndReadsSharedStorageOnce() started.
-◇ Test mutationsOfStrideAndByteOrderAreCaughtByTheSharedStorageChecks() started.
-◇ Test encoderRefusesMetadataItCannotCarry() started.
-◇ Test case passing 2 arguments width → 2, height → 3 to waveletForwardInverseIsIdentity(width:height:) started.
+◇ Test independentPublicCallShapesReportTheirActualCoverage() started.
 ◇ Test resourceLimitsGateAdmission() started.
-◇ Test case passing 2 arguments width → 33, height → 17 to waveletForwardInverseIsIdentity(width:height:) started.
-◇ Test syntheticExactSamplesAndPadding(precision:) started.
-◇ Test mqCoderRoundTripsRandomSymbolsOverAllContexts() started.
-◇ Test case passing 2 arguments width → 64, height → 64 to waveletForwardInverseIsIdentity(width:height:) started.
-◇ Test bothCopyPoliciesUseTheSharedPathAndReportNoCopy() started.
-◇ Test colourCodestreamsAreRejected() started.
 ◇ Test decodeWritesOnlySampleBytesOfTheCallerAllocation(name:variant:prefix:padding:) started.
-◇ Test roundTripThroughCallerStorageWithDifferentStridesOnEachSide() started.
-◇ Test packetBitCoderStuffsAfterFF() started.
-◇ Test encoderOptionsRoundTrip(levels:blockWidth:blockHeight:) started.
 ◇ Test cancellationIsCheckedBeforeAllocatingStorage() started.
+◇ Test roundTripThroughCallerStorageWithDifferentStridesOnEachSide() started.
+◇ Test concurrentAdaptersReserveExactlyOneWriter() started.
+◇ Test metadataAndDestinationLimitsUseCallerBudget() started.
+◇ Test extremeValuesSurviveEveryPrecision() started.
+◇ Test encoderRejectsSamplesOutsideDeclaredPrecision() started.
+◇ Test syntheticExactSamplesAndPadding(precision:) started.
+◇ Suite "Descriptor validation" started.
+◇ Test waveletForwardInverseIsIdentity(width:height:) started.
+◇ Test invalidResourceProfilesAndProgressFailPredictably() started.
+◇ Test descriptorMutationRejectsInvalidStridesAndOffsets() started.
+◇ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() started.
+◇ Test publicOperationsRejectForeignBytesAndAdvertiseScalarLosslessCoverage() started.
+◇ Test pixelAndDimensionLimitsRejectBeforeAllocation() started.
+◇ Test configurationsAndBackendRequestsRejectUnsupportedChoices() started.
+◇ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() started.
+◇ Test syntaxCoverageVariantsDecodeExactly(file:) started.
+◇ Test explicitLargerMetadataLimitIsHonoured() started.
+◇ Test tagTreeEncodesAndDecodesInclusionAndZeroBitPlanes() started.
+◇ Test progressIsMonotonicAndCompletesAfterPublication() started.
+◇ Test supportedSyntaxVariantsDecodeExactly(variant:) started.
+◇ Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() started.
+◇ Test cancellationDuringSyntheticRowsInvalidatesDestination() started.
+◇ Test sealedOwnerSupportsConcurrentReadersAndNestedRead() started.
+◇ Test failedFillInvalidatesDestination() started.
+◇ Test cancellationDuringDecodeInvalidatesTheDestination() started.
+◇ Test mutationsOfStrideAndByteOrderAreCaughtByTheSharedStorageChecks() started.
+◇ Test decodeIntoCallerStorageKeepsIdentityAndLeavesPaddingUntouched() started.
 ◇ Test reentrantLeaseOperationsRejectWithoutDeadlocking() started.
-◇ Test semanticMetadataMustAgreeWithComponents() started.
-◇ Test paddedOddDimensionsAndPrecision() started.
-◇ Test deterministicLayoutMutation() started.
-◇ Test rejectsArithmeticOverflowBeforeAllocation() started.
+◇ Test allocatingDecodeUsesTheSameFinalOutputPathWithOneAllocation() started.
+◇ Test cancellationInsideWriteCannotPublishPartialImage() started.
+◇ Test incompatibleDestinationIsRejectedInPreflight() started.
+◇ Test bothCopyPoliciesUseTheSharedPathAndReportNoCopy() started.
+◇ Test independentAllocationAndMemoryCeilingsAreEnforced() started.
+◇ Test safeWriterRejectsOutOfRangeInsteadOfTruncating() started.
+◇ Test safeSampleAccessHonoursExplicitBigEndian() started.
+◇ Test headerOnlyInputIsMalformedNotAnImage() started.
+◇ Test integerOverflowWithExplicitLargeLimitsThrows() started.
+◇ Test colourCodestreamsAreRejected() started.
+◇ Test unknownMeasurementsStayUnknownAndMetadataIsBounded() started.
+◇ Test degenerateGeometriesRoundTrip(width:height:) started.
+◇ Test independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test adaptersShareWriterAuthorityAndRejectForgedLease() started.
+◇ Test encoderIgnoresRowPaddingAndReadsSharedStorageOnce() started.
+◇ Test validButUnsupportedCodestreamsAreRejectedBeforeDecoding(variant:expected:) started.
+◇ Test packetBitCoderStuffsAfterFF() started.
+◇ Test cancellationInProviderFinalisationPreventsPublication(_:) started.
+◇ Test independentDecodersReadSuccessorCodestreams(name:) started.
 ◇ Test case passing 1 argument name → "g16_1x1_max" to encoderOutputDecodesExactlyWithDefaultOptions(name:) started.
-◇ Test rejectsOverlappingPlanesAndIncompleteMapping() started.
-◇ Test rejectsMisalignedOffsetsAndStrides() started.
-◇ Test rejectsInvalidGeometryAndPrecision() started.
-◇ Test case passing 1 argument name → "g16_8x8_zero" to encoderOutputDecodesExactlyWithDefaultOptions(name:) started.
 ◇ Test case passing 1 argument name → "g16_8x8_const" to encoderOutputDecodesExactlyWithDefaultOptions(name:) started.
 ◇ Test case passing 1 argument name → "g12_5x3_ramp_extremes" to encoderOutputDecodesExactlyWithDefaultOptions(name:) started.
+◇ Test case passing 1 argument name → "g16_8x8_zero" to encoderOutputDecodesExactlyWithDefaultOptions(name:) started.
+◇ Test truncatedCodestreamsFailWithDefinedErrors() started.
 ◇ Test case passing 1 argument name → "g16_17x9_alternating" to encoderOutputDecodesExactlyWithDefaultOptions(name:) started.
 ◇ Test case passing 1 argument name → "g16_64x64_random" to encoderOutputDecodesExactlyWithDefaultOptions(name:) started.
-◇ Test case passing 1 argument name → "g12_129x67_gradient" to encoderOutputDecodesExactlyWithDefaultOptions(name:) started.
-◇ Test finalRowNeedsOnlyItsActualSampleBytes() started.
+◇ Test paddedStorageCountsTowardsDecodedLimit() started.
 ◇ Test case passing 1 argument name → "g16_256x256_smooth" to encoderOutputDecodesExactlyWithDefaultOptions(name:) started.
+◇ Test case passing 1 argument name → "g12_129x67_gradient" to encoderOutputDecodesExactlyWithDefaultOptions(name:) started.
+◇ Test decoderPreservesTaskCancellationError() started.
 ◇ Test case passing 1 argument name → "g08_37x23_random" to encoderOutputDecodesExactlyWithDefaultOptions(name:) started.
+◇ Test mqCoderRoundTripsRandomSymbolsOverAllContexts() started.
 ◇ Test case passing 1 argument name → "g10_300x200_gradient" to encoderOutputDecodesExactlyWithDefaultOptions(name:) started.
-◇ Test case passing 2 arguments width → 1, height → 1 to degenerateGeometriesRoundTrip(width:height:) started.
-◇ Test case passing 2 arguments width → 1, height → 7 to degenerateGeometriesRoundTrip(width:height:) started.
-◇ Test case passing 2 arguments width → 7, height → 1 to degenerateGeometriesRoundTrip(width:height:) started.
-◇ Test case passing 2 arguments width → 2, height → 2 to degenerateGeometriesRoundTrip(width:height:) started.
-◇ Test case passing 2 arguments width → 3, height → 5 to degenerateGeometriesRoundTrip(width:height:) started.
-◇ Test case passing 2 arguments width → 65, height → 1 to degenerateGeometriesRoundTrip(width:height:) started.
-◇ Test case passing 2 arguments width → 1, height → 65 to degenerateGeometriesRoundTrip(width:height:) started.
-◇ Test case passing 2 arguments width → 17, height → 33 to degenerateGeometriesRoundTrip(width:height:) started.
-✔ Test safeWriterRejectsOutOfRangeInsteadOfTruncating() passed after 0.510 seconds.
-✔ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() passed after 0.513 seconds.
-✔ Test descriptorMutationRejectsInvalidStridesAndOffsets() passed after 0.522 seconds.
-✔ Test metadataAndDestinationLimitsUseCallerBudget() passed after 0.522 seconds.
-✔ Test configurationsAndBackendRequestsRejectUnsupportedChoices() passed after 0.522 seconds.
-◇ Test case passing 1 argument key → "g16_1x1_max|g16_1x1_max.opj_n1.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_1x1_max|g16_1x1_max.kdu.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_1x1_max|g16_1x1_max.kdu_l3.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_8x8_zero|g16_8x8_zero.opj_n1.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_8x8_zero|g16_8x8_zero.opj_n2_b16.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_8x8_zero|g16_8x8_zero.kdu.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_8x8_zero|g16_8x8_zero.kdu_l3.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_8x8_const|g16_8x8_const.opj_n1.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_8x8_const|g16_8x8_const.opj_n2_b16.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_8x8_const|g16_8x8_const.kdu.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_8x8_const|g16_8x8_const.kdu_l3.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g12_5x3_ramp_extremes|g12_5x3_ramp_extremes.opj_n1.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g12_5x3_ramp_extremes|g12_5x3_ramp_extremes.opj_n2_b16.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g12_5x3_ramp_extremes|g12_5x3_ramp_extremes.kdu.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g12_5x3_ramp_extremes|g12_5x3_ramp_extremes.kdu_l3.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_17x9_alternating|g16_17x9_alternating.opj_n1.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_17x9_alternating|g16_17x9_alternating.opj_n2_b16.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_17x9_alternating|g16_17x9_alternating.kdu.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_17x9_alternating|g16_17x9_alternating.kdu_l3.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_64x64_random|g16_64x64_random.opj.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_64x64_random|g16_64x64_random.opj_n1.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_64x64_random|g16_64x64_random.opj_b32.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_64x64_random|g16_64x64_random.opj_n2_b16.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_64x64_random|g16_64x64_random.opj_rpcl.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_64x64_random|g16_64x64_random.kdu.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_64x64_random|g16_64x64_random.kdu_l3.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g12_129x67_gradient|g12_129x67_gradient.opj.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g12_129x67_gradient|g12_129x67_gradient.opj_n1.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g12_129x67_gradient|g12_129x67_gradient.opj_b32.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g12_129x67_gradient|g12_129x67_gradient.opj_n2_b16.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g12_129x67_gradient|g12_129x67_gradient.opj_rpcl.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g12_129x67_gradient|g12_129x67_gradient.kdu.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g12_129x67_gradient|g12_129x67_gradient.kdu_l3.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_256x256_smooth|g16_256x256_smooth.opj.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_256x256_smooth|g16_256x256_smooth.opj_n1.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_256x256_smooth|g16_256x256_smooth.opj_b32.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_256x256_smooth|g16_256x256_smooth.opj_n2_b16.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_256x256_smooth|g16_256x256_smooth.opj_rpcl.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_256x256_smooth|g16_256x256_smooth.kdu.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g16_256x256_smooth|g16_256x256_smooth.kdu_l3.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g08_37x23_random|g08_37x23_random.opj_n1.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g08_37x23_random|g08_37x23_random.opj_n2_b16.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g08_37x23_random|g08_37x23_random.kdu.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g08_37x23_random|g08_37x23_random.kdu_l3.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g10_300x200_gradient|g10_300x200_gradient.opj.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g10_300x200_gradient|g10_300x200_gradient.opj_n1.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g10_300x200_gradient|g10_300x200_gradient.opj_b32.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g10_300x200_gradient|g10_300x200_gradient.opj_n2_b16.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g10_300x200_gradient|g10_300x200_gradient.opj_rpcl.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g10_300x200_gradient|g10_300x200_gradient.kdu.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 1 argument key → "g10_300x200_gradient|g10_300x200_gradient.kdu_l3.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
-◇ Test case passing 2 arguments variant → "irreversible97", expected → "9/7" to validButUnsupportedCodestreamsAreRejectedBeforeDecoding(variant:expected:) started.
-◇ Test case passing 2 arguments variant → "kdu_ht", expected → "Part 15" to validButUnsupportedCodestreamsAreRejectedBeforeDecoding(variant:expected:) started.
+◇ Test rejectsCoordinatesBeforeOffsetArithmetic() started.
+◇ Test refusesShortProviderBeforeLoadingSample() started.
+◇ Test outOfPrecisionWriteInvalidatesDestination() started.
+◇ Test case passing 4 arguments name → "g12_129x67_gradient", variant → "opj", prefix → 6, padding → 10 to decodeWritesOnlySampleBytesOfTheCallerAllocation(name:variant:prefix:padding:) started.
+◇ Test case passing 4 arguments name → "g16_17x9_alternating", variant → "kdu", prefix → 2, padding → 4 to decodeWritesOnlySampleBytesOfTheCallerAllocation(name:variant:prefix:padding:) started.
+◇ Test case passing 4 arguments name → "g12_129x67_gradient", variant → "kdu_l3", prefix → 0, padding → 0 to decodeWritesOnlySampleBytesOfTheCallerAllocation(name:variant:prefix:padding:) started.
+◇ Test initialisesExternalSampleBytesAtOddAddressWithoutChangingPadding() started.
+◇ Test writesGoldenBytesForPackedAndPadded12And16BitSamples() started.
+◇ Test codecOptionsAreValidatedExplicitly() started.
+◇ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() started.
+◇ Test case passing 1 argument precision → 12 to syntheticExactSamplesAndPadding(precision:) started.
+◇ Test encoderOptionsRoundTrip(levels:blockWidth:blockHeight:) started.
+◇ Test case passing 1 argument precision → 16 to syntheticExactSamplesAndPadding(precision:) started.
+◇ Test encoderRefusesMetadataItCannotCarry() started.
+◇ Test readsIndependentGoldenBytesFromOddPhysicalAddress() started.
+◇ Test singleBitCorruptionNeverTrapsOrHangs() started.
+◇ Test borrowedStorageRejectsForgedLeasesAndPublication() started.
+◇ Test abandonedDestinationInvalidatesItsReservedOwner() started.
+◇ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() started.
+◇ Test case passing 2 arguments width → 1, height → 1 to waveletForwardInverseIsIdentity(width:height:) started.
+◇ Test case passing 2 arguments width → 1, height → 9 to waveletForwardInverseIsIdentity(width:height:) started.
+◇ Test case passing 2 arguments width → 9, height → 1 to waveletForwardInverseIsIdentity(width:height:) started.
+◇ Test case passing 2 arguments width → 2, height → 3 to waveletForwardInverseIsIdentity(width:height:) started.
+◇ Test case passing 2 arguments width → 33, height → 17 to waveletForwardInverseIsIdentity(width:height:) started.
+◇ Test case passing 2 arguments width → 64, height → 64 to waveletForwardInverseIsIdentity(width:height:) started.
 ◇ Test case passing 1 argument file → "g12_129x67_gradient.syntax.layers3_opj.j2k" to syntaxCoverageVariantsDecodeExactly(file:) started.
 ◇ Test case passing 1 argument file → "g12_129x67_gradient.syntax.layers3_kdu.j2k" to syntaxCoverageVariantsDecodeExactly(file:) started.
 ◇ Test case passing 1 argument file → "g12_129x67_gradient.syntax.bypass_opj.j2k" to syntaxCoverageVariantsDecodeExactly(file:) started.
@@ -180,16 +103,27 @@
 ◇ Test case passing 1 argument file → "g12_129x67_gradient.syntax.restart_opj.j2k" to syntaxCoverageVariantsDecodeExactly(file:) started.
 ◇ Test case passing 1 argument file → "g12_129x67_gradient.syntax.causal_opj.j2k" to syntaxCoverageVariantsDecodeExactly(file:) started.
 ◇ Test case passing 1 argument file → "g12_129x67_gradient.syntax.erterm_opj.j2k" to syntaxCoverageVariantsDecodeExactly(file:) started.
+◇ Test case passing 1 argument variant → "precincts" to supportedSyntaxVariantsDecodeExactly(variant:) started.
 ◇ Test case passing 1 argument file → "g12_129x67_gradient.syntax.segsym_opj.j2k" to syntaxCoverageVariantsDecodeExactly(file:) started.
+◇ Test case passing 1 argument variant → "sop_eph" to supportedSyntaxVariantsDecodeExactly(variant:) started.
 ◇ Test case passing 1 argument file → "g12_129x67_gradient.syntax.allstyles_opj.j2k" to syntaxCoverageVariantsDecodeExactly(file:) started.
 ◇ Test case passing 1 argument file → "g12_129x67_gradient.syntax.bypass_restart_kdu.j2k" to syntaxCoverageVariantsDecodeExactly(file:) started.
+◇ Test case passing 1 argument variant → "rpcl" to supportedSyntaxVariantsDecodeExactly(variant:) started.
 ◇ Test case passing 1 argument file → "g12_129x67_gradient.syntax.allstyles_kdu.j2k" to syntaxCoverageVariantsDecodeExactly(file:) started.
+◇ Test case passing 1 argument variant → "cprl" to supportedSyntaxVariantsDecodeExactly(variant:) started.
 ◇ Test case passing 1 argument file → "g12_129x67_gradient.syntax.tiles37x29_opj.j2k" to syntaxCoverageVariantsDecodeExactly(file:) started.
+◇ Test case passing 1 argument variant → "kdu_tileparts" to supportedSyntaxVariantsDecodeExactly(variant:) started.
 ◇ Test case passing 1 argument file → "g12_129x67_gradient.syntax.tiles64_opj.j2k" to syntaxCoverageVariantsDecodeExactly(file:) started.
+◇ Test case passing 1 argument variant → "kdu_plt" to supportedSyntaxVariantsDecodeExactly(variant:) started.
 ◇ Test case passing 1 argument file → "g12_129x67_gradient.syntax.origin_opj.j2k" to syntaxCoverageVariantsDecodeExactly(file:) started.
+◇ Test case passing 1 argument variant → "tiled" to supportedSyntaxVariantsDecodeExactly(variant:) started.
+◇ Test case passing 1 argument variant → "layers2" to supportedSyntaxVariantsDecodeExactly(variant:) started.
 ◇ Test case passing 1 argument file → "g12_129x67_gradient.syntax.origin_tiles_opj.j2k" to syntaxCoverageVariantsDecodeExactly(file:) started.
+◇ Test case passing 1 argument variant → "bypass" to supportedSyntaxVariantsDecodeExactly(variant:) started.
 ◇ Test case passing 1 argument file → "g12_129x67_gradient.syntax.tiles_kdu.j2k" to syntaxCoverageVariantsDecodeExactly(file:) started.
+◇ Test case passing 1 argument variant → "termall" to supportedSyntaxVariantsDecodeExactly(variant:) started.
 ◇ Test case passing 1 argument file → "g12_129x67_gradient.syntax.origin_kdu.j2k" to syntaxCoverageVariantsDecodeExactly(file:) started.
+◇ Test case passing 1 argument variant → "segsym" to supportedSyntaxVariantsDecodeExactly(variant:) started.
 ◇ Test case passing 1 argument file → "g12_129x67_gradient.syntax.pcrl_precincts_opj.j2k" to syntaxCoverageVariantsDecodeExactly(file:) started.
 ◇ Test case passing 1 argument file → "g12_129x67_gradient.syntax.cprl_precincts_opj.j2k" to syntaxCoverageVariantsDecodeExactly(file:) started.
 ◇ Test case passing 1 argument file → "g12_129x67_gradient.syntax.rpcl_precincts_kdu.j2k" to syntaxCoverageVariantsDecodeExactly(file:) started.
@@ -217,105 +151,171 @@
 ◇ Test case passing 1 argument file → "g16_64x64_random.syntax.rpcl_precincts_kdu.j2k" to syntaxCoverageVariantsDecodeExactly(file:) started.
 ◇ Test case passing 1 argument file → "g16_64x64_random.syntax.everything_opj.j2k" to syntaxCoverageVariantsDecodeExactly(file:) started.
 ◇ Test case passing 1 argument file → "g16_64x64_random.syntax.everything_kdu.j2k" to syntaxCoverageVariantsDecodeExactly(file:) started.
-✔ Test invalidResourceProfilesAndProgressFailPredictably() passed after 9.088 seconds.
-✔ Test adaptersShareWriterAuthorityAndRejectForgedLease() passed after 9.095 seconds.
-✔ Test borrowedStorageRejectsForgedLeasesAndPublication() passed after 9.095 seconds.
-✔ Test encoderRejectsSamplesOutsideDeclaredPrecision() passed after 9.095 seconds.
-✔ Test pixelAndDimensionLimitsRejectBeforeAllocation() passed after 9.096 seconds.
-✔ Test abandonedDestinationInvalidatesItsReservedOwner() passed after 9.096 seconds.
-✔ Test waveletForwardInverseIsIdentity(width:height:) with 6 test cases passed after 9.095 seconds.
-✔ Test failedFillInvalidatesDestination() passed after 9.096 seconds.
-◇ Test case passing 1 argument precision → 12 to syntheticExactSamplesAndPadding(precision:) started.
-◇ Test case passing 1 argument precision → 16 to syntheticExactSamplesAndPadding(precision:) started.
-✔ Test publicOperationsRejectForeignBytesAndAdvertiseScalarLosslessCoverage() passed after 9.210 seconds.
-◇ Test case passing 4 arguments name → "g12_129x67_gradient", variant → "opj", prefix → 6, padding → 10 to decodeWritesOnlySampleBytesOfTheCallerAllocation(name:variant:prefix:padding:) started.
-◇ Test case passing 4 arguments name → "g16_17x9_alternating", variant → "kdu", prefix → 2, padding → 4 to decodeWritesOnlySampleBytesOfTheCallerAllocation(name:variant:prefix:padding:) started.
-◇ Test case passing 4 arguments name → "g12_129x67_gradient", variant → "kdu_l3", prefix → 0, padding → 0 to decodeWritesOnlySampleBytesOfTheCallerAllocation(name:variant:prefix:padding:) started.
+◇ Test case passing 1 argument key → "g16_1x1_max|g16_1x1_max.opj_n1.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g16_1x1_max|g16_1x1_max.kdu.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g16_1x1_max|g16_1x1_max.kdu_l3.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g16_8x8_zero|g16_8x8_zero.opj_n1.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 2 arguments width → 1, height → 1 to degenerateGeometriesRoundTrip(width:height:) started.
+◇ Test case passing 1 argument key → "g16_8x8_zero|g16_8x8_zero.opj_n2_b16.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g16_8x8_zero|g16_8x8_zero.kdu.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 2 arguments width → 1, height → 7 to degenerateGeometriesRoundTrip(width:height:) started.
+◇ Test case passing 1 argument key → "g16_8x8_zero|g16_8x8_zero.kdu_l3.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g16_8x8_const|g16_8x8_const.opj_n1.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 2 arguments width → 7, height → 1 to degenerateGeometriesRoundTrip(width:height:) started.
+◇ Test case passing 1 argument key → "g16_8x8_const|g16_8x8_const.opj_n2_b16.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 2 arguments variant → "irreversible97", expected → "9/7" to validButUnsupportedCodestreamsAreRejectedBeforeDecoding(variant:expected:) started.
+◇ Test case passing 1 argument key → "g16_8x8_const|g16_8x8_const.kdu.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 2 arguments width → 2, height → 2 to degenerateGeometriesRoundTrip(width:height:) started.
+◇ Test case passing 1 argument key → "g16_8x8_const|g16_8x8_const.kdu_l3.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 2 arguments variant → "kdu_ht", expected → "Part 15" to validButUnsupportedCodestreamsAreRejectedBeforeDecoding(variant:expected:) started.
+◇ Test case passing 1 argument key → "g12_5x3_ramp_extremes|g12_5x3_ramp_extremes.opj_n1.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 2 arguments width → 3, height → 5 to degenerateGeometriesRoundTrip(width:height:) started.
+◇ Test case passing 1 argument key → "g12_5x3_ramp_extremes|g12_5x3_ramp_extremes.opj_n2_b16.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g12_5x3_ramp_extremes|g12_5x3_ramp_extremes.kdu.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g12_5x3_ramp_extremes|g12_5x3_ramp_extremes.kdu_l3.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 2 arguments width → 65, height → 1 to degenerateGeometriesRoundTrip(width:height:) started.
+◇ Test case passing 1 argument key → "g16_17x9_alternating|g16_17x9_alternating.opj_n1.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g16_17x9_alternating|g16_17x9_alternating.opj_n2_b16.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 2 arguments width → 1, height → 65 to degenerateGeometriesRoundTrip(width:height:) started.
+◇ Test case passing 1 argument key → "g16_17x9_alternating|g16_17x9_alternating.kdu.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 2 arguments width → 17, height → 33 to degenerateGeometriesRoundTrip(width:height:) started.
+◇ Test case passing 1 argument key → "g16_17x9_alternating|g16_17x9_alternating.kdu_l3.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g16_64x64_random|g16_64x64_random.opj.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g16_64x64_random|g16_64x64_random.opj_n1.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g16_64x64_random|g16_64x64_random.opj_b32.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g16_64x64_random|g16_64x64_random.opj_n2_b16.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g16_64x64_random|g16_64x64_random.opj_rpcl.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument point → .sealing to cancellationInProviderFinalisationPreventsPublication(_:) started.
+◇ Test case passing 1 argument key → "g16_64x64_random|g16_64x64_random.kdu.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g16_64x64_random|g16_64x64_random.kdu_l3.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g12_129x67_gradient|g12_129x67_gradient.opj.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument point → .validatingSealedStorage to cancellationInProviderFinalisationPreventsPublication(_:) started.
+◇ Test case passing 1 argument key → "g12_129x67_gradient|g12_129x67_gradient.opj_n1.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g12_129x67_gradient|g12_129x67_gradient.opj_b32.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g12_129x67_gradient|g12_129x67_gradient.opj_n2_b16.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g12_129x67_gradient|g12_129x67_gradient.opj_rpcl.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g12_129x67_gradient|g12_129x67_gradient.kdu.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g12_129x67_gradient|g12_129x67_gradient.kdu_l3.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g16_256x256_smooth|g16_256x256_smooth.opj.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g16_256x256_smooth|g16_256x256_smooth.opj_n1.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g16_256x256_smooth|g16_256x256_smooth.opj_b32.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g16_256x256_smooth|g16_256x256_smooth.opj_n2_b16.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g16_256x256_smooth|g16_256x256_smooth.opj_rpcl.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g16_256x256_smooth|g16_256x256_smooth.kdu.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g16_256x256_smooth|g16_256x256_smooth.kdu_l3.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g08_37x23_random|g08_37x23_random.opj_n1.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g08_37x23_random|g08_37x23_random.opj_n2_b16.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g08_37x23_random|g08_37x23_random.kdu.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g08_37x23_random|g08_37x23_random.kdu_l3.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g10_300x200_gradient|g10_300x200_gradient.opj.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g10_300x200_gradient|g10_300x200_gradient.opj_n1.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g10_300x200_gradient|g10_300x200_gradient.opj_b32.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g10_300x200_gradient|g10_300x200_gradient.opj_n2_b16.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g10_300x200_gradient|g10_300x200_gradient.opj_rpcl.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument name → "g16_1x1_max" to independentDecodersReadSuccessorCodestreams(name:) started.
+◇ Test case passing 1 argument key → "g10_300x200_gradient|g10_300x200_gradient.kdu.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+◇ Test case passing 1 argument key → "g10_300x200_gradient|g10_300x200_gradient.kdu_l3.j2k" to independentCodestreamsDecodeToTheGeneratedSamples(key:) started.
+✔ Test encoderOutputDecodesExactlyWithDefaultOptions(name:) with 10 test cases passed after 14.633 seconds.
+✔ Test resourceLimitsGateAdmission() passed after 14.633 seconds.
+✔ Test independentPublicCallShapesReportTheirActualCoverage() passed after 14.633 seconds.
+✔ Test decodeWritesOnlySampleBytesOfTheCallerAllocation(name:variant:prefix:padding:) with 3 test cases passed after 14.633 seconds.
+✔ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() passed after 14.637 seconds.
+✔ Test metadataAndDestinationLimitsUseCallerBudget() passed after 14.636 seconds.
+✔ Test encoderRejectsSamplesOutsideDeclaredPrecision() passed after 14.767 seconds.
+✔ Test syntheticExactSamplesAndPadding(precision:) with 2 test cases passed after 14.767 seconds.
 ◇ Test case passing 3 arguments levels → 0, blockWidth → 64, blockHeight → 64 to encoderOptionsRoundTrip(levels:blockWidth:blockHeight:) started.
-✔ Test explicitLargerMetadataLimitIsHonoured() passed after 9.438 seconds.
-✔ Test unknownMeasurementsStayUnknownAndMetadataIsBounded() passed after 9.438 seconds.
 ◇ Test case passing 3 arguments levels → 1, blockWidth → 16, blockHeight → 16 to encoderOptionsRoundTrip(levels:blockWidth:blockHeight:) started.
 ◇ Test case passing 3 arguments levels → 2, blockWidth → 32, blockHeight → 8 to encoderOptionsRoundTrip(levels:blockWidth:blockHeight:) started.
 ◇ Test case passing 3 arguments levels → 3, blockWidth → 4, blockHeight → 4 to encoderOptionsRoundTrip(levels:blockWidth:blockHeight:) started.
 ◇ Test case passing 3 arguments levels → 5, blockWidth → 64, blockHeight → 64 to encoderOptionsRoundTrip(levels:blockWidth:blockHeight:) started.
 ◇ Test case passing 3 arguments levels → 6, blockWidth → 8, blockHeight → 512 to encoderOptionsRoundTrip(levels:blockWidth:blockHeight:) started.
-◇ Test refusesShortProviderBeforeLoadingSample() started.
-✔ Test encoderOutputDecodesExactlyWithDefaultOptions(name:) with 10 test cases passed after 9.702 seconds.
-◇ Test rejectsCoordinatesBeforeOffsetArithmetic() started.
-◇ Test initialisesExternalSampleBytesAtOddAddressWithoutChangingPadding() started.
-◇ Test writesGoldenBytesForPackedAndPadded12And16BitSamples() started.
-◇ Test readsIndependentGoldenBytesFromOddPhysicalAddress() started.
-◇ Test outOfPrecisionWriteInvalidatesDestination() started.
-✔ Test independentPublicCallShapesReportTheirActualCoverage() passed after 9.703 seconds.
-✔ Test integerOverflowWithExplicitLargeLimitsThrows() passed after 9.703 seconds.
-✔ Test truncatedCodestreamsFailWithDefinedErrors() passed after 9.703 seconds.
-✔ Test safeSampleAccessHonoursExplicitBigEndian() passed after 9.703 seconds.
-✔ Test incompatibleDestinationIsRejectedInPreflight() passed after 9.703 seconds.
-✔ Test independentAllocationAndMemoryCeilingsAreEnforced() passed after 9.703 seconds.
-✔ Test codecOptionsAreValidatedExplicitly() passed after 9.703 seconds.
-✔ Test decodeIntoCallerStorageKeepsIdentityAndLeavesPaddingUntouched() passed after 9.703 seconds.
-✔ Test degenerateGeometriesRoundTrip(width:height:) with 8 test cases passed after 9.704 seconds.
-✔ Test cancellationDuringDecodeInvalidatesTheDestination() passed after 9.805 seconds.
+◇ Test paddedOddDimensionsAndPrecision() started.
+◇ Test rejectsArithmeticOverflowBeforeAllocation() started.
+◇ Test rejectsOverlappingPlanesAndIncompleteMapping() started.
+◇ Test rejectsInvalidGeometryAndPrecision() started.
+◇ Test deterministicLayoutMutation() started.
+✔ Test waveletForwardInverseIsIdentity(width:height:) with 6 test cases passed after 16.728 seconds.
+◇ Test rejectsMisalignedOffsetsAndStrides() started.
+◇ Test finalRowNeedsOnlyItsActualSampleBytes() started.
+◇ Test semanticMetadataMustAgreeWithComponents() started.
+✔ Test extremeValuesSurviveEveryPrecision() passed after 16.728 seconds.
+✔ Test invalidResourceProfilesAndProgressFailPredictably() passed after 16.728 seconds.
+✔ Test pixelAndDimensionLimitsRejectBeforeAllocation() passed after 16.728 seconds.
+✔ Test descriptorMutationRejectsInvalidStridesAndOffsets() passed after 16.728 seconds.
+✔ Test configurationsAndBackendRequestsRejectUnsupportedChoices() passed after 16.914 seconds.
+✔ Test sameTokenCannotAuthoriseConcurrentOverlappingBorrows() passed after 16.915 seconds.
+✔ Test tagTreeEncodesAndDecodesInclusionAndZeroBitPlanes() passed after 16.914 seconds.
+✔ Test explicitLargerMetadataLimitIsHonoured() passed after 16.914 seconds.
+✔ Test syntaxCoverageVariantsDecodeExactly(file:) with 44 test cases passed after 16.914 seconds.
+✔ Test supportedSyntaxVariantsDecodeExactly(variant:) with 11 test cases passed after 16.914 seconds.
+✔ Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() passed after 16.914 seconds.
+✔ Test roundTripThroughCallerStorageWithDifferentStridesOnEachSide() passed after 16.915 seconds.
+✔ Test publicOperationsRejectForeignBytesAndAdvertiseScalarLosslessCoverage() passed after 16.915 seconds.
+✔ Test failedFillInvalidatesDestination() passed after 16.914 seconds.
+✔ Test cancellationDuringDecodeInvalidatesTheDestination() passed after 16.915 seconds.
+✔ Test decodeIntoCallerStorageKeepsIdentityAndLeavesPaddingUntouched() passed after 16.915 seconds.
+✔ Test allocatingDecodeUsesTheSameFinalOutputPathWithOneAllocation() passed after 16.915 seconds.
+✔ Test progressIsMonotonicAndCompletesAfterPublication() passed after 16.915 seconds.
+✔ Test incompatibleDestinationIsRejectedInPreflight() passed after 16.915 seconds.
+✔ Test independentAllocationAndMemoryCeilingsAreEnforced() passed after 16.915 seconds.
+✔ Test safeWriterRejectsOutOfRangeInsteadOfTruncating() passed after 16.915 seconds.
+✔ Test safeSampleAccessHonoursExplicitBigEndian() passed after 16.915 seconds.
+✔ Test integerOverflowWithExplicitLargeLimitsThrows() passed after 16.915 seconds.
+✔ Test reentrantLeaseOperationsRejectWithoutDeadlocking() passed after 16.915 seconds.
+✔ Test headerOnlyInputIsMalformedNotAnImage() passed after 16.915 seconds.
+✔ Test colourCodestreamsAreRejected() passed after 16.915 seconds.
+✔ Test bothCopyPoliciesUseTheSharedPathAndReportNoCopy() passed after 16.915 seconds.
+✔ Test unknownMeasurementsStayUnknownAndMetadataIsBounded() passed after 16.915 seconds.
+✔ Test degenerateGeometriesRoundTrip(width:height:) with 8 test cases passed after 16.915 seconds.
+✔ Test adaptersShareWriterAuthorityAndRejectForgedLease() passed after 16.915 seconds.
+✔ Test validButUnsupportedCodestreamsAreRejectedBeforeDecoding(variant:expected:) with 2 test cases passed after 16.949 seconds.
+✔ Test packetBitCoderStuffsAfterFF() passed after 16.950 seconds.
+✔ Test truncatedCodestreamsFailWithDefinedErrors() passed after 16.949 seconds.
+✔ Test mutationsOfStrideAndByteOrderAreCaughtByTheSharedStorageChecks() passed after 16.950 seconds.
+✔ Test paddedStorageCountsTowardsDecodedLimit() passed after 16.950 seconds.
+✔ Test rejectsCoordinatesBeforeOffsetArithmetic() passed after 16.941 seconds.
+✔ Test refusesShortProviderBeforeLoadingSample() passed after 16.941 seconds.
+✔ Test outOfPrecisionWriteInvalidatesDestination() passed after 16.941 seconds.
+✔ Test initialisesExternalSampleBytesAtOddAddressWithoutChangingPadding() passed after 16.934 seconds.
+✔ Test writesGoldenBytesForPackedAndPadded12And16BitSamples() passed after 16.934 seconds.
+✔ Test codecOptionsAreValidatedExplicitly() passed after 16.934 seconds.
+✔ Test mqCoderRoundTripsRandomSymbolsOverAllContexts() passed after 16.949 seconds.
+✔ Test encoderRefusesMetadataItCannotCarry() passed after 16.956 seconds.
+✔ Test readsIndependentGoldenBytesFromOddPhysicalAddress() passed after 16.956 seconds.
+✔ Test borrowedStorageRejectsForgedLeasesAndPublication() passed after 16.956 seconds.
+✔ Test abandonedDestinationInvalidatesItsReservedOwner() passed after 16.956 seconds.
 ◇ Test case passing 1 argument name → "g16_8x8_zero" to independentDecodersReadSuccessorCodestreams(name:) started.
-✔ Test independentCodestreamsDecodeToTheGeneratedSamples(key:) with 51 test cases passed after 9.768 seconds.
-✔ Test supportedSyntaxVariantsDecodeExactly(variant:) with 11 test cases passed after 9.984 seconds.
-✔ Test allocatingDecodeUsesTheSameFinalOutputPathWithOneAllocation() passed after 9.982 seconds.
-✔ Test singleBitCorruptionNeverTrapsOrHangs() passed after 9.983 seconds.
-✔ Test progressIsMonotonicAndCompletesAfterPublication() passed after 9.983 seconds.
-✔ Test validButUnsupportedCodestreamsAreRejectedBeforeDecoding(variant:expected:) with 2 test cases passed after 9.702 seconds.
-✔ Test safeSampleWriterRejectsOutOfRangeWithoutTruncating() passed after 9.685 seconds.
-✔ Test syntaxCoverageVariantsDecodeExactly(file:) with 44 test cases passed after 9.685 seconds.
-✔ Test paddedStorageCountsTowardsDecodedLimit() passed after 9.685 seconds.
-✔ Test tagTreeEncodesAndDecodesInclusionAndZeroBitPlanes() passed after 9.685 seconds.
-✔ Test headerOnlyInputIsMalformedNotAnImage() passed after 9.684 seconds.
-✔ Test imageRetainsAdapterUntilLastImageReleaseExactlyOnce() passed after 9.683 seconds.
-✔ Test encoderRefusesMetadataItCannotCarry() passed after 9.691 seconds.
-✔ Test resourceLimitsGateAdmission() passed after 9.691 seconds.
-✔ Test syntheticExactSamplesAndPadding(precision:) with 2 test cases passed after 9.691 seconds.
-✔ Test extremeValuesSurviveEveryPrecision() passed after 9.694 seconds.
-✔ Test mqCoderRoundTripsRandomSymbolsOverAllContexts() passed after 9.691 seconds.
-✔ Test colourCodestreamsAreRejected() passed after 9.723 seconds.
-✔ Test bothCopyPoliciesUseTheSharedPathAndReportNoCopy() passed after 9.723 seconds.
-✔ Test decodeWritesOnlySampleBytesOfTheCallerAllocation(name:variant:prefix:padding:) with 3 test cases passed after 9.722 seconds.
-✔ Test packetBitCoderStuffsAfterFF() passed after 9.722 seconds.
-✔ Test reentrantLeaseOperationsRejectWithoutDeadlocking() passed after 9.722 seconds.
-✔ Test semanticMetadataMustAgreeWithComponents() passed after 9.722 seconds.
-✔ Test paddedOddDimensionsAndPrecision() passed after 9.722 seconds.
-✔ Test deterministicLayoutMutation() passed after 9.722 seconds.
-✔ Test rejectsArithmeticOverflowBeforeAllocation() passed after 9.722 seconds.
-✔ Test rejectsOverlappingPlanesAndIncompleteMapping() passed after 9.722 seconds.
-✔ Test rejectsMisalignedOffsetsAndStrides() passed after 9.722 seconds.
-✔ Test rejectsInvalidGeometryAndPrecision() passed after 9.722 seconds.
-✔ Test finalRowNeedsOnlyItsActualSampleBytes() passed after 9.720 seconds.
-✔ Test cancellationInProviderFinalisationPreventsPublication(_:) with 2 test cases passed after 10.037 seconds.
-✔ Test concurrentAdaptersReserveExactlyOneWriter() passed after 10.284 seconds.
-✔ Test refusesShortProviderBeforeLoadingSample() passed after 0.582 seconds.
-✔ Test rejectsCoordinatesBeforeOffsetArithmetic() passed after 0.581 seconds.
-✔ Test initialisesExternalSampleBytesAtOddAddressWithoutChangingPadding() passed after 0.581 seconds.
-✔ Test writesGoldenBytesForPackedAndPadded12And16BitSamples() passed after 0.582 seconds.
-✔ Test readsIndependentGoldenBytesFromOddPhysicalAddress() passed after 0.582 seconds.
-✔ Test outOfPrecisionWriteInvalidatesDestination() passed after 0.582 seconds.
-✔ Test sealedOwnerSupportsConcurrentReadersAndNestedRead() passed after 10.285 seconds.
-✔ Test decoderPreservesTaskCancellationError() passed after 10.284 seconds.
-✔ Test cancellationDuringSyntheticRowsInvalidatesDestination() passed after 10.283 seconds.
-✔ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() passed after 10.283 seconds.
+✔ Test cancellationIsCheckedBeforeAllocatingStorage() passed after 17.051 seconds.
+✔ Test concurrentAdaptersReserveExactlyOneWriter() passed after 17.052 seconds.
+✔ Test paddedOddDimensionsAndPrecision() passed after 1.013 seconds.
+✔ Test rejectsArithmeticOverflowBeforeAllocation() passed after 0.820 seconds.
+✔ Test rejectsOverlappingPlanesAndIncompleteMapping() passed after 0.820 seconds.
+✔ Test rejectsInvalidGeometryAndPrecision() passed after 0.820 seconds.
+✔ Test deterministicLayoutMutation() passed after 0.831 seconds.
+✔ Test rejectsMisalignedOffsetsAndStrides() passed after 0.831 seconds.
+✔ Test finalRowNeedsOnlyItsActualSampleBytes() passed after 0.831 seconds.
+✔ Test semanticMetadataMustAgreeWithComponents() passed after 0.831 seconds.
+✔ Test refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt() passed after 17.560 seconds.
+✔ Test cancellationDuringSyntheticRowsInvalidatesDestination() passed after 17.559 seconds.
+✔ Test sealedOwnerSupportsConcurrentReadersAndNestedRead() passed after 17.559 seconds.
+✔ Test cancellationInsideWriteCannotPublishPartialImage() passed after 17.560 seconds.
+✔ Test encoderIgnoresRowPaddingAndReadsSharedStorageOnce() passed after 17.559 seconds.
+✔ Test cancellationInProviderFinalisationPreventsPublication(_:) with 2 test cases passed after 17.559 seconds.
+✔ Test decoderPreservesTaskCancellationError() passed after 17.559 seconds.
+✔ Suite "Byte-order sample access" passed after 17.562 seconds.
+✔ Test encoderOptionsRoundTrip(levels:blockWidth:blockHeight:) with 6 test cases passed after 17.542 seconds.
 ◇ Test case passing 1 argument name → "g16_8x8_const" to independentDecodersReadSuccessorCodestreams(name:) started.
-✔ Test cancellationInsideWriteCannotPublishPartialImage() passed after 10.035 seconds.
-✔ Test encoderIgnoresRowPaddingAndReadsSharedStorageOnce() passed after 10.032 seconds.
-✔ Test cancellationIsCheckedBeforeAllocatingStorage() passed after 10.027 seconds.
-✔ Suite "Descriptor validation" passed after 10.336 seconds.
-✔ Suite "Byte-order sample access" passed after 10.336 seconds.
-✔ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() passed after 10.374 seconds.
+✔ Suite "Descriptor validation" passed after 17.845 seconds.
 ◇ Test case passing 1 argument name → "g12_5x3_ramp_extremes" to independentDecodersReadSuccessorCodestreams(name:) started.
-✔ Test encoderOptionsRoundTrip(levels:blockWidth:blockHeight:) with 6 test cases passed after 10.083 seconds.
 ◇ Test case passing 1 argument name → "g16_17x9_alternating" to independentDecodersReadSuccessorCodestreams(name:) started.
 ◇ Test case passing 1 argument name → "g16_64x64_random" to independentDecodersReadSuccessorCodestreams(name:) started.
 ◇ Test case passing 1 argument name → "g12_129x67_gradient" to independentDecodersReadSuccessorCodestreams(name:) started.
-✔ Test roundTripThroughCallerStorageWithDifferentStridesOnEachSide() passed after 10.370 seconds.
+✔ Test concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails() passed after 18.459 seconds.
+✔ Test independentCodestreamsDecodeToTheGeneratedSamples(key:) with 51 test cases passed after 18.944 seconds.
 ◇ Test case passing 1 argument name → "g16_256x256_smooth" to independentDecodersReadSuccessorCodestreams(name:) started.
-✔ Test mutationsOfStrideAndByteOrderAreCaughtByTheSharedStorageChecks() passed after 11.692 seconds.
+✔ Test singleBitCorruptionNeverTrapsOrHangs() passed after 19.256 seconds.
 ◇ Test case passing 1 argument name → "g08_37x23_random" to independentDecodersReadSuccessorCodestreams(name:) started.
 ◇ Test case passing 1 argument name → "g10_300x200_gradient" to independentDecodersReadSuccessorCodestreams(name:) started.
-✔ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() passed after 13.199 seconds.
-✔ Test independentDecodersReadSuccessorCodestreams(name:) with 10 test cases passed after 13.581 seconds.
-✔ Test run with 78 tests in 2 suites passed after 13.582 seconds.
+✔ Test cancelledEncodeLeavesTheSourceIntactAndPublishesNothing() passed after 21.812 seconds.
+✔ Test independentDecodersReadSuccessorCodestreams(name:) with 10 test cases passed after 22.325 seconds.
+✔ Test run with 78 tests in 2 suites passed after 22.328 seconds.

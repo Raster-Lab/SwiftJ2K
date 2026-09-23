@@ -1,0 +1,2 @@
+decode: 3419581 iterations, outcomes [(key: "malformedInput", value: 2881525), (key: "resourceLimitExceeded", value: 65821), (key: "success", value: 375467), (key: "unsupportedFeature", value: 68763), (key: "unsupportedFormat", value: 28005)], slowest 5687 ms, unexpected 0, peak RSS 122 MiB
+exit 0 after 4309 s

@@ -4,5 +4,5 @@ Building for production...
 [4/6] Compiling SwiftJ2K BitIO.swift
 [5/7] Compiling SwiftJ2KCLI main.swift
 [5/7] Write Objects.LinkFileList
-[6/7] Linking swiftj2k
-Build complete! (19.16s)
+[6/7] Linking swiftj2k-cli
+Build complete! (23.42s)

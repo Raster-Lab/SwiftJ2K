@@ -10,5 +10,5 @@ SwiftJ2K: asan-discovery
 SwiftJ2K: asan-tests
 SwiftJ2K: tsan-discovery
 SwiftJ2K: tsan-tests
-Evidence: <scratch>/release/swift64-sanitizers/report.json
+Evidence: <scratch>/release2/swift64-sanitizers/report.json
 validate sanitizers exit 0

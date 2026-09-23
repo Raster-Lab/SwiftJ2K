@@ -1,8 +1,8 @@
-load before: 19:04  up 4 days, 21:38, 1 user, load averages: 2.66 2.37 3.33
- 98.5       07:23 /opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python
- 15.0    20:25:51 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
-  3.9 04-21:36:52 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
-load after: 19:04  up 4 days, 21:38, 1 user, load averages: 3.00 2.45 3.35
- 98.5       07:27 /opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python
- 13.9    20:25:55 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
- 10.3 04-21:36:56 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd
+load before: 16:23  up  5:36, 1 user, load averages: 5.31 4.00 3.12
+ 44.1 05:34:29 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+ 16.3 04:37:08 /System/Library/PrivateFrameworks/XprotectFramework.framework/Versions/A/XPCServices/XprotectService.xpc/Contents/MacOS/XprotectService
+ 10.4 04:39:57 /Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/153.0.8010.53/Helpers/Codex (Service).app/Contents/MacOS/Codex (Service)
+load after: 16:23  up  5:36, 1 user, load averages: 5.12 3.99 3.11
+ 44.0 05:34:33 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  9.5 04:40:01 /Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/153.0.8010.53/Helpers/Codex (Service).app/Contents/MacOS/Codex (Service)
+  8.5 04:40:00 /Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/153.0.8010.53/Helpers/Codex (Renderer).app/Contents/MacOS/Codex (Renderer)
