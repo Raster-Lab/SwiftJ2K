@@ -1,6 +1,6 @@
 # Migrating applications from J2KSwift to SwiftJ2K
 
-For application maintainers and coding agents. This guide covers **consumer application migration**; [IMPLEMENTATION.md](IMPLEMENTATION.md) governs migration of codec algorithms into this library. Suite contract **0.9.0**; successor at version **12.1.0** (tag state in [CHANGELOG.md](CHANGELOG.md)); predecessor pinned at [J2KSwift 7acc9ae4](https://github.com/Raster-Lab/J2KSwift/tree/7acc9ae415e7d0bc7d441e0f0277d5e150bd19ca), the revision the codec was migrated from. Record your application's actual resolved revisions and compare them before applying the mappings below.
+For application maintainers and coding agents. This guide covers **consumer application migration**; [IMPLEMENTATION.md](IMPLEMENTATION.md) governs migration of codec algorithms into this library. Suite contract **0.10.0**; successor at version **12.1.0** (tag state in [CHANGELOG.md](CHANGELOG.md)); predecessor pinned at [J2KSwift 7acc9ae4](https://github.com/Raster-Lab/J2KSwift/tree/7acc9ae415e7d0bc7d441e0f0277d5e150bd19ca), the revision the codec was migrated from. Record your application's actual resolved revisions and compare them before applying the mappings below.
 
 ## Readiness
 
