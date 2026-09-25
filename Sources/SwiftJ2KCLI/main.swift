@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 //
-// swiftj2k: the standalone executable of the SwiftJ2K library (CLI_CONTRACT
+// swiftj2k-cli: the standalone executable of the SwiftJ2K library (CLI_CONTRACT
 // CLI-01..CLI-04, CLI-07..CLI-09). Milestone 4 wires encode, decode, inspect
 // and validate to the library over the NRRD interchange profile described in
 // CLI.md; transcode stays reserved. Library errors map to exit statuses here
@@ -14,8 +14,8 @@ import Darwin
 import Glibc
 #endif
 
-private let tool = "swiftj2k"
-private let version = "12.1.0-dev.6"
+private let tool = "swiftj2k-cli"
+private let version = "12.1.0"
 private let codecCommands = ["encode", "decode", "inspect", "validate", "transcode"]
 private let valueOptions: Set<String> = ["--input", "-i", "--output", "-o", "--input-format", "--output-format",
     "--mode", "--max-error", "--backend", "--copy-policy", "--threads", "--max-memory", "--timeout",

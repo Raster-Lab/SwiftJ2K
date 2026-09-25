@@ -1,0 +1,138 @@
+Building for debugging...
+[Constructing description]
+[Planning deferred tasks]
+[43 / 82]
+[45 / 82]
+[47 / 82] SwiftJ2K_SwiftJ2KTests
+[48 / 82] SwiftJ2K
+[52 / 138]
+[54 / 138]
+[57 / 138]
+[58 / 138]
+[61 / 138]
+[64 / 138]
+[66 / 138]
+[69 / 138]
+[73 / 138]
+[74 / 138]
+[77 / 138]
+[78 / 138]
+[80 / 138]
+[83 / 138]
+[85 / 138]
+[87 / 138]
+[88 / 138]
+[89 / 138]
+[90 / 138]
+[91 / 138]
+[92 / 138]
+[93 / 138]
+[96 / 138] SwiftJ2K
+[97 / 138] SwiftJ2K
+[100 / 138] SwiftJ2K
+[106 / 138] SwiftJ2K
+[107 / 138] swiftj2k-cli-product
+[108 / 138] swiftj2k-cli-product
+[110 / 138] SwiftJ2K
+[110 / 138]
+[115 / 139]
+[117 / 139]
+[119 / 141] swiftj2k-cli-product
+[124 / 142] SwiftJ2KTests-product
+[126 / 154] SwiftJ2KTests-product
+[127 / 154] SwiftJ2KTests-product
+[128 / 154] SwiftJ2KTests-product
+[129 / 154] swiftj2k-cli-product
+[132 / 154] SwiftJ2KTests-product
+[137 / 154] SwiftJ2KTests-product
+[138 / 154] SwiftJ2KTests-product
+[139 / 154] SwiftJ2KTests-product
+[142 / 154] SwiftJ2KTests-product
+[144 / 154] SwiftJ2KTests-product
+[146 / 154] SwiftJ2KTests-product
+[146 / 154] AllIncludingTests
+[147 / 154]
+[148 / 154] SwiftJ2KTests-product
+[150 / 154] SwiftJ2KTests-product
+[152 / 154] SwiftJ2KTests-product
+Build complete! (30.73 secs)
+==32486==WARN: Invalid dyld module map detected. This is most likely a bug in the sanitizer.
+==32486==WARN: Backtraces may be unreliable.
+SwiftJ2KTests.DescriptorTests/deterministicLayoutMutation()
+SwiftJ2KTests.DescriptorTests/finalRowNeedsOnlyItsActualSampleBytes()
+SwiftJ2KTests.DescriptorTests/paddedOddDimensionsAndPrecision()
+SwiftJ2KTests.DescriptorTests/rejectsArithmeticOverflowBeforeAllocation()
+SwiftJ2KTests.DescriptorTests/rejectsInvalidGeometryAndPrecision()
+SwiftJ2KTests.DescriptorTests/rejectsMisalignedOffsetsAndStrides()
+SwiftJ2KTests.DescriptorTests/rejectsOverlappingPlanesAndIncompleteMapping()
+SwiftJ2KTests.DescriptorTests/semanticMetadataMustAgreeWithComponents()
+SwiftJ2KTests.SampleAccessTests/initialisesExternalSampleBytesAtOddAddressWithoutChangingPadding()
+SwiftJ2KTests.SampleAccessTests/outOfPrecisionWriteInvalidatesDestination()
+SwiftJ2KTests.SampleAccessTests/readsIndependentGoldenBytesFromOddPhysicalAddress()
+SwiftJ2KTests.SampleAccessTests/refusesShortProviderBeforeLoadingSample()
+SwiftJ2KTests.SampleAccessTests/rejectsCoordinatesBeforeOffsetArithmetic()
+SwiftJ2KTests.SampleAccessTests/writesGoldenBytesForPackedAndPadded12And16BitSamples()
+SwiftJ2KTests.abandonedDestinationInvalidatesItsReservedOwner()
+SwiftJ2KTests.adaptersShareWriterAuthorityAndRejectForgedLease()
+SwiftJ2KTests.allocatingDecodeUsesTheSameFinalOutputPathWithOneAllocation()
+SwiftJ2KTests.borrowedStorageRejectsForgedLeasesAndPublication()
+SwiftJ2KTests.bothCopyPoliciesUseTheSharedPathAndReportNoCopy()
+SwiftJ2KTests.cancellationDuringDecodeInvalidatesTheDestination()
+SwiftJ2KTests.cancellationDuringSyntheticRowsInvalidatesDestination()
+SwiftJ2KTests.cancellationInProviderFinalisationPreventsPublication(_:)
+SwiftJ2KTests.cancellationInsideWriteCannotPublishPartialImage()
+SwiftJ2KTests.cancellationIsCheckedBeforeAllocatingStorage()
+SwiftJ2KTests.cancelledEncodeLeavesTheSourceIntactAndPublishesNothing()
+SwiftJ2KTests.codecOptionsAreValidatedExplicitly()
+SwiftJ2KTests.colourCodestreamsAreRejected()
+SwiftJ2KTests.concurrentAdaptersReserveExactlyOneWriter()
+SwiftJ2KTests.concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails()
+SwiftJ2KTests.configurationsAndBackendRequestsRejectUnsupportedChoices()
+SwiftJ2KTests.decodeIntoCallerStorageKeepsIdentityAndLeavesPaddingUntouched()
+SwiftJ2KTests.decodeWritesOnlySampleBytesOfTheCallerAllocation(name:variant:prefix:padding:)
+SwiftJ2KTests.decoderPreservesTaskCancellationError()
+SwiftJ2KTests.degenerateGeometriesRoundTrip(width:height:)
+SwiftJ2KTests.descriptorMutationRejectsInvalidStridesAndOffsets()
+SwiftJ2KTests.encoderIgnoresRowPaddingAndReadsSharedStorageOnce()
+SwiftJ2KTests.encoderOptionsRoundTrip(levels:blockWidth:blockHeight:)
+SwiftJ2KTests.encoderOutputDecodesExactlyWithDefaultOptions(name:)
+SwiftJ2KTests.encoderRefusesMetadataItCannotCarry()
+SwiftJ2KTests.encoderRejectsSamplesOutsideDeclaredPrecision()
+SwiftJ2KTests.explicitLargerMetadataLimitIsHonoured()
+SwiftJ2KTests.extremeValuesSurviveEveryPrecision()
+SwiftJ2KTests.failedFillInvalidatesDestination()
+SwiftJ2KTests.headerOnlyInputIsMalformedNotAnImage()
+SwiftJ2KTests.imageRetainsAdapterUntilLastImageReleaseExactlyOnce()
+SwiftJ2KTests.incompatibleDestinationIsRejectedInPreflight()
+SwiftJ2KTests.independentAllocationAndMemoryCeilingsAreEnforced()
+SwiftJ2KTests.independentCodestreamsDecodeToTheGeneratedSamples(key:)
+SwiftJ2KTests.independentDecodersReadSuccessorCodestreams(name:)
+SwiftJ2KTests.independentPublicCallShapesReportTheirActualCoverage()
+SwiftJ2KTests.integerOverflowWithExplicitLargeLimitsThrows()
+SwiftJ2KTests.invalidResourceProfilesAndProgressFailPredictably()
+SwiftJ2KTests.metadataAndDestinationLimitsUseCallerBudget()
+SwiftJ2KTests.mqCoderRoundTripsRandomSymbolsOverAllContexts()
+SwiftJ2KTests.mutationsOfStrideAndByteOrderAreCaughtByTheSharedStorageChecks()
+SwiftJ2KTests.packetBitCoderStuffsAfterFF()
+SwiftJ2KTests.paddedStorageCountsTowardsDecodedLimit()
+SwiftJ2KTests.pixelAndDimensionLimitsRejectBeforeAllocation()
+SwiftJ2KTests.progressIsMonotonicAndCompletesAfterPublication()
+SwiftJ2KTests.publicOperationsRejectForeignBytesAndAdvertiseScalarLosslessCoverage()
+SwiftJ2KTests.reentrantLeaseOperationsRejectWithoutDeadlocking()
+SwiftJ2KTests.refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt()
+SwiftJ2KTests.resourceLimitsGateAdmission()
+SwiftJ2KTests.roundTripThroughCallerStorageWithDifferentStridesOnEachSide()
+SwiftJ2KTests.safeSampleAccessHonoursExplicitBigEndian()
+SwiftJ2KTests.safeSampleWriterRejectsOutOfRangeWithoutTruncating()
+SwiftJ2KTests.safeWriterRejectsOutOfRangeInsteadOfTruncating()
+SwiftJ2KTests.sameTokenCannotAuthoriseConcurrentOverlappingBorrows()
+SwiftJ2KTests.sealedOwnerSupportsConcurrentReadersAndNestedRead()
+SwiftJ2KTests.singleBitCorruptionNeverTrapsOrHangs()
+SwiftJ2KTests.supportedSyntaxVariantsDecodeExactly(variant:)
+SwiftJ2KTests.syntaxCoverageVariantsDecodeExactly(file:)
+SwiftJ2KTests.syntheticExactSamplesAndPadding(precision:)
+SwiftJ2KTests.tagTreeEncodesAndDecodesInclusionAndZeroBitPlanes()
+SwiftJ2KTests.truncatedCodestreamsFailWithDefinedErrors()
+SwiftJ2KTests.unknownMeasurementsStayUnknownAndMetadataIsBounded()
+SwiftJ2KTests.validButUnsupportedCodestreamsAreRejectedBeforeDecoding(variant:expected:)
+SwiftJ2KTests.waveletForwardInverseIsIdentity(width:height:)

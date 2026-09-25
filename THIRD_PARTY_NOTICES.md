@@ -1,6 +1,6 @@
 # Third-party and provenance notices
 
-SwiftJ2K ships under Apache-2.0 ([LICENSE](LICENSE), [NOTICE](NOTICE)). The shipped products (`SwiftJ2K` library, `swiftj2k` executable) contain no third-party source and declare no package dependency; `swift package show-dependencies` on a consumer resolves this repository alone. Everything below is either in-house material whose provenance the contract requires to be recorded, or a development tool that never enters the shipped dependency graph (SUITE_POLICY.md POL-01, POL-07).
+SwiftJ2K ships under Apache-2.0 ([LICENSE](LICENSE), [NOTICE](NOTICE)). The shipped products (`SwiftJ2K` library, `swiftj2k-cli` executable) contain no third-party source and declare no package dependency; `swift package show-dependencies` on a consumer resolves this repository alone. Everything below is either in-house material whose provenance the contract requires to be recorded, or a development tool that never enters the shipped dependency graph (SUITE_POLICY.md POL-01, POL-07).
 
 ## In-house predecessor code
 

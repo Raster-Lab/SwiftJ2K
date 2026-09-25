@@ -22,10 +22,10 @@ Run all of these on the exact commit to be tagged and archive the outputs under 
 | Swift 6.4, Swift Build engine, consumer, repetitions, SBOM | `DEVELOPER_DIR=… TOOLCHAINS=org.swift.640202609131a ./Scripts/validate.sh --output <new dir>` | `report.json` status `passed`; both SBOMs emitted |
 | Sanitizers | `./Scripts/validate.sh --checks asan,tsan --output <new dir>` under the toolchain on which they execute (see MILESTONE5.md for which one that was) | both runs pass |
 | Linux arm64 container | `colima start; docker run --rm --platform linux/arm64 -v "$PWD":/SwiftJ2K -w /SwiftJ2K swift:6.2-noble swift test` then the release build, `Scripts/test-cli.py` and `Examples/Consumer` | as in MILESTONE4.md |
-| CLI conformance | `python3 Scripts/test-cli.py --binary <release swiftj2k> --output <new dir>` | 147 of 147 |
+| CLI conformance | `python3 Scripts/test-cli.py --binary <release swiftj2k-cli> --output <new dir>` | 147 of 147 |
 | Contract harness | `xcrun swift run --package-path Integration/ContractHarness ContractHarness` | 6 of 6 |
 | Fuzz campaign | `Integration/FuzzHarness` for one hour per entry point (`inspect`, `decode`, `decodeInto`), seed recorded | zero unexpected errors, zero traps, no input over the deadline |
-| Release benchmark | `python3 Scripts/benchmark-lossless.py --binary <release swiftj2k> --output <new dir>` on an unloaded host | no median regression over 5% against the previous record (PERF-03) |
+| Release benchmark | `python3 Scripts/benchmark-lossless.py --binary <release swiftj2k-cli> --output <new dir>` on an unloaded host | no median regression over 5% against the previous record (PERF-03) |
 | Apple SDK matrix | `xcodebuild -scheme SwiftJ2K -destination 'generic/platform=<iOS|iOS Simulator|tvOS|tvOS Simulator|watchOS|watchOS Simulator|visionOS|visionOS Simulator>' build` | every platform builds |
 | Fresh URL consumer | a package outside the repository with `.package(url: "https://github.com/Raster-Lab/SwiftJ2K.git", revision: "<release commit>")` | resolves this repository alone and round-trips |
 
@@ -33,7 +33,7 @@ Anything unexecuted is recorded as unexecuted in the release notes, never as pas
 
 ## Version and tag steps
 
-1. Set `VERSION` to `12.1.0`; update the version string in `Sources/SwiftJ2KCLI/main.swift`, the `.TH` line of `ManPages/swiftj2k.1`, the version lines in `README.md` and `CLI.md`, and turn the top CHANGELOG entry into `## 12.1.0 — <date>` with the executed gates listed.
+1. Set `VERSION` to `12.1.0`; update the version string in `Sources/SwiftJ2KCLI/main.swift`, the `.TH` line of `ManPages/swiftj2k-cli.1`, the version lines in `README.md` and `CLI.md`, and turn the top CHANGELOG entry into `## 12.1.0 — <date>` with the executed gates listed.
 2. Commit as `Release 12.1.0` and open a pull request; merge only after the gates above have been archived.
 3. Tag the merge commit with an annotated tag and push it:
    ```sh

@@ -42,8 +42,8 @@ Use the native format-pair extension in [COMMON_API.md](Documentation/COMMON_API
 The planned CLI performs the whole operation in one process. These examples are requirements for future executable tests, not currently runnable successor commands:
 
 ```sh
-swiftj2k transcode -i source.j2k --input-format j2k --output-format htj2k --mode lossless -o converted.j2c
-swiftj2k transcode -i converted.j2c --input-format htj2k --output-format j2k --mode lossless -o restored.j2k
+swiftj2k-cli transcode -i source.j2k --input-format j2k --output-format htj2k --mode lossless -o converted.j2c
+swiftj2k-cli transcode -i converted.j2c --input-format htj2k --output-format j2k --mode lossless -o restored.j2k
 ```
 
 Here `j2k` and `htj2k` explicitly select raw codestreams; JP2/JPH container support is separately declared. An extension alone does not prove the block coder or container. Support `-` for stdin/stdout using the common limits and diagnostics rules. CLI final-output atomic publication is allowed; it is not permission to stage an intermediate image. Reject lossy mode/quality settings on this lossless transcode operation.

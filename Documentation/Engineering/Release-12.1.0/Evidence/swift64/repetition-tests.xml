@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="TestResults" errors="0" tests="95" failures="0" skipped="0" time="2.619595792">
+    <testcase classname="SwiftJ2KTests" name="reentrantLeaseOperationsRejectWithoutDeadlocking()" time="0.002329334" />
+    <testcase classname="SwiftJ2KTests" name="progressIsMonotonicAndCompletesAfterPublication()" time="0.278069792" />
+    <testcase classname="SwiftJ2KTests" name="cancellationIsCheckedBeforeAllocatingStorage()" time="0.0034395" />
+    <testcase classname="SwiftJ2KTests" name="safeWriterRejectsOutOfRangeInsteadOfTruncating()" time="0.002315791" />
+    <testcase classname="SwiftJ2KTests" name="cancellationInProviderFinalisationPreventsPublication(_:)" time="0.003090458" />
+    <testcase classname="SwiftJ2KTests" name="cancellationInsideWriteCannotPublishPartialImage()" time="0.002931875" />
+    <testcase classname="SwiftJ2KTests" name="cancellationDuringSyntheticRowsInvalidatesDestination()" time="0.003082916" />
+    <testcase classname="SwiftJ2KTests" name="borrowedStorageRejectsForgedLeasesAndPublication()" time="0.002322542" />
+    <testcase classname="SwiftJ2KTests" name="refusedLayoutLeavesDestinationReusableAndCancelledWorkInvalidatesIt()" time="0.0179285" />
+    <testcase classname="SwiftJ2KTests" name="cancelledEncodeLeavesTheSourceIntactAndPublishesNothing()" time="0.490188084" />
+    <testcase classname="SwiftJ2KTests" name="sealedOwnerSupportsConcurrentReadersAndNestedRead()" time="0.003173875" />
+    <testcase classname="SwiftJ2KTests" name="decoderPreservesTaskCancellationError()" time="0.00294025" />
+    <testcase classname="SwiftJ2KTests" name="concurrentAdaptersReserveExactlyOneWriter()" time="0.003165917" />
+    <testcase classname="SwiftJ2KTests" name="sameTokenCannotAuthoriseConcurrentOverlappingBorrows()" time="0.002389959" />
+    <testcase classname="SwiftJ2KTests" name="safeSampleWriterRejectsOutOfRangeWithoutTruncating()" time="0.002191" />
+    <testcase classname="SwiftJ2KTests" name="adaptersShareWriterAuthorityAndRejectForgedLease()" time="0.002242167" />
+    <testcase classname="SwiftJ2KTests" name="cancellationDuringDecodeInvalidatesTheDestination()" time="0.0160935" />
+    <testcase classname="SwiftJ2KTests" name="concurrentReadersOfOneCallerOwnerAgreeWhileAMutationAttemptFails()" time="0.138989709" />
+    <testcase classname="SwiftJ2KTests" name="imageRetainsAdapterUntilLastImageReleaseExactlyOnce()" time="0.002180625" />
+  </testsuite>
+</testsuites>

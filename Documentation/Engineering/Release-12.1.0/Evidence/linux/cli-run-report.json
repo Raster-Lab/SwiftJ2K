@@ -1,0 +1,1864 @@
+{
+  "binary": "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+  "binary_sha256": "fba362378191751f06ba8efa956190c25680070f5bb83bf1af66214b8816a99a",
+  "installer_sha256": "10ff1fbd8b59292545c245175090a8fedd27663b921409dff56deaa0a5952d55",
+  "test_runner_sha256": "35786aeca38423d24037afdac10be9136ec0e17c633f12cef630526f948fe991",
+  "version": "12.1.0",
+  "manual_sha256": "247f418ae52ae510e39cd42ebe75dd859bd7305e6e5ac6458c918ca79765230f",
+  "commands": [
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "--help"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "swiftj2k-cli 12.1.0 \u2014 JPEG 2000 and HTJ2K\nUSAGE: swiftj2k-cli [OPTIONS] <command> [OPTIONS]\n\nCOMMANDS\n  encode                     NRRD greyscale image -> lossless JPEG 2000 codestream.\n  decode                     JPEG 2000 codestream -> NRRD greyscale image.\n  inspect                    Report codestream geometry without decoding.\n  validate                   Fully decode in memory and report the result.\n  capabilities [--json]      Report actual library support (scalar lossless JPEG 2000).\n  help [command]             Show global or command-specific help.\n  version                    Show the development version.\n  transcode                  Reserved; unavailable until native transcoding is qualified (exit 4).\n\nSwift 6.2 minimum, Swift 6.4 qualified; Apple OS baseline 26.0. CLI hosts: macOS/Linux.\n\nOPTIONS\n  -h, --help                 Show this help; also: help [command].\n  --version                  Show the development version.\n  -v, -vv ... -vvvvv         Increase verbosity (maximum 5).\n  --verbose LEVEL           Set verbosity to 1..5 or + through +++++.\n  --verbose=LEVEL            Equivalent explicit form; -verbose: LEVEL is accepted.\n  -q, --quiet                Suppress optional diagnostics; errors remain visible.\n\nVERBOSITY (stderr only; default 0)\n  1 summary; 2 command stages; 3 capability/configuration details; 4 elapsed timing;\n  5 bounded diagnostic trace. Levels are cumulative. Quiet conflicts with verbosity.\n  Payload bytes, metadata, raw addresses and input/output paths are never logged.\n\nEXIT STATUS\n  0 success; 2 invalid usage or argument; 3 malformed input; 4 unsupported format,\n  feature, layout or backend; 5 resource limit or deadline; 6 I/O or storage failure\n  (including an existing output without --overwrite and a closed pipe); 7 internal\n  failure; 130 interrupted (SIGINT).\n\nMANUAL\n  man swiftj2k-cli (installed with the executable by Scripts/install-cli.sh).\n\nEXAMPLES\n  swiftj2k-cli encode -i slice.nrrd -o slice.j2k --precision 12\n  swiftj2k-cli decode -i slice.j2k -o slice.nrrd\n  swiftj2k-cli inspect -i slice.j2k --json\n  swiftj2k-cli capabilities --json -vv\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "swiftj2k-cli 12.1.0 \u2014 JPEG 2000 and HTJ2K\nUSAGE: swiftj2k-cli [OPTIONS] <command> [OPTIONS]\n\nCOMMANDS\n  encode                     NRRD greyscale image -> lossless JPEG 2000 codestream.\n  decode                     JPEG 2000 codestream -> NRRD greyscale image.\n  inspect                    Report codestream geometry without decoding.\n  validate                   Fully decode in memory and report the result.\n  capabilities [--json]      Report actual library support (scalar lossless JPEG 2000).\n  help [command]             Show global or command-specific help.\n  version                    Show the development version.\n  transcode                  Reserved; unavailable until native transcoding is qualified (exit 4).\n\nSwift 6.2 minimum, Swift 6.4 qualified; Apple OS baseline 26.0. CLI hosts: macOS/Linux.\n\nOPTIONS\n  -h, --help                 Show this help; also: help [command].\n  --version                  Show the development version.\n  -v, -vv ... -vvvvv         Increase verbosity (maximum 5).\n  --verbose LEVEL           Set verbosity to 1..5 or + through +++++.\n  --verbose=LEVEL            Equivalent explicit form; -verbose: LEVEL is accepted.\n  -q, --quiet                Suppress optional diagnostics; errors remain visible.\n\nVERBOSITY (stderr only; default 0)\n  1 summary; 2 command stages; 3 capability/configuration details; 4 elapsed timing;\n  5 bounded diagnostic trace. Levels are cumulative. Quiet conflicts with verbosity.\n  Payload bytes, metadata, raw addresses and input/output paths are never logged.\n\nEXIT STATUS\n  0 success; 2 invalid usage or argument; 3 malformed input; 4 unsupported format,\n  feature, layout or backend; 5 resource limit or deadline; 6 I/O or storage failure\n  (including an existing output without --overwrite and a closed pipe); 7 internal\n  failure; 130 interrupted (SIGINT).\n\nMANUAL\n  man swiftj2k-cli (installed with the executable by Scripts/install-cli.sh).\n\nEXAMPLES\n  swiftj2k-cli encode -i slice.nrrd -o slice.j2k --precision 12\n  swiftj2k-cli decode -i slice.j2k -o slice.nrrd\n  swiftj2k-cli inspect -i slice.j2k --json\n  swiftj2k-cli capabilities --json -vv\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "-h"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "swiftj2k-cli 12.1.0 \u2014 JPEG 2000 and HTJ2K\nUSAGE: swiftj2k-cli [OPTIONS] <command> [OPTIONS]\n\nCOMMANDS\n  encode                     NRRD greyscale image -> lossless JPEG 2000 codestream.\n  decode                     JPEG 2000 codestream -> NRRD greyscale image.\n  inspect                    Report codestream geometry without decoding.\n  validate                   Fully decode in memory and report the result.\n  capabilities [--json]      Report actual library support (scalar lossless JPEG 2000).\n  help [command]             Show global or command-specific help.\n  version                    Show the development version.\n  transcode                  Reserved; unavailable until native transcoding is qualified (exit 4).\n\nSwift 6.2 minimum, Swift 6.4 qualified; Apple OS baseline 26.0. CLI hosts: macOS/Linux.\n\nOPTIONS\n  -h, --help                 Show this help; also: help [command].\n  --version                  Show the development version.\n  -v, -vv ... -vvvvv         Increase verbosity (maximum 5).\n  --verbose LEVEL           Set verbosity to 1..5 or + through +++++.\n  --verbose=LEVEL            Equivalent explicit form; -verbose: LEVEL is accepted.\n  -q, --quiet                Suppress optional diagnostics; errors remain visible.\n\nVERBOSITY (stderr only; default 0)\n  1 summary; 2 command stages; 3 capability/configuration details; 4 elapsed timing;\n  5 bounded diagnostic trace. Levels are cumulative. Quiet conflicts with verbosity.\n  Payload bytes, metadata, raw addresses and input/output paths are never logged.\n\nEXIT STATUS\n  0 success; 2 invalid usage or argument; 3 malformed input; 4 unsupported format,\n  feature, layout or backend; 5 resource limit or deadline; 6 I/O or storage failure\n  (including an existing output without --overwrite and a closed pipe); 7 internal\n  failure; 130 interrupted (SIGINT).\n\nMANUAL\n  man swiftj2k-cli (installed with the executable by Scripts/install-cli.sh).\n\nEXAMPLES\n  swiftj2k-cli encode -i slice.nrrd -o slice.j2k --precision 12\n  swiftj2k-cli decode -i slice.j2k -o slice.nrrd\n  swiftj2k-cli inspect -i slice.j2k --json\n  swiftj2k-cli capabilities --json -vv\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "help"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "swiftj2k-cli 12.1.0 \u2014 JPEG 2000 and HTJ2K\nUSAGE: swiftj2k-cli [OPTIONS] <command> [OPTIONS]\n\nCOMMANDS\n  encode                     NRRD greyscale image -> lossless JPEG 2000 codestream.\n  decode                     JPEG 2000 codestream -> NRRD greyscale image.\n  inspect                    Report codestream geometry without decoding.\n  validate                   Fully decode in memory and report the result.\n  capabilities [--json]      Report actual library support (scalar lossless JPEG 2000).\n  help [command]             Show global or command-specific help.\n  version                    Show the development version.\n  transcode                  Reserved; unavailable until native transcoding is qualified (exit 4).\n\nSwift 6.2 minimum, Swift 6.4 qualified; Apple OS baseline 26.0. CLI hosts: macOS/Linux.\n\nOPTIONS\n  -h, --help                 Show this help; also: help [command].\n  --version                  Show the development version.\n  -v, -vv ... -vvvvv         Increase verbosity (maximum 5).\n  --verbose LEVEL           Set verbosity to 1..5 or + through +++++.\n  --verbose=LEVEL            Equivalent explicit form; -verbose: LEVEL is accepted.\n  -q, --quiet                Suppress optional diagnostics; errors remain visible.\n\nVERBOSITY (stderr only; default 0)\n  1 summary; 2 command stages; 3 capability/configuration details; 4 elapsed timing;\n  5 bounded diagnostic trace. Levels are cumulative. Quiet conflicts with verbosity.\n  Payload bytes, metadata, raw addresses and input/output paths are never logged.\n\nEXIT STATUS\n  0 success; 2 invalid usage or argument; 3 malformed input; 4 unsupported format,\n  feature, layout or backend; 5 resource limit or deadline; 6 I/O or storage failure\n  (including an existing output without --overwrite and a closed pipe); 7 internal\n  failure; 130 interrupted (SIGINT).\n\nMANUAL\n  man swiftj2k-cli (installed with the executable by Scripts/install-cli.sh).\n\nEXAMPLES\n  swiftj2k-cli encode -i slice.nrrd -o slice.j2k --precision 12\n  swiftj2k-cli decode -i slice.j2k -o slice.nrrd\n  swiftj2k-cli inspect -i slice.j2k --json\n  swiftj2k-cli capabilities --json -vv\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--help"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "USAGE: swiftj2k-cli capabilities [--json] [OPTIONS]\n\nReport this library's current encode/decode/inspect support without reading files.\n--json writes one JSON document to stdout; diagnostics stay on stderr.\n\nOPTIONS\n  -h, --help                 Show this help; also: help [command].\n  --version                  Show the development version.\n  -v, -vv ... -vvvvv         Increase verbosity (maximum 5).\n  --verbose LEVEL           Set verbosity to 1..5 or + through +++++.\n  --verbose=LEVEL            Equivalent explicit form; -verbose: LEVEL is accepted.\n  -q, --quiet                Suppress optional diagnostics; errors remain visible.\n\nVERBOSITY (stderr only; default 0)\n  1 summary; 2 command stages; 3 capability/configuration details; 4 elapsed timing;\n  5 bounded diagnostic trace. Levels are cumulative. Quiet conflicts with verbosity.\n  Payload bytes, metadata, raw addresses and input/output paths are never logged.\n\nEXIT STATUS\n  0 success; 2 invalid usage or argument; 3 malformed input; 4 unsupported format,\n  feature, layout or backend; 5 resource limit or deadline; 6 I/O or storage failure\n  (including an existing output without --overwrite and a closed pipe); 7 internal\n  failure; 130 interrupted (SIGINT).\n\nMANUAL\n  man swiftj2k-cli (installed with the executable by Scripts/install-cli.sh).\n\nEXAMPLES\n  swiftj2k-cli capabilities --json\n  swiftj2k-cli capabilities --verbose=+++\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "help",
+        "capabilities"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "USAGE: swiftj2k-cli capabilities [--json] [OPTIONS]\n\nReport this library's current encode/decode/inspect support without reading files.\n--json writes one JSON document to stdout; diagnostics stay on stderr.\n\nOPTIONS\n  -h, --help                 Show this help; also: help [command].\n  --version                  Show the development version.\n  -v, -vv ... -vvvvv         Increase verbosity (maximum 5).\n  --verbose LEVEL           Set verbosity to 1..5 or + through +++++.\n  --verbose=LEVEL            Equivalent explicit form; -verbose: LEVEL is accepted.\n  -q, --quiet                Suppress optional diagnostics; errors remain visible.\n\nVERBOSITY (stderr only; default 0)\n  1 summary; 2 command stages; 3 capability/configuration details; 4 elapsed timing;\n  5 bounded diagnostic trace. Levels are cumulative. Quiet conflicts with verbosity.\n  Payload bytes, metadata, raw addresses and input/output paths are never logged.\n\nEXIT STATUS\n  0 success; 2 invalid usage or argument; 3 malformed input; 4 unsupported format,\n  feature, layout or backend; 5 resource limit or deadline; 6 I/O or storage failure\n  (including an existing output without --overwrite and a closed pipe); 7 internal\n  failure; 130 interrupted (SIGINT).\n\nMANUAL\n  man swiftj2k-cli (installed with the executable by Scripts/install-cli.sh).\n\nEXAMPLES\n  swiftj2k-cli capabilities --json\n  swiftj2k-cli capabilities --verbose=+++\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "-h"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "USAGE: swiftj2k-cli capabilities [--json] [OPTIONS]\n\nReport this library's current encode/decode/inspect support without reading files.\n--json writes one JSON document to stdout; diagnostics stay on stderr.\n\nOPTIONS\n  -h, --help                 Show this help; also: help [command].\n  --version                  Show the development version.\n  -v, -vv ... -vvvvv         Increase verbosity (maximum 5).\n  --verbose LEVEL           Set verbosity to 1..5 or + through +++++.\n  --verbose=LEVEL            Equivalent explicit form; -verbose: LEVEL is accepted.\n  -q, --quiet                Suppress optional diagnostics; errors remain visible.\n\nVERBOSITY (stderr only; default 0)\n  1 summary; 2 command stages; 3 capability/configuration details; 4 elapsed timing;\n  5 bounded diagnostic trace. Levels are cumulative. Quiet conflicts with verbosity.\n  Payload bytes, metadata, raw addresses and input/output paths are never logged.\n\nEXIT STATUS\n  0 success; 2 invalid usage or argument; 3 malformed input; 4 unsupported format,\n  feature, layout or backend; 5 resource limit or deadline; 6 I/O or storage failure\n  (including an existing output without --overwrite and a closed pipe); 7 internal\n  failure; 130 interrupted (SIGINT).\n\nMANUAL\n  man swiftj2k-cli (installed with the executable by Scripts/install-cli.sh).\n\nEXAMPLES\n  swiftj2k-cli capabilities --json\n  swiftj2k-cli capabilities --verbose=+++\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "--version"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "swiftj2k-cli 12.1.0\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "version"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "swiftj2k-cli 12.1.0\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "--version",
+        "--quiet"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "swiftj2k-cli 12.1.0\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "--verbose",
+        "1"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "--verbose=1"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "-verbose:",
+        "1"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "-verbose:1"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "--verbose",
+        "+"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "--verbose=+"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "-vv"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "-v",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "--verbose",
+        "2"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "--verbose=2"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "-verbose:",
+        "2"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "-verbose:2"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "--verbose",
+        "++"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "--verbose=++"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "-vvv"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "-v",
+        "-v",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "--verbose",
+        "3"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "--verbose=3"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "-verbose:",
+        "3"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "-verbose:3"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "--verbose",
+        "+++"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "--verbose=+++"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "-vvvv"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n[4] swiftj2k-cli: elapsed seconds: 0.00100007\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "-v",
+        "-v",
+        "-v",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n[4] swiftj2k-cli: elapsed seconds: 0.0016111\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "--verbose",
+        "4"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n[4] swiftj2k-cli: elapsed seconds: 0.001244406\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "--verbose=4"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n[4] swiftj2k-cli: elapsed seconds: 0.00131461\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "-verbose:",
+        "4"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n[4] swiftj2k-cli: elapsed seconds: 0.001062394\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "-verbose:4"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n[4] swiftj2k-cli: elapsed seconds: 0.001576915\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "--verbose",
+        "++++"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n[4] swiftj2k-cli: elapsed seconds: 0.001343334\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "--verbose=++++"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n[4] swiftj2k-cli: elapsed seconds: 0.0013272\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "-vvvvv"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n[4] swiftj2k-cli: elapsed seconds: 0.001966913\n[5] swiftj2k-cli: arguments validated; capability report emitted; no codec payload opened\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "-v",
+        "-v",
+        "-v",
+        "-v",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n[4] swiftj2k-cli: elapsed seconds: 0.001076485\n[5] swiftj2k-cli: arguments validated; capability report emitted; no codec payload opened\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "--verbose",
+        "5"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n[4] swiftj2k-cli: elapsed seconds: 0.001174328\n[5] swiftj2k-cli: arguments validated; capability report emitted; no codec payload opened\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "--verbose=5"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n[4] swiftj2k-cli: elapsed seconds: 0.000884508\n[5] swiftj2k-cli: arguments validated; capability report emitted; no codec payload opened\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "-verbose:",
+        "5"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n[4] swiftj2k-cli: elapsed seconds: 0.001224563\n[5] swiftj2k-cli: arguments validated; capability report emitted; no codec payload opened\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "-verbose:5"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n[4] swiftj2k-cli: elapsed seconds: 0.00142692\n[5] swiftj2k-cli: arguments validated; capability report emitted; no codec payload opened\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "--verbose",
+        "+++++"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n[4] swiftj2k-cli: elapsed seconds: 0.000965676\n[5] swiftj2k-cli: arguments validated; capability report emitted; no codec payload opened\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "--verbose=+++++"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n[4] swiftj2k-cli: elapsed seconds: 0.001349879\n[5] swiftj2k-cli: arguments validated; capability report emitted; no codec payload opened\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "--verbose",
+        "capabilities",
+        "--json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "-verbose",
+        "capabilities",
+        "--json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "-v",
+        "--verbose",
+        "2",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "swiftj2k-cli 12.1.0\nencode: true\ndecode: true\ninspect: true\nformats: jpeg2000-codestream\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "-vv",
+        "-vvv"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "swiftj2k-cli 12.1.0\nencode: true\ndecode: true\ninspect: true\nformats: jpeg2000-codestream\n",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running capabilities\n[3] swiftj2k-cli: advertised formats: 1; capability values read from the library\n[4] swiftj2k-cli: elapsed seconds: 0.000358981\n[5] swiftj2k-cli: arguments validated; capability report emitted; no codec payload opened\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--json",
+        "--quiet"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"canDecode\":true,\"canEncode\":true,\"canInspect\":true,\"formats\":[\"jpeg2000-codestream\"],\"minimumAppleOS\":\"26.0\",\"tool\":\"swiftj2k-cli\",\"version\":\"12.1.0\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "--help",
+        "--quiet"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "swiftj2k-cli 12.1.0 \u2014 JPEG 2000 and HTJ2K\nUSAGE: swiftj2k-cli [OPTIONS] <command> [OPTIONS]\n\nCOMMANDS\n  encode                     NRRD greyscale image -> lossless JPEG 2000 codestream.\n  decode                     JPEG 2000 codestream -> NRRD greyscale image.\n  inspect                    Report codestream geometry without decoding.\n  validate                   Fully decode in memory and report the result.\n  capabilities [--json]      Report actual library support (scalar lossless JPEG 2000).\n  help [command]             Show global or command-specific help.\n  version                    Show the development version.\n  transcode                  Reserved; unavailable until native transcoding is qualified (exit 4).\n\nSwift 6.2 minimum, Swift 6.4 qualified; Apple OS baseline 26.0. CLI hosts: macOS/Linux.\n\nOPTIONS\n  -h, --help                 Show this help; also: help [command].\n  --version                  Show the development version.\n  -v, -vv ... -vvvvv         Increase verbosity (maximum 5).\n  --verbose LEVEL           Set verbosity to 1..5 or + through +++++.\n  --verbose=LEVEL            Equivalent explicit form; -verbose: LEVEL is accepted.\n  -q, --quiet                Suppress optional diagnostics; errors remain visible.\n\nVERBOSITY (stderr only; default 0)\n  1 summary; 2 command stages; 3 capability/configuration details; 4 elapsed timing;\n  5 bounded diagnostic trace. Levels are cumulative. Quiet conflicts with verbosity.\n  Payload bytes, metadata, raw addresses and input/output paths are never logged.\n\nEXIT STATUS\n  0 success; 2 invalid usage or argument; 3 malformed input; 4 unsupported format,\n  feature, layout or backend; 5 resource limit or deadline; 6 I/O or storage failure\n  (including an existing output without --overwrite and a closed pipe); 7 internal\n  failure; 130 interrupted (SIGINT).\n\nMANUAL\n  man swiftj2k-cli (installed with the executable by Scripts/install-cli.sh).\n\nEXAMPLES\n  swiftj2k-cli encode -i slice.nrrd -o slice.j2k --precision 12\n  swiftj2k-cli decode -i slice.j2k -o slice.nrrd\n  swiftj2k-cli inspect -i slice.j2k --json\n  swiftj2k-cli capabilities --json -vv\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--verbose=0"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: Verbosity must be 1 through 5, or + through +++++.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--verbose=6"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: Verbosity must be 1 through 5, or + through +++++.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--verbose=10"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: Verbosity must be 1 through 5, or + through +++++.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--verbose=99999999999999999999999999999"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: Verbosity must be 1 through 5, or + through +++++.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--verbose=abc"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: Verbosity must be 1 through 5, or + through +++++.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--verbose=++++++"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: Verbosity must be 1 through 5, or + through +++++.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--verbose=+2"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: Verbosity must be 1 through 5, or + through +++++.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--verbose=\u0661"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: Verbosity must be 1 through 5, or + through +++++.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--verbose="
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: An option is missing its value. Use --help for syntax.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "--verbose=5",
+        "-v"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: Verbosity exceeds the maximum level 5.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "-vvvvvv"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: Verbosity exceeds the maximum level 5.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "-v",
+        "--quiet"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: --quiet and verbosity cannot be combined.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "--quiet",
+        "--verbose=1"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: --quiet and verbosity cannot be combined.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "--quiet",
+        "--verbose=0"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: Verbosity must be 1 through 5, or + through +++++.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "--unknown"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: Unknown option. Use swiftj2k-cli --help.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "bogus"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: Unknown command. Use swiftj2k-cli --help.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "help",
+        "bogus"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: Unknown command. Use swiftj2k-cli --help.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "extra"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: Unexpected positional argument. Use --input and --output.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "--verbose:"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: An option is missing its value. Use --help for syntax.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "--json"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: --json requires capabilities or a codec command.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "--input",
+        "some-path"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: Input/output and codec options require a codec command.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--output",
+        "x"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: Input/output and codec options require a codec command.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "capabilities",
+        "--version"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: --version cannot be combined with a command or command options.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "--input"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: An option is missing its value. Use --help for syntax.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "encode",
+        "--help"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "USAGE: swiftj2k-cli encode -i IMAGE.nrrd -o OUT.j2k [--levels N] [--code-block WxH] [--precision N] [OPTIONS]\n\nLosslessly encode one unsigned greyscale NRRD image (1..16 meaningful bits in 16-bit\nsamples) to a raw JPEG 2000 Part 1 codestream: reversible 5/3 wavelet, one tile, one\nlayer, default code-block style.\n\nCODEC OPTIONS\n  --levels N                Decomposition levels 0..32; default min(5, floor(log2(min(w, h)))).\n  --code-block WxH          Code-block size, powers of two 4..1024 with W*H <= 4096; default 64x64.\n  --precision N             Meaningful bits when the NRRD header carries none; default 16.\n\nINPUT AND OUTPUT\n  -i, --input PATH           Input file, or '-' for standard input (read completely).\n  -o, --output PATH          Final output file, or '-' for binary standard output.\n  --input-format FORMAT     j2k (raw JPEG 2000 codestream) or nrrd; checked against the bytes.\n  --output-format FORMAT    j2k or nrrd; the default follows the command.\n  --overwrite               Replace an existing output file. Output is written to a sibling\n                            temporary file and renamed into place; nothing partial remains.\n  --json                    Structured report on stderr (encode/decode/validate) or stdout (inspect).\n\nLIMITS AND POLICIES\n  --mode lossless           The only mode; near-lossless and lossy are unsupported (exit 4).\n  --backend NAME            scalar (default); accelerated backends are unavailable (exit 4).\n  --copy-policy POLICY      require-sharing (default) or allow-copy; neither copies here.\n  --threads N               Worker limit (1..8; the scalar path uses one).\n  --max-memory BYTES        Admission budget for input, output and workspace.\n  --timeout SECONDS         Operation deadline (exit 5 when exceeded).\n\nNRRD PROFILE (CLI.md)\n  Attached header, 2-D, type uint16, encoding raw, explicit endian, no detached data.\n  A key 'swiftj2k.meaningfulbits:=N' carries 1..16 meaningful bits; on encode\n  --precision N supplies it when the header has none (default 16).\n\nOPTIONS\n  -h, --help                 Show this help; also: help [command].\n  --version                  Show the development version.\n  -v, -vv ... -vvvvv         Increase verbosity (maximum 5).\n  --verbose LEVEL           Set verbosity to 1..5 or + through +++++.\n  --verbose=LEVEL            Equivalent explicit form; -verbose: LEVEL is accepted.\n  -q, --quiet                Suppress optional diagnostics; errors remain visible.\n\nVERBOSITY (stderr only; default 0)\n  1 summary; 2 command stages; 3 capability/configuration details; 4 elapsed timing;\n  5 bounded diagnostic trace. Levels are cumulative. Quiet conflicts with verbosity.\n  Payload bytes, metadata, raw addresses and input/output paths are never logged.\n\nEXIT STATUS\n  0 success; 2 invalid usage or argument; 3 malformed input; 4 unsupported format,\n  feature, layout or backend; 5 resource limit or deadline; 6 I/O or storage failure\n  (including an existing output without --overwrite and a closed pipe); 7 internal\n  failure; 130 interrupted (SIGINT).\n\nMANUAL\n  man swiftj2k-cli (installed with the executable by Scripts/install-cli.sh).\n\nEXAMPLES\n  swiftj2k-cli encode -i slice.nrrd -o slice.j2k --precision 12\n  cat slice.nrrd | swiftj2k-cli encode -i - --input-format nrrd -o - > slice.j2k\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "encode",
+        "--help"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "USAGE: swiftj2k-cli encode -i IMAGE.nrrd -o OUT.j2k [--levels N] [--code-block WxH] [--precision N] [OPTIONS]\n\nLosslessly encode one unsigned greyscale NRRD image (1..16 meaningful bits in 16-bit\nsamples) to a raw JPEG 2000 Part 1 codestream: reversible 5/3 wavelet, one tile, one\nlayer, default code-block style.\n\nCODEC OPTIONS\n  --levels N                Decomposition levels 0..32; default min(5, floor(log2(min(w, h)))).\n  --code-block WxH          Code-block size, powers of two 4..1024 with W*H <= 4096; default 64x64.\n  --precision N             Meaningful bits when the NRRD header carries none; default 16.\n\nINPUT AND OUTPUT\n  -i, --input PATH           Input file, or '-' for standard input (read completely).\n  -o, --output PATH          Final output file, or '-' for binary standard output.\n  --input-format FORMAT     j2k (raw JPEG 2000 codestream) or nrrd; checked against the bytes.\n  --output-format FORMAT    j2k or nrrd; the default follows the command.\n  --overwrite               Replace an existing output file. Output is written to a sibling\n                            temporary file and renamed into place; nothing partial remains.\n  --json                    Structured report on stderr (encode/decode/validate) or stdout (inspect).\n\nLIMITS AND POLICIES\n  --mode lossless           The only mode; near-lossless and lossy are unsupported (exit 4).\n  --backend NAME            scalar (default); accelerated backends are unavailable (exit 4).\n  --copy-policy POLICY      require-sharing (default) or allow-copy; neither copies here.\n  --threads N               Worker limit (1..8; the scalar path uses one).\n  --max-memory BYTES        Admission budget for input, output and workspace.\n  --timeout SECONDS         Operation deadline (exit 5 when exceeded).\n\nNRRD PROFILE (CLI.md)\n  Attached header, 2-D, type uint16, encoding raw, explicit endian, no detached data.\n  A key 'swiftj2k.meaningfulbits:=N' carries 1..16 meaningful bits; on encode\n  --precision N supplies it when the header has none (default 16).\n\nOPTIONS\n  -h, --help                 Show this help; also: help [command].\n  --version                  Show the development version.\n  -v, -vv ... -vvvvv         Increase verbosity (maximum 5).\n  --verbose LEVEL           Set verbosity to 1..5 or + through +++++.\n  --verbose=LEVEL            Equivalent explicit form; -verbose: LEVEL is accepted.\n  -q, --quiet                Suppress optional diagnostics; errors remain visible.\n\nVERBOSITY (stderr only; default 0)\n  1 summary; 2 command stages; 3 capability/configuration details; 4 elapsed timing;\n  5 bounded diagnostic trace. Levels are cumulative. Quiet conflicts with verbosity.\n  Payload bytes, metadata, raw addresses and input/output paths are never logged.\n\nEXIT STATUS\n  0 success; 2 invalid usage or argument; 3 malformed input; 4 unsupported format,\n  feature, layout or backend; 5 resource limit or deadline; 6 I/O or storage failure\n  (including an existing output without --overwrite and a closed pipe); 7 internal\n  failure; 130 interrupted (SIGINT).\n\nMANUAL\n  man swiftj2k-cli (installed with the executable by Scripts/install-cli.sh).\n\nEXAMPLES\n  swiftj2k-cli encode -i slice.nrrd -o slice.j2k --precision 12\n  cat slice.nrrd | swiftj2k-cli encode -i - --input-format nrrd -o - > slice.j2k\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "decode",
+        "--help"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "USAGE: swiftj2k-cli decode -i IN.j2k -o IMAGE.nrrd [OPTIONS]\n\nDecode a raw JPEG 2000 Part 1 codestream (unsigned greyscale, 1..16 bits, reversible\n5/3, any tiles, layers, code-block styles and progression orders) to the NRRD profile.\n\nINPUT AND OUTPUT\n  -i, --input PATH           Input file, or '-' for standard input (read completely).\n  -o, --output PATH          Final output file, or '-' for binary standard output.\n  --input-format FORMAT     j2k (raw JPEG 2000 codestream) or nrrd; checked against the bytes.\n  --output-format FORMAT    j2k or nrrd; the default follows the command.\n  --overwrite               Replace an existing output file. Output is written to a sibling\n                            temporary file and renamed into place; nothing partial remains.\n  --json                    Structured report on stderr (encode/decode/validate) or stdout (inspect).\n\nLIMITS AND POLICIES\n  --mode lossless           The only mode; near-lossless and lossy are unsupported (exit 4).\n  --backend NAME            scalar (default); accelerated backends are unavailable (exit 4).\n  --copy-policy POLICY      require-sharing (default) or allow-copy; neither copies here.\n  --threads N               Worker limit (1..8; the scalar path uses one).\n  --max-memory BYTES        Admission budget for input, output and workspace.\n  --timeout SECONDS         Operation deadline (exit 5 when exceeded).\n\nNRRD PROFILE (CLI.md)\n  Attached header, 2-D, type uint16, encoding raw, explicit endian, no detached data.\n  A key 'swiftj2k.meaningfulbits:=N' carries 1..16 meaningful bits; on encode\n  --precision N supplies it when the header has none (default 16).\n\nOPTIONS\n  -h, --help                 Show this help; also: help [command].\n  --version                  Show the development version.\n  -v, -vv ... -vvvvv         Increase verbosity (maximum 5).\n  --verbose LEVEL           Set verbosity to 1..5 or + through +++++.\n  --verbose=LEVEL            Equivalent explicit form; -verbose: LEVEL is accepted.\n  -q, --quiet                Suppress optional diagnostics; errors remain visible.\n\nVERBOSITY (stderr only; default 0)\n  1 summary; 2 command stages; 3 capability/configuration details; 4 elapsed timing;\n  5 bounded diagnostic trace. Levels are cumulative. Quiet conflicts with verbosity.\n  Payload bytes, metadata, raw addresses and input/output paths are never logged.\n\nEXIT STATUS\n  0 success; 2 invalid usage or argument; 3 malformed input; 4 unsupported format,\n  feature, layout or backend; 5 resource limit or deadline; 6 I/O or storage failure\n  (including an existing output without --overwrite and a closed pipe); 7 internal\n  failure; 130 interrupted (SIGINT).\n\nMANUAL\n  man swiftj2k-cli (installed with the executable by Scripts/install-cli.sh).\n\nEXAMPLES\n  swiftj2k-cli decode -i slice.j2k -o slice.nrrd --overwrite\n  swiftj2k-cli decode -i - -o - < slice.j2k > slice.nrrd\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "decode",
+        "--help"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "USAGE: swiftj2k-cli decode -i IN.j2k -o IMAGE.nrrd [OPTIONS]\n\nDecode a raw JPEG 2000 Part 1 codestream (unsigned greyscale, 1..16 bits, reversible\n5/3, any tiles, layers, code-block styles and progression orders) to the NRRD profile.\n\nINPUT AND OUTPUT\n  -i, --input PATH           Input file, or '-' for standard input (read completely).\n  -o, --output PATH          Final output file, or '-' for binary standard output.\n  --input-format FORMAT     j2k (raw JPEG 2000 codestream) or nrrd; checked against the bytes.\n  --output-format FORMAT    j2k or nrrd; the default follows the command.\n  --overwrite               Replace an existing output file. Output is written to a sibling\n                            temporary file and renamed into place; nothing partial remains.\n  --json                    Structured report on stderr (encode/decode/validate) or stdout (inspect).\n\nLIMITS AND POLICIES\n  --mode lossless           The only mode; near-lossless and lossy are unsupported (exit 4).\n  --backend NAME            scalar (default); accelerated backends are unavailable (exit 4).\n  --copy-policy POLICY      require-sharing (default) or allow-copy; neither copies here.\n  --threads N               Worker limit (1..8; the scalar path uses one).\n  --max-memory BYTES        Admission budget for input, output and workspace.\n  --timeout SECONDS         Operation deadline (exit 5 when exceeded).\n\nNRRD PROFILE (CLI.md)\n  Attached header, 2-D, type uint16, encoding raw, explicit endian, no detached data.\n  A key 'swiftj2k.meaningfulbits:=N' carries 1..16 meaningful bits; on encode\n  --precision N supplies it when the header has none (default 16).\n\nOPTIONS\n  -h, --help                 Show this help; also: help [command].\n  --version                  Show the development version.\n  -v, -vv ... -vvvvv         Increase verbosity (maximum 5).\n  --verbose LEVEL           Set verbosity to 1..5 or + through +++++.\n  --verbose=LEVEL            Equivalent explicit form; -verbose: LEVEL is accepted.\n  -q, --quiet                Suppress optional diagnostics; errors remain visible.\n\nVERBOSITY (stderr only; default 0)\n  1 summary; 2 command stages; 3 capability/configuration details; 4 elapsed timing;\n  5 bounded diagnostic trace. Levels are cumulative. Quiet conflicts with verbosity.\n  Payload bytes, metadata, raw addresses and input/output paths are never logged.\n\nEXIT STATUS\n  0 success; 2 invalid usage or argument; 3 malformed input; 4 unsupported format,\n  feature, layout or backend; 5 resource limit or deadline; 6 I/O or storage failure\n  (including an existing output without --overwrite and a closed pipe); 7 internal\n  failure; 130 interrupted (SIGINT).\n\nMANUAL\n  man swiftj2k-cli (installed with the executable by Scripts/install-cli.sh).\n\nEXAMPLES\n  swiftj2k-cli decode -i slice.j2k -o slice.nrrd --overwrite\n  swiftj2k-cli decode -i - -o - < slice.j2k > slice.nrrd\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "inspect",
+        "--help"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "USAGE: swiftj2k-cli inspect -i IN.j2k [--json] [OPTIONS]\n\nBounded structural inspection of a codestream: geometry, precision and tiles are read\nfrom the main and tile-part headers without decoding samples. Output goes to stdout.\n\nINPUT AND OUTPUT\n  -i, --input PATH           Input file, or '-' for standard input (read completely).\n  -o, --output PATH          Final output file, or '-' for binary standard output.\n  --input-format FORMAT     j2k (raw JPEG 2000 codestream) or nrrd; checked against the bytes.\n  --output-format FORMAT    j2k or nrrd; the default follows the command.\n  --overwrite               Replace an existing output file. Output is written to a sibling\n                            temporary file and renamed into place; nothing partial remains.\n  --json                    Structured report on stderr (encode/decode/validate) or stdout (inspect).\n\nLIMITS AND POLICIES\n  --mode lossless           The only mode; near-lossless and lossy are unsupported (exit 4).\n  --backend NAME            scalar (default); accelerated backends are unavailable (exit 4).\n  --copy-policy POLICY      require-sharing (default) or allow-copy; neither copies here.\n  --threads N               Worker limit (1..8; the scalar path uses one).\n  --max-memory BYTES        Admission budget for input, output and workspace.\n  --timeout SECONDS         Operation deadline (exit 5 when exceeded).\n\nNRRD PROFILE (CLI.md)\n  Attached header, 2-D, type uint16, encoding raw, explicit endian, no detached data.\n  A key 'swiftj2k.meaningfulbits:=N' carries 1..16 meaningful bits; on encode\n  --precision N supplies it when the header has none (default 16).\n\nOPTIONS\n  -h, --help                 Show this help; also: help [command].\n  --version                  Show the development version.\n  -v, -vv ... -vvvvv         Increase verbosity (maximum 5).\n  --verbose LEVEL           Set verbosity to 1..5 or + through +++++.\n  --verbose=LEVEL            Equivalent explicit form; -verbose: LEVEL is accepted.\n  -q, --quiet                Suppress optional diagnostics; errors remain visible.\n\nVERBOSITY (stderr only; default 0)\n  1 summary; 2 command stages; 3 capability/configuration details; 4 elapsed timing;\n  5 bounded diagnostic trace. Levels are cumulative. Quiet conflicts with verbosity.\n  Payload bytes, metadata, raw addresses and input/output paths are never logged.\n\nEXIT STATUS\n  0 success; 2 invalid usage or argument; 3 malformed input; 4 unsupported format,\n  feature, layout or backend; 5 resource limit or deadline; 6 I/O or storage failure\n  (including an existing output without --overwrite and a closed pipe); 7 internal\n  failure; 130 interrupted (SIGINT).\n\nMANUAL\n  man swiftj2k-cli (installed with the executable by Scripts/install-cli.sh).\n\nEXAMPLES\n  swiftj2k-cli inspect -i slice.j2k --json\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "inspect",
+        "--help"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "USAGE: swiftj2k-cli inspect -i IN.j2k [--json] [OPTIONS]\n\nBounded structural inspection of a codestream: geometry, precision and tiles are read\nfrom the main and tile-part headers without decoding samples. Output goes to stdout.\n\nINPUT AND OUTPUT\n  -i, --input PATH           Input file, or '-' for standard input (read completely).\n  -o, --output PATH          Final output file, or '-' for binary standard output.\n  --input-format FORMAT     j2k (raw JPEG 2000 codestream) or nrrd; checked against the bytes.\n  --output-format FORMAT    j2k or nrrd; the default follows the command.\n  --overwrite               Replace an existing output file. Output is written to a sibling\n                            temporary file and renamed into place; nothing partial remains.\n  --json                    Structured report on stderr (encode/decode/validate) or stdout (inspect).\n\nLIMITS AND POLICIES\n  --mode lossless           The only mode; near-lossless and lossy are unsupported (exit 4).\n  --backend NAME            scalar (default); accelerated backends are unavailable (exit 4).\n  --copy-policy POLICY      require-sharing (default) or allow-copy; neither copies here.\n  --threads N               Worker limit (1..8; the scalar path uses one).\n  --max-memory BYTES        Admission budget for input, output and workspace.\n  --timeout SECONDS         Operation deadline (exit 5 when exceeded).\n\nNRRD PROFILE (CLI.md)\n  Attached header, 2-D, type uint16, encoding raw, explicit endian, no detached data.\n  A key 'swiftj2k.meaningfulbits:=N' carries 1..16 meaningful bits; on encode\n  --precision N supplies it when the header has none (default 16).\n\nOPTIONS\n  -h, --help                 Show this help; also: help [command].\n  --version                  Show the development version.\n  -v, -vv ... -vvvvv         Increase verbosity (maximum 5).\n  --verbose LEVEL           Set verbosity to 1..5 or + through +++++.\n  --verbose=LEVEL            Equivalent explicit form; -verbose: LEVEL is accepted.\n  -q, --quiet                Suppress optional diagnostics; errors remain visible.\n\nVERBOSITY (stderr only; default 0)\n  1 summary; 2 command stages; 3 capability/configuration details; 4 elapsed timing;\n  5 bounded diagnostic trace. Levels are cumulative. Quiet conflicts with verbosity.\n  Payload bytes, metadata, raw addresses and input/output paths are never logged.\n\nEXIT STATUS\n  0 success; 2 invalid usage or argument; 3 malformed input; 4 unsupported format,\n  feature, layout or backend; 5 resource limit or deadline; 6 I/O or storage failure\n  (including an existing output without --overwrite and a closed pipe); 7 internal\n  failure; 130 interrupted (SIGINT).\n\nMANUAL\n  man swiftj2k-cli (installed with the executable by Scripts/install-cli.sh).\n\nEXAMPLES\n  swiftj2k-cli inspect -i slice.j2k --json\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "validate",
+        "--help"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "USAGE: swiftj2k-cli validate -i IN.j2k [--json] [OPTIONS]\n\nFully decode a codestream in memory and report success or the defined failure.\nNo output file is written.\n\nINPUT AND OUTPUT\n  -i, --input PATH           Input file, or '-' for standard input (read completely).\n  -o, --output PATH          Final output file, or '-' for binary standard output.\n  --input-format FORMAT     j2k (raw JPEG 2000 codestream) or nrrd; checked against the bytes.\n  --output-format FORMAT    j2k or nrrd; the default follows the command.\n  --overwrite               Replace an existing output file. Output is written to a sibling\n                            temporary file and renamed into place; nothing partial remains.\n  --json                    Structured report on stderr (encode/decode/validate) or stdout (inspect).\n\nLIMITS AND POLICIES\n  --mode lossless           The only mode; near-lossless and lossy are unsupported (exit 4).\n  --backend NAME            scalar (default); accelerated backends are unavailable (exit 4).\n  --copy-policy POLICY      require-sharing (default) or allow-copy; neither copies here.\n  --threads N               Worker limit (1..8; the scalar path uses one).\n  --max-memory BYTES        Admission budget for input, output and workspace.\n  --timeout SECONDS         Operation deadline (exit 5 when exceeded).\n\nNRRD PROFILE (CLI.md)\n  Attached header, 2-D, type uint16, encoding raw, explicit endian, no detached data.\n  A key 'swiftj2k.meaningfulbits:=N' carries 1..16 meaningful bits; on encode\n  --precision N supplies it when the header has none (default 16).\n\nOPTIONS\n  -h, --help                 Show this help; also: help [command].\n  --version                  Show the development version.\n  -v, -vv ... -vvvvv         Increase verbosity (maximum 5).\n  --verbose LEVEL           Set verbosity to 1..5 or + through +++++.\n  --verbose=LEVEL            Equivalent explicit form; -verbose: LEVEL is accepted.\n  -q, --quiet                Suppress optional diagnostics; errors remain visible.\n\nVERBOSITY (stderr only; default 0)\n  1 summary; 2 command stages; 3 capability/configuration details; 4 elapsed timing;\n  5 bounded diagnostic trace. Levels are cumulative. Quiet conflicts with verbosity.\n  Payload bytes, metadata, raw addresses and input/output paths are never logged.\n\nEXIT STATUS\n  0 success; 2 invalid usage or argument; 3 malformed input; 4 unsupported format,\n  feature, layout or backend; 5 resource limit or deadline; 6 I/O or storage failure\n  (including an existing output without --overwrite and a closed pipe); 7 internal\n  failure; 130 interrupted (SIGINT).\n\nMANUAL\n  man swiftj2k-cli (installed with the executable by Scripts/install-cli.sh).\n\nEXAMPLES\n  swiftj2k-cli validate -i slice.j2k\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "validate",
+        "--help"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "USAGE: swiftj2k-cli validate -i IN.j2k [--json] [OPTIONS]\n\nFully decode a codestream in memory and report success or the defined failure.\nNo output file is written.\n\nINPUT AND OUTPUT\n  -i, --input PATH           Input file, or '-' for standard input (read completely).\n  -o, --output PATH          Final output file, or '-' for binary standard output.\n  --input-format FORMAT     j2k (raw JPEG 2000 codestream) or nrrd; checked against the bytes.\n  --output-format FORMAT    j2k or nrrd; the default follows the command.\n  --overwrite               Replace an existing output file. Output is written to a sibling\n                            temporary file and renamed into place; nothing partial remains.\n  --json                    Structured report on stderr (encode/decode/validate) or stdout (inspect).\n\nLIMITS AND POLICIES\n  --mode lossless           The only mode; near-lossless and lossy are unsupported (exit 4).\n  --backend NAME            scalar (default); accelerated backends are unavailable (exit 4).\n  --copy-policy POLICY      require-sharing (default) or allow-copy; neither copies here.\n  --threads N               Worker limit (1..8; the scalar path uses one).\n  --max-memory BYTES        Admission budget for input, output and workspace.\n  --timeout SECONDS         Operation deadline (exit 5 when exceeded).\n\nNRRD PROFILE (CLI.md)\n  Attached header, 2-D, type uint16, encoding raw, explicit endian, no detached data.\n  A key 'swiftj2k.meaningfulbits:=N' carries 1..16 meaningful bits; on encode\n  --precision N supplies it when the header has none (default 16).\n\nOPTIONS\n  -h, --help                 Show this help; also: help [command].\n  --version                  Show the development version.\n  -v, -vv ... -vvvvv         Increase verbosity (maximum 5).\n  --verbose LEVEL           Set verbosity to 1..5 or + through +++++.\n  --verbose=LEVEL            Equivalent explicit form; -verbose: LEVEL is accepted.\n  -q, --quiet                Suppress optional diagnostics; errors remain visible.\n\nVERBOSITY (stderr only; default 0)\n  1 summary; 2 command stages; 3 capability/configuration details; 4 elapsed timing;\n  5 bounded diagnostic trace. Levels are cumulative. Quiet conflicts with verbosity.\n  Payload bytes, metadata, raw addresses and input/output paths are never logged.\n\nEXIT STATUS\n  0 success; 2 invalid usage or argument; 3 malformed input; 4 unsupported format,\n  feature, layout or backend; 5 resource limit or deadline; 6 I/O or storage failure\n  (including an existing output without --overwrite and a closed pipe); 7 internal\n  failure; 130 interrupted (SIGINT).\n\nMANUAL\n  man swiftj2k-cli (installed with the executable by Scripts/install-cli.sh).\n\nEXAMPLES\n  swiftj2k-cli validate -i slice.j2k\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "transcode",
+        "--help"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "USAGE: swiftj2k-cli transcode [OPTIONS]\n\nUNAVAILABLE: native JPEG 2000 <-> HTJ2K transcoding is reserved (exit 4).\nNo input is opened, no standard input is consumed and no output file is created.\n\nOPTIONS\n  -h, --help                 Show this help; also: help [command].\n  --version                  Show the development version.\n  -v, -vv ... -vvvvv         Increase verbosity (maximum 5).\n  --verbose LEVEL           Set verbosity to 1..5 or + through +++++.\n  --verbose=LEVEL            Equivalent explicit form; -verbose: LEVEL is accepted.\n  -q, --quiet                Suppress optional diagnostics; errors remain visible.\n\nVERBOSITY (stderr only; default 0)\n  1 summary; 2 command stages; 3 capability/configuration details; 4 elapsed timing;\n  5 bounded diagnostic trace. Levels are cumulative. Quiet conflicts with verbosity.\n  Payload bytes, metadata, raw addresses and input/output paths are never logged.\n\nEXIT STATUS\n  0 success; 2 invalid usage or argument; 3 malformed input; 4 unsupported format,\n  feature, layout or backend; 5 resource limit or deadline; 6 I/O or storage failure\n  (including an existing output without --overwrite and a closed pipe); 7 internal\n  failure; 130 interrupted (SIGINT).\n\nMANUAL\n  man swiftj2k-cli (installed with the executable by Scripts/install-cli.sh).\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "transcode",
+        "--input",
+        "-",
+        "--output",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/private image \u03bb.raw",
+        "-vvvvv"
+      ],
+      "exit_code": 4,
+      "expected_exit_code": 4,
+      "stdout": "",
+      "stderr": "[1] swiftj2k-cli: development version 12.1.0\n[2] swiftj2k-cli: running transcode\nswiftj2k-cli: unsupported feature: native transcoding is not implemented; no input/output opened.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "inspect",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_17x9_alternating.opj_n1.j2k",
+        "--json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"bytes\":394,\"components\":1,\"format\":\"jpeg2000-codestream\",\"frames\":1,\"height\":9,\"meaningfulBits\":16,\"sampleType\":\"unsignedInteger\",\"storageBits\":16,\"width\":17}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "inspect",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_17x9_alternating.opj_n1.j2k"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "format: jpeg2000-codestream\nwidth: 17\nheight: 9\nmeaningful bits: 16\nstorage bits: 16\ncomponents: 1\nbytes: 394\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "validate",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_17x9_alternating.opj_n1.j2k",
+        "--json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"backend\":\"scalar\",\"bytes\":394,\"elapsedSeconds\":0.004808376,\"fidelity\":\"exactSamples\",\"height\":9,\"meaningfulBits\":16,\"valid\":true,\"width\":17}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "validate",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_17x9_alternating.opj_n1.j2k"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "valid: 17x9, 16 meaningful bits, 394 bytes\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "decode",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_17x9_alternating.opj_n1.j2k",
+        "-o",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/g16_17x9_alternating decoded.nrrd",
+        "--json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "",
+      "stderr": "{\"backend\":\"scalar\",\"command\":\"decode\",\"copyEvents\":0,\"elapsedSeconds\":0.005527208,\"fidelity\":\"exactSamples\",\"height\":9,\"inputBytes\":394,\"meaningfulBits\":16,\"outputBytes\":522,\"peakWorkspaceBytes\":46202,\"pixelAllocations\":1,\"width\":17}\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "decode",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_17x9_alternating.opj_n1.j2k",
+        "-o",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/g16_17x9_alternating decoded.nrrd"
+      ],
+      "exit_code": 6,
+      "expected_exit_code": 6,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: output exists; pass --overwrite to replace it.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "decode",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_17x9_alternating.opj_n1.j2k",
+        "-o",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/g16_17x9_alternating decoded.nrrd",
+        "--overwrite",
+        "--input-format",
+        "j2k",
+        "--output-format",
+        "nrrd",
+        "--copy-policy",
+        "allow-copy"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "encode",
+        "-i",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/g16_17x9_alternating decoded.nrrd",
+        "-o",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/g16_17x9_alternating re-encoded.j2k",
+        "--json",
+        "--levels",
+        "2",
+        "--code-block",
+        "32x32"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "",
+      "stderr": "{\"backend\":\"scalar\",\"command\":\"encode\",\"copyEvents\":0,\"elapsedSeconds\":0.005279204,\"fidelity\":\"exactSamples\",\"format\":\"jpeg2000-codestream\",\"height\":9,\"inputBytes\":522,\"meaningfulBits\":16,\"mode\":\"lossless\",\"outputBytes\":106,\"peakWorkspaceBytes\":45928,\"width\":17}\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "validate",
+        "-i",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/g16_17x9_alternating re-encoded.j2k",
+        "--json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"backend\":\"scalar\",\"bytes\":106,\"elapsedSeconds\":0.000511558,\"fidelity\":\"exactSamples\",\"height\":9,\"meaningfulBits\":16,\"valid\":true,\"width\":17}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "sh",
+        "-c",
+        "decode | encode | decode"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "inspect",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g12_129x67_gradient.opj.j2k",
+        "--json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"bytes\":3609,\"components\":1,\"format\":\"jpeg2000-codestream\",\"frames\":1,\"height\":67,\"meaningfulBits\":12,\"sampleType\":\"unsignedInteger\",\"storageBits\":16,\"width\":129}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "inspect",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g12_129x67_gradient.opj.j2k"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "format: jpeg2000-codestream\nwidth: 129\nheight: 67\nmeaningful bits: 12\nstorage bits: 16\ncomponents: 1\nbytes: 3609\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "validate",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g12_129x67_gradient.opj.j2k",
+        "--json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"backend\":\"scalar\",\"bytes\":3609,\"elapsedSeconds\":0.004016047,\"fidelity\":\"exactSamples\",\"height\":67,\"meaningfulBits\":12,\"valid\":true,\"width\":129}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "validate",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g12_129x67_gradient.opj.j2k"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "valid: 129x67, 12 meaningful bits, 3609 bytes\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "decode",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g12_129x67_gradient.opj.j2k",
+        "-o",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/g12_129x67_gradient decoded.nrrd",
+        "--json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "",
+      "stderr": "{\"backend\":\"scalar\",\"command\":\"decode\",\"copyEvents\":0,\"elapsedSeconds\":0.008266842,\"fidelity\":\"exactSamples\",\"height\":67,\"inputBytes\":3609,\"meaningfulBits\":12,\"outputBytes\":17504,\"peakWorkspaceBytes\":83362,\"pixelAllocations\":1,\"width\":129}\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "decode",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g12_129x67_gradient.opj.j2k",
+        "-o",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/g12_129x67_gradient decoded.nrrd"
+      ],
+      "exit_code": 6,
+      "expected_exit_code": 6,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: output exists; pass --overwrite to replace it.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "decode",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g12_129x67_gradient.opj.j2k",
+        "-o",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/g12_129x67_gradient decoded.nrrd",
+        "--overwrite",
+        "--input-format",
+        "j2k",
+        "--output-format",
+        "nrrd",
+        "--copy-policy",
+        "allow-copy"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "encode",
+        "-i",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/g12_129x67_gradient decoded.nrrd",
+        "-o",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/g12_129x67_gradient re-encoded.j2k",
+        "--json",
+        "--levels",
+        "2",
+        "--code-block",
+        "32x32"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "",
+      "stderr": "{\"backend\":\"scalar\",\"command\":\"encode\",\"copyEvents\":0,\"elapsedSeconds\":0.010408747,\"fidelity\":\"exactSamples\",\"format\":\"jpeg2000-codestream\",\"height\":67,\"inputBytes\":17504,\"meaningfulBits\":12,\"mode\":\"lossless\",\"outputBytes\":3682,\"peakWorkspaceBytes\":79888,\"width\":129}\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "validate",
+        "-i",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/g12_129x67_gradient re-encoded.j2k",
+        "--json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"backend\":\"scalar\",\"bytes\":3682,\"elapsedSeconds\":0.003312598,\"fidelity\":\"exactSamples\",\"height\":67,\"meaningfulBits\":12,\"valid\":true,\"width\":129}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "sh",
+        "-c",
+        "decode | encode | decode"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "inspect",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g08_37x23_random.opj_n1.j2k",
+        "--json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"bytes\":1030,\"components\":1,\"format\":\"jpeg2000-codestream\",\"frames\":1,\"height\":23,\"meaningfulBits\":8,\"sampleType\":\"unsignedInteger\",\"storageBits\":16,\"width\":37}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "inspect",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g08_37x23_random.opj_n1.j2k"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "format: jpeg2000-codestream\nwidth: 37\nheight: 23\nmeaningful bits: 8\nstorage bits: 16\ncomponents: 1\nbytes: 1030\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "validate",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g08_37x23_random.opj_n1.j2k",
+        "--json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"backend\":\"scalar\",\"bytes\":1030,\"elapsedSeconds\":0.003209503,\"fidelity\":\"exactSamples\",\"height\":23,\"meaningfulBits\":8,\"valid\":true,\"width\":37}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "validate",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g08_37x23_random.opj_n1.j2k"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "valid: 37x23, 8 meaningful bits, 1030 bytes\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "decode",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g08_37x23_random.opj_n1.j2k",
+        "-o",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/g08_37x23_random decoded.nrrd",
+        "--json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "",
+      "stderr": "{\"backend\":\"scalar\",\"command\":\"decode\",\"copyEvents\":0,\"elapsedSeconds\":0.013965389,\"fidelity\":\"exactSamples\",\"height\":23,\"inputBytes\":1030,\"meaningfulBits\":8,\"outputBytes\":1918,\"peakWorkspaceBytes\":49630,\"pixelAllocations\":1,\"width\":37}\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "decode",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g08_37x23_random.opj_n1.j2k",
+        "-o",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/g08_37x23_random decoded.nrrd"
+      ],
+      "exit_code": 6,
+      "expected_exit_code": 6,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: output exists; pass --overwrite to replace it.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "decode",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g08_37x23_random.opj_n1.j2k",
+        "-o",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/g08_37x23_random decoded.nrrd",
+        "--overwrite",
+        "--input-format",
+        "j2k",
+        "--output-format",
+        "nrrd",
+        "--copy-policy",
+        "allow-copy"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "encode",
+        "-i",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/g08_37x23_random decoded.nrrd",
+        "-o",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/g08_37x23_random re-encoded.j2k",
+        "--json",
+        "--levels",
+        "2",
+        "--code-block",
+        "32x32"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "",
+      "stderr": "{\"backend\":\"scalar\",\"command\":\"encode\",\"copyEvents\":0,\"elapsedSeconds\":0.006335129,\"fidelity\":\"exactSamples\",\"format\":\"jpeg2000-codestream\",\"height\":23,\"inputBytes\":1918,\"meaningfulBits\":8,\"mode\":\"lossless\",\"outputBytes\":1048,\"peakWorkspaceBytes\":48720,\"width\":37}\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "validate",
+        "-i",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/g08_37x23_random re-encoded.j2k",
+        "--json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\"backend\":\"scalar\",\"bytes\":1048,\"elapsedSeconds\":0.00163781,\"fidelity\":\"exactSamples\",\"height\":23,\"meaningfulBits\":8,\"valid\":true,\"width\":37}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "sh",
+        "-c",
+        "decode | encode | decode"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "encode"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: encode requires --input.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "decode",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_64x64_random.opj.j2k"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: decode requires --output.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "inspect",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_64x64_random.opj.j2k",
+        "-o",
+        "x"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: --output is not accepted by inspect.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "validate",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_64x64_random.opj.j2k",
+        "--output",
+        "x"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: --output is not accepted by validate.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "decode",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_64x64_random.opj.j2k",
+        "-o",
+        "x",
+        "--input-format",
+        "tiff"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: --input-format must be j2k or nrrd.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "encode",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_64x64_random.opj.j2k",
+        "-o",
+        "x",
+        "--precision",
+        "17"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: --precision must be 1..16.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "encode",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_64x64_random.opj.j2k",
+        "-o",
+        "x",
+        "--code-block",
+        "3x3"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: Code-block dimensions must be powers of two from 4 to 1024.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "encode",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_64x64_random.opj.j2k",
+        "-o",
+        "x",
+        "--levels",
+        "40"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: --levels must be 0..32.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "validate",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_64x64_random.opj.j2k",
+        "--threads",
+        "9"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: --threads must be 1..8.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "validate",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_64x64_random.opj.j2k",
+        "--timeout",
+        "-1"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: An option is missing its value. Use --help for syntax.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "validate",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_64x64_random.opj.j2k",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_64x64_random.opj.j2k"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: --input was given twice.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "validate",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_64x64_random.irreversible97.j2k"
+      ],
+      "exit_code": 4,
+      "expected_exit_code": 4,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: unsupported: The irreversible 9/7 wavelet is not supported.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "validate",
+        "-i",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/truncated.j2k"
+      ],
+      "exit_code": 3,
+      "expected_exit_code": 3,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: malformed input: Marker segment ff64 is truncated.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "validate",
+        "-i",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/private image \u03bb.raw"
+      ],
+      "exit_code": 4,
+      "expected_exit_code": 4,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: unsupported format: input is neither a JPEG 2000 codestream nor NRRD.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "encode",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_64x64_random.opj.j2k",
+        "-o",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/x.j2k"
+      ],
+      "exit_code": 4,
+      "expected_exit_code": 4,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: unsupported format: encode reads NRRD images.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "decode",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_64x64_random.opj.j2k",
+        "-o",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/x.nrrd",
+        "--input-format",
+        "nrrd"
+      ],
+      "exit_code": 4,
+      "expected_exit_code": 4,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: unsupported format: the input bytes are not nrrd as declared.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "decode",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_64x64_random.opj.j2k",
+        "-o",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/x.nrrd",
+        "--mode",
+        "lossy"
+      ],
+      "exit_code": 4,
+      "expected_exit_code": 4,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: unsupported: only lossless mode is implemented.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "decode",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_64x64_random.opj.j2k",
+        "-o",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/x.nrrd",
+        "--backend",
+        "metal"
+      ],
+      "exit_code": 4,
+      "expected_exit_code": 4,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: unsupported: backend 'metal' is not available; only scalar exists.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "validate",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_256x256_smooth.opj.j2k",
+        "--timeout",
+        "0.000001"
+      ],
+      "exit_code": 5,
+      "expected_exit_code": 5,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: resource limit: Operation deadline elapsed.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "validate",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_256x256_smooth.opj.j2k",
+        "--max-memory",
+        "1000"
+      ],
+      "exit_code": 5,
+      "expected_exit_code": 5,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: resource limit: Compressed input exceeds operation limits.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "validate",
+        "-i",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/missing.j2k"
+      ],
+      "exit_code": 6,
+      "expected_exit_code": 6,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: I/O failure: the input could not be read.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "decode",
+        "-i",
+        "/SwiftJ2K/Tests/SwiftJ2KTests/Fixtures/Lossless/g16_64x64_random.opj.j2k",
+        "-o",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/no such dir/x.nrrd"
+      ],
+      "exit_code": 6,
+      "expected_exit_code": 6,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: output I/O failure: the final output could not be written.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "encode",
+        "-i",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/detached.nrrd",
+        "-o",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/x.j2k"
+      ],
+      "exit_code": 4,
+      "expected_exit_code": 4,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: unsupported format: NRRD 'data file' is outside the attached-raw profile.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "encode",
+        "-i",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/gzip.nrrd",
+        "-o",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/x.j2k"
+      ],
+      "exit_code": 4,
+      "expected_exit_code": 4,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: unsupported format: NRRD encoding must be raw.\n"
+    },
+    {
+      "argv": [
+        "<linux-build>/release2-scratch/aarch64-unknown-linux-gnu/release/swiftj2k-cli",
+        "encode",
+        "-i",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/short.nrrd",
+        "-o",
+        "<linux-build>/release2-out/cli-run/cli stage spaces bp2gj9s4/x.j2k"
+      ],
+      "exit_code": 3,
+      "expected_exit_code": 3,
+      "stdout": "",
+      "stderr": "swiftj2k-cli: malformed input: NRRD data holds 6 bytes, expected 8.\n"
+    },
+    {
+      "argv": [
+        "decode",
+        "-i",
+        "-",
+        "(SIGINT while waiting for stdin)"
+      ],
+      "exit_code": 130,
+      "expected_exit_code": 130,
+      "stderr": "swiftj2k-cli: interrupted; no output was published.\n"
+    }
+  ],
+  "status": "passed",
+  "checks": 147
+}

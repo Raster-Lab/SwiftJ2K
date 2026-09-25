@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
-"""Controlled release benchmark of the swiftj2k CLI against reference tools
+"""Controlled release benchmark of the swiftj2k-cli CLI against reference tools
 (PERFORMANCE.md PERF-02): cold command-line invocations, 5 warm-ups and 20
 interleaved timed iterations per case, medians, p95, spread and pixels/s.
 
-Usage: benchmark-lossless.py --binary /abs/release/swiftj2k --output /new/dir
+Usage: benchmark-lossless.py --binary /abs/release/swiftj2k-cli --output /new/dir
 
 Cases are the repository's synthetic fixtures. Each codec is invoked as a
 fresh process, so process start-up is part of every figure; results describe
@@ -34,7 +34,7 @@ def main():
     out = args.output.resolve(); out.mkdir(parents=True, exist_ok=False)
     binary = args.binary.resolve()
     tools = {
-        "swiftj2k": {"encode": [str(binary), "encode", "-i", "{nrrd}", "-o", "{out}", "--overwrite", "--precision", "{bits}"],
+        "swiftj2k-cli": {"encode": [str(binary), "encode", "-i", "{nrrd}", "-o", "{out}", "--overwrite", "--precision", "{bits}"],
                      "decode": [str(binary), "decode", "-i", "{j2k}", "-o", "{out}", "--overwrite"]},
     }
     opj_c, opj_d = shutil.which("opj_compress"), shutil.which("opj_decompress")
@@ -62,7 +62,7 @@ def main():
             for direction in ("encode", "decode"):
                 samples = {tool: [] for tool in tools}
                 def argv(tool):
-                    ext = ".j2k" if direction == "encode" else (".nrrd" if tool == "swiftj2k" else ".pgm")
+                    ext = ".j2k" if direction == "encode" else (".nrrd" if tool == "swiftj2k-cli" else ".pgm")
                     return [a.format(nrrd=nrrd, pgm=pgm, j2k=j2k, out=temp / f"{tool}-{direction}-{name}{ext}", bits=entry["meaningfulBits"]) for a in tools[tool][direction]]
                 for _ in range(WARMUPS):
                     for tool in tools: timed(argv(tool))

@@ -1,0 +1,8 @@
+load before: 16:23  up  5:36, 1 user, load averages: 5.31 4.00 3.12
+ 44.1 05:34:29 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+ 16.3 04:37:08 /System/Library/PrivateFrameworks/XprotectFramework.framework/Versions/A/XPCServices/XprotectService.xpc/Contents/MacOS/XprotectService
+ 10.4 04:39:57 /Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/153.0.8010.53/Helpers/Codex (Service).app/Contents/MacOS/Codex (Service)
+load after: 16:23  up  5:36, 1 user, load averages: 5.12 3.99 3.11
+ 44.0 05:34:33 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  9.5 04:40:01 /Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/153.0.8010.53/Helpers/Codex (Service).app/Contents/MacOS/Codex (Service)
+  8.5 04:40:00 /Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/153.0.8010.53/Helpers/Codex (Renderer).app/Contents/MacOS/Codex (Renderer)

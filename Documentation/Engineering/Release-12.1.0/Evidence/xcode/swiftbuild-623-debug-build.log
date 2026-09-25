@@ -1,0 +1,22 @@
+Building for debugging...
+[0/100] Planning deferred tasks
+[60/100] 32 / 53
+[61/100] SwiftJ2K 33 / 54
+[45/100] 45 / 98
+[51/100] 50 / 98
+[52/100] 51 / 98
+[58/100] 57 / 98
+[63/100] 63 / 98
+[65/100] 64 / 98
+[66/100] 65 / 98
+[67/100] 66 / 98
+[76/100] SwiftJ2K 77 / 98
+[83/100] SwiftJ2K 85 / 100
+[83/100] swiftj2k-cli-product 85 / 100
+[84/100] swiftj2k-cli-product 89 / 104
+[90/100] SwiftJ2K 95 / 104
+[92/100] SwiftJ2K 97 / 104
+[94/100] swiftj2k-cli-product 98 / 104
+[100/100] 
+Build complete! (5.340626625 seconds)
+swiftbuild 6.2.3 debug build exit 0

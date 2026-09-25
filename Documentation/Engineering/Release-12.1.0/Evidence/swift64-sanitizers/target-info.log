@@ -1,0 +1,27 @@
+{
+  "compilerVersion": "Apple Swift version 6.4 (swift-6.4-RELEASE)",
+  "swiftCompilerTag": "swift-6.4.0-RELEASE",
+  "target": {
+    "triple": "arm64-apple-macosx26.0",
+    "unversionedTriple": "arm64-apple-macosx",
+    "moduleTriple": "arm64-apple-macos",
+    "platform": "macosx",
+    "arch": "arm64",
+    "pointerWidthInBits": 64,
+    "pointerWidthInBytes": 8,
+    "swiftRuntimeCompatibilityVersion": "6.2",
+    "compatibilityLibraries": [ ],
+    "openbsdBTCFIEnabled": false,
+    "librariesRequireRPath": false
+  },
+  "paths": {
+    "runtimeLibraryPaths": [
+      "<home>/Library/Developer/Toolchains/swift-6.4.0-RELEASE.xctoolchain/usr/lib/swift/macosx",
+      "/usr/lib/swift"
+    ],
+    "runtimeLibraryImportPaths": [
+      "<home>/Library/Developer/Toolchains/swift-6.4.0-RELEASE.xctoolchain/usr/lib/swift/macosx"
+    ],
+    "runtimeResourcePath": "<home>/Library/Developer/Toolchains/swift-6.4.0-RELEASE.xctoolchain/usr/lib/swift"
+  }
+}

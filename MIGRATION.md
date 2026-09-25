@@ -1,6 +1,6 @@
 # Migrating applications from J2KSwift to SwiftJ2K
 
-For application maintainers and coding agents. This guide covers **consumer application migration**; [IMPLEMENTATION.md](IMPLEMENTATION.md) governs migration of codec algorithms into this library. Suite contract **0.9.0**; successor at development version **12.1.0-dev.6** (no tag yet); predecessor pinned at [J2KSwift 7acc9ae4](https://github.com/Raster-Lab/J2KSwift/tree/7acc9ae415e7d0bc7d441e0f0277d5e150bd19ca), the revision the codec was migrated from. Record your application's actual resolved revisions and compare them before applying the mappings below.
+For application maintainers and coding agents. This guide covers **consumer application migration**; [IMPLEMENTATION.md](IMPLEMENTATION.md) governs migration of codec algorithms into this library. Suite contract **0.10.0**; successor at version **12.1.0** (tag state in [CHANGELOG.md](CHANGELOG.md)); predecessor pinned at [J2KSwift 7acc9ae4](https://github.com/Raster-Lab/J2KSwift/tree/7acc9ae415e7d0bc7d441e0f0277d5e150bd19ca), the revision the codec was migrated from. Record your application's actual resolved revisions and compare them before applying the mappings below.
 
 ## Readiness
 
@@ -28,7 +28,7 @@ Executed evidence per milestone: [MILESTONE2.md](Documentation/MILESTONE2.md), [
 | Minimum tools | consult the application pin; the pinned predecessor uses Swift 6.2 | Swift 6.2 tools minimum, Swift 6 language mode; Swift 6.4 is the qualified primary toolchain |
 | Apple deployment floors | inspected predecessor manifest: macOS 15, iOS/tvOS 18, watchOS 10, visionOS 1 | all five floors are 26.0. Contract 0.9.0 Decision D3: a consumer raises its own floor to 26.0 in the same change that re-points it; until then the predecessor remains its supported route |
 | Linux | Apple-only in practice | Ubuntu 24.04 arm64 build, tests and CLI executed in a container (MILESTONE4.md); x86_64 unexecuted |
-| CLI | `j2k` | `swiftj2k` with `encode`, `decode`, `inspect`, `validate`, `capabilities` over the NRRD interchange profile ([CLI.md](CLI.md)) |
+| CLI | `j2k` | `swiftj2k-cli` with `encode`, `decode`, `inspect`, `validate`, `capabilities` over the NRRD interchange profile ([CLI.md](CLI.md)) |
 
 In an isolated application branch, add the successor and pin it to a reviewed commit:
 
@@ -125,12 +125,12 @@ print("Migration example passed: \(encoded.data.count)-byte lossless codestream;
 
 ## Command-line scripts
 
-| `j2k` use | `swiftj2k` equivalent |
+| `j2k` use | `swiftj2k-cli` equivalent |
 | --- | --- |
-| encode a raw greyscale image | `swiftj2k encode -i image.nrrd -o out.j2k --precision 12`; input is the NRRD profile in CLI.md (attached header, `uint16`, 2-D, raw, `swiftj2k.meaningfulbits:=N`), not PGM or DICOM |
-| decode to a raw image | `swiftj2k decode -i in.j2k -o image.nrrd [--overwrite]` |
-| `Info` | `swiftj2k inspect -i in.j2k --json` |
-| validate a stream | `swiftj2k validate -i in.j2k` (full in-memory decode, exit status only) |
+| encode a raw greyscale image | `swiftj2k-cli encode -i image.nrrd -o out.j2k --precision 12`; input is the NRRD profile in CLI.md (attached header, `uint16`, 2-D, raw, `swiftj2k.meaningfulbits:=N`), not PGM or DICOM |
+| decode to a raw image | `swiftj2k-cli decode -i in.j2k -o image.nrrd [--overwrite]` |
+| `Info` | `swiftj2k-cli inspect -i in.j2k --json` |
+| validate a stream | `swiftj2k-cli validate -i in.j2k` (full in-memory decode, exit status only) |
 | pipes | `-` for stdin and binary stdout on every codec verb |
 | exit codes | 0, 2 usage, 3 malformed, 4 unsupported, 5 resource limit or deadline, 6 I/O, 7 internal, 130 interrupted |
 | `Batch`, `Benchmark`, `Compare`, `Convert`, `Completions`, `Headless`, `InProcBench`, `Encode3D`, `Decode3D`, `JPIPClient`, `JPIPServer`, `DICOMSupport`, `OPJ*` | none yet; keep those scripts on `j2k` (IMPLEMENTATION.md, CLI surface) |

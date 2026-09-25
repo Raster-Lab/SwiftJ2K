@@ -1,0 +1,28 @@
+Building for debugging...
+[0/7] Write sources
+[2/7] Write swift-version-24593BA9C3E375BF.txt
+[4/17] Emitting module SwiftJ2K
+[5/17] Compiling SwiftJ2K BitIO.swift
+[6/17] Compiling SwiftJ2K BitPlaneCoder.swift
+[7/17] Compiling SwiftJ2K Codestream.swift
+[8/17] Compiling SwiftJ2K ContextModeling.swift
+[9/17] Compiling SwiftJ2K LosslessPipeline.swift
+[10/17] Compiling SwiftJ2K MQCoder.swift
+[11/17] Compiling SwiftJ2K TagTree.swift
+[12/17] Compiling SwiftJ2K Tier2.swift
+[13/17] Compiling SwiftJ2K Wavelet53.swift
+[14/25] Compiling SwiftJ2K CodecAPI.swift
+[15/25] Compiling SwiftJ2K Errors.swift
+[16/25] Compiling SwiftJ2K Image.swift
+[17/25] Compiling SwiftJ2K ImageDescriptor.swift
+[18/25] Compiling SwiftJ2K ImageStorage.swift
+[19/25] Compiling SwiftJ2K Options.swift
+[20/25] Compiling SwiftJ2K Telemetry.swift
+[21/25] Compiling SwiftJ2K Transcoding.swift
+[22/26] Wrapping AST for SwiftJ2K for debugging
+[24/28] Emitting module SwiftJ2KCLI
+[25/28] Compiling SwiftJ2KCLI main.swift
+[26/29] Wrapping AST for SwiftJ2KCLI for debugging
+[27/29] Write Objects.LinkFileList
+[28/29] Linking swiftj2k-cli
+Build complete! (13.11s)

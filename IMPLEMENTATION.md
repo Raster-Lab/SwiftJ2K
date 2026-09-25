@@ -6,7 +6,7 @@ For applications upgrading from J2KSwift, use [MIGRATION.md](MIGRATION.md). This
 
 ## Source and destination
 
-Predecessor: [Raster-Lab/J2KSwift](https://github.com/Raster-Lab/J2KSwift) at inspected SHA `768f6b53499b806fd0304962056e1fc7833f12e5`. Highest stable-shaped tag observed: `v11.0.3` (resolve independently before choosing it as a baseline). Target module/product: `SwiftJ2K`. Target CLI: `swiftj2k`. Intended first stable library version: `12.1.0`.
+Predecessor: [Raster-Lab/J2KSwift](https://github.com/Raster-Lab/J2KSwift) at inspected SHA `768f6b53499b806fd0304962056e1fc7833f12e5`. Highest stable-shaped tag observed: `v11.0.3` (resolve independently before choosing it as a baseline). Target module/product: `SwiftJ2K`. Target CLI: `swiftj2k-cli`. Intended first stable library version: `12.1.0`.
 
 Do not migrate code from moving main without recording the selected revision. Reproduce relevant source tests and inspect source-level capabilities. Existing test totals and benchmark claims are historical, not successor acceptance evidence.
 
@@ -38,6 +38,44 @@ Decoder coverage now spans the Part 1 greyscale lossless syntax: any tile grid a
 ### Milestone 5 status — executed 22 September 2026
 
 Release preparation without a tag: fresh URL-based consumption on macOS and Linux, MIGRATION.md rewritten with an executable example, THIRD_PARTY_NOTICES.md, SECURITY.md's supported-version policy, RELEASE.md as the procedure for the explicit release task, and the previously unexecuted gates run on the Swift 6.4 toolchain (Swift Build engine, AddressSanitizer, ThreadSanitizer, SBOMs), plus one-hour fuzz campaigns per decode entry point, an Apple SDK build matrix and an iOS simulator run ([MILESTONE5.md](Documentation/MILESTONE5.md)). The DICOMKit audit of decision M3 was executed: `J2KDICOMCodestreamDetector` has no DICOMKit equivalent for its CAP-marker transfer-syntax sniff, so that file transplants to DICOMKit in DICOMKit's own task. Contract 0.9.0's continuous-integration precondition remained unmet; the stable tag waits for the release task.
+
+### Release 12.1.0 task status — executed 22 September 2026
+
+Owner-assigned release task following [Documentation/RELEASE.md](Documentation/RELEASE.md). Version set to 12.1.0 (commit `67273db`); every gate of the procedure executed on that commit and recorded in [Documentation/RELEASE-12.1.0.md](Documentation/RELEASE-12.1.0.md). The stable tag was **not** cut: contract 0.9.0's continuous-integration precondition (Actions jobs at `steps=0`) and the private-vulnerability-reporting precondition are unmet, both organisation-owner actions. When they hold, RELEASE.md steps 3 to 6 apply to the release pull request's merge commit.
+
+### Owner decision, 25 September 2026: complete the migration before any release
+
+The owner ruled that no release is created until the migration of J2KSwift is complete: "I need complete migration of J2KSwift then only to create a release work". This restores the order decision M2 below already implied (the first stable ships `SwiftJ2K3D` and `SwiftJ2KJPIP`, which do not exist yet). The 12.1.0 preparation on pull request 18 (executable rename to `swiftj2k-cli`, gate record, evidence) stands as preparation only; no tag, and the version string stays 12.1.0 as the target of the first stable. The release task is re-run in full on the commit that completes the programme below.
+
+**What remains, measured at predecessor `7acc9ae`** (files / lines; `SwiftJ2K` today has 17 files / 3,727 lines adapted from six of them):
+
+| Predecessor area | Files / lines | Successor home | Programme milestone |
+| --- | --- | --- | --- |
+| `J2KCodec` HTJ2K block coder, HT codec, HT conformance tables, transcoder (`J2KHT*`, `J2KTranscoder`, `J2KGPU*HT*` scalar parts) | 23 / ~12,900 | `SwiftJ2K` internal `Codec/HT` | 6 |
+| `J2KCore` `J2KHTConformanceAPI`, `J2KPart1Conformance`, `J2KMarker`, `J2KCodestreamIntegrity`, bit reader/writer | 8 / ~4,000 | `SwiftJ2K` internal | 6 and 7 |
+| `J2KCodec` Part 1 breadth: `J2KEncoderPipeline`, `J2KDecoderPipeline` remainder, `J2KColorTransform`, `J2KMCT*`, `J2KQuantization`, `J2KRateControl`, `J2KTrellisQuantizer`, `J2KDWT2D*`, `J2KWaveletKernel*`, `J2KROI`, `J2KExtendedROI`, `J2KDCOffset`, `J2KExtendedPrecision`, `J2KTier2Coding`, `J2KProgressiveEncoding`, `J2KMultiTile*`, `J2KEncodingPresets`, `J2KAdvancedDecoding`, `J2KCodec` | ~30 / ~32,000 | `SwiftJ2K` | 7 |
+| `J2KCodec` Part 2 and perceptual: `J2KArbitraryWavelet`, `J2KNonLinearTransform`, `J2KNLTMarker`, `J2KPart2CodestreamExtensions`, `J2KMCTDependency`, `J2KPerceptualEncoder`, `J2KVisualMasking`, `J2KVisualWeighting`, `J2KQualityMetrics`, `J2KAdaptiveBlockSize` | 10 / ~5,300 | `SwiftJ2K`, capability-gated | 7 (audit; owner disposition per feature) |
+| `J2KCodec` Motion JPEG 2000: `MJ2*` | 5 / ~1,700 | **owner disposition needed** (not in the single-image contract) | 7 (audit only) |
+| `J2KFileFormat`: JP2/JPH boxes, JPX animation, Part 2 boxes, reader requirements | 9 / 7,374 | `SwiftJ2K` internal `Container` | 8 |
+| `J2KCodecNEON` (C kernels for HT and entropy coding) and `J2KCodec/ARM` | 10 / ~3,100 | `SwiftJ2K` internal, `executionPolicy` | 9 |
+| `J2KMetal` (DWT, colour, MCT, quantiser, ROI, HT emit stages, shaders) | 25 / 25,447 | `SwiftJ2K` internal, `executionPolicy` (decision M1) | 9 |
+| `J2K3D` (JP3D) | 30 / 8,923 | `SwiftJ2K3D` (retained, decision M2) | 10 |
+| `JPIP` | 31 / 14,005 | `SwiftJ2KJPIP` (retained, decision M2) | 11 |
+| `J2KCLICore` remainder: `Transcode`, `Convert`, `Compare`, `Info`, `Batch`, `MultiFileProcessor`, `ImageIO`/PNG/TIFF, `Encode3D`/`Decode3D`, JPIP client/server verbs, `Completions`, `Benchmark` | 27 / 9,569 | `swiftj2k-cli` (`DICOMSupport`, `Daemon*`, `OPJ*` wrappers and `Headless` retire with their products) | 6, 10, 11, 12 |
+| Timings, telemetry, profilers, benchmarks (`*Timings`, `J2KPipelineProfiler`, `J2KBenchmark`, `J2KPerformanceOptimizer`, `J2KMemoryTracker`) | ~12 / ~2,500 | development-only under `Integration/` or dropped where `OperationReport` already covers them | each milestone as needed |
+
+**Programme.** One owner-assigned milestone at a time, each on its own branch, each with the evidence record, provenance headers and the gate set of Milestones 2 to 5, and each merged only on the owner's request.
+
+| Milestone | Work | Exit evidence |
+| --- | --- | --- |
+| 6 — HTJ2K | Part 15 block coder (MEL, VLC, MagSgn, cleanup), CAP/CPF/COD HT signalling, HT decode and encode for the current greyscale lossless profile (HT Rev Only, then HT Only and mixed), and lossless J2K ↔ HTJ2K transcoding in memory and through `swiftj2k-cli transcode` per TRANSCODING.md and POL-09. Audit the predecessor's recorded HTJ2K lossless failure case first | Sample-exact round trips against OpenJPH 0.30.1 and Kakadu 8.4.1 fixtures in both directions; transcode both directions with independent decode of the result; capability reports `htj2k`; fuzz of the HT entry points; harness pair added |
+| 7 — Part 1 breadth | Colour and multi-component with RCT/ICT, signed samples, 9/7 irreversible with quantisation and rate control (`.lossy`, `.nearLossless`), ROI, multi-tile, multi-layer and precinct encoding, progression control, DC offset and extended precision; audit Part 2, perceptual and MJ2 files and record a feature-level disposition for each | Per-feature OpenJPEG and Kakadu cross-decode fixtures; rate-distortion table for lossy; capability matrix; benchmark record |
+| 8 — containers | JP2 and JPH boxes, JPX where the predecessor supported it, reader requirements, colour specification and channel definition, metadata policy limits | Container fixtures from OpenJPEG/Kakadu; inspect/validate/decode through containers; metadata-bytes limit enforced |
+| 9 — acceleration | Metal and NEON paths behind `executionPolicy` (PLAT-05, decision M1), reported in `OperationReport.backend` | Byte-identity of accelerated output against the scalar path on every fixture; availability guards on every platform in the matrix; benchmark record |
+| 10 — `SwiftJ2K3D` | JP3D codec, slice-stack codec, ROI, progressive delivery, HTJ2K in JP3D, transcoder, as the retained product with the volume extension API (API-13) | DICOMKit's seven importing files compile against it in DICOMKit's own task; predecessor JP3D fixtures round-trip |
+| 11 — `SwiftJ2KJPIP` | JPIP client and server, transports, caches, progressive delivery, JP3D streaming, as the retained product | Client/server loopback tests; DICOMKit's JPIP client compiles against it in DICOMKit's own task |
+| 12 — CLI and consumer breadth | Remaining `swiftj2k-cli` verbs and image I/O, batch and compare, shell completions; migration guide for every consumer named in the dispositions | 147-plus CLI conformance checks extended per verb; consumer builds |
+| 13 — release preparation, again | The Milestone 5 scope re-executed on the completed codebase, then the release task | RELEASE.md gates on the release commit; tag only after the owner's explicit release task and the CI precondition |
 
 ### Migration focus
 
@@ -81,14 +119,14 @@ POL-05 requires every product to be explicitly **retained** (migrates, stays a p
 | `J2K3D` (JP3D) | 29 / 8,879 | 5 | **Retained** | `SwiftJ2K3D` | API-13 treats volume coding as a clearly named extension operation rather than an interchangeable common one |
 | `JPIP` | 30 / 13,955 | 2 | **Retained** | `SwiftJ2KJPIP` | API-13 names JPIP explicitly as not interchangeable with the single-image contract |
 | `J2KDICOMHelpers` | 11 / 1,647 | 0 | Deferred — retired | none | POL-05 keeps transfer-syntax negotiation and photometric policy in consumers. DICOMKit already owns `DICOMCore/PhotometricInterpretation.swift` and `DICOMCore/TransferSyntaxConverter.swift`, and nothing imports this product. |
-| `j2k` (exec) | 1 / 16 + `J2KCLICore` | — | Adapted — renamed | `swiftj2k` | CLI-01 fixes the successor executable names |
+| `j2k` (exec) | 1 / 16 + `J2KCLICore` | — | Adapted — renamed | `swiftj2k-cli` | CLI-01 fixes the successor executable names |
 | `j2kd` (exec) | 1 / 82 | — | Deferred | none | macOS-only XPC daemon; no importer, and a daemon-plus-fallback execution model is not part of the contract's operation surface |
 | `J2KDaemonProtocol` | 1 / 177 | 0 | Deferred | none | as `j2kd` |
 | `J2KDaemonCore` | 2 / 414 | 0 | Deferred | none | as `j2kd` |
 | `J2KDaemonClient` | 1 / 275 | 0 | Deferred | none | as `j2kd` |
 | `J2KTestApp` (exec) | 23 / 7,475 | 0 | Deferred — dev tooling | none | TESTING keeps development-only tools outside the shipped dependency graph |
 
-**Product list after migration:** `SwiftJ2K`, `SwiftJ2K3D`, `SwiftJ2KJPIP` (libraries) and `swiftj2k` (executable). Fourteen products become four.
+**Product list after migration:** `SwiftJ2K`, `SwiftJ2K3D`, `SwiftJ2KJPIP` (libraries) and `swiftj2k-cli` (executable). Fourteen products become four.
 
 `Sources/J2KCore/CompressionFamilyConformance.swift` and `Sources/J2KCodec/CompressionFamilyConformance.swift` were the entire CompressionFamily coupling. Contract 0.8.0 §4 is satisfied: J2KSwift pull request 489 (merged 22 September 2026, `7acc9ae`) moved them, with their pin-down tests, into the separate package `Adapters/J2KCompressionFamily` in the predecessor repository, which depends on J2KSwift by path and on CompressionFamily by URL. The J2KSwift root manifest now declares no external dependency, so `SwiftJ2K` resolves alone. The adapter package is predecessor-compatibility surface and does not migrate. CompressionFamily itself is untouched and stays available to predecessor consumers under POL-04.
 

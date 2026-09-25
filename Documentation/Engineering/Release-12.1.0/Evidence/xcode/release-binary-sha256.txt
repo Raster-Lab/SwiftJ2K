@@ -1,0 +1,2 @@
+144b410bdc3ca5560db6b134a6492f7e081848677f30ea297280c6e8812bb543  <scratch>/release2/build-release/release/swiftj2k-cli
+swiftj2k-cli 12.1.0

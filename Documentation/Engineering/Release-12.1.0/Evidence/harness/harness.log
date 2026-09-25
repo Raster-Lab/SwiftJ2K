@@ -1,0 +1,57 @@
+Building for debugging...
+[0/10] Write sources
+[2/10] Write ContractHarness-entitlement.plist
+[6/10] Write swift-version-6ED5EA0491098587.txt
+[8/49] Emitting module SwiftJXL
+[9/49] Compiling SwiftJ2K Telemetry.swift
+[10/50] Compiling SwiftJ2K Errors.swift
+[11/50] Compiling SwiftJ2K Image.swift
+[12/50] Compiling SwiftJXL Errors.swift
+[13/50] Compiling SwiftJXL Transcoding.swift
+[14/50] Compiling SwiftJXL Options.swift
+[15/50] Compiling SwiftJXL CodecAPI.swift
+[16/50] Compiling SwiftJ2K TagTree.swift
+[17/50] Compiling SwiftJ2K Tier2.swift
+[18/50] Compiling SwiftJ2K ImageDescriptor.swift
+[19/50] Compiling SwiftJ2K ImageStorage.swift
+[20/50] Compiling SwiftJ2K Options.swift
+[21/50] Compiling SwiftJ2K Wavelet53.swift
+[22/50] Compiling SwiftJ2K CodecAPI.swift
+[23/50] Compiling SwiftJLS Options.swift
+[24/50] Compiling SwiftJXL ImageDescriptor.swift
+[25/50] Compiling SwiftJXL ImageStorage.swift
+[26/50] Compiling SwiftJLI ImageDescriptor.swift
+[27/50] Compiling SwiftJLI Options.swift
+[28/50] Compiling SwiftJLS ImageDescriptor.swift
+[29/50] Compiling SwiftJLS ImageStorage.swift
+[30/50] Compiling SwiftJLS Errors.swift
+[31/50] Compiling SwiftJLS Image.swift
+[32/50] Compiling SwiftJXL Image.swift
+[33/50] Emitting module SwiftJLS
+[34/50] Compiling SwiftJLS CodecAPI.swift
+[35/50] Compiling SwiftJLI Image.swift
+[36/50] Emitting module SwiftJLI
+[37/50] Compiling SwiftJLI ImageStorage.swift
+[38/50] Compiling SwiftJLI CodecAPI.swift
+[39/50] Compiling SwiftJLI Errors.swift
+[40/50] Compiling SwiftJ2K LosslessPipeline.swift
+[41/50] Compiling SwiftJ2K MQCoder.swift
+[42/50] Compiling SwiftJ2K Transcoding.swift
+[43/50] Emitting module SwiftJ2K
+[44/50] Compiling SwiftJ2K BitIO.swift
+[45/50] Compiling SwiftJ2K BitPlaneCoder.swift
+[46/50] Compiling SwiftJ2K Codestream.swift
+[47/50] Compiling SwiftJ2K ContextModeling.swift
+[48/52] Emitting module ContractHarness
+[49/52] Compiling ContractHarness main.swift
+[49/52] Write Objects.LinkFileList
+[50/52] Linking ContractHarness
+[51/52] Applying ContractHarness
+Build of product 'ContractHarness' complete! (6.06s)
+PASS: 12-in-16, 5x3 padded storage, 1 pixel allocation, 0 adapter copy bytes, shared identity, concurrent reads, second writer rejected
+PASS: 16-in-16, 5x3 padded storage, 1 pixel allocation, 0 adapter copy bytes, shared identity, concurrent reads, second writer rejected
+PASS: local write-lease mapping and exact UInt16 maximum
+PASS: g12_129x67_gradient 129x67@12 prefix 6 padding 10: decoded into the caller owner (1 allocation, 1 write borrow, identity kept, padding intact), re-encoded from it (1 read borrow, 3570 bytes, workspace 79888 bytes), live heap +41792 B after decode and +49648 B after encode, oracles OpenJPEG+Kakadu exact; JPEG-LS leg unexecuted: SwiftJLS advertises canEncode == false
+PASS: g16_17x9_alternating 17x9@16 prefix 2 padding 4: decoded into the caller owner (1 allocation, 1 write borrow, identity kept, padding intact), re-encoded from it (1 read borrow, 110 bytes, workspace 45928 bytes), live heap +1168 B after decode and +1776 B after encode, oracles OpenJPEG+Kakadu exact; JPEG-LS leg unexecuted: SwiftJLS advertises canEncode == false
+PASS: g16_256x256_smooth 256x256@16 prefix 0 padding 0: decoded into the caller owner (1 allocation, 1 write borrow, identity kept, padding intact), re-encoded from it (1 read borrow, 64328 bytes, workspace 307460 bytes), live heap +131856 B after decode and +197888 B after encode, oracles OpenJPEG+Kakadu exact; JPEG-LS leg unexecuted: SwiftJLS advertises canEncode == false
+harness exit 0

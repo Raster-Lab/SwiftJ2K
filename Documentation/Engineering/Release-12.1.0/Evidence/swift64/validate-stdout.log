@@ -1,0 +1,24 @@
+SwiftJ2K: swift-version
+SwiftJ2K: xcode-version
+SwiftJ2K: source-commit
+SwiftJ2K: working-tree
+SwiftJ2K: swift-build-help
+SwiftJ2K: swift-test-help
+SwiftJ2K: swift-package-help
+SwiftJ2K: swift-sbom-help
+SwiftJ2K: target-info
+SwiftJ2K: debug-clean-build
+SwiftJ2K: debug-incremental-build
+SwiftJ2K: debug-discovery
+SwiftJ2K: debug-tests
+SwiftJ2K: release-clean-build
+SwiftJ2K: release-incremental-build
+SwiftJ2K: release-discovery
+SwiftJ2K: release-tests
+SwiftJ2K: fresh-local-consumer
+SwiftJ2K: repetition-discovery
+SwiftJ2K: repetition-tests
+SwiftJ2K: sbom-spdx
+SwiftJ2K: sbom-cyclonedx
+Evidence: <scratch>/release2/swift64/report.json
+validate default exit 0

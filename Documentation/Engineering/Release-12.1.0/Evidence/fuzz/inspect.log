@@ -1,0 +1,2 @@
+inspect: 13783050 iterations, outcomes [(key: "malformedInput", value: 11370703), (key: "resourceLimitExceeded", value: 265170), (key: "success", value: 1756088), (key: "unsupportedFeature", value: 278136), (key: "unsupportedFormat", value: 112953)], slowest 13 ms, unexpected 0, peak RSS 15 MiB
+exit 0 after 3600 s
